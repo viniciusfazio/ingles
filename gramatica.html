@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Gramática — My English Course</title>
+<link rel="stylesheet" href="assets/curso.css">
+<link rel="icon" href="assets/icone-192.png">
+</head>
+<body>
+<header class="topo">
+  <div class="linha">
+    <a class="voltar" href="index.html">← Aulas</a>
+    <span id="contagem" style="font-size:13px;opacity:.9"></span>
+  </div>
+  <h1>📘 Gramática</h1>
+  <div class="sub">Tudo o que você já aprendeu, num lugar só</div>
+</header>
+<main>
+  <input id="busca" class="resposta-txt" type="text" placeholder="🔎 procurar (ex.: passado, perguntas, to be)"
+         autocomplete="off" style="margin-bottom:14px">
+  <div id="lista"></div>
+  <p class="ajuda" id="vazio" hidden style="text-align:center;margin-top:20px"></p>
+</main>
+<script src="assets/config.js"></script>
+<script src="assets/curso.js"></script>
+<script src="assets/semanas.js"></script>
+<script src="assets/gramatica.js"></script>
+<script>
+(function(){
+  var lista=document.getElementById('lista');
+  var vazio=document.getElementById('vazio');
+  var regras=(typeof GRAMATICA!=='undefined')?GRAMATICA:[];
+
+  document.getElementById('contagem').textContent=
+    regras.length+(regras.length===1?' regra':' regras');
+
+  if(!regras.length){
+    vazio.hidden=false;
+    vazio.innerHTML='Ainda não há gramática aqui. Ela vai aparecendo conforme você avança nas aulas. 💜';
+    return;
+  }
+
+  function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function som(t){return '<button class="som pequeno" data-say="'+esc(t)+'" aria-label="Ouvir">&#128266;</button>';}
+  function pad(n){return (n<10?'0':'')+n;}
+
+  /* agrupado por módulo, na ordem em que foi ensinado */
+  var moduloAtual=null;
+  regras.slice().sort(function(a,b){
+    return (a.modulo-b.modulo) || (a.semana-b.semana) || (a.dia-b.dia);
+  }).forEach(function(g){
+    if(g.modulo!==moduloAtual){
+      moduloAtual=g.modulo;
+      var m=null;
+      if(typeof MODULOS!=='undefined')
+        for(var i=0;i<MODULOS.length;i++) if(MODULOS[i].n===g.modulo) m=MODULOS[i];
+      var h=document.createElement('div');
+      h.className='titulo-modulo';
+      h.textContent='Módulo '+g.modulo+(m?' — '+m.titulo:'');
+      lista.appendChild(h);
+    }
+
+    var det=document.createElement('details');
+    det.className='card regra';
+    det.dataset.texto=((g.titulo||'')+' '+(g.resumo||'')+' '+(g.html||'')+' '+
+      (g.exemplos||[]).map(function(e){return e.en+' '+e.pt;}).join(' ')).toLowerCase();
+
+    var exemplos=(g.exemplos||[]).map(function(e){
+      return '<div class="ex">'+som(e.en)+'<div><b>'+esc(e.en)+'</b><span>'+esc(e.pt)+'</span></div></div>';
+    }).join('');
+
+    det.innerHTML=
+      '<summary><span class="regra-txt"><span class="regra-nome">'+esc(g.titulo)+'</span>'+
+      '<span class="regra-resumo">'+esc(g.resumo||'')+'</span></span>'+
+      '<span class="regra-onde">Sem. '+g.semana+'</span></summary>'+
+      '<div class="regra-corpo">'+(g.html||'')+
+      (exemplos?'<div class="exemplos">'+exemplos+'</div>':'')+
+      '<a class="regra-link" href="semanas/semana-'+pad(g.semana)+'/dia-'+g.dia+'.html">'+
+      '↩︎ ver a aula em que isto foi ensinado (Semana '+g.semana+' · Dia '+g.dia+')</a></div>';
+    lista.appendChild(det);
+  });
+
+  /* busca */
+  var busca=document.getElementById('busca');
+  busca.addEventListener('input',function(){
+    var q=busca.value.trim().toLowerCase();
+    var achou=0;
+    var itens=lista.querySelectorAll('.regra');
+    for(var i=0;i<itens.length;i++){
+      var ok=!q || itens[i].dataset.texto.indexOf(q)>=0;
+      itens[i].hidden=!ok;
+      if(ok) achou++;
+      if(q && ok) itens[i].open=true;
+      if(!q) itens[i].open=false;
+    }
+    var titulos=lista.querySelectorAll('.titulo-modulo');
+    for(var j=0;j<titulos.length;j++) titulos[j].hidden=!!q;
+    vazio.hidden=!!achou;
+    if(!achou) vazio.textContent='Nada encontrado para "'+busca.value+'".';
+  });
+})();
+</script>
+</body>
+</html>

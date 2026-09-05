@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 1 · Dia 5</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:1, dia:5,
+titulo:"Review + My first presentation",
+subtitulo:"Sexta-feira: revisão da semana e o seu primeiro projeto",
+objetivos:[
+  "Revisar tudo o que você aprendeu na semana 1",
+  "Ouvir e entender a sua primeira história em inglês",
+  "Gravar a sua primeira apresentação em inglês 🎬"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🎉 Você chegou na sexta!",
+ html:"<p>Em 4 dias você aprendeu a cumprimentar, dizer seu nome, soletrar, contar até 20, usar o verbo TO BE e fazer perguntas. Isso é <b>muita coisa</b>!</p><p>Hoje é dia de revisar e mostrar o que você sabe. No fim tem o <b>Projeto da Semana</b>. 🎬</p>"},
+
+{tipo:"historia", titulo:"Ouça a história da Anna", paragrafos:[
+ {en:"Hello! My name is Anna. I am eleven years old.", pt:"Olá! Meu nome é Anna. Eu tenho onze anos."},
+ {en:"I am Brazilian and I live in a big city.", pt:"Eu sou brasileira e moro em uma cidade grande."},
+ {en:"My best friend is Leo. He is eleven too.", pt:"Meu melhor amigo é o Leo. Ele tem onze anos também."},
+ {en:"Emma is my new friend. She is American. She is from New York.", pt:"A Emma é minha amiga nova. Ela é americana. Ela é de Nova York."},
+ {en:"We are very happy. English is not difficult!", pt:"Nós estamos muito felizes. Inglês não é difícil!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu o texto?", questoes:[
+ {pergunta:"How old is Anna?", opcoes:["Ten years old.","Eleven years old.","Twelve years old."], correta:1,
+  explicacao:"I am eleven years old = eu tenho onze anos."},
+ {pergunta:"Where is Emma from?", opcoes:["Brazil","England","New York"], correta:2,
+  explicacao:"She is from New York."},
+ {pergunta:"Who is Anna's best friend?", opcoes:["Emma","Leo","The teacher"], correta:1,
+  explicacao:"My best friend is Leo."},
+ {pergunta:"Is Emma Brazilian?", opcoes:["Yes, she is.","No, she isn't. She is American.","Yes, she are."], correta:1,
+  explicacao:"She is American, não brasileira."}
+]},
+
+{tipo:"quiz", titulo:"Revisão geral da semana", questoes:[
+ {pergunta:"São 15h. Você diz:", opcoes:["Good morning","Good afternoon","Good night"], correta:1,
+  explicacao:"Afternoon = tarde (do meio-dia até umas 18h)."},
+ {pergunta:"Qual é o número 'thirteen'?", opcoes:["3","13","30"], correta:1,
+  explicacao:"O final -teen indica 13, 14, 15..."},
+ {pergunta:"Complete: 'They ___ my friends.'", opcoes:["is","am","are"], correta:2,
+  explicacao:"They usa are."},
+ {pergunta:"Como se pergunta a idade?", opcoes:["How old are you?","How are you?","Who are you?"], correta:0,
+  explicacao:"How old = quantos anos."},
+ {pergunta:"Alguém diz 'Thank you'. Você responde:", opcoes:["Please","You're welcome","Sorry"], correta:1,
+  explicacao:"You're welcome = de nada."},
+ {pergunta:"'I'm not hungry' significa:", opcoes:["Eu estou com fome.","Eu não estou com fome.","Eu estou com sede."], correta:1,
+  explicacao:"not deixa a frase negativa; hungry = com fome."},
+ {pergunta:"Qual está ERRADA?", opcoes:["She is my sister.","I am eleven.","He are my friend."], correta:2,
+  explicacao:"He usa IS, não are: He is my friend."},
+ {pergunta:"Como se diz 'Prazer em conhecer você'?", opcoes:["See you tomorrow.","Nice to meet you.","How are you?"], correta:1,
+  explicacao:"Nice to meet you é a frase pronta."}
+]},
+
+{tipo:"ligar", titulo:"Desafio: ligue tudo!", pares:[
+ {en:"See you tomorrow", pt:"Até amanhã"},
+ {en:"seventeen", pt:"17"},
+ {en:"Where are you from?", pt:"De onde você é?"},
+ {en:"thirsty", pt:"com sede"},
+ {en:"You're welcome", pt:"De nada"},
+ {en:"How do you spell it?", pt:"Como se escreve?"},
+ {en:"country", pt:"país"},
+ {en:"my teacher", pt:"minha professora"}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases da semana", itens:[
+ {frase:"My name is Anna and I am eleven", pt:"Meu nome é Anna e eu tenho onze anos."},
+ {frase:"She is not my sister", pt:"Ela não é minha irmã."},
+ {frase:"Where do you live", pt:"Onde você mora?"},
+ {frase:"Good morning nice to meet you", pt:"Bom dia, prazer em conhecer você."}
+]},
+
+{tipo:"ditado", titulo:"Ditado final da semana", itens:[
+ {en:"Nice to meet you", pt:"Prazer em conhecer você."},
+ {en:"I am from Brazil", pt:"Eu sou do Brasil."},
+ {en:"How old are you", pt:"Quantos anos você tem?"},
+ {en:"She is my best friend", pt:"Ela é minha melhor amiga."},
+ {en:"Thank you very much", pt:"Muito obrigada."}
+]},
+
+{tipo:"escrita", titulo:"🎬 PROJETO DA SEMANA 1 — All about me", id:"projeto",
+ instrucao:"Escreva o <b>seu</b> texto de apresentação em inglês, de 6 a 8 frases. Você já sabe tudo o que precisa — este é o seu projeto da semana, então faça sem colar. 💪",
+ dica:"<ul><li>um cumprimento</li><li>o seu nome</li><li>a sua idade</li><li>a sua nacionalidade</li><li>a cidade onde você mora</li><li>uma pessoa importante para você (e uma frase sobre ela)</li><li>como você está se sentindo hoje</li></ul>Se travar em alguma parte, escreva as outras e deixe essa para o fim. A história da Anna, aqui em cima, tem o mesmo assunto — mas escreva com as <b>suas</b> informações.",
+ gabarito:"6 a 8 frases cobrindo cumprimento, nome, idade (I am ... years old), nacionalidade (I am Brazilian), cidade (I live in ...), uma pessoa com uma frase usando he/she is, e um sentimento (I am happy/tired/...)",
+ instrucaoIA:"PROJETO FINAL DA SEMANA 1. Ela devia escrever um texto de 6 a 8 frases se apresentando: cumprimento, nome, idade, nacionalidade, onde mora, uma pessoa importante para ela, e como está se sentindo. Conteúdo da semana: cumprimentos, alfabeto, números 0-20, verbo to be (am/is/are + formas curtas + not), perguntas (what/where/who/how old/Are you...?), países e nacionalidades, adjetivos (happy, sad, tired, hungry, thirsty, big, small, nice). Corrija com carinho e, no final, diga em uma frase se ela está pronta para a Semana 2."},
+
+{tipo:"fala", titulo:"🎤 Grave a sua apresentação",
+ instrucao:"Agora leia em voz alta o <b>seu próprio texto</b>, aquele que você acabou de escrever. Antes, aqueça a boca com as palavras mais difíceis da semana — elas são cascudas! 😄 Depois <b>grave um vídeo de 30 segundos</b> se apresentando em inglês para mostrar para a família. 💜",
+ frases:[
+  {en:"Brazilian", pt:"brasileira — três pedaços: bra-ZÍ-li-an"},
+  {en:"eleven", pt:"onze — i-LÉ-ven (o L é bem leve)"},
+  {en:"thirteen", pt:"treze — a língua vai ENTRE os dentes: FÊR-tin"},
+  {en:"Nice to meet you.", pt:"Prazer em conhecer você."},
+  {en:"Thank you very much!", pt:"Muito obrigada!"}
+ ],
+ instrucaoIA:"APRESENTAÇÃO FINAL DA SEMANA 1. Peça para ela falar por áudio o texto de apresentação dela (nome, idade, nacionalidade, onde mora, um amigo, como se sente). Depois corrija a pronúncia com carinho, dê 1 a 5 estrelas e faça 3 perguntas fáceis em inglês sobre ela para ela responder falando."}
+
+]});
+</script>
+</body>
+</html>

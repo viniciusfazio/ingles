@@ -1,0 +1,5 @@
+# nada de build aqui: o site é a própria pasta
+.DS_Store
+Thumbs.db
+*.swp
+*~

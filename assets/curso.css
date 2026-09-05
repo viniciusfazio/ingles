@@ -1,0 +1,469 @@
+/* ============================================================
+   Curso de Inglês — folha de estilo única
+   Mobile-first. Não precisa editar para gerar novas semanas.
+   ============================================================ */
+
+:root{
+  --roxo:#6C4AB6;
+  --roxo-claro:#8D72E1;
+  --menta:#12CAD6;
+  --amarelo:#FFC94A;
+  --rosa:#FF6F91;
+  --verde:#2BB673;
+  --vermelho:#E14B4B;
+  --texto:#2B2340;
+  --cinza:#6E6A80;
+  --borda:#E6E2F5;
+  --fundo:#F6F3FF;
+  --branco:#fff;
+  --raio:16px;
+  --sombra:0 4px 14px rgba(108,74,182,.10);
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  background:var(--fundo);
+  color:var(--texto);
+  font-size:17px;
+  line-height:1.55;
+  padding-bottom:90px;
+}
+img{max-width:100%}
+
+/* ---------- Cabeçalho ---------- */
+.topo{
+  position:sticky;top:0;z-index:50;
+  background:linear-gradient(135deg,var(--roxo),var(--roxo-claro));
+  color:#fff;padding:12px 16px 10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+.topo .linha{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.topo .voltar{color:#fff;text-decoration:none;font-size:15px;opacity:.9;white-space:nowrap}
+.topo h1{margin:6px 0 2px;font-size:20px;line-height:1.25}
+.topo .sub{font-size:13px;opacity:.85}
+.velocidade{display:flex;gap:6px;align-items:center;margin-top:8px;font-size:12px;opacity:.95}
+.velocidade button{
+  border:none;background:rgba(255,255,255,.18);color:#fff;
+  padding:5px 11px;border-radius:20px;font-size:12px;cursor:pointer;font-weight:600;
+}
+.velocidade button.ativo{background:#fff;color:var(--roxo)}
+
+/* ---------- Conteúdo ---------- */
+main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
+
+.card{
+  background:var(--branco);border-radius:var(--raio);
+  padding:16px;margin:0 0 18px;box-shadow:var(--sombra);
+  border:1px solid var(--borda);
+}
+.card > h2{
+  margin:0 0 4px;font-size:19px;color:var(--roxo);
+  display:flex;align-items:center;gap:8px;
+}
+.card > .ajuda{margin:0 0 14px;font-size:14px;color:var(--cinza)}
+.card > h2 + .ajuda{margin-top:2px}
+
+.objetivos{background:linear-gradient(135deg,#FFF7E0,#FFEFD0);border-color:#FFE1A8}
+.objetivos li{margin-bottom:4px}
+.objetivos ul{margin:8px 0 0;padding-left:20px}
+
+.nota{background:linear-gradient(135deg,#E6FBFC,#DFF6FF);border-color:#B7EAF0}
+.nota h2{color:#0E8A93}
+
+/* ---------- Botão de som ---------- */
+.som{
+  border:none;background:var(--menta);color:#fff;
+  width:36px;height:36px;min-width:36px;border-radius:50%;
+  font-size:17px;cursor:pointer;display:inline-flex;
+  align-items:center;justify-content:center;vertical-align:middle;
+  box-shadow:0 2px 6px rgba(18,202,214,.35);
+}
+.som:active{transform:scale(.9)}
+.som.pequeno{width:30px;height:30px;min-width:30px;font-size:14px}
+
+/* ---------- Vocabulário ---------- */
+.vocab{display:grid;gap:10px}
+.vocab .item{
+  display:flex;align-items:center;gap:12px;
+  background:#FAF8FF;border:1px solid var(--borda);
+  border-radius:12px;padding:10px 12px;
+}
+.vocab .emoji{font-size:26px;line-height:1}
+.vocab .txt{flex:1;min-width:0}
+.vocab .en{display:block;font-weight:700;font-size:17px}
+.vocab .ipa{display:block;font-size:13px;color:var(--cinza);font-style:italic}
+.vocab .pt{display:block;font-size:15px;color:var(--cinza)}
+
+/* ---------- Diálogo / Texto ---------- */
+.dialogo .linha{margin-bottom:12px;display:flex;gap:10px;align-items:flex-start}
+.dialogo .quem{font-weight:700;color:var(--rosa);font-size:14px;min-width:62px;padding-top:6px}
+.dialogo .bolha{
+  background:#F3F0FF;border-radius:14px;padding:9px 12px;flex:1;
+}
+.dialogo .en,.leitura .en{display:block;font-weight:600}
+.dialogo .pt,.leitura .pt{display:block;font-size:14px;color:var(--cinza);margin-top:3px}
+.leitura p{margin:0 0 14px}
+.leitura .en{display:block}
+
+/* ---------- Gramática ---------- */
+.gramatica{background:linear-gradient(135deg,#FFF0F5,#FFE8F0);border-color:#FFD3E2}
+.gramatica h2{color:var(--rosa)}
+.gramatica table{width:100%;border-collapse:collapse;margin:10px 0;font-size:15px}
+.gramatica td,.gramatica th{border:1px solid #F3C6D8;padding:7px 9px;text-align:left}
+.gramatica th{background:#FFDCE8}
+.gramatica code{background:#fff;padding:1px 6px;border-radius:5px;font-size:15px;color:var(--roxo);font-weight:600}
+.exemplos{margin-top:12px;display:grid;gap:8px}
+.exemplos .ex{display:flex;gap:10px;align-items:center;background:#fff;border-radius:10px;padding:8px 10px}
+.exemplos .ex b{display:block}
+.exemplos .ex span{font-size:14px;color:var(--cinza)}
+
+/* ---------- Exercícios ---------- */
+.exercicio{margin-bottom:16px;padding-bottom:14px;border-bottom:1px dashed var(--borda)}
+.exercicio:last-of-type{border-bottom:none;margin-bottom:6px;padding-bottom:0}
+.pergunta{font-weight:600;margin-bottom:9px}
+.pergunta .num{
+  display:inline-flex;width:24px;height:24px;border-radius:50%;
+  background:var(--roxo);color:#fff;font-size:13px;
+  align-items:center;justify-content:center;margin-right:7px;
+}
+
+.opcoes{display:grid;gap:8px}
+.opcao{
+  border:2px solid var(--borda);background:#fff;border-radius:12px;
+  padding:11px 14px;text-align:left;font-size:16px;cursor:pointer;
+  font-family:inherit;color:var(--texto);
+}
+.opcao:active{transform:scale(.99)}
+.opcao.certa{border-color:var(--verde);background:#E7F8F0;font-weight:700}
+.opcao.errada{border-color:var(--vermelho);background:#FDECEC}
+.opcao:disabled{cursor:default}
+
+.resposta-txt{
+  width:100%;border:2px solid var(--borda);border-radius:12px;
+  padding:11px 13px;font-size:16px;font-family:inherit;color:var(--texto);
+}
+.resposta-txt:focus{outline:none;border-color:var(--roxo-claro)}
+.resposta-txt.certa{border-color:var(--verde);background:#E7F8F0}
+.resposta-txt.errada{border-color:var(--vermelho);background:#FDECEC}
+
+.linha-inline{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.linha-inline .resposta-txt{flex:1;min-width:150px}
+
+.btn{
+  border:none;border-radius:12px;padding:11px 18px;font-size:15px;
+  font-weight:700;font-family:inherit;cursor:pointer;
+  background:var(--roxo);color:#fff;box-shadow:var(--sombra);
+}
+.btn:active{transform:scale(.98)}
+.btn.secundario{background:#fff;color:var(--roxo);border:2px solid var(--roxo)}
+.btn.menta{background:var(--menta)}
+.btn.pequeno{padding:7px 13px;font-size:14px}
+
+.feedback{margin-top:9px;font-size:14px;font-weight:600;display:none}
+.feedback.ok{display:block;color:var(--verde)}
+.feedback.nok{display:block;color:var(--vermelho)}
+.feedback .porque{display:block;font-weight:500;color:var(--cinza);margin-top:3px}
+
+/* ---------- Ligar colunas ---------- */
+.ligar{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.ligar .col{display:grid;gap:9px;align-content:start}
+.chip{
+  border:2px solid var(--borda);background:#fff;border-radius:12px;
+  padding:10px;font-size:15px;font-family:inherit;color:var(--texto);
+  cursor:pointer;text-align:center;
+}
+.chip.sel{border-color:var(--roxo);background:#EFE9FF}
+.chip.ok{border-color:var(--verde);background:#E7F8F0;opacity:.65;cursor:default}
+.chip.nok{border-color:var(--vermelho);animation:tremer .3s}
+@keyframes tremer{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* ---------- Ordenar palavras ---------- */
+.montagem{
+  min-height:52px;border:2px dashed var(--borda);border-radius:12px;
+  padding:8px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px;background:#FAF8FF;
+}
+.banco{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+.palavra{
+  border:2px solid var(--roxo-claro);background:#fff;color:var(--roxo);
+  border-radius:10px;padding:7px 12px;font-size:15px;font-weight:600;
+  cursor:pointer;font-family:inherit;
+}
+.montagem .palavra{border-color:var(--menta);color:#0E8A93}
+
+/* ---------- Tarefa com IA ---------- */
+.tarefa-ia{background:linear-gradient(135deg,#EFE9FF,#E4F6FF);border-color:#CFC2F5}
+.tarefa-ia h2{color:var(--roxo)}
+.dica-tarefa{
+  background:rgba(255,255,255,.7);border:1px solid #CFC2F5;border-radius:12px;
+  padding:10px 12px;margin:10px 0;font-size:15px;
+}
+.dica-tarefa b{color:var(--roxo)}
+.dica-tarefa ul{margin:6px 0 0;padding-left:20px}
+.dica-tarefa li{margin-bottom:3px}
+.ajudinha{margin-top:10px}
+.ajudinha summary{
+  cursor:pointer;display:inline-block;font-size:14px;font-weight:700;color:var(--roxo);
+  background:#fff;border:2px dashed var(--roxo-claro);border-radius:11px;padding:7px 13px;
+  list-style:none;
+}
+.ajudinha summary::-webkit-details-marker{display:none}
+.ajudinha[open] summary{border-style:solid;margin-bottom:8px}
+.ajudinha > div{
+  background:#fff;border:1px solid var(--borda);border-radius:12px;padding:11px 13px;font-size:15px;
+}
+.ajudinha .lacuna{
+  display:inline-block;min-width:44px;border-bottom:2px solid var(--rosa);
+  color:var(--rosa);text-align:center;font-weight:700;
+}
+.ajudinha > div p{line-height:2.1}
+.tarefa-ia textarea{
+  width:100%;min-height:110px;border:2px solid var(--borda);border-radius:12px;
+  padding:11px;font-size:16px;font-family:inherit;color:var(--texto);resize:vertical;
+}
+.tarefa-ia textarea:focus{outline:none;border-color:var(--roxo-claro)}
+.acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.frases-fala{display:grid;gap:8px;margin:10px 0}
+.frases-fala .f{
+  display:flex;align-items:center;gap:9px;background:#fff;
+  border-radius:12px;padding:9px 11px;border:1px solid var(--borda);
+}
+.frases-fala .f .txt{flex:1}
+.frases-fala .f .txt b{display:block}
+.frases-fala .f .pt{display:block;font-size:13px;color:var(--cinza)}
+.mic{
+  border:none;background:var(--rosa);color:#fff;width:36px;height:36px;min-width:36px;
+  border-radius:50%;font-size:16px;cursor:pointer;
+}
+.mic.gravando{animation:pulsar .9s infinite}
+@keyframes pulsar{50%{opacity:.45}}
+.ouvido{font-size:13px;margin-top:5px;color:var(--cinza)}
+.ouvido b{color:var(--texto)}
+
+/* ---------- Rodapé / pontuação ---------- */
+.placar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:#fff;border-top:1px solid var(--borda);
+  padding:10px 14px;display:flex;align-items:center;gap:12px;
+  box-shadow:0 -3px 12px rgba(108,74,182,.10);
+}
+.placar .barra{flex:1;height:10px;background:var(--borda);border-radius:6px;overflow:hidden}
+.placar .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--menta),var(--verde));transition:width .35s}
+.placar .txt{font-size:13px;font-weight:700;color:var(--roxo);white-space:nowrap}
+
+.final{text-align:center;background:linear-gradient(135deg,#FFF7E0,#FFE7F0);border-color:#FFD9A8}
+.final .estrelas{font-size:34px;letter-spacing:4px}
+.final h2{justify-content:center;color:var(--rosa)}
+
+/* ---------- Hub (index) ---------- */
+.hero{
+  background:linear-gradient(135deg,var(--roxo),var(--menta));
+  color:#fff;padding:26px 16px 30px;text-align:center;
+}
+.hero h1{margin:0 0 6px;font-size:26px}
+.hero p{margin:0;opacity:.92;font-size:15px}
+.boasvindas{background:linear-gradient(135deg,#FFF7E0,#FFE7F0);border-color:#FFD9A8}
+.boasvindas h2{color:var(--rosa)}
+.boasvindas .resposta-txt{font-size:18px;text-align:center}
+.rotulo{display:block;font-size:14px;font-weight:600;color:var(--cinza);margin:12px 0 6px}
+.rotulo:first-of-type{margin-top:4px}
+.hero #ola b{font-weight:800}
+.ferramentas{border-color:var(--borda)}
+.ferramentas summary{
+  cursor:pointer;list-style:none;font-weight:700;color:var(--cinza);font-size:15px;
+}
+.ferramentas summary::-webkit-details-marker{display:none}
+.ferramentas[open] summary{margin-bottom:10px;color:var(--roxo)}
+.ferramentas .btn{margin:0 6px 8px 0}
+.ferramentas .separador{
+  display:flex;align-items:center;gap:10px;margin:14px 0 10px;
+  font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--cinza);
+}
+.ferramentas .separador::before,.ferramentas .separador::after{
+  content:'';flex:1;height:1px;background:var(--borda);
+}
+.ferramentas .feedback{word-break:break-word}
+.diag{font-size:13px;color:var(--cinza);margin-top:10px;line-height:1.6}
+.diag b{color:var(--texto)}
+.numeros{display:flex;gap:8px;text-align:center;margin-bottom:14px}
+.numeros > div{
+  flex:1;background:#FAF8FF;border:1px solid var(--borda);border-radius:12px;padding:9px 4px;
+}
+.numeros b{display:block;font-size:20px;color:var(--roxo);line-height:1.2}
+.numeros span{display:block;font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.3px}
+.atalho{
+  display:flex;align-items:center;gap:12px;background:#fff;text-decoration:none;color:var(--texto);
+  border:1px solid var(--borda);border-radius:14px;padding:12px 14px;margin-bottom:14px;
+  box-shadow:var(--sombra);
+}
+.atalho .ico{font-size:24px;line-height:1}
+.atalho .txt{flex:1;min-width:0}
+.atalho .txt b{display:block;font-size:16px;color:var(--roxo)}
+.atalho .txt span{display:block;font-size:13px;color:var(--cinza)}
+.atalho .seta{color:var(--roxo);font-size:22px}
+
+/* ---------- página de gramática ---------- */
+.titulo-modulo{
+  margin:20px 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.7px;
+  color:var(--cinza);font-weight:700;
+}
+.titulo-modulo:first-child{margin-top:4px}
+.regra{padding:0;overflow:hidden}
+.regra > summary{
+  cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:13px 15px;
+}
+.regra > summary::-webkit-details-marker{display:none}
+.regra > summary::after{content:'▾';color:var(--roxo);font-size:17px;flex:none}
+.regra[open] > summary::after{content:'▴'}
+.regra[open] > summary{border-bottom:1px solid var(--borda)}
+.regra-txt{flex:1;min-width:0}
+.regra-nome{display:block;font-weight:700;font-size:16px;color:var(--roxo)}
+.regra-resumo{display:block;font-size:13px;color:var(--cinza);margin-top:2px}
+.regra-onde{
+  font-size:11px;font-weight:700;color:var(--cinza);background:#F3F0FF;
+  border-radius:20px;padding:3px 8px;flex:none;
+}
+.regra-corpo{padding:13px 15px 15px}
+.regra-corpo table{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:15px}
+.regra-corpo td,.regra-corpo th{border:1px solid var(--borda);padding:7px 9px;text-align:left}
+.regra-corpo th{background:#F3F0FF}
+.regra-corpo code{background:#F6F3FF;padding:1px 6px;border-radius:5px;color:var(--roxo);font-weight:600}
+.regra-corpo p{margin:0 0 9px}
+.regra-link{
+  display:inline-block;margin-top:10px;font-size:13px;color:var(--roxo);text-decoration:none;
+  border-bottom:1px dashed var(--roxo-claro);
+}
+.hero-modulo{
+  display:inline-block;margin-top:10px;padding:5px 12px;border-radius:20px;
+  background:rgba(255,255,255,.2);font-size:12.5px;letter-spacing:.2px;
+}
+.modulo{
+  display:flex;align-items:flex-start;gap:11px;background:#FAF8FF;
+  border:1px solid var(--borda);border-radius:12px;padding:10px 12px;margin-bottom:8px;
+}
+.modulo.futuro{opacity:.55}
+.modulo.atual{background:#EFE9FF;border-color:var(--roxo-claro)}
+.modulo .n{
+  width:28px;height:28px;min-width:28px;border-radius:9px;background:#CFC9E0;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;margin-top:2px;
+}
+.modulo.atual .n{background:linear-gradient(135deg,var(--roxo),var(--roxo-claro))}
+.modulo .info{flex:1;min-width:0}
+.modulo .info b{display:block;font-size:15px}
+.modulo .info > span{display:block;font-size:12px;color:var(--cinza)}
+.modulo .info .resumo{margin-top:3px;font-size:13px;color:var(--texto);opacity:.75}
+.modulo .marca{font-size:15px;color:var(--roxo)}
+
+.bloco{margin-bottom:10px}
+.bloco > summary{
+  cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  background:#fff;border:1px solid var(--borda);border-radius:14px;
+  padding:12px 14px;box-shadow:var(--sombra);
+}
+.bloco > summary::-webkit-details-marker{display:none}
+.bloco > summary::after{
+  content:'▾';margin-left:auto;color:var(--roxo);font-size:18px;flex:none;
+}
+.bloco[open] > summary::after{content:'▴'}
+.bloco[open] > summary{border-color:var(--roxo-claro)}
+.bloco-nome{display:block;font-weight:800;font-size:15px;color:var(--roxo);line-height:1.25}
+.bloco-info{
+  display:block;font-size:12px;color:var(--cinza);text-transform:uppercase;
+  letter-spacing:.4px;margin-top:2px;font-weight:600;
+}
+.bloco-txt{flex:1;min-width:0}
+.bloco-corpo{padding:10px 0 4px}
+.semana{
+  display:flex;align-items:center;gap:12px;background:#fff;
+  border:1px solid var(--borda);border-radius:14px;padding:12px 14px;
+  margin-bottom:9px;box-shadow:var(--sombra);
+}
+.semana.bloqueada{opacity:.5;box-shadow:none;padding:9px 14px}
+/* semana trancada é só espiada do que vem: o tema cabe em uma linha,
+   senão os 9 cartões seguintes empurram tudo o mais para fora da tela */
+.semana.bloqueada .info span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.semana .n{
+  width:40px;height:40px;min-width:40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--roxo),var(--roxo-claro));color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;
+}
+.semana.bloqueada .n{background:#CFC9E0}
+.semana .info{flex:1;min-width:0;padding-right:4px}
+.semana .info b{display:block;font-size:16px}
+.semana .info span{font-size:13px;color:var(--cinza)}
+.semana .seta{color:var(--roxo);font-size:20px}
+.dias{display:flex;flex-wrap:wrap;gap:8px;margin:-4px 0 14px;padding-left:6px}
+.dias a{
+  text-decoration:none;background:#fff;border:2px solid var(--borda);
+  border-radius:11px;padding:8px 12px;font-size:14px;color:var(--texto);font-weight:600;
+}
+.dias a.feito{border-color:var(--verde);background:#E7F8F0}
+.dias a.andando{border-color:var(--amarelo);background:#FFF8E8}
+.dias a .d{color:var(--roxo);font-weight:800}
+
+/* ---------- tarefas com a IA: marca de feito ---------- */
+.feito-wrap{margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.selo-feito{
+  display:inline-block;background:#E7F8F0;color:var(--verde);border:1px solid #B9EBD2;
+  border-radius:20px;padding:6px 12px;font-size:14px;font-weight:700;
+}
+
+/* ---------- história (escuta longa) ---------- */
+.historia{background:linear-gradient(135deg,#EEF7FF,#E8FBF4);border-color:#BFE3F5}
+.historia h2{color:#1B6FA8}
+.historia .oculto{display:none}
+.historia .par{
+  border-radius:10px;padding:8px 10px;margin:0 0 8px;transition:background .25s;
+}
+.historia .par.agora{background:#FFF4CC}
+.historia .par .en{display:block;font-weight:600}
+.historia .pt{display:block;font-size:14px;color:var(--cinza);margin-top:4px;cursor:pointer}
+.historia .pt.escondida{
+  color:transparent;background:#E9E5F5;border-radius:6px;user-select:none;
+  position:relative;
+}
+.historia .pt.escondida::after{
+  content:'toque para ver a tradução';color:var(--cinza);font-size:12px;
+  position:absolute;left:8px;top:0;
+}
+
+/* ---------- revisão (flashcards) ---------- */
+.carta{
+  background:#fff;border:1px solid var(--borda);border-radius:var(--raio);box-shadow:var(--sombra);
+  padding:26px 18px;text-align:center;min-height:210px;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;gap:10px;margin-bottom:14px;
+}
+.carta .emoji{font-size:44px;line-height:1}
+.carta .frente{font-size:26px;font-weight:800;color:var(--roxo)}
+.carta .verso{font-size:20px;color:var(--texto)}
+.carta .lado{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--cinza)}
+.carta .ipa{font-size:14px;color:var(--cinza);font-style:italic}
+.notas{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.notas .btn{padding:13px 6px;font-size:15px;line-height:1.2}
+.notas .btn small{display:block;font-weight:500;font-size:11px;opacity:.85;margin-top:2px}
+.btn.vermelho{background:var(--vermelho)}
+.btn.verde{background:var(--verde)}
+.btn.amarelo{background:#E0A800}
+.progresso-rev{font-size:13px;color:var(--cinza);text-align:center;margin-bottom:10px}
+.atalho .badge{
+  display:inline-block;background:var(--rosa);color:#fff;border-radius:20px;
+  padding:2px 9px;font-size:12px;font-weight:800;margin-left:6px;vertical-align:middle;
+}
+.atalho.quieto .badge{background:#CFC9E0}
+
+/* ---------- missão (jogo de conversa) ---------- */
+.missao{background:linear-gradient(135deg,#FFF3E0,#FFE9F3);border-color:#FFD2A8}
+.missao h2{color:#C2410C}
+.missao .cenario{font-size:16px}
+.missao .cenario p{margin:0 0 8px}
+.missao .dica-tarefa b{color:#C2410C}
+.missao .dica-tarefa .ajuda{display:block;margin-top:8px;font-size:13px;color:var(--cinza)}
+
+/* ---------- foco de pronúncia (bloco de fala) ---------- */
+.foco{
+  background:rgba(255,255,255,.75);border:1px dashed var(--rosa);border-radius:12px;
+  padding:9px 12px;margin:8px 0 4px;font-size:15px;
+}
+.foco b{color:var(--rosa)}

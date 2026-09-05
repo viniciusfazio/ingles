@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>My English Course</title>
+<link rel="stylesheet" href="assets/curso.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#6C4AB6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="English">
+<link rel="icon" href="assets/icone-192.png">
+<link rel="apple-touch-icon" href="assets/icone-192.png">
+</head>
+<body>
+<div class="hero">
+  <h1>🇺🇸 My English Course</h1>
+  <p id="ola">Uma aula por dia, de segunda a sexta.</p>
+  <div class="hero-modulo" id="hero-modulo"></div>
+</div>
+<main>
+  <section class="card boasvindas" id="boasvindas" hidden>
+    <h2>👋 Oi! Vamos nos conhecer</h2>
+    <label class="rotulo" for="in-nome">Como você quer ser chamada nas aulas?</label>
+    <input id="in-nome" class="resposta-txt" type="text" placeholder="seu nome"
+           maxlength="30" autocomplete="off" autocapitalize="words">
+    <label class="rotulo" for="in-idade">Quantos anos você tem?</label>
+    <input id="in-idade" class="resposta-txt" type="number" placeholder="11"
+           min="5" max="18" inputmode="numeric">
+    <button class="btn" id="bt-nome" style="width:100%;margin-top:14px">Vamos começar! 🚀</button>
+    <p class="ajuda" style="margin-top:12px">Isso fica guardado <b>só neste celular</b> — não vai
+    para a internet. É o nome que a professora de IA vai usar para falar com você. 💜</p>
+  </section>
+  <div class="card" id="painel"></div>
+  <a class="atalho" id="atalho-revisao" href="revisao.html">
+    <span class="ico">🃏</span>
+    <span class="txt"><b>Revisão de palavras <span class="badge" id="badge-rev"></span></b><span id="conta-cartas">3 minutinhos por dia</span></span>
+    <span class="seta">›</span>
+  </a>
+  <a class="atalho" id="atalho-gramatica" href="gramatica.html">
+    <span class="ico">📘</span>
+    <span class="txt"><b>Gramática</b><span id="conta-regras">as regras que você já aprendeu</span></span>
+    <span class="seta">›</span>
+  </a>
+  <div class="blocos" id="lista"></div>
+
+  <details class="card ferramentas" id="caminho">
+    <summary>🗺️ O caminho até a fluência</summary>
+    <p class="ajuda">São 5 módulos, um por ano. Você está no primeiro.</p>
+    <div id="lista-modulos"></div>
+  </details>
+
+  <details class="card ferramentas" id="diagnostico">
+    <summary>🔎 Testar o áudio e o microfone</summary>
+    <p class="ajuda">Se o 🔊 sair errado ou o 🎤 não funcionar, teste aqui — e experimente
+    abrir o curso em outro navegador para comparar.</p>
+    <button class="btn secundario pequeno" id="bt-voz">🔊 Testar a voz</button>
+    <button class="btn secundario pequeno" id="bt-mic">🎤 Testar o microfone</button>
+    <div id="diag-voz" class="diag"></div>
+    <div id="diag-mic" class="ouvido"></div>
+  </details>
+
+  <details class="card ferramentas" id="ferramentas">
+    <summary>⚙️ Backup do progresso</summary>
+    <p class="ajuda">O seu progresso fica guardado <b>só neste celular</b>. Se você for trocar de
+    aparelho, salve um backup antes — depois é só abrir esse arquivo no celular novo.</p>
+
+    <button class="btn pequeno" id="bt-compartilhar" hidden>📤 Compartilhar backup</button>
+    <button class="btn secundario pequeno" id="bt-baixar">💾 Baixar arquivo</button>
+
+    <div class="separador">para restaurar</div>
+
+    <input type="file" id="arquivo" accept=".json,.txt,application/json,text/plain" hidden>
+    <button class="btn secundario pequeno" id="bt-arquivo">📂 Escolher arquivo de backup</button>
+
+    <div id="msg-backup" class="feedback"></div>
+  </details>
+
+  <p class="ajuda" style="text-align:center;margin-top:24px">Feito com 💜 para você.</p>
+</main>
+<script src="assets/config.js"></script>
+<script src="assets/semanas.js"></script>
+<script src="assets/gramatica.js"></script>
+<script src="assets/curso.js"></script>
+<script src="assets/vocabulario.js"></script>
+<script src="assets/revisao.js"></script>
+<script>
+(function(){
+  if(!window.Curso){ document.body.innerHTML='<p style="padding:20px">Recarregue a página. 🙂</p>'; return; }
+  var prog={};
+  try{prog=JSON.parse(localStorage.getItem('ingles.progresso')||'{}');}catch(e){}
+
+  /* ---------- primeira vez: pergunta o nome ---------- */
+  var bv=document.getElementById('boasvindas');
+  var inNome=document.getElementById('in-nome');
+  var inIdade=document.getElementById('in-idade');
+
+  function abrirBoasVindas(){
+    inNome.value=Curso.temAluna()?Curso.aluna().nome:'';
+    inIdade.value=Curso.temAluna()?Curso.aluna().idade:'';
+    bv.hidden=false;
+    document.getElementById('painel').hidden=true;
+    document.getElementById('lista').hidden=true;
+    setTimeout(function(){inNome.focus();},150);
+  }
+  function salvarNome(){
+    if(!inNome.value.replace(/\s/g,'')){ inNome.classList.add('errada'); inNome.focus(); return; }
+    Curso.definirAluna(inNome.value, inIdade.value);
+    location.reload();
+  }
+  document.getElementById('bt-nome').onclick=salvarNome;
+  inNome.addEventListener('keydown',function(e){ if(e.key==='Enter') inIdade.focus(); });
+  inIdade.addEventListener('keydown',function(e){ if(e.key==='Enter') salvarNome(); });
+  inNome.addEventListener('input',function(){ inNome.classList.remove('errada'); });
+
+  if(!Curso.temAluna()){ abrirBoasVindas(); return; }
+
+  document.getElementById('ola').innerHTML='Bem-vinda, <b>'+Curso.esc(Curso.aluna().nome)+
+    '</b>! <a href="#" id="editar" title="trocar o nome" style="color:#fff;text-decoration:none">✏️</a>'+
+    '<br>Uma aula por dia, de segunda a sexta.';
+  document.getElementById('editar').onclick=function(ev){ ev.preventDefault(); abrirBoasVindas(); };
+
+  /* ---------- painel de progresso (fica salvo no celular dela) ---------- */
+  var chaves=Object.keys(prog);
+  function concluida(k){ var e=prog[k]; return e && (e.concluida || (e.total && e.respondidas===undefined)); }
+  var feitas=chaves.filter(concluida).length;
+  var prontas=SEMANAS.filter(function(s){return s.pronta;}).length;
+
+  /* próxima aula não feita, entre as semanas liberadas */
+  var proxima=null;
+  for(var i=0;i<SEMANAS.length && !proxima;i++){
+    if(!SEMANAS[i].pronta) continue;
+    for(var d=1;d<=5;d++){
+      if(!concluida(SEMANAS[i].n+'-'+d)){ proxima={s:SEMANAS[i],d:d}; break; }
+    }
+  }
+
+  /* acertos acumulados */
+  var certos=0, exercicios=0;
+  chaves.forEach(function(k){
+    certos+=(prog[k].acertos||0);
+    exercicios+=(prog[k].respondidas!==undefined?prog[k].respondidas:(prog[k].total||0));
+  });
+  var pct = exercicios ? Math.round(certos/exercicios*100) : 0;
+
+  /* dias seguidos de estudo (a "ofensiva") */
+  var dias={}; chaves.forEach(function(k){ if(prog[k].data) dias[prog[k].data]=1; });
+  function iso(d){ return d.toISOString().slice(0,10); }
+  var seguidos=0, cursor=new Date();
+  if(!dias[iso(cursor)]) cursor.setDate(cursor.getDate()-1);   /* ontem ainda conta */
+  while(dias[iso(cursor)]){ seguidos++; cursor.setDate(cursor.getDate()-1); }
+
+  /* o módulo atual (precisa vir antes do painel, que o mostra) */
+  var mod=null;
+  for(var mi=0;mi<MODULOS.length;mi++) if(MODULOS[mi].atual) mod=MODULOS[mi];
+
+  var painel=document.getElementById('painel');
+  if(!feitas){
+    painel.innerHTML='<div style="text-align:center"><b>Vamos começar! 💜</b>'+
+      '<div class="ajuda" style="margin:6px 0 12px">Sua primeira aula está aqui embaixo.</div></div>';
+  }else{
+    painel.innerHTML=
+      '<div class="numeros">'+
+        '<div><b>'+feitas+'</b><span>aulas feitas</span></div>'+
+        '<div><b>'+pct+'%</b><span>de acertos</span></div>'+
+        '<div><b>'+(seguidos>1?'🔥 '+seguidos:seguidos)+'</b><span>dias seguidos</span></div>'+
+      '</div>';
+  }
+  if(proxima){
+    var link='semanas/semana-'+(proxima.s.n<10?'0':'')+proxima.s.n+'/dia-'+proxima.d+'.html';
+    painel.innerHTML+='<a class="btn" style="display:block;text-align:center;text-decoration:none" href="'+link+'">'+
+      (feitas?'▶ Continuar':'▶ Começar')+' — Semana '+proxima.s.n+' · Dia '+proxima.d+'</a>'+
+      '<div class="ajuda" style="text-align:center;margin-top:8px">'+
+      ((proxima.s.dias&&proxima.s.dias[proxima.d-1])||proxima.s.titulo)+'</div>';
+  }else{
+    painel.innerHTML+='<div style="text-align:center"><b>🎉 Você terminou todas as aulas liberadas!</b>'+
+      '<div class="ajuda" style="margin-top:6px">A próxima semana chega logo. 💜</div></div>';
+  }
+  painel.innerHTML+='<div class="ajuda" style="text-align:center;margin-top:12px;font-size:12px">'+
+    'Módulo '+(mod?mod.n:1)+' · '+prontas+' de 40 semanas liberadas</div>';
+
+  /* ---------- atalho da gramática ---------- */
+  var nRegras=(typeof GRAMATICA!=='undefined')?GRAMATICA.length:0;
+  document.getElementById('conta-regras').textContent = nRegras
+    ? nRegras+(nRegras===1?' regra que você já aprendeu':' regras que você já aprendeu')
+    : 'vai aparecendo conforme você avança';
+  if(!nRegras) document.getElementById('atalho-gramatica').hidden=true;
+
+  /* ---------- atalho da revisão de palavras ---------- */
+  var atRev=document.getElementById('atalho-revisao');
+  var rev=(typeof Revisao!=='undefined')?Revisao.resumo():null;
+  if(rev && rev.total){
+    var pend=rev.pendentes;
+    document.getElementById('conta-cartas').innerHTML = pend
+      ? '<b>'+pend+'</b> palavra'+(pend===1?'':'s')+' esperando por você hoje'
+      : (rev.feitasHoje?'revisão de hoje feita ✅':'nada para hoje — volte amanhã');
+    document.getElementById('badge-rev').textContent = pend ? pend : '✓';
+    if(!pend) atRev.classList.add('quieto');
+  }else{
+    atRev.hidden=true;
+  }
+
+  /* ---------- o caminho completo ---------- */
+  if(mod){
+    document.getElementById('hero-modulo').innerHTML=
+      'Módulo '+mod.n+' de '+MODULOS.length+' · <b>'+mod.titulo+'</b> · '+mod.nivel;
+  }
+  var listaMod=document.getElementById('lista-modulos');
+  MODULOS.forEach(function(m){
+    var div=document.createElement('div');
+    div.className='modulo'+(m.atual?' atual':' futuro');
+    div.innerHTML='<span class="n">'+m.n+'</span>'+
+      '<span class="info"><b>'+m.titulo+'</b>'+
+      '<span>'+m.idade+' · '+m.nivel+'</span>'+
+      '<span class="resumo">'+m.resumo+'</span></span>'+
+      '<span class="marca">'+(m.atual?'▶':'🔒')+'</span>';
+    listaMod.appendChild(div);
+  });
+
+  /* ---------- diagnóstico de áudio ---------- */
+  var diagVoz=document.getElementById('diag-voz');
+  document.getElementById('bt-voz').onclick=function(){
+    Curso.falar('Hello! My name is '+Curso.aluna().nome+'. Nice to meet you.');
+    var i=Curso.infoAudio();
+    var linhas=[];
+    if(!i.temSintese) linhas.push('❌ Este navegador não tem voz. Use o Chrome.');
+    else if(!i.ingles) linhas.push('⚠️ <b>Nenhuma voz em inglês encontrada</b> — o texto pode sair com '+
+      'pronúncia de português. Tente abrir o curso em outro navegador (Chrome).');
+    else linhas.push('✅ '+i.ingles+' voz(es) em inglês. Em uso: <b>'+(i.voz||'padrão do sistema')+'</b>');
+    linhas.push(i.temReconhecimento
+      ? '🎤 Microfone de ditado: disponível'
+      : '🎤 Microfone de ditado: <b>não existe neste navegador</b> (a prática de fala segue pelo '+CONFIG.nomeIA+')');
+    if(!i.seguro) linhas.push('⚠️ A página não está em https: o microfone não vai funcionar.');
+    if(Curso.semCompartilharMarcado())
+      linhas.push('📤 O compartilhar foi desligado neste aparelho depois de uma falha. '+
+                  '<a href="#" id="religar-share">Tentar de novo</a>');
+    diagVoz.innerHTML=linhas.join('<br>');
+    var religar=document.getElementById('religar-share');
+    if(religar) religar.onclick=function(ev){
+      ev.preventDefault(); Curso.limparSemCompartilhar(); location.reload();
+    };
+  };
+  document.getElementById('bt-mic').onclick=function(){
+    Curso.ouvirMicrofone('hello', this, document.getElementById('diag-mic'));
+  };
+
+  /* ---------- backup / restauração ---------- */
+  var msg=document.getElementById('msg-backup');
+  function aviso(ok,html){ msg.className='feedback '+(ok?'ok':'nok'); msg.innerHTML=html; }
+
+  /* compartilhar é o caminho bom no celular: ela escolhe WhatsApp/Drive na hora.
+     Só aparece se o navegador realmente souber compartilhar arquivos. */
+  var btCompartilhar=document.getElementById('bt-compartilhar');
+  if(Curso.podeCompartilhar()){
+    btCompartilhar.hidden=false;
+    document.getElementById('bt-baixar').className='btn secundario pequeno';
+    btCompartilhar.onclick=function(){
+      /* o share vem PRIMEIRO: qualquer coisa antes pode consumir o gesto do usuário */
+      Curso.compartilharBackup().then(function(nome){
+        aviso(true,'✅ Backup <b>'+nome+'</b> enviado. Guarde num lugar que você não perca. 💜');
+      },function(e){
+        var nome=e&&e.name;
+        if(nome==='AbortError'){ aviso(false,'Compartilhamento cancelado. Nada foi perdido.'); return; }
+        /* NotAllowedError / TypeError = este navegador não compartilha arquivos.
+           Não insistimos: escondemos o botão e mandamos ela pelo download. */
+        if(nome==='NotAllowedError'||nome==='TypeError'||nome==='DataError'){
+          Curso.marcarSemCompartilhar();
+          btCompartilhar.hidden=true;
+          aviso(false,'Este celular não deixa compartilhar arquivos pelo navegador. '+
+                      'Sem problema: toque em <b>💾 Baixar arquivo</b> — o backup vai para os Downloads '+
+                      'e de lá você manda para onde quiser. (O botão de compartilhar não vai mais aparecer.)');
+          return;
+        }
+        var motivo=nome?(' ('+nome+(e.message?': '+e.message:'')+')'):'';
+        aviso(false,'Não deu para compartilhar'+motivo+'. Use o "💾 Baixar arquivo" — funciona igual.');
+      });
+    };
+  }
+
+  document.getElementById('bt-baixar').onclick=function(){
+    try{ aviso(true,'✅ Salvo em Downloads como <b>'+Curso.baixarBackup()+'</b>. Mande esse arquivo para você mesma (WhatsApp, Drive, e-mail) para não perder.'); }
+    catch(e){ aviso(false,'Não consegui gerar o arquivo neste navegador. Tente pelo "Compartilhar backup".'); }
+  };
+  var arquivo=document.getElementById('arquivo');
+  document.getElementById('bt-arquivo').onclick=function(){ arquivo.click(); };
+  arquivo.onchange=function(){
+    var f=arquivo.files&&arquivo.files[0];
+    if(!f) return;
+    var leitor=new FileReader();
+    leitor.onload=function(){ restaurar(String(leitor.result||'')); };
+    leitor.onerror=function(){ aviso(false,'Não consegui abrir o arquivo.'); };
+    leitor.readAsText(f);
+  };
+
+  function dataBonita(iso){
+    if(!iso) return '';
+    var p=String(iso).slice(0,10).split('-');
+    return p.length===3 ? p[2]+'/'+p[1]+'/'+p[0] : iso;
+  }
+
+  function restaurar(texto){
+    if(!String(texto).trim()){ aviso(false,'O arquivo está vazio.'); return; }
+
+    /* primeiro olhamos o que tem dentro, sem aplicar nada */
+    var info;
+    try{ info=Curso.inspecionarBackup(texto); }
+    catch(e){ aviso(false,'❌ '+(e&&e.message?e.message:'Não consegui ler o backup.')); return; }
+
+    var pergunta;
+    if(info.outraPessoa){
+      /* pessoas diferentes: misturar produziria um progresso que não é de ninguém.
+         Aqui é substituição, e por isso avisamos com todas as letras. */
+      pergunta='⚠️ ATENÇÃO — este backup é de OUTRA PESSOA!\n\n'+
+        'O backup é de: '+info.aluna+'\n'+
+        'Neste celular o nome é: '+info.nomeAtual+'\n\n'+
+        'Continuar vai APAGAR todo o progresso de '+info.nomeAtual+' neste celular e '+
+        'colocar o de '+info.aluna+' no lugar.\n\n'+
+        'Tem certeza?';
+    }else{
+      pergunta='Restaurar o backup'+(info.aluna?' de '+info.aluna:'')+'?\n\n'+
+        (info.gerado?'Salvo em: '+dataBonita(info.gerado)+'\n':'')+
+        'Aulas concluídas no backup: '+info.concluidas+'\n\n'+
+        'O que estiver mais adiantado aqui é mantido — você não perde nada.';
+    }
+    if(!confirm(pergunta)) { aviso(false,'Restauração cancelada. Nada foi alterado.'); return; }
+
+    if(info.outraPessoa){
+      if(confirm('Antes de apagar: quer salvar um backup do progresso de '+info.nomeAtual+
+                 ' que está neste celular?\n\n(Recomendado — depois é só restaurar quando quiser.)')){
+        try{ Curso.baixarBackup(); }catch(e){}
+      }
+    }
+
+    try{
+      var r=Curso.importarTudo(texto, info.outraPessoa);
+      aviso(true,'✅ '+(r.modo==='substituido'?'Substituído':'Restaurado')+
+            (r.gerado?' (backup de '+dataBonita(r.gerado)+')':'')+': <b>'+
+            r.aulas+' aula(s)</b>'+(r.textos?' e <b>'+r.textos+' texto(s)</b>':'')+'. Recarregando…');
+      setTimeout(function(){ location.reload(); },1800);
+    }catch(e){
+      aviso(false,'❌ '+(e&&e.message?e.message:'Não consegui restaurar.'));
+    }
+  }
+
+  /* ---------- a lista de semanas, agrupada nos 4 blocos do curso ----------
+     Só o bloco onde ela está estudando começa aberto. Os outros ficam
+     recolhidos: senão a página vira 40 cartões e nada mais abaixo é alcançável. */
+  var lista=document.getElementById('lista');
+  var blocoDaVez = proxima ? proxima.s.bloco : (SEMANAS[0]&&SEMANAS[0].bloco);
+  var grupos=[], porNome={};
+  SEMANAS.forEach(function(s){
+    if(!porNome[s.bloco]){ porNome[s.bloco]={nome:s.bloco, semanas:[]}; grupos.push(porNome[s.bloco]); }
+    porNome[s.bloco].semanas.push(s);
+  });
+
+  grupos.forEach(function(g){
+    var primeira=g.semanas[0].n, ultima=g.semanas[g.semanas.length-1].n;
+    var feitasNoBloco=0, liberadas=0;
+    g.semanas.forEach(function(s){
+      if(s.pronta) liberadas++;
+      for(var d=1;d<=5;d++) if(concluida(s.n+'-'+d)) feitasNoBloco++;
+    });
+
+    var det=document.createElement('details');
+    det.className='bloco';
+    if(g.nome===blocoDaVez) det.open=true;
+
+    var resumo=document.createElement('summary');
+    resumo.innerHTML='<span class="bloco-txt">'+
+      '<span class="bloco-nome">'+g.nome+'</span>'+
+      '<span class="bloco-info">Semanas '+primeira+'–'+ultima+' · '+
+      (liberadas? feitasNoBloco+' de '+(liberadas*5)+' aulas feitas' : 'ainda trancado')+'</span></span>';
+    det.appendChild(resumo);
+
+    var corpo=document.createElement('div');
+    corpo.className='bloco-corpo';
+    det.appendChild(corpo);
+    lista.appendChild(det);
+
+    g.semanas.forEach(function(s){
+      var div=document.createElement('div');
+      div.className='semana'+(s.pronta?'':' bloqueada');
+      div.innerHTML='<span class="n">'+s.n+'</span><span class="info"><b>'+s.titulo+'</b><span>'+s.tema+'</span></span>'+
+                    '<span class="seta">'+(s.pronta?'▾':'🔒')+'</span>';
+      corpo.appendChild(div);
+      if(!s.pronta) return;
+
+      var dias=document.createElement('div');
+      dias.className='dias'; dias.style.display='none';
+      for(var d=1;d<=5;d++){
+        var p=prog[s.n+'-'+d], ok=concluida(s.n+'-'+d);
+        var a=document.createElement('a');
+        a.href='semanas/semana-'+(s.n<10?'0':'')+s.n+'/dia-'+d+'.html';
+        a.className=ok?'feito':(p?'andando':'');
+        var marca = ok ? ' ✅' : (p ? ' ⏳ '+(p.respondidas||0)+'/'+(p.total||0) : '');
+        a.innerHTML='<span class="d">Dia '+d+'</span> · '+((s.dias&&s.dias[d-1])||'')+marca;
+        dias.appendChild(a);
+      }
+      corpo.appendChild(dias);
+      div.style.cursor='pointer';
+      div.onclick=function(){
+        var aberto=dias.style.display!=='none';
+        dias.style.display=aberto?'none':'flex';
+        div.querySelector('.seta').textContent=aberto?'▾':'▴';
+      };
+      /* a semana da vez já vem com os 5 dias à mostra */
+      if(proxima && s.n===proxima.s.n){
+        dias.style.display='flex';
+        div.querySelector('.seta').textContent='▴';
+      }
+    });
+  });
+})();
+</script>
+<script>
+/* funciona offline depois da primeira visita — e pede para guardar as aulas
+   de todas as semanas liberadas, para a semana inteira abrir sem sinal */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').then(function(){
+      return navigator.serviceWorker.ready;
+    }).then(function(reg){
+      if(!reg.active || typeof SEMANAS==='undefined') return;
+      var urls=[];
+      SEMANAS.forEach(function(s){
+        if(!s.pronta) return;
+        for(var d=1;d<=5;d++) urls.push('./semanas/semana-'+(s.n<10?'0':'')+s.n+'/dia-'+d+'.html');
+      });
+      reg.active.postMessage({tipo:'precache', urls:urls});
+    }).catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

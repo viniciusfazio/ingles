@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 1 · Dia 1</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:1, dia:1,
+titulo:"Hello! Nice to meet you",
+subtitulo:"Cumprimentar e dizer seu nome",
+objetivos:[
+  "Cumprimentar alguém em inglês a qualquer hora do dia",
+  "Perguntar e dizer o seu nome",
+  "Usar as palavras mágicas: please, thank you, sorry"
+],
+blocos:[
+
+{tipo:"nota", titulo:"👋 Bem-vinda ao Dia 1!",
+ html:"<p>Cada aula tem <b>3 partes</b>: você <b>aprende</b>, depois <b>treina</b> nos exercícios, e no fim <b>escreve e fala</b> com a ajuda da IA.</p><p>Coloque o som do celular ligado 🔊 e, sempre que ouvir uma palavra, <b>repita em voz alta</b>. É assim que a boca aprende!</p>"},
+
+{tipo:"vocab", titulo:"Cumprimentos", itens:[
+ {en:"Hello", pt:"Olá", ipa:"/heh-LOU/", emoji:"👋"},
+ {en:"Hi", pt:"Oi (mais informal)", ipa:"/RRAI/", emoji:"🙋‍♀️"},
+ {en:"Good morning", pt:"Bom dia", ipa:"/gud MOR-ning/", emoji:"🌅"},
+ {en:"Good afternoon", pt:"Boa tarde", ipa:"/gud af-ter-NUN/", emoji:"☀️"},
+ {en:"Good evening", pt:"Boa noite (ao chegar)", ipa:"/gud IV-ning/", emoji:"🌆"},
+ {en:"Good night", pt:"Boa noite (ao dormir)", ipa:"/gud NAIT/", emoji:"🌙"},
+ {en:"Goodbye", pt:"Tchau (formal)", ipa:"/gud-BAI/", emoji:"🚪"},
+ {en:"Bye", pt:"Tchau", ipa:"/BAI/", emoji:"👋"},
+ {en:"See you tomorrow", pt:"Até amanhã", ipa:"/SI iu tu-MÓ-rou/", emoji:"📅"}
+]},
+
+{tipo:"vocab", titulo:"As palavras mágicas", itens:[
+ {en:"Please", pt:"Por favor", ipa:"/PLIIZ/", emoji:"🙏"},
+ {en:"Thank you", pt:"Obrigada", ipa:"/FÊNK iu/", emoji:"💛"},
+ {en:"Thank you very much", pt:"Muito obrigada", ipa:"/FÊNK iu VÉ-ri MÂTCH/", emoji:"🙏"},
+ {en:"You're welcome", pt:"De nada", ipa:"/iór UÉL-com/", emoji:"😊"},
+ {en:"Sorry", pt:"Desculpa", ipa:"/SÁ-ri/", emoji:"😅"},
+ {en:"Yes", pt:"Sim", ipa:"/IÉS/", emoji:"✅"},
+ {en:"No", pt:"Não", ipa:"/NÔU/", emoji:"❌"}
+]},
+
+{tipo:"vocab", titulo:"Frases para conversar (use com a IA!)", itens:[
+ {en:"Sorry, I don't understand.", pt:"Desculpa, eu não entendi.", ipa:"/SÁ-ri ai dont ân-der-STÉND/", emoji:"🤔"},
+ {en:"Again, please.", pt:"De novo, por favor.", ipa:"/a-GUÉN pliiz/", emoji:"🔁"},
+ {en:"Slowly, please.", pt:"Devagar, por favor.", ipa:"/SLÔU-li pliiz/", emoji:"🐢"},
+ {en:"I don't know.", pt:"Eu não sei.", ipa:"/ai dont NÔU/", emoji:"🤷‍♀️"}
+]},
+
+{tipo:"dialogo", titulo:"Anna encontra um amigo novo", linhas:[
+ {quem:"Anna", en:"Hello! My name is Anna. What's your name?", pt:"Olá! Meu nome é Anna. Qual é o seu nome?"},
+ {quem:"Leo", en:"Hi, Anna! I'm Leo. Nice to meet you.", pt:"Oi, Anna! Eu sou o Leo. Prazer em conhecer você."},
+ {quem:"Anna", en:"Nice to meet you too! How are you?", pt:"Prazer em conhecer você também! Como você está?"},
+ {quem:"Leo", en:"I'm fine, thank you. And you?", pt:"Estou bem, obrigado. E você?"},
+ {quem:"Anna", en:"I'm very well, thanks!", pt:"Estou muito bem, obrigada!"},
+ {quem:"Leo", en:"See you tomorrow, Anna. Bye!", pt:"Até amanhã, Anna. Tchau!"},
+ {quem:"Anna", en:"Bye, Leo!", pt:"Tchau, Leo!"}
+]},
+
+{tipo:"gramatica", titulo:"Como dizer o seu nome",
+ html:"<p>Existem <b>duas maneiras</b> de dizer o seu nome. As duas estão certas!</p>"+
+ "<table><tr><th>Em inglês</th><th>Em português</th></tr>"+
+ "<tr><td><code>My name is Ana.</code></td><td>Meu nome é Ana.</td></tr>"+
+ "<tr><td><code>I'm Ana.</code></td><td>Eu sou a Ana.</td></tr></table>"+
+ "<p>👉 <code>I'm</code> é a forma curta de <code>I am</code> (eu sou / eu estou). Em inglês falado, quase sempre se usa a forma curta.</p>"+
+ "<p>E para perguntar: <code>What's your name?</code> = Qual é o seu nome?</p>",
+ exemplos:[
+  {en:"What's your name?", pt:"Qual é o seu nome?"},
+  {en:"My name is Sofia.", pt:"Meu nome é Sofia."},
+  {en:"I'm Sofia.", pt:"Eu sou a Sofia."},
+  {en:"Nice to meet you.", pt:"Prazer em conhecer você."},
+  {en:"How are you?", pt:"Como você está?"},
+  {en:"I'm fine, thank you.", pt:"Estou bem, obrigada."}
+ ]},
+
+{tipo:"ligar", titulo:"Ligue as traduções", pares:[
+ {en:"Good morning", pt:"Bom dia"},
+ {en:"Thank you", pt:"Obrigada"},
+ {en:"Goodbye", pt:"Tchau"},
+ {en:"Please", pt:"Por favor"},
+ {en:"Sorry", pt:"Desculpa"},
+ {en:"Good night", pt:"Boa noite (dormir)"}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"São 8 horas da manhã. Você diz:", opcoes:["Good morning","Good night","Good afternoon"], correta:0,
+  explicacao:"Morning = manhã. Usamos até o meio-dia."},
+ {pergunta:"Alguém diz 'Thank you'. Você responde:", opcoes:["Sorry","You're welcome","Hello"], correta:1,
+  explicacao:"You're welcome = De nada."},
+ {pergunta:"Qual frase pergunta o seu nome?", opcoes:["How are you?","Nice to meet you.","What's your name?"], correta:2,
+  explicacao:"What's your name? = Qual é o seu nome?"},
+ {pergunta:"Você está indo dormir. Você diz:", opcoes:["Good night","Good evening","Good morning"], correta:0,
+  explicacao:"Good evening é quando você CHEGA à noite. Good night é quando você VAI DORMIR ou vai embora."},
+ {pergunta:"Como se responde 'How are you?'", opcoes:["My name is Ana.","I'm fine, thank you.","See you tomorrow."], correta:1,
+  explicacao:"How are you? pergunta como você está."}
+]},
+
+{tipo:"completar", titulo:"Complete o diálogo", ajuda:"Escolha a palavra que falta.", itens:[
+ {frase:"Hello! My ___ is Julia.", pt:"Olá! Meu nome é Julia.", resposta:"name", opcoes:["name","are","you"],
+  explicacao:"my name = meu nome."},
+ {frase:"___ to meet you!", pt:"Prazer em conhecer você!", resposta:"Nice", opcoes:["Nice","Good","Thank"],
+  explicacao:"Nice to meet you é a frase pronta para 'prazer em conhecer você'."},
+ {frase:"I ___ fine, thank you.", pt:"Estou bem, obrigada.", resposta:"am", opcoes:["am","is","are"],
+  explicacao:"Com I sempre usamos am. I am = I'm."},
+ {frase:"See you ___!", pt:"Até amanhã!", resposta:"tomorrow", opcoes:["tomorrow","night","please"],
+  explicacao:"tomorrow = amanhã."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"My name is Anna", pt:"Meu nome é Anna."},
+ {frase:"What's your name", pt:"Qual é o seu nome?"},
+ {frase:"Nice to meet you", pt:"Prazer em conhecer você."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"Hello", pt:"Olá", dica:"(uma palavra)"},
+ {en:"Thank you", pt:"Obrigada", dica:"(duas palavras)"},
+ {en:"Good morning", pt:"Bom dia", dica:"(duas palavras)"},
+ {en:"How are you", pt:"Como você está?", dica:"(três palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>3 frases</b> se apresentando em inglês, como se estivesse falando pela primeira vez com uma amiga nova.",
+ dica:"<ul><li>um <b>cumprimento</b> — pense na hora do dia em que você está agora</li><li>o <b>seu nome</b></li><li>uma frase <b>educada</b>, de quem acabou de conhecer alguém</li></ul>Tente escrever sem olhar para cima. Se esquecer uma palavra, volte no diálogo da Anna. 💜",
+ andaime:"<p>Este é o <b>molde</b> das frases. Quem preenche é você:</p><p style=\"font-size:17px\">Good <span class=\"lacuna\">?</span>! My <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span>. <span class=\"lacuna\">?</span> to meet you.</p><p style=\"font-size:14px;color:#6E6A80\">Todas as palavras que faltam estão nas duas listas de vocabulário desta aula. 😉</p>",
+ gabarito:"um cumprimento (Hello / Hi / Good morning / Good afternoon), a apresentação do nome (My name is... ou I'm...) e uma frase educada (Nice to meet you)",
+ instrucaoIA:"Ela devia escrever 3 frases se apresentando em inglês: um cumprimento (hello/hi/good morning), o nome dela e uma frase educada (nice to meet you). Vocabulário da aula: hello, hi, good morning/afternoon/evening/night, goodbye, bye, please, thank you, you're welcome, sorry, my name is, I'm, nice to meet you, how are you, I'm fine."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Toque no 🔊 para ouvir, repita em voz alta e depois toque no 🎤 para testar a sua pronúncia. Se o microfone não funcionar, use a IA!",
+ foco:"o <b>TH</b> de <i>thank you</i> — a língua vai <b>entre os dentes</b> e sopra (não é F nem T) · e o <b>H</b> de <i>hello</i> e <i>hi</i> é um sopro leve, como um suspiro, nunca um R.",
+ frases:[
+  {en:"Hello! My name is Anna.", pt:"Olá! Meu nome é Anna. (troque pelo seu nome!)"},
+  {en:"Nice to meet you.", pt:"Prazer em conhecer você."},
+  {en:"How are you?", pt:"Como você está?"},
+  {en:"I'm fine, thank you.", pt:"Estou bem, obrigada."},
+  {en:"See you tomorrow. Bye!", pt:"Até amanhã. Tchau!"}
+ ],
+ instrucaoIA:"Praticar cumprimentos e apresentação pessoal em inglês (primeiro dia de aula dela). Ela deve falar cada frase em voz alta."}
+
+]});
+</script>
+</body>
+</html>

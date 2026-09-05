@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 1 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:1, dia:2,
+titulo:"The alphabet and numbers",
+subtitulo:"Soletrar o seu nome e contar até 20",
+objetivos:[
+  "Dizer as 26 letras do alfabeto em inglês",
+  "Soletrar o seu nome quando alguém perguntar",
+  "Contar de 0 a 20"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🔤 Por que aprender o alfabeto?",
+ html:"<p>Em inglês, as letras têm <b>nomes diferentes</b> do português. O <b>A</b> vira \"ei\", o <b>E</b> vira \"ii\"... Isso confunde no começo!</p><p>Você vai precisar disso sempre que alguém pedir: <i>\"How do you spell your name?\"</i> (Como se escreve o seu nome?)</p>"},
+
+{tipo:"vocab", titulo:"O alfabeto (parte 1)", itens:[
+ {en:"A", pt:"lê-se: ÊI", emoji:"🅰️"},
+ {en:"B", pt:"lê-se: BI", emoji:"🅱️"},
+ {en:"C", pt:"lê-se: SI", emoji:"©️"},
+ {en:"D", pt:"lê-se: DI", emoji:"🇩"},
+ {en:"E", pt:"lê-se: II", emoji:"📧"},
+ {en:"F", pt:"lê-se: ÉF", emoji:"🇫"},
+ {en:"G", pt:"lê-se: DJI", emoji:"🇬"},
+ {en:"H", pt:"lê-se: ÊITCH", emoji:"♓"},
+ {en:"I", pt:"lê-se: AI", emoji:"ℹ️"},
+ {en:"J", pt:"lê-se: DJÊI", emoji:"🇯"},
+ {en:"K", pt:"lê-se: KÊI", emoji:"🇰"},
+ {en:"L", pt:"lê-se: ÉL", emoji:"🇱"},
+ {en:"M", pt:"lê-se: ÉM", emoji:"Ⓜ️"}
+]},
+
+{tipo:"vocab", titulo:"O alfabeto (parte 2)", itens:[
+ {en:"N", pt:"lê-se: ÉN", emoji:"🇳"},
+ {en:"O", pt:"lê-se: ÔU", emoji:"⭕"},
+ {en:"P", pt:"lê-se: PI", emoji:"🅿️"},
+ {en:"Q", pt:"lê-se: KIÚ", emoji:"👑"},
+ {en:"R", pt:"lê-se: ÁR", emoji:"®️"},
+ {en:"S", pt:"lê-se: ÉS", emoji:"💲"},
+ {en:"T", pt:"lê-se: TI", emoji:"🇹"},
+ {en:"U", pt:"lê-se: IÚ", emoji:"🇺"},
+ {en:"V", pt:"lê-se: VI", emoji:"✌️"},
+ {en:"W", pt:"lê-se: DÁBOL-IÚ", emoji:"〰️"},
+ {en:"X", pt:"lê-se: ÉKS", emoji:"❌"},
+ {en:"Y", pt:"lê-se: UÁI", emoji:"🇾"},
+ {en:"Z", pt:"lê-se: ZI (nos EUA)", emoji:"💤"}
+]},
+
+{tipo:"vocab", titulo:"Números 0 a 20", itens:[
+ {en:"zero", pt:"0", emoji:"0️⃣"},
+ {en:"one", pt:"1 — lê-se: UÂN", emoji:"1️⃣"},
+ {en:"two", pt:"2 — lê-se: TU", emoji:"2️⃣"},
+ {en:"three", pt:"3 — lê-se: FRI", emoji:"3️⃣"},
+ {en:"four", pt:"4 — lê-se: FÓR", emoji:"4️⃣"},
+ {en:"five", pt:"5 — lê-se: FÁIV", emoji:"5️⃣"},
+ {en:"six", pt:"6 — lê-se: SÍKS", emoji:"6️⃣"},
+ {en:"seven", pt:"7 — lê-se: SÉ-ven", emoji:"7️⃣"},
+ {en:"eight", pt:"8 — lê-se: ÊIT", emoji:"8️⃣"},
+ {en:"nine", pt:"9 — lê-se: NÁIN", emoji:"9️⃣"},
+ {en:"ten", pt:"10 — lê-se: TÉN", emoji:"🔟"},
+ {en:"eleven", pt:"11", emoji:"1️⃣1️⃣"},
+ {en:"twelve", pt:"12", emoji:"1️⃣2️⃣"},
+ {en:"thirteen", pt:"13", emoji:"1️⃣3️⃣"},
+ {en:"fourteen", pt:"14", emoji:"1️⃣4️⃣"},
+ {en:"fifteen", pt:"15", emoji:"1️⃣5️⃣"},
+ {en:"sixteen", pt:"16", emoji:"1️⃣6️⃣"},
+ {en:"seventeen", pt:"17", emoji:"1️⃣7️⃣"},
+ {en:"eighteen", pt:"18", emoji:"1️⃣8️⃣"},
+ {en:"nineteen", pt:"19", emoji:"1️⃣9️⃣"},
+ {en:"twenty", pt:"20", emoji:"2️⃣0️⃣"}
+]},
+
+{tipo:"gramatica", titulo:"Soletrando o seu nome",
+ html:"<p>Quando alguém não entende o seu nome, pergunta:</p>"+
+ "<table><tr><th>Pergunta</th><th>Resposta</th></tr>"+
+ "<tr><td><code>How do you spell it?</code><br>Como se escreve?</td><td><code>A - N - N - A</code></td></tr>"+
+ "<tr><td><code>Can you spell your name?</code><br>Você pode soletrar seu nome?</td><td><code>Sure! L - E - O</code></td></tr></table>"+
+ "<p>💡 De 13 a 19, todos os números terminam em <code>-teen</code>. Repare: <b>thir</b>teen, <b>four</b>teen, <b>fif</b>teen...</p>",
+ exemplos:[
+  {en:"How do you spell your name?", pt:"Como você escreve o seu nome?"},
+  {en:"My name is Bia. B - I - A.", pt:"Meu nome é Bia. B - I - A."},
+  {en:"I am eleven years old.", pt:"Eu tenho onze anos."},
+  {en:"My house is number seven.", pt:"Minha casa é o número sete."},
+  {en:"Count with me: one, two, three!", pt:"Conte comigo: um, dois, três!"}
+ ]},
+
+{tipo:"quiz", titulo:"Qual é o número?", questoes:[
+ {pergunta:"Ouça e escolha o número:", audio:"twelve", opcoes:["2","12","20"], correta:1,
+  explicacao:"twelve = 12. Cuidado: two = 2 e twenty = 20."},
+ {pergunta:"Ouça e escolha o número:", audio:"seventeen", opcoes:["7","17","70"], correta:1,
+  explicacao:"seventeen tem o -teen no final = 17."},
+ {pergunta:"Quanto é five + three?", opcoes:["eight","seven","nine"], correta:0,
+  explicacao:"5 + 3 = 8 = eight."},
+ {pergunta:"Quanto é twenty - ten?", opcoes:["one","ten","twelve"], correta:1,
+  explicacao:"20 - 10 = 10 = ten."},
+ {pergunta:"Como se lê a letra W?", opcoes:["VI","DÁBOL-IÚ","UÁI"], correta:1,
+  explicacao:"W = double u = DÁBOL-IÚ. É a letra com o nome mais comprido!"}
+]},
+
+{tipo:"completar", titulo:"Escreva o número por extenso", ajuda:"Escreva o número em inglês, com letras.", itens:[
+ {frase:"3 = ___", pt:"três", resposta:"three", explicacao:"three — a língua vai entre os dentes: FRI."},
+ {frase:"8 = ___", pt:"oito", resposta:"eight", explicacao:"eight — escreve-se com GH mudo, lê-se ÊIT."},
+ {frase:"11 = ___", pt:"onze", resposta:"eleven"},
+ {frase:"15 = ___", pt:"quinze", resposta:"fifteen", explicacao:"Cuidado: NÃO é fiveteen, é fifteen."},
+ {frase:"20 = ___", pt:"vinte", resposta:"twenty"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o número", itens:[
+ {en:"six", pt:"6"},
+ {en:"nineteen", pt:"19"},
+ {en:"fourteen", pt:"14"},
+ {en:"ten", pt:"10"}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"How do you spell your name", pt:"Como você escreve o seu nome?"},
+ {frase:"I am eleven years old", pt:"Eu tenho onze anos."}
+]},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Imagine que você está falando ao telefone com alguém dos Estados Unidos e a pessoa não entendeu o seu nome. Escreva: o seu nome soletrado letra por letra, a sua idade e o número da sua casa.",
+ dica:"<ul><li>o nome <b>soletrado</b>, com as letras separadas por traço</li><li>a sua <b>idade</b></li><li>o <b>número da sua casa</b></li></ul>⚠️ Os números têm que estar <b>escritos com letras</b> (nine, twelve...), nunca com algarismos.",
+ andaime:"<p>Veja como o <b>Leo</b> fez a dele — o seu vai ser diferente, com o seu nome e os seus números:</p><p style=\"font-size:17px\">My name is Leo. L - E - O. I am twelve years old. My house is number seven.</p>",
+ gabarito:"o nome dela soletrado em letras separadas por hífen, a idade no formato I am ... years old, e o número da casa escrito por extenso em inglês",
+ instrucaoIA:"Ela devia soletrar o próprio nome letra por letra em inglês e escrever a idade e o número da casa por extenso em inglês (números de 0 a 20). Vocabulário da aula: alfabeto A-Z, números zero a twenty, how do you spell, years old."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita e teste no 🎤. Depois use a IA para treinar a soletração do seu nome de verdade.",
+ frases:[
+  {en:"How do you spell your name?", pt:"Como você escreve o seu nome?"},
+  {en:"One, two, three, four, five.", pt:"Um, dois, três, quatro, cinco."},
+  {en:"Six, seven, eight, nine, ten.", pt:"Seis, sete, oito, nove, dez."},
+  {en:"I am eleven years old.", pt:"Eu tenho onze anos."},
+  {en:"Twelve, thirteen, fourteen, fifteen.", pt:"Doze, treze, catorze, quinze."}
+ ],
+ instrucaoIA:"Praticar o alfabeto em inglês e os números de 0 a 20. Peça também para ela soletrar o nome dela e o nome de duas pessoas da família, letra por letra, em inglês."}
+
+]});
+</script>
+</body>
+</html>

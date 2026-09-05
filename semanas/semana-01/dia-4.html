@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 1 · Dia 4</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:1, dia:4,
+titulo:"Where are you from?",
+subtitulo:"Países, nacionalidades e perguntas",
+objetivos:[
+  "Dizer de onde você é e onde você mora",
+  "Fazer perguntas com o verbo TO BE",
+  "Responder Yes, I am / No, I'm not"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🌍 Hoje você vira repórter!",
+ html:"<p>Ontem você aprendeu a <b>falar</b> com o verbo TO BE. Hoje você aprende a <b>perguntar</b>.</p><p>O segredo é simples: é só <b>trocar as duas primeiras palavras de lugar</b>. Vai ver como é fácil!</p>"},
+
+{tipo:"vocab", titulo:"Países e nacionalidades", itens:[
+ {en:"Brazil / Brazilian", pt:"Brasil / brasileiro(a)", emoji:"🇧🇷"},
+ {en:"The United States / American", pt:"Estados Unidos / americano(a)", emoji:"🇺🇸"},
+ {en:"England / English", pt:"Inglaterra / inglês(a)", emoji:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
+ {en:"Canada / Canadian", pt:"Canadá / canadense", emoji:"🇨🇦"},
+ {en:"Argentina / Argentinian", pt:"Argentina / argentino(a)", emoji:"🇦🇷"},
+ {en:"Japan / Japanese", pt:"Japão / japonês(a)", emoji:"🇯🇵"},
+ {en:"Italy / Italian", pt:"Itália / italiano(a)", emoji:"🇮🇹"},
+ {en:"France / French", pt:"França / francês(a)", emoji:"🇫🇷"},
+ {en:"city", pt:"cidade", emoji:"🏙️"},
+ {en:"country", pt:"país", emoji:"🗺️"},
+ {en:"I live in...", pt:"Eu moro em...", emoji:"🏠"},
+ {en:"Where do you live?", pt:"Onde você mora? (frase pronta — o 'do' você aprende na semana 5)", emoji:"📍"}
+]},
+
+{tipo:"gramatica", titulo:"Como fazer perguntas",
+ html:"<p>Para perguntar, é só <b>inverter</b>: o verbo vem primeiro!</p>"+
+ "<table><tr><th>Frase normal</th><th>Pergunta</th></tr>"+
+ "<tr><td>You <b>are</b> Brazilian.</td><td><b>Are</b> you Brazilian?</td></tr>"+
+ "<tr><td>She <b>is</b> happy.</td><td><b>Is</b> she happy?</td></tr>"+
+ "<tr><td>They <b>are</b> your friends.</td><td><b>Are</b> they your friends?</td></tr></table>"+
+ "<p>E as respostas curtas são assim:</p>"+
+ "<table><tr><th>Pergunta</th><th>Sim</th><th>Não</th></tr>"+
+ "<tr><td>Are you Brazilian?</td><td><code>Yes, I am.</code></td><td><code>No, I'm not.</code></td></tr>"+
+ "<tr><td>Is she your sister?</td><td><code>Yes, she is.</code></td><td><code>No, she isn't.</code></td></tr></table>"+
+ "<p>🔎 As <b>palavras de pergunta</b> vêm antes de tudo:</p>"+
+ "<p><code>What</code> = o quê · <code>Where</code> = onde · <code>Who</code> = quem · <code>How old</code> = quantos anos</p>",
+ exemplos:[
+  {en:"Where are you from?", pt:"De onde você é?"},
+  {en:"I'm from Brazil.", pt:"Eu sou do Brasil."},
+  {en:"Where do you live?", pt:"Onde você mora?"},
+  {en:"I live in Florianópolis.", pt:"Eu moro em Florianópolis."},
+  {en:"I live in a big city.", pt:"Eu moro em uma cidade grande."},
+  {en:"How old are you?", pt:"Quantos anos você tem?"},
+  {en:"Are you American?", pt:"Você é americana?"},
+  {en:"No, I'm not. I'm Brazilian.", pt:"Não, não sou. Eu sou brasileira."},
+  {en:"Who is she?", pt:"Quem é ela?"}
+ ]},
+
+{tipo:"dialogo", titulo:"Conversa por vídeo com uma amiga dos EUA", linhas:[
+ {quem:"Emma", en:"Hi! I'm Emma. What's your name?", pt:"Oi! Eu sou a Emma. Qual é o seu nome?"},
+ {quem:"Anna", en:"Hello, Emma! My name is Anna.", pt:"Olá, Emma! Meu nome é Anna."},
+ {quem:"Emma", en:"Where are you from, Anna?", pt:"De onde você é, Anna?"},
+ {quem:"Anna", en:"I'm from Brazil. I live in Florianópolis. And you?", pt:"Eu sou do Brasil. Eu moro em Florianópolis. E você?"},
+ {quem:"Emma", en:"I'm American. I'm from New York.", pt:"Eu sou americana. Eu sou de Nova York."},
+ {quem:"Anna", en:"Cool! How old are you?", pt:"Legal! Quantos anos você tem?"},
+ {quem:"Emma", en:"I'm eleven. Are you eleven too?", pt:"Eu tenho onze. Você também tem onze?"},
+ {quem:"Anna", en:"Yes, I am! Let's be friends.", pt:"Sim, tenho! Vamos ser amigas."}
+]},
+
+{tipo:"historia", titulo:"Ouça: a Emma fala de New York", paragrafos:[
+ {en:"Hi! I'm Emma. I'm from New York.", pt:"Oi! Eu sou a Emma. Eu sou de Nova York."},
+ {en:"New York is a big city in the United States.", pt:"Nova York é uma cidade grande nos Estados Unidos."},
+ {en:"I'm eleven years old and I'm American.", pt:"Eu tenho onze anos e sou americana."},
+ {en:"This is my friend Anna. She's from Brazil. She's eleven too.", pt:"Esta é minha amiga Anna. Ela é do Brasil. Ela tem onze também."},
+ {en:"Anna is Brazilian. She's from Florianópolis, a big city in Brazil.", pt:"A Anna é brasileira. Ela é de Florianópolis, uma cidade grande no Brasil."},
+ {en:"Anna and I are friends. We're very happy!", pt:"A Anna e eu somos amigas. Nós estamos muito felizes!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a Emma?", questoes:[
+ {pergunta:"Where is Emma from?", opcoes:["New York","Brazil","Canada"], correta:0,
+  explicacao:"I'm from New York."},
+ {pergunta:"Is Emma Brazilian?", opcoes:["Yes, she is.","No, she isn't. She's American.","No, she isn't. She's Canadian."], correta:1,
+  explicacao:"Ela diz: I'm American."},
+ {pergunta:"Is New York a big city?", opcoes:["No, it isn't.","Yes, she is.","Yes, it is."], correta:2,
+  explicacao:"New York is a big city. Para cidade usamos it, não she."}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"Como se pergunta 'De onde você é?'", opcoes:["Where you are from?","Where are you from?","You are from where?"], correta:1,
+  explicacao:"A palavra de pergunta vem primeiro, depois o verbo: Where + are + you."},
+ {pergunta:"'Are you Brazilian?' — resposta CURTA para SIM:", opcoes:["Yes, I am.","Yes, I is.","Yes, you are."], correta:0,
+  explicacao:"A pergunta é sobre VOCÊ, então a resposta usa I am."},
+ {pergunta:"Qual pergunta serve para saber a idade?", opcoes:["What is your name?","Where are you from?","How old are you?"], correta:2,
+  explicacao:"How old = quantos anos."},
+ {pergunta:"'Is she your teacher?' — resposta para NÃO:", opcoes:["No, she isn't.","No, she not.","No, she aren't."], correta:0,
+  explicacao:"isn't = is not."},
+ {pergunta:"Como se diz 'Eu moro em São Paulo'?", opcoes:["I live in São Paulo.","I am live São Paulo.","I from São Paulo."], correta:0,
+  explicacao:"live in = morar em."}
+]},
+
+{tipo:"completar", titulo:"Complete as perguntas", ajuda:"Qual palavra de pergunta falta?", itens:[
+ {frase:"___ is your name?", pt:"Qual é o seu nome?", resposta:"What", opcoes:["What","Where","Who"]},
+ {frase:"___ are you from?", pt:"De onde você é?", resposta:"Where", opcoes:["What","Where","How"]},
+ {frase:"___ old are you?", pt:"Quantos anos você tem?", resposta:"How", opcoes:["What","How","Who"]},
+ {frase:"___ is your teacher?", pt:"Quem é a sua professora?", resposta:"Who", opcoes:["Who","Where","What"]},
+ {frase:"___ you happy today?", pt:"Você está feliz hoje?", resposta:"Are", opcoes:["Are","Is","Am"]}
+]},
+
+{tipo:"ordenar", titulo:"Monte as perguntas e respostas", itens:[
+ {frase:"Where are you from", pt:"De onde você é?"},
+ {frase:"I am from Brazil", pt:"Eu sou do Brasil."},
+ {frase:"How old are you", pt:"Quantos anos você tem?"},
+ {frase:"Is she your sister", pt:"Ela é sua irmã?"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"Where are you from", pt:"De onde você é?"},
+ {en:"I am from Brazil", pt:"Eu sou do Brasil."},
+ {en:"Yes, I am", pt:"Sim, eu sou."},
+ {en:"I live in a big city", pt:"Eu moro em uma cidade grande."}
+]},
+
+{tipo:"missao", titulo:"Missão: conhecer a Emma",
+ cenario:"<p>Você está numa <b>videochamada</b> com a Emma, uma menina americana de 11 anos que acabou de chegar na sua escola. Ela é simpática, mas <b>só entende inglês</b>. Você quer virar amiga dela!</p>",
+ personagem:"Emma, uma menina americana de 11 anos, de New York, simpática e curiosa, que acabou de chegar numa escola no Brasil",
+ objetivos:[
+  "dizer o seu nome e perguntar o nome dela",
+  "perguntar quantos anos ela tem",
+  "perguntar de onde ela é",
+  "se despedir com educação"
+ ],
+ andaime:"<p>Se travar, lembre das perguntas desta semana. Elas começam com:</p><p><span class=\"lacuna\">What's</span> …? · <span class=\"lacuna\">How old</span> …? · <span class=\"lacuna\">Where</span> … from?</p><p style=\"font-size:14px;color:#6E6A80\">E se não entender a Emma: <i>Sorry, I don't understand. Again, please.</i></p>",
+ instrucaoIA:"Ela sabe: hello/hi, my name is / I'm, what's your name, nice to meet you, how are you, I'm fine, how old are you, I am ... years old, where are you from, I'm from, I live in, países e nacionalidades (Brazil/Brazilian, American, Canadian, Japanese...), yes I am / no I'm not, bye, see you tomorrow, sorry I don't understand, again please. Emma é de New York, tem onze anos e está feliz de conhecer alguém."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Você vai entrevistar a Emma, a menina dos Estados Unidos. Escreva <b>4 perguntas</b> para ela em inglês e, embaixo de cada uma, <b>a sua própria resposta</b>.",
+ dica:"<ul><li>uma pergunta sobre o <b>nome</b></li><li>uma sobre a <b>idade</b></li><li>uma sobre <b>de onde</b> ela é</li><li>uma que comece com <b>Are you...?</b></li></ul>Toda pergunta em inglês termina com <b>?</b> e começa com a palavra de pergunta ou com o verbo.",
+ andaime:"<p>Um par pronto, de outro assunto, só para você ver o formato:</p><p style=\"font-size:17px\">Who is your teacher?<br>→ My teacher is Mrs. Silva.</p><p style=\"font-size:14px;color:#6E6A80\">As palavras de pergunta estão na tabela verde-rosa desta aula.</p>",
+ gabarito:"4 perguntas bem formadas (com what / how old / where e uma com Are you...?) e 4 respostas completas sobre ela mesma",
+ instrucaoIA:"Ela devia escrever 4 perguntas em inglês com o verbo to be / palavras interrogativas (what, where, who, how old) e responder as mesmas 4 perguntas sobre ela. Vocabulário da aula: where are you from, I'm from, I live in, how old are you, what's your name, who is, Yes I am / No I'm not, países e nacionalidades (Brazil/Brazilian, American, English, Canadian, Japanese, Italian, French)."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Aquecimento: as perguntas da missão, bem pronunciadas. Ouça, repita e teste no 🎤. Depois mande para a IA e responda <b>falando</b>.",
+ frases:[
+  {en:"Hi! What's your name?", pt:"Oi! Qual é o seu nome?"},
+  {en:"How old are you?", pt:"Quantos anos você tem?"},
+  {en:"Where are you from?", pt:"De onde você é?"},
+  {en:"I live in a big city.", pt:"Eu moro em uma cidade grande."}
+ ],
+ instrucaoIA:"Praticar perguntas pessoais em inglês (what's your name, how old are you, where are you from). Depois das frases, faça 3 perguntas fáceis para ela responder falando: o nome, a idade e de onde ela é. Uma pergunta de cada vez, frases muito curtas."}
+
+]});
+</script>
+</body>
+</html>
