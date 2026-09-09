@@ -118,6 +118,7 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
 .dialogo .linha.agora .bolha{background:#FFF4CC}
 .dialogo .en,.leitura .en{display:block;font-weight:600}
 .dialogo .pt,.leitura .pt{display:block;font-size:14px;color:var(--cinza);margin-top:3px}
+.dialogo .pt.escondida{cursor:pointer;min-height:18px}
 .leitura p{margin:0 0 14px}
 .leitura .en{display:block}
 
@@ -423,6 +424,22 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
   border-radius:20px;padding:6px 12px;font-size:14px;font-weight:700;
 }
 
+/* ---------- adivinha (pistas reveladas uma a uma) ---------- */
+.pistas{display:flex;flex-direction:column;gap:6px;margin:6px 0 4px}
+.pista{background:#FAF8FF;border:1px solid var(--borda);border-radius:10px;padding:8px 10px;font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.pista .n{background:var(--amarelo);color:#5A3E00;border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none}
+.pistas + .refazer{margin:0 0 10px}
+
+/* ---------- desafio bônus (recolhido, fora do placar) ---------- */
+.card.bonus{padding:0;background:linear-gradient(135deg,#FFF7E0,#FFF1F5);border-color:#FFD9A8}
+.card.bonus > summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;flex-direction:column;gap:3px}
+.card.bonus > summary::-webkit-details-marker{display:none}
+.card.bonus .bonus-t{font-size:18px;font-weight:800;color:#B8741A}
+.card.bonus .bonus-s{font-size:13px;color:var(--cinza)}
+.card.bonus[open] > summary{border-bottom:1px dashed #FFD9A8}
+.card.bonus .bonus-corpo{padding:14px 12px 4px}
+.card.bonus .bonus-corpo .card{box-shadow:none;border-color:#FFE7C2}
+
 /* ---------- tentar de novo (um exercício só) ---------- */
 .refazer{
   display:inline-block;margin:8px 0 0;padding:6px 12px;border-radius:20px;
@@ -464,11 +481,11 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
 .historia .par.agora{background:#FFF4CC}
 .historia .par .en{display:block;font-weight:600}
 .historia .pt{display:block;font-size:14px;color:var(--cinza);margin-top:4px;cursor:pointer}
-.historia .pt.escondida{
+.historia .pt.escondida,.dialogo .pt.escondida{
   color:transparent;background:#E9E5F5;border-radius:6px;user-select:none;
   position:relative;
 }
-.historia .pt.escondida::after{
+.historia .pt.escondida::after,.dialogo .pt.escondida::after{
   content:'toque para ver a tradução';color:var(--cinza);font-size:12px;
   position:absolute;left:8px;top:0;
 }

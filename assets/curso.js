@@ -263,7 +263,13 @@ var EST={r:{}};                       /* r = respostas já dadas, por id */
 /* ORDEM = todos os ids que valem ponto, na ordem da página. SECOES = o card
    de cada bloco, por índice. Juntos dizem o que ainda falta e onde está. */
 var ORDEM=[], SECOES={}, TITULOS={};
-function contar(id){ total++; ORDEM.push(id); }
+/* BÔNUS: blocos com bonus:true ficam num card recolhido no fim, fora do
+   placar principal — a aula fecha sem eles. Têm contagem própria (⭐). */
+var BONUS_MODO=false, BONUS_IDS={}, totalBonus=0, respondidasBonus=0, acertosBonus=0;
+function contar(id){
+  if(BONUS_MODO){ BONUS_IDS[id]=1; totalBonus++; return; }
+  total++; ORDEM.push(id);
+}
 function pendentes(){ return ORDEM.filter(function(id){ return !EST.r[id]; }); }
 function blocoDoId(id){ return parseInt(String(id).split('-')[0],10); }
 /* o que falta, agrupado por bloco: [{bi, titulo, quantos}] */
@@ -317,6 +323,7 @@ function gravar(){
       pct: total?Math.round(acertos/total*100):0,
       acertos: acertos, total: total, respondidas: respondidas,
       concluida: (total>0 && respondidas>=total),
+      bonus: totalBonus?{feitos:respondidasBonus, acertos:acertosBonus, total:totalBonus}:undefined,
       data: hojeLocal()
     };
     localStorage.setItem('ingles.progresso',JSON.stringify(p));
@@ -329,6 +336,11 @@ function registrar(certo,id,valor,restaurando){
   if(!restaurando){
     if(EST.r[id]) return;             /* nunca conta duas vezes */
     EST.r[id]={c:!!certo, v:(valor===undefined?1:valor)};
+  }
+  if(BONUS_IDS[id]){                  /* bônus: conta à parte, não fecha nem trava a aula */
+    respondidasBonus++; if(certo) acertosBonus++;
+    atualizarPlacar(); if(!restaurando) gravar();
+    return;
   }
   respondidas++;
   if(certo)acertos++;
@@ -344,6 +356,10 @@ function registrar(certo,id,valor,restaurando){
 function desfazer(id){
   var g=EST.r[id]; if(!g) return;
   delete EST.r[id];
+  if(BONUS_IDS[id]){
+    respondidasBonus=Math.max(0,respondidasBonus-1); if(g.c) acertosBonus=Math.max(0,acertosBonus-1);
+    atualizarPlacar(); gravar(); return;
+  }
   respondidas=Math.max(0,respondidas-1);
   if(g.c) acertos=Math.max(0,acertos-1);
   var fim=document.getElementById('fim');
@@ -359,7 +375,7 @@ function botaoRefazer(id,reset){
 function atualizarPlacar(){
   if(barraEl)barraEl.style.width=(total?Math.round(respondidas/total*100):0)+'%';
   /* o progresso é o que foi FEITO (errar também conta); os acertos vêm ao lado */
-  if(placarEl)placarEl.textContent=respondidas+'/'+total+' feitos · '+acertos+' ✅';
+  if(placarEl)placarEl.textContent=respondidas+'/'+total+' feitos · '+acertos+' ✅'+(totalBonus?' · ⭐ '+respondidasBonus+'/'+totalBonus:'');
 }
 /* o card do fim enquanto a aula não terminou: diz O QUE falta e leva até lá */
 function mostrarPendentes(){
@@ -379,6 +395,7 @@ function finalizar(){
   var msg = pct>=90?'Perfeito! You are amazing!' : pct>=75?'Muito bom! Great job!' : pct>=50?'Bom trabalho! Keep going!' : 'Tudo bem! Refaça a aula amanhã, você vai conseguir. 💪';
   alvo.innerHTML='<h2>🎉 Aula terminada!</h2><div class="estrelas">'+estrelas+'</div>'+
     '<p><b>'+acertos+' de '+total+'</b> exercícios certos.</p><p>'+esc(msg)+'</p>'+
+    (totalBonus&&respondidasBonus<totalBonus?'<p>⭐ Achou fácil? O <b>desafio bônus</b> está logo acima ('+respondidasBonus+' de '+totalBonus+' feitos).</p>':'')+
     '<a class="btn menta" style="text-decoration:none;display:inline-block;margin:4px 0 8px" href="../../revisao.html">🃏 Revisar as palavras de hoje</a><br>'+
     '<button class="btn secundario pequeno" id="refazer" style="margin-top:6px">🔄 Fazer esta aula de novo</button>';
   var bt=document.getElementById('refazer');
@@ -935,13 +952,18 @@ blocos.vocab = function(b){
 
 blocos.dialogo = function(b){
   var c=novo('section','card dialogo');
-  c.innerHTML='<h2>💬 '+esc(b.titulo||'Diálogo')+'</h2><p class="ajuda">Ouça, depois leia em voz alta fazendo as duas vozes.</p>';
+  /* escuta:true = bloco de escuta (dias 2 e 4): a tradução fica escondida até
+     ela tocar, para a compreensão vir do ouvido, como na história */
+  c.innerHTML='<h2>'+(b.escuta?'🎧 ':'💬 ')+esc(b.titulo||'Diálogo')+'</h2><p class="ajuda">'+
+    (b.escuta?'Ouça o diálogo todo <b>sem ler a tradução</b>, pelo menos duas vezes. Só toque na tradução se precisar. Depois responda as perguntas.'
+             :'Ouça, depois leia em voz alta fazendo as duas vozes.')+'</p>';
   var linhas=[];
   b.linhas.forEach(function(l){
     var el=novo('div','linha',
       '<span class="quem">'+esc(l.quem)+'</span>'+
-      '<span class="bolha"><span class="en">'+esc(l.en)+'</span><span class="pt">'+esc(l.pt)+'</span></span>'+
+      '<span class="bolha"><span class="en">'+esc(l.en)+'</span><span class="pt'+(b.escuta?' escondida':'')+'"'+(b.escuta?' title="toque para ver"':'')+'>'+esc(l.pt)+'</span></span>'+
       botaoSom(l.en,true).replace('data-say=','data-quem="'+esc(l.quem)+'"'+(l.voz?' data-voz="'+esc(l.voz)+'"':'')+' data-say='));
+    if(b.escuta) el.querySelector('.pt').onclick=function(){ this.classList.toggle('escondida'); };
     c.appendChild(el); linhas.push(el);
   });
   /* o diálogo inteiro, cada fala com a voz do seu personagem, destacando a fala da vez */
@@ -1180,6 +1202,69 @@ blocos.ditado = function(b,bi){
       }));
     }
     bt.onclick=function(){ aplicar(inp.value,false); };
+    inp.addEventListener('keydown',function(e){ if(e.key==='Enter') bt.click(); });
+    linha.appendChild(inp); linha.appendChild(bt);
+    ex.appendChild(linha); ex.appendChild(fb);
+    c.appendChild(ex);
+    if(EST.r[id]) aplicar(EST.r[id].v,true);
+  });
+  return c;
+};
+
+/* ---- ADIVINHA: pistas em inglês, resposta digitada ----
+   Sem opções, de propósito: com opções vira trivial. As pistas aparecem uma
+   de cada vez (ela pede a próxima), com áudio. Aceita resposta com uma letra
+   errada em palavras de 5+ letras, e variantes em `aceita`. */
+blocos.adivinha = function(b,bi){
+  var c=novo('section','card');
+  c.innerHTML='<h2>🕵️ '+esc(b.titulo||'Adivinha')+'</h2><p class="ajuda">Leia (ou ouça) as pistas e escreva em inglês o que é. Peça mais pistas se precisar.</p>';
+  b.itens.forEach(function(it,i){
+    var id=bi+'-'+i; contar(id);
+    var ex=novo('div','exercicio');
+    ex.appendChild(novo('div','pergunta','<span class="num">'+(i+1)+'</span>'+(it.dica?'<span style="font-weight:400;font-size:14px;color:#6E6A80">'+esc(it.dica)+'</span>':'What is it?')));
+    var pistas=novo('div','pistas');
+    var mostradas=0;
+    var btMais=novo('button','refazer','➕ Mais uma pista');
+    function mostrarPista(){
+      if(mostradas>=it.pistas.length) return;
+      var p=it.pistas[mostradas++];
+      pistas.appendChild(novo('div','pista','<span class="n">'+mostradas+'</span> '+esc(p)+' '+botaoSom(p,true)));
+      if(mostradas>=it.pistas.length) btMais.hidden=true;
+    }
+    btMais.onclick=mostrarPista;
+    mostrarPista();
+    ex.appendChild(pistas); ex.appendChild(btMais);
+    var linha=novo('div','linha-inline');
+    var inp=novo('input','resposta-txt'); inp.type='text'; inp.placeholder='escreva em inglês';
+    inp.setAttribute('autocapitalize','off'); inp.setAttribute('autocomplete','off');
+    var bt=novo('button','btn pequeno','Verificar');
+    var fb=novo('div','feedback');
+    function confere(valor){
+      var alvos=[it.resposta].concat(it.aceita||[]);
+      var v=norm(valor).replace(/^(a|an|the|it is|it's|its)\s+/,'');
+      for(var k=0;k<alvos.length;k++){
+        var a=norm(alvos[k]).replace(/^(a|an|the)\s+/,'');
+        if(quaseIgual(v,a)>=0) return true;
+      }
+      return false;
+    }
+    function aplicar(valor,restaurando){
+      var certo=confere(valor);
+      inp.value=valor; inp.disabled=true; bt.disabled=true; btMais.hidden=true;
+      while(mostradas<it.pistas.length) mostrarPista();     /* revela tudo no fim */
+      inp.classList.add(certo?'certa':'errada');
+      fb.className='feedback '+(certo?'ok':'nok');
+      fb.innerHTML=(certo?'✅ Acertou! É <b>'+esc(it.resposta)+'</b>':'❌ Era: <b>'+esc(it.resposta)+'</b>')+
+                   '<span class="porque">'+esc(it.pt||'')+(it.explicacao?' — '+esc(it.explicacao):'')+'</span>';
+      if(!restaurando) falar(it.resposta);
+      registrar(certo,id,valor,restaurando);
+      fb.appendChild(botaoRefazer(id,function(){
+        inp.value=''; inp.disabled=false; bt.disabled=false; inp.classList.remove('certa','errada');
+        fb.className='feedback'; fb.innerHTML='';
+        pistas.innerHTML=''; mostradas=0; btMais.hidden=false; mostrarPista(); inp.focus();
+      }));
+    }
+    bt.onclick=function(){ if(!inp.value.trim()){ inp.focus(); return; } aplicar(inp.value,false); };
     inp.addEventListener('keydown',function(e){ if(e.key==='Enter') bt.click(); });
     linha.appendChild(inp); linha.appendChild(bt);
     ex.appendChild(linha); ex.appendChild(fb);
@@ -1554,13 +1639,29 @@ function montar(aula){
     main.appendChild(obj);
   }
 
+  var bonus=[];
   (aula.blocos||[]).forEach(function(b,bi){
     var fn=blocos[b.tipo];
     if(!fn){console.warn('Bloco desconhecido:',b.tipo);return;}
+    if(b.bonus){ bonus.push({b:b,bi:bi,fn:fn}); return; }
     var el=fn(b,bi);
     SECOES[bi]=el; TITULOS[bi]=b.titulo||b.tipo;
     main.appendChild(el);
   });
+  if(bonus.length){
+    var det=novo('details','card bonus');
+    det.innerHTML='<summary><span class="bonus-t">⭐ Desafio bônus</span><span class="bonus-s">Achou fácil? Tem mais aqui — não vale ponto na aula, vale estrela.</span></summary>';
+    var corpo=novo('div','bonus-corpo');
+    BONUS_MODO=true;
+    bonus.forEach(function(x){
+      var el=x.fn(x.b,x.bi);
+      SECOES[x.bi]=el; TITULOS[x.bi]=x.b.titulo||x.b.tipo;
+      corpo.appendChild(el);
+    });
+    BONUS_MODO=false;
+    det.appendChild(corpo);
+    main.appendChild(det);
+  }
 
   main.appendChild(novo('section','card final')).id='fim';
   document.getElementById('fim').style.display='none';
