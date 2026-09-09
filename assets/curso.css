@@ -59,6 +59,10 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
   padding:16px;margin:0 0 18px;box-shadow:var(--sombra);
   border:1px solid var(--borda);
 }
+/* o atributo hidden precisa vencer qualquer "display" de classe (.selo-feito,
+   .atalho, .btn…): sem isto, um selo escondido continua aparecendo */
+[hidden]{display:none !important}
+
 .card > h2{
   margin:0 0 4px;font-size:19px;color:var(--roxo);
   display:flex;align-items:center;gap:8px;
@@ -72,6 +76,14 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
 
 .nota{background:linear-gradient(135deg,#E6FBFC,#DFF6FF);border-color:#B7EAF0}
 .nota h2{color:#0E8A93}
+.nota .btn{margin-top:4px}
+
+/* o card que "Ir para o que falta" acabou de mostrar */
+.card.destaque{animation:destacar 2.2s ease-out}
+@keyframes destacar{
+  0%,60%{box-shadow:0 0 0 4px var(--roxo),0 6px 22px rgba(108,74,182,.28)}
+  100%{box-shadow:none}
+}
 
 /* ---------- Botão de som ---------- */
 .som{
@@ -103,6 +115,7 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
 .dialogo .bolha{
   background:#F3F0FF;border-radius:14px;padding:9px 12px;flex:1;
 }
+.dialogo .linha.agora .bolha{background:#FFF4CC}
 .dialogo .en,.leitura .en{display:block;font-weight:600}
 .dialogo .pt,.leitura .pt{display:block;font-size:14px;color:var(--cinza);margin-top:3px}
 .leitura p{margin:0 0 14px}
@@ -409,6 +422,37 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
   display:inline-block;background:#E7F8F0;color:var(--verde);border:1px solid #B9EBD2;
   border-radius:20px;padding:6px 12px;font-size:14px;font-weight:700;
 }
+
+/* ---------- tentar de novo (um exercício só) ---------- */
+.refazer{
+  display:inline-block;margin:8px 0 0;padding:6px 12px;border-radius:20px;
+  border:1px solid var(--borda);background:#fff;color:var(--roxo);
+  font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;
+}
+.refazer:active{transform:scale(.97)}
+.feedback .refazer{display:block;width:max-content}
+
+/* ---------- IA dentro do app: chat e correção ---------- */
+.chat{margin-top:12px;border:1px solid var(--borda);border-radius:14px;background:#FAF8FF;overflow:hidden}
+.chat .mensagens{max-height:380px;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.chat .mensagens:empty{display:none}
+.chat .msg{max-width:88%;padding:9px 12px;border-radius:14px;font-size:15px;line-height:1.4;white-space:pre-wrap;word-break:break-word}
+.chat .msg.ia{align-self:flex-start;background:#fff;border:1px solid var(--borda);border-bottom-left-radius:4px}
+.chat .msg.ia b{color:var(--roxo)}
+.chat .msg.ela{align-self:flex-end;background:var(--roxo);color:#fff;border-bottom-right-radius:4px}
+.chat .entrada{display:flex;gap:8px;padding:10px;border-top:1px solid var(--borda);background:#fff;align-items:center}
+.chat .entrada .resposta-txt{flex:1;min-width:0}
+.chat .status{margin:0;padding:8px 12px 0;font-size:13px;color:var(--cinza);min-height:0}
+.chat .status:empty{padding:0}
+.chat .acoes{padding:10px;margin:0}
+.chat .acoes:empty{display:none}
+.frases-fala .f.praticada{border-color:var(--verde);background:#F1FBF6}
+.frases-fala .f.praticada .txt b::after{content:" ✅";font-size:13px}
+.dica-pronuncia{margin-top:6px;padding:8px 10px;border-radius:10px;background:#fff;border:1px dashed var(--borda);font-size:13px;color:var(--texto);white-space:pre-wrap}
+.progresso-fala{margin:10px 0 0}
+.resposta-ia{margin-top:12px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid var(--borda);font-size:15px;line-height:1.45;white-space:pre-wrap;word-break:break-word}
+.resposta-ia b{color:var(--roxo)}
+.pensando{animation:pulsar 1s infinite}
 
 /* ---------- história (escuta longa) ---------- */
 .historia{background:linear-gradient(135deg,#EEF7FF,#E8FBF4);border-color:#BFE3F5}

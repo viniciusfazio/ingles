@@ -85,6 +85,21 @@ function distancia(a,b){
   return prev[b.length];
 }
 /* "quase certo": no máximo 1 letra errada, e só em respostas com 5+ letras */
+/* O reconhecimento de voz devolve números como dígitos ("12", "twenty-one"
+   vira "21"). Para comparar com o alvo escrito por extenso, os dois lados
+   passam por aqui: dígitos viram palavras (0 a 999) e hífens viram espaço. */
+var _UNIDADES='zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split(' ');
+var _DEZENAS=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+function numeroPorExtenso(n){
+  n=parseInt(n,10);
+  if(isNaN(n)||n<0||n>999) return String(n);
+  if(n<20) return _UNIDADES[n];
+  if(n<100) return _DEZENAS[Math.floor(n/10)]+(n%10?' '+_UNIDADES[n%10]:'');
+  return _UNIDADES[Math.floor(n/100)]+' hundred'+(n%100?' '+numeroPorExtenso(n%100):'');
+}
+function normFala(s){
+  return norm(s).replace(/-/g,' ').replace(/\b\d+\b/g,numeroPorExtenso).replace(/\s+/g,' ').trim();
+}
 function quaseIgual(a,b){
   a=norm(a); b=norm(b);
   if(a===b) return 0;
@@ -110,14 +125,78 @@ if(global.speechSynthesis){
   speechSynthesis.onvoiceschanged=function(){vozEN=pegarVoz();};
   setTimeout(function(){vozEN=pegarVoz();},250);
 }
-function falar(texto,taxa){
-  if(!global.speechSynthesis){alert('Este navegador não tem áudio. Abra no Google Chrome.');return;}
-  try{speechSynthesis.cancel();}catch(e){}
+/* ---- uma voz por personagem ----
+   A API não diz o gênero de uma voz, mas os nomes costumam dizer. Cada
+   personagem (Anna, Leo, Teacher…) ganha uma voz estável: com várias vozes
+   em inglês no aparelho, vozes diferentes; com uma só, tons diferentes
+   (grave para homem, agudo para mulher). A aula pode forçar com voz:"m"/"f". */
+var NOMES_F=/^(anna|emma|mia|lily|lucy|kate|sofia|sophia|julia|zoe|emily|olivia|ava|grace|ella|sarah|mary|lisa|maria|ana|mom|mother|mommy|grandma|grandmother|aunt|sister|girl|woman|lady|teacher|professora|mrs|ms|miss|mae|mãe|vovo|vovó|tia|menina|vendedora|atendente|waitress|nurse|queen|princess|narradora)$/i;
+var NOMES_M=/^(leo|sam|tom|ben|max|jack|mike|jake|noah|liam|lucas|peter|paul|john|david|dan|daniel|bob|bill|charlie|oliver|alex|dad|father|daddy|grandpa|grandfather|uncle|brother|boy|man|mr|sir|pai|vovô|tio|menino|vendedor|waiter|doctor|king|prince|coach|driver|narrador)$/i;
+function generoDe(quem,pista){
+  if(pista==='m'||pista==='f') return pista;
+  var w=String(quem||'').trim().split(/[\s,:.()]+/)[0].toLowerCase();
+  if(!w) return 'f';
+  if(NOMES_F.test(w)) return 'f';
+  if(NOMES_M.test(w)) return 'm';
+  if(/o$/.test(w)) return 'm';              /* Marco, Pedro */
+  return 'f';                               /* a professora é a voz padrão do curso */
+}
+function generoDaVoz(v){
+  var n=(v.name||'').toLowerCase();
+  if(/female|woman|samantha|aria|zira|ava|jenny|karen|moira|tessa|fiona|victoria|allison|susan|catherine|serena|emma|olivia|sonia|libby|amy|joanna|salli|kimberly|ivy|kendra|nicole|emily|hazel|heather|linda|michelle|natasha|clara|maria|ana\b/.test(n)) return 'f';
+  if(/\bmale\b|\bman\b|daniel|david|mark|alex|fred|tom\b|george|ryan|guy\b|brian|matthew|joey|justin|kevin|eric|james|oliver|william|christopher|thomas|arthur|rishi|liam|connor|aaron|oscar|jorge|diego|juan/.test(n)) return 'm';
+  return null;                              /* "Google US English": feminina na prática */
+}
+function vozesEN(){
+  var vs=[]; try{ vs=(global.speechSynthesis&&speechSynthesis.getVoices)?(speechSynthesis.getVoices()||[]):[]; }catch(e){}
+  return vs.filter(function(v){ return (v.lang||'').replace('_','-').slice(0,2).toLowerCase()==='en'; })
+           .sort(function(a,b){ return (b.lang==='en-US')-(a.lang==='en-US'); });
+}
+function hashDe(s){ var h=0; s=String(s||''); for(var i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0; return h; }
+var VOZES={};                                 /* quem -> {voice, pitch, rate} */
+var ORDEM_VOZ={f:[],m:[]};                    /* personagens já vistos, por gênero, na ordem */
+/* tons e ritmos bem separados para personagens do MESMO gênero: a Anna e a
+   professora não podem soar iguais mesmo quando só existe uma voz feminina */
+var TONS={f:[1.05,1.32,0.9,1.2], m:[0.9,0.7,1.02,0.8]};
+var TONS_SEM_VOZ={f:[1.12,1.35,0.98,1.25], m:[0.72,0.58,0.84,0.65]};
+var RITMOS=[1,0.93,1.07,0.96];
+function vozPara(quem,pista){
+  if(!quem) return null;
+  var k=String(quem).toLowerCase()+'|'+(pista||'');
+  if(VOZES[k]) return VOZES[k];
+  var g=generoDe(quem,pista), h=hashDe(quem);
+  var fila=ORDEM_VOZ[g], idx=fila.indexOf(k);
+  if(idx<0){ fila.push(k); idx=fila.length-1; }
+  var doGenero=vozesEN().filter(function(v){ return (generoDaVoz(v)||'f')===g; });
+  var escolhida=null, pitch;
+  if(doGenero.length){
+    /* voz pelo nome (estável), mas sem repetir a de outro personagem enquanto houver voz livre */
+    var usadas={}; for(var kk in VOZES){ if(VOZES[kk].g===g&&VOZES[kk].voice) usadas[VOZES[kk].voice.name]=1; }
+    var livres=doGenero.filter(function(v){ return !usadas[v.name]; });
+    var pool=livres.length?livres:doGenero;
+    escolhida=pool[h%pool.length];
+    pitch=TONS[g][idx%4];
+  }else{
+    escolhida=vozEN||pegarVoz();
+    pitch=TONS_SEM_VOZ[g][idx%4];
+  }
+  VOZES[k]={voice:escolhida, pitch:pitch, rate:RITMOS[idx%4], g:g};
+  return VOZES[k];
+}
+function _utter(texto,taxa,quem,pista){
   var u=new SpeechSynthesisUtterance(String(texto));
   if(!vozEN)vozEN=pegarVoz();
-  if(vozEN)u.voice=vozEN;
-  u.lang='en-US'; u.rate=taxa||velocidade; u.pitch=1.05;
-  speechSynthesis.speak(u);
+  var v=vozPara(quem,pista);
+  if(v&&v.voice) u.voice=v.voice; else if(vozEN) u.voice=vozEN;
+  u.lang='en-US'; u.rate=(taxa||velocidade)*(v?v.rate:1); u.pitch=v?v.pitch:1.05;
+  return u;
+}
+function falar(texto,taxa,quem,pista){
+  if(!global.speechSynthesis){alert('Este navegador não tem áudio. Abra no Google Chrome.');return;}
+  /* se o microfone está ligado, o áudio entraria nele como se fosse ela falando */
+  if(recAtiva){ try{ recAtiva.abort(); }catch(e){} recAtiva=null; }
+  try{speechSynthesis.cancel();}catch(e){}
+  speechSynthesis.speak(_utter(texto,taxa,quem,pista));
 }
 /* fala várias frases em sequência, com uma pausa entre elas (para a
    história longa). Uma frase por vez evita o corte que o Chrome dá em
@@ -130,10 +209,8 @@ function falarSequencia(textos,aoTerminar,aoComecarItem){
   function proxima(){
     if(minha!==seqAtual) return;
     if(i>=textos.length){ if(aoTerminar) aoTerminar(); return; }
-    var u=new SpeechSynthesisUtterance(String(textos[i]));
-    if(!vozEN)vozEN=pegarVoz();
-    if(vozEN)u.voice=vozEN;
-    u.lang='en-US'; u.rate=velocidade; u.pitch=1.05;
+    /* cada item é um texto ou {texto, quem, voz} (diálogo com várias vozes) */
+    var it=textos[i], u=(it&&typeof it==='object')?_utter(it.texto,null,it.quem,it.voz):_utter(it);
     if(aoComecarItem) aoComecarItem(i);
     i++;
     u.onend=function(){ setTimeout(proxima, 450); };
@@ -150,7 +227,7 @@ function botaoSom(texto,pequeno){
 document.addEventListener('click',function(ev){
   var alvo=ev.target;
   while(alvo&&alvo!==document){ if(alvo.hasAttribute&&alvo.hasAttribute('data-say')) break; alvo=alvo.parentNode; }
-  if(alvo&&alvo!==document&&alvo.hasAttribute&&alvo.hasAttribute('data-say')) falar(alvo.getAttribute('data-say'));
+  if(alvo&&alvo!==document&&alvo.hasAttribute&&alvo.hasAttribute('data-say')) falar(alvo.getAttribute('data-say'),null,alvo.getAttribute('data-quem'),alvo.getAttribute('data-voz'));
 });
 
 /* ---------------- diagnóstico de áudio ----------------
@@ -183,6 +260,43 @@ function infoAudio(){
    Assim ela pode parar no meio, fechar, e continuar depois. */
 var total=0, acertos=0, respondidas=0, barraEl=null, placarEl=null;
 var EST={r:{}};                       /* r = respostas já dadas, por id */
+/* ORDEM = todos os ids que valem ponto, na ordem da página. SECOES = o card
+   de cada bloco, por índice. Juntos dizem o que ainda falta e onde está. */
+var ORDEM=[], SECOES={}, TITULOS={};
+function contar(id){ total++; ORDEM.push(id); }
+function pendentes(){ return ORDEM.filter(function(id){ return !EST.r[id]; }); }
+function blocoDoId(id){ return parseInt(String(id).split('-')[0],10); }
+/* o que falta, agrupado por bloco: [{bi, titulo, quantos}] */
+function faltando(){
+  var por={}, lista=[];
+  pendentes().forEach(function(id){
+    var bi=blocoDoId(id);
+    if(!por[bi]){ por[bi]={bi:bi, titulo:TITULOS[bi]||('Bloco '+(bi+1)), quantos:0}; lista.push(por[bi]); }
+    por[bi].quantos++;
+  });
+  return lista;
+}
+/* rola até o primeiro exercício pendente e destaca o card dele */
+function irParaPendente(){
+  var f=faltando(); if(!f.length) return false;
+  var sec=SECOES[f[0].bi]; if(!sec) return false;
+  sec.scrollIntoView({behavior:'smooth',block:'start'});
+  sec.classList.remove('destaque'); void sec.offsetWidth; sec.classList.add('destaque');
+  setTimeout(function(){ sec.classList.remove('destaque'); },2200);
+  return true;
+}
+function botaoPendente(texto){
+  var bt=novo('button','btn pequeno',texto||'▶ Ir para o que falta');
+  bt.onclick=irParaPendente;
+  return bt;
+}
+function textoFaltando(){
+  var f=faltando();
+  if(!f.length) return '';
+  var n=f.reduce(function(a,x){ return a+x.quantos; },0);
+  return (n===1?'Falta <b>1</b> exercício':'Faltam <b>'+n+'</b> exercícios')+': '+
+    f.map(function(x){ return esc(x.titulo)+(x.quantos>1?' ('+x.quantos+')':''); }).join(' · ');
+}
 
 function chaveAula(){ return 'ingles.aula.'+AULA.semana+'-'+AULA.dia; }
 
@@ -222,11 +336,39 @@ function registrar(certo,id,valor,restaurando){
   if(!restaurando){
     gravar();
     if(respondidas>=total&&total>0) finalizar();
+    else mostrarPendentes();
   }
+}
+/* desfaz UM exercício (um toque errado não pode arruinar a aula): tira do
+   placar, do que está salvo e reabre o card do fim se a aula já tinha fechado */
+function desfazer(id){
+  var g=EST.r[id]; if(!g) return;
+  delete EST.r[id];
+  respondidas=Math.max(0,respondidas-1);
+  if(g.c) acertos=Math.max(0,acertos-1);
+  var fim=document.getElementById('fim');
+  if(fim&&fim.dataset.pronto) delete fim.dataset.pronto;
+  atualizarPlacar(); gravar(); mostrarPendentes();
+}
+/* o botão que aparece no feedback de um exercício respondido */
+function botaoRefazer(id,reset){
+  var bt=novo('button','refazer','↺ Tentar de novo');
+  bt.onclick=function(){ desfazer(id); reset(); };
+  return bt;
 }
 function atualizarPlacar(){
   if(barraEl)barraEl.style.width=(total?Math.round(respondidas/total*100):0)+'%';
-  if(placarEl)placarEl.textContent=acertos+' / '+total+' ✅';
+  /* o progresso é o que foi FEITO (errar também conta); os acertos vêm ao lado */
+  if(placarEl)placarEl.textContent=respondidas+'/'+total+' feitos · '+acertos+' ✅';
+}
+/* o card do fim enquanto a aula não terminou: diz O QUE falta e leva até lá */
+function mostrarPendentes(){
+  var alvo=document.getElementById('fim');
+  if(!alvo||alvo.dataset.pronto)return;
+  /* aula ainda não começada: a lista inteira seria só ruído */
+  var lista=respondidas>0?textoFaltando():'';
+  alvo.innerHTML='<h2>🏁 Termine os exercícios</h2><p>'+(lista||'Complete tudo para ver sua nota!')+'</p>';
+  if(lista) alvo.appendChild(botaoPendente());
 }
 function finalizar(){
   var alvo=document.getElementById('fim');
@@ -476,17 +618,36 @@ function promptEscrita(instrucao,resposta,semana,gabarito){
 '5) Termine com UMA pergunta bem fácil em inglês (com a tradução entre parênteses) para ela responder.\n'+
 'Responda em português, menos os exemplos em inglês. Seja carinhosa e encorajadora.';
 }
-function promptFala(instrucao,frases,semana){
+function promptFala(instrucao,frases,semana,soConversa){
   var eu=aluna();
-  return 'Você é uma professora de inglês simpática e paciente. Sua aluna é uma menina brasileira de '+eu.idade+
+  var cabeca='Você é uma professora de inglês simpática e paciente. Sua aluna é uma menina brasileira de '+eu.idade+
 ' anos chamada '+eu.nome+', na semana '+semana+' de um curso de inglês do zero (nível iniciante).\n\n'+
 'ATIVIDADE DE FALA:\n'+instrucao+'\n\nFRASES/PERGUNTAS DA AULA DE HOJE:\n- '+frases.join('\n- ')+'\n\n'+
+'Ela responde falando; o áudio chega para você como texto (às vezes com erros de reconhecimento — seja tolerante).\n';
+  if(soConversa){
+    /* no chat do app, as frases já foram praticadas no microfone: aqui é só a conversa guiada */
+    return cabeca+
+'Ela JÁ praticou as frases acima no microfone. Agora é a CONVERSA:\n'+
+'1) Comece se apresentando em UMA linha e já faça a primeira pergunta, em inglês, sobre o tema da aula (com a tradução entre parênteses). Uma pergunta por vez; espere a resposta.\n'+
+'2) Depois de cada resposta dela: elogie em uma frase, corrija no máximo 1 erro em português (bem simples) e faça a próxima pergunta.\n'+
+'3) Faça de 4 a 6 perguntas no total, fáceis, só com o inglês que ela conhece.\n'+
+'4) Frases curtas. Nunca use inglês difícil. Nada de termos gramaticais.\n'+
+'5) Depois da última resposta, encerre: dê uma nota de 1 a 5 estrelas (use o símbolo ⭐) e uma dica para melhorar. Só use ⭐ no encerramento.';
+  }
+  return cabeca+
 'COMO CONDUZIR:\n'+
-'1) Peça para ela falar (por áudio) uma frase de cada vez, na ordem acima. Só passe para a próxima depois que ela responder.\n'+
+'1) Peça para ela falar (por áudio) uma frase de cada vez, na ordem acima. Só passe para a próxima depois que ela responder — e NÃO encerre antes de passar por TODAS as '+frases.length+' frases. Se ela mandar só uma, responda e já peça a seguinte.\n'+
 '2) Depois de cada áudio dela: diga se entendeu bem, elogie, e corrija a pronúncia e a gramática em português, de forma simples e carinhosa.\n'+
 '3) Se a pronúncia de alguma palavra ficou difícil, escreva como se lê "à brasileira" (ex.: "name" = "neim").\n'+
 '4) Use frases curtas e fale devagar. Nunca use inglês difícil.\n'+
-'5) No final, dê uma nota de 1 a 5 estrelas e uma dica para melhorar.';
+'5) Depois das frases, faça de 4 a 6 perguntas fáceis em inglês sobre o tema, uma por vez, para ela responder falando.\n'+
+'6) Só no final de tudo, dê uma nota de 1 a 5 estrelas e uma dica para melhorar.';
+}
+/* dica curta quando o microfone não reconheceu a frase */
+function promptPronuncia(alvo,ouvido){
+  var eu=aluna();
+  return 'Você é professora de inglês de uma menina brasileira de '+eu.idade+' anos, iniciante. Ela tentou falar a frase: "'+alvo+
+'". O reconhecimento de voz entendeu: "'+(ouvido||'(nada)')+'". Em no máximo 3 linhas, em português e com carinho: diga qual palavra provavelmente saiu diferente e como pronunciá-la "à brasileira" (ex.: three = "fri", com a língua entre os dentes). Sem termos técnicos. Se o reconhecimento só trocou uma palavra parecida, diga que ficou quase certo.';
 }
 /* ---- MISSÃO: jogo de conversa com objetivo ----
    A IA vira um personagem que SÓ fala e SÓ entende inglês. Ela precisa
@@ -543,7 +704,21 @@ function copiar(texto,botao){
 
 /* ---------------- microfone (opcional) ---------------- */
 var Rec = global.SpeechRecognition || global.webkitSpeechRecognition || null;
-function ouvirMicrofone(alvoTexto,botao,saida){
+var recAtiva=null;                    /* o reconhecimento em andamento, se houver */
+/* liga o microfone: cala o áudio antes (senão a voz do app entra na gravação)
+   e registra a instância para o falar() poder abortar. */
+function ligarMic(botao,aoResultado,aoErro,aoFim){
+  pararFala();
+  if(recAtiva){ try{ recAtiva.abort(); }catch(e){} }
+  var r=new Rec(); r.lang='en-US'; r.interimResults=false; r.maxAlternatives=3;
+  recAtiva=r; botao.classList.add('gravando');
+  r.onresult=function(e){ if(recAtiva===r) aoResultado(e); };
+  r.onerror=function(e){ if(recAtiva===r) aoErro(e); };
+  r.onend=function(){ if(recAtiva===r) recAtiva=null; botao.classList.remove('gravando'); if(aoFim) aoFim(); };
+  try{ r.start(); }catch(e){ recAtiva=null; botao.classList.remove('gravando'); }
+}
+/* aoResultado(bateu, ouvido) é opcional: o bloco de fala usa para cobrar frase por frase */
+function ouvirMicrofone(alvoTexto,botao,saida,aoResultado){
   if(!global.isSecureContext){
     saida.innerHTML='O microfone só funciona quando o site está aberto pelo endereço <b>https</b>. '+
                     'Use o '+esc(NOME_IA)+' para praticar a fala. 😉';return;
@@ -551,18 +726,17 @@ function ouvirMicrofone(alvoTexto,botao,saida){
   if(!Rec){
     saida.innerHTML='Este navegador não tem o microfone de ditado. Abra pelo <b>Chrome</b> ou pratique a fala com o '+esc(NOME_IA)+'. 😉';return;
   }
-  var r=new Rec(); r.lang='en-US'; r.interimResults=false; r.maxAlternatives=3;
-  botao.classList.add('gravando'); saida.innerHTML='🎤 Pode falar...';
-  r.onresult=function(e){
+  saida.innerHTML='🎤 Pode falar...';
+  ligarMic(botao,function(e){
     var melhor='',bateu=false;
     for(var i=0;i<e.results[0].length;i++){
       var t=e.results[0][i].transcript;
       if(!melhor)melhor=t;
-      if(norm(t)===norm(alvoTexto)){bateu=true;melhor=t;break;}
+      if(normFala(t)===normFala(alvoTexto)){bateu=true;melhor=t;break;}
     }
     saida.innerHTML=(bateu?'✅ Perfeito! ':'🤔 Eu ouvi: ')+'<b>'+esc(melhor)+'</b>'+(bateu?'':' — tente de novo, ouça o 🔊 primeiro.');
-  };
-  r.onerror=function(e){
+    if(aoResultado) aoResultado(bateu,melhor);
+  },function(e){
     var erro=(e&&e.error)||'';
     if(erro==='not-allowed'||erro==='service-not-allowed')
       saida.innerHTML='Você precisa <b>permitir o microfone</b>: toque no 🔒 do lado do endereço, '+
@@ -573,9 +747,164 @@ function ouvirMicrofone(alvoTexto,botao,saida){
       saida.innerHTML='O microfone precisa de internet para funcionar. Sem sinal, pratique a fala com o '+esc(NOME_IA)+'.';
     else
       saida.innerHTML='Não consegui ouvir agora. Tente de novo tocando no 🎤.';
+  });
+}
+
+/* ---------------- IA dentro do app (chave da API do Gemini) ----------------
+   Com uma chave guardada NESTE aparelho (prefixo "ingles.local.", fora do
+   backup), as tarefas com a IA acontecem dentro da aula: a escrita é
+   corrigida na hora, e a fala e a missão viram um chat com microfone e
+   voz. Sem chave, vale o caminho antigo: mandar o texto para o app da IA.
+   A chave vai no cabeçalho (não na URL) e só para o endereço do Google. */
+var CHAVE_IA='ingles.local.iaChave', CHAVE_IA_MODELO='ingles.local.iaModelo';
+var IA_MODELO_PADRAO='gemini-2.5-flash';
+var IA_BASE='https://generativelanguage.googleapis.com/v1beta/';
+function iaChave(){ try{ return localStorage.getItem(CHAVE_IA)||''; }catch(e){ return ''; } }
+function iaModelo(){ try{ return localStorage.getItem(CHAVE_IA_MODELO)||IA_MODELO_PADRAO; }catch(e){ return IA_MODELO_PADRAO; } }
+function iaAtiva(){ return !!iaChave() && typeof global.fetch==='function'; }
+function iaDefinir(chave,modelo){
+  try{
+    if(chave) localStorage.setItem(CHAVE_IA,String(chave).trim());
+    if(modelo) localStorage.setItem(CHAVE_IA_MODELO,String(modelo).trim());
+  }catch(e){}
+}
+function iaLimpar(){ try{ localStorage.removeItem(CHAVE_IA); localStorage.removeItem(CHAVE_IA_MODELO); }catch(e){} }
+
+function _iaErro(status,corpo){
+  var msg=''; try{ msg=(corpo&&corpo.error&&corpo.error.message)||''; }catch(e){}
+  if(status===403||(status===400&&/api key/i.test(msg))) return 'A chave da IA não foi aceita. Confira em ⚙️ na tela inicial.';
+  if(status===404) return 'O modelo "'+iaModelo()+'" não está disponível. Escolha outro em ⚙️ na tela inicial.';
+  if(status===429) return 'A IA está ocupada (limite de uso). Espere um minutinho e tente de novo.';
+  if(status===503) return 'A IA está sobrecarregada agora. Tente de novo daqui a pouco.';
+  return 'A IA não respondeu'+(msg?' ('+msg+')':'')+'. Tente de novo.';
+}
+function _iaFetch(caminho,opcoes){
+  if(global.navigator && navigator.onLine===false)
+    return Promise.reject(new Error('Sem internet agora. A IA precisa de sinal — os exercícios continuam funcionando.'));
+  opcoes=opcoes||{}; opcoes.headers=opcoes.headers||{}; opcoes.headers['x-goog-api-key']=iaChave();
+  return fetch(IA_BASE+caminho,opcoes).then(function(r){
+    return r.json().catch(function(){ return null; }).then(function(j){
+      if(!r.ok) throw new Error(_iaErro(r.status,j));
+      return j;
+    });
+  },function(){ throw new Error('Não consegui falar com a IA. Confira a internet e tente de novo.'); });
+}
+/* mensagens: [{de:'ela'|'ia', texto}]. A API exige que a conversa comece pela vez dela. */
+function iaConversar(sistema,mensagens){
+  var contents=(mensagens||[]).map(function(m){ return {role:m.de==='ia'?'model':'user', parts:[{text:m.texto}]}; });
+  if(!contents.length||contents[0].role!=='user') contents.unshift({role:'user',parts:[{text:'Vamos começar.'}]});
+  var corpo={contents:contents, generationConfig:{temperature:0.8, maxOutputTokens:4096}};
+  if(sistema) corpo.systemInstruction={parts:[{text:sistema}]};
+  return _iaFetch('models/'+encodeURIComponent(iaModelo())+':generateContent',
+                  {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(corpo)})
+    .then(function(j){
+      var c=j&&j.candidates&&j.candidates[0];
+      var partes=(c&&c.content&&c.content.parts)||[];
+      var texto=partes.map(function(p){ return p.text||''; }).join('').trim();
+      if(!texto){
+        var motivo=(c&&c.finishReason)||(j&&j.promptFeedback&&j.promptFeedback.blockReason)||'';
+        throw new Error('A IA não respondeu'+(motivo?' ('+motivo+')':'')+'. Tente de novo.');
+      }
+      return texto;
+    });
+}
+/* os modelos que a chave enxerga, para a tela de configuração */
+function iaModelos(){
+  return _iaFetch('models?pageSize=200').then(function(j){
+    return (j.models||[]).filter(function(m){
+      return /gemini/i.test(m.name) && (m.supportedGenerationMethods||[]).indexOf('generateContent')>=0;
+    }).map(function(m){ return {id:String(m.name).replace(/^models\//,''), nome:m.displayName||m.name}; });
+  });
+}
+function iaTestar(){ return iaConversar('Responda apenas a palavra OK.',[{de:'ela',texto:'Teste.'}]); }
+
+/* texto da IA na tela: escapa tudo e só devolve **negrito** e *itálico* */
+function md(t){
+  return esc(t).replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>').replace(/(^|[^*])\*([^*\n]+)\*/g,'$1<i>$2</i>');
+}
+/* lê em voz alta só as linhas em inglês (o personagem), pulando as dicas
+   em português e as ações entre asteriscos */
+function falarIngles(texto,quem,voz){
+  var linhas=String(texto).split('\n').map(function(l){
+    return l.replace(/\*[^*]*\*/g,' ').replace(/[*_#>]/g,'').replace(/\([^)]*\)/g,' ').trim();
+  }).filter(function(l){ return l && pareceIngles(l) && !/^[-•\d]/.test(l); });
+  if(linhas.length) falar(linhas.join('. '),null,quem,voz);
+}
+
+/* chat com a IA dentro de um card (fala e missão).
+   o = {chave (localStorage), sistema (prompt), fim (regex que marca o fim),
+        minTrocas (falas dela para valer como feita), aoConcluir()} */
+function chatIA(o){
+  var wrap=novo('div','chat');
+  var lista=novo('div','mensagens');
+  var status=novo('p','ajuda status','');
+  var entrada=novo('div','entrada');
+  var inp=novo('input','resposta-txt'); inp.type='text'; inp.placeholder='escreva (ou fale no 🎤) em inglês';
+  inp.setAttribute('autocapitalize','off'); inp.setAttribute('autocomplete','off');
+  var mic=novo('button','mic','🎤'); mic.setAttribute('aria-label','Falar');
+  var btEnviar=novo('button','btn pequeno','Enviar');
+  entrada.appendChild(mic); entrada.appendChild(inp); entrada.appendChild(btEnviar);
+  var acoes=novo('div','acoes');
+  var btComecar=novo('button','btn','▶ Começar');
+  var btDeNovo=novo('button','btn secundario pequeno','🔄 Recomeçar');
+  acoes.appendChild(btComecar); acoes.appendChild(btDeNovo);
+  wrap.appendChild(lista); wrap.appendChild(status); wrap.appendChild(entrada); wrap.appendChild(acoes);
+
+  var msgs=[], ocupado=false, concluido=false;
+  try{ msgs=JSON.parse(localStorage.getItem(o.chave)||'[]')||[]; }catch(e){ msgs=[]; }
+  function salvar(){ try{ localStorage.setItem(o.chave,JSON.stringify(msgs)); }catch(e){} }
+  function mostrar(m){
+    lista.appendChild(novo('div','msg '+(m.de==='ia'?'ia':'ela'), m.de==='ia'?md(m.texto):esc(m.texto)));
+    lista.scrollTop=lista.scrollHeight;
+  }
+  function trocas(){ return msgs.filter(function(m){ return m.de==='ela'; }).length; }
+  function concluir(){ if(concluido) return; concluido=true; if(o.aoConcluir) o.aoConcluir(); }
+  function estado(){
+    var comecou=msgs.length>0;
+    btComecar.hidden=comecou; entrada.hidden=!comecou; btDeNovo.hidden=!comecou;
+    inp.disabled=btEnviar.disabled=mic.disabled=ocupado;
+    status.textContent=ocupado?'… a IA está pensando':'';
+    status.classList.toggle('pensando',ocupado);
+  }
+  function pedir(){
+    ocupado=true; estado();
+    iaConversar(o.sistema,msgs).then(function(t){
+      ocupado=false; msgs.push({de:'ia',texto:t}); salvar(); mostrar(msgs[msgs.length-1]); estado();
+      falarIngles(t,o.quem,o.voz);
+      if((o.fim&&o.fim.test(t)) || (o.minTrocas&&trocas()>=o.minTrocas)) concluir();
+      inp.focus();
+    },function(e){
+      ocupado=false; estado(); status.textContent='⚠️ '+(e&&e.message?e.message:'Não deu certo. Tente de novo.');
+    });
+  }
+  function enviar(){
+    var t=inp.value.trim(); if(!t||ocupado) return;
+    msgs.push({de:'ela',texto:t}); salvar(); mostrar(msgs[msgs.length-1]); inp.value='';
+    pedir();
+  }
+  btEnviar.onclick=enviar;
+  inp.addEventListener('keydown',function(e){ if(e.key==='Enter') enviar(); });
+  btComecar.onclick=function(){
+    if(ocupado) return;
+    var trava=o.bloqueio?o.bloqueio():null;        /* ex.: "pratique as frases primeiro" */
+    if(trava){ status.textContent=trava; return; }
+    pedir();
   };
-  r.onend=function(){botao.classList.remove('gravando');};
-  try{r.start();}catch(e){botao.classList.remove('gravando');}
+  btDeNovo.onclick=function(){
+    if(ocupado) return;
+    if(!confirm('Recomeçar a conversa do zero?')) return;
+    msgs=[]; salvar(); lista.innerHTML=''; pararFala(); estado();
+  };
+  mic.onclick=function(){
+    if(!Rec||!global.isSecureContext){ status.textContent='O microfone não funciona aqui — escreva a resposta. 🙂'; return; }
+    status.textContent='🎤 Pode falar…';
+    ligarMic(mic,function(e){ inp.value=(e.results[0][0].transcript||'').trim(); status.textContent='Confira e toque em Enviar.'; inp.focus(); },
+             function(){ status.textContent='Não ouvi. Toque no 🎤 e fale mais perto.'; });
+  };
+  msgs.forEach(mostrar);
+  if(msgs.length && ((o.fim&&msgs.some(function(m){ return m.de==='ia'&&o.fim.test(m.texto); })) || (o.minTrocas&&trocas()>=o.minTrocas))) concluido=true;
+  estado();
+  return wrap;
 }
 
 /* ================= BLOCOS ================= */
@@ -607,13 +936,25 @@ blocos.vocab = function(b){
 blocos.dialogo = function(b){
   var c=novo('section','card dialogo');
   c.innerHTML='<h2>💬 '+esc(b.titulo||'Diálogo')+'</h2><p class="ajuda">Ouça, depois leia em voz alta fazendo as duas vozes.</p>';
+  var linhas=[];
   b.linhas.forEach(function(l){
-    c.appendChild(novo('div','linha',
+    var el=novo('div','linha',
       '<span class="quem">'+esc(l.quem)+'</span>'+
       '<span class="bolha"><span class="en">'+esc(l.en)+'</span><span class="pt">'+esc(l.pt)+'</span></span>'+
-      botaoSom(l.en,true)));
+      botaoSom(l.en,true).replace('data-say=','data-quem="'+esc(l.quem)+'"'+(l.voz?' data-voz="'+esc(l.voz)+'"':'')+' data-say='));
+    c.appendChild(el); linhas.push(el);
   });
-  c.appendChild(novo('div',null,'<button class="btn menta pequeno" data-say="'+esc(b.linhas.map(function(l){return l.en;}).join('. '))+'">🔊 Ouvir o diálogo todo</button>'));
+  /* o diálogo inteiro, cada fala com a voz do seu personagem, destacando a fala da vez */
+  var bt=novo('button','btn menta pequeno','🔊 Ouvir o diálogo todo'), tocando=false;
+  function limpar(){ for(var i=0;i<linhas.length;i++) linhas[i].classList.remove('agora'); }
+  bt.onclick=function(){
+    if(tocando){ pararFala(); tocando=false; limpar(); bt.textContent='🔊 Ouvir o diálogo todo'; return; }
+    tocando=true; bt.textContent='⏹ Parar';
+    falarSequencia(b.linhas.map(function(l){ return {texto:l.en, quem:l.quem, voz:l.voz}; }),
+      function(){ tocando=false; limpar(); bt.textContent='🔊 Ouvir o diálogo todo'; },
+      function(i){ limpar(); if(linhas[i]) linhas[i].classList.add('agora'); });
+  };
+  c.appendChild(novo('div',null,'')).appendChild(bt);
   return c;
 };
 
@@ -643,8 +984,7 @@ blocos.quiz = function(b,bi){
   var c=novo('section','card');
   c.innerHTML='<h2>❓ '+esc(b.titulo||'Escolha a resposta certa')+'</h2>';
   b.questoes.forEach(function(q,i){
-    total++;
-    var id=bi+'-'+i;
+    var id=bi+'-'+i; contar(id);
     var ex=novo('div','exercicio');
     ex.appendChild(novo('div','pergunta','<span class="num">'+(i+1)+'</span>'+esc(q.pergunta)+(q.audio?' '+botaoSom(q.audio,true):'')));
     var ops=novo('div','opcoes');
@@ -663,6 +1003,10 @@ blocos.quiz = function(b,bi){
          com voz americana soa errado e ensina pronúncia errada */
       if(!restaurando && q.audioResposta!==false && pareceIngles(q.opcoes[q.correta])) falar(q.opcoes[q.correta]);
       registrar(certo,id,escolhida,restaurando);
+      fb.appendChild(botaoRefazer(id,function(){
+        for(var k=0;k<todos.length;k++){ todos[k].disabled=false; todos[k].classList.remove('certa','errada'); }
+        fb.className='feedback'; fb.innerHTML='';
+      }));
     }
     q.opcoes.forEach(function(op,jj){
       var bt=novo('button','opcao',esc(op));
@@ -680,8 +1024,7 @@ blocos.completar = function(b,bi){
   var c=novo('section','card');
   c.innerHTML='<h2>✏️ '+esc(b.titulo||'Complete as frases')+'</h2><p class="ajuda">'+esc(b.ajuda||'Escreva a palavra que falta no espaço.')+'</p>';
   b.itens.forEach(function(it,i){
-    total++;
-    var id=bi+'-'+i;
+    var id=bi+'-'+i; contar(id);
     var ex=novo('div','exercicio');
     ex.appendChild(novo('div','pergunta','<span class="num">'+(i+1)+'</span>'+esc(it.frase)+(it.pt?' <span style="font-weight:400;color:#6E6A80;font-size:14px">('+esc(it.pt)+')</span>':'')));
     var fb=novo('div','feedback');
@@ -705,6 +1048,15 @@ blocos.completar = function(b,bi){
                    (it.explicacao?'<span class="porque">'+esc(it.explicacao)+'</span>':'');
       if(!restaurando) falar(it.frase.replace(/_+/g,it.resposta));
       registrar(certo,id,valor,restaurando);
+      fb.appendChild(botaoRefazer(id,function(){
+        if(ops){
+          var todos=ops.querySelectorAll('.opcao');
+          for(var k=0;k<todos.length;k++){ todos[k].disabled=false; todos[k].classList.remove('certa','errada'); }
+        }else{
+          inp.value=''; inp.disabled=false; btV.disabled=false; inp.classList.remove('certa','errada'); inp.focus();
+        }
+        fb.className='feedback'; fb.innerHTML='';
+      }));
     }
 
     if(it.opcoes&&it.opcoes.length){
@@ -739,7 +1091,7 @@ blocos.ligar = function(b,bi){
   var colE=novo('div','col'), colD=novo('div','col');
   var selecionado=null, errou={}, esq={}, dir={};
 
-  b.pares.forEach(function(p,i){ total++; });
+  b.pares.forEach(function(p,i){ contar(bi+'-'+i); });
 
   baralhar(b.pares).forEach(function(p){
     var bt=novo('button','chip',esc(p.en)); bt.dataset.k=p.en; esq[p.en]=bt;
@@ -782,6 +1134,16 @@ blocos.ligar = function(b,bi){
 
   grade.appendChild(colE); grade.appendChild(colD); c.appendChild(grade);
 
+  /* um par fechado não abre sozinho; o botão reabre o bloco inteiro */
+  var btRefazer=novo('button','refazer','↺ Refazer este exercício');
+  btRefazer.onclick=function(){
+    b.pares.forEach(function(p,i){ desfazer(bi+'-'+i); });
+    errou={}; selecionado=null;
+    var chips=grade.querySelectorAll('.chip');
+    for(var k=0;k<chips.length;k++) chips[k].classList.remove('ok','sel','nok');
+  };
+  c.appendChild(btRefazer);
+
   b.pares.forEach(function(p,i){
     var g=EST.r[bi+'-'+i];
     if(g) fechar(p.en, g.c, true);
@@ -793,8 +1155,7 @@ blocos.ditado = function(b,bi){
   var c=novo('section','card');
   c.innerHTML='<h2>👂 '+esc(b.titulo||'Escute e escreva')+'</h2><p class="ajuda">Toque no 🔊, ouça quantas vezes quiser e escreva o que ouviu em inglês.</p>';
   b.itens.forEach(function(it,i){
-    total++;
-    var id=bi+'-'+i;
+    var id=bi+'-'+i; contar(id);
     var ex=novo('div','exercicio');
     ex.appendChild(novo('div','pergunta','<span class="num">'+(i+1)+'</span>'+botaoSom(it.en)+' <span style="font-weight:400;font-size:14px;color:#6E6A80">'+(it.dica?esc(it.dica):'')+'</span>'));
     var linha=novo('div','linha-inline');
@@ -813,6 +1174,10 @@ blocos.ditado = function(b,bi){
                     grau===1?'✅ Quase perfeito! Só uma letrinha: o certo é <b>'+esc(it.en)+'</b>':
                     '❌ Era: <b>'+esc(it.en)+'</b>')+'<span class="porque">'+esc(it.pt||'')+'</span>';
       registrar(certo,id,valor,restaurando);
+      fb.appendChild(botaoRefazer(id,function(){
+        inp.value=''; inp.disabled=false; bt.disabled=false; inp.classList.remove('certa','errada');
+        fb.className='feedback'; fb.innerHTML=''; inp.focus();
+      }));
     }
     bt.onclick=function(){ aplicar(inp.value,false); };
     inp.addEventListener('keydown',function(e){ if(e.key==='Enter') bt.click(); });
@@ -828,23 +1193,26 @@ blocos.ordenar = function(b,bi){
   var c=novo('section','card');
   c.innerHTML='<h2>🧱 '+esc(b.titulo||'Monte a frase')+'</h2><p class="ajuda">Toque nas palavras na ordem certa. Toque de novo para tirar.</p>';
   b.itens.forEach(function(it,i){
-    total++;
-    var id=bi+'-'+i;
+    var id=bi+'-'+i; contar(id);
     var palavras=it.frase.split(/\s+/);
     var ex=novo('div','exercicio');
     ex.appendChild(novo('div','pergunta','<span class="num">'+(i+1)+'</span>'+esc(it.pt)));
     var montagem=novo('div','montagem');
     var banco=novo('div','banco');
-    var mistas=baralhar(palavras);
-    if(mistas.join(' ')===palavras.join(' ')&&palavras.length>2)mistas=baralhar(mistas);
-    mistas.forEach(function(pal){
-      var bp=novo('button','palavra',esc(pal));
-      bp.onclick=function(){
-        if(bp.parentNode===banco){montagem.appendChild(bp);falar(pal);}
-        else banco.appendChild(bp);
-      };
-      banco.appendChild(bp);
-    });
+    function montarBanco(){
+      montagem.innerHTML=''; banco.innerHTML='';
+      var mistas=baralhar(palavras);
+      if(mistas.join(' ')===palavras.join(' ')&&palavras.length>2)mistas=baralhar(mistas);
+      mistas.forEach(function(pal){
+        var bp=novo('button','palavra',esc(pal));
+        bp.onclick=function(){
+          if(bp.parentNode===banco){montagem.appendChild(bp);falar(pal);}
+          else banco.appendChild(bp);
+        };
+        banco.appendChild(bp);
+      });
+    }
+    montarBanco();
     var fb=novo('div','feedback');
     var bt=novo('button','btn pequeno','Verificar');
 
@@ -864,6 +1232,9 @@ blocos.ordenar = function(b,bi){
       fb.innerHTML=(certo?'✅ Frase perfeita!':'❌ O certo é: <b>'+esc(it.frase)+'</b>');
       if(!restaurando) falar(it.frase);
       registrar(certo,id,frase,restaurando);
+      fb.appendChild(botaoRefazer(id,function(){
+        bt.disabled=false; fb.className='feedback'; fb.innerHTML=''; montarBanco();
+      }));
     }
     bt.onclick=function(){
       var feito=[]; var ps=montagem.querySelectorAll('.palavra');
@@ -933,8 +1304,7 @@ function marcadorFeito(id,textoBotao,textoFeito){
 }
 
 blocos.escrita = function(b,bi){
-  total++;
-  var id=bi+'-tarefa';
+  var id=bi+'-tarefa'; contar(id);
   var c=novo('section','card tarefa-ia');
   c.innerHTML='<h2>📝 '+esc(b.titulo||'Hora de escrever')+'</h2><p>'+(b.instrucao||'')+'</p>'+
     (b.dica?'<div class="dica-tarefa"><b>A sua resposta precisa ter:</b>'+b.dica+'</div>':'');
@@ -963,6 +1333,34 @@ blocos.escrita = function(b,bi){
     aviso.className='feedback'; aviso.innerHTML='';
     return promptEscrita(b.instrucaoIA||b.instrucaoTexto||strip(b.instrucao),ta.value,AULA.semana,b.gabarito);
   }
+  if(iaAtiva()){
+    /* a correção chega aqui mesmo; a última fica guardada para ela reler */
+    var chaveCor='ingles.ia.'+AULA.semana+'-'+AULA.dia+'-'+(b.id||'1');
+    var resp=novo('div','resposta-ia'); resp.hidden=true;
+    try{ var antiga=localStorage.getItem(chaveCor); if(antiga){ resp.innerHTML=md(antiga); resp.hidden=false; } }catch(e){}
+    var btIA=novo('button','btn','✨ Corrigir com a '+esc(NOME_IA));
+    var ocupada=false;
+    btIA.onclick=function(){
+      if(ocupada) return;
+      var p=gerarPrompt(); if(p===null) return;
+      ocupada=true; btIA.disabled=true; btIA.textContent='… a '+NOME_IA+' está lendo';
+      iaConversar(null,[{de:'ela',texto:p}]).then(function(t){
+        ocupada=false; btIA.disabled=false; btIA.textContent='✨ Corrigir de novo';
+        resp.innerHTML=md(t); resp.hidden=false;
+        try{ localStorage.setItem(chaveCor,t); }catch(e){}
+        feito.marcar();
+      },function(e){
+        ocupada=false; btIA.disabled=false; btIA.textContent='✨ Corrigir com a '+NOME_IA;
+        aviso.className='feedback nok'; aviso.innerHTML='⚠️ '+esc(e&&e.message?e.message:'Não deu certo. Tente de novo.');
+      });
+    };
+    var ac=novo('div','acoes'); ac.appendChild(btIA); c.appendChild(ac);
+    c.appendChild(aviso); c.appendChild(resp);
+    c.appendChild(novo('p','ajuda','Escreva, toque em <b>Corrigir</b> e leia a correção com calma. Você pode consertar e corrigir de novo. 💜'));
+    feito.el.querySelector('.btn').hidden=true;      /* sem "já fiz": feita = corrigida */
+    c.appendChild(feito.el);
+    return c;
+  }
   c.appendChild(acoesIA(gerarPrompt,function(){ feito.marcar(); }));
   c.appendChild(aviso);
   c.appendChild(novo('p','ajuda',(podeCompartilharTexto()?'Toque em <b>Mandar</b> e escolha a '+esc(NOME_IA)+' no menu — ou copie e cole no app. ':'Copie, abra a '+esc(NOME_IA)+', cole e envie. ')+
@@ -973,8 +1371,7 @@ blocos.escrita = function(b,bi){
 function strip(html){var d=document.createElement('div');d.innerHTML=html||'';return (d.textContent||'').trim();}
 
 blocos.missao = function(b,bi){
-  total++;
-  var id=bi+'-tarefa';
+  var id=bi+'-tarefa'; contar(id);
   var c=novo('section','card tarefa-ia missao');
   c.innerHTML='<h2>🎯 '+esc(b.titulo||'Missão')+'</h2>'+
     '<div class="cenario">'+(b.cenario||'')+'</div>'+
@@ -988,6 +1385,15 @@ blocos.missao = function(b,bi){
     c.appendChild(det);
   }
   var feito=marcadorFeito(id,'✅ Missão feita','Missão feita');
+  if(iaAtiva()){
+    c.appendChild(novo('p','ajuda','Toque em <b>Começar</b>. O personagem fala em inglês; responda pelo 🎤 ou escrevendo. Se travar, vem uma dica em português. 🎮'));
+    c.appendChild(chatIA({chave:'ingles.chat.'+AULA.semana+'-'+AULA.dia+'-'+bi, sistema:promptMissao(b,AULA.semana),
+                          quem:String(b.personagem||'').split(/[\s,]+/)[0], voz:b.voz,
+                          fim:/🎉|miss[ãa]o cumprida|quase!/i, aoConcluir:function(){ feito.marcar(); }}));
+    feito.el.querySelector('.btn').hidden=true;
+    c.appendChild(feito.el);
+    return c;
+  }
   c.appendChild(acoesIA(function(){ return promptMissao(b,AULA.semana); }, function(){ feito.marcar(); }));
   c.appendChild(novo('p','ajuda','Mande para a '+esc(NOME_IA)+' e responda <b>falando</b> (microfone do app) ou escrevendo. '+
     'Se travar, ela dá uma dica em português. Ao terminar, volte aqui e marque a missão. 🎮'));
@@ -996,26 +1402,59 @@ blocos.missao = function(b,bi){
 };
 
 blocos.fala = function(b,bi){
-  total++;
-  var id=bi+'-tarefa';
+  var id=bi+'-tarefa'; contar(id);
   var c=novo('section','card tarefa-ia');
   c.innerHTML='<h2>🎤 '+esc(b.titulo||'Hora de falar')+'</h2><p>'+(b.instrucao||'')+'</p>'+
     (b.foco?'<div class="foco"><b>🔊 Foco de pronúncia:</b> '+b.foco+'</div>':'');
   var lista=novo('div','frases-fala');
-  (b.frases||[]).forEach(function(f){
+  var ia=iaAtiva(), total_f=(b.frases||[]).length;
+  /* com a IA no app, cada frase é cobrada: praticada = acertou no 🎤, ou
+     tentou 2 vezes (com dica de pronúncia da IA). Fica guardado. */
+  var chavePrat='ingles.fala.'+AULA.semana+'-'+AULA.dia+'-'+bi;
+  var prat={}, tent={};
+  try{ prat=JSON.parse(localStorage.getItem(chavePrat)||'{}')||{}; }catch(e){ prat={}; }
+  function praticadas(){ var n=0; for(var i=0;i<total_f;i++) if(prat[i]) n++; return n; }
+  var progresso=ia?novo('p','ajuda progresso-fala',''):null;
+  function mostrarProgresso(){
+    if(!progresso) return;
+    var n=praticadas();
+    progresso.innerHTML=n>=total_f?'✅ Todas as frases praticadas. Agora a conversa! 👇':'🎤 Frases praticadas: <b>'+n+' de '+total_f+'</b> — pratique todas para liberar a conversa.';
+  }
+  (b.frases||[]).forEach(function(f,i){
     var texto=typeof f==='string'?f:f.en;
     var pt=typeof f==='string'?'':f.pt;
-    var linha=novo('div','f',botaoSom(texto,true)+'<span class="txt"><b>'+esc(texto)+'</b>'+(pt?'<span class="pt">'+esc(pt)+'</span>':'')+'</span>');
+    var linha=novo('div','f'+(prat[i]?' praticada':''),botaoSom(texto,true)+'<span class="txt"><b>'+esc(texto)+'</b>'+(pt?'<span class="pt">'+esc(pt)+'</span>':'')+'</span>');
     var mic=novo('button','mic','🎤'); mic.setAttribute('aria-label','Testar a pronúncia');
     var saida=novo('div','ouvido');
-    mic.onclick=function(){ouvirMicrofone(texto,mic,saida);};
+    mic.onclick=function(){
+      ouvirMicrofone(texto,mic,saida, ia?function(bateu,ouvido){
+        tent[i]=(tent[i]||0)+1;
+        if(bateu||tent[i]>=2){ prat[i]=true; linha.classList.add('praticada'); try{ localStorage.setItem(chavePrat,JSON.stringify(prat)); }catch(e){} mostrarProgresso(); }
+        if(!bateu){
+          var dica=novo('div','dica-pronuncia','… a '+esc(NOME_IA)+' está ouvindo');
+          saida.appendChild(dica);
+          iaConversar(null,[{de:'ela',texto:promptPronuncia(texto,ouvido)}]).then(function(t){ dica.innerHTML=md(t); },function(){ dica.remove(); });
+        }
+      }:null);
+    };
     linha.appendChild(mic);
     var caixa=novo('div');caixa.style.gridColumn='1';caixa.appendChild(linha);caixa.appendChild(saida);
     lista.appendChild(caixa);
   });
   c.appendChild(lista);
+  if(progresso){ c.appendChild(progresso); mostrarProgresso(); }
   var frasesTxt=(b.frases||[]).map(function(f){return typeof f==='string'?f:f.en;});
   var feito=marcadorFeito(id,'✅ Já pratiquei com a '+esc(NOME_IA),'Prática de fala feita');
+  if(iaAtiva()){
+    c.appendChild(novo('p','ajuda','Agora a conversa: toque em <b>Começar</b> e responda <b>falando</b> no 🎤 (ou escrevendo). A '+esc(NOME_IA)+' pergunta em inglês e corrige em português. 🎧'));
+    c.appendChild(chatIA({chave:'ingles.chat.'+AULA.semana+'-'+AULA.dia+'-'+bi,
+                          sistema:promptFala(b.instrucaoIA||strip(b.instrucao),frasesTxt,AULA.semana,true),
+                          fim:/⭐/, minTrocas:4, aoConcluir:function(){ feito.marcar(); },
+                          bloqueio:function(){ return praticadas()>=total_f?null:'Primeiro pratique todas as frases no 🎤 ('+praticadas()+' de '+total_f+'). 😉'; }}));
+    feito.el.querySelector('.btn').hidden=true;
+    c.appendChild(feito.el);
+    return c;
+  }
   c.appendChild(acoesIA(function(){ return promptFala(b.instrucaoIA||strip(b.instrucao),frasesTxt,AULA.semana); },
                         function(){ feito.marcar(); }));
   c.appendChild(novo('p','ajuda','Na '+esc(NOME_IA)+', responda <b>falando</b> (o microfone do app). Ela conduz a conversa e corrige em português. 🎧'));
@@ -1118,7 +1557,9 @@ function montar(aula){
   (aula.blocos||[]).forEach(function(b,bi){
     var fn=blocos[b.tipo];
     if(!fn){console.warn('Bloco desconhecido:',b.tipo);return;}
-    main.appendChild(fn(b,bi));
+    var el=fn(b,bi);
+    SECOES[bi]=el; TITULOS[bi]=b.titulo||b.tipo;
+    main.appendChild(el);
   });
 
   main.appendChild(novo('section','card final')).id='fim';
@@ -1136,7 +1577,7 @@ function montar(aula){
     main.appendChild(nav);
   }
 
-  var placar=novo('div','placar','<span class="txt">0 / '+total+' ✅</span><span class="barra"><i></i></span>');
+  var placar=novo('div','placar','<span class="txt">0/'+total+' feitos · 0 ✅</span><span class="barra"><i></i></span>');
   document.body.appendChild(placar);
   placarEl=placar.querySelector('.txt');
   barraEl=placar.querySelector('.barra i');
@@ -1145,25 +1586,33 @@ function montar(aula){
   /* o placar nasce depois dos blocos, então agora refletimos o que foi restaurado */
   atualizarPlacar();
   if(total>0 && respondidas>=total) finalizar();
-  else if(respondidas>0){
-    var av=novo('section','card nota');
-    av.innerHTML='<h2>👋 Bem-vinda de volta!</h2><p>Você já tinha respondido <b>'+respondidas+
-      ' de '+total+'</b> exercícios desta aula. O que você fez está marcado — continue de onde parou. 💜</p>';
-    var m=document.querySelector('main');
-    m.insertBefore(av, m.firstChild.nextSibling);
+  else{
+    mostrarPendentes();
+    if(respondidas>0){
+      var av=novo('section','card nota');
+      av.innerHTML='<h2>👋 Bem-vinda de volta!</h2><p>Você já tinha feito <b>'+respondidas+
+        ' de '+total+'</b> exercícios desta aula. O que você fez está marcado. 💜</p>'+
+        '<p>'+textoFaltando()+'</p>';
+      av.appendChild(botaoPendente());
+      var m=document.querySelector('main');
+      m.insertBefore(av, m.firstChild.nextSibling);
+    }
   }
 }
 
 global.Curso={
   montar:montar, falar:falar, falarSequencia:falarSequencia, pararFala:pararFala,
   ouvirMicrofone:ouvirMicrofone, infoAudio:infoAudio,
-  hojeLocal:hojeLocal, esc:esc, norm:norm, baralhar:baralhar, quaseIgual:quaseIgual,
+  hojeLocal:hojeLocal, esc:esc, norm:norm, normFala:normFala, baralhar:baralhar, quaseIgual:quaseIgual,
+  vozPara:vozPara, generoDe:generoDe, vozesEN:vozesEN,
   aluna:aluna, definirAluna:definirAluna, temAluna:temAluna,
   exportarTudo:exportarTudo, importarTudo:importarTudo, inspecionarBackup:inspecionarBackup,
   baixarBackup:baixarBackup, nomeDoBackup:nomeDoBackup,
   podeCompartilhar:podeCompartilhar, compartilharBackup:compartilharBackup,
   marcarSemCompartilhar:marcarSemCompartilhar,
   semCompartilharMarcado:semCompartilharMarcado,
-  limparSemCompartilhar:limparSemCompartilhar
+  limparSemCompartilhar:limparSemCompartilhar,
+  iaAtiva:iaAtiva, iaChave:iaChave, iaModelo:iaModelo, iaDefinir:iaDefinir, iaLimpar:iaLimpar,
+  iaTestar:iaTestar, iaModelos:iaModelos, iaConversar:iaConversar
 };
 })(window);

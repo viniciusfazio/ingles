@@ -31,6 +31,8 @@
     <button class="btn" id="bt-nome" style="width:100%;margin-top:14px">Vamos começar! 🚀</button>
     <p class="ajuda" style="margin-top:12px">Isso fica guardado <b>só neste celular</b> — não vai
     para a internet. É o nome que a professora de IA vai usar para falar com você. 💜</p>
+    <p class="ajuda">Trocando de celular? Se você tem um backup do antigo, vá lá embaixo em
+    <b>⚙️ Backup do progresso</b> e escolha o arquivo — o nome e o progresso voltam juntos.</p>
   </section>
   <div class="card" id="painel"></div>
   <a class="atalho" id="atalho-revisao" href="revisao.html">
@@ -77,6 +79,36 @@
     <div id="msg-backup" class="feedback"></div>
   </details>
 
+  <details class="card ferramentas" id="ia-config">
+    <summary>🤖 IA dentro do app</summary>
+    <p class="ajuda">Com uma <b>chave da API do Gemini</b>, a correção da escrita, a conversa e a
+    missão acontecem aqui dentro, sem sair do app. A chave fica guardada <b>só neste celular</b>
+    (não entra no backup). Sem chave, as tarefas continuam indo pelo botão "Mandar".</p>
+    <label class="rotulo" for="in-chave">Chave da API</label>
+    <input id="in-chave" class="resposta-txt" type="password" placeholder="AIza…" autocomplete="off"
+           autocapitalize="off" spellcheck="false">
+    <label class="rotulo" for="in-modelo">Modelo</label>
+    <select id="in-modelo" class="resposta-txt"></select>
+    <div class="acoes">
+      <button class="btn pequeno" id="bt-ia-salvar">✅ Testar e salvar</button>
+      <button class="btn secundario pequeno" id="bt-ia-remover">Remover chave</button>
+    </div>
+    <div id="msg-ia" class="feedback"></div>
+    <details class="ajudinha" style="margin-top:12px">
+      <summary>Como conseguir a chave (quem cuida do curso faz isso, uma vez)</summary>
+      <div>
+        <ol style="padding-left:20px;margin:8px 0">
+          <li>Entre em <b>aistudio.google.com</b> com a sua conta Google.</li>
+          <li>Menu <b>Get API key</b> → <b>Create API key</b>. Se pedir um projeto, crie um novo.</li>
+          <li>Copie a chave (começa com <b>AIza</b>) e cole aqui em cima. Toque em <b>Testar e salvar</b>.</li>
+        </ol>
+        <p class="ajuda">Recomendado: no Google Cloud, em <i>APIs e serviços → Credenciais</i>, restrinja
+        a chave ao endereço deste site e à <i>Generative Language API</i>. Assim ela não serve para
+        mais nada se alguém pegar o celular.</p>
+      </div>
+    </details>
+  </details>
+
   <p class="ajuda" style="text-align:center;margin-top:24px">Feito com 💜 para você.</p>
 </main>
 <script src="assets/config.js"></script>
@@ -113,6 +145,151 @@
   inNome.addEventListener('keydown',function(e){ if(e.key==='Enter') inIdade.focus(); });
   inIdade.addEventListener('keydown',function(e){ if(e.key==='Enter') salvarNome(); });
   inNome.addEventListener('input',function(){ inNome.classList.remove('errada'); });
+
+  /* O backup vem ANTES da checagem do nome: num celular novo a tela de boas-vindas
+     aparece e é exatamente aí que ela precisa restaurar o backup do celular antigo. */
+  /* ---------- backup / restauração ---------- */
+  var msg=document.getElementById('msg-backup');
+  function aviso(ok,html){ msg.className='feedback '+(ok?'ok':'nok'); msg.innerHTML=html; }
+
+  /* compartilhar é o caminho bom no celular: ela escolhe WhatsApp/Drive na hora.
+     Só aparece se o navegador realmente souber compartilhar arquivos. */
+  var btCompartilhar=document.getElementById('bt-compartilhar');
+  if(Curso.podeCompartilhar()){
+    btCompartilhar.hidden=false;
+    document.getElementById('bt-baixar').className='btn secundario pequeno';
+    btCompartilhar.onclick=function(){
+      /* o share vem PRIMEIRO: qualquer coisa antes pode consumir o gesto do usuário */
+      Curso.compartilharBackup().then(function(nome){
+        aviso(true,'✅ Backup <b>'+nome+'</b> enviado. Guarde num lugar que você não perca. 💜');
+      },function(e){
+        var nome=e&&e.name;
+        if(nome==='AbortError'){ aviso(false,'Compartilhamento cancelado. Nada foi perdido.'); return; }
+        /* NotAllowedError / TypeError = este navegador não compartilha arquivos.
+           Não insistimos: escondemos o botão e mandamos ela pelo download. */
+        if(nome==='NotAllowedError'||nome==='TypeError'||nome==='DataError'){
+          Curso.marcarSemCompartilhar();
+          btCompartilhar.hidden=true;
+          aviso(false,'Este celular não deixa compartilhar arquivos pelo navegador. '+
+                      'Sem problema: toque em <b>💾 Baixar arquivo</b> — o backup vai para os Downloads '+
+                      'e de lá você manda para onde quiser. (O botão de compartilhar não vai mais aparecer.)');
+          return;
+        }
+        var motivo=nome?(' ('+nome+(e.message?': '+e.message:'')+')'):'';
+        aviso(false,'Não deu para compartilhar'+motivo+'. Use o "💾 Baixar arquivo" — funciona igual.');
+      });
+    };
+  }
+
+  document.getElementById('bt-baixar').onclick=function(){
+    try{ aviso(true,'✅ Salvo em Downloads como <b>'+Curso.baixarBackup()+'</b>. Mande esse arquivo para você mesma (WhatsApp, Drive, e-mail) para não perder.'); }
+    catch(e){ aviso(false,'Não consegui gerar o arquivo neste navegador. Tente pelo "Compartilhar backup".'); }
+  };
+  var arquivo=document.getElementById('arquivo');
+  document.getElementById('bt-arquivo').onclick=function(){ arquivo.click(); };
+  arquivo.onchange=function(){
+    var f=arquivo.files&&arquivo.files[0];
+    if(!f) return;
+    var leitor=new FileReader();
+    leitor.onload=function(){ restaurar(String(leitor.result||'')); };
+    leitor.onerror=function(){ aviso(false,'Não consegui abrir o arquivo.'); };
+    leitor.readAsText(f);
+  };
+
+  function dataBonita(iso){
+    if(!iso) return '';
+    var p=String(iso).slice(0,10).split('-');
+    return p.length===3 ? p[2]+'/'+p[1]+'/'+p[0] : iso;
+  }
+
+  function restaurar(texto){
+    if(!String(texto).trim()){ aviso(false,'O arquivo está vazio.'); return; }
+
+    /* primeiro olhamos o que tem dentro, sem aplicar nada */
+    var info;
+    try{ info=Curso.inspecionarBackup(texto); }
+    catch(e){ aviso(false,'❌ '+(e&&e.message?e.message:'Não consegui ler o backup.')); return; }
+
+    var pergunta;
+    if(info.outraPessoa){
+      /* pessoas diferentes: misturar produziria um progresso que não é de ninguém.
+         Aqui é substituição, e por isso avisamos com todas as letras. */
+      pergunta='⚠️ ATENÇÃO — este backup é de OUTRA PESSOA!\n\n'+
+        'O backup é de: '+info.aluna+'\n'+
+        'Neste celular o nome é: '+info.nomeAtual+'\n\n'+
+        'Continuar vai APAGAR todo o progresso de '+info.nomeAtual+' neste celular e '+
+        'colocar o de '+info.aluna+' no lugar.\n\n'+
+        'Tem certeza?';
+    }else{
+      pergunta='Restaurar o backup'+(info.aluna?' de '+info.aluna:'')+'?\n\n'+
+        (info.gerado?'Salvo em: '+dataBonita(info.gerado)+'\n':'')+
+        'Aulas concluídas no backup: '+info.concluidas+'\n\n'+
+        'O que estiver mais adiantado aqui é mantido — você não perde nada.';
+    }
+    if(!confirm(pergunta)) { aviso(false,'Restauração cancelada. Nada foi alterado.'); return; }
+
+    if(info.outraPessoa){
+      if(confirm('Antes de apagar: quer salvar um backup do progresso de '+info.nomeAtual+
+                 ' que está neste celular?\n\n(Recomendado — depois é só restaurar quando quiser.)')){
+        try{ Curso.baixarBackup(); }catch(e){}
+      }
+    }
+
+    try{
+      var r=Curso.importarTudo(texto, info.outraPessoa);
+      aviso(true,'✅ '+(r.modo==='substituido'?'Substituído':'Restaurado')+
+            (r.gerado?' (backup de '+dataBonita(r.gerado)+')':'')+': <b>'+
+            r.aulas+' aula(s)</b>'+(r.textos?' e <b>'+r.textos+' texto(s)</b>':'')+'. Recarregando…');
+      setTimeout(function(){ location.reload(); },1800);
+    }catch(e){
+      aviso(false,'❌ '+(e&&e.message?e.message:'Não consegui restaurar.'));
+    }
+  }
+
+  /* ---------- IA dentro do app: chave e modelo (também antes do nome) ---------- */
+  var msgIA=document.getElementById('msg-ia');
+  var inChave=document.getElementById('in-chave'), selModelo=document.getElementById('in-modelo');
+  function avisoIA(ok,html){ msgIA.className='feedback '+(ok?'ok':'nok'); msgIA.innerHTML=html; }
+  function opcoesModelo(lista,atual){
+    selModelo.innerHTML='';
+    var tem=false;
+    lista.forEach(function(m){
+      var op=document.createElement('option'); op.value=m.id; op.textContent=m.nome+' ('+m.id+')';
+      if(m.id===atual){ op.selected=true; tem=true; }
+      selModelo.appendChild(op);
+    });
+    if(!tem){ var op0=document.createElement('option'); op0.value=atual; op0.textContent=atual; op0.selected=true; selModelo.insertBefore(op0,selModelo.firstChild); }
+  }
+  opcoesModelo([{id:Curso.iaModelo(),nome:Curso.iaModelo()}],Curso.iaModelo());
+  if(Curso.iaChave()){
+    inChave.value=Curso.iaChave();
+    avisoIA(true,'✅ IA ativa neste celular (modelo <b>'+Curso.esc(Curso.iaModelo())+'</b>).');
+    Curso.iaModelos().then(function(l){ opcoesModelo(l,Curso.iaModelo()); },function(){});
+  }
+  selModelo.onchange=function(){
+    Curso.iaDefinir(null,selModelo.value);
+    if(Curso.iaChave()) avisoIA(true,'Modelo trocado para <b>'+Curso.esc(selModelo.value)+'</b>.');
+  };
+  document.getElementById('bt-ia-salvar').onclick=function(){
+    var chave=inChave.value.trim();
+    if(!chave){ avisoIA(false,'Cole a chave primeiro. 🙂'); return; }
+    var anterior=Curso.iaChave();
+    Curso.iaDefinir(chave,selModelo.value);
+    avisoIA(true,'… testando a chave');
+    Curso.iaTestar().then(function(){
+      avisoIA(true,'✅ Funcionou! A IA agora responde dentro das aulas (modelo <b>'+Curso.esc(Curso.iaModelo())+'</b>).');
+      Curso.iaModelos().then(function(l){ opcoesModelo(l,Curso.iaModelo()); },function(){});
+    },function(e){
+      /* chave que não funciona não fica: senão as aulas trocam para um modo quebrado */
+      if(anterior) Curso.iaDefinir(anterior); else Curso.iaLimpar();
+      avisoIA(false,'❌ '+Curso.esc(e&&e.message?e.message:'A chave não funcionou.')+(anterior?' A chave anterior foi mantida.':''));
+    });
+  };
+  document.getElementById('bt-ia-remover').onclick=function(){
+    Curso.iaLimpar(); inChave.value='';
+    opcoesModelo([{id:Curso.iaModelo(),nome:Curso.iaModelo()}],Curso.iaModelo());
+    avisoIA(true,'Chave removida. As tarefas voltam a ir pelo botão "Mandar".');
+  };
 
   if(!Curso.temAluna()){ abrirBoasVindas(); return; }
 
@@ -244,104 +421,6 @@
   document.getElementById('bt-mic').onclick=function(){
     Curso.ouvirMicrofone('hello', this, document.getElementById('diag-mic'));
   };
-
-  /* ---------- backup / restauração ---------- */
-  var msg=document.getElementById('msg-backup');
-  function aviso(ok,html){ msg.className='feedback '+(ok?'ok':'nok'); msg.innerHTML=html; }
-
-  /* compartilhar é o caminho bom no celular: ela escolhe WhatsApp/Drive na hora.
-     Só aparece se o navegador realmente souber compartilhar arquivos. */
-  var btCompartilhar=document.getElementById('bt-compartilhar');
-  if(Curso.podeCompartilhar()){
-    btCompartilhar.hidden=false;
-    document.getElementById('bt-baixar').className='btn secundario pequeno';
-    btCompartilhar.onclick=function(){
-      /* o share vem PRIMEIRO: qualquer coisa antes pode consumir o gesto do usuário */
-      Curso.compartilharBackup().then(function(nome){
-        aviso(true,'✅ Backup <b>'+nome+'</b> enviado. Guarde num lugar que você não perca. 💜');
-      },function(e){
-        var nome=e&&e.name;
-        if(nome==='AbortError'){ aviso(false,'Compartilhamento cancelado. Nada foi perdido.'); return; }
-        /* NotAllowedError / TypeError = este navegador não compartilha arquivos.
-           Não insistimos: escondemos o botão e mandamos ela pelo download. */
-        if(nome==='NotAllowedError'||nome==='TypeError'||nome==='DataError'){
-          Curso.marcarSemCompartilhar();
-          btCompartilhar.hidden=true;
-          aviso(false,'Este celular não deixa compartilhar arquivos pelo navegador. '+
-                      'Sem problema: toque em <b>💾 Baixar arquivo</b> — o backup vai para os Downloads '+
-                      'e de lá você manda para onde quiser. (O botão de compartilhar não vai mais aparecer.)');
-          return;
-        }
-        var motivo=nome?(' ('+nome+(e.message?': '+e.message:'')+')'):'';
-        aviso(false,'Não deu para compartilhar'+motivo+'. Use o "💾 Baixar arquivo" — funciona igual.');
-      });
-    };
-  }
-
-  document.getElementById('bt-baixar').onclick=function(){
-    try{ aviso(true,'✅ Salvo em Downloads como <b>'+Curso.baixarBackup()+'</b>. Mande esse arquivo para você mesma (WhatsApp, Drive, e-mail) para não perder.'); }
-    catch(e){ aviso(false,'Não consegui gerar o arquivo neste navegador. Tente pelo "Compartilhar backup".'); }
-  };
-  var arquivo=document.getElementById('arquivo');
-  document.getElementById('bt-arquivo').onclick=function(){ arquivo.click(); };
-  arquivo.onchange=function(){
-    var f=arquivo.files&&arquivo.files[0];
-    if(!f) return;
-    var leitor=new FileReader();
-    leitor.onload=function(){ restaurar(String(leitor.result||'')); };
-    leitor.onerror=function(){ aviso(false,'Não consegui abrir o arquivo.'); };
-    leitor.readAsText(f);
-  };
-
-  function dataBonita(iso){
-    if(!iso) return '';
-    var p=String(iso).slice(0,10).split('-');
-    return p.length===3 ? p[2]+'/'+p[1]+'/'+p[0] : iso;
-  }
-
-  function restaurar(texto){
-    if(!String(texto).trim()){ aviso(false,'O arquivo está vazio.'); return; }
-
-    /* primeiro olhamos o que tem dentro, sem aplicar nada */
-    var info;
-    try{ info=Curso.inspecionarBackup(texto); }
-    catch(e){ aviso(false,'❌ '+(e&&e.message?e.message:'Não consegui ler o backup.')); return; }
-
-    var pergunta;
-    if(info.outraPessoa){
-      /* pessoas diferentes: misturar produziria um progresso que não é de ninguém.
-         Aqui é substituição, e por isso avisamos com todas as letras. */
-      pergunta='⚠️ ATENÇÃO — este backup é de OUTRA PESSOA!\n\n'+
-        'O backup é de: '+info.aluna+'\n'+
-        'Neste celular o nome é: '+info.nomeAtual+'\n\n'+
-        'Continuar vai APAGAR todo o progresso de '+info.nomeAtual+' neste celular e '+
-        'colocar o de '+info.aluna+' no lugar.\n\n'+
-        'Tem certeza?';
-    }else{
-      pergunta='Restaurar o backup'+(info.aluna?' de '+info.aluna:'')+'?\n\n'+
-        (info.gerado?'Salvo em: '+dataBonita(info.gerado)+'\n':'')+
-        'Aulas concluídas no backup: '+info.concluidas+'\n\n'+
-        'O que estiver mais adiantado aqui é mantido — você não perde nada.';
-    }
-    if(!confirm(pergunta)) { aviso(false,'Restauração cancelada. Nada foi alterado.'); return; }
-
-    if(info.outraPessoa){
-      if(confirm('Antes de apagar: quer salvar um backup do progresso de '+info.nomeAtual+
-                 ' que está neste celular?\n\n(Recomendado — depois é só restaurar quando quiser.)')){
-        try{ Curso.baixarBackup(); }catch(e){}
-      }
-    }
-
-    try{
-      var r=Curso.importarTudo(texto, info.outraPessoa);
-      aviso(true,'✅ '+(r.modo==='substituido'?'Substituído':'Restaurado')+
-            (r.gerado?' (backup de '+dataBonita(r.gerado)+')':'')+': <b>'+
-            r.aulas+' aula(s)</b>'+(r.textos?' e <b>'+r.textos+' texto(s)</b>':'')+'. Recarregando…');
-      setTimeout(function(){ location.reload(); },1800);
-    }catch(e){
-      aviso(false,'❌ '+(e&&e.message?e.message:'Não consegui restaurar.'));
-    }
-  }
 
   /* ---------- a lista de semanas, agrupada nos 4 blocos do curso ----------
      Só o bloco onde ela está estudando começa aberto. Os outros ficam
