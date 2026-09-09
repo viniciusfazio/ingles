@@ -408,6 +408,11 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
 .semana .info b{display:block;font-size:16px}
 .semana .info span{font-size:13px;color:var(--cinza)}
 .semana .seta{color:var(--roxo);font-size:20px}
+.aviso-versao{
+  background:#FFF8E8;border:1px dashed var(--amarelo);border-radius:12px;
+  padding:10px 12px;margin:-4px 0 12px;font-size:14px;line-height:1.45;
+}
+.aviso-versao .acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .dias{display:flex;flex-wrap:wrap;gap:8px;margin:-4px 0 14px;padding-left:6px}
 .dias a{
   text-decoration:none;background:#fff;border:2px solid var(--borda);
@@ -521,6 +526,17 @@ main{padding:16px 14px 40px;max-width:720px;margin:0 auto}
 .missao .cenario p{margin:0 0 8px}
 .missao .dica-tarefa b{color:#C2410C}
 .missao .dica-tarefa .ajuda{display:block;margin-top:8px;font-size:13px;color:var(--cinza)}
+
+/* ---------- explorar (conhecer alguém) e entrevista (alguém quer te conhecer) ---------- */
+.explorar{background:linear-gradient(135deg,#E6F7F1,#E4F0FF);border-color:#A8E0CC}
+.explorar h2{color:#0F766E}
+.explorar .dica-tarefa b{color:#0F766E}
+.entrevista{background:linear-gradient(135deg,#FFF9E0,#EAF4FF);border-color:#F2D98A}
+.entrevista h2{color:#92400E}
+.entrevista .dica-tarefa b{color:#92400E}
+.explorar .cenario,.entrevista .cenario{font-size:16px}
+.explorar .cenario p,.entrevista .cenario p{margin:0 0 8px}
+.explorar .dica-tarefa .ajuda,.entrevista .dica-tarefa .ajuda{display:block;margin-top:8px;font-size:13px;color:var(--cinza)}
 
 /* ---------- foco de pronúncia (bloco de fala) ---------- */
 .foco{

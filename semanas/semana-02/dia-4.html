@@ -12,154 +12,163 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:2, dia:4,
-titulo:"Anna's family",
-subtitulo:"O 's que diz de quem é",
+semana:2,
+dia:4,
+titulo:"Max's family",
+subtitulo:"Dizer de quem é: o 's que gruda no dono",
 objetivos:[
-  "Usar o 's para dizer de quem é uma coisa (Anna's brother)",
-  "Entender de ouvido uma conversa sobre família",
-  "Apresentar a sua família para um adulto que só fala inglês"
+  "Usar o 's para dizer de quem é (Anna's brother)",
+  "Entender um diálogo sobre uma família só de ouvido",
+  "Perguntar e contar como é a família de alguém"
 ],
 blocos:[
 
-{tipo:"gramatica", titulo:"O 's: de quem é",
- html:"<p>Em português a gente diz <b>o irmão da Anna</b>. Em inglês a ordem vira do avesso: primeiro o <b>dono</b>, depois um <code>'s</code>, depois a coisa.</p>"+
- "<table><tr><th>Português</th><th>Inglês</th></tr>"+
- "<tr><td>o irmão da Anna</td><td><code>Anna's brother</code></td></tr>"+
- "<tr><td>a mãe da Emma</td><td><code>Emma's mother</code></td></tr>"+
- "<tr><td>o gato do Leo</td><td><code>Leo's cat</code></td></tr>"+
- "<tr><td>o nome da minha tia</td><td><code>my aunt's name</code></td></tr></table>"+
- "<p>👉 Leia sempre <b>de trás para a frente</b>: <code>Anna's brother</code> = brother (irmão) ... da Anna.</p>"+
- "<p>⚠️ Não confunda com o outro <code>'s</code>, o de <code>She's my sister</code> — aquele é <code>is</code> encurtado. Aqui, depois do <code>'s</code> vem sempre <b>uma coisa ou uma pessoa</b>, nunca um adjetivo.</p>",
+{tipo:"gramatica", titulo:"O 's de quem é: Anna's brother",
+ html:"<p>Ontem você aprendeu <code>his</code> e <code>her</code>, para quando a gente já sabe de quem está falando. E quando você quer <b>dizer o nome</b> do dono?</p>"+
+ "<p>Em português a gente vira a frase: <i>o irmão <b>da</b> Anna</i>. Em inglês, o dono vem <b>na frente</b>, com um <code>'s</code> grudado nele:</p>"+
+ "<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>Anna's brother</code></td><td>o irmão da Anna</td></tr>"+
+ "<tr><td><code>Emma's family</code></td><td>a família da Emma</td></tr>"+
+ "<tr><td><code>my sister's cat</code></td><td>o gato da minha irmã</td></tr>"+
+ "<tr><td><code>my father's mother</code></td><td>a mãe do meu pai (a minha avó!)</td></tr>"+
+ "</table>"+
+ "<p>O truque é ler <b>de trás para frente</b>: <code>Anna's brother</code> → <i>irmão</i> … <i>da Anna</i>.</p>"+
+ "<p>E cuidado com a confusão do dia:</p>"+
+ "<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>her dog</code></td><td>o cachorro dela</td></tr>"+
+ "<tr><td><code>Mia's dog</code></td><td>o cachorro da Mia</td></tr>"+
+ "</table>"+
+ "<p>São as duas maneiras de dizer a mesma coisa: com <code>his</code>/<code>her</code> quando já se sabe quem é, e com <code>'s</code> quando você diz o nome.</p>",
  exemplos:[
-  {en:"Anna's brother is five.", pt:"O irmão da Anna tem cinco anos."},
-  {en:"Emma's mother is very nice.", pt:"A mãe da Emma é muito legal."},
-  {en:"Leo's parents are teachers.", pt:"Os pais do Leo são professores."},
-  {en:"My sister's cat is small.", pt:"O gato da minha irmã é pequeno."},
-  {en:"My grandmother's name is Lia.", pt:"O nome da minha avó é Lia."}
+  {en:"This is Anna's brother.", pt:"Este é o irmão da Anna."},
+  {en:"Emma's mother is a teacher.", pt:"A mãe da Emma é professora."},
+  {en:"My sister's cat is little.", pt:"O gato da minha irmã é pequeno."},
+  {en:"Leo's cousins are twins.", pt:"Os primos do Leo são gêmeos."},
+  {en:"Her grandmother's name is Ruth.", pt:"O nome da avó dela é Ruth."}
  ]},
 
-{tipo:"dialogo", titulo:"🎧 Ouça: na casa da Emma", escuta:true, linhas:[
- {quem:"Emma", en:"Mom, this is Anna. She is my friend.", pt:"Mãe, esta é a Anna. Ela é a minha amiga."},
- {quem:"Rita", en:"Hello, Anna! Nice to meet you.", pt:"Olá, Anna! Prazer em conhecer você.", voz:"f"},
- {quem:"Anna", en:"Nice to meet you too. This is a photo of my family.", pt:"Prazer em conhecer você também. Esta é uma foto da minha família."},
- {quem:"Rita", en:"Your family is big! Who is this man?", pt:"A sua família é grande! Quem é este homem?", voz:"f"},
- {quem:"Anna", en:"He is my father. His name is Marcos.", pt:"Ele é o meu pai. O nome dele é Marcos."},
- {quem:"Rita", en:"And this girl? Is she your sister?", pt:"E esta menina? Ela é a sua irmã?", voz:"f"},
- {quem:"Anna", en:"Yes, she is. Bia is my sister. She is nine.", pt:"Sim, é. A Bia é a minha irmã. Ela tem nove anos."},
- {quem:"Rita", en:"Bia is very nice! And Theo? Is he Bia's brother?", pt:"A Bia é muito legal! E o Theo? Ele é irmão da Bia?", voz:"f"},
- {quem:"Anna", en:"Yes! Theo is Bia's brother and my brother too. He is five.", pt:"Sim! O Theo é irmão da Bia e meu irmão também. Ele tem cinco anos."},
- {quem:"Rita", en:"Your family is wonderful, Anna!", pt:"A sua família é maravilhosa, Anna!", voz:"f"}
+{tipo:"dialogo", titulo:"Ouça: a foto do Max", escuta:true, linhas:[
+ {quem:"Max", en:"Anna, this is my family photo.", pt:"Anna, esta é a foto da minha família."},
+ {quem:"Anna", en:"Nice, Max! Who is the tall woman?", pt:"Legal, Max! Quem é a mulher alta?"},
+ {quem:"Max", en:"She is my mother. Her name is Julia.", pt:"Ela é a minha mãe. O nome dela é Julia."},
+ {quem:"Anna", en:"And the man with the baby?", pt:"E o homem com o bebê?"},
+ {quem:"Max", en:"He is my uncle. The baby is my cousin Nina.", pt:"Ele é o meu tio. O bebê é a minha prima Nina."},
+ {quem:"Anna", en:"Is Nina your sister's baby?", pt:"A Nina é o bebê da sua irmã?"},
+ {quem:"Max", en:"No! Nina is my uncle's baby.", pt:"Não! A Nina é o bebê do meu tio."},
+ {quem:"Anna", en:"OK! And who are these two boys?", pt:"Certo! E quem são estes dois meninos?"},
+ {quem:"Max", en:"They are my brothers. They are twins.", pt:"Eles são os meus irmãos. Eles são gêmeos."},
+ {quem:"Anna", en:"Your family is big and funny!", pt:"A sua família é grande e engraçada!"}
 ]},
 
-{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
- {pergunta:"Who is Rita?", opcoes:["Anna's mother","Emma's mother","Anna's aunt"], correta:1,
-  explicacao:"A Emma diz Mom — a Rita é a mãe dela."},
- {pergunta:"Is Anna's family big?", opcoes:["Yes, it is.","No, it is small.","It is new."], correta:0,
-  explicacao:"A Rita diz Your family is big!"},
- {pergunta:"Who is Marcos?", opcoes:["Emma's father","Anna's father","Anna's brother"], correta:1,
-  explicacao:"He is my father. His name is Marcos — quem fala é a Anna."},
- {pergunta:"How old is Bia?", opcoes:["Five","Eleven","Nine"], correta:2,
-  explicacao:"Bia is my sister. She is nine."},
- {pergunta:"Is Theo Bia's brother?", opcoes:["Yes, he is.","No, he is her cousin.","No, he is her father."], correta:0,
-  explicacao:"Theo is Bia's brother and my brother too."},
- {pergunta:"How old is Theo?", opcoes:["Nine","Two","Five"], correta:2,
-  explicacao:"He is five."}
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"Who is Julia?", opcoes:["Max's mother","Max's aunt","Max's sister"], correta:0,
+  explicacao:"Max diz: She is my mother. Her name is Julia."},
+ {pergunta:"Who is with the baby?", opcoes:["Max's father","Max's uncle","Max's brother"], correta:1,
+  explicacao:"He is my uncle — o homem com o bebê é o tio dele."},
+ {pergunta:"Who is Nina?", opcoes:["Max's cousin","Max's sister","Max's mother"], correta:0,
+  explicacao:"The baby is my cousin Nina."},
+ {pergunta:"How many brothers does Max have?", opcoes:["One","Two","Three"], correta:1,
+  explicacao:"These two boys... They are my brothers — são dois."},
+ {pergunta:"Are Max's brothers twins?", opcoes:["Yes, they are.","No, they are not.","They are cousins."], correta:0,
+  explicacao:"They are twins."},
+ {pergunta:"Is Julia short?", opcoes:["Yes, she is short.","No, she is tall.","She is a baby."], correta:1,
+  explicacao:"Anna pergunta Who is the tall woman? e o Max responde que é a mãe dele."}
 ]},
 
-{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
- {en:"He is my father", pt:"Ele é o meu pai.", dica:"(quatro palavras)"},
- {en:"His name is Marcos", pt:"O nome dele é Marcos.", dica:"(quatro palavras)"},
- {en:"Bia is my sister", pt:"A Bia é a minha irmã.", dica:"(quatro palavras)"},
- {en:"Nice to meet you too", pt:"Prazer em conhecer você também.", dica:"(cinco palavras)"}
+{tipo:"ditado", titulo:"Escute e escreva frases do diálogo", itens:[
+ {en:"She is my mother", pt:"Ela é a minha mãe.", dica:"(quatro palavras)"},
+ {en:"He is my uncle", pt:"Ele é o meu tio.", dica:"(quatro palavras)"},
+ {en:"They are my brothers", pt:"Eles são os meus irmãos.", dica:"(quatro palavras)"},
+ {en:"Nina is my uncle's baby", pt:"A Nina é o bebê do meu tio.", dica:"(cinco palavras — cuidado com o 's)"}
 ]},
 
-{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
- instrucao:"Responda em inglês, com frases completas:<br>1. Who is Rita? (Quem é a Rita?)<br>2. Who is Marcos? (Quem é o Marcos?)<br>3. Is Theo Bia's brother? (O Theo é irmão da Bia?)",
- dica:"<ul><li>uma frase completa para cada pergunta</li><li>nas 1 e 2, use o <b>'s</b> para dizer de quem a pessoa é</li><li>na 3, comece com <b>Yes</b> ou <b>No</b> e continue a frase</li></ul>",
- andaime:"<p>Só o começo — o resto é você:</p><p>She is <span class=\"lacuna\">?</span> mother. · He is <span class=\"lacuna\">?</span> father. · Yes, he <span class=\"lacuna\">?</span>.</p>",
- gabarito:"1. She is Emma's mother. 2. He is Anna's father. 3. Yes, he is (Bia's brother).",
- instrucaoIA:"Ela ouviu um dialogo e devia responder por escrito, em ingles: quem e Rita (a mae da Emma), quem e Marcos (o pai da Anna) e se Theo e irmao da Bia (sim). Vocabulario: mother, father, sister, brother, family, photo, girl, man, e a gramatica do dia: o possessivo com apostrofo s (Emma's mother, Anna's father). Confira principalmente se ela usou o 's no lugar certo.",
- },
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Who is Julia? (Quem é a Julia?)<br>2. Who is Nina? (Quem é a Nina?)<br>3. Are Max's brothers twins? (Os irmãos do Max são gêmeos?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>nas duas primeiras, diga de quem ela é: use o 's ou his</li><li>na 3, responda começando com sim ou não</li></ul>",
+ andaime:"<p>Comece assim: Julia is Max's <span class=\"lacuna\">?</span>. · Nina is his <span class=\"lacuna\">?</span>. · Yes, they <span class=\"lacuna\">?</span> twins.</p>",
+ gabarito:"1. Julia is Max's mother. (Her name is Julia.) 2. Nina is Max's cousin. She is his uncle's baby. 3. Yes, they are twins.",
+ instrucaoIA:"Ela ouviu um dialogo curto e devia responder por escrito: quem e a Julia (a mae do Max), quem e a Nina (a prima do Max, o bebe do tio dele) e se os irmaos do Max sao gemeos (sim). Vocabulario: mother, uncle, cousin, baby, brothers, twins, tall, his, her, o 's de posse. Confira se ela usou o 's ou his corretamente. Corrija em portugues."},
 
-{tipo:"completar", titulo:"De quem é?", ajuda:"Leia a tradução e escolha a forma certa.", itens:[
- {frase:"This is ___ brother.", pt:"Este é o irmão da Anna.", resposta:"Anna's", opcoes:["Anna's","Anna","Annas"],
-  explicacao:"Dono primeiro, com 's: Anna's brother."},
- {frase:"___ mother is very nice.", pt:"A mãe da Emma é muito legal.", resposta:"Emma's", opcoes:["Emma","Emma's","Emmas"],
-  explicacao:"Emma's mother = a mãe da Emma."},
- {frase:"Bia is ___ daughter.", pt:"A Bia é a filha da Carla.", resposta:"Carla's", opcoes:["Carlas","Carla","Carla's"],
-  explicacao:"Carla's daughter = a filha da Carla."},
- {frase:"My ___ name is Nina.", pt:"O nome da minha prima é Nina.", resposta:"cousin's", opcoes:["cousin's","cousins","cousin"],
-  explicacao:"Aqui o dono é a prima: my cousin's name."},
- {frase:"___ father is tall.", pt:"O pai do Leo é alto.", resposta:"Leo's", opcoes:["Leos","Leo","Leo's"],
-  explicacao:"Leo's father = o pai do Leo."},
- {frase:"This is my ___ cat.", pt:"Este é o gato da minha irmã.", resposta:"sister's", opcoes:["sisters","sister's","sister"],
-  explicacao:"my sister's cat = o gato da minha irmã. Sem o 's, sisters seria só o plural."}
+{tipo:"completar", titulo:"Complete com o 's, his ou her", ajuda:"Pense em quem é o dono.", itens:[
+ {frase:"This is ___ brother.", pt:"Este é o irmão da Emma.", resposta:"Emma's",
+  opcoes:["Emma","Emma's","Emmas"], explicacao:"O dono vem na frente com 's: Emma's brother."},
+ {frase:"My ___ cat is little.", pt:"O gato da minha irmã é pequeno.", resposta:"sister's",
+  opcoes:["sister","sister's","sisters"], explicacao:"my sister's cat = o gato da minha irmã."},
+ {frase:"___ dog is big.", pt:"O cachorro do Leo é grande.", resposta:"Leo's",
+  opcoes:["Leo","Leo's","Leos"], explicacao:"Leo's dog = o cachorro do Leo."},
+ {frase:"Ruth is my ___ mother.", pt:"A Ruth é a mãe do meu pai.", resposta:"father's",
+  opcoes:["father","father's","fathers"], explicacao:"my father's mother — ou seja, a minha avó!"},
+ {frase:"Max is my friend. ___ brothers are twins.", pt:"O Max é meu amigo. Os irmãos dele são gêmeos.", resposta:"His",
+  opcoes:["His","Her","He"], explicacao:"O Max é menino, então his brothers."},
+ {frase:"Nina is a baby. ___ mother is my aunt.", pt:"A Nina é um bebê. A mãe dela é a minha tia.", resposta:"Her",
+  opcoes:["His","Her","She"], explicacao:"A Nina é menina, então her mother."}
 ]},
 
 {tipo:"ordenar", titulo:"Monte as frases", itens:[
- {frase:"This is my sister Bia", pt:"Esta é a minha irmã Bia."},
- {frase:"Theo is Bia's brother", pt:"O Theo é irmão da Bia."},
- {frase:"Emma's mother is very nice", pt:"A mãe da Emma é muito legal."},
- {frase:"Her name is Carla", pt:"O nome dela é Carla."}
+ {frase:"This is my mother's dog", pt:"Este é o cachorro da minha mãe."},
+ {frase:"Max's brothers are twins", pt:"Os irmãos do Max são gêmeos."},
+ {frase:"Her grandmother is very kind", pt:"A avó dela é muito gentil."},
+ {frase:"These are my father's photos", pt:"Estas são as fotos do meu pai."}
 ]},
 
-{tipo:"ligar", titulo:"Revisão da semana", pares:[
- {en:"son", pt:"filho"},
- {en:"daughter", pt:"filha"},
- {en:"grandparents", pt:"avós"},
- {en:"children", pt:"crianças"},
- {en:"man", pt:"homem"},
- {en:"woman", pt:"mulher"},
- {en:"tall", pt:"alto, alta"},
- {en:"funny", pt:"engraçado, engraçada"}
+{tipo:"ligar", titulo:"Ligue: como as pessoas são", pares:[
+ {en:"tall", pt:"alta"},
+ {en:"short", pt:"baixa"},
+ {en:"funny", pt:"engraçada"},
+ {en:"kind", pt:"gentil"},
+ {en:"tired", pt:"cansada"},
+ {en:"hungry", pt:"com fome"}
 ]},
 
-{tipo:"missao", titulo:"🎯 Missão da semana: conhecendo a mãe da Emma",
- cenario:"<p>Você foi à casa da <b>Emma</b> pela primeira vez. A mãe dela, a <b>Rita</b>, abre a porta sorrindo e quer muito conhecer você e a sua família. Você está com uma foto no celular.</p><p>A Rita é americana e <b>só entende inglês</b>. Se você falar português, ela vai dizer que não entendeu.</p>",
- personagem:"Rita, a mãe da Emma, 40 anos, calorosa e curiosa; ela é de New York e é professora",
- objetivos:[
-  "cumprimentar a Rita e dizer o seu nome",
-  "apresentar duas pessoas da sua família (This is my... / These are my...)",
-  "dizer o nome de uma delas (His name is... / Her name is...)",
-  "dizer a idade de uma delas",
-  "agradecer e se despedir no fim"
- ],
- andaime:"<p>Se travar: <span class=\"lacuna\">Hello! My name is</span> ... · <span class=\"lacuna\">This is my</span> ... · <span class=\"lacuna\">She is</span> ... years old.</p>",
- instrucaoIA:"Ela sabe: cumprimentos e despedidas da semana 1 (hello, hi, nice to meet you, thank you, goodbye, bye), as palavras de familia (mother, father, mom, dad, sister, brother, son, daughter, baby, grandmother, grandfather, aunt, uncle, cousin, pet, cat, family), man, woman, boy, girl, child, children, person, people, twins, os adjetivos tall, short, young, funny, smart, strong, quiet, friendly, nice, big, small, happy, os numeros ate 20, o verbo to be, This is / These are, o plural com -s, he / she / his / her e o possessivo com apostrofo s. Rita fala frases de 3 a 6 palavras. Ela cumprimenta, pergunta What is your name? Is your family big? Who is this? What is her name? How old is he? e no fim elogia a familia dela. Termine a cena quando os cinco objetivos forem cumpridos ou em oito falas.",
- },
+{tipo:"entrevista", titulo:"A vizinha nova quer conhecer você", perfil:"vizinho", voz:"f",
+ personagem:"Mrs. Green, a vizinha nova, curiosa e alegre, sempre com um cachorro enorme do lado",
+ apresentacao:"<p>Uma senhora acabou de se mudar para a casa ao lado. Ela está no portão com o cachorro e quer saber quem mora com você. Ela <b>só fala inglês</b> — entenda as perguntas dela e responda.</p>",
+ quer:["quantas pessoas tem na família dela","o nome da mãe ou do pai dela","se ela tem irmãos, irmãs ou primos, e como eles são","se a família tem um bicho de estimação, e de quem ele é"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">My family is</span> … · <span class=\"lacuna\">My mother's name is</span> … · <span class=\"lacuna\">My brother is</span> …</p>",
+ instrucaoIA:"Ela sabe: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, mom, dad, aunt, uncle, dog, cat, bird, fish, pet, man, woman, people, child, children, twin, photo, tall, short, funny, kind, little, big, favorite, love, he is / she is, his / her, o 's de posse (Anna's brother), This is / These are, plural com -s, numeros ate 20, e a semana 1. Mrs. Green pergunta UMA coisa por vez, com frases de 3 a 6 palavras (How many people in your family? Is your brother tall?). Se ela nao entender, Mrs. Green pergunta a MESMA coisa de outro jeito ate 3 vezes: mais curta, com exemplo sobre ela mesma (My family is big. Three people. And your family?) ou com opcoes (One? Two? Three?). Depois disso o narrador ajuda em portugues. No fim ela agradece e resume em portugues o que a aluna conseguiu contar."},
+
+{tipo:"missao", titulo:"Missão da semana: o mural My family", cena:"reportagem",
+ cenario:"<p>A sua turma vai montar um mural chamado <b>My family</b>. Cada aluno escreve sobre a família de um colega — e você tirou o <b>Max</b>.</p><p>O Max <b>só entende inglês</b>. Descubra tudo sobre a família dele e conte da sua para ele também.</p>",
+ personagem:"Max, 11 anos, colega de turma, tagarela e muito orgulhoso da família",
+ objetivos:["perguntar quantos irmãos e irmãs o Max tem","perguntar o nome da mãe ou do pai dele","descobrir se ele tem um bicho de estimação e como ele é","contar quem tem na sua família (pelo menos duas pessoas)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">How many brothers do you</span> …? · <span class=\"lacuna\">What's your mother's</span> …? · <span class=\"lacuna\">Do you have a</span> …?</p>",
+ instrucaoIA:"Ela sabe: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, aunt, uncle, dog, cat, bird, fish, pet, man, woman, children, twin, photo, tall, short, funny, kind, little, big, favorite, love, he is / she is, his / her, o 's de posse, This is / These are, plural com -s, How many...?, Do you have...?, numeros ate 20, e a semana 1. A familia do Max: a mae se chama Julia e e alta; ele tem dois irmaos gemeos; a prima dele e um bebe chamado Nina, filha do tio dele; ele tem um cachorro pequeno e muito engracado chamado Pepper. Max responde com frases de 3 a 6 palavras, so com essas palavras, e devolve as mesmas perguntas para ela (And your family? How many brothers?). Se ela escrever em portugues, ele diz que nao entendeu e repete mais devagar. No fim, feche em portugues: elogie, corrija no maximo 3 coisas e mostre uma frase que ela poderia ter usado."},
 
 {tipo:"escrita", titulo:"Hora de escrever", id:"1",
- instrucao:"Escreva <b>4 ou 5 frases</b> contando o que aconteceu na missão: quem você conheceu e o que você contou para ela.",
- dica:"<ul><li>uma frase dizendo <b>quem</b> é a Rita (use o <b>'s</b>!)</li><li>duas ou três frases com o que você contou da sua família</li><li>pelo menos um <b>nome</b> e uma <b>idade</b></li><li>se alguma coisa deu errado na missão, conte também — vale a frase 😄</li></ul>",
- andaime:"<p>O molde é este — quem preenche é você:</p><p>Rita is <span class=\"lacuna\">?</span> mother. I am <span class=\"lacuna\">?</span>. This is my <span class=\"lacuna\">?</span>. <span class=\"lacuna\">?</span> name is <span class=\"lacuna\">?</span>.</p>",
- gabarito:"4 ou 5 frases contando a missão: quem é a Rita (Emma's mother, com o 's), quem ela apresentou da família, pelo menos um nome (His/Her name is...) e uma idade (... is ... years old)",
- instrucaoIA:"Ela devia escrever 4 ou 5 frases contando a missao: ela conheceu a Rita, mae da Emma, e apresentou a familia dela. Vocabulario da semana: palavras de familia, man, woman, boy, girl, child, children, people, twins, tall, short, young, funny, smart, strong, quiet, friendly, photo. Gramatica da semana: This is / These are, plural com -s, he / she / his / her e o possessivo com apostrofo s. Confira principalmente o uso do 's e do his / her."},
+ instrucao:"Escreva <b>4 ou 5 frases</b> em inglês contando o que você descobriu sobre a família do Max na missão. ✍️",
+ dica:"<ul><li>uma frase dizendo quantos irmãos ele tem</li><li>uma frase com o nome da mãe ou do pai dele — use o 's</li><li>uma frase sobre o bicho de estimação dele, dizendo de quem ele é</li><li>uma frase dizendo como é alguém da família dele (alta, engraçada, pequena)</li><li>use pelo menos uma vez his ou her</li></ul>",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>Max's brothers are <span class=\"lacuna\">?</span>.<br>His mother's name is <span class=\"lacuna\">?</span>.<br>His <span class=\"lacuna\">?</span> is little and <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre a familia do Max: o numero de irmaos (dois, gemeos), o nome da mae (Julia) usando Max's mother ou his mother, o bicho de estimacao (o cachorro dele) e pelo menos um adjetivo (tall, funny, little). Precisa aparecer pelo menos um 's ou um his/her usado corretamente.",
+ instrucaoIA:"Ela fez uma missao em que entrevistou o Max sobre a familia dele e agora devia escrever 4 ou 5 frases contando o que descobriu. Vocabulario da aula: o 's de posse (Max's mother), his / her, he is / she is, brother, sister, mother, father, uncle, cousin, baby, twin, dog, pet, tall, short, funny, kind, little, big, plural com -s, numeros. Confira o uso do 's e de his/her. Elogie muito, corrija no maximo 3 coisas e em portugues."},
 
-{tipo:"fala", titulo:"Hora de falar — aquecimento para a missão",
- instrucao:"Ouça e repita em voz alta <b>antes</b> de fazer a missão. Estas são as frases que você vai precisar.",
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e depois teste no 🎤. Estas frases são o aquecimento da missão!",
  frases:[
-  {en:"Hello! My name is Anna.", pt:"Olá! Meu nome é Anna. (troque pelo seu nome!)"},
-  {en:"This is my family.", pt:"Esta é a minha família."},
-  {en:"He is my father. His name is Marcos.", pt:"Ele é o meu pai. O nome dele é Marcos."},
-  {en:"My sister is nine years old.", pt:"A minha irmã tem nove anos."},
-  {en:"Thank you! Goodbye!", pt:"Obrigada! Tchau!"}
+  {en:"This is Max's mother.", pt:"Esta é a mãe do Max."},
+  {en:"His brothers are twins.", pt:"Os irmãos dele são gêmeos."},
+  {en:"Her name is Julia.", pt:"O nome dela é Julia."},
+  {en:"How many brothers do you have?", pt:"Quantos irmãos você tem?"},
+  {en:"My family is big and funny.", pt:"A minha família é grande e engraçada."}
  ],
- instrucaoIA:"Aquecimento para a missao do dia (conhecer a Rita, mae da Emma). Pratique as frases acima. Depois faca 4 a 6 perguntas em ingles para ela responder falando, uma de cada vez, esperando a resposta: What is your name? Is your family big? Who is this in the photo? What is your mother's name? How old is your brother or sister? Corrija em portugues, com carinho. Ela so sabe o verbo to be, This is / These are, o plural, he / she / his / her, o possessivo com apostrofo s e as palavras de familia."},
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues, com atencao ao 's grudado no nome (Max's, mother's) e ao som de z no fim de brothers. Depois faca 4 a 6 perguntas em ingles, uma de cada vez, esperando a resposta FALADA antes da proxima: How many brothers do you have? / What's your mother's name? / Is your father tall? / Do you have a pet? / Who is your favorite person in your family? Corrija em portugues, com carinho. Use so palavras da aula e das aulas anteriores."},
 
-{tipo:"ditado", bonus:true, titulo:"Frases inteiras", itens:[
- {en:"This is my mother and my father", pt:"Esta é a minha mãe e este é o meu pai.", dica:"(sete palavras)"},
- {en:"Her name is Bia and she is nine", pt:"O nome dela é Bia e ela tem nove anos.", dica:"(oito palavras)"},
- {en:"My grandmother is very nice and funny", pt:"A minha avó é muito legal e engraçada.", dica:"(sete palavras)"}
+{tipo:"completar", bonus:true, titulo:"Sem opções: digite o dono certo", itens:[
+ {frase:"This is my ___ photo.", pt:"Esta é a foto da minha avó.", resposta:"grandmother's",
+  explicacao:"my grandmother's photo = a foto da minha avó."},
+ {frase:"___ brothers are twins.", pt:"Os irmãos do Max são gêmeos.", resposta:"Max's",
+  explicacao:"O dono é o Max: Max's brothers."},
+ {frase:"Julia is ___ mother.", pt:"A Julia é a mãe dele.", resposta:"his",
+  explicacao:"Falando do Max, um menino: his mother."},
+ {frase:"The tall woman is ___ mother.", pt:"A mulher alta é a mãe da Emma.", resposta:"Emma's",
+  explicacao:"Com o nome da dona, entra o 's: Emma's mother."}
 ]},
 
-{tipo:"completar", bonus:true, titulo:"Sem opções: escreva o 's", itens:[
- {frase:"This is ___ cat.", pt:"Este é o gato do Leo.", resposta:"Leo's",
-  explicacao:"Dono primeiro, com 's: Leo's cat."},
- {frase:"___ brother is five.", pt:"O irmão da Anna tem cinco anos.", resposta:"Anna's",
-  explicacao:"Anna's brother = o irmão da Anna."},
- {frase:"My ___ name is Rita.", pt:"O nome da minha tia é Rita.", resposta:"aunt's",
-  explicacao:"my aunt's name = o nome da minha tia."}
+{tipo:"ditado", bonus:true, titulo:"Frases inteiras: escute e escreva", itens:[
+ {en:"My father's mother is my grandmother", pt:"A mãe do meu pai é a minha avó.", dica:"(seis palavras)"},
+ {en:"These are my brother's two little cats", pt:"Estes são os dois gatinhos do meu irmão.", dica:"(sete palavras)"},
+ {en:"Her uncle is tall and very funny", pt:"O tio dela é alto e muito engraçado.", dica:"(sete palavras)"}
 ]}
 
 ]});

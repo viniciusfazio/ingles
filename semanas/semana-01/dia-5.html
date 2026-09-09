@@ -12,99 +12,144 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:1, dia:5,
-titulo:"Review + My first presentation",
-subtitulo:"Sexta-feira: revisão da semana e o seu primeiro projeto",
+semana:1,
+dia:5,
+titulo:"Nice to meet you! — revisão e projeto",
+subtitulo:"Juntando a semana toda e gravando a sua primeira apresentação em inglês",
 objetivos:[
-  "Revisar tudo o que você aprendeu na semana 1",
-  "Ouvir e entender a sua primeira história em inglês",
-  "Gravar a sua primeira apresentação em inglês 🎬"
+  "Entender uma história inteira em inglês",
+  "Revisar cumprimentos, números, letras e o verbo TO BE",
+  "Gravar a sua apresentação em inglês"
 ],
 blocos:[
 
-{tipo:"nota", titulo:"🎉 Você chegou na sexta!",
- html:"<p>Em 4 dias você aprendeu a cumprimentar, dizer seu nome, soletrar, contar até 20, usar o verbo TO BE e fazer perguntas. Isso é <b>muita coisa</b>!</p><p>Hoje é dia de revisar e mostrar o que você sabe. No fim tem o <b>Projeto da Semana</b>. 🎬</p>"},
+{tipo:"nota", titulo:"🎉 Você chegou ao fim da primeira semana!",
+ html:"<p>Pare um segundo e veja o tamanho disso: em cinco dias você já sabe <b>cumprimentar</b>, <b>dizer e soletrar o seu nome</b>, <b>contar até 20</b>, <b>perguntar</b> e <b>responder</b> em inglês.</p>"+
+ "<p>Hoje tem uma história engraçada, uma revisão de tudo e o <b>projeto da semana</b>: gravar você se apresentando. Guarde essa gravação — daqui a um ano você vai querer ouvir de novo. 💜</p>"},
 
-{tipo:"historia", titulo:"Ouça a história da Anna", paragrafos:[
- {en:"Hello! My name is Anna. I am eleven years old.", pt:"Olá! Meu nome é Anna. Eu tenho onze anos."},
- {en:"I am Brazilian and I live in a big city.", pt:"Eu sou brasileira e moro em uma cidade grande."},
- {en:"My best friend is Leo. He is eleven too.", pt:"Meu melhor amigo é o Leo. Ele tem onze anos também."},
- {en:"Emma is my new friend. She is American. She is from New York.", pt:"A Emma é minha amiga nova. Ela é americana. Ela é de Nova York."},
- {en:"We are very happy. English is not difficult!", pt:"Nós estamos muito felizes. Inglês não é difícil!"}
+{tipo:"historia", titulo:"Ouça: good night, Miss Kate!", cena:"mal-entendido", paragrafos:[
+ {en:"It is 8 in the morning. Leo is at school.", pt:"São 8 da manhã. O Leo está na escola."},
+ {en:"Leo is very tired. He is not ready.", pt:"O Leo está muito cansado. Ele não está pronto."},
+ {en:"Miss Kate is his teacher. She is nice.", pt:"A Miss Kate é a professora dele. Ela é simpática."},
+ {en:"\"Good night, Miss Kate!\"", pt:"— Boa noite, Miss Kate!"},
+ {en:"The class is happy. \"Good night? It is morning, Leo!\"", pt:"A turma fica feliz. — Boa noite? É de manhã, Leo!"},
+ {en:"Leo is not sad. He is happy, too.", pt:"O Leo não fica triste. Ele fica feliz também."},
+ {en:"\"Good morning, Miss Kate! Sorry!\"", pt:"— Bom dia, Miss Kate! Desculpa!"},
+ {en:"\"Good morning, Leo. Are you tired?\" \"Yes, I am!\"", pt:"— Bom dia, Leo. Você está cansado? — Sim, estou!"}
 ]},
 
-{tipo:"quiz", titulo:"Você entendeu o texto?", questoes:[
- {pergunta:"How old is Anna?", opcoes:["Ten years old.","Eleven years old.","Twelve years old."], correta:1,
-  explicacao:"I am eleven years old = eu tenho onze anos."},
- {pergunta:"Where is Emma from?", opcoes:["Brazil","England","New York"], correta:2,
-  explicacao:"She is from New York."},
- {pergunta:"Who is Anna's best friend?", opcoes:["Emma","Leo","The teacher"], correta:1,
-  explicacao:"My best friend is Leo."},
- {pergunta:"Is Emma Brazilian?", opcoes:["Yes, she is.","No, she isn't. She is American.","Yes, she are."], correta:1,
-  explicacao:"She is American, não brasileira."}
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"Where is Leo?", opcoes:["At school","In class ten","At a new school"], correta:0,
+  explicacao:"A história começa: Leo is at school."},
+ {pergunta:"How is Leo in the morning?", opcoes:["He is very tired.","He is ready.","He is thirsty."], correta:0,
+  explicacao:"Leo is very tired. He is not ready."},
+ {pergunta:"Who is Miss Kate?", opcoes:["His teacher","His friend","A new student"], correta:0,
+  explicacao:"Miss Kate is his teacher."},
+ {pergunta:"Is it morning or night?", opcoes:["Morning","Night","Afternoon"], correta:0,
+  explicacao:"São 8 da manhã — por isso a turma acha graça do good night."},
+ {pergunta:"Is Leo sad?", opcoes:["Yes, he is.","No, he is happy.","He is not here."], correta:1,
+  explicacao:"Leo is not sad. He is happy, too. Ele riu junto!"}
 ]},
 
-{tipo:"quiz", titulo:"Revisão geral da semana", questoes:[
- {pergunta:"São 15h. Você diz:", opcoes:["Good morning","Good afternoon","Good night"], correta:1,
-  explicacao:"Afternoon = tarde (do meio-dia até umas 18h)."},
- {pergunta:"Qual é o número 'thirteen'?", opcoes:["3","13","30"], correta:1,
-  explicacao:"O final -teen indica 13, 14, 15..."},
- {pergunta:"Complete: 'They ___ my friends.'", opcoes:["is","am","are"], correta:2,
-  explicacao:"They usa are."},
- {pergunta:"Como se pergunta a idade?", opcoes:["How old are you?","How are you?","Who are you?"], correta:0,
-  explicacao:"How old = quantos anos."},
- {pergunta:"Alguém diz 'Thank you'. Você responde:", opcoes:["Please","You're welcome","Sorry"], correta:1,
-  explicacao:"You're welcome = de nada."},
- {pergunta:"'I'm not hungry' significa:", opcoes:["Eu estou com fome.","Eu não estou com fome.","Eu estou com sede."], correta:1,
-  explicacao:"not deixa a frase negativa; hungry = com fome."},
- {pergunta:"Qual está ERRADA?", opcoes:["She is my sister.","I am eleven.","He are my friend."], correta:2,
-  explicacao:"He usa IS, não are: He is my friend."},
- {pergunta:"Como se diz 'Prazer em conhecer você'?", opcoes:["See you tomorrow.","Nice to meet you.","How are you?"], correta:1,
-  explicacao:"Nice to meet you é a frase pronta."}
+{tipo:"ditado", titulo:"Escute e escreva o que você ouviu na história", itens:[
+ {en:"Leo is at school", pt:"O Leo está na escola.", dica:"(quatro palavras)"},
+ {en:"Leo is very tired", pt:"O Leo está muito cansado.", dica:"(quatro palavras)"},
+ {en:"Miss Kate is his teacher", pt:"A Miss Kate é a professora dele.", dica:"(cinco palavras)"},
+ {en:"Are you tired", pt:"Você está cansado?", dica:"(três palavras)"}
 ]},
 
-{tipo:"ligar", titulo:"Desafio: ligue tudo!", pares:[
- {en:"See you tomorrow", pt:"Até amanhã"},
- {en:"seventeen", pt:"17"},
- {en:"Where are you from?", pt:"De onde você é?"},
- {en:"thirsty", pt:"com sede"},
- {en:"You're welcome", pt:"De nada"},
- {en:"How do you spell it?", pt:"Como se escreve?"},
- {en:"country", pt:"país"},
- {en:"my teacher", pt:"minha professora"}
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. How is Leo in the morning? (Como o Leo está de manhã?)<br>2. Who is Miss Kate? (Quem é a Miss Kate?)<br>3. Is Leo sad? (O Leo fica triste?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>use <b>he</b> para falar do Leo e <b>she</b> para falar da Miss Kate</li><li>na terceira, responda com a frase inteira, não só com um sim ou não</li></ul>",
+ gabarito:"1. He is (very) tired. 2. She is his teacher. 3. No, he is not sad. He is happy.",
+ instrucaoIA:"Ela ouviu uma historia curta: o Leo, de tao cansado, disse good night as 8 da manha para a professora, e todo mundo riu junto. Ela devia responder por escrito como o Leo esta (tired), quem e a Miss Kate (a professora dele) e se ele fica triste (nao, ele fica feliz). Vocabulario: is, he, she, his, tired, ready, teacher, happy, sad, morning, class."},
+
+{tipo:"quiz", titulo:"Revisão da semana", questoes:[
+ {pergunta:"Alguém diz \"Nice to meet you!\". O que você responde?",
+  opcoes:["Nice to meet you, too!","I am ten.","Good night."], correta:0,
+  explicacao:"too = também. É a resposta mais usada."},
+ {pergunta:"Como se escreve o número 12?", opcoes:["twelve","twelf","twenty"], correta:0,
+  explicacao:"twelve = doze. Cuidado: twenty é vinte."},
+ {pergunta:"Você chega na escola às 8 da manhã. O que você diz?",
+  opcoes:["Good morning!","Good night!","Goodbye!"], correta:0,
+  explicacao:"Good night é só na hora de dormir."},
+ {pergunta:"Qual é a pergunta certa para saber o nome de alguém?",
+  opcoes:["How are you?","What's your name?","Where are you from?"], correta:1,
+  explicacao:"What's your name? = Qual é o seu nome?"},
+ {pergunta:"\"Are you a student?\" — qual é a resposta certa?",
+  opcoes:["Yes, I am.","Yes, I are.","Yes, am I."], correta:0,
+  explicacao:"A resposta sempre volta para o I am."},
+ {pergunta:"O que significa \"Excuse me\"?", opcoes:["Com licença","Obrigada","Até amanhã"], correta:0,
+  explicacao:"Excuse me é para chamar a atenção de alguém com educação."},
+ {pergunta:"Ouça o número e escolha:", audio:"seventeen", opcoes:["17","70","7"], correta:0,
+  explicacao:"seventeen = dezessete. A força da voz vai no fim: sé-ven-TÍN."},
+ {pergunta:"\"Where are you from?\" — qual é a resposta certa?",
+  opcoes:["I am from Brazil.","I am fine.","My name is Anna."], correta:0,
+  explicacao:"where = onde. A resposta é o lugar de onde você é."}
 ]},
 
-{tipo:"ordenar", titulo:"Monte as frases da semana", itens:[
- {frase:"My name is Anna and I am eleven", pt:"Meu nome é Anna e eu tenho onze anos."},
- {frase:"She is not my sister", pt:"Ela não é minha irmã."},
- {frase:"Where do you live", pt:"Onde você mora?"},
- {frase:"Good morning nice to meet you", pt:"Bom dia, prazer em conhecer você."}
+{tipo:"ligar", titulo:"Ligue: a semana inteira", pares:[
+ {en:"hello", pt:"olá"},
+ {en:"good night", pt:"boa noite"},
+ {en:"thank you", pt:"obrigada"},
+ {en:"please", pt:"por favor"},
+ {en:"friend", pt:"amiga"},
+ {en:"teacher", pt:"professora"},
+ {en:"fifteen", pt:"quinze"},
+ {en:"tired", pt:"cansada"}
 ]},
 
-{tipo:"ditado", titulo:"Ditado final da semana", itens:[
- {en:"Nice to meet you", pt:"Prazer em conhecer você."},
- {en:"I am from Brazil", pt:"Eu sou do Brasil."},
- {en:"How old are you", pt:"Quantos anos você tem?"},
- {en:"She is my best friend", pt:"Ela é minha melhor amiga."},
- {en:"Thank you very much", pt:"Muito obrigada."}
-]},
+{tipo:"explorar", titulo:"Quem é a Lily?", perfil:"crianca",
+ personagem:"Lily, 11 anos, chegou de Chicago esta semana, tímida no começo e depois falante",
+ apresentacao:"<p>Uma menina que você nunca viu está sentada sozinha no pátio, com uma mochila enorme. Ela <b>só fala inglês</b>. Vá conversar e descubra quem ela é!</p>",
+ segredos:["o nome dela é Lily, e ela soletra L-I-L-Y quando alguém pergunta","ela é de Chicago e também é nova na escola","ela está na turma número sete","ela está com fome e com sede, porque perdeu a hora do lanche","surpresa: a melhor amiga dela mora no Brasil e se chama Ana"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">Hello! What's your</span> …? · <span class=\"lacuna\">Where are you</span> …? · <span class=\"lacuna\">Are you</span> …?</p>",
+ instrucaoIA:"Ela sabe: cumprimentos, What's your name?, My name is..., Nice to meet you, How are you?, I'm fine, I'm great, And you?, I am / I'm, you are, Are you...?, Yes I am, No I'm not, Where are you from?, I'm from..., This is my friend, See you tomorrow, Excuse me, Sorry I don't understand, Again please, Slowly please, o alfabeto, os numeros ate twenty, student, teacher, girl, boy, friend, class, number, here, new, happy, sad, tired, hungry, thirsty, ready. Lily responde com frases de 3 a 6 palavras, curtinhas, e deixa ganchos (My friend is from Brazil.) para ela continuar perguntando. Devolve perguntas faceis. Quando ela disser bye, conte em portugues o que ela descobriu e o que ficou escondido. Nao use nenhuma palavra fora dessa lista."},
 
-{tipo:"escrita", titulo:"🎬 PROJETO DA SEMANA 1 — All about me", id:"projeto",
- instrucao:"Escreva o <b>seu</b> texto de apresentação em inglês, de 6 a 8 frases. Você já sabe tudo o que precisa — este é o seu projeto da semana, então faça sem colar. 💪",
- dica:"<ul><li>um cumprimento</li><li>o seu nome</li><li>a sua idade</li><li>a sua nacionalidade</li><li>a cidade onde você mora</li><li>uma pessoa importante para você (e uma frase sobre ela)</li><li>como você está se sentindo hoje</li></ul>Se travar em alguma parte, escreva as outras e deixe essa para o fim. A história da Anna, aqui em cima, tem o mesmo assunto — mas escreva com as <b>suas</b> informações.",
- gabarito:"6 a 8 frases cobrindo cumprimento, nome, idade (I am ... years old), nacionalidade (I am Brazilian), cidade (I live in ...), uma pessoa com uma frase usando he/she is, e um sentimento (I am happy/tired/...)",
- instrucaoIA:"PROJETO FINAL DA SEMANA 1. Ela devia escrever um texto de 6 a 8 frases se apresentando: cumprimento, nome, idade, nacionalidade, onde mora, uma pessoa importante para ela, e como está se sentindo. Conteúdo da semana: cumprimentos, alfabeto, números 0-20, verbo to be (am/is/are + formas curtas + not), perguntas (what/where/who/how old/Are you...?), países e nacionalidades, adjetivos (happy, sad, tired, hungry, thirsty, big, small, nice). Corrija com carinho e, no final, diga em uma frase se ela está pronta para a Semana 2."},
+{tipo:"missao", titulo:"Missão: apresentar a amiga nova", cena:"apresentar-outro",
+ cenario:"<p>A Lily é nova na escola e ainda não conhece ninguém. Você resolveu levá-la até a <b>Miss Kate</b>, a professora, para apresentar.</p><p>A Miss Kate <b>só entende inglês</b>. Apresente a sua amiga para ela!</p>",
+ personagem:"Miss Kate, a professora da turma, calma e muito simpática",
+ objetivos:["cumprimentar a Miss Kate em inglês","apresentar a Lily com a frase This is my friend...","dizer de onde a Lily é e como ela está hoje"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Good morning! This is my</span> … · <span class=\"lacuna\">She is from</span> … · <span class=\"lacuna\">She is</span> …</p>",
+ instrucaoIA:"Ela sabe: cumprimentos, This is my friend, My name is..., Nice to meet you, How are you?, I am / I'm, is, she is, Are you...?, Yes I am, No I'm not, Where are you from?, I'm from..., student, teacher, girl, friend, class, number, here, new, happy, sad, tired, hungry, thirsty, ready, os numeros ate twenty e o alfabeto. A amiga se chama Lily, e de Chicago e esta com fome. Miss Kate fala frases de 3 a 6 palavras, cumprimenta, pergunta o nome da amiga (What's her name?) e de onde ela e, e pede para soletrar o nome se nao entender. Nao use nenhuma palavra fora dessa lista."},
 
-{tipo:"fala", titulo:"🎤 Grave a sua apresentação",
- instrucao:"Agora leia em voz alta o <b>seu próprio texto</b>, aquele que você acabou de escrever. Antes, aqueça a boca com as palavras mais difíceis da semana — elas são cascudas! 😄 Depois <b>grave um vídeo de 30 segundos</b> se apresentando em inglês para mostrar para a família. 💜",
+{tipo:"escrita", titulo:"⭐ Projeto da semana: a sua apresentação", id:"1",
+ instrucao:"Escreva a sua <b>apresentação em inglês</b>, com <b>4 ou 5 frases</b>. É o texto que você vai gravar no fim da aula — capriche, porque ele é seu. 🎬",
+ dica:"<ul><li>um cumprimento e o seu nome (soletre-o na hora de gravar!)</li><li>de onde você é</li><li>uma frase dizendo que você é aluna e a sua turma ou um número</li><li>uma frase dizendo como você está hoje</li><li>uma despedida</li></ul>Escreva sozinha, sem olhar as outras aulas. Você consegue. 💜",
+ gabarito:"4 ou 5 frases de apresentacao, com: cumprimento, My name is..., I'm from..., I am a student (ou a turma/um numero), como ela esta (I'm fine / happy / great) e uma despedida. Tudo com I am / I'm no lugar certo.",
+ instrucaoIA:"Este e o PROJETO da semana 1: ela devia escrever a propria apresentacao em 4 ou 5 frases para gravar. Vocabulario da semana: cumprimentos, What's your name?, My name is..., Nice to meet you, How are you?, I'm fine / great, I am / I'm, Where are you from?, I'm from..., student, teacher, girl, boy, friend, class, number, here, new, happy, sad, tired, hungry, thirsty, ready, o alfabeto e os numeros ate twenty. Elogie muito: e a primeira semana de ingles dela. Corrija no maximo 3 coisas, em portugues, e diga uma frase que ela poderia acrescentar da proxima vez."},
+
+{tipo:"fala", titulo:"🎬 Hora de gravar a apresentação",
+ instrucao:"Aqueça a boca com as frases abaixo, teste no 🎤 e depois grave a sua apresentação inteira, do começo ao fim.",
+ foco:"o <b>h</b> de <i>hello</i>, <i>happy</i> e <i>here</i>: é um <b>sopro</b> curtinho, nunca o R de <i>rato</i>. E o <b>th</b> de <i>thank you</i> e <i>three</i> sai com a língua entre os dentes.",
  frases:[
-  {en:"Brazilian", pt:"brasileira — três pedaços: bra-ZÍ-li-an"},
-  {en:"eleven", pt:"onze — i-LÉ-ven (o L é bem leve)"},
-  {en:"thirteen", pt:"treze — a língua vai ENTRE os dentes: FÊR-tin"},
-  {en:"Nice to meet you.", pt:"Prazer em conhecer você."},
-  {en:"Thank you very much!", pt:"Muito obrigada!"}
+  {en:"Hello! My name is Anna.", pt:"Olá! Meu nome é Anna."},
+  {en:"I'm from Brazil.", pt:"Eu sou do Brasil."},
+  {en:"I am a student.", pt:"Eu sou aluna."},
+  {en:"I'm happy today.", pt:"Eu estou feliz hoje."},
+  {en:"Thank you! Goodbye!", pt:"Obrigada! Tchau!"}
  ],
- instrucaoIA:"APRESENTAÇÃO FINAL DA SEMANA 1. Peça para ela falar por áudio o texto de apresentação dela (nome, idade, nacionalidade, onde mora, um amigo, como se sente). Depois corrija a pronúncia com carinho, dê 1 a 5 estrelas e faça 3 perguntas fáceis em inglês sobre ela para ela responder falando."}
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues, com atencao ao h (sopro, nao R) e ao th (lingua entre os dentes). Depois faca 4 a 6 perguntas em ingles, uma de cada vez, esperando a resposta FALADA dela: What's your name? / Can you spell it? / Where are you from? / Are you a student? / How are you today? / Are you happy? No fim, peca que ela fale a apresentacao inteira de uma vez so, sem parar, e elogie. Use so estas palavras: name, spell, where, from, are you, student, teacher, friend, happy, tired, ready, how, today."},
+
+{tipo:"ligar", bonus:true, titulo:"Cuidado: pares parecidos", pares:[
+ {en:"I am", pt:"eu sou"},
+ {en:"You are", pt:"você é"},
+ {en:"Are you...?", pt:"Você é...? (a pergunta)"},
+ {en:"Yes, I am.", pt:"Sim, eu sou."},
+ {en:"No, I'm not.", pt:"Não, eu não sou."},
+ {en:"thirteen", pt:"treze"},
+ {en:"fourteen", pt:"quatorze"},
+ {en:"fifteen", pt:"quinze"}
+]},
+
+{tipo:"quiz", bonus:true, titulo:"Detetive: o que dá para descobrir?", questoes:[
+ {pergunta:"Why is Leo not ready in the morning?", opcoes:["He is very tired.","He is happy.","He is a teacher."], correta:0,
+  explicacao:"A história não explica, mas dá para concluir: ele está cansado demais."},
+ {pergunta:"Is Leo sad with the class?", opcoes:["No, he is happy, too.","Yes, he is very sad.","He is not here."], correta:0,
+  explicacao:"Leo is not sad. He is happy, too. Ele riu junto com a turma."},
+ {pergunta:"Is Miss Kate a good teacher?", opcoes:["Yes, she is nice to Leo.","No, she is not nice.","She is a student."], correta:0,
+  explicacao:"Ela não briga com o Leo: responde good morning e pergunta se ele está cansado."}
+]}
 
 ]});
 </script>

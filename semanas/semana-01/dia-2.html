@@ -12,139 +12,195 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:1, dia:2,
-titulo:"The alphabet and numbers",
-subtitulo:"Soletrar o seu nome e contar até 20",
+semana:1,
+dia:2,
+titulo:"A, B, C... one, two, three!",
+subtitulo:"O alfabeto, os números de 0 a 10 e a sua primeira regra: I am",
 objetivos:[
-  "Dizer as 26 letras do alfabeto em inglês",
-  "Soletrar o seu nome quando alguém perguntar",
-  "Contar de 0 a 20"
+  "Soletrar o seu nome em inglês",
+  "Contar de 0 a 10",
+  "Falar de você usando I am / I'm"
 ],
 blocos:[
 
-{tipo:"nota", titulo:"🔤 Por que aprender o alfabeto?",
- html:"<p>Em inglês, as letras têm <b>nomes diferentes</b> do português. O <b>A</b> vira \"ei\", o <b>E</b> vira \"ii\"... Isso confunde no começo!</p><p>Você vai precisar disso sempre que alguém pedir: <i>\"How do you spell your name?\"</i> (Como se escreve o seu nome?)</p>"},
+{tipo:"nota", titulo:"🔤 O alfabeto em inglês",
+ html:"<p>As letras são as mesmas do português — o que muda é o <b>nome</b> de cada uma. Leia em voz alta:</p>"+
+ "<table>"+
+ "<tr><td><code>A</code> /ÊI/</td><td><code>B</code> /BÍ/</td><td><code>C</code> /SÍ/</td><td><code>D</code> /DÍ/</td></tr>"+
+ "<tr><td><code>E</code> /Í/</td><td><code>F</code> /ÉF/</td><td><code>G</code> /DJÍ/</td><td><code>H</code> /ÊI-tch/</td></tr>"+
+ "<tr><td><code>I</code> /ÁI/</td><td><code>J</code> /DJÊI/</td><td><code>K</code> /KÊI/</td><td><code>L</code> /ÉL/</td></tr>"+
+ "<tr><td><code>M</code> /ÉM/</td><td><code>N</code> /ÉN/</td><td><code>O</code> /ÔU/</td><td><code>P</code> /PÍ/</td></tr>"+
+ "<tr><td><code>Q</code> /KIÚ/</td><td><code>R</code> /ÁR/</td><td><code>S</code> /ÉS/</td><td><code>T</code> /TÍ/</td></tr>"+
+ "<tr><td><code>U</code> /IÚ/</td><td><code>V</code> /VÍ/</td><td><code>W</code> /DÁ-bol-iu/</td><td><code>X</code> /ÉKS/</td></tr>"+
+ "<tr><td><code>Y</code> /UÁI/</td><td><code>Z</code> /ZÍ/</td><td></td><td></td></tr>"+
+ "</table>"+
+ "<p><b>As cinco que mais enganam:</b> <b>A</b> é /ÊI/ (não é /á/), <b>E</b> é /Í/, <b>I</b> é /ÁI/, <b>G</b> é /DJÍ/ e <b>H</b> é /ÊI-tch/.</p>"+
+ "<p>Quando alguém pede <code>Can you spell it?</code> (Você pode soletrar?), é a sua hora de dizer as letras do seu nome, uma por uma.</p>"+
+ "<p>Soletre o seu nome agora, em voz alta, letra por letra. 😄</p>"},
 
-{tipo:"vocab", titulo:"O alfabeto (parte 1)", itens:[
- {en:"A", pt:"lê-se: ÊI", emoji:"🅰️"},
- {en:"B", pt:"lê-se: BI", emoji:"🅱️"},
- {en:"C", pt:"lê-se: SI", emoji:"©️"},
- {en:"D", pt:"lê-se: DI", emoji:"🇩"},
- {en:"E", pt:"lê-se: II", emoji:"📧"},
- {en:"F", pt:"lê-se: ÉF", emoji:"🇫"},
- {en:"G", pt:"lê-se: DJI", emoji:"🇬"},
- {en:"H", pt:"lê-se: ÊITCH", emoji:"♓"},
- {en:"I", pt:"lê-se: AI", emoji:"ℹ️"},
- {en:"J", pt:"lê-se: DJÊI", emoji:"🇯"},
- {en:"K", pt:"lê-se: KÊI", emoji:"🇰"},
- {en:"L", pt:"lê-se: ÉL", emoji:"🇱"},
- {en:"M", pt:"lê-se: ÉM", emoji:"Ⓜ️"}
+{tipo:"vocab", titulo:"Números de 0 a 10", itens:[
+ {en:"zero", pt:"zero", ipa:"/ZÍ-rou/", emoji:"0️⃣"},
+ {en:"one", pt:"um", ipa:"/UÁN/", emoji:"1️⃣"},
+ {en:"two", pt:"dois", ipa:"/TÚ/", emoji:"2️⃣"},
+ {en:"three", pt:"três", ipa:"/FRÍ/", emoji:"3️⃣"},
+ {en:"four", pt:"quatro", ipa:"/FÓR/", emoji:"4️⃣"},
+ {en:"five", pt:"cinco", ipa:"/FÁIV/", emoji:"5️⃣"},
+ {en:"six", pt:"seis", ipa:"/SÍKS/", emoji:"6️⃣"},
+ {en:"seven", pt:"sete", ipa:"/SÉ-ven/", emoji:"7️⃣"},
+ {en:"eight", pt:"oito", ipa:"/ÊIT/", emoji:"8️⃣"},
+ {en:"nine", pt:"nove", ipa:"/NÁIN/", emoji:"9️⃣"},
+ {en:"ten", pt:"dez", ipa:"/TÉN/", emoji:"🔟"}
 ]},
 
-{tipo:"vocab", titulo:"O alfabeto (parte 2)", itens:[
- {en:"N", pt:"lê-se: ÉN", emoji:"🇳"},
- {en:"O", pt:"lê-se: ÔU", emoji:"⭕"},
- {en:"P", pt:"lê-se: PI", emoji:"🅿️"},
- {en:"Q", pt:"lê-se: KIÚ", emoji:"👑"},
- {en:"R", pt:"lê-se: ÁR", emoji:"®️"},
- {en:"S", pt:"lê-se: ÉS", emoji:"💲"},
- {en:"T", pt:"lê-se: TI", emoji:"🇹"},
- {en:"U", pt:"lê-se: IÚ", emoji:"🇺"},
- {en:"V", pt:"lê-se: VI", emoji:"✌️"},
- {en:"W", pt:"lê-se: DÁBOL-IÚ", emoji:"〰️"},
- {en:"X", pt:"lê-se: ÉKS", emoji:"❌"},
- {en:"Y", pt:"lê-se: UÁI", emoji:"🇾"},
- {en:"Z", pt:"lê-se: ZI (nos EUA)", emoji:"💤"}
+{tipo:"vocab", titulo:"Quem é quem na escola", itens:[
+ {en:"girl", pt:"menina", ipa:"/GUÊRL/", emoji:"👧"},
+ {en:"boy", pt:"menino", ipa:"/BÓI/", emoji:"👦"},
+ {en:"friend", pt:"amiga, amigo", ipa:"/FRÉND/", emoji:"🧑‍🤝‍🧑"},
+ {en:"teacher", pt:"professora, professor", ipa:"/TÍ-tcher/", emoji:"👩‍🏫"},
+ {en:"student", pt:"aluna, aluno", ipa:"/STIÚ-dent/", emoji:"🎒"},
+ {en:"class", pt:"turma, aula", ipa:"/KLÉS/", emoji:"🏫"},
+ {en:"number", pt:"número", ipa:"/NÂM-ber/", emoji:"#️⃣"},
+ {en:"here", pt:"aqui", ipa:"/HÍR/", emoji:"📍"}
 ]},
 
-{tipo:"vocab", titulo:"Números 0 a 20", itens:[
- {en:"zero", pt:"0", emoji:"0️⃣"},
- {en:"one", pt:"1 — lê-se: UÂN", emoji:"1️⃣"},
- {en:"two", pt:"2 — lê-se: TU", emoji:"2️⃣"},
- {en:"three", pt:"3 — lê-se: FRI", emoji:"3️⃣"},
- {en:"four", pt:"4 — lê-se: FÓR", emoji:"4️⃣"},
- {en:"five", pt:"5 — lê-se: FÁIV", emoji:"5️⃣"},
- {en:"six", pt:"6 — lê-se: SÍKS", emoji:"6️⃣"},
- {en:"seven", pt:"7 — lê-se: SÉ-ven", emoji:"7️⃣"},
- {en:"eight", pt:"8 — lê-se: ÊIT", emoji:"8️⃣"},
- {en:"nine", pt:"9 — lê-se: NÁIN", emoji:"9️⃣"},
- {en:"ten", pt:"10 — lê-se: TÉN", emoji:"🔟"},
- {en:"eleven", pt:"11", emoji:"1️⃣1️⃣"},
- {en:"twelve", pt:"12", emoji:"1️⃣2️⃣"},
- {en:"thirteen", pt:"13", emoji:"1️⃣3️⃣"},
- {en:"fourteen", pt:"14", emoji:"1️⃣4️⃣"},
- {en:"fifteen", pt:"15", emoji:"1️⃣5️⃣"},
- {en:"sixteen", pt:"16", emoji:"1️⃣6️⃣"},
- {en:"seventeen", pt:"17", emoji:"1️⃣7️⃣"},
- {en:"eighteen", pt:"18", emoji:"1️⃣8️⃣"},
- {en:"nineteen", pt:"19", emoji:"1️⃣9️⃣"},
- {en:"twenty", pt:"20", emoji:"2️⃣0️⃣"}
-]},
-
-{tipo:"gramatica", titulo:"Soletrando o seu nome",
- html:"<p>Quando alguém não entende o seu nome, pergunta:</p>"+
- "<table><tr><th>Pergunta</th><th>Resposta</th></tr>"+
- "<tr><td><code>How do you spell it?</code><br>Como se escreve?</td><td><code>A - N - N - A</code></td></tr>"+
- "<tr><td><code>Can you spell your name?</code><br>Você pode soletrar seu nome?</td><td><code>Sure! L - E - O</code></td></tr></table>"+
- "<p>💡 De 13 a 19, todos os números terminam em <code>-teen</code>. Repare: <b>thir</b>teen, <b>four</b>teen, <b>fif</b>teen...</p>",
+{tipo:"gramatica", titulo:"I am / I'm — falando de você",
+ html:"<p>Em inglês, para falar de você mesma, existe uma palavrinha que anda <b>sempre</b> com o <code>I</code>: é o <code>am</code>.</p>"+
+ "<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I am</code></td><td>eu sou / eu estou</td></tr>"+
+ "<tr><td><code>I'm</code></td><td>a mesma coisa, só que curtinho</td></tr>"+
+ "</table>"+
+ "<p>Repare: em inglês o <code>I</code> é <b>sempre</b> maiúsculo, no meio da frase também.</p>"+
+ "<p>E olha que legal: <b>ser</b> e <b>estar</b> são a mesma palavra em inglês. <code>I am fine</code> serve para \"eu estou bem\" e <code>I am a student</code> para \"eu sou aluna\".</p>",
  exemplos:[
-  {en:"How do you spell your name?", pt:"Como você escreve o seu nome?"},
-  {en:"My name is Bia. B - I - A.", pt:"Meu nome é Bia. B - I - A."},
-  {en:"I am eleven years old.", pt:"Eu tenho onze anos."},
-  {en:"My house is number seven.", pt:"Minha casa é o número sete."},
-  {en:"Count with me: one, two, three!", pt:"Conte comigo: um, dois, três!"}
+  {en:"I am Anna.", pt:"Eu sou a Anna."},
+  {en:"I'm a student.", pt:"Eu sou aluna."},
+  {en:"I am from Brazil.", pt:"Eu sou do Brasil."},
+  {en:"I'm your friend.", pt:"Eu sou sua amiga."},
+  {en:"I'm here!", pt:"Eu estou aqui!"}
  ]},
 
-{tipo:"quiz", titulo:"Qual é o número?", questoes:[
- {pergunta:"Ouça e escolha o número:", audio:"twelve", opcoes:["2","12","20"], correta:1,
-  explicacao:"twelve = 12. Cuidado: two = 2 e twenty = 20."},
- {pergunta:"Ouça e escolha o número:", audio:"seventeen", opcoes:["7","17","70"], correta:1,
-  explicacao:"seventeen tem o -teen no final = 17."},
- {pergunta:"Quanto é five + three?", opcoes:["eight","seven","nine"], correta:0,
-  explicacao:"5 + 3 = 8 = eight."},
- {pergunta:"Quanto é twenty - ten?", opcoes:["one","ten","twelve"], correta:1,
-  explicacao:"20 - 10 = 10 = ten."},
- {pergunta:"Como se lê a letra W?", opcoes:["VI","DÁBOL-IÚ","UÁI"], correta:1,
-  explicacao:"W = double u = DÁBOL-IÚ. É a letra com o nome mais comprido!"}
+{tipo:"dialogo", titulo:"Ouça: o aluno novo", escuta:true, linhas:[
+ {quem:"Leo", en:"Good morning! My name is Leo.", pt:"Bom dia! Meu nome é Leo."},
+ {quem:"Anna", en:"Good morning, Leo! I am Anna.", pt:"Bom dia, Leo! Eu sou a Anna."},
+ {quem:"Leo", en:"I am a new student here.", pt:"Eu sou um aluno novo aqui."},
+ {quem:"Anna", en:"Nice to meet you! I am in class five.", pt:"Prazer em conhecer você! Eu estou na turma cinco."},
+ {quem:"Leo", en:"I am in class five, too!", pt:"Eu estou na turma cinco também!"},
+ {quem:"Anna", en:"Great! How are you?", pt:"Ótimo! Como você está?"},
+ {quem:"Leo", en:"I am fine, thank you. And you?", pt:"Eu estou bem, obrigado. E você?"},
+ {quem:"Anna", en:"I am great! My friend Emma is here, too.", pt:"Eu estou ótima! A minha amiga Emma está aqui também."},
+ {quem:"Leo", en:"Nice! Goodbye, Anna. Thank you!", pt:"Legal! Tchau, Anna. Obrigado!"},
+ {quem:"Anna", en:"Goodbye, Leo!", pt:"Tchau, Leo!"}
 ]},
 
-{tipo:"completar", titulo:"Escreva o número por extenso", ajuda:"Escreva o número em inglês, com letras.", itens:[
- {frase:"3 = ___", pt:"três", resposta:"three", explicacao:"three — a língua vai entre os dentes: FRI."},
- {frase:"8 = ___", pt:"oito", resposta:"eight", explicacao:"eight — escreve-se com GH mudo, lê-se ÊIT."},
- {frase:"11 = ___", pt:"onze", resposta:"eleven"},
- {frase:"15 = ___", pt:"quinze", resposta:"fifteen", explicacao:"Cuidado: NÃO é fiveteen, é fifteen."},
- {frase:"20 = ___", pt:"vinte", resposta:"twenty"}
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"Who is the new student?", opcoes:["Anna","Leo","Emma"], correta:1,
+  explicacao:"Ele diz: I am a new student here."},
+ {pergunta:"What class is Leo in?", opcoes:["Class five","Class nine","Class two"], correta:0,
+  explicacao:"Ele diz: I am in class five, too."},
+ {pergunta:"Is Anna in class five, too?", opcoes:["Yes, she is.","No, she is not.","She is a teacher."], correta:0,
+  explicacao:"A Anna fala primeiro: I am in class five."},
+ {pergunta:"Who is Anna's friend?", opcoes:["Emma","Leo","Kate"], correta:0,
+  explicacao:"Ela diz: My friend Emma is here, too."},
+ {pergunta:"How is Anna?", opcoes:["She is great.","She is not fine.","She is a teacher."], correta:0,
+  explicacao:"Ela responde: I am great!"}
 ]},
 
-{tipo:"ditado", titulo:"Escute e escreva o número", itens:[
- {en:"six", pt:"6"},
- {en:"nineteen", pt:"19"},
- {en:"fourteen", pt:"14"},
- {en:"ten", pt:"10"}
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"My name is Leo", pt:"Meu nome é Leo.", dica:"(quatro palavras)"},
+ {en:"I am a new student", pt:"Eu sou um aluno novo.", dica:"(cinco palavras)"},
+ {en:"I am in class five", pt:"Eu estou na turma cinco.", dica:"(cinco palavras)"},
+ {en:"How are you", pt:"Como você está?", dica:"(três palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Who is the new student? (Quem é o aluno novo?)<br>2. What class is Leo in? (Em que turma o Leo está?)<br>3. Who is Anna's friend? (Quem é a amiga da Anna?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>comece as respostas com o nome da pessoa</li><li>use <b>is</b> para falar de outra pessoa</li></ul>",
+ andaime:"<p>Comece assim: Leo is <span class=\"lacuna\">?</span>. · He is in <span class=\"lacuna\">?</span>. · <span class=\"lacuna\">?</span> is Anna's friend.</p>",
+ gabarito:"1. Leo is the new student. 2. He is in class five. 3. Emma is Anna's friend.",
+ instrucaoIA:"Ela ouviu um dialogo curto e devia responder por escrito quem e o aluno novo (Leo), em que turma ele esta (class five) e quem e a amiga da Anna (Emma). Vocabulario: I am, is, new, student, class, friend, here, numeros de 0 a 10."},
+
+{tipo:"quiz", titulo:"Ouça e escolha", questoes:[
+ {pergunta:"Que letra é esta?", audio:"G", opcoes:["G","J","Z"], correta:0,
+  explicacao:"G é /DJÍ/. O J é /DJÊI/ — bem parecidos!"},
+ {pergunta:"Que letra é esta?", audio:"A", opcoes:["E","A","I"], correta:1,
+  explicacao:"A é /ÊI/ em inglês."},
+ {pergunta:"Que letra é esta?", audio:"H", opcoes:["H","W","Y"], correta:0,
+  explicacao:"H é /ÊI-tch/."},
+ {pergunta:"Que número é este?", audio:"nine", opcoes:["5","9","4"], correta:1,
+  explicacao:"nine = nove."},
+ {pergunta:"Que número é este?", audio:"three", opcoes:["3","10","2"], correta:0,
+  explicacao:"three = três, com a língua entre os dentes."},
+ {pergunta:"Que número é este?", audio:"seven", opcoes:["6","7","8"], correta:1,
+  explicacao:"seven = sete."}
+]},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Nas três últimas você digita o número por extenso.", itens:[
+ {frase:"I ___ a student.", pt:"Eu sou aluna.", resposta:"am",
+  opcoes:["am","is","are"], explicacao:"Com I é sempre am."},
+ {frase:"___ name is Emma.", pt:"Meu nome é Emma.", resposta:"My",
+  opcoes:["My","I","Am"], explicacao:"my = meu, minha."},
+ {frase:"I'm your ___.", pt:"Eu sou sua amiga.", resposta:"friend",
+  opcoes:["friend","fine","five"], explicacao:"friend = amiga. Cuidado para não confundir com fine e five!"},
+ {frase:"5 = ___", pt:"cinco", resposta:"five"},
+ {frase:"8 = ___", pt:"oito", resposta:"eight"},
+ {frase:"10 = ___", pt:"dez", resposta:"ten"}
 ]},
 
 {tipo:"ordenar", titulo:"Monte as frases", itens:[
- {frase:"How do you spell your name", pt:"Como você escreve o seu nome?"},
- {frase:"I am eleven years old", pt:"Eu tenho onze anos."}
+ {frase:"I am a new student", pt:"Eu sou uma aluna nova."},
+ {frase:"My name is Leo", pt:"Meu nome é Leo."},
+ {frase:"I am in class five", pt:"Eu estou na turma cinco."},
+ {frase:"Good morning I am Anna", pt:"Bom dia, eu sou a Anna."}
 ]},
 
+{tipo:"entrevista", titulo:"A carteirinha da biblioteca", perfil:"bibliotecario",
+ personagem:"Miss Rose, a bibliotecária da escola, calma e muito paciente",
+ apresentacao:"<p>Você foi fazer a <b>carteirinha da biblioteca</b>. A Miss Rose precisa preencher a ficha, mas ela <b>só fala inglês</b>. Entenda o que ela pergunta e responda!</p>",
+ quer:["o nome dela","como se soletra esse nome, letra por letra","como ela está hoje","um número de 1 a 10 para a carteirinha"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">My name is</span> … · <span class=\"lacuna\">I'm</span> … · Sorry? <span class=\"lacuna\">Again, please</span>.</p>",
+ instrucaoIA:"Ela sabe: hello, good morning, What's your name?, My name is..., Nice to meet you, How are you?, I'm fine, I'm great, thank you, please, o alfabeto (para soletrar) e os numeros de zero a ten. Miss Rose pergunta UMA coisa por vez, com frases de 3 a 6 palavras. Se ela nao entender, Miss Rose pergunta a mesma coisa de outro jeito (mais curto, dando um exemplo sobre ela mesma, ou oferecendo duas opcoes) ate 3 vezes. Nao use nenhuma palavra fora dessa lista."},
+
+{tipo:"missao", titulo:"Missão: na secretaria da escola", cena:"escola",
+ cenario:"<p>Você chegou na escola e precisa se apresentar na <b>secretaria</b>. O Mr. Parker vai anotar o seu nome na lista — e ele <b>só entende inglês</b>.</p><p>Ele vai pedir para você <b>soletrar</b>: letra por letra, como no alfabeto de hoje!</p>",
+ personagem:"Mr. Parker, o secretário da escola, apressado mas simpático",
+ objetivos:["cumprimentar o Mr. Parker com um bom dia em inglês","dizer o seu nome","soletrar o seu nome, letra por letra"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Good morning! My name is</span> … · <span class=\"lacuna\">Slowly, please</span>.</p>",
+ instrucaoIA:"Ela sabe: good morning, hello, My name is..., What's your name?, Nice to meet you, How are you?, I'm fine, thank you, please, Sorry I don't understand, Again please, Slowly please, o alfabeto e os numeros de zero a ten. Mr. Parker fala frases de 3 a 6 palavras, pede o nome e depois pede para soletrar (Can you spell it? / Letter by letter, please). Ele repete cada letra em voz alta para confirmar. Nao use nenhuma palavra fora dessa lista."},
+
 {tipo:"escrita", titulo:"Hora de escrever", id:"1",
- instrucao:"Imagine que você está falando ao telefone com alguém dos Estados Unidos e a pessoa não entendeu o seu nome. Escreva: o seu nome soletrado letra por letra, a sua idade e o número da sua casa.",
- dica:"<ul><li>o nome <b>soletrado</b>, com as letras separadas por traço</li><li>a sua <b>idade</b></li><li>o <b>número da sua casa</b></li></ul>⚠️ Os números têm que estar <b>escritos com letras</b> (nine, twelve...), nunca com algarismos.",
- andaime:"<p>Veja como o <b>Leo</b> fez a dele — o seu vai ser diferente, com o seu nome e os seus números:</p><p style=\"font-size:17px\">My name is Leo. L - E - O. I am twelve years old. My house is number seven.</p>",
- gabarito:"o nome dela soletrado em letras separadas por hífen, a idade no formato I am ... years old, e o número da casa escrito por extenso em inglês",
- instrucaoIA:"Ela devia soletrar o próprio nome letra por letra em inglês e escrever a idade e o número da casa por extenso em inglês (números de 0 a 20). Vocabulário da aula: alfabeto A-Z, números zero a twenty, how do you spell, years old."},
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre você, todas começando com <b>I am</b> ou <b>I'm</b>. ✍️",
+ dica:"<ul><li>uma frase com o seu nome</li><li>uma frase dizendo que você é aluna</li><li>uma frase dizendo de onde você é</li><li>uma frase dizendo como você está hoje</li><li>uma frase com a sua turma ou com um número</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I am <span class=\"lacuna\">?</span>.<br>I'm a <span class=\"lacuna\">?</span>.<br>I am from <span class=\"lacuna\">?</span>.<br>I am in class <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases, todas com I am / I'm: o nome, que ela e student, de onde ela e (from Brazil), como ela esta (fine / great) e a turma ou um numero.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre ela mesma usando I am / I'm. Vocabulario da aula: I am, I'm, student, teacher, girl, boy, friend, class, number, here, from, numeros de zero a ten, fine, great. Confira se ela nao esqueceu o am e se escreveu o I maiusculo. Corrija no maximo 3 coisas, em portugues."},
 
 {tipo:"fala", titulo:"Hora de falar",
- instrucao:"Ouça, repita e teste no 🎤. Depois use a IA para treinar a soletração do seu nome de verdade.",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois conte de 0 a 10 sem olhar!",
  frases:[
-  {en:"How do you spell your name?", pt:"Como você escreve o seu nome?"},
+  {en:"I am a student.", pt:"Eu sou aluna."},
+  {en:"I'm in class five.", pt:"Eu estou na turma cinco."},
   {en:"One, two, three, four, five.", pt:"Um, dois, três, quatro, cinco."},
   {en:"Six, seven, eight, nine, ten.", pt:"Seis, sete, oito, nove, dez."},
-  {en:"I am eleven years old.", pt:"Eu tenho onze anos."},
-  {en:"Twelve, thirteen, fourteen, fifteen.", pt:"Doze, treze, catorze, quinze."}
+  {en:"I'm your friend.", pt:"Eu sou sua amiga."},
+  {en:"I am fine, thank you.", pt:"Eu estou bem, obrigada."}
  ],
- instrucaoIA:"Praticar o alfabeto em inglês e os números de 0 a 20. Peça também para ela soletrar o nome dela e o nome de duas pessoas da família, letra por letra, em inglês."}
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues (three com a lingua entre os dentes; a de eight e /ÊIT/). Depois faca 4 a 6 perguntas em ingles, uma de cada vez, esperando a resposta FALADA dela: What's your name? / Can you spell your name? / Are you a student? / What number is this: 7? / How are you today? Use so estas palavras: name, spell, student, teacher, friend, class, number, here, fine, great, how, what, os numeros de zero a ten e as letras."},
+
+{tipo:"completar", bonus:true, titulo:"Sem opções: digite a palavra", itens:[
+ {frase:"I ___ in class ten.", pt:"Eu estou na turma dez.", resposta:"am",
+  explicacao:"Com I, nunca esqueça o am."},
+ {frase:"My ___ is Emma.", pt:"O meu nome é Emma.", resposta:"name",
+  explicacao:"name = nome."},
+ {frase:"I'm a new ___.", pt:"Eu sou uma aluna nova.", resposta:"student",
+  explicacao:"student = aluna, aluno."}
+]},
+
+{tipo:"ditado", bonus:true, titulo:"Frases inteiras: escute e escreva", itens:[
+ {en:"I am a new student here", pt:"Eu sou uma aluna nova aqui.", dica:"(seis palavras)"},
+ {en:"My friend is in class ten", pt:"A minha amiga está na turma dez.", dica:"(seis palavras)"},
+ {en:"Good morning, I am your teacher", pt:"Bom dia, eu sou a sua professora.", dica:"(seis palavras)"}
+]}
 
 ]});
 </script>

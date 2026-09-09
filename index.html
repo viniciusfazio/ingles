@@ -120,6 +120,8 @@
 <script>
 (function(){
   if(!window.Curso){ document.body.innerHTML='<p style="padding:20px">Recarregue a página. 🙂</p>'; return; }
+  /* semanas regeradas: o progresso antigo delas é apagado aqui, e o card avisa */
+  var desfeitas=Curso.conferirVersoes(SEMANAS);
   var prog={};
   try{prog=JSON.parse(localStorage.getItem('ingles.progresso')||'{}');}catch(e){}
 
@@ -444,6 +446,7 @@
     var det=document.createElement('details');
     det.className='bloco';
     if(g.nome===blocoDaVez) det.open=true;
+    if(g.semanas.some(function(s){ return desfeitas[s.n]; })) det.open=true;
 
     var resumo=document.createElement('summary');
     resumo.innerHTML='<span class="bloco-txt">'+
@@ -464,6 +467,24 @@
                     '<span class="seta">'+(s.pronta?'▾':'🔒')+'</span>';
       corpo.appendChild(div);
       if(!s.pronta) return;
+
+      /* esta semana ganhou uma versão nova e o progresso antigo foi desfeito */
+      if(desfeitas[s.n]){
+        var av=document.createElement('div');
+        av.className='aviso-versao';
+        var qa=desfeitas[s.n].aulas;
+        av.innerHTML='<b>🔄 Esta semana ganhou uma versão nova.</b> O que você tinha feito nela ('+
+          qa+(qa===1?' aula':' aulas')+') foi desfeito: é como se a semana <b>não estivesse feita</b>. '+
+          'Você pode refazer as aulas normalmente — ou, se já tinha terminado, dar a semana como feita.'+
+          '<div class="acoes"><button class="btn pequeno" data-acao="feita">✔ Dar a semana como feita</button>'+
+          '<button class="btn secundario pequeno" data-acao="ok">Vou refazer</button></div>';
+        av.querySelector('[data-acao=feita]').onclick=function(){
+          if(!confirm('Marcar as 5 aulas da semana '+s.n+' como feitas, sem refazer?\n\nVocê continua podendo abrir qualquer aula depois.')) return;
+          Curso.concluirSemana(s.n); location.reload();
+        };
+        av.querySelector('[data-acao=ok]').onclick=function(){ Curso.esquecerDesfeita(s.n); av.remove(); };
+        corpo.appendChild(av);
+      }
 
       var dias=document.createElement('div');
       dias.className='dias'; dias.style.display='none';

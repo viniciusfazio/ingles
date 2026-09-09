@@ -12,131 +12,176 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:1, dia:3,
-titulo:"I am, you are, she is",
-subtitulo:"O verbo mais importante do inglês: TO BE",
+semana:1,
+dia:3,
+titulo:"Are you happy?",
+subtitulo:"Fazer perguntas em inglês e responder Yes, I am / No, I'm not",
 objetivos:[
-  "Usar I am, you are, he is, she is, it is, we are, they are",
-  "Falar sobre você e sobre outras pessoas",
-  "Entender as formas curtas (I'm, you're, she's...)"
+  "Perguntar usando Are you...?",
+  "Responder Yes, I am ou No, I'm not",
+  "Contar de 11 a 20 e dizer como você está"
 ],
 blocos:[
 
-{tipo:"nota", titulo:"⭐ O verbo mais usado do inglês",
- html:"<p>O verbo <b>TO BE</b> significa <b>SER</b> e <b>ESTAR</b> ao mesmo tempo! Uma palavra só para as duas coisas.</p><p>Se você aprender bem o TO BE hoje, metade do inglês fica mais fácil. É sério. 💪</p>"},
+{tipo:"nota", titulo:"❓ Hoje você aprende a PERGUNTAR",
+ html:"<p>Ontem você aprendeu a falar de você: <code>I am a student</code>.</p>"+
+ "<p>Hoje é o contrário: você vai <b>perguntar</b> as coisas para a outra pessoa. E o truque é lindo de simples — a palavrinha <b>troca de lugar</b>:</p>"+
+ "<p><code>You are happy.</code> → <code>Are you happy?</code></p>"+
+ "<p>É só isso! Não existe \"você faz\" nem nada disso. O <code>are</code> pula para a frente e a frase vira pergunta. 🎉</p>"},
 
-{tipo:"gramatica", titulo:"O verbo TO BE (ser / estar)",
- html:"<table>"+
- "<tr><th>Inglês</th><th>Forma curta</th><th>Português</th></tr>"+
- "<tr><td>I <b>am</b></td><td><code>I'm</code></td><td>Eu sou / eu estou</td></tr>"+
- "<tr><td>You <b>are</b></td><td><code>You're</code></td><td>Você é / você está</td></tr>"+
- "<tr><td>He <b>is</b></td><td><code>He's</code></td><td>Ele é / ele está</td></tr>"+
- "<tr><td>She <b>is</b></td><td><code>She's</code></td><td>Ela é / ela está</td></tr>"+
- "<tr><td>It <b>is</b></td><td><code>It's</code></td><td>É / está (coisa ou animal)</td></tr>"+
- "<tr><td>We <b>are</b></td><td><code>We're</code></td><td>Nós somos / estamos</td></tr>"+
- "<tr><td>They <b>are</b></td><td><code>They're</code></td><td>Eles/elas são / estão</td></tr>"+
+{tipo:"gramatica", titulo:"Are you...? — perguntar e responder",
+ html:"<p>Com <code>you</code> (você), a palavrinha é <code>are</code>:</p>"+
+ "<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>You are my friend.</code></td><td>Você é minha amiga.</td></tr>"+
+ "<tr><td><code>Are you my friend?</code></td><td>Você é minha amiga?</td></tr>"+
+ "<tr><td><code>Yes, I am.</code></td><td>Sim, sou. / Sim, estou.</td></tr>"+
+ "<tr><td><code>No, I'm not.</code></td><td>Não, não sou. / Não, não estou.</td></tr>"+
  "</table>"+
- "<p>🎵 Truque para decorar: <b>I am, he is, she is, it is</b> — o resto é <b>are</b>!</p>"+
- "<p>Para dizer que <b>não</b> é, basta colocar <code>not</code> depois: <code>I am not tired.</code> (Eu não estou cansada.)</p>",
+ "<p>Para responder <b>sim</b>, você volta para o <code>I am</code>. Para responder <b>não</b>, entra a palavrinha <code>not</code>: <code>I'm not</code>.</p>"+
+ "<p>Cuidado com uma armadilha: em inglês não se responde só <i>yes</i> ou <i>no</i> — soa seco. A resposta bonita é <code>Yes, I am.</code> 😊</p>",
  exemplos:[
-  {en:"I'm Brazilian.", pt:"Eu sou brasileira."},
-  {en:"You're my friend.", pt:"Você é minha amiga."},
-  {en:"She's my sister.", pt:"Ela é minha irmã."},
-  {en:"He's eleven years old.", pt:"Ele tem onze anos. (em inglês: ele É onze anos!)"},
-  {en:"It's a big dog.", pt:"É um cachorro grande."},
-  {en:"We're happy today.", pt:"Nós estamos felizes hoje."},
-  {en:"They're my parents.", pt:"Eles são meus pais."},
-  {en:"I'm not tired.", pt:"Eu não estou cansada."}
+  {en:"You are my friend.", pt:"Você é minha amiga."},
+  {en:"Are you happy?", pt:"Você está feliz?"},
+  {en:"Yes, I am.", pt:"Sim, estou."},
+  {en:"Are you a student?", pt:"Você é aluna?"},
+  {en:"No, I'm not. I am a teacher.", pt:"Não, não sou. Eu sou professora."},
+  {en:"Are you tired?", pt:"Você está cansada?"}
  ]},
 
-{tipo:"vocab", titulo:"Palavras para descrever", itens:[
- {en:"happy", pt:"feliz", emoji:"😄"},
- {en:"sad", pt:"triste", emoji:"😢"},
- {en:"tired", pt:"cansada(o)", emoji:"😴"},
- {en:"hungry", pt:"com fome", emoji:"🍕"},
- {en:"thirsty", pt:"com sede", emoji:"🥤"},
- {en:"big", pt:"grande", emoji:"🐘"},
- {en:"small", pt:"pequeno(a)", emoji:"🐭"},
- {en:"nice", pt:"legal, gentil", emoji:"💖"},
- {en:"my friend", pt:"meu amigo / minha amiga", emoji:"👭"},
- {en:"my best friend", pt:"meu melhor amigo / minha melhor amiga", emoji:"🤝"},
- {en:"my teacher", pt:"meu professor / minha professora", emoji:"👩‍🏫"},
- {en:"my mother", pt:"minha mãe", emoji:"👩"},
- {en:"my sister", pt:"minha irmã", emoji:"👧"},
- {en:"my parents", pt:"meus pais", emoji:"👨‍👩‍👧"},
- {en:"student", pt:"aluno / aluna", emoji:"🎒"}
+{tipo:"vocab", titulo:"Números de 11 a 20", itens:[
+ {en:"eleven", pt:"onze", ipa:"/i-LÉ-ven/"},
+ {en:"twelve", pt:"doze", ipa:"/TUÉLV/"},
+ {en:"thirteen", pt:"treze", ipa:"/fêr-TÍN/"},
+ {en:"fourteen", pt:"quatorze", ipa:"/fór-TÍN/"},
+ {en:"fifteen", pt:"quinze", ipa:"/fif-TÍN/"},
+ {en:"sixteen", pt:"dezesseis", ipa:"/siks-TÍN/"},
+ {en:"seventeen", pt:"dezessete", ipa:"/sé-ven-TÍN/"},
+ {en:"eighteen", pt:"dezoito", ipa:"/êi-TÍN/"},
+ {en:"nineteen", pt:"dezenove", ipa:"/náin-TÍN/"},
+ {en:"twenty", pt:"vinte", ipa:"/TUÉN-ti/"}
 ]},
 
-{tipo:"dialogo", titulo:"Na sala de aula", linhas:[
- {quem:"Teacher", en:"Good morning! I'm your English teacher.", pt:"Bom dia! Eu sou a sua professora de inglês."},
- {quem:"Anna", en:"Good morning! I'm Anna. This is my friend Leo.", pt:"Bom dia! Eu sou a Anna. Este é meu amigo Leo."},
- {quem:"Teacher", en:"Nice to meet you, Leo. Are you eleven?", pt:"Prazer em conhecer você, Leo. Você tem onze anos?"},
- {quem:"Leo", en:"Yes, I am. Anna is eleven too.", pt:"Sim, tenho. A Anna também tem onze."},
- {quem:"Teacher", en:"Wonderful! You are my new students.", pt:"Maravilhoso! Vocês são meus novos alunos."},
- {quem:"Anna", en:"We're very happy to be here!", pt:"Nós estamos muito felizes de estar aqui!"}
+{tipo:"vocab", titulo:"Como você está?", itens:[
+ {en:"happy", pt:"feliz", ipa:"/HÉ-pi/", emoji:"😀"},
+ {en:"sad", pt:"triste", ipa:"/SÉD/", emoji:"🙁"},
+ {en:"tired", pt:"cansada, cansado", ipa:"/TÁI-erd/", emoji:"😴"},
+ {en:"hungry", pt:"com fome", ipa:"/HÂN-gri/", emoji:"🍎"},
+ {en:"thirsty", pt:"com sede", ipa:"/FÊRS-ti/", emoji:"🥤"},
+ {en:"ready", pt:"pronta, pronto", ipa:"/RÉ-di/", emoji:"✅"},
+ {en:"today", pt:"hoje", ipa:"/tu-DÊI/", emoji:"📅"}
 ]},
 
-{tipo:"completar", titulo:"am, is ou are?", ajuda:"Escolha a forma certa do verbo TO BE.", itens:[
- {frase:"I ___ Brazilian.", pt:"Eu sou brasileira.", resposta:"am", opcoes:["am","is","are"], explicacao:"Com I é SEMPRE am."},
- {frase:"She ___ my sister.", pt:"Ela é minha irmã.", resposta:"is", opcoes:["am","is","are"], explicacao:"He, she e it usam is."},
- {frase:"They ___ my friends.", pt:"Eles são meus amigos.", resposta:"are", opcoes:["am","is","are"], explicacao:"They usa are."},
- {frase:"You ___ very nice.", pt:"Você é muito legal.", resposta:"are", opcoes:["am","is","are"], explicacao:"You sempre usa are, mesmo para uma pessoa só."},
- {frase:"It ___ a small dog.", pt:"É um cachorro pequeno.", resposta:"is", opcoes:["am","is","are"], explicacao:"It é usado para coisas e animais."},
- {frase:"We ___ hungry!", pt:"Nós estamos com fome!", resposta:"are", opcoes:["am","is","are"], explicacao:"We usa are."}
+{tipo:"historia", titulo:"Ouça: a aluna nova", cena:"amizade", paragrafos:[
+ {en:"Anna is a new student. She is at a new school.", pt:"A Anna é uma aluna nova. Ela está numa escola nova."},
+ {en:"It is morning. Anna is not happy. She is sad.", pt:"É de manhã. A Anna não está feliz. Ela está triste."},
+ {en:"A girl is here. Her name is Emma.", pt:"Uma menina está aqui. O nome dela é Emma."},
+ {en:"\"Good morning! I am Emma. What is your name?\"", pt:"— Bom dia! Eu sou a Emma. Qual é o seu nome?"},
+ {en:"\"My name is Anna. Nice to meet you!\"", pt:"— Meu nome é Anna. Prazer em conhecer você!"},
+ {en:"\"Are you new here?\" \"Yes, I am.\"", pt:"— Você é nova aqui? — Sim, eu sou."},
+ {en:"\"Are you sad?\" \"I am fine now, thank you.\"", pt:"— Você está triste? — Eu estou bem agora, obrigada."},
+ {en:"Emma is a new friend. Anna is happy!", pt:"A Emma é uma amiga nova. A Anna está feliz!"}
 ]},
 
-{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
- {pergunta:"Qual é a forma curta de 'She is'?", opcoes:["She're","She's","Shes"], correta:1,
-  explicacao:"She is = She's. O apóstrofo (') substitui o i que sumiu."},
- {pergunta:"Como se diz 'Eu tenho 11 anos' em inglês?", opcoes:["I have eleven years.","I am eleven years old.","I is eleven."], correta:1,
-  explicacao:"Em inglês a idade usa o verbo TO BE: I AM eleven years old. Nunca 'I have'!"},
- {pergunta:"Qual frase está CERTA?", opcoes:["He are my friend.","He is my friend.","He am my friend."], correta:1,
-  explicacao:"He usa is."},
- {pergunta:"'Eu não estou triste' em inglês é:", opcoes:["I am not sad.","I no sad.","I not am sad."], correta:0,
-  explicacao:"O not vem SEMPRE depois do am/is/are."},
- {pergunta:"'It's a big dog' significa:", opcoes:["Ele é um cachorro grande.","É um cachorro grande.","Eles são cachorros grandes."], correta:1,
-  explicacao:"It usamos para animais e coisas: 'é'."}
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"Who is the new student?", opcoes:["Emma","Anna","The teacher"], correta:1,
+  explicacao:"A história começa assim: Anna is a new student."},
+ {pergunta:"How is Anna in the morning?", opcoes:["She is sad.","She is happy.","She is ready."], correta:0,
+  explicacao:"Anna is not happy. She is sad."},
+ {pergunta:"Who is nice to Anna?", opcoes:["Emma","A boy","Her teacher"], correta:0,
+  explicacao:"É a Emma que chega e diz good morning."},
+ {pergunta:"Is Anna new at school?", opcoes:["Yes, she is.","No, she is not.","She is not here."], correta:0,
+  explicacao:"Emma pergunta: Are you new here? E a Anna responde: Yes, I am."},
+ {pergunta:"And now? How is Anna?", opcoes:["She is happy.","She is sad.","She is not here."], correta:0,
+  explicacao:"No fim: Anna is happy! Ela ganhou uma amiga."}
 ]},
 
-{tipo:"ordenar", titulo:"Monte as frases", itens:[
- {frase:"She is my best friend", pt:"Ela é minha melhor amiga."},
- {frase:"We are very happy today", pt:"Nós estamos muito felizes hoje."},
- {frase:"I am not tired", pt:"Eu não estou cansada."}
+{tipo:"ditado", titulo:"Escute e escreva o que você ouviu na história", itens:[
+ {en:"Anna is a new student", pt:"A Anna é uma aluna nova.", dica:"(cinco palavras)"},
+ {en:"It is morning", pt:"É de manhã.", dica:"(três palavras)"},
+ {en:"Are you new here", pt:"Você é nova aqui?", dica:"(quatro palavras)"},
+ {en:"Emma is a new friend", pt:"A Emma é uma amiga nova.", dica:"(cinco palavras)"}
 ]},
 
-{tipo:"ditado", titulo:"Escute e escreva", itens:[
- {en:"I am happy", pt:"Eu estou feliz."},
- {en:"He is my friend", pt:"Ele é meu amigo."},
- {en:"They are students", pt:"Eles são alunos."}
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Who is the new student? (Quem é a aluna nova?)<br>2. How is Anna in the morning? (Como a Anna está de manhã?)<br>3. Who is Anna's new friend? (Quem é a nova amiga da Anna?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>use <b>is</b> para falar da Anna e da Emma</li><li>não precisa copiar a história: escreva com as suas palavras</li></ul>",
+ andaime:"<p>Comece assim: Anna is <span class=\"lacuna\">?</span>. · In the morning she is <span class=\"lacuna\">?</span>. · <span class=\"lacuna\">?</span> is her new friend.</p>",
+ gabarito:"1. Anna is the new student. 2. She is sad. 3. Emma is her new friend.",
+ instrucaoIA:"Ela ouviu uma historia curta e devia responder por escrito quem e a aluna nova (Anna), como a Anna esta de manha (sad) e quem e a nova amiga dela (Emma). Vocabulario: is, new, student, school, girl, friend, happy, sad, morning, here."},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Nas duas últimas você digita o número por extenso.", itens:[
+ {frase:"___ you happy?", pt:"Você está feliz?", resposta:"Are",
+  opcoes:["Are","Am","Is"], explicacao:"Para perguntar com you, o are vai para a frente."},
+ {frase:"Yes, I ___.", pt:"Sim, estou.", resposta:"am",
+  opcoes:["am","are","is"], explicacao:"A resposta volta para o I am."},
+ {frase:"No, I'm ___.", pt:"Não, não estou.", resposta:"not",
+  opcoes:["not","no","am"], explicacao:"Para dizer não, entra o not: I'm not."},
+ {frase:"You ___ my friend.", pt:"Você é minha amiga.", resposta:"are",
+  opcoes:["are","am","is"], explicacao:"Com you é sempre are."},
+ {frase:"14 = ___", pt:"quatorze", resposta:"fourteen"},
+ {frase:"20 = ___", pt:"vinte", resposta:"twenty"}
 ]},
 
-{tipo:"ligar", titulo:"Ligue as traduções", pares:[
- {en:"hungry", pt:"com fome"},
- {en:"tired", pt:"cansada"},
- {en:"happy", pt:"feliz"},
- {en:"small", pt:"pequeno"},
- {en:"my teacher", pt:"minha professora"},
- {en:"sad", pt:"triste"}
+{tipo:"ordenar", titulo:"Monte as perguntas e as respostas", itens:[
+ {frase:"Are you tired", pt:"Você está cansada?"},
+ {frase:"You are my new friend", pt:"Você é minha amiga nova."},
+ {frase:"No I am not hungry", pt:"Não, eu não estou com fome."},
+ {frase:"Are you a new student", pt:"Você é uma aluna nova?"}
 ]},
 
-{tipo:"escrita", titulo:"Hora de escrever", id:"1",
- instrucao:"Escreva <b>5 frases</b> com o verbo TO BE: uma sobre você, uma sobre a sua mãe ou o seu pai, uma sobre um amigo, uma sobre um animal e uma frase <b>negativa</b>.",
- dica:"<ul><li>frase 1: sobre <b>você</b> (comece com I)</li><li>frase 2: sobre a sua <b>mãe ou pai</b> (she / he)</li><li>frase 3: sobre um <b>amigo</b></li><li>frase 4: sobre um <b>animal</b> (it)</li><li>frase 5: uma frase com <b>not</b></li></ul>O desafio de hoje é escolher certo entre <b>am</b>, <b>is</b> e <b>are</b> em cada frase.",
- andaime:"<p>Os cinco moldes. Você escolhe o verbo e completa o resto:</p><p style=\"font-size:17px;line-height:2\">I <span class=\"lacuna\">?</span> ... years old.<br>She <span class=\"lacuna\">?</span> very ... .<br>My friend <span class=\"lacuna\">?</span> ... .<br>It <span class=\"lacuna\">?</span> a ... .<br>I <span class=\"lacuna\">?</span> not ... .</p><p style=\"font-size:14px;color:#6E6A80\">Lembre do truque: <b>I am</b>, <b>he/she/it is</b>, e o resto é <b>are</b>.</p>",
- gabarito:"5 frases com o verbo to be correto em cada pessoa (I am, she/he is, it is) e uma frase negativa com not depois do verbo",
- instrucaoIA:"Ela devia escrever 5 frases usando o verbo to be (am/is/are), incluindo uma frase negativa com not. Assuntos: ela mesma, um dos pais, um amigo, um animal, e uma frase negativa. Vocabulário da aula: am/is/are, I'm/you're/he's/she's/it's/we're/they're, happy, sad, tired, hungry, thirsty, big, small, nice, my friend, my teacher, years old."},
+{tipo:"adivinha", titulo:"O que é? Escreva em inglês", itens:[
+ {pistas:["I am a number.","I am not ten.","I am 10 + 2."], resposta:"twelve", pt:"doze", dica:"(um número)",
+  explicacao:"10 + 2 = twelve."},
+ {pistas:["I am a number.","I am 10 + 10."], resposta:"twenty", pt:"vinte", dica:"(um número)",
+  explicacao:"10 + 10 = twenty."},
+ {pistas:["It is 10 at night.","You are not sad. You are not hungry.","It is not morning. Good night!"],
+  resposta:"tired", pt:"cansada", dica:"(como você está)",
+  explicacao:"Às 10 da noite todo mundo está tired!"},
+ {pistas:["You are at school.","It is 12.","You are not thirsty."],
+  resposta:"hungry", pt:"com fome", dica:"(como você está)",
+  explicacao:"Meio-dia e você não está com sede... está com fome: hungry."}
+]},
+
+{tipo:"missao", titulo:"Missão: Yes or No com o Leo", cena:"jogo",
+ cenario:"<p>O Leo inventou uma brincadeira no recreio: cada um faz perguntas e o outro só pode responder <b>Yes, I am</b> ou <b>No, I'm not</b>.</p><p>Ele <b>só entende inglês</b>. Faça as suas perguntas e responda as dele!</p>",
+ personagem:"Leo, 11 anos, colega de turma, brincalhão e competitivo",
+ objetivos:["cumprimentar o Leo antes de começar","fazer três perguntas começando com Are you...?","responder as perguntas dele com Yes, I am ou No, I'm not"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Are you</span> …? · <span class=\"lacuna\">Yes, I</span> … · <span class=\"lacuna\">No, I'm</span> …</p>",
+ instrucaoIA:"Ela sabe: I am, I'm, you are, Are you...?, Yes I am, No I'm not, happy, sad, tired, hungry, thirsty, ready, student, teacher, girl, boy, friend, class, number, here, new, from, os numeros de zero a twenty e os cumprimentos. Leo fala frases de 3 a 6 palavras. Ele responde as perguntas dela e faz perguntas do mesmo tipo (Are you tired? Are you a student? Are you happy?), uma de cada vez. Nao use nenhuma palavra fora dessa lista."},
+
+{tipo:"escrita", titulo:"Hora de escrever: invente uma conversa", id:"1",
+ instrucao:"Invente uma conversa entre <b>duas pessoas que acabaram de se conhecer</b>. Escreva <b>4 ou 5 falas</b> (uma por linha), colocando o nome de quem fala na frente. Podem ser pessoas, robôs, animais falantes — o que você quiser! ✍️",
+ dica:"<ul><li>escolha os dois personagens e dê um nome a cada um</li><li>um cumprimento no começo</li><li>pelo menos uma pergunta com <b>Are you...?</b></li><li>pelo menos uma resposta com sim ou com não</li><li>uma despedida no fim</li></ul>Capriche: essa conversa é sua. 💜",
+ gabarito:"4 ou 5 falas de dois personagens inventados, com nome na frente de cada fala. Precisa ter: um cumprimento, pelo menos uma pergunta Are you...?, uma resposta Yes, I am ou No, I'm not, e uma despedida. Criatividade conta mais que perfeicao.",
+ instrucaoIA:"Ela devia INVENTAR uma conversa de 4 ou 5 falas entre dois personagens que acabaram de se conhecer. Vocabulario da aula: cumprimentos, What's your name?, My name is..., Nice to meet you, How are you?, I am / I'm, you are, Are you...?, Yes I am, No I'm not, happy, sad, tired, hungry, thirsty, ready, student, teacher, girl, boy, friend, class, numeros ate twenty. Elogie primeiro a ideia e a criatividade, depois corrija no maximo 3 coisas, em portugues. Se ela usou uma palavra que ainda nao aprendeu, diga que gostou da coragem e ensine a forma certa."},
 
 {tipo:"fala", titulo:"Hora de falar",
- instrucao:"Ouça cada frase, repita bem alto e teste no 🎤.",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Faça cara de pergunta na hora certa!",
  frases:[
-  {en:"I am eleven years old.", pt:"Eu tenho onze anos."},
-  {en:"I am Brazilian.", pt:"Eu sou brasileira."},
-  {en:"She is my mother.", pt:"Ela é minha mãe."},
-  {en:"He is my friend.", pt:"Ele é meu amigo."},
-  {en:"We are very happy.", pt:"Nós estamos muito felizes."},
-  {en:"I am not tired.", pt:"Eu não estou cansada."}
+  {en:"Are you happy?", pt:"Você está feliz?"},
+  {en:"Yes, I am!", pt:"Sim, estou!"},
+  {en:"Are you tired?", pt:"Você está cansada?"},
+  {en:"No, I'm not.", pt:"Não, não estou."},
+  {en:"Are you a student?", pt:"Você é aluna?"},
+  {en:"You are my friend.", pt:"Você é minha amiga."}
  ],
- instrucaoIA:"Praticar o verbo to be (am/is/are) falando. Depois das frases, faça 3 perguntas fáceis para ela responder com o verbo to be, como 'Are you happy today?', 'How old are you?', 'Is your mother nice?'."}
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues (a voz sobe no fim da pergunta). Depois faca 4 a 6 perguntas em ingles, uma de cada vez, esperando a resposta FALADA dela: Are you happy today? / Are you tired? / Are you a student? / Are you hungry? / Are you ready? Peca que ela responda a frase inteira (Yes, I am / No, I'm not) e nao so yes ou no. Use so estas palavras: are, you, I am, not, happy, sad, tired, hungry, thirsty, ready, student, teacher, friend, new, here."},
+
+{tipo:"quiz", bonus:true, titulo:"Detetive: o que dá para descobrir?", questoes:[
+ {pergunta:"Emma is nice to Anna. Why is Anna happy now?", opcoes:["She is not a student.","She is a teacher.","Emma is her new friend."], correta:2,
+  explicacao:"A história não diz isso com todas as letras, mas dá para concluir: ela ficou feliz porque agora tem uma amiga."},
+ {pergunta:"Anna is new at school. Is Emma new, too?", opcoes:["No, Emma is not new.","Yes, Emma is new.","Emma is a teacher."], correta:0,
+  explicacao:"Quem dá as boas-vindas é quem já está lá há um tempo. A Emma não é nova."},
+ {pergunta:"Is Emma a student, too?", opcoes:["Yes, she is at school.","No, she is a teacher.","She is not here."], correta:0,
+  explicacao:"Ela é uma girl que está na escola de manhã: é aluna também."}
+]},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases grandes", itens:[
+ {frase:"Are you a new student here", pt:"Você é uma aluna nova aqui?"},
+ {frase:"I am not sad I am happy", pt:"Eu não estou triste, eu estou feliz."},
+ {frase:"My new friend is in class ten", pt:"A minha amiga nova está na turma dez."}
+]}
 
 ]});
 </script>

@@ -12,179 +12,183 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:2, dia:3,
-titulo:"He is, she is · his, her",
-subtitulo:"Falar dos outros: dele e dela",
+semana:2,
+dia:3,
+titulo:"He is my brother",
+subtitulo:"Falar de OUTRA pessoa: he / she e o dele / dela (his / her)",
 objetivos:[
-  "Usar he e she para falar de outra pessoa",
-  "Usar his e her para dizer de quem é a coisa",
-  "Descrever como alguém da sua família é"
+  "Usar he para ele e she para ela",
+  "Dizer de quem é uma coisa com his e her",
+  "Descrever as pessoas da família: alta, engraçada, gentil"
 ],
 blocos:[
 
-{tipo:"nota", titulo:"💡 O truque do dia",
- html:"<p>Em português, <b>dele</b> e <b>dela</b> vêm <b>depois</b>: o nome <b>dele</b>, a mãe <b>dela</b>.</p><p>Em inglês, elas vêm <b>antes</b>: <code>his name</code>, <code>her mother</code>. É a mesma ideia, só que de trás para a frente. Se você lembrar disso, metade da aula já está resolvida. 😉</p>"},
+{tipo:"nota", titulo:"💡 A pegadinha do dia",
+ html:"<p>Em português, o \"dele\" e o \"dela\" vêm <b>depois</b> da coisa: <i>o gato <b>dela</b></i>.</p>"+
+ "<p>Em inglês eles vêm <b>antes</b>, coladinhos na dona: <code>her cat</code>. Leia de trás para frente e encaixa: <i>cat</i> (gato) <i>her</i> (dela).</p>"+
+ "<p>E tem mais uma diferença: em inglês, o que manda é <b>de quem é</b>, não o que é. O gato do Leo é <code>his cat</code>, o cachorro do Leo é <code>his dog</code> — sempre <code>his</code>, porque o dono é ele. 🧠</p>"},
 
-{tipo:"gramatica", titulo:"He / She e his / her",
- html:"<p>Para não repetir o nome da pessoa toda hora, o inglês usa <code>he</code> (ele) e <code>she</code> (ela).</p>"+
- "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+{tipo:"gramatica", titulo:"He is / She is · his / her",
+ html:"<p>Na semana passada você falou de você (<code>I am</code>) e com alguém (<code>You are</code>). Agora você vai falar de uma <b>terceira pessoa</b>: aquela que não está na conversa.</p>"+
+ "<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
  "<tr><td><code>He is my brother.</code></td><td>Ele é o meu irmão.</td></tr>"+
- "<tr><td><code>She is my mother.</code></td><td>Ela é a minha mãe.</td></tr></table>"+
- "<p>👉 E para dizer <b>de quem é</b> uma coisa, usamos <code>his</code> (dele) e <code>her</code> (dela) <b>antes</b> da palavra:</p>"+
- "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>She is my sister.</code></td><td>Ela é a minha irmã.</td></tr>"+
+ "<tr><td><code>He is tall.</code></td><td>Ele é alto.</td></tr>"+
+ "<tr><td><code>She is not here.</code></td><td>Ela não está aqui.</td></tr>"+
+ "</table>"+
+ "<p>Com <b>he</b> e <b>she</b> o verbo é sempre <code>is</code>. Não existe <code>he am</code> nem <code>she are</code>. E dá para encurtar: <code>he's</code>, <code>she's</code>.</p>"+
+ "<p>Para dizer <b>de quem é</b> uma coisa:</p>"+
+ "<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>his dog</code></td><td>o cachorro dele</td></tr>"+
+ "<tr><td><code>her dog</code></td><td>o cachorro dela</td></tr>"+
  "<tr><td><code>his name</code></td><td>o nome dele</td></tr>"+
  "<tr><td><code>her name</code></td><td>o nome dela</td></tr>"+
- "<tr><td><code>his sister</code></td><td>a irmã dele</td></tr>"+
- "<tr><td><code>her cat</code></td><td>o gato dela</td></tr></table>"+
- "<p>⚠️ Cuidado com a pegadinha: o que manda é <b>o dono</b>, não a coisa. <code>her father</code> é o pai <b>dela</b> — mesmo o pai sendo homem. E <code>his mother</code> é a mãe <b>dele</b>.</p>",
+ "</table>"+
+ "<p>Olhe sempre para o <b>dono</b>: se é um homem ou menino, <code>his</code>; se é uma mulher ou menina, <code>her</code>.</p>",
  exemplos:[
-  {en:"This is my father. His name is Marcos.", pt:"Este é o meu pai. O nome dele é Marcos."},
-  {en:"This is my sister. Her name is Bia.", pt:"Esta é a minha irmã. O nome dela é Bia."},
-  {en:"He is my uncle. His daughter is my cousin.", pt:"Ele é o meu tio. A filha dele é a minha prima."},
-  {en:"She is my aunt. Her son is my cousin.", pt:"Ela é a minha tia. O filho dela é o meu primo."},
-  {en:"Leo is nine. His mother is a teacher.", pt:"O Leo tem nove anos. A mãe dele é professora."},
-  {en:"Emma is eleven. Her father is from New York.", pt:"A Emma tem onze anos. O pai dela é de Nova York."}
+  {en:"He is my father.", pt:"Ele é o meu pai."},
+  {en:"She is my grandmother.", pt:"Ela é a minha avó."},
+  {en:"His name is Tom.", pt:"O nome dele é Tom."},
+  {en:"Her name is Mia.", pt:"O nome dela é Mia."},
+  {en:"This is her dog.", pt:"Este é o cachorro dela."},
+  {en:"His sister is tall.", pt:"A irmã dele é alta."}
  ]},
 
 {tipo:"vocab", titulo:"Como as pessoas são", itens:[
- {en:"tall", pt:"alto, alta", ipa:"/TÓL/", emoji:"📏"},
- {en:"short", pt:"baixo, baixa", ipa:"/CHÓRT/", emoji:"🐤"},
- {en:"young", pt:"jovem, novo de idade", ipa:"/IÂNG/", emoji:"🌱"},
- {en:"funny", pt:"engraçado, engraçada", ipa:"/FÂ-ni/", emoji:"😂"},
- {en:"smart", pt:"inteligente", ipa:"/SMÁRT/", emoji:"🧠"},
- {en:"strong", pt:"forte", ipa:"/STRÓNG/", emoji:"💪"},
- {en:"quiet", pt:"quieto, caladinho", ipa:"/KUÁI-et/", emoji:"🤫"},
- {en:"friendly", pt:"amigável, simpático", ipa:"/FRÊND-li/", emoji:"😊"},
- {en:"photo", pt:"foto", ipa:"/FÔU-tou/", emoji:"📷"}
+ {en:"tall", pt:"alta, alto", ipa:"/TÓL/", emoji:"📏"},
+ {en:"short", pt:"baixa, baixo", ipa:"/CHÓRT/", emoji:"🐧"},
+ {en:"funny", pt:"engraçada, engraçado", ipa:"/FÁ-ni/", emoji:"😄"},
+ {en:"kind", pt:"gentil, boazinha", ipa:"/KÁIND/", emoji:"🤗"},
+ {en:"little", pt:"pequena, pequenininha", ipa:"/LÍ-tol/", emoji:"🐣"},
+ {en:"big", pt:"grande", ipa:"/BÍG/", emoji:"🐘"},
+ {en:"favorite", pt:"favorita, favorito", ipa:"/FÊI-vo-rit/", emoji:"⭐"},
+ {en:"love", pt:"amar", ipa:"/LÁV/", emoji:"💖"}
 ]},
 
-{tipo:"historia", titulo:"🎧 Ouça: a foto da Anna", paragrafos:[
- {en:"Today Anna is very happy. She is with a photo of her family.", pt:"Hoje a Anna está muito feliz. Ela está com uma foto da família dela."},
- {en:"Emma and Leo are her friends. They are happy too.", pt:"A Emma e o Leo são amigos dela. Eles estão felizes também."},
- {en:"In the photo, her father is tall. His name is Marcos.", pt:"Na foto, o pai dela é alto. O nome dele é Marcos."},
- {en:"Her mother is very funny. Her name is Carla.", pt:"A mãe dela é muito engraçada. O nome dela é Carla."},
- {en:"Her brother Theo is five. He is small and quiet.", pt:"O irmão dela, Theo, tem cinco anos. Ele é pequeno e quietinho."},
- {en:"But where is the photo? It is not here. Anna is very sad.", pt:"Mas cadê a foto? Ela não está aqui. A Anna fica muito triste."},
- {en:"Leo is a good friend. The photo is with him.", pt:"O Leo é um bom amigo. A foto está com ele."},
- {en:"Anna is happy again. Thank you, Leo!", pt:"A Anna fica feliz de novo. Obrigada, Leo!"}
+{tipo:"historia", titulo:"Ouça: a surpresa da Emma", cena:"surpresa", paragrafos:[
+ {en:"Today Emma is at home. She is not happy.", pt:"Hoje a Emma está em casa. Ela não está feliz."},
+ {en:"Her mother and her father are at work.", pt:"A mãe dela e o pai dela estão no trabalho."},
+ {en:"Emma is with her baby brother Sam. He is hungry.", pt:"A Emma está com o irmãozinho dela, o Sam. Ele está com fome."},
+ {en:"Ding dong! A woman is at the door.", pt:"Ding dong! Uma mulher está na porta."},
+ {en:"It is Grandma Ruth, from Chicago!", pt:"É a vovó Ruth, de Chicago!"},
+ {en:"She is Emma's grandmother. She is short and very funny.", pt:"Ela é a avó da Emma. Ela é baixinha e muito engraçada."},
+ {en:"Her dog Rex is big. He is Sam's favorite dog!", pt:"O cachorro dela, o Rex, é grande. Ele é o cachorro favorito do Sam!"},
+ {en:"Now Emma is happy. Sam is happy, too!", pt:"Agora a Emma está feliz. O Sam está feliz também!"}
 ]},
 
 {tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
- {pergunta:"Who is Marcos?", opcoes:["Her father","Her brother","Her friend"], correta:0,
-  explicacao:"In the photo, her father is tall. His name is Marcos."},
- {pergunta:"How old is Theo?", opcoes:["Five","Eleven","Nine"], correta:0,
-  explicacao:"Her brother Theo is five."},
- {pergunta:"Why is Anna sad?", opcoes:["Her mother is funny.","The photo is not here.","Her brother is small."], correta:1,
-  explicacao:"But where is the photo? It is not here. Anna is very sad."},
- {pergunta:"Who is with the photo?", opcoes:["Emma","Leo","Carla"], correta:1,
-  explicacao:"Leo is a good friend. The photo is with him."},
- {pergunta:"Is her mother funny?", opcoes:["Yes, she is.","No, she is not.","She is tall."], correta:0,
-  explicacao:"Her mother is very funny. — quem é tall é o pai."},
- {pergunta:"How is Theo?", opcoes:["Tall and funny","Small and quiet","Sad and tired"], correta:1,
-  explicacao:"He is small and quiet."}
+ {pergunta:"Where is Emma today?", opcoes:["At school","At home","At work"], correta:1,
+  explicacao:"A primeira frase diz: Today Emma is at home."},
+ {pergunta:"Who is at work?", opcoes:["Her mother and her father","Her grandmother","Her brother"], correta:0,
+  explicacao:"Her mother and her father are at work."},
+ {pergunta:"Who is Sam?", opcoes:["Emma's baby brother","Emma's cousin","Emma's dog"], correta:0,
+  explicacao:"Emma is with her baby brother Sam."},
+ {pergunta:"Who is at the door?", opcoes:["Grandma Ruth","Anna","A teacher"], correta:0,
+  explicacao:"A woman is at the door — e é a Grandma Ruth."},
+ {pergunta:"Where is Grandma Ruth from?", opcoes:["Miami","Chicago","New York"], correta:1,
+  explicacao:"It is Grandma Ruth, from Chicago!"},
+ {pergunta:"Is Rex a little dog?", opcoes:["Yes, he is little.","No, he is big.","Rex is a cat."], correta:1,
+  explicacao:"Her dog Rex is big."}
 ]},
 
 {tipo:"ditado", titulo:"Escute e escreva frases da história", itens:[
- {en:"His name is Marcos", pt:"O nome dele é Marcos.", dica:"(quatro palavras)"},
- {en:"Her name is Carla", pt:"O nome dela é Carla.", dica:"(quatro palavras)"},
- {en:"He is small and quiet", pt:"Ele é pequeno e quietinho.", dica:"(cinco palavras)"},
- {en:"Anna is happy again", pt:"A Anna fica feliz de novo.", dica:"(quatro palavras)"}
+ {en:"She is not happy", pt:"Ela não está feliz.", dica:"(quatro palavras)"},
+ {en:"He is hungry", pt:"Ele está com fome.", dica:"(três palavras)"},
+ {en:"A woman is at the door", pt:"Uma mulher está na porta.", dica:"(seis palavras)"},
+ {en:"Her dog Rex is big", pt:"O cachorro dela, o Rex, é grande.", dica:"(cinco palavras)"}
 ]},
 
 {tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
- instrucao:"Responda em inglês, com frases completas:<br>1. Who is Marcos? (Quem é o Marcos?)<br>2. Why is Anna sad? (Por que a Anna fica triste?)<br>3. Who is with the photo? (Quem está com a foto?)",
- dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1 e na 3, diga <b>quem é</b> a pessoa em relação à Anna</li><li>na 2, a resposta está no meio da história, não no começo</li></ul>",
- andaime:"<p>Só o começo — o resto é você:</p><p>He is her <span class=\"lacuna\">?</span>. · The <span class=\"lacuna\">?</span> is not <span class=\"lacuna\">?</span>. · <span class=\"lacuna\">?</span> is with the photo.</p>",
- gabarito:"1. He is her father. 2. Because her photo is not here (she is sad about the photo). 3. Leo is with the photo.",
- instrucaoIA:"Ela ouviu uma historia curta e devia responder por escrito, em ingles: quem e Marcos (o pai da Anna), por que a Anna fica triste (a foto sumiu, nao esta ali) e quem esta com a foto (o Leo). Vocabulario: photo, father, mother, brother, friend, happy, sad, tall, funny, small, quiet, his, her. Ela ainda nao aprendeu because, entao aceite uma resposta simples como The photo is not here.",
- },
+ instrucao:"Responda em inglês, com frases completas:<br>1. Where is Emma? (Onde a Emma está?)<br>2. Who is at the door? (Quem está na porta?)<br>3. Is Rex big or little? (O Rex é grande ou pequeno?)<br>4. Who is Grandma Ruth? (Quem é a vovó Ruth?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>use ele é / ela é para falar das pessoas da história</li><li>na 4, diga de quem ela é avó</li></ul>",
+ andaime:"<p>Comece assim: Emma is <span class=\"lacuna\">?</span>. · <span class=\"lacuna\">?</span> is at the door. · Rex is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Emma is at home. 2. Grandma Ruth is at the door. (A woman / Emma's grandmother.) 3. Rex is big. 4. She is Emma's grandmother. She is from Chicago.",
+ instrucaoIA:"Ela ouviu uma historia curta e devia responder por escrito: onde a Emma esta (at home), quem esta na porta (a avo dela, Grandma Ruth), se o Rex e grande ou pequeno (big) e quem e a Grandma Ruth (a avo da Emma, de Chicago). Vocabulario: at home, at work, door, grandmother, big, little, short, funny, he is / she is, his / her. Corrija em portugues e elogie o que ela entendeu de ouvido."},
 
-{tipo:"completar", titulo:"his, her, he ou she?", ajuda:"Pense: de quem é a coisa?", itens:[
- {frase:"This is my father. ___ name is Marcos.", pt:"Este é o meu pai. O nome dele é Marcos.", resposta:"His", opcoes:["His","Her","She"],
-  explicacao:"O dono do nome é o pai (homem): his."},
- {frase:"This is my sister. ___ name is Bia.", pt:"Esta é a minha irmã. O nome dela é Bia.", resposta:"Her", opcoes:["His","Her","He"],
-  explicacao:"A dona do nome é a irmã (mulher): her."},
- {frase:"My mother is a teacher. ___ is very nice.", pt:"A minha mãe é professora. Ela é muito legal.", resposta:"She", opcoes:["She","He","It"],
-  explicacao:"Aqui a palavra é o sujeito da frase: she (ela é)."},
- {frase:"My brother is nine. ___ is quiet.", pt:"O meu irmão tem nove anos. Ele é quietinho.", resposta:"He", opcoes:["He","His","They"],
-  explicacao:"Ele é = He is. His seria dele."},
- {frase:"Emma is my friend. ___ mother is a teacher.", pt:"A Emma é a minha amiga. A mãe dela é professora.", resposta:"Her", opcoes:["His","Her","She"],
-  explicacao:"A dona da mãe é a Emma: her mother, mesmo com mother sendo mulher."},
- {frase:"Leo is tall. ___ father is tall too.", pt:"O Leo é alto. O pai dele é alto também.", resposta:"His", opcoes:["Her","His","He"],
-  explicacao:"O dono do pai é o Leo (homem): his father."}
+{tipo:"completar", titulo:"Complete com he, she, his ou her", ajuda:"Olhe sempre para quem é o dono.", itens:[
+ {frase:"Tom is my brother. ___ is eleven.", pt:"O Tom é o meu irmão. Ele tem onze anos.", resposta:"He",
+  opcoes:["He","She","It"], explicacao:"Tom é menino: he."},
+ {frase:"Lucy is my sister. ___ is a baby.", pt:"A Lucy é a minha irmã. Ela é um bebê.", resposta:"She",
+  opcoes:["He","She","It"], explicacao:"Lucy é menina: she."},
+ {frase:"This is Leo. ___ dog is big.", pt:"Este é o Leo. O cachorro dele é grande.", resposta:"His",
+  opcoes:["His","Her","She"], explicacao:"O dono é o Leo, um menino: his."},
+ {frase:"This is Emma. ___ cat is little.", pt:"Esta é a Emma. O gato dela é pequeno.", resposta:"Her",
+  opcoes:["His","Her","He"], explicacao:"A dona é a Emma, uma menina: her."},
+ {frase:"My grandmother is very ___.", pt:"A minha avó é muito engraçada.", resposta:"funny",
+  opcoes:["funny","tall","short"], explicacao:"funny = engraçada."},
+ {frase:"My father is ___. He is not short.", pt:"O meu pai é alto. Ele não é baixo.", resposta:"tall",
+  opcoes:["tall","little","kind"], explicacao:"O contrário de short é tall."}
 ]},
 
 {tipo:"ordenar", titulo:"Monte as frases", itens:[
- {frase:"His name is Marcos", pt:"O nome dele é Marcos."},
- {frase:"She is my grandmother", pt:"Ela é a minha avó."},
- {frase:"Her brother is very funny", pt:"O irmão dela é muito engraçado."},
- {frase:"He is tall and smart", pt:"Ele é alto e inteligente."}
+ {frase:"She is my favorite aunt", pt:"Ela é a minha tia favorita."},
+ {frase:"His sister is very tall", pt:"A irmã dele é muito alta."},
+ {frase:"Her dog is little and funny", pt:"O cachorro dela é pequeno e engraçado."},
+ {frase:"My grandfather is very kind", pt:"O meu avô é muito gentil."}
 ]},
 
-{tipo:"adivinha", titulo:"Quem sou eu?", itens:[
- {pistas:["I am a woman in your family.","Your mother is my sister.","My children are your cousins."],
-  resposta:"aunt", pt:"tia", dica:"(alguém da família)",
-  explicacao:"A irmã da sua mãe é a sua aunt."},
- {pistas:["We are two brothers.","We are nine years old.","We are not one boy, we are two!"],
-  resposta:"twins", pt:"gêmeos", dica:"(duas pessoas)",
-  explicacao:"Dois irmãos da mesma idade: twins."},
- {pistas:["I am not a boy.","I am young.","I am a child."],
-  resposta:"girl", pt:"menina", dica:"(uma pessoa)",
-  explicacao:"Uma criança que não é menino: a girl."},
- {pistas:["I am a man in your family.","I am old.","Your father is my son."],
-  resposta:"grandfather", pt:"avô", dica:"(alguém da família)",
-  explicacao:"O pai do seu pai é o seu grandfather."}
+{tipo:"adivinha", titulo:"O que é? Escreva em inglês", itens:[
+ {pistas:["It is a pet.","It is not a dog and not a cat.","It is little and it is not a fish."],
+  resposta:"bird", pt:"pássaro", dica:"(um bicho)",
+  explicacao:"bird = pássaro. O do Leo se chama Kiwi!"},
+ {pistas:["She is in my family.","She is my mother's sister.","She is very funny."],
+  resposta:"aunt", pt:"tia", dica:"(uma pessoa da família)",
+  explicacao:"A irmã da mãe (ou do pai) é a aunt."},
+ {pistas:["You can see your family in it.","It is not big.","It is not a pet and not a box."],
+  resposta:"photo", pt:"foto", dica:"(uma coisa)",
+  explicacao:"photo = foto."},
+ {pistas:["She is my father's mother.","She is short and very kind.","She is not my aunt."],
+  resposta:"grandmother", aceita:["grandma"], pt:"avó", dica:"(uma pessoa da família)",
+  explicacao:"A mãe do pai é a grandmother — ou grandma, no jeito carinhoso."}
 ]},
 
-{tipo:"missao", titulo:"🎯 Missão: a videochamada com a Sofia",
- cenario:"<p>A prima da Emma, a <b>Sofia</b>, está numa videochamada com vocês duas. Ela quer saber como são as pessoas da sua família — e quer contar da dela. A Sofia <b>só entende inglês</b>.</p>",
- personagem:"Sofia, prima da Emma, 12 anos, animada e falante; ela mora em Miami e tem um irmão mais velho chamado Nick e um gato",
- objetivos:[
-  "dizer o nome de duas pessoas da sua família usando His name is / Her name is",
-  "dizer como é uma dessas pessoas (tall, funny, smart, quiet...)",
-  "perguntar à Sofia o nome de alguém da família dela"
- ],
- andaime:"<p>Se travar: <span class=\"lacuna\">His name is</span> ... · <span class=\"lacuna\">She is very</span> ... · <span class=\"lacuna\">What is</span> ... name?</p>",
- instrucaoIA:"Ela sabe: as palavras de familia, man, woman, boy, girl, child, children, people, twins, os adjetivos tall, short, young, funny, smart, strong, quiet, friendly, nice, big, small, happy, sad, old, e a gramatica he / she / his / her, This is / These are, plural com -s, verbo to be, numeros ate 20. Sofia fala frases de 3 a 6 palavras. Ela pergunta What is his name? What is her name? Is she tall? e conta que o irmao dela e o Nick, que ele e tall and funny, e que o gato dela se chama Mimi.",
- },
+{tipo:"missao", titulo:"Missão: de quem é este cachorro?", cena:"animal",
+ cenario:"<p>Tem um cachorro pequeno sozinho no portão da escola, com uma coleira vermelha. O <b>Ben</b> está lá do lado e também não sabe de quem é.</p><p>O Ben <b>só entende inglês</b>. Descubram juntos de quem é o cachorro!</p>",
+ personagem:"Ben, 11 anos, colega da escola, calmo e prestativo",
+ objetivos:["perguntar ao Ben se o cachorro é dele","descobrir de quem é o cachorro, usando his ou her para confirmar","dizer como o cachorro é (grande, pequeno, engraçado)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Is this your</span> …? · <span class=\"lacuna\">Is it his or</span> …? · <span class=\"lacuna\">He is very</span> …</p>",
+ instrucaoIA:"Ela sabe: he is / she is, his / her, family, mother, father, sister, brother, cousin, grandmother, aunt, uncle, dog, cat, bird, pet, photo, tall, short, funny, kind, little, big, favorite, love, This is / These are, plural com -s, numeros ate 20, e a semana 1. O cachorro e da MIA, a prima do Leo (uma menina) — o nome do cachorro e Bob. Ben nao conta de uma vez: primeiro diz No, it is not my dog, depois dá pistas curtas (It is not a boy's dog. / Mia is Leo's cousin.) e responde yes/no. Frases de 3 a 6 palavras, so com as palavras da lista. Se ela escrever em portugues, Ben diz que nao entendeu e repete mais devagar."},
 
-{tipo:"escrita", titulo:"Hora de escrever — invente você!",
- id:"1",
- instrucao:"Hoje a escrita é <b>livre</b>: escolha <b>uma</b> destas ideias e escreva <b>4 ou 5 frases</b> em inglês.<br><br><b>1.</b> Continue a história: o que a Anna fala para o Leo depois que a foto aparece?<br><b>2.</b> Invente um diálogo entre a Emma e a Sofia sobre a família de cada uma.<br><b>3.</b> Escreva uma carta curtinha para o Theo, o irmão de cinco anos da Anna.",
- dica:"<ul><li>escolha <b>uma só</b> das três ideias</li><li>4 ou 5 frases — pode inventar nomes e idades à vontade</li><li>precisa aparecer pelo menos um <b>his</b> e um <b>her</b></li><li>precisa aparecer pelo menos <b>um adjetivo</b> de hoje (alto, baixo, engraçado, inteligente, forte, quietinho, simpático)</li><li>não precisa ficar perfeito: precisa ser <b>seu</b>. 💜</li></ul>",
- gabarito:"4 ou 5 frases criativas em uma das três ideias (continuação da história, diálogo Emma e Sofia, ou carta para o Theo), com pelo menos um his e um her usados corretamente, pelo menos um adjetivo do dia (tall, short, young, funny, smart, strong, quiet, friendly) e o verbo to be bem usado",
- instrucaoIA:"Esta e uma escrita LIVRE E CRIATIVA. Ela escolheu uma de tres ideias: continuar a historia da foto da Anna, inventar um dialogo entre Emma e Sofia sobre as familias delas, ou escrever uma carta curta para o Theo (irmao de cinco anos da Anna). Devia escrever 4 ou 5 frases, com pelo menos um his e um her e um adjetivo do dia. Vocabulario da aula: tall, short, young, funny, smart, strong, quiet, friendly, photo, mais as palavras de familia e de pessoas dos dias 1 e 2. Gramatica: he / she / his / her, This is / These are, plural com -s, verbo to be. Elogie a criatividade primeiro e depois corrija no maximo tres coisas. Nao exija vocabulario que ela nao tem."},
+{tipo:"escrita", titulo:"Hora de inventar", id:"1",
+ instrucao:"Agora é você quem inventa! Crie uma família <b>que não existe</b> — de um personagem de desenho, de um alienígena, de quem você quiser — e apresente essa família em <b>4 ou 5 frases</b> em inglês. 🎨",
+ dica:"<ul><li>diga quantas pessoas tem nessa família</li><li>apresente pelo menos duas delas, dizendo quem são</li><li>use ele é / ela é para falar de cada uma</li><li>diga como cada uma é: alta, baixa, engraçada, gentil</li><li>conte se essa família tem algum bicho de estimação, e de quem ele é</li></ul>Não tem resposta certa — quanto mais maluca, melhor. 💜",
+ gabarito:"4 ou 5 frases inventadas apresentando uma familia imaginaria. Uma boa resposta traz: pelo menos duas pessoas apresentadas (This is... / He is... / She is...), pelo menos um adjetivo (tall, short, funny, kind, little, big), pelo menos um uso de his ou her, e um bicho de estimacao ou um numero de pessoas. Nao existe resposta certa: o que conta e usar he is / she is e his / her corretamente.",
+ instrucaoIA:"Ela devia INVENTAR uma familia e apresenta-la em 4 ou 5 frases. E uma tarefa criativa: elogie a imaginacao antes de corrigir. Vocabulario da aula: he is, she is, his, her, family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, aunt, uncle, dog, cat, bird, pet, man, woman, children, twin, tall, short, funny, kind, little, big, favorite, love, This is / These are. Confira principalmente: is com he e she, e his/her de acordo com o dono. Corrija no maximo 3 coisas, em portugues."},
 
 {tipo:"fala", titulo:"Hora de falar",
- instrucao:"Ouça, repita em voz alta e teste no 🎤.",
+ instrucao:"Ouça, repita em voz alta e depois teste no 🎤.",
  frases:[
-  {en:"His name is Marcos.", pt:"O nome dele é Marcos."},
-  {en:"Her name is Carla.", pt:"O nome dela é Carla."},
-  {en:"He is tall and strong.", pt:"Ele é alto e forte."},
-  {en:"She is very funny.", pt:"Ela é muito engraçada."},
-  {en:"Her brother is quiet.", pt:"O irmão dela é quietinho."},
-  {en:"His grandmother is friendly.", pt:"A avó dele é simpática."}
+  {en:"He is my brother.", pt:"Ele é o meu irmão."},
+  {en:"She is my sister.", pt:"Ela é a minha irmã."},
+  {en:"His name is Tom.", pt:"O nome dele é Tom."},
+  {en:"Her name is Mia.", pt:"O nome dela é Mia."},
+  {en:"My grandmother is very kind.", pt:"A minha avó é muito gentil."},
+  {en:"Her dog is big and funny.", pt:"O cachorro dela é grande e engraçado."},
+  {en:"I love my family.", pt:"Eu amo a minha família."}
  ],
- instrucaoIA:"Praticar his e her nas frases acima. Depois faca 4 a 6 perguntas em ingles sobre a historia do dia e sobre a familia dela, uma de cada vez, esperando a resposta falada: Who is Marcos? Is her mother funny? What is your father's name? Is your brother tall or short? Who is funny in your family? Corrija em portugues, com carinho. Ela so sabe o verbo to be, he / she / his / her, This is / These are, o plural, as palavras de familia e os adjetivos tall, short, young, funny, smart, strong, quiet, friendly."},
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues, com atencao ao h de his e her (um sopro, nunca R) e ao th mole de brother e mother. Depois faca 4 a 6 perguntas em ingles sobre a historia do dia e sobre a familia dela, uma de cada vez, esperando a resposta FALADA antes da proxima: Who is Grandma Ruth? / Is Rex big or little? / Is your mother tall or short? / Who is funny in your family? / What's your brother's name? Corrija em portugues. Use so palavras da aula e das aulas anteriores."},
 
-{tipo:"quiz", bonus:true, titulo:"Detetive: o que a história não disse", questoes:[
- {pergunta:"Theo is five. Anna is eleven. Who is small?", opcoes:["Anna","Theo","Carla"], correta:1,
-  explicacao:"A história não diz que a Anna é pequena — mas o Theo tem cinco anos e é small."},
- {pergunta:"Marcos and Carla are Anna's parents. Theo is her brother. Is Carla his mother?", opcoes:["Yes, she is.","No, she is not.","She is his aunt."], correta:0,
-  explicacao:"Se o Theo é irmão da Anna, os pais são os mesmos: a Carla é a mãe dele também."},
- {pergunta:"Emma and Leo are with Anna. Is Anna with her family?", opcoes:["Yes, she is.","No, she is with her friends.","She is with her brother."], correta:1,
-  explicacao:"A família dela está na foto, não ali. Ali estão os amigos."}
+{tipo:"quiz", bonus:true, titulo:"Detetive: o que dá para concluir?", questoes:[
+ {pergunta:"A mãe e o pai da Emma estão no trabalho. Quem está em casa com o Sam?",
+  opcoes:["Emma","Grandma Ruth","Rex"], correta:0,
+  explicacao:"A história diz que a Emma está com o irmãozinho — os pais estão fora."},
+ {pergunta:"A vovó Ruth é de Chicago, mas está na porta da casa da Emma. Onde ela está agora?",
+  opcoes:["Em Chicago","Na casa da Emma","No trabalho"], correta:1,
+  explicacao:"Ela é DE Chicago (é de lá), mas agora está na porta da Emma — por isso é surpresa!"},
+ {pergunta:"O Rex é o cachorro da vovó Ruth. Então o Rex é o cachorro da Emma?",
+  opcoes:["Yes, he is her dog.","No, he is her grandmother's dog.","Rex is a cat."], correta:1,
+  explicacao:"A história diz HER dog, falando da vovó: o Rex é o cachorro dela, não da Emma."},
+ {pergunta:"No fim, a Emma está feliz. Por quê?",
+  opcoes:["Her grandmother is here.","She is at school.","Sam is hungry."], correta:0,
+  explicacao:"A avó chegou de surpresa — e o dia virou."}
 ]},
 
-{tipo:"ligar", bonus:true, titulo:"Pares parecidos: não se confunda", pares:[
- {en:"he", pt:"ele"},
- {en:"his", pt:"dele"},
- {en:"she", pt:"ela"},
- {en:"her", pt:"dela"},
- {en:"tired", pt:"cansada"},
- {en:"thirsty", pt:"com sede"},
- {en:"country", pt:"país"},
- {en:"student", pt:"aluno, aluna"}
+{tipo:"ordenar", bonus:true, titulo:"Frases grandes: monte com cuidado", itens:[
+ {frase:"My grandmother is short and very funny", pt:"A minha avó é baixinha e muito engraçada."},
+ {frase:"Her dog is big and very funny", pt:"O cachorro dela é grande e muito engraçado."},
+ {frase:"He is tall and she is very funny", pt:"Ele é alto e ela é muito engraçada."}
 ]}
 
 ]});

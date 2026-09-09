@@ -12,150 +12,154 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:1, dia:4,
+semana:1,
+dia:4,
 titulo:"Where are you from?",
-subtitulo:"Países, nacionalidades e perguntas",
+subtitulo:"Tudo junto: conhecer alguém de verdade, numa videochamada",
 objetivos:[
-  "Dizer de onde você é e onde você mora",
-  "Fazer perguntas com o verbo TO BE",
-  "Responder Yes, I am / No, I'm not"
+  "Perguntar e dizer de onde a pessoa é",
+  "Entender uma conversa inteira em inglês",
+  "Conversar com alguém que só fala inglês"
 ],
 blocos:[
 
-{tipo:"nota", titulo:"🌍 Hoje você vira repórter!",
- html:"<p>Ontem você aprendeu a <b>falar</b> com o verbo TO BE. Hoje você aprende a <b>perguntar</b>.</p><p>O segredo é simples: é só <b>trocar as duas primeiras palavras de lugar</b>. Vai ver como é fácil!</p>"},
-
-{tipo:"vocab", titulo:"Países e nacionalidades", itens:[
- {en:"Brazil / Brazilian", pt:"Brasil / brasileiro(a)", emoji:"🇧🇷"},
- {en:"The United States / American", pt:"Estados Unidos / americano(a)", emoji:"🇺🇸"},
- {en:"England / English", pt:"Inglaterra / inglês(a)", emoji:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
- {en:"Canada / Canadian", pt:"Canadá / canadense", emoji:"🇨🇦"},
- {en:"Argentina / Argentinian", pt:"Argentina / argentino(a)", emoji:"🇦🇷"},
- {en:"Japan / Japanese", pt:"Japão / japonês(a)", emoji:"🇯🇵"},
- {en:"Italy / Italian", pt:"Itália / italiano(a)", emoji:"🇮🇹"},
- {en:"France / French", pt:"França / francês(a)", emoji:"🇫🇷"},
- {en:"city", pt:"cidade", emoji:"🏙️"},
- {en:"country", pt:"país", emoji:"🗺️"},
- {en:"I live in...", pt:"Eu moro em...", emoji:"🏠"},
- {en:"Where do you live?", pt:"Onde você mora? (frase pronta — o 'do' você aprende na semana 5)", emoji:"📍"}
-]},
-
-{tipo:"gramatica", titulo:"Como fazer perguntas",
- html:"<p>Para perguntar, é só <b>inverter</b>: o verbo vem primeiro!</p>"+
- "<table><tr><th>Frase normal</th><th>Pergunta</th></tr>"+
- "<tr><td>You <b>are</b> Brazilian.</td><td><b>Are</b> you Brazilian?</td></tr>"+
- "<tr><td>She <b>is</b> happy.</td><td><b>Is</b> she happy?</td></tr>"+
- "<tr><td>They <b>are</b> your friends.</td><td><b>Are</b> they your friends?</td></tr></table>"+
- "<p>E as respostas curtas são assim:</p>"+
- "<table><tr><th>Pergunta</th><th>Sim</th><th>Não</th></tr>"+
- "<tr><td>Are you Brazilian?</td><td><code>Yes, I am.</code></td><td><code>No, I'm not.</code></td></tr>"+
- "<tr><td>Is she your sister?</td><td><code>Yes, she is.</code></td><td><code>No, she isn't.</code></td></tr></table>"+
- "<p>🔎 As <b>palavras de pergunta</b> vêm antes de tudo:</p>"+
- "<p><code>What</code> = o quê · <code>Where</code> = onde · <code>Who</code> = quem · <code>How old</code> = quantos anos</p>",
+{tipo:"gramatica", titulo:"Revisão rápida: I am, you are, Are you...?",
+ html:"<p>Tudo o que você aprendeu nesta semana cabe nesta tabelinha:</p>"+
+ "<table>"+
+ "<tr><th>Para...</th><th>Inglês</th></tr>"+
+ "<tr><td>falar de você</td><td><code>I am / I'm</code></td></tr>"+
+ "<tr><td>falar com a outra pessoa</td><td><code>You are</code></td></tr>"+
+ "<tr><td>perguntar</td><td><code>Are you...?</code></td></tr>"+
+ "<tr><td>responder sim / não</td><td><code>Yes, I am. / No, I'm not.</code></td></tr>"+
+ "</table>"+
+ "<p>E hoje entra a pergunta mais usada do mundo quando duas pessoas se conhecem:</p>"+
+ "<p><code>Where are you from?</code> — De onde você é?<br>Resposta: <code>I'm from Brazil.</code></p>"+
+ "<p>Repare que ela é a mesma pergunta de ontem, com um <code>where</code> (onde) na frente.</p>",
  exemplos:[
   {en:"Where are you from?", pt:"De onde você é?"},
   {en:"I'm from Brazil.", pt:"Eu sou do Brasil."},
-  {en:"Where do you live?", pt:"Onde você mora?"},
-  {en:"I live in Florianópolis.", pt:"Eu moro em Florianópolis."},
-  {en:"I live in a big city.", pt:"Eu moro em uma cidade grande."},
-  {en:"How old are you?", pt:"Quantos anos você tem?"},
-  {en:"Are you American?", pt:"Você é americana?"},
-  {en:"No, I'm not. I'm Brazilian.", pt:"Não, não sou. Eu sou brasileira."},
-  {en:"Who is she?", pt:"Quem é ela?"}
+  {en:"Are you from New York?", pt:"Você é de Nova York?"},
+  {en:"No, I'm not. I am from Miami.", pt:"Não, não sou. Eu sou de Miami."}
  ]},
 
-{tipo:"dialogo", titulo:"Conversa por vídeo com uma amiga dos EUA", linhas:[
- {quem:"Emma", en:"Hi! I'm Emma. What's your name?", pt:"Oi! Eu sou a Emma. Qual é o seu nome?"},
- {quem:"Anna", en:"Hello, Emma! My name is Anna.", pt:"Olá, Emma! Meu nome é Anna."},
- {quem:"Emma", en:"Where are you from, Anna?", pt:"De onde você é, Anna?"},
- {quem:"Anna", en:"I'm from Brazil. I live in Florianópolis. And you?", pt:"Eu sou do Brasil. Eu moro em Florianópolis. E você?"},
- {quem:"Emma", en:"I'm American. I'm from New York.", pt:"Eu sou americana. Eu sou de Nova York."},
- {quem:"Anna", en:"Cool! How old are you?", pt:"Legal! Quantos anos você tem?"},
- {quem:"Emma", en:"I'm eleven. Are you eleven too?", pt:"Eu tenho onze. Você também tem onze?"},
- {quem:"Anna", en:"Yes, I am! Let's be friends.", pt:"Sim, tenho! Vamos ser amigas."}
+{tipo:"vocab", titulo:"Mais frases para conversar", itens:[
+ {en:"Excuse me.", pt:"Com licença.", ipa:"/iks-KIÚS mi/", emoji:"🙋"},
+ {en:"Where are you from?", pt:"De onde você é?", ipa:"/UÉR ar iu from/", emoji:"🌎"},
+ {en:"This is my friend.", pt:"Este é meu amigo. / Esta é minha amiga.", ipa:"/DÍS iz mai frend/", emoji:"👭"},
+ {en:"See you tomorrow!", pt:"Até amanhã!", ipa:"/SÍ iu tu-MÓ-rou/", emoji:"📅"},
+ {en:"Have a nice day!", pt:"Tenha um bom dia!", ipa:"/HÉV a náis DÊI/", emoji:"🌞"},
+ {en:"Of course!", pt:"Claro!", ipa:"/ov KÓRS/", emoji:"👍"},
+ {en:"No problem.", pt:"Sem problema.", ipa:"/nôu PRÓ-blem/", emoji:"😎"},
+ {en:"Good luck!", pt:"Boa sorte!", ipa:"/gud LÂK/", emoji:"🍀"}
 ]},
 
-{tipo:"historia", titulo:"Ouça: a Emma fala de New York", paragrafos:[
- {en:"Hi! I'm Emma. I'm from New York.", pt:"Oi! Eu sou a Emma. Eu sou de Nova York."},
- {en:"New York is a big city in the United States.", pt:"Nova York é uma cidade grande nos Estados Unidos."},
- {en:"I'm eleven years old and I'm American.", pt:"Eu tenho onze anos e sou americana."},
- {en:"This is my friend Anna. She's from Brazil. She's eleven too.", pt:"Esta é minha amiga Anna. Ela é do Brasil. Ela tem onze também."},
- {en:"Anna is Brazilian. She's from Florianópolis, a big city in Brazil.", pt:"A Anna é brasileira. Ela é de Florianópolis, uma cidade grande no Brasil."},
- {en:"Anna and I are friends. We're very happy!", pt:"A Anna e eu somos amigas. Nós estamos muito felizes!"}
+{tipo:"dialogo", titulo:"Ouça: a videochamada", escuta:true, linhas:[
+ {quem:"Emma", en:"Hello! Are you Ben?", pt:"Olá! Você é o Ben?"},
+ {quem:"Ben", en:"Yes, I am. Hi, Emma!", pt:"Sim, sou. Oi, Emma!"},
+ {quem:"Emma", en:"Nice to meet you, Ben. Where are you from?", pt:"Prazer em conhecer você, Ben. De onde você é?"},
+ {quem:"Ben", en:"I am from Miami. And you?", pt:"Eu sou de Miami. E você?"},
+ {quem:"Emma", en:"I am from New York. How are you?", pt:"Eu sou de Nova York. Como você está?"},
+ {quem:"Ben", en:"I am great, thank you. Are you a student?", pt:"Eu estou ótimo, obrigado. Você é aluna?"},
+ {quem:"Emma", en:"Yes, I am. I am in class six.", pt:"Sim, sou. Eu estou na turma seis."},
+ {quem:"Ben", en:"Nice! My friend Leo is here, too.", pt:"Legal! O meu amigo Leo está aqui também."},
+ {quem:"Emma", en:"Hi, Leo! Have a nice day, Ben!", pt:"Oi, Leo! Tenha um bom dia, Ben!"},
+ {quem:"Ben", en:"Thank you! See you tomorrow, Emma!", pt:"Obrigado! Até amanhã, Emma!"}
 ]},
 
-{tipo:"quiz", titulo:"Você entendeu a Emma?", questoes:[
- {pergunta:"Where is Emma from?", opcoes:["New York","Brazil","Canada"], correta:0,
-  explicacao:"I'm from New York."},
- {pergunta:"Is Emma Brazilian?", opcoes:["Yes, she is.","No, she isn't. She's American.","No, she isn't. She's Canadian."], correta:1,
-  explicacao:"Ela diz: I'm American."},
- {pergunta:"Is New York a big city?", opcoes:["No, it isn't.","Yes, she is.","Yes, it is."], correta:2,
-  explicacao:"New York is a big city. Para cidade usamos it, não she."}
+{tipo:"quiz", titulo:"Você entendeu a videochamada?", questoes:[
+ {pergunta:"Where is Ben from?", opcoes:["Miami","New York","Brazil"], correta:0,
+  explicacao:"Ele diz: I am from Miami."},
+ {pergunta:"Where is Emma from?", opcoes:["Miami","New York","Brazil"], correta:1,
+  explicacao:"Ela diz: I am from New York."},
+ {pergunta:"Is Emma a student?", opcoes:["Yes, she is.","No, she is not.","She is a teacher."], correta:0,
+  explicacao:"Ben pergunta Are you a student? e ela responde Yes, I am."},
+ {pergunta:"What class is Emma in?", opcoes:["Class six","Class five","Class ten"], correta:0,
+  explicacao:"Ela diz: I am in class six."},
+ {pergunta:"Who is with Ben?", opcoes:["Leo","Anna","A teacher"], correta:0,
+  explicacao:"Ele diz: My friend Leo is here, too."}
 ]},
 
-{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
- {pergunta:"Como se pergunta 'De onde você é?'", opcoes:["Where you are from?","Where are you from?","You are from where?"], correta:1,
-  explicacao:"A palavra de pergunta vem primeiro, depois o verbo: Where + are + you."},
- {pergunta:"'Are you Brazilian?' — resposta CURTA para SIM:", opcoes:["Yes, I am.","Yes, I is.","Yes, you are."], correta:0,
-  explicacao:"A pergunta é sobre VOCÊ, então a resposta usa I am."},
- {pergunta:"Qual pergunta serve para saber a idade?", opcoes:["What is your name?","Where are you from?","How old are you?"], correta:2,
-  explicacao:"How old = quantos anos."},
- {pergunta:"'Is she your teacher?' — resposta para NÃO:", opcoes:["No, she isn't.","No, she not.","No, she aren't."], correta:0,
-  explicacao:"isn't = is not."},
- {pergunta:"Como se diz 'Eu moro em São Paulo'?", opcoes:["I live in São Paulo.","I am live São Paulo.","I from São Paulo."], correta:0,
-  explicacao:"live in = morar em."}
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"Where are you from", pt:"De onde você é?", dica:"(quatro palavras)"},
+ {en:"I am from Miami", pt:"Eu sou de Miami.", dica:"(quatro palavras)"},
+ {en:"Are you a student", pt:"Você é aluna?", dica:"(quatro palavras)"},
+ {en:"See you tomorrow", pt:"Até amanhã!", dica:"(três palavras)"}
 ]},
 
-{tipo:"completar", titulo:"Complete as perguntas", ajuda:"Qual palavra de pergunta falta?", itens:[
- {frase:"___ is your name?", pt:"Qual é o seu nome?", resposta:"What", opcoes:["What","Where","Who"]},
- {frase:"___ are you from?", pt:"De onde você é?", resposta:"Where", opcoes:["What","Where","How"]},
- {frase:"___ old are you?", pt:"Quantos anos você tem?", resposta:"How", opcoes:["What","How","Who"]},
- {frase:"___ is your teacher?", pt:"Quem é a sua professora?", resposta:"Who", opcoes:["Who","Where","What"]},
- {frase:"___ you happy today?", pt:"Você está feliz hoje?", resposta:"Are", opcoes:["Are","Is","Am"]}
+{tipo:"escrita", titulo:"Responda sobre a videochamada", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Where is Ben from? (De onde é o Ben?)<br>2. Where is Emma from? (De onde é a Emma?)<br>3. Is Emma a student? (A Emma é aluna?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>use <b>is</b> para falar do Ben e da Emma</li><li>na terceira, responda sim ou não com a frase inteira</li></ul>",
+ andaime:"<p>Comece assim: Ben is from <span class=\"lacuna\">?</span>. · Emma is from <span class=\"lacuna\">?</span>. · Yes, she <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Ben is from Miami. 2. Emma is from New York. 3. Yes, she is (a student).",
+ instrucaoIA:"Ela ouviu uma videochamada e devia responder por escrito de onde e o Ben (Miami), de onde e a Emma (New York) e se a Emma e aluna (sim). Vocabulario: is, from, where, student, class, friend, here, Are you...?, Yes she is."},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"___ are you from?", pt:"De onde você é?", resposta:"Where",
+  opcoes:["Where","What","How"], explicacao:"where = onde."},
+ {frase:"I ___ from Brazil.", pt:"Eu sou do Brasil.", resposta:"am",
+  opcoes:["am","are","is"], explicacao:"Com I é sempre am."},
+ {frase:"___ you a student?", pt:"Você é aluna?", resposta:"Are",
+  opcoes:["Are","Am","Is"], explicacao:"Perguntas com you começam com Are."},
+ {frase:"See you ___!", pt:"Até amanhã!", resposta:"tomorrow",
+  opcoes:["tomorrow","morning","please"], explicacao:"tomorrow = amanhã."},
+ {frase:"___ me, please.", pt:"Com licença, por favor.", resposta:"Excuse",
+  opcoes:["Excuse","Sorry","Thank"], explicacao:"Excuse me é o nosso com licença."},
+ {frase:"This ___ my friend.", pt:"Esta é minha amiga.", resposta:"is",
+  opcoes:["is","am","are"], explicacao:"Para falar de outra pessoa, a palavrinha é is."}
 ]},
 
-{tipo:"ordenar", titulo:"Monte as perguntas e respostas", itens:[
- {frase:"Where are you from", pt:"De onde você é?"},
- {frase:"I am from Brazil", pt:"Eu sou do Brasil."},
- {frase:"How old are you", pt:"Quantos anos você tem?"},
- {frase:"Is she your sister", pt:"Ela é sua irmã?"}
+{tipo:"ligar", titulo:"Ligue as frases de conversa", pares:[
+ {en:"Excuse me.", pt:"Com licença."},
+ {en:"Where are you from?", pt:"De onde você é?"},
+ {en:"See you tomorrow!", pt:"Até amanhã!"},
+ {en:"Have a nice day!", pt:"Tenha um bom dia!"},
+ {en:"Of course!", pt:"Claro!"},
+ {en:"Good luck!", pt:"Boa sorte!"}
 ]},
 
-{tipo:"ditado", titulo:"Escute e escreva", itens:[
- {en:"Where are you from", pt:"De onde você é?"},
- {en:"I am from Brazil", pt:"Eu sou do Brasil."},
- {en:"Yes, I am", pt:"Sim, eu sou."},
- {en:"I live in a big city", pt:"Eu moro em uma cidade grande."}
-]},
+{tipo:"entrevista", titulo:"O jornal da escola", perfil:"reporter",
+ personagem:"Kim, repórter do jornal da escola, curiosa e animada",
+ apresentacao:"<p>A Kim está fazendo uma matéria sobre os alunos novos para o <b>jornal da escola</b>. Ela quer falar com você — e ela <b>só fala inglês</b>. Entenda as perguntas e responda!</p>",
+ quer:["o nome dela e como se soletra","de onde ela é (a cidade ou o país)","como ela está hoje","o nome de uma amiga dela"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">My name is</span> … · <span class=\"lacuna\">I'm from</span> … · <span class=\"lacuna\">This is my friend</span> …</p>",
+ instrucaoIA:"Ela sabe: cumprimentos, What's your name?, My name is..., Nice to meet you, How are you?, I'm fine, I'm great, I am / I'm, you are, Are you...?, Yes I am, No I'm not, Where are you from?, I'm from..., This is my friend, happy, sad, tired, hungry, thirsty, ready, student, teacher, girl, boy, friend, class, number, here, new, o alfabeto e os numeros ate twenty. Kim pergunta UMA coisa por vez, com frases de 3 a 6 palavras, e anota. Se ela nao entender, Kim pergunta de outro jeito (mais curto, dando um exemplo sobre ela mesma, ou com duas opcoes) ate 3 vezes. Nao use nenhuma palavra fora dessa lista."},
 
-{tipo:"missao", titulo:"Missão: conhecer a Emma",
- cenario:"<p>Você está numa <b>videochamada</b> com a Emma, uma menina americana de 11 anos que acabou de chegar na sua escola. Ela é simpática, mas <b>só entende inglês</b>. Você quer virar amiga dela!</p>",
- personagem:"Emma, uma menina americana de 11 anos, de New York, simpática e curiosa, que acabou de chegar numa escola no Brasil",
- objetivos:[
-  "dizer o seu nome e perguntar o nome dela",
-  "perguntar quantos anos ela tem",
-  "perguntar de onde ela é",
-  "se despedir com educação"
- ],
- andaime:"<p>Se travar, lembre das perguntas desta semana. Elas começam com:</p><p><span class=\"lacuna\">What's</span> …? · <span class=\"lacuna\">How old</span> …? · <span class=\"lacuna\">Where</span> … from?</p><p style=\"font-size:14px;color:#6E6A80\">E se não entender a Emma: <i>Sorry, I don't understand. Again, please.</i></p>",
- instrucaoIA:"Ela sabe: hello/hi, my name is / I'm, what's your name, nice to meet you, how are you, I'm fine, how old are you, I am ... years old, where are you from, I'm from, I live in, países e nacionalidades (Brazil/Brazilian, American, Canadian, Japanese...), yes I am / no I'm not, bye, see you tomorrow, sorry I don't understand, again please. Emma é de New York, tem onze anos e está feliz de conhecer alguém."},
+{tipo:"missao", titulo:"Missão da semana: a videochamada", cena:"ligacao",
+ cenario:"<p>A sua escola tem uma turma amiga nos <b>Estados Unidos</b>. Hoje é a sua vez de aparecer na videochamada!</p><p>Do outro lado está a <b>Sophie</b>, que tem a sua idade e <b>só entende inglês</b>. Você tem alguns minutos para se apresentar e conhecer ela.</p>",
+ personagem:"Sophie, 11 anos, de Miami, animada e um pouco tagarela",
+ objetivos:["cumprimentar a Sophie em inglês","dizer o seu nome e soletrar quando ela pedir","perguntar o nome dela","dizer de onde você é e perguntar de onde ela é","se despedir no fim da chamada"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Hello! My name is</span> … · <span class=\"lacuna\">Where are you</span> …? · <span class=\"lacuna\">See you</span> …!</p>",
+ instrucaoIA:"Ela sabe: cumprimentos, What's your name?, My name is..., Nice to meet you, How are you?, I'm fine, I'm great, And you?, I am / I'm, Are you...?, Yes I am, No I'm not, Where are you from?, I'm from..., See you tomorrow, Have a nice day, Excuse me, Of course, No problem, Sorry I don't understand, Again please, Slowly please, o alfabeto, os numeros ate twenty, student, teacher, girl, boy, friend, class, happy, tired, hungry, ready. Sophie e de Miami, esta na class six e tem uma amiga chamada Lily. Ela fala frases de 3 a 6 palavras, uma de cada vez, e pede para soletrar o nome dela (Can you spell it?). Nao use nenhuma palavra fora dessa lista."},
 
 {tipo:"escrita", titulo:"Hora de escrever", id:"1",
- instrucao:"Você vai entrevistar a Emma, a menina dos Estados Unidos. Escreva <b>4 perguntas</b> para ela em inglês e, embaixo de cada uma, <b>a sua própria resposta</b>.",
- dica:"<ul><li>uma pergunta sobre o <b>nome</b></li><li>uma sobre a <b>idade</b></li><li>uma sobre <b>de onde</b> ela é</li><li>uma que comece com <b>Are you...?</b></li></ul>Toda pergunta em inglês termina com <b>?</b> e começa com a palavra de pergunta ou com o verbo.",
- andaime:"<p>Um par pronto, de outro assunto, só para você ver o formato:</p><p style=\"font-size:17px\">Who is your teacher?<br>→ My teacher is Mrs. Silva.</p><p style=\"font-size:14px;color:#6E6A80\">As palavras de pergunta estão na tabela verde-rosa desta aula.</p>",
- gabarito:"4 perguntas bem formadas (com what / how old / where e uma com Are you...?) e 4 respostas completas sobre ela mesma",
- instrucaoIA:"Ela devia escrever 4 perguntas em inglês com o verbo to be / palavras interrogativas (what, where, who, how old) e responder as mesmas 4 perguntas sobre ela. Vocabulário da aula: where are you from, I'm from, I live in, how old are you, what's your name, who is, Yes I am / No I'm not, países e nacionalidades (Brazil/Brazilian, American, English, Canadian, Japanese, Italian, French)."},
+ instrucao:"Conte, em <b>4 ou 5 frases</b> em inglês, como foi a videochamada com a Sophie. ✍️",
+ dica:"<ul><li>uma frase com o seu nome</li><li>uma frase dizendo de onde você é</li><li>uma frase com o nome da Sophie</li><li>uma frase dizendo de onde ela é</li><li>uma frase dizendo como você está depois da conversa</li></ul>Use <b>is</b> quando falar da Sophie. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>My name is <span class=\"lacuna\">?</span>.<br>I'm from <span class=\"lacuna\">?</span>.<br><span class=\"lacuna\">?</span> is from <span class=\"lacuna\">?</span>.<br>I am <span class=\"lacuna\">?</span>!</p>",
+ gabarito:"4 ou 5 frases: o nome dela, de onde ela e (I'm from Brazil), o nome da Sophie, de onde a Sophie e (Miami) e como ela esta depois da conversa (happy / great / tired).",
+ instrucaoIA:"Ela devia contar em 4 ou 5 frases como foi a videochamada com a Sophie, uma menina de Miami. Vocabulario da aula: I am / I'm, is, Where are you from?, I'm from, name, friend, student, class, happy, tired, great, fine, numeros ate twenty. Repare se ela usou is para falar da Sophie e am para falar dela mesma. Corrija no maximo 3 coisas, em portugues."},
 
-{tipo:"fala", titulo:"Hora de falar",
- instrucao:"Aquecimento: as perguntas da missão, bem pronunciadas. Ouça, repita e teste no 🎤. Depois mande para a IA e responda <b>falando</b>.",
+{tipo:"fala", titulo:"Hora de falar: aquecimento para a missão",
+ instrucao:"Estas são as frases da videochamada. Ouça, repita e teste no 🎤 antes de começar a missão.",
  frases:[
-  {en:"Hi! What's your name?", pt:"Oi! Qual é o seu nome?"},
-  {en:"How old are you?", pt:"Quantos anos você tem?"},
+  {en:"Hello! My name is Anna.", pt:"Olá! Meu nome é Anna."},
   {en:"Where are you from?", pt:"De onde você é?"},
-  {en:"I live in a big city.", pt:"Eu moro em uma cidade grande."}
+  {en:"I'm from Brazil.", pt:"Eu sou do Brasil."},
+  {en:"Nice to meet you!", pt:"Prazer em conhecer você!"},
+  {en:"See you tomorrow!", pt:"Até amanhã!"}
  ],
- instrucaoIA:"Praticar perguntas pessoais em inglês (what's your name, how old are you, where are you from). Depois das frases, faça 3 perguntas fáceis para ela responder falando: o nome, a idade e de onde ela é. Uma pergunta de cada vez, frases muito curtas."}
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues (o r de from e bem leve; tomorrow tem a forca no MO). Depois faca 4 a 6 perguntas em ingles, uma de cada vez, esperando a resposta FALADA dela: What's your name? / Where are you from? / Are you a student? / How are you today? / Are you ready? Use so estas palavras: name, where, from, are you, student, teacher, friend, ready, happy, tired, how, today."},
+
+{tipo:"ditado", bonus:true, titulo:"Frases inteiras: escute e escreva", itens:[
+ {en:"Excuse me, are you from Miami?", pt:"Com licença, você é de Miami?", dica:"(seis palavras)"},
+ {en:"This is my friend and she is nice", pt:"Esta é a minha amiga e ela é legal.", dica:"(oito palavras)"},
+ {en:"Where are you from, Emma?", pt:"De onde você é, Emma?", dica:"(cinco palavras)"}
+]},
+
+{tipo:"escrita", bonus:true, titulo:"Escreva uma mensagem para a Sophie", id:"bonus",
+ instrucao:"A Sophie mandou uma mensagem: <i>Hi! Are you a student? Where are you from?</i> Responda a mensagem dela em inglês, com <b>3 ou 4 frases</b>, e faça <b>duas perguntas</b> para ela no fim.",
+ dica:"<ul><li>comece com um cumprimento</li><li>responda as duas perguntas dela</li><li>termine com duas perguntas suas, começando com <b>Are you...?</b> ou <b>Where...?</b></li></ul>",
+ gabarito:"3 ou 4 frases respondendo que ela e student e de onde ela e, mais duas perguntas para a Sophie (Are you...? / Where are you from? / How are you?).",
+ instrucaoIA:"Desafio bonus: ela devia responder uma mensagem da Sophie com 3 ou 4 frases E fazer duas perguntas. Vocabulario: I am / I'm, Are you...?, Where are you from?, student, class, friend, happy, tired, ready, numeros ate twenty. Confira principalmente se as PERGUNTAS dela estao na ordem certa (Are you... / Where are you...). Corrija em portugues, com carinho."}
 
 ]});
 </script>

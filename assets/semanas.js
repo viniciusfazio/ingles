@@ -20,13 +20,16 @@ var MODULOS = [
    MÓDULO 1 — 40 semanas (8 a 10 meses, de segunda a sexta)
    Ao gerar uma semana nova, mude "pronta" para true e preencha
    "dias" com os títulos dos 5 dias. NADA MAIS muda aqui.
+   "versao" (1 se não houver) sobe quando uma semana é REGERADA — quem
+   faz isso é o ./limpar.sh, nunca a IA. O celular compara e apaga o
+   progresso antigo da semana, avisando no índice.
    ============================================================ */
 var SEMANAS = [
 /* ---------- BLOCO 1 — Primeiras palavras (A0 → A1) ---------- */
-{n:1, bloco:"Bloco 1 — Primeiras palavras", titulo:"Hello! Nice to meet you", tema:"Cumprimentos, alfabeto, números 0–20, verbo TO BE (I / you)", pronta:true,
- dias:["Hello! Cumprimentos","O alfabeto e os números","I am / You are","Where are you from?","Revisão + My first presentation"]},
-{n:2, bloco:"Bloco 1 — Primeiras palavras", titulo:"My family", tema:"Família, this/these, plural, He is / She is, his/her, possessivo com 's", pronta:true,
- dias:["This is my family","This is / These are","He is, she is · his, her","Anna's family","Revisão + projeto: a minha família"]},
+{n:1, bloco:"Bloco 1 — Primeiras palavras", titulo:"Hello! Nice to meet you", tema:"Cumprimentos, alfabeto, números 0–20, verbo TO BE (I / you)", versao:2, pronta:true,
+ dias:["Hello! Nice to meet you","A, B, C... one, two, three!","Are you happy?","Where are you from?","Revisão + projeto"]},
+{n:2, bloco:"Bloco 1 — Primeiras palavras", titulo:"My family", tema:"Família, this/these, plural, He is / She is, his/her, possessivo com 's", versao:2, pronta:true,
+ dias:["My family","One sister, two sisters","He is my brother","Max's family","Revisão + projeto"]},
 {n:3, bloco:"Bloco 1 — Primeiras palavras", titulo:"Colors and my school things", tema:"Cores, material escolar, a/an, adjetivos, What's this?", pronta:false},
 {n:4, bloco:"Bloco 1 — Primeiras palavras", titulo:"How old are you?", tema:"Números 21–100, ordinais (first, second…), idade, dias da semana, meses, aniversário (on May 5th)", pronta:false},
 {n:5, bloco:"Bloco 1 — Primeiras palavras", titulo:"My day", tema:"Rotina, present simple (I/you/we), que horas são, preposições de tempo (at 7, on Monday, in the morning)", pronta:false},

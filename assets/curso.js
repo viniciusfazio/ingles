@@ -305,12 +305,96 @@ function textoFaltando(){
 }
 
 function chaveAula(){ return 'ingles.aula.'+AULA.semana+'-'+AULA.dia; }
-
+/* a "assinatura" da aula: a sequência de blocos. Se a aula foi regerada (outros
+   blocos, outra ordem), o progresso guardado é de OUTRA aula e não pode ser
+   restaurado por cima — os ids dos exercícios (bloco-item) não batem mais. */
+function assinaturaAula(){
+  return (AULA.blocos||[]).map(function(b){ return b.tipo+(b.bonus?'*':''); }).join(',');
+}
+/* apaga tudo o que o celular guardou desta aula: respostas, resumo do índice,
+   textos de escrita e conversas com a IA */
+function esquecerAula(){
+  var pref=AULA.semana+'-'+AULA.dia, mortas=[];
+  try{
+    localStorage.removeItem(chaveAula());
+    var p=JSON.parse(localStorage.getItem('ingles.progresso')||'{}');
+    delete p[pref]; localStorage.setItem('ingles.progresso',JSON.stringify(p));
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      if(k && (k.indexOf('ingles.chat.'+pref+'-')===0 || k.indexOf('ingles.escrita.'+pref+'-')===0)) mortas.push(k);
+    }
+    mortas.forEach(function(k){ localStorage.removeItem(k); });
+  }catch(e){}
+}
+/* ---- VERSÃO DA SEMANA ----
+   Cada semana do semanas.js tem uma versao (1 se não tiver). Quando uma semana é
+   regerada, o limpar.sh sobe a versão. O celular guarda em "ingles.versoes" a
+   versão que o progresso dele conhece; se a do site for maior, o progresso da
+   semana inteira é apagado (as aulas mudaram, os ids não batem mais) e fica um
+   registro em "ingles.desfeitas" para o índice avisar e oferecer "dar a semana
+   como feita" a quem não quer refazer. */
+function _json(k,padrao){ try{ return JSON.parse(localStorage.getItem(k)||'null')||padrao; }catch(e){ return padrao; } }
+function _guardarJson(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+/* apaga tudo o que o celular guardou das 5 aulas da semana; devolve quantas tinham algo */
+function esquecerSemana(n){
+  var tinha=0, mortas=[];
+  try{
+    var p=_json('ingles.progresso',{});
+    for(var d=1;d<=5;d++){
+      var pref=n+'-'+d;
+      if(p[pref] || localStorage.getItem('ingles.aula.'+pref)) tinha++;
+      delete p[pref];
+      localStorage.removeItem('ingles.aula.'+pref);
+    }
+    _guardarJson('ingles.progresso',p);
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      for(var d2=1;d2<=5;d2++){
+        var pr=n+'-'+d2+'-';
+        if(k && (k.indexOf('ingles.chat.'+pr)===0 || k.indexOf('ingles.escrita.'+pr)===0)) mortas.push(k);
+      }
+    }
+    mortas.forEach(function(k){ localStorage.removeItem(k); });
+  }catch(e){}
+  return tinha;
+}
+/* compara as versões do site com as do celular; apaga o progresso das semanas que
+   mudaram e devolve o mapa das desfeitas ({n: {de, para, aulas, data}}) */
+function conferirVersoes(semanas){
+  var versoes=_json('ingles.versoes',{}), desfeitas=_json('ingles.desfeitas',{}), mudou=false;
+  (semanas||[]).forEach(function(s){
+    if(!s || !s.pronta) return;
+    var atual=s.versao||1, guardada=versoes[s.n]||1;
+    if(atual>guardada){
+      var aulas=esquecerSemana(s.n);
+      if(aulas) desfeitas[s.n]={de:guardada, para:atual, aulas:aulas, data:hojeLocal()};
+      versoes[s.n]=atual; mudou=true;
+    }else if(!versoes[s.n]){ versoes[s.n]=atual; mudou=true; }
+  });
+  if(mudou){ _guardarJson('ingles.versoes',versoes); _guardarJson('ingles.desfeitas',desfeitas); }
+  return desfeitas;
+}
+function esquecerDesfeita(n){ var d=_json('ingles.desfeitas',{}); delete d[n]; _guardarJson('ingles.desfeitas',d); }
+/* dá as 5 aulas da semana como feitas, sem refazer (para quem recebeu uma versão nova) */
+function concluirSemana(n){
+  var p=_json('ingles.progresso',{});
+  for(var d=1;d<=5;d++){
+    var k=n+'-'+d;
+    if(p[k] && p[k].concluida) continue;
+    p[k]={pct:0, acertos:0, total:0, respondidas:0, concluida:true, marcada:true, data:hojeLocal()};
+  }
+  _guardarJson('ingles.progresso',p);
+  esquecerDesfeita(n);
+}
 function carregarEstado(){
-  EST={r:{}};
+  var ass=assinaturaAula();
+  EST={r:{},assinatura:ass};
   try{
     var g=JSON.parse(localStorage.getItem(chaveAula())||'null');
-    if(g&&g.r) EST=g;
+    if(g&&g.r){
+      if(g.assinatura===ass) EST=g;
+      else esquecerAula();            /* a aula mudou desde que ela fez: começa do zero */
+    }
   }catch(e){}
 }
 function gravar(){
@@ -400,7 +484,7 @@ function finalizar(){
     '<button class="btn secundario pequeno" id="refazer" style="margin-top:6px">🔄 Fazer esta aula de novo</button>';
   var bt=document.getElementById('refazer');
   if(bt) bt.onclick=function(){
-    try{ localStorage.removeItem(chaveAula()); }catch(e){}
+    esquecerAula();
     location.reload();
   };
   alvo.scrollIntoView({behavior:'smooth',block:'center'});
@@ -536,6 +620,13 @@ function importarTudo(texto,substituir){
       var dia=(sa.dia&&sa.dia.data>=(sn.dia?sn.dia.data:''))?sa.dia:sn.dia;
       guardar(k,JSON.stringify({cartas:cartas, dia:dia||{data:'',novas:0,feitas:0}}));
     }
+    else if(k==='ingles.versoes'){
+      /* versão por semana: fica a maior (o progresso de versão antiga é apagado no índice) */
+      var va=_resumo(atualV), vn=_resumo(novoV);
+      for(var sem in vn){ if(vn.hasOwnProperty(sem) && (vn[sem]||0)>(va[sem]||0)) va[sem]=vn[sem]; }
+      guardar(k,JSON.stringify(va));
+    }
+    else if(k==='ingles.desfeitas'){ /* aviso local; o do backup não interessa */ }
     else guardar(k,novoV);                          /* aluna, velocidade */
   }
 
@@ -702,6 +793,75 @@ function promptMissao(b,semana){
 '- Um elogio específico sobre algo que ela disse bem.\n'+
 '- No máximo 3 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português.\n'+
 '- UMA frase em inglês que ela poderia ter usado, com a tradução.\n'+
+'- Termine perguntando se ela quer jogar de novo.\n\n'+
+'Tudo o que o personagem diz é em INGLÊS. Português só na dica do narrador (regra 4) e no fechamento. Comece agora.';
+}
+
+/* ---- EXPLORAR: conhecer alguém, sem missão ----
+   O espelho da missão, sem objetivo: a IA vira um personagem cheio de
+   segredos e ELA conduz, perguntando o que quiser. É o lugar natural das
+   "Frases para conversar" (What's your name? Do you have a pet?). Não há
+   nada a cumprir; o fechamento só conta o que ela descobriu e deixa uma
+   pista do que ficou escondido, para dar vontade de voltar. */
+function promptExplorar(b,semana){
+  var eu=aluna(), n=nivelMissao(semana);
+  var segredos=(b.segredos||[]).map(function(o){return '- '+o;}).join('\n');
+  return 'Vamos brincar de CONHECER ALGUÉM em inglês. A jogadora é uma menina brasileira de '+eu.idade+
+' anos chamada '+eu.nome+', na semana '+semana+' de um curso de inglês para iniciantes. Ela vai responder digitando ou falando (o áudio chega para você como texto).\n\n'+
+'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+
+'ONDE ESTÃO: '+strip(b.apresentacao)+'\n'+
+'O personagem SÓ FALA E SÓ ENTENDE INGLÊS. Não sabe uma palavra de português.\n\n'+
+'OS SEGREDOS DO PERSONAGEM (ela só descobre se PERGUNTAR; nunca conte de uma vez, nem sem uma pergunta que leve até ali):\n'+segredos+'\n\n'+
+'O QUE ELA JÁ SABE (o personagem usa SÓ isto, nada mais avançado):\n'+(b.instrucaoIA||'')+'\n\n'+
+'NÃO É UMA MISSÃO: não há lista para cumprir, nem nota. É só pela diversão de descobrir quem é essa pessoa. ELA conduz: pergunta o que quiser, na ordem que quiser.\n\n'+
+'REGRAS DO JOGO:\n'+
+'1) Comece JÁ em cena, em inglês: o personagem diz o nome e UMA coisa curiosa e curta, que dê vontade de perguntar mais (ex.: "I have a strange pet."). No máximo 10 palavras. Depois ESPERE.\n'+
+'2) Frases do personagem: de 3 a '+n.palavras+' palavras. Inglês simples, americano, do nível dela. Uma ideia por fala.\n'+
+'3) Responda o que ela perguntou e, de vez em quando, deixe um GANCHO: uma pista pequena de outro segredo, sem revelar ("My job is funny."). É isso que mantém a curiosidade.\n'+
+'4) A cada duas respostas, o personagem devolve uma pergunta fácil sobre ela ("And you? Do you have a pet?"), para virar conversa e não interrogatório.\n'+
+'5) Se ela escrever em português, ou algo que o personagem não entenderia, o personagem responde em inglês que não entendeu ("Sorry?") e repete de um jeito mais simples, ou faz um gesto descrito em inglês entre asteriscos. EXCEÇÃO: se ela perguntar "How do you say ... in English?", o NARRADOR responde em uma linha em português, entre parênteses e em itálico, e a cena continua.\n'+
+'6) Se ela travar por 2 falas seguidas (não perguntar nada, repetir português, pedir ajuda), acrescente UMA linha de NARRADOR em português, entre parênteses e em itálico, sugerindo SOBRE O QUE perguntar (ex.: "pergunte da família dele") — SEM dar a frase em inglês. Depois volte à cena.\n'+
+'7) Não corrija erros durante a conversa. Se dá para entender, o personagem entende. Anote os erros para o final.\n'+
+'8) A conversa NÃO tem fim marcado: acaba quando ELA se despedir (bye, see you, I have to go) ou pedir para parar. Aí o personagem se despede em inglês e você faz o fechamento.\n\n'+
+'FECHAMENTO (só quando ela se despedir): saia do personagem e escreva em PORTUGUÊS:\n'+
+'- "🔎 O que você descobriu sobre [nome do personagem]:" e a lista do que ela descobriu.\n'+
+'- "Ainda não descobriu:" uma ou duas pistas vagas do que ficou escondido, SEM revelar (para dar vontade de voltar).\n'+
+'- Um elogio específico sobre uma pergunta que ela fez bem.\n'+
+'- No máximo 2 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português.\n'+
+'- UMA pergunta em inglês que ela poderia ter feito, com a tradução.\n'+
+'- Termine perguntando se ela quer conversar mais um pouco.\n\n'+
+'Tudo o que o personagem diz é em INGLÊS. Português só nas linhas do narrador (regras 5 e 6) e no fechamento. Use o símbolo 🔎 só no fechamento. Comece agora.';
+}
+/* ---- ENTREVISTA: alguém quer te conhecer ----
+   O contrário do explorar: a missão é DO PERSONAGEM. Ele quer descobrir
+   coisas sobre ela, sabe que ela está aprendendo, e quando ela não entende
+   ele pergunta a mesma coisa de outro jeito (mais curto, com exemplo, com
+   opções) até ela responder. Treina o que mais falta a um iniciante:
+   entender a pergunta, e pedir para repetir sem travar. */
+function promptEntrevista(b,semana){
+  var eu=aluna(), n=nivelMissao(semana);
+  var quer=(b.quer||[]).map(function(o){return '- '+o;}).join('\n');
+  return 'Vamos fazer um JOGO DE CONVERSA em inglês. A jogadora é uma menina brasileira de '+eu.idade+
+' anos chamada '+eu.nome+', na semana '+semana+' de um curso de inglês para iniciantes. Ela vai responder digitando ou falando (o áudio chega para você como texto).\n\n'+
+'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+
+'A CENA: '+strip(b.apresentacao)+'\n'+
+'O personagem SÓ FALA E SÓ ENTENDE INGLÊS. Não sabe uma palavra de português. Mas ele SABE que ela está aprendendo inglês, e é paciente e criativo.\n\n'+
+'A MISSÃO É DO PERSONAGEM, não dela: ele quer descobrir estas coisas sobre ela (não mostre a lista; consiga uma por uma, na conversa):\n'+quer+'\n\n'+
+'O QUE ELA JÁ SABE (o personagem usa SÓ isto, nada mais avançado):\n'+(b.instrucaoIA||'')+'\n\n'+
+'REGRAS DO JOGO:\n'+
+'1) Comece JÁ em cena, em inglês: o personagem se apresenta em uma frase curta e já faz a primeira pergunta. No máximo 10 palavras. Uma pergunta por vez; depois ESPERE a resposta.\n'+
+'2) Frases do personagem: de 3 a '+n.palavras+' palavras. Inglês simples, americano, do nível dela.\n'+
+'3) A REGRA PRINCIPAL: se ela não entender, responder outra coisa, escrever em português ou pedir para repetir, o personagem NÃO desiste e NÃO traduz. Ele pergunta A MESMA COISA de outro jeito: mais curto ("Pets? A dog? A cat?"), com outra palavra, com um exemplo sobre ele mesmo ("I have two brothers. And you?"), com um gesto descrito entre asteriscos, ou oferecendo opções ("Big or small?"). Tente até 3 jeitos diferentes para a mesma coisa.\n'+
+'4) Se depois de 3 jeitos ela ainda não entendeu, acrescente UMA linha de NARRADOR em português, entre parênteses e em itálico, dizendo o que ele quer saber — SEM dar a resposta em inglês. Depois volte à cena.\n'+
+'5) Quando ela responder, o personagem REAGE em uma frase curta mostrando que entendeu ("Oh, two brothers! Nice.") e passa para a próxima coisa. Se ele entendeu errado, ela pode corrigir.\n'+
+'6) Não corrija erros durante a cena. Se dá para entender, o personagem entende. Anote os erros para o final.\n'+
+'7) A cena termina quando o personagem descobrir TUDO, ou em no máximo '+n.falas+' falas dele. Se acabar sem descobrir tudo, ele agradece e se despede com simpatia, e você faz o fechamento mesmo assim.\n\n'+
+'FECHAMENTO (só quando a cena acabar): saia do personagem e escreva em PORTUGUÊS:\n'+
+'- "🎉 [nome do personagem] descobriu tudo!" se ele conseguiu, ou "Quase! Faltou descobrir: ..." em uma linha.\n'+
+'- "Ele descobriu que:" a lista do que ela contou, em português.\n'+
+'- Se ele precisou perguntar algo de vários jeitos: "Ele perguntou a mesma coisa assim:" as versões em inglês, com a tradução — todas querem dizer o mesmo.\n'+
+'- Um elogio específico sobre algo que ela disse bem.\n'+
+'- No máximo 3 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português.\n'+
 '- Termine perguntando se ela quer jogar de novo.\n\n'+
 'Tudo o que o personagem diz é em INGLÊS. Português só na dica do narrador (regra 4) e no fechamento. Comece agora.';
 }
@@ -1486,6 +1646,62 @@ blocos.missao = function(b,bi){
   return c;
 };
 
+/* nome do personagem para a voz e o balão: pula títulos (Miss Kate → Kate) */
+function nomeCurto(personagem){
+  var toks=String(personagem||'').split(/[\s,;:()]+/).filter(Boolean);
+  for(var i=0;i<toks.length;i++){ if(!/^(miss|mr|mrs|ms|dr|coach|aunt|uncle|grandma|grandpa|captain|nurse|detective|professor|teacher|o|a|um|uma)\.?$/i.test(toks[i])) return toks[i]; }
+  return toks[0]||'';
+}
+/* card comum de explorar e entrevista: apresentação + instrução + andaime + chat (ou o prompt para copiar) */
+function cardConversa(b,bi,cls,icone,titulo,dica,ajudaChat,ajudaCopia,prompt,fim,minTrocas){
+  var id=bi+'-tarefa'; contar(id);
+  var c=novo('section','card tarefa-ia '+cls);
+  c.innerHTML='<h2>'+icone+' '+esc(b.titulo||titulo)+'</h2>'+
+    '<div class="cenario">'+(b.apresentacao||'')+'</div>'+
+    '<div class="dica-tarefa">'+dica+'</div>';
+  if(b.andaime){
+    var det=novo('details','ajudinha');
+    det.innerHTML='<summary>💡 Não sei o que dizer — me dá um empurrão</summary><div>'+b.andaime+'</div>';
+    c.appendChild(det);
+  }
+  var feito=marcadorFeito(id,'✅ Conversa feita','Conversa feita');
+  if(iaAtiva()){
+    c.appendChild(novo('p','ajuda',ajudaChat));
+    c.appendChild(chatIA({chave:'ingles.chat.'+AULA.semana+'-'+AULA.dia+'-'+bi, sistema:prompt,
+                          quem:nomeCurto(b.personagem), voz:b.voz, fim:fim, minTrocas:minTrocas,
+                          aoConcluir:function(){ feito.marcar(); }}));
+    feito.el.querySelector('.btn').hidden=true;
+    c.appendChild(feito.el);
+    return c;
+  }
+  c.appendChild(acoesIA(function(){ return prompt; }, function(){ feito.marcar(); }));
+  c.appendChild(novo('p','ajuda',ajudaCopia));
+  c.appendChild(feito.el);
+  return c;
+}
+/* EXPLORAR: ela descobre quem é o personagem, perguntando o que quiser */
+blocos.explorar = function(b,bi){
+  var n=(b.segredos||[]).length;
+  return cardConversa(b,bi,'explorar','🔎','Quem é essa pessoa?',
+    '<b>Sem missão, só curiosidade:</b> pergunte o que quiser e descubra quem é. '+
+    (n?'Tem <b>'+n+' segredos</b> escondidos — só saem se você perguntar. ':'')+'Quando quiser parar, diga <b>bye</b>.'+
+    '<span class="ajuda">O personagem <b>só entende inglês</b>. Quando você se despedir, a '+esc(NOME_IA)+' volta a falar português e conta o que você descobriu. 🔎</span>',
+    'Toque em <b>Começar</b>. O personagem se apresenta em inglês; pergunte pelo 🎤 ou escrevendo. Se travar, vem uma dica em português. 🎮',
+    'Mande para a '+esc(NOME_IA)+' e pergunte <b>falando</b> (microfone do app) ou escrevendo. Quando se despedir, ela conta o que você descobriu. Depois volte aqui e marque. 🎮',
+    promptExplorar(b,AULA.semana), /🔎/, 6);
+};
+/* ENTREVISTA: o personagem quer descobrir coisas sobre ela e reformula até ela entender */
+blocos.entrevista = function(b,bi){
+  var n=(b.quer||[]).length;
+  return cardConversa(b,bi,'entrevista','🗣️','Alguém quer te conhecer',
+    '<b>A missão é do personagem:</b> ele quer descobrir '+(n?'<b>'+n+' coisas</b>':'algumas coisas')+' sobre você. '+
+    'Entenda o que ele pergunta e responda em inglês. Não entendeu? Diga <b>Sorry?</b> ou <b>Again, please</b> — ele pergunta de outro jeito.'+
+    '<span class="ajuda">O personagem <b>só entende inglês</b>. Quando descobrir tudo, a '+esc(NOME_IA)+' volta a falar português e conta como foi. 🏁</span>',
+    'Toque em <b>Começar</b>. O personagem pergunta em inglês; responda pelo 🎤 ou escrevendo. Se não entender, peça para repetir. 🎮',
+    'Mande para a '+esc(NOME_IA)+' e responda <b>falando</b> (microfone do app) ou escrevendo. Ao terminar, volte aqui e marque. 🎮',
+    promptEntrevista(b,AULA.semana), /🎉|descobriu tudo|quase!/i);
+};
+
 blocos.fala = function(b,bi){
   var id=bi+'-tarefa'; contar(id);
   var c=novo('section','card tarefa-ia');
@@ -1707,6 +1923,7 @@ global.Curso={
   hojeLocal:hojeLocal, esc:esc, norm:norm, normFala:normFala, baralhar:baralhar, quaseIgual:quaseIgual,
   vozPara:vozPara, generoDe:generoDe, vozesEN:vozesEN,
   aluna:aluna, definirAluna:definirAluna, temAluna:temAluna,
+  conferirVersoes:conferirVersoes, esquecerDesfeita:esquecerDesfeita, concluirSemana:concluirSemana,
   exportarTudo:exportarTudo, importarTudo:importarTudo, inspecionarBackup:inspecionarBackup,
   baixarBackup:baixarBackup, nomeDoBackup:nomeDoBackup,
   podeCompartilhar:podeCompartilhar, compartilharBackup:compartilharBackup,

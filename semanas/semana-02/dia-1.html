@@ -12,175 +12,196 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:2, dia:1,
-titulo:"This is my family",
-subtitulo:"As palavras para falar de cada pessoa da família",
+semana:2,
+dia:1,
+titulo:"My family",
+subtitulo:"As pessoas da sua casa em inglês — e como pedir uma palavra nova",
 objetivos:[
-  "Nomear em inglês as pessoas da sua família",
-  "Apresentar alguém dizendo This is my...",
-  "Pedir ajuda à IA em inglês: How do you say...? e What does... mean?"
+  "Dizer em inglês quem é quem na sua família",
+  "Falar dos bichos de estimação da casa",
+  "Pedir uma palavra que você não sabe: How do you say this in English?"
 ],
 blocos:[
 
-{tipo:"nota", titulo:"👋 Semana 2 — a sua família em inglês",
- html:"<p>Na semana 1 você aprendeu a falar de <b>você</b>. Agora vamos falar das <b>pessoas ao seu redor</b>.</p><p>Hoje é dia de <b>palavras novas</b>: são muitas! Elas voltam nos exercícios várias vezes de propósito — é assim que a memória segura. 🔊 Ouça cada uma e <b>repita em voz alta</b>.</p>"},
+{tipo:"nota", titulo:"💜 Semana nova: a sua família",
+ html:"<p>Na semana passada você aprendeu a dizer <b>quem você é</b>. Agora você vai aprender a falar de <b>quem está com você</b>: mãe, pai, irmãos, avós, primos — e o cachorro, claro. 🐶</p>"+
+ "<p>Duas coisas para os seus ouvidos:</p>"+
+ "<ul>"+
+ "<li>Em <code>mother</code>, <code>father</code> e <code>brother</code> tem aquele <b>th</b> da semana passada, mas agora ele é <b>mole</b>: a língua vai entre os dentes e a voz <b>vibra</b>. Fica parecido com um D bem molinho.</li>"+
+ "<li>Todas essas palavras terminam com um <b>-er</b> preguiçoso, quase um <i>a</i>: <i>MÁ-der</i>, <i>FÁ-der</i>.</li>"+
+ "</ul>"+
+ "<p>E guarde a frase mais útil do mundo: <code>How do you say this in English?</code> — com ela você nunca mais fica sem palavra. 💪</p>"},
 
 {tipo:"vocab", titulo:"A minha família", itens:[
- {en:"family", pt:"família", ipa:"/FÉ-mi-li/", emoji:"👨‍👩‍👧‍👦"},
- {en:"mother", pt:"mãe", ipa:"/MÂ-der/", emoji:"👩"},
+ {en:"family", pt:"família", ipa:"/FÉ-mi-li/", emoji:"👪"},
+ {en:"mother", pt:"mãe", ipa:"/MÁ-der/", emoji:"👩"},
  {en:"father", pt:"pai", ipa:"/FÁ-der/", emoji:"👨"},
- {en:"mom", pt:"mamãe (jeito carinhoso)", ipa:"/MÂM/", emoji:"💗"},
- {en:"dad", pt:"papai (jeito carinhoso)", ipa:"/DÉD/", emoji:"💙"},
  {en:"sister", pt:"irmã", ipa:"/SÍS-ter/", emoji:"👧"},
- {en:"brother", pt:"irmão", ipa:"/BRÂ-der/", emoji:"👦"},
- {en:"daughter", pt:"filha", ipa:"/DÓ-ter/", emoji:"🎀"},
- {en:"son", pt:"filho", ipa:"/SÂN/", emoji:"⚽"},
- {en:"baby", pt:"bebê", ipa:"/BÊI-bi/", emoji:"👶"}
+ {en:"brother", pt:"irmão", ipa:"/BRÁ-der/", emoji:"👦"},
+ {en:"parents", pt:"os pais (mãe e pai)", ipa:"/PÉ-rents/", emoji:"👫"},
+ {en:"grandmother", pt:"avó", ipa:"/GRÉND-má-der/", emoji:"👵"},
+ {en:"grandfather", pt:"avô", ipa:"/GRÉND-fá-der/", emoji:"👴"},
+ {en:"baby", pt:"bebê", ipa:"/BÊI-bi/", emoji:"👶"},
+ {en:"cousin", pt:"primo, prima", ipa:"/KÁ-zen/", emoji:"🧒"}
 ]},
 
-{tipo:"vocab", titulo:"A família toda", itens:[
- {en:"grandmother", pt:"avó", ipa:"/GRÉND-mâ-der/", emoji:"👵"},
- {en:"grandfather", pt:"avô", ipa:"/GRÉND-fá-der/", emoji:"👴"},
- {en:"grandma", pt:"vovó (jeito carinhoso)", ipa:"/GRÉND-ma/", emoji:"💐"},
- {en:"grandpa", pt:"vovô (jeito carinhoso)", ipa:"/GRÉND-pa/", emoji:"🎣"},
- {en:"grandparents", pt:"avós (os dois juntos)", ipa:"/GRÉND-pé-rents/", emoji:"👵👴"},
- {en:"aunt", pt:"tia", ipa:"/ÉNT/", emoji:"💃"},
- {en:"uncle", pt:"tio", ipa:"/ÂN-kol/", emoji:"🕺"},
- {en:"cousin", pt:"primo, prima", ipa:"/KÂ-zen/", emoji:"🧒"},
- {en:"pet", pt:"animal de estimação", ipa:"/PÉT/", emoji:"🐾"},
+{tipo:"vocab", titulo:"Do jeito carinhoso, em casa", itens:[
+ {en:"mom", pt:"mãe (carinhoso, como \"mãezinha\")", ipa:"/mám/", emoji:"💗"},
+ {en:"dad", pt:"pai (carinhoso, como \"paizinho\")", ipa:"/déd/", emoji:"💙"},
+ {en:"grandma", pt:"vovó", ipa:"/GRÉND-ma/", emoji:"🧶"},
+ {en:"grandpa", pt:"vovô", ipa:"/GRÉND-pa/", emoji:"🎩"},
+ {en:"aunt", pt:"tia", ipa:"/ÉNT/", emoji:"🌷"},
+ {en:"uncle", pt:"tio", ipa:"/ÁN-col/", emoji:"🧢"},
+ {en:"dog", pt:"cachorro", ipa:"/DÓG/", emoji:"🐶"},
  {en:"cat", pt:"gato", ipa:"/KÉT/", emoji:"🐱"}
 ]},
 
-{tipo:"vocab", titulo:"Frases para conversar (use com a IA!)", itens:[
- {en:"How do you say ... in English?", pt:"Como se diz ... em inglês?", ipa:"/RRAU du iu SÊI ... in ÍN-glich/", emoji:"🗣️"},
- {en:"What does ... mean?", pt:"O que significa ...?", ipa:"/UÓT dâz ... MIIN/", emoji:"❓"},
- {en:"OK!", pt:"Está bem! / Tá!", ipa:"/ôu-KÊI/", emoji:"👌"}
+{tipo:"vocab", titulo:"Frases para conversar (guarde estas!)", itens:[
+ {en:"How do you say this in English?", pt:"Como se diz isto em inglês?", ipa:"/hau du iu SÊI dis in ÍN-glich/", emoji:"🗣️"},
+ {en:"What does it mean?", pt:"O que isso significa?", ipa:"/uót daz it MÍN/", emoji:"🤔"},
+ {en:"OK!", pt:"Certo! / Tá bom!", ipa:"/ôu-KÊI/", emoji:"👌"}
 ]},
 
-{tipo:"dialogo", titulo:"A Anna mostra a família dela", linhas:[
- {quem:"Anna", en:"Hi, Emma! This is my family.", pt:"Oi, Emma! Esta é a minha família."},
- {quem:"Emma", en:"Who is he?", pt:"Quem é ele?"},
- {quem:"Anna", en:"He is my father. His name is Marcos.", pt:"Ele é o meu pai. O nome dele é Marcos."},
- {quem:"Emma", en:"And who is she?", pt:"E quem é ela?"},
- {quem:"Anna", en:"She is my mother. Her name is Carla.", pt:"Ela é a minha mãe. O nome dela é Carla."},
- {quem:"Emma", en:"Is Bia your sister?", pt:"A Bia é a sua irmã?"},
- {quem:"Anna", en:"Yes, she is. Bia is nine, and my brother Theo is five.", pt:"Sim, é. A Bia tem nove anos, e o meu irmão Theo tem cinco."},
- {quem:"Emma", en:"Your family is very nice!", pt:"A sua família é muito legal!"}
+{tipo:"dialogo", titulo:"A foto da família da Anna", escuta:false, linhas:[
+ {quem:"Anna", en:"Emma, look! This is my family.", pt:"Emma, olha! Esta é a minha família."},
+ {quem:"Emma", en:"Nice! Who is she?", pt:"Legal! Quem é ela?"},
+ {quem:"Anna", en:"She is my mother. Her name is Rita.", pt:"Ela é a minha mãe. O nome dela é Rita."},
+ {quem:"Emma", en:"And who is he?", pt:"E quem é ele?"},
+ {quem:"Anna", en:"He is my father. This is my brother Tom.", pt:"Ele é o meu pai. Este é o meu irmão Tom."},
+ {quem:"Emma", en:"Is Tom a baby?", pt:"O Tom é um bebê?"},
+ {quem:"Anna", en:"No! Tom is eleven. My cousin Lucy is a baby.", pt:"Não! O Tom tem onze anos. A minha prima Lucy é um bebê."},
+ {quem:"Anna", en:"Emma, how do you say this in English?", pt:"Emma, como se diz isto em inglês?"},
+ {quem:"Emma", en:"Cat! Is it your cat?", pt:"Gato! É o seu gato?"},
+ {quem:"Anna", en:"Yes! My cat Luna. OK, thank you, Emma!", pt:"Sim! A minha gata Luna. Certo, obrigada, Emma!"}
 ]},
 
-{tipo:"ligar", titulo:"Ligue as palavras novas", pares:[
- {en:"family", pt:"família"},
+{tipo:"ligar", titulo:"Ligue as pessoas da família", pares:[
+ {en:"mother", pt:"mãe"},
  {en:"father", pt:"pai"},
+ {en:"sister", pt:"irmã"},
  {en:"brother", pt:"irmão"},
- {en:"son", pt:"filho"},
- {en:"daughter", pt:"filha"},
  {en:"grandmother", pt:"avó"},
- {en:"uncle", pt:"tio"},
- {en:"cat", pt:"gato"}
+ {en:"grandfather", pt:"avô"},
+ {en:"aunt", pt:"tia"},
+ {en:"uncle", pt:"tio"}
 ]},
 
 {tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
- {pergunta:"Qual é a palavra para irmão?", opcoes:["sister","brother","father"], correta:1,
-  explicacao:"brother = irmão. sister = irmã (cuidado: elas são parecidas!)."},
- {pergunta:"A mãe da sua mãe é a sua:", opcoes:["aunt","grandmother","daughter"], correta:1,
-  explicacao:"grand- é como o nosso a-vó: grandmother = avó."},
- {pergunta:"O irmão do seu pai é o seu:", opcoes:["uncle","cousin","grandfather"], correta:0,
-  explicacao:"uncle = tio. cousin = primo ou prima."},
- {pergunta:"O filho da sua mãe é o seu:", opcoes:["brother","son","dad"], correta:0,
-  explicacao:"Cuidado: son = filho, mas o filho da sua mãe é o seu brother (irmão)."},
- {pergunta:"Como se diz avós (os dois juntos) em inglês?", opcoes:["parents","grandparents","cousins"], correta:1,
-  explicacao:"parents = pais · grandparents = avós."},
- {pergunta:"Você não sabe o que uma palavra quer dizer. Você pergunta:", opcoes:["OK!","What does it mean?","Nice to meet you."], correta:1,
-  explicacao:"What does ... mean? = O que significa ...? Guarde esta frase: ela vale ouro na conversa com a IA."}
+ {pergunta:"O que significa family?",
+  opcoes:["amiga","família","escola"], correta:1,
+  explicacao:"family = família. Repare que é bem parecido com o português!"},
+ {pergunta:"A mãe da sua mãe é a sua...",
+  opcoes:["aunt","grandmother","cousin"], correta:1,
+  explicacao:"grandmother = avó. O grand na frente quer dizer que é a geração de cima."},
+ {pergunta:"O irmão do seu pai é o seu...",
+  opcoes:["uncle","brother","grandfather"], correta:0,
+  explicacao:"uncle = tio. E a irmã do seu pai é a sua aunt."},
+ {pergunta:"Qual é a palavra em inglês para primo e prima?",
+  opcoes:["cousin","parents","baby"], correta:0,
+  explicacao:"cousin serve para primo E para prima — em inglês é a mesma palavra."},
+ {pergunta:"Você viu uma coisa e não sabe o nome dela em inglês. O que você pergunta?",
+  opcoes:["What does it mean?","How do you say this in English?","Nice to meet you!"], correta:1,
+  explicacao:"How do you say this in English? = Como se diz isto em inglês? É a frase que te tira de qualquer apuro."},
+ {pergunta:"A sua mãe e o seu pai, juntos, são os seus...",
+  opcoes:["parents","cousins","babies"], correta:0,
+  explicacao:"parents = os pais, os dois juntos."}
 ]},
 
-{tipo:"completar", titulo:"Complete as frases", ajuda:"Leia a tradução em português e escolha a palavra que falta.", itens:[
- {frase:"This is my ___.", pt:"Este é o meu pai.", resposta:"father", opcoes:["father","mother","sister"],
-  explicacao:"father = pai."},
- {frase:"She is my ___.", pt:"Ela é a minha avó.", resposta:"grandmother", opcoes:["grandmother","grandfather","uncle"],
-  explicacao:"grandmother termina com mother (mãe): é a avó."},
- {frase:"He is my ___.", pt:"Ele é o meu tio.", resposta:"uncle", opcoes:["uncle","aunt","cousin"],
-  explicacao:"uncle = tio · aunt = tia."},
- {frase:"My ___ is a baby.", pt:"A minha irmã é um bebê.", resposta:"sister", opcoes:["sister","brother","son"],
-  explicacao:"sister = irmã."},
- {frase:"My ___ is big.", pt:"A minha família é grande.", resposta:"family", opcoes:["family","cat","pet"],
-  explicacao:"family = família."}
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"My ___ is Rita.", pt:"A minha mãe é a Rita.", resposta:"mother",
+  opcoes:["mother","father","brother"], explicacao:"mother = mãe."},
+ {frase:"My ___ is Paulo.", pt:"O meu pai é o Paulo.", resposta:"father",
+  opcoes:["mother","father","sister"], explicacao:"father = pai."},
+ {frase:"Tom is my ___.", pt:"O Tom é o meu irmão.", resposta:"brother",
+  opcoes:["brother","sister","aunt"], explicacao:"brother = irmão."},
+ {frase:"My mom and my dad are my ___.", pt:"A minha mãe e o meu pai são os meus pais.", resposta:"parents",
+  opcoes:["parents","cousins","babies"], explicacao:"parents = os pais (os dois)."},
+ {frase:"How do you ___ this in English?", pt:"Como se diz isto em inglês?", resposta:"say",
+  opcoes:["say","mean","name"], explicacao:"say = dizer. É a frase para pedir uma palavra nova."}
 ]},
 
 {tipo:"ditado", titulo:"Escute e escreva", itens:[
  {en:"family", pt:"família", dica:"(uma palavra)"},
- {en:"my brother", pt:"meu irmão", dica:"(duas palavras)"},
- {en:"my grandfather", pt:"meu avô", dica:"(duas palavras)"},
- {en:"a big family", pt:"uma família grande", dica:"(três palavras)"},
- {en:"my aunt and my uncle", pt:"minha tia e meu tio", dica:"(cinco palavras)"}
+ {en:"my grandmother", pt:"a minha avó", dica:"(duas palavras)"},
+ {en:"my brother and my sister", pt:"o meu irmão e a minha irmã", dica:"(cinco palavras)"},
+ {en:"This is my father", pt:"Este é o meu pai.", dica:"(quatro palavras)"},
+ {en:"My cousin is a baby", pt:"A minha prima é um bebê.", dica:"(cinco palavras)"}
 ]},
 
-{tipo:"adivinha", titulo:"Quem sou eu?", itens:[
- {pistas:["I am old and I am in your family.","My daughter is your mother.","I am not your aunt."],
-  resposta:"grandmother", pt:"avó", dica:"(alguém da família)",
-  explicacao:"A mãe da sua mãe é a sua grandmother."},
- {pistas:["I am in your family. I am not your sister.","My mother is your mother.","My father is your father."],
-  resposta:"brother", pt:"irmão", dica:"(alguém da família)",
-  explicacao:"Mesma mãe, mesmo pai, e não é irmã: é o brother."},
- {pistas:["I am small.","I am a pet.","I am not a dog."],
-  resposta:"cat", pt:"gato", dica:"(um animal de estimação)",
-  explicacao:"cat = gato."},
- {pistas:["I am very small.","I am new in the family.","I am not eleven years old."],
-  resposta:"baby", pt:"bebê", dica:"(alguém muito pequeno)",
-  explicacao:"baby = bebê."}
+{tipo:"adivinha", titulo:"Quem é? Escreva em inglês", itens:[
+ {pistas:["She is in my family.","She is a girl.","My mother is her mother, too."],
+  resposta:"sister", pt:"irmã", dica:"(uma pessoa da família)",
+  explicacao:"Se a mãe dela é a sua mãe, ela é a sua sister."},
+ {pistas:["He is in my family.","He is my father's brother.","He is not my grandfather."],
+  resposta:"uncle", pt:"tio", dica:"(uma pessoa da família)",
+  explicacao:"O irmão do pai (ou da mãe) é o uncle."},
+ {pistas:["She is in my family.","My aunt is her mother.","She is not my sister."],
+  resposta:"cousin", pt:"prima", dica:"(uma pessoa da família)",
+  explicacao:"A filha da tia é a cousin — e o filho da tia é cousin também."},
+ {pistas:["I am not a cat.","I am your friend.","A good name for me is Rex."],
+  resposta:"dog", pt:"cachorro", dica:"(um bicho)",
+  explicacao:"dog = cachorro. Rex e Bob são nomes clássicos de cachorro em inglês!"}
 ]},
 
-{tipo:"ligar", titulo:"Misturando com a semana 1", pares:[
- {en:"cousin", pt:"primo, prima"},
- {en:"aunt", pt:"tia"},
- {en:"pet", pt:"animal de estimação"},
+{tipo:"ligar", titulo:"Ligue: palavras novas e da semana 1", pares:[
+ {en:"baby", pt:"bebê"},
+ {en:"cat", pt:"gato"},
  {en:"teacher", pt:"professora"},
- {en:"city", pt:"cidade"},
- {en:"hungry", pt:"com fome"}
+ {en:"friend", pt:"amiga"},
+ {en:"happy", pt:"feliz"},
+ {en:"school", pt:"escola"}
 ]},
 
-{tipo:"missao", titulo:"🎯 Missão: quem é quem na foto",
- cenario:"<p>Você está no recreio com a <b>Emma</b>, uma menina americana da sua escola. Você mostra a ela uma <b>foto da sua família</b> no celular. A Emma é curiosa e vai perguntar quem é cada pessoa — mas ela <b>só entende inglês</b>.</p>",
- personagem:"Emma, sua amiga americana de 11 anos, curiosa e animada; ela é de New York",
- objetivos:[
-  "apresentar duas pessoas da sua família (This is my...)",
-  "dizer o nome de uma dessas pessoas (His name is... / Her name is...)"
- ],
- andaime:"<p>Se travar: <span class=\"lacuna\">This is my</span> ... · <span class=\"lacuna\">Her name is</span> ...</p>",
- instrucaoIA:"Ela sabe: as palavras da familia (family, mother, father, mom, dad, sister, brother, son, daughter, baby, grandmother, grandfather, grandma, grandpa, grandparents, aunt, uncle, cousin, pet, cat), This is my ..., He is / She is, His name is / Her name is, os numeros ate 20, e os cumprimentos da semana 1. Emma fala frases de 3 a 6 palavras. Emma pergunta Who is he? / Who is she? / What is her name? e no fim mostra a familia dela: her mother, her father and her cat."},
+{tipo:"explorar", titulo:"Quem é a Grandma Pearl?", perfil:"avo", voz:"f",
+ personagem:"Pearl, 68 anos, uma senhora que espera alguém na saída da escola, calorosa e muito faladeira",
+ apresentacao:"<p>Na saída da escola, uma senhora está sentada no banco com um álbum de fotos no colo. Ela sorri e chama você para sentar perto. Ela <b>só entende inglês</b> — descubra quem é ela e quem é a família dela!</p>",
+ segredos:["o gato dela se chama Cookie e tem vinte anos","a irmã dela é professora e mora no Canadá","o cachorro dela se chama Baby (ela acha isso engraçadíssimo)","o Grandpa Joe, o marido dela, é de Miami","surpresa: ela é a avó do Leo, o seu colega de turma, e está esperando por ele"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">What's your</span> …? · <span class=\"lacuna\">How do you say</span> …? · <span class=\"lacuna\">Is this your</span> …?</p>",
+ instrucaoIA:"Ela sabe: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, mom, dad, grandma, grandpa, aunt, uncle, dog, cat, How do you say this in English?, What does it mean?, OK!, e a semana 1 (hello, hi, good morning, What's your name?, My name is..., Nice to meet you!, How are you?, I'm fine, I'm great, Where are you from?, numeros ate 20, yes, no, please, thank you, Sorry I don't understand, Again please, Slowly please). Pearl responde com frases de 3 a 6 palavras, so com essas palavras, deixa ganchos (My cat is funny.) e devolve perguntas faceis. Se ela escrever em portugues, Pearl diz que nao entendeu e repete mais devagar. Quando ela disser bye, volte ao portugues e conte o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: quem está na foto?", cena:"adivinhacao",
+ cenario:"<p>A <b>Emma</b> está com uma foto na mão, virada para baixo. Ela pensou em <b>uma pessoa da família dela</b> e quer que você adivinhe quem é, perguntando em inglês.</p><p>A Emma <b>só entende inglês</b>. Adivinhe quem está na foto — e depois conte quem tem na sua família.</p>",
+ personagem:"Emma, 11 anos, sua colega de classe, animada e brincalhona",
+ objetivos:["adivinhar quem é a pessoa da foto perguntando em inglês (Your sister? Your grandmother?)","dizer o nome de duas pessoas da sua própria família"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Your</span> …? · <span class=\"lacuna\">Is she your</span> …? · <span class=\"lacuna\">My mother is</span> …</p>",
+ instrucaoIA:"Ela sabe: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, mom, dad, grandma, grandpa, aunt, uncle, dog, cat, How do you say this in English?, What does it mean?, OK!, e a semana 1 (cumprimentos, My name is..., numeros ate 20, yes, no, thank you). Emma pensou na AVO dela (grandmother), que se chama Ruth. Emma responde so com frases de 2 a 5 palavras: Yes! / No, try again. / Not my mother. Se ela acertar, Emma diz Yes! My grandmother Ruth! e pergunta And your family? Nao use nenhuma palavra fora dessa lista."},
 
 {tipo:"escrita", titulo:"Hora de escrever", id:"1",
- instrucao:"Escreva <b>4 ou 5 frases</b> apresentando pessoas da sua família em inglês, como se estivesse mostrando uma foto para a Emma.",
- dica:"<ul><li>comece cada frase apresentando uma pessoa</li><li>use pelo menos <b>quatro</b> palavras novas de hoje (pai, mãe, irmão, irmã, avó, avô, tio, tia, primo...)</li><li>em uma das frases, diga o <b>nome</b> da pessoa</li><li>em outra, diga a <b>idade</b> dela (você aprendeu os números na semana 1!)</li></ul>Tente sem olhar para cima. Se esquecer uma palavra, volte no diálogo da Anna. 💜",
- andaime:"<p>Este é o <b>molde</b>. Quem preenche é você:</p><p>This is my <span class=\"lacuna\">?</span>. <span class=\"lacuna\">?</span> name is <span class=\"lacuna\">?</span>. <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span> years old.</p><p style=\"font-size:14px\">Todas as palavras que faltam estão nas listas de vocabulário desta aula. 😉</p>",
- gabarito:"4 ou 5 frases apresentando pessoas da família com This is my... / He is my... / She is my..., pelo menos quatro palavras de família diferentes, um nome (His name is / Her name is) e uma idade (... is ... years old)",
- instrucaoIA:"Ela devia escrever 4 ou 5 frases apresentando pessoas da familia dela, usando This is my ..., He is / She is, His name is / Her name is e uma idade com years old. Vocabulario da aula: family, mother, father, mom, dad, sister, brother, son, daughter, baby, grandmother, grandfather, grandma, grandpa, grandparents, aunt, uncle, cousin, pet, cat. Gramatica que ela ja tem: verbo to be (am, is, are), formas curtas, numeros ate 20. Ela ainda NAO aprendeu o possessivo com apostrofo nem o plural, entao nao cobre isso."},
+ instrucao:"Escreva <b>4 ou 5 frases</b> em inglês apresentando a sua família. Depois toque no botão para a IA corrigir. ✍️",
+ dica:"<ul><li>uma frase dizendo que aquela é a sua família</li><li>uma frase sobre a sua mãe (com o nome dela)</li><li>uma frase sobre o seu pai (com o nome dele)</li><li>uma frase sobre um irmão, uma irmã, um primo ou uma prima</li><li>uma frase sobre um bicho de estimação (ou sobre a sua avó, se não tiver bicho)</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>This is my <span class=\"lacuna\">?</span>.<br>She is my <span class=\"lacuna\">?</span>. Her name is <span class=\"lacuna\">?</span>.<br>He is my <span class=\"lacuna\">?</span>.<br>I have a <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases apresentando a familia: uma abertura (This is my family), a mae (She is my mother / My mother is...), o pai (He is my father / My father is...), um irmao, irma ou primo, e um bicho de estimacao ou avo. Nomes proprios sao bem-vindos.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases apresentando a familia dela. Vocabulario da aula: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, mom, dad, grandma, grandpa, aunt, uncle, dog, cat, My name is..., I have a..., This is my..., He is / She is. Elogie muito, corrija no maximo 3 coisas e sempre em portugues."},
 
 {tipo:"fala", titulo:"Hora de falar",
- instrucao:"Toque no 🔊 para ouvir, repita em voz alta e depois teste no 🎤.",
+ instrucao:"Ouça, repita em voz alta e depois teste no 🎤.",
+ foco:"o <b>th</b> mole de <i>mother</i>, <i>father</i> e <i>brother</i>: a língua vai entre os dentes e a <b>voz vibra</b> (não é F, não é D duro).",
  frases:[
   {en:"This is my family.", pt:"Esta é a minha família."},
-  {en:"He is my brother.", pt:"Ele é o meu irmão."},
-  {en:"She is my grandmother.", pt:"Ela é a minha avó."},
-  {en:"Her name is Carla.", pt:"O nome dela é Carla."},
-  {en:"How do you say it in English?", pt:"Como se diz isso em inglês?"},
-  {en:"What does family mean?", pt:"O que significa family?"}
+  {en:"She is my mother.", pt:"Ela é a minha mãe."},
+  {en:"He is my father.", pt:"Ele é o meu pai."},
+  {en:"My brother is eleven.", pt:"O meu irmão tem onze anos."},
+  {en:"I have a cat.", pt:"Eu tenho um gato."},
+  {en:"How do you say this in English?", pt:"Como se diz isto em inglês?"},
+  {en:"OK! Thank you!", pt:"Certo! Obrigada!"}
  ],
- instrucaoIA:"Praticar as frases acima com as palavras da familia. Depois faca 4 a 6 perguntas faceis em ingles para ela responder falando, uma de cada vez, esperando a resposta: Who is in your family? Is your family big? Is your family big? How old is your brother or your sister? What is her name? Corrija com carinho em portugues. Ela so sabe as palavras da familia, o verbo to be e os numeros ate 20."},
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues, com atencao ao th mole de mother, father e brother. Depois faca 4 a 6 perguntas faceis em ingles, uma de cada vez, e espere a resposta FALADA dela antes da proxima: Hello! How are you? / Is this your family? / Who is she? / Do you have a brother or a sister? / Do you have a dog or a cat? / What's your mother's name? Corrija em portugues, com carinho. Use so palavras da aula: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, mom, dad, aunt, uncle, dog, cat, e as da semana 1."},
 
-{tipo:"completar", bonus:true, titulo:"Sem opções: digite a palavra", itens:[
- {frase:"She is my ___.", pt:"Ela é a minha avó.", resposta:"grandmother",
-  explicacao:"grandmother = avó (com mother no fim). grandfather = avô."},
- {frase:"He is my ___.", pt:"Ele é o meu tio.", resposta:"uncle",
-  explicacao:"uncle = tio · aunt = tia."},
- {frase:"She is my ___.", pt:"Ela é a minha filha.", resposta:"daughter",
-  explicacao:"daughter = filha. É uma palavra difícil de escrever: d-a-u-g-h-t-e-r."}
+{tipo:"completar", bonus:true, titulo:"Sem opções: digite a palavra que falta", itens:[
+ {frase:"My mother's mother is my ___.", pt:"A mãe da minha mãe é a minha avó.", resposta:"grandmother",
+  explicacao:"grandmother = avó."},
+ {frase:"My father's brother is my ___.", pt:"O irmão do meu pai é o meu tio.", resposta:"uncle",
+  explicacao:"uncle = tio."},
+ {frase:"My mom and my dad are my ___.", pt:"A minha mãe e o meu pai são os meus pais.", resposta:"parents",
+  explicacao:"parents = os pais."},
+ {frase:"___ does it mean?", pt:"O que isso significa?", resposta:"What",
+  explicacao:"What does it mean? = O que isso significa?"}
 ]},
 
-{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
- {frase:"My brother is eleven years old", pt:"Meu irmão tem onze anos."},
- {frase:"This is my mother and my father", pt:"Esta é a minha mãe e este é o meu pai."},
- {frase:"My grandmother is very nice and happy", pt:"A minha avó é muito legal e feliz."}
+{tipo:"ordenar", bonus:true, titulo:"Monte as frases grandes", itens:[
+ {frase:"This is my grandmother and my grandfather", pt:"Esta é a minha avó e este é o meu avô."},
+ {frase:"My mother and my father are my parents", pt:"A minha mãe e o meu pai são os meus pais."},
+ {frase:"How do you say cat in English", pt:"Como se diz \"gato\" em inglês?"}
 ]}
 
 ]});

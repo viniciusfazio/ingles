@@ -12,131 +12,149 @@
 <script src="../../assets/curso.js"></script>
 <script>
 Curso.montar({
-semana:2, dia:5,
-titulo:"My family — the big day",
-subtitulo:"Revisão da semana + o seu projeto",
+semana:2,
+dia:5,
+titulo:"Revisão + projeto",
+subtitulo:"Juntar a semana toda e apresentar a sua família em inglês",
 objetivos:[
-  "Entender de ouvido uma história com a família toda",
-  "Revisar plural, this/these, he/she, his/her e o 's",
-  "Apresentar a sua família inteira em inglês, sozinha"
+  "Revisar família, plural, this/these, he/she, his/her e o 's",
+  "Entender uma história inteira de ouvido",
+  "Apresentar a sua família em inglês, do seu jeito"
 ],
 blocos:[
 
 {tipo:"nota", titulo:"🎉 Você chegou ao fim da semana 2!",
- html:"<p>Em cinco dias você aprendeu a falar de <b>todo mundo</b> da sua família: quem é quem, como cada um é, de quem é cada coisa.</p><p>Hoje é dia de <b>juntar tudo</b>. A história é a maior da semana, e no fim vem o <b>projeto</b>: a sua apresentação da família, do seu jeito. Sem molde, sem cola — você já sabe. 💜</p>"},
+ html:"<p>Pare um segundo e olhe o tamanho disso: em cinco dias você aprendeu a dizer <b>quem é quem</b> na sua família, a falar de <b>duas ou mais</b> pessoas, a contar de <b>outra pessoa</b> (<code>he is</code>, <code>she is</code>) e a dizer <b>de quem é</b> cada coisa (<code>her cat</code>, <code>Anna's brother</code>).</p>"+
+ "<p>Hoje tem história, revisão e o <b>projeto da semana</b>: apresentar a sua família em inglês, sem molde nenhum. Você consegue. 💜</p>"},
 
-{tipo:"historia", titulo:"🎧 Ouça: o dia grande da Anna", paragrafos:[
- {en:"Today is a big day. Anna's family is together.", pt:"Hoje é um dia grande. A família da Anna está reunida."},
- {en:"Her grandparents are here. They are happy and friendly.", pt:"Os avós dela estão aqui. Eles estão felizes e são simpáticos."},
- {en:"These are her cousins, Pedro and Lucas. They are twins.", pt:"Estes são os primos dela, Pedro e Lucas. Eles são gêmeos."},
- {en:"The twins are ten years old. They are funny and friendly.", pt:"Os gêmeos têm dez anos. Eles são engraçados e simpáticos."},
- {en:"Her aunt Lia is a teacher. She is tall and quiet.", pt:"A tia dela, Lia, é professora. Ela é alta e caladinha."},
- {en:"But where is Theo? Anna's brother is not here!", pt:"Mas cadê o Theo? O irmão da Anna não está aqui!"},
- {en:"Emma is Anna's best friend. She is from New York.", pt:"A Emma é a melhor amiga da Anna. Ela é de Nova York."},
- {en:"Theo is with Emma and the cat. Anna is very happy!", pt:"O Theo está com a Emma e com o gato. A Anna fica muito feliz!"}
+{tipo:"historia", titulo:"Ouça: o irmão novo do Leo", cena:"novidade", paragrafos:[
+ {en:"Today Leo is very happy. He is at school.", pt:"Hoje o Leo está muito feliz. Ele está na escola."},
+ {en:"His friend Anna is here. 'Leo, what is it?'", pt:"A amiga dele, a Anna, está aqui. 'Leo, o que foi?'"},
+ {en:"'I have a new brother!' says Leo.", pt:"'Eu tenho um irmão novo!', diz o Leo."},
+ {en:"'His name is Nico. He is a baby.'", pt:"'O nome dele é Nico. Ele é um bebê.'"},
+ {en:"'Is he little?' says Anna.", pt:"'Ele é pequeno?', diz a Anna."},
+ {en:"'Yes! He is very little and very funny.'", pt:"'Sim! Ele é bem pequenininho e muito engraçado.'"},
+ {en:"Now Anna is at Leo's home. She sees Nico.", pt:"Agora a Anna está na casa do Leo. Ela vê o Nico."},
+ {en:"'Nico is my favorite baby!' says Anna.", pt:"'O Nico é o meu bebê favorito!', diz a Anna."}
 ]},
 
 {tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
- {pergunta:"Who is together today?", opcoes:["Anna's friends","Anna's family","Anna's students"], correta:1,
-  explicacao:"Today is a big day. Anna's family is together."},
- {pergunta:"How are her grandparents?", opcoes:["Happy and friendly","Sad and tired","Small and quiet"], correta:0,
-  explicacao:"Her grandparents are here. They are happy and friendly."},
- {pergunta:"Who are Pedro and Lucas?", opcoes:["Her cousins","Her brothers","Her uncles"], correta:0,
-  explicacao:"These are her cousins, Pedro and Lucas."},
- {pergunta:"How old are the twins?", opcoes:["Ten","Five","Nine"], correta:0,
-  explicacao:"The twins are ten years old."},
- {pergunta:"Who is not here?", opcoes:["Emma","Theo","Lia"], correta:1,
-  explicacao:"But where is Theo? Anna's brother is not here!"},
- {pergunta:"Where is Theo?", opcoes:["With Emma and the cat","With his grandparents","With his cousins"], correta:0,
-  explicacao:"Theo is with Emma and the cat — no fim da história."}
+ {pergunta:"Who is Nico?", opcoes:["Leo's new brother","Leo's cousin","Leo's dog"], correta:0,
+  explicacao:"Leo diz: I have a new brother! His name is Nico."},
+ {pergunta:"Where is Leo?", opcoes:["At school","At home","At work"], correta:0,
+  explicacao:"Today Leo is very happy. He is at school."},
+ {pergunta:"Is Nico a big boy?", opcoes:["Yes, he is big.","No, he is little.","He is a girl."], correta:1,
+  explicacao:"He is very little and very funny."},
+ {pergunta:"Who is Leo's friend?", opcoes:["Anna","Emma","Mia"], correta:0,
+  explicacao:"His friend Anna is here."},
+ {pergunta:"Where is Anna now?", opcoes:["At school","At Leo's home","At her school"], correta:1,
+  explicacao:"Now Anna is at Leo's home."},
+ {pergunta:"Is Nico funny?", opcoes:["Yes, he is very funny.","No, he is not funny.","He is tall."], correta:0,
+  explicacao:"Leo diz que o irmãozinho é very little and very funny."}
 ]},
 
 {tipo:"ditado", titulo:"Escute e escreva frases da história", itens:[
- {en:"Today is a big day", pt:"Hoje é um dia grande.", dica:"(cinco palavras)"},
- {en:"Her grandparents are here", pt:"Os avós dela estão aqui.", dica:"(quatro palavras)"},
- {en:"They are twins", pt:"Eles são gêmeos.", dica:"(três palavras)"},
- {en:"She is from New York", pt:"Ela é de Nova York.", dica:"(cinco palavras)"}
+ {en:"He is at school", pt:"Ele está na escola.", dica:"(quatro palavras)"},
+ {en:"I have a new brother", pt:"Eu tenho um irmão novo.", dica:"(cinco palavras)"},
+ {en:"His name is Nico", pt:"O nome dele é Nico.", dica:"(quatro palavras)"},
+ {en:"She sees Nico", pt:"Ela vê o Nico.", dica:"(três palavras)"}
 ]},
 
 {tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
- instrucao:"Responda em inglês, com frases completas:<br>1. Who are Pedro and Lucas? (Quem são o Pedro e o Lucas?)<br>2. Where is Emma from? (De onde é a Emma?)<br>3. Who is not here? (Quem não está lá?)<br>4. Where is Theo? (Onde está o Theo?)",
- dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1, lembre-se: são <b>dois</b> — o verbo muda</li><li>na 4, a resposta só aparece no <b>último</b> pedaço da história</li></ul>",
- gabarito:"1. They are her cousins (they are twins). 2. She is from New York. 3. Theo is not here. 4. He is with Emma and the cat.",
- instrucaoIA:"Ela ouviu a historia mais longa da semana e devia responder por escrito, em ingles: quem sao Pedro e Lucas (os primos gemeos da Anna), de onde e a Emma (de New York), quem nao esta la (o Theo) e onde o Theo esta (com a Emma e o gato). Vocabulario da semana: familia, twins, cousins, grandparents, brother, cat, tall, quiet, smart, funny, friendly. Gramatica: to be, plural, This is / These are, he / she / his / her, possessivo com apostrofo s.",
- },
+ instrucao:"Responda em inglês, com frases completas:<br>1. Who is Nico? (Quem é o Nico?)<br>2. Is Nico big or little? (O Nico é grande ou pequeno?)<br>3. Where is Anna now? (Onde a Anna está agora?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1, diga de quem ele é irmão — use o 's</li><li>na 3, diga na casa de quem ela está</li></ul>",
+ gabarito:"1. Nico is Leo's new brother. He is a baby. 2. Nico is little. (He is very little.) 3. Anna is at Leo's home.",
+ instrucaoIA:"Ela ouviu uma historia curta e devia responder por escrito: quem e o Nico (o irmao novo do Leo, um bebe), se ele e grande ou pequeno (little) e onde a Anna esta agora (na casa do Leo). Vocabulario: brother, baby, little, funny, home, school, his, her, o 's de posse. Corrija em portugues e elogie o que ela entendeu de ouvido."},
 
 {tipo:"quiz", titulo:"Revisão da semana", questoes:[
- {pergunta:"Escolha a forma certa: ___ are my parents.", opcoes:["This","These","He"], correta:1,
-  explicacao:"Duas pessoas: These are."},
- {pergunta:"O plural de child é:", opcoes:["children","childs","childes"], correta:0,
-  explicacao:"child é teimosa: children."},
- {pergunta:"This is my father. ___ name is Marcos.", opcoes:["Her","His","Its"], correta:1,
-  explicacao:"O dono do nome é o pai: his name."},
- {pergunta:"Como se diz avô em inglês?", opcoes:["grandfather","grandmother","grandparents"], correta:0,
-  explicacao:"grandfather = avô (father = pai) · grandmother = avó."},
- {pergunta:"Como se escreve o irmão da Anna?", opcoes:["Anna brother","brother Anna","Anna's brother"], correta:2,
-  explicacao:"Dono primeiro, com 's: Anna's brother."},
- {pergunta:"O plural de woman é:", opcoes:["womans","women","womens"], correta:1,
-  explicacao:"woman vira women — muda a letra do meio, não ganha -s."},
- {pergunta:"Como se diz a minha tia em inglês?", opcoes:["my aunt","my uncle","my cousin"], correta:0,
-  explicacao:"aunt = tia · uncle = tio · cousin = primo ou prima."},
- {pergunta:"This is my sister. ___ is very funny.", opcoes:["He","She","They"], correta:1,
-  explicacao:"Uma irmã, mulher, uma pessoa só: She is."}
+ {pergunta:"A mãe da sua mãe é a sua...",
+  opcoes:["grandmother","aunt","cousin"], correta:0,
+  explicacao:"grandmother = avó."},
+ {pergunta:"Qual é o plural de cousin?",
+  opcoes:["cousin","cousins","cousines"], correta:1,
+  explicacao:"Plural quase sempre é só o -s: cousins."},
+ {pergunta:"Complete: ___ are my brothers.",
+  opcoes:["This","These","He"], correta:1,
+  explicacao:"São vários, então these — e o verbo vira are."},
+ {pergunta:"\"O gato dela\" em inglês é...",
+  opcoes:["her cat","his cat","she cat"], correta:0,
+  explicacao:"A dona é uma menina: her cat."},
+ {pergunta:"\"O irmão da Anna\" em inglês é...",
+  opcoes:["Anna brother","Anna's brother","brother's Anna"], correta:1,
+  explicacao:"O dono vem na frente com 's: Anna's brother."},
+ {pergunta:"Qual é o plural de box?",
+  opcoes:["boxes","boxs","boxen"], correta:0,
+  explicacao:"Termina em x, então entra -es: boxes."},
+ {pergunta:"Como se diz \"crianças\"?",
+  opcoes:["childs","childrens","children"], correta:2,
+  explicacao:"child é teimosa: o plural é children."},
+ {pergunta:"Você não sabe uma palavra em inglês. O que você pergunta?",
+  opcoes:["How do you say this in English?","What is your name?","I don't know."], correta:0,
+  explicacao:"É a frase que resolve tudo — use com a IA sempre que precisar!"}
 ]},
 
-{tipo:"ligar", titulo:"Ligue tudo o que você aprendeu", pares:[
+{tipo:"ligar", titulo:"Ligue: a semana toda", pares:[
  {en:"family", pt:"família"},
- {en:"grandmother", pt:"avó"},
- {en:"uncle", pt:"tio"},
- {en:"cousin", pt:"primo, prima"},
- {en:"daughter", pt:"filha"},
- {en:"twins", pt:"gêmeos"},
- {en:"people", pt:"pessoas"},
- {en:"quiet", pt:"quieto, caladinho"}
+ {en:"parents", pt:"os pais"},
+ {en:"cousin", pt:"primo"},
+ {en:"twin", pt:"gêmeo"},
+ {en:"pet", pt:"bicho de estimação"},
+ {en:"tall", pt:"alto"},
+ {en:"kind", pt:"gentil"},
+ {en:"photo", pt:"foto"}
 ]},
 
-{tipo:"missao", titulo:"🎯 Missão: a professora nova",
- cenario:"<p>Primeiro dia com a <b>Miss Kate</b>, a professora nova de inglês. Ela quer conhecer cada aluno, e começa perguntando da família. A Miss Kate <b>só fala inglês</b> na aula — nem uma palavra de português.</p>",
- personagem:"Miss Kate, professora nova de inglês, 30 anos, paciente e sorridente; ela é do Canadá e tem uma irmã gêmea",
- objetivos:[
-  "cumprimentar a professora e dizer o seu nome",
-  "dizer quantas pessoas são na sua família e quem são",
-  "dizer o nome e a idade de duas dessas pessoas"
- ],
- andaime:"<p>Se travar: <span class=\"lacuna\">Good morning! My name is</span> ... · <span class=\"lacuna\">We are</span> ... · <span class=\"lacuna\">His name is</span> ...</p>",
- instrucaoIA:"Ela sabe: cumprimentos da semana 1, as palavras de familia (mother, father, mom, dad, sister, brother, son, daughter, baby, grandmother, grandfather, grandparents, aunt, uncle, cousin, pet, cat, family), man, woman, boy, girl, child, children, person, people, twins, together, everybody, os adjetivos tall, short, young, funny, smart, strong, quiet, friendly, os numeros ate 20, o verbo to be, This is / These are, o plural com -s, he / she / his / her e o possessivo com apostrofo s. Miss Kate fala frases de 3 a 6 palavras. Ela pergunta Good morning! What is your name? Is your family big? Who is in your family? What is her name? How old is he? e conta que ela tem uma irma gemea chamada Kim. Termine a cena quando os tres objetivos forem cumpridos ou em oito falas.",
- },
+{tipo:"explorar", titulo:"Quem é a Zoe?", perfil:"atleta", voz:"f",
+ personagem:"Zoe, 14 anos, nadadora, animada, competitiva e muito orgulhosa da família",
+ apresentacao:"<p>Na piscina do clube tem uma menina mais velha de touca azul. Ela acabou de sair da água, senta do seu lado e sorri. Ela <b>só entende inglês</b> — descubra quem ela é e como é a família dela!</p>",
+ segredos:["ela tem três irmãos e todos os quatro nadam no mesmo time","a mãe dela é a treinadora do time","o cachorro dela se chama Splash e pula na piscina junto","ela é a pessoa mais alta da família, mais alta até que o pai","surpresa: a avó dela tem 70 anos e também nada todo dia"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">What's your</span> …? · <span class=\"lacuna\">How many brothers do you</span> …? · <span class=\"lacuna\">Is your mother</span> …?</p>",
+ instrucaoIA:"Ela sabe: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, mom, dad, aunt, uncle, dog, cat, bird, fish, pet, man, woman, people, child, children, twin, photo, tall, short, funny, kind, little, big, favorite, love, he is / she is, his / her, o 's de posse, This is / These are, plural com -s, How many...?, Do you have...?, numeros ate 20, How do you say this in English?, What does it mean?, OK!, e a semana 1 (cumprimentos, nome, Where are you from?, Sorry I don't understand, Again please). Zoe responde com frases de 3 a 6 palavras, so com essas palavras, deixa ganchos (My family is big. / My dog is funny.) e devolve perguntas faceis (And your family?). Se ela escrever em portugues, Zoe diz que nao entendeu e repete mais devagar. Quando ela disser bye, volte ao portugues, conte o que ela descobriu e deixe uma pista do que ficou escondido."},
 
-{tipo:"escrita", titulo:"⭐ Projeto da semana: a minha família", id:"1",
- instrucao:"Este é o <b>projeto da semana</b>. Escreva <b>4 ou 5 frases</b> apresentando a sua família inteira em inglês, como se fosse a legenda de uma foto de família.<br><br>Depois de escrever, <b>leia em voz alta</b> e mande para a IA corrigir.",
- dica:"<ul><li>uma frase dizendo <b>quantas pessoas</b> são na sua família</li><li>uma frase no <b>plural</b> (These are...) e uma no <b>singular</b> (This is...)</li><li>pelo menos um <b>his</b> ou <b>her</b> com o nome de alguém</li><li>pelo menos um <b>'s</b> (de quem é alguma coisa)</li><li>pelo menos um <b>adjetivo</b> descrevendo alguém</li></ul>Hoje não tem molde: você já tem tudo o que precisa. Confia. 💜",
- gabarito:"4 ou 5 frases apresentando a família: o número de pessoas, pelo menos uma frase com These are (plural com -s correto), uma com This is, um his ou her com nome, um possessivo com 's e um adjetivo da semana (tall, short, young, funny, smart, strong, quiet, friendly)",
- instrucaoIA:"Este e o projeto da semana 2. Ela devia escrever 4 ou 5 frases apresentando a familia dela, cobrindo: quantas pessoas sao, uma frase com These are (plural), uma com This is, um his ou her com um nome, um possessivo com apostrofo s e um adjetivo. Vocabulario da semana: family, mother, father, mom, dad, sister, brother, son, daughter, baby, grandmother, grandfather, grandma, grandpa, grandparents, aunt, uncle, cousin, pet, cat, man, men, woman, women, boy, girl, child, children, person, people, twins, together, everybody, tall, short, young, funny, smart, strong, quiet, friendly, photo. Gramatica: verbo to be, plural com -s e -es, plurais teimosos, This is / These are, he / she / his / her, possessivo com apostrofo s. Elogie primeiro, depois corrija no maximo tres coisas e diga uma frase que ela poderia ter usado."},
+{tipo:"missao", titulo:"Missão: os convites da Miss Kate", cena:"ajuda",
+ cenario:"<p>A <b>Miss Kate</b> está escrevendo os convites do <i>Family Day</i> da escola, um para cada pessoa da sua família, e se enrolou: não sabe quem é quem nem como se escrevem os nomes.</p><p>Ela <b>só entende inglês</b>. Ajude a professora a escrever cada convite certo!</p>",
+ personagem:"Miss Kate, a sua professora, carinhosa e um pouquinho atrapalhada",
+ objetivos:["dizer quem são três pessoas da sua família que vão ao Family Day","dizer de quem é o bicho de estimação que vai junto, usando his ou her","soletrar o nome de uma pessoa da sua família, letra por letra"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">This is my</span> … · <span class=\"lacuna\">These are my</span> … · <span class=\"lacuna\">It is her</span> … · <span class=\"lacuna\">Can you spell</span> …?</p>",
+ instrucaoIA:"Ela sabe: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, aunt, uncle, dog, cat, bird, pet, man, woman, children, twin, photo, tall, short, funny, kind, little, big, favorite, love, he is / she is, his / her, o 's de posse, This is / These are, plural com -s, o alfabeto para soletrar, numeros ate 20, e a semana 1. Miss Kate pergunta uma pessoa por vez (Who is in your family? / And who is this? / Is it his dog or her dog?) e pede para soletrar um nome (Can you spell it?) para escrever certo no convite. Frases de 3 a 6 palavras, so com as palavras da lista. Se ela escrever em portugues, Miss Kate diz que nao entendeu e repete mais devagar. No fim, feche em portugues: elogie, corrija no maximo 3 coisas e mostre uma frase que ela poderia ter usado."},
 
-{tipo:"fala", titulo:"🎤 Apresentação da semana",
- instrucao:"Aqueça a boca com estas frases e depois <b>apresente a sua família em voz alta</b> para a IA, sem ler.",
- foco:"o <b>-s</b> do plural de novo: /s/ em <i>aunts</i> e <i>cats</i>, /z/ em <i>brothers</i> e <i>cousins</i>, /iz/ em <i>houses</i>. E o <b>th</b> de <i>mother</i>, <i>father</i> e <i>brother</i> é o th <b>mole</b>: a língua encosta nos dentes e a voz vibra.",
+{tipo:"escrita", titulo:"⭐ Projeto da semana: My family", id:"1",
+ instrucao:"Este é o projeto da semana! Escreva <b>4 ou 5 frases</b> em inglês apresentando a sua família de verdade — como se você fosse mandar para uma amiga de outro país que nunca viu vocês. 💜",
+ dica:"<ul><li>diga quantas pessoas tem na sua família</li><li>apresente pelo menos duas pessoas, dizendo quem são e o nome delas</li><li>diga como uma delas é (alta, baixa, engraçada, gentil)</li><li>use pelo menos uma vez his ou her, ou o 's</li><li>termine falando dos bichos de estimação — ou de quem é a sua pessoa favorita</li></ul>Hoje é sem molde: você já sabe tudo o que precisa. 💪",
+ gabarito:"4 ou 5 frases apresentando a familia dela. Uma boa resposta traz: o numero de pessoas da familia, pelo menos duas pessoas apresentadas com nome (This is my mother. Her name is...), pelo menos um adjetivo (tall, short, funny, kind), pelo menos um uso correto de his, her ou do 's, e uma frase final sobre bichos ou sobre a pessoa favorita. Sem molde: e a avaliacao da semana.",
+ instrucaoIA:"E o projeto da semana 2: ela devia escrever 4 ou 5 frases apresentando a familia dela, sem molde. Vocabulario da semana: family, mother, father, sister, brother, parents, grandmother, grandfather, baby, cousin, mom, dad, aunt, uncle, dog, cat, bird, fish, pet, man, woman, people, child, children, twin, photo, box, tall, short, funny, kind, little, big, favorite, love, he is / she is, his / her, o 's de posse, This is / These are, plural com -s. Corrija com carinho e em portugues: elogie primeiro, aponte no maximo 3 coisas (principalmente is com he/she, o plural com -s e o his/her de acordo com o dono) e termine dizendo o que ficou melhor do que na semana passada."},
+
+{tipo:"fala", titulo:"Hora de falar: apresente a sua família",
+ instrucao:"Ouça, repita em voz alta e depois teste no 🎤. É o aquecimento para apresentar a sua família falando.",
+ foco:"o <b>-s</b> do plural: <i>brothers</i> e <i>cousins</i> terminam com um <b>z</b> zumbindo, <i>cats</i> e <i>parents</i> com um <b>s</b> soprado.",
  frases:[
-  {en:"This is my family.", pt:"Esta é a minha família."},
-  {en:"These are my cousins.", pt:"Estes são os meus primos."},
-  {en:"My brother is ten years old.", pt:"O meu irmão tem dez anos."},
-  {en:"Her name is Lia and she is a teacher.", pt:"O nome dela é Lia e ela é professora."},
-  {en:"My grandmother is very funny.", pt:"A minha avó é muito engraçada."},
-  {en:"My mother's cat is small and quiet.", pt:"O gato da minha mãe é pequeno e quietinho."}
+  {en:"Hello! This is my family.", pt:"Olá! Esta é a minha família."},
+  {en:"She is my mother. Her name is Rita.", pt:"Ela é a minha mãe. O nome dela é Rita."},
+  {en:"He is my father. His name is Paulo.", pt:"Ele é o meu pai. O nome dele é Paulo."},
+  {en:"These are my two cousins.", pt:"Estes são os meus dois primos."},
+  {en:"My grandmother is very kind.", pt:"A minha avó é muito gentil."},
+  {en:"I love my family!", pt:"Eu amo a minha família!"}
  ],
- instrucaoIA:"Aquecimento e apresentacao final da semana. Pratique as frases acima com atencao ao som do -s do plural e ao th de mother, father e brother. Depois peca a apresentacao da familia dela em voz alta, sem ler, e em seguida faca 4 a 6 perguntas em ingles para ela responder falando, uma de cada vez: Who is in your family? Is your family big? What is your sister's name? Who is funny in your family? Are your cousins boys or girls? How old is your brother? Corrija a pronuncia em portugues, com carinho, no maximo tres coisas."},
+ instrucaoIA:"Primeiro peca para ela repetir as frases acima e corrija a pronuncia em portugues, com atencao ao som do -s do plural (brothers e cousins com z, cats e parents com s) e ao th mole de mother, father e brother. Depois faca 4 a 6 perguntas em ingles sobre a familia dela, uma de cada vez, esperando a resposta FALADA antes da proxima: How many people are in your family? / What's your mother's name? / Do you have brothers or sisters? / Is your father tall or short? / Who is funny in your family? / Do you have a pet? Corrija em portugues, com carinho, e no fim diga uma frase que ela pode usar na apresentacao. Use so palavras da semana 1 e da semana 2."},
 
-{tipo:"ordenar", bonus:true, titulo:"Frases longas", itens:[
- {frase:"My grandmother and my grandfather are very funny", pt:"A minha avó e o meu avô são muito engraçados."},
- {frase:"These are my two cousins and my brother", pt:"Estes são os meus dois primos e o meu irmão."},
- {frase:"Emma's mother is a teacher from New York", pt:"A mãe da Emma é professora de Nova York."}
+{tipo:"ligar", bonus:true, titulo:"Pares traiçoeiros: preste muita atenção", pares:[
+ {en:"this", pt:"este (um)"},
+ {en:"these", pt:"estes (vários)"},
+ {en:"he is", pt:"ele é"},
+ {en:"she is", pt:"ela é"},
+ {en:"his", pt:"dele"},
+ {en:"her", pt:"dela"},
+ {en:"brother", pt:"irmão"},
+ {en:"brothers", pt:"irmãos"},
+ {en:"good night", pt:"boa noite"},
+ {en:"teacher", pt:"professora"}
 ]},
 
-{tipo:"escrita", bonus:true, titulo:"⭐ Escrita livre: o fim da história", id:"bonus",
- instrucao:"O Theo apareceu com o gato. Escreva <b>4 a 6 frases</b> inventando o que acontece <b>depois</b>: o que a Anna fala para o Theo? E a avó? E os gêmeos?",
- dica:"<ul><li>pode inventar o que quiser — só use inglês que você já conhece</li><li>faça pelo menos <b>duas pessoas</b> falarem</li><li>use pelo menos um <b>'s</b> e um adjetivo da semana</li></ul>",
- gabarito:"4 a 6 frases criativas continuando a história, com pelo menos duas personagens falando, um possessivo com 's e um adjetivo da semana",
- instrucaoIA:"Desafio bonus, escrita livre. Ela devia inventar a continuacao da historia do dia 5: o Theo aparece com o gato e ela conta o que acontece depois, com pelo menos duas personagens falando. Vocabulario e gramatica da semana 2 (familia, adjetivos, to be, plural, This is / These are, his / her, possessivo com apostrofo s). Elogie a criatividade, corrija no maximo tres coisas e nao exija vocabulario que ela nao tem."}
+{tipo:"escrita", bonus:true, titulo:"⭐ Escrita livre: continue a história", id:"bonus",
+ instrucao:"A Anna acabou de conhecer o Nico, o irmãozinho novo do Leo. <b>Continue a história</b> em 4 ou 5 frases: o que acontece na casa do Leo? Quem mais chega? O que o Nico faz? Invente!",
+ dica:"<ul><li>escreva em inglês, com frases curtas</li><li>use pelo menos duas pessoas da família</li><li>use pelo menos uma vez his ou her</li><li>diga como cada pessoa é (alta, engraçada, gentil, pequena)</li></ul>",
+ gabarito:"4 ou 5 frases inventadas continuando a historia do Nico. Uma boa resposta usa he is / she is, his / her, palavras de familia e pelo menos um adjetivo. Nao existe resposta certa: o que conta e a historia continuar fazendo sentido em ingles.",
+ instrucaoIA:"E um desafio bonus criativo: ela devia continuar a historia do Nico (o irmao novo do Leo) em 4 ou 5 frases inventadas. Elogie a criatividade primeiro. Vocabulario disponivel: familia inteira, he is / she is, his / her, o 's, This is / These are, plural com -s, tall, short, funny, kind, little, big, favorite, love, home, school, e a semana 1. Corrija no maximo 3 coisas, em portugues."}
 
 ]});
 </script>

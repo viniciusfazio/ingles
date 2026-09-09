@@ -12,7 +12,7 @@
      (mensagem "precache"), então a semana inteira funciona offline
      mesmo que ela só tenha aberto o dia 1.
    ============================================================ */
-var CACHE = 'ingles-v3';   /* mude o número para forçar a troca de tudo o que está guardado */
+var CACHE = 'ingles-v4';   /* mude o número para forçar a troca de tudo o que está guardado */
 var ESPERA_REDE_MS = 3000;
 var BASICO = [
   './',
