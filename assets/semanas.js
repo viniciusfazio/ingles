@@ -25,7 +25,8 @@ var SEMANAS = [
 /* ---------- BLOCO 1 — Primeiras palavras (A0 → A1) ---------- */
 {n:1, bloco:"Bloco 1 — Primeiras palavras", titulo:"Hello! Nice to meet you", tema:"Cumprimentos, alfabeto, números 0–20, verbo TO BE (I / you)", pronta:true,
  dias:["Hello! Cumprimentos","O alfabeto e os números","I am / You are","Where are you from?","Revisão + My first presentation"]},
-{n:2, bloco:"Bloco 1 — Primeiras palavras", titulo:"My family", tema:"Família, this/these, plural, He is / She is, his/her, possessivo com 's", pronta:false},
+{n:2, bloco:"Bloco 1 — Primeiras palavras", titulo:"My family", tema:"Família, this/these, plural, He is / She is, his/her, possessivo com 's", pronta:true,
+ dias:["This is my family","This is / These are","He is, she is · his, her","Anna's family","Revisão + projeto: a minha família"]},
 {n:3, bloco:"Bloco 1 — Primeiras palavras", titulo:"Colors and my school things", tema:"Cores, material escolar, a/an, adjetivos, What's this?", pronta:false},
 {n:4, bloco:"Bloco 1 — Primeiras palavras", titulo:"How old are you?", tema:"Números 21–100, ordinais (first, second…), idade, dias da semana, meses, aniversário (on May 5th)", pronta:false},
 {n:5, bloco:"Bloco 1 — Primeiras palavras", titulo:"My day", tema:"Rotina, present simple (I/you/we), que horas são, preposições de tempo (at 7, on Monday, in the morning)", pronta:false},

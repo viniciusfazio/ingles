@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 2 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:2, dia:2,
+titulo:"This is / These are",
+subtitulo:"Falar de mais de uma pessoa: o plural",
+objetivos:[
+  "Formar o plural das palavras em inglês (-s, -es e os teimosos)",
+  "Usar This is para um e These are para vários",
+  "Entender de ouvido uma conversa sobre a família de um amigo"
+],
+blocos:[
+
+{tipo:"vocab", titulo:"Pessoas", itens:[
+ {en:"man", pt:"homem", ipa:"/MÉN/", emoji:"👨"},
+ {en:"men", pt:"homens (plural de man)", ipa:"/MÉN/", emoji:"👬"},
+ {en:"woman", pt:"mulher", ipa:"/UÚ-man/", emoji:"👩"},
+ {en:"women", pt:"mulheres (plural de woman)", ipa:"/UÍ-men/", emoji:"👭"},
+ {en:"boy", pt:"menino", ipa:"/BÓI/", emoji:"👦"},
+ {en:"girl", pt:"menina", ipa:"/GUÉRL/", emoji:"👧"},
+ {en:"child", pt:"criança", ipa:"/TCHÁILD/", emoji:"🧒"},
+ {en:"children", pt:"crianças (plural de child)", ipa:"/TCHÍL-dren/", emoji:"🧒🧒"},
+ {en:"person", pt:"pessoa", ipa:"/PÉR-son/", emoji:"🙋"},
+ {en:"people", pt:"pessoas (plural de person)", ipa:"/PÍ-pol/", emoji:"👪"},
+ {en:"twins", pt:"gêmeos, gêmeas", ipa:"/TUÍNS/", emoji:"👯"},
+ {en:"together", pt:"juntos, juntas", ipa:"/tu-GUÉ-der/", emoji:"🤝"},
+ {en:"everybody", pt:"todo mundo", ipa:"/ÉV-ri-bâ-di/", emoji:"🙌"}
+]},
+
+{tipo:"gramatica", titulo:"Mais de um: o plural",
+ html:"<p>Em inglês, para falar de <b>mais de um</b>, quase sempre é só pôr um <code>-s</code> no fim da palavra. Igualzinho ao português!</p>"+
+ "<table><tr><th>Um</th><th>Mais de um</th></tr>"+
+ "<tr><td><code>sister</code> (irmã)</td><td><code>sisters</code> (irmãs)</td></tr>"+
+ "<tr><td><code>brother</code> (irmão)</td><td><code>brothers</code> (irmãos)</td></tr>"+
+ "<tr><td><code>friend</code> (amigo)</td><td><code>friends</code> (amigos)</td></tr></table>"+
+ "<p>👉 Se a palavra já termina com um som sibilante (<b>s, x, ch, sh</b>), o <code>-s</code> sozinho não sai da boca. Aí entra <code>-es</code>:</p>"+
+ "<table><tr><th>Um</th><th>Mais de um</th></tr>"+
+ "<tr><td><code>box</code> (caixa)</td><td><code>boxes</code> (caixas)</td></tr></table>"+
+ "<p>👉 E existem <b>três teimosas</b> que mudam por dentro. Não tem regra: é decorar.</p>"+
+ "<table><tr><th>Um</th><th>Mais de um</th></tr>"+
+ "<tr><td><code>man</code> (homem)</td><td><code>men</code> (homens)</td></tr>"+
+ "<tr><td><code>woman</code> (mulher)</td><td><code>women</code> (mulheres)</td></tr>"+
+ "<tr><td><code>child</code> (criança)</td><td><code>children</code> (crianças)</td></tr>"+
+ "<tr><td><code>person</code> (pessoa)</td><td><code>people</code> (pessoas)</td></tr></table>",
+ exemplos:[
+  {en:"one sister, two sisters", pt:"uma irmã, duas irmãs"},
+  {en:"one boy, three boys", pt:"um menino, três meninos"},
+  {en:"one box, two boxes", pt:"uma caixa, duas caixas"},
+  {en:"one man, two men", pt:"um homem, dois homens"},
+  {en:"one child, five children", pt:"uma criança, cinco crianças"},
+  {en:"My cousins are here.", pt:"Os meus primos estão aqui."}
+ ]},
+
+{tipo:"gramatica", titulo:"This is (um) · These are (vários)",
+ html:"<p>Para apresentar <b>uma</b> pessoa você já sabe: <code>This is my brother.</code></p>"+
+ "<p>Para apresentar <b>duas ou mais</b>, tudo vira plural de uma vez: a palavrinha, o verbo e a pessoa.</p>"+
+ "<table><tr><th>Um</th><th>Mais de um</th></tr>"+
+ "<tr><td><code>This is my sister.</code><br>Esta é a minha irmã.</td><td><code>These are my sisters.</code><br>Estas são as minhas irmãs.</td></tr>"+
+ "<tr><td><code>This is my cat.</code><br>Este é o meu gato.</td><td><code>These are my cats.</code><br>Estes são os meus gatos.</td></tr></table>"+
+ "<p>👉 Repare nos <b>três</b> pedaços que mudam juntos: <code>This</code> vira <code>These</code>, <code>is</code> vira <code>are</code>, e a palavra ganha <code>-s</code>. Se um deles ficar para trás, a frase fica torta.</p>",
+ exemplos:[
+  {en:"This is my mother.", pt:"Esta é a minha mãe."},
+  {en:"These are my grandparents.", pt:"Estes são os meus avós."},
+  {en:"This is my cousin.", pt:"Este é o meu primo."},
+  {en:"These are my two brothers.", pt:"Estes são os meus dois irmãos."},
+  {en:"These are my friends.", pt:"Estes são os meus amigos."}
+ ]},
+
+{tipo:"dialogo", titulo:"🎧 Ouça: a família do Leo", escuta:true, linhas:[
+ {quem:"Emma", en:"Leo, is your family big?", pt:"Leo, a sua família é grande?"},
+ {quem:"Leo", en:"Yes, it is. We are six.", pt:"Sim, é. Nós somos seis."},
+ {quem:"Emma", en:"Six! Who are they?", pt:"Seis! Quem são eles?"},
+ {quem:"Leo", en:"These are my parents, Rita and Paulo.", pt:"Estes são os meus pais, Rita e Paulo."},
+ {quem:"Emma", en:"And these two boys?", pt:"E estes dois meninos?"},
+ {quem:"Leo", en:"They are my brothers. They are twins!", pt:"Eles são os meus irmãos. Eles são gêmeos!"},
+ {quem:"Emma", en:"Twins! Are they eleven?", pt:"Gêmeos! Eles têm onze anos?"},
+ {quem:"Leo", en:"No, they are nine. And this is my sister Nina.", pt:"Não, eles têm nove. E esta é a minha irmã Nina."},
+ {quem:"Emma", en:"She is very small!", pt:"Ela é muito pequena!"},
+ {quem:"Leo", en:"She is a baby. We are together every day.", pt:"Ela é um bebê. Nós ficamos juntos todo dia."}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
+ {pergunta:"Is Leo's family big?", opcoes:["Yes, it is.","No, it is small.","It is new."], correta:0,
+  explicacao:"Ele diz: Yes, it is. We are six."},
+ {pergunta:"Who are Rita and Paulo?", opcoes:["His brothers","His parents","His grandparents"], correta:1,
+  explicacao:"These are my parents, Rita and Paulo."},
+ {pergunta:"Are the two boys twins?", opcoes:["Yes, they are.","No, they are not.","They are cousins."], correta:0,
+  explicacao:"They are my brothers. They are twins!"},
+ {pergunta:"How old are the twins?", opcoes:["Nine","Eleven","Six"], correta:0,
+  explicacao:"A Emma chuta eleven, mas o Leo corrige: No, they are nine."},
+ {pergunta:"Who is Nina?", opcoes:["Leo's cousin","Leo's sister","Leo's mother"], correta:1,
+  explicacao:"And this is my sister Nina."},
+ {pergunta:"Is Nina a baby?", opcoes:["Yes, she is.","No, she is nine.","No, she is eleven."], correta:0,
+  explicacao:"She is a baby — por isso a Emma diz She is very small!"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"Is your family big", pt:"A sua família é grande?", dica:"(quatro palavras)"},
+ {en:"These are my parents", pt:"Estes são os meus pais.", dica:"(quatro palavras)"},
+ {en:"They are my brothers", pt:"Eles são os meus irmãos.", dica:"(quatro palavras)"},
+ {en:"She is a baby", pt:"Ela é um bebê.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Is Leo's family big? (A família do Leo é grande?)<br>2. Who are Rita and Paulo? (Quem são Rita e Paulo?)<br>3. Who is Nina? (Quem é a Nina?)",
+ dica:"<ul><li>uma frase completa para cada pergunta — nada de responder só com uma palavra</li><li>na 1, comece com <b>Yes</b> ou <b>No</b> e continue a frase</li><li>nas 2 e 3, diga <b>quem são</b> em relação ao Leo</li></ul>",
+ andaime:"<p>Só o começo — o resto é você:</p><p>Yes, <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span>. · They are his <span class=\"lacuna\">?</span>. · She is his <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Yes, it is (big). 2. They are his parents. 3. She is his sister (a baby).",
+ instrucaoIA:"Ela ouviu um dialogo entre Emma e Leo e devia responder por escrito, em ingles: se a familia do Leo e grande (sim, sao seis), quem sao Rita e Paulo (os pais dele) e quem e Nina (a irma dele, um bebe). Vocabulario: family, big, parents, sister, brother, twins, baby, his, they are, she is.",
+ },
+
+{tipo:"completar", titulo:"This ou These? Singular ou plural?", ajuda:"Leia a tradução e escolha.", itens:[
+ {frase:"___ is my brother.", pt:"Este é o meu irmão.", resposta:"This", opcoes:["This","These","They"],
+  explicacao:"Um irmão só: This is."},
+ {frase:"___ are my parents.", pt:"Estes são os meus pais.", resposta:"These", opcoes:["This","These","It"],
+  explicacao:"Duas pessoas: These are."},
+ {frase:"They are my two ___.", pt:"Elas são as minhas duas irmãs.", resposta:"sisters", opcoes:["sister","sisters","sisteres"],
+  explicacao:"two = duas, então a palavra ganha -s: sisters."},
+ {frase:"These are my ___.", pt:"Estes são os meus primos.", resposta:"cousins", opcoes:["cousin","cousins","cousines"],
+  explicacao:"Depois de These are, a palavra vem no plural."},
+ {frase:"Three ___ are here.", pt:"Três crianças estão aqui.", resposta:"children", opcoes:["childs","children","childrens"],
+  explicacao:"child é teimosa: o plural é children, sem -s no fim."},
+ {frase:"Two ___ are my aunts.", pt:"Duas mulheres são as minhas tias.", resposta:"women", opcoes:["womans","women","womens"],
+  explicacao:"woman vira women (muda o o por e no meio)."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as pessoas", pares:[
+ {en:"man", pt:"homem"},
+ {en:"woman", pt:"mulher"},
+ {en:"boy", pt:"menino"},
+ {en:"girl", pt:"menina"},
+ {en:"people", pt:"pessoas"},
+ {en:"twins", pt:"gêmeos"}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"These are my parents", pt:"Estes são os meus pais."},
+ {frase:"This is my brother Theo", pt:"Este é o meu irmão Theo."},
+ {frase:"They are my two sisters", pt:"Elas são as minhas duas irmãs."},
+ {frase:"My family is very big", pt:"A minha família é muito grande."}
+]},
+
+{tipo:"missao", titulo:"🎯 Missão: quantos são vocês?",
+ cenario:"<p>Você está sentada no ônibus da escola ao lado do <b>Leo</b>. Ele acabou de contar da família dele e agora quer saber da sua. O Leo <b>só entende inglês</b>.</p>",
+ personagem:"Leo, um menino americano de 11 anos, falante e engraçado; ele tem dois irmãos gêmeos e uma irmã bebê",
+ objetivos:[
+  "dizer quantas pessoas são na sua família",
+  "apresentar duas ou mais pessoas usando These are my...",
+  "dizer a idade de uma delas"
+ ],
+ andaime:"<p>Se travar: <span class=\"lacuna\">We are</span> ... · <span class=\"lacuna\">These are my</span> ...</p>",
+ instrucaoIA:"Ela sabe: as palavras da familia (mother, father, sister, brother, grandmother, grandfather, aunt, uncle, cousin, baby, pet, cat), man, woman, boy, girl, child, children, person, people, twins, together, os numeros ate 20, o verbo to be, This is / These are e o plural com -s. Leo fala frases de 3 a 6 palavras. Ele pergunta Is your family big? How many? Who are they? e conta que os irmaos dele sao gemeos de nove anos.",
+ },
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre a sua família usando <b>This is</b> e <b>These are</b>.",
+ dica:"<ul><li>pelo menos <b>uma</b> frase no singular e <b>uma</b> no plural</li><li>na frase do plural, não esqueça os três pedaços que mudam juntos</li><li>use pelo menos <b>duas</b> palavras novas de hoje (menino, menina, criança, pessoas, gêmeos...)</li><li>diga quantas pessoas são na sua família</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>This is my <span class=\"lacuna\">?</span>. These are my <span class=\"lacuna\">?</span>. We are <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre a família dela, com pelo menos uma frase This is my... (singular) e uma These are my... (plural com -s), duas palavras novas do dia (man, woman, boy, girl, child, children, person, people, twins, together) e o número de pessoas da família",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre a familia dela usando This is (singular) e These are (plural), com o plural em -s correto. Vocabulario do dia: man, men, woman, women, boy, girl, child, children, person, people, twins, together, everybody, e as palavras de familia do dia 1. Gramatica: plural com -s e -es, plurais teimosos (men, women, children, people), This is / These are. Confira principalmente se o plural esta certo e se o This/These combina com is/are.",
+ },
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Preste atenção no <b>som</b> do -s no fim.",
+ foco:"o <b>-s</b> do plural tem <b>três sons</b>: /s/ em <i>cats</i> e <i>aunts</i>, /z/ em <i>brothers</i> e <i>dogs</i>, e /iz/ (uma sílaba a mais!) em <i>boxes</i> e <i>houses</i>. Não force: fale rápido e o som certo sai sozinho.",
+ frases:[
+  {en:"These are my parents.", pt:"Estes são os meus pais."},
+  {en:"They are my brothers.", pt:"Eles são os meus irmãos."},
+  {en:"My sisters are twins.", pt:"As minhas irmãs são gêmeas."},
+  {en:"My pets are two cats and one dog.", pt:"Os meus animais de estimação são dois gatos e um cachorro."},
+  {en:"These boys are my cousins.", pt:"Estes meninos são os meus primos."},
+  {en:"Two boxes are here.", pt:"Duas caixas estão aqui."}
+ ],
+ instrucaoIA:"Praticar o som do -s do plural nas frases acima (/s/ em cats, /z/ em brothers, /iz/ em boxes). Depois faca 4 a 6 perguntas em ingles para ela responder falando, uma de cada vez, esperando a resposta: Is your family big? Who are your parents? Are you a girl? Who are the children in your family? Are your cousins boys or girls? Corrija a pronuncia em portugues, com carinho. Ela so sabe o verbo to be, This is / These are, o plural e as palavras de familia e pessoas."},
+
+{tipo:"quiz", bonus:true, titulo:"Detetive: o que dá para concluir?", questoes:[
+ {pergunta:"The baby is Nina. Is she nine years old?", opcoes:["Yes, she is.","No, she is not.","She is eleven."], correta:1,
+  explicacao:"O diálogo não diz a idade da Nina, mas um bebê não tem nove anos. Dá para concluir."},
+ {pergunta:"Leo is not one of the twins. Who are the twins?", opcoes:["Leo and Nina","His brothers","Rita and Paulo"], correta:1,
+  explicacao:"Ele diz They are my brothers. They are twins — falando dos dois meninos, não dele."},
+ {pergunta:"O Leo diz 'We are six'. Ele conta os pais, os dois irmãos e a Nina: são cinco. Quem é a sexta pessoa?", opcoes:["Emma","Leo","Rita"], correta:1,
+  explicacao:"Ele mesmo! Quando alguém diz We are six, está se contando junto."}
+]},
+
+{tipo:"completar", bonus:true, titulo:"Sem opções: is ou are?", itens:[
+ {frase:"These ___ my grandparents.", pt:"Estes são os meus avós.", resposta:"are",
+  explicacao:"These pede are, sempre."},
+ {frase:"This ___ my aunt.", pt:"Esta é a minha tia.", resposta:"is",
+  explicacao:"This pede is, sempre."},
+ {frase:"My two ___ are twins.", pt:"Os meus dois irmãos são gêmeos.", resposta:"brothers",
+  explicacao:"two pede o plural: brothers."}
+]}
+
+]});
+</script>
+</body>
+</html>

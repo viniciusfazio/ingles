@@ -67,6 +67,78 @@ var GRAMATICA = [
   {en:"Are you American?", pt:"Você é americana?"},
   {en:"No, I'm not. I'm Brazilian.", pt:"Não, não sou. Eu sou brasileira."},
   {en:"Who is she?", pt:"Quem é ela?"}
+ ]},
+
+{semana:2, dia:2, modulo:1,
+ titulo:"O plural: mais de um",
+ resumo:"Quase sempre é só pôr -s no fim (e quatro teimosas)",
+ html:"<table><tr><th>Um</th><th>Mais de um</th></tr>"+
+      "<tr><td><code>sister</code></td><td><code>sisters</code></td></tr>"+
+      "<tr><td><code>friend</code></td><td><code>friends</code></td></tr>"+
+      "<tr><td><code>box</code> (termina em s, x, ch, sh)</td><td><code>boxes</code></td></tr>"+
+      "</table>"+
+      "<p>As teimosas, que mudam por dentro e não ganham -s:</p>"+
+      "<table><tr><th>Um</th><th>Mais de um</th></tr>"+
+      "<tr><td><code>man</code> (homem)</td><td><code>men</code></td></tr>"+
+      "<tr><td><code>woman</code> (mulher)</td><td><code>women</code></td></tr>"+
+      "<tr><td><code>child</code> (criança)</td><td><code>children</code></td></tr>"+
+      "<tr><td><code>person</code> (pessoa)</td><td><code>people</code></td></tr></table>"+
+      "<p>🔊 O -s tem três sons: /s/ em <i>cats</i>, /z/ em <i>brothers</i>, /iz/ em <i>boxes</i>.</p>",
+ exemplos:[
+  {en:"one sister, two sisters", pt:"uma irmã, duas irmãs"},
+  {en:"one box, two boxes", pt:"uma caixa, duas caixas"},
+  {en:"one man, two men", pt:"um homem, dois homens"},
+  {en:"one child, five children", pt:"uma criança, cinco crianças"},
+  {en:"My cousins are here.", pt:"Os meus primos estão aqui."}
+ ]},
+
+{semana:2, dia:2, modulo:1,
+ titulo:"This is / These are",
+ resumo:"Um: This is. Mais de um: These are (e a palavra ganha -s)",
+ html:"<table><tr><th>Um</th><th>Mais de um</th></tr>"+
+      "<tr><td><code>This is my sister.</code></td><td><code>These are my sisters.</code></td></tr>"+
+      "<tr><td><code>This is my cat.</code></td><td><code>These are my cats.</code></td></tr></table>"+
+      "<p>👉 Mudam <b>três</b> pedaços de uma vez: <code>This</code> → <code>These</code>, "+
+      "<code>is</code> → <code>are</code>, e a palavra ganha <code>-s</code>.</p>",
+ exemplos:[
+  {en:"This is my mother.", pt:"Esta é a minha mãe."},
+  {en:"These are my grandparents.", pt:"Estes são os meus avós."},
+  {en:"These are my two brothers.", pt:"Estes são os meus dois irmãos."},
+  {en:"This is my cousin.", pt:"Este é o meu primo."}
+ ]},
+
+{semana:2, dia:3, modulo:1,
+ titulo:"He / She e his / her",
+ resumo:"ele e ela · dele e dela — e em inglês vêm ANTES da palavra",
+ html:"<table><tr><th>Inglês</th><th>Português</th></tr>"+
+      "<tr><td><code>He is my brother.</code></td><td>Ele é o meu irmão.</td></tr>"+
+      "<tr><td><code>She is my mother.</code></td><td>Ela é a minha mãe.</td></tr>"+
+      "<tr><td><code>his name</code></td><td>o nome dele</td></tr>"+
+      "<tr><td><code>her name</code></td><td>o nome dela</td></tr></table>"+
+      "<p>⚠️ Quem manda é o <b>dono</b>, não a coisa: <code>her father</code> é o pai <b>dela</b>, "+
+      "e <code>his mother</code> é a mãe <b>dele</b>.</p>",
+ exemplos:[
+  {en:"This is my father. His name is Marcos.", pt:"Este é o meu pai. O nome dele é Marcos."},
+  {en:"This is my sister. Her name is Bia.", pt:"Esta é a minha irmã. O nome dela é Bia."},
+  {en:"She is my aunt. Her son is my cousin.", pt:"Ela é a minha tia. O filho dela é o meu primo."},
+  {en:"He is my uncle. His daughter is my cousin.", pt:"Ele é o meu tio. A filha dele é a minha prima."}
+ ]},
+
+{semana:2, dia:4, modulo:1,
+ titulo:"O possessivo com 's",
+ resumo:"Anna's brother = o irmão da Anna (dono primeiro)",
+ html:"<table><tr><th>Português</th><th>Inglês</th></tr>"+
+      "<tr><td>o irmão da Anna</td><td><code>Anna's brother</code></td></tr>"+
+      "<tr><td>a mãe da Emma</td><td><code>Emma's mother</code></td></tr>"+
+      "<tr><td>o nome da minha tia</td><td><code>my aunt's name</code></td></tr></table>"+
+      "<p>👉 Leia de trás para a frente: <code>Anna's brother</code> = irmão ... da Anna.</p>"+
+      "<p>⚠️ Não confunda com o <code>'s</code> de <code>She's my sister</code>, que é "+
+      "<code>is</code> encurtado. Depois do possessivo vem sempre uma coisa ou uma pessoa.</p>",
+ exemplos:[
+  {en:"Anna's brother is five.", pt:"O irmão da Anna tem cinco anos."},
+  {en:"Emma's mother is very nice.", pt:"A mãe da Emma é muito legal."},
+  {en:"My sister's cat is small.", pt:"O gato da minha irmã é pequeno."},
+  {en:"My grandmother's name is Lia.", pt:"O nome da minha avó é Lia."}
  ]}
 
 ];
