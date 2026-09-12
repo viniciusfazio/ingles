@@ -132,14 +132,46 @@ if(global.speechSynthesis){
    (grave para homem, agudo para mulher). A aula pode forçar com voz:"m"/"f". */
 var NOMES_F=/^(anna|emma|mia|lily|lucy|kate|sofia|sophia|julia|zoe|emily|olivia|ava|grace|ella|sarah|mary|lisa|maria|ana|mom|mother|mommy|grandma|grandmother|aunt|sister|girl|woman|lady|teacher|professora|mrs|ms|miss|mae|mãe|vovo|vovó|tia|menina|vendedora|atendente|waitress|nurse|queen|princess|narradora)$/i;
 var NOMES_M=/^(leo|sam|tom|ben|max|jack|mike|jake|noah|liam|lucas|peter|paul|john|david|dan|daniel|bob|bill|charlie|oliver|alex|dad|father|daddy|grandpa|grandfather|uncle|brother|boy|man|mr|sir|pai|vovô|tio|menino|vendedor|waiter|doctor|king|prince|coach|driver|narrador)$/i;
-function generoDe(quem,pista){
-  if(pista==='m'||pista==='f') return pista;
+/* gênero só pelo nome: 'f', 'm' ou null quando o nome não diz nada (Kim, Diaz) */
+function generoNome(quem){
   var w=String(quem||'').trim().split(/[\s,:.()]+/)[0].toLowerCase();
-  if(!w) return 'f';
+  if(!w) return null;
   if(NOMES_F.test(w)) return 'f';
   if(NOMES_M.test(w)) return 'm';
   if(/o$/.test(w)) return 'm';              /* Marco, Pedro */
-  return 'f';                               /* a professora é a voz padrão do curso */
+  return null;
+}
+function generoDe(quem,pista){
+  if(pista==='m'||pista==='f') return pista;
+  return generoNome(quem)||'f';             /* a professora é a voz padrão do curso */
+}
+/* gênero de um personagem de missão/explorar/entrevista, pela descrição em
+   português ("Mr. Diaz, recepcionista…", "uma senhora que espera alguém",
+   "Kim, repórter, curiosa e animada"): voz:"m"/"f" da aula > nome > palavra
+   que denuncia o gênero > terminação dos adjetivos. null se nada decidir. */
+var PT_FEM=/(^|[\s,;:(])(ela|dela|senhora|senhorita|menina|mulher|mo[çc]a|garota|m[ãa]e|mam[ãa]e|av[óo]|vov[óo]|tia|irm[ãa]|filha|prima|sobrinha|amiga|vizinha|aluna|professora|diretora|secret[áa]ria|vendedora|bibliotec[áa]ria|recepcionista mulher|treinadora|m[ée]dica|enfermeira|dentista mulher|cozinheira|nadadora|cantora|atriz|pintora|escritora|jogadora|policial mulher|rainha|princesa|bruxa|fada|sereia|gata|cachorra|sra|srta|dona|mrs|ms|miss|grandma|aunt|girl|woman|lady|queen|princess|mom|mother)(?=[\s,.;:()!]|$)/i;
+var PT_MASC=/(^|[\s,;:(])(ele|dele|senhor|menino|homem|mo[çc]o|rapaz|garoto|pai|papai|av[ôo]|vov[ôo]|tio|irm[ãa]o|filho|primo|sobrinho|amigo|vizinho|aluno|professor|diretor|secret[áa]rio|vendedor|bibliotec[áa]rio|recepcionista homem|treinador|m[ée]dico|enfermeiro|cozinheiro|nadador|cantor|ator|pintor|escritor|jogador|rei|pr[íi]ncipe|bruxo|mago|gato|cachorro|rob[ôo]|drag[ãa]o|sr|mr|sir|grandpa|uncle|boy|man|king|prince|dad|father)(?=[\s,.;:()!]|$)/i;
+var ADJ_GEN=/(^|[\s,;:(])(simp[áa]tic|animad|calm|curios|t[íi]mid|educad|orgulhos|apressad|distra[íi]d|competitiv|prestativ|atrapalhad|caloros|brincalh|s[ée]ri|engra[çc]ad|organizad|bem-humorad|carinhos|falant|quiet|nov|velh|alt|baix|pequen|gord|magr|rápid|lent|cansad|preocupad|nervos|content|feliz|elegant|bagun[çc]ad|cuidados|esquecid|sonhador|teimos|gulos)(a|o|ona|[ãa]o)(?=[\s,.;:()!]|$)/ig;
+function generoPersonagem(personagem,pista){
+  if(pista==='m'||pista==='f') return pista;
+  var txt=String(personagem||'');
+  var g=generoNome(nomeCurto(txt));
+  if(g) return g;
+  var f=PT_FEM.test(txt), m=PT_MASC.test(txt);
+  if(f!==m) return f?'f':'m';
+  var nf=0, nm=0, r;
+  ADJ_GEN.lastIndex=0;
+  while((r=ADJ_GEN.exec(txt))){ if(r[3]==='a'||r[3]==='ona') nf++; else nm++; }
+  if(nf!==nm) return nf>nm?'f':'m';
+  return null;
+}
+/* a frase que avisa a IA de quem ela está interpretando, para o jeito de
+   falar (e a voz, quando ela puder escolher) bater com o personagem */
+function linhaGenero(personagem,pista){
+  var g=generoPersonagem(personagem,pista);
+  if(g==='m') return 'O PERSONAGEM É HOMEM (ou menino): fale como ele falaria e, se você puder escolher a voz, use uma voz masculina. Mantenha isso do começo ao fim.\n';
+  if(g==='f') return 'A PERSONAGEM É MULHER (ou menina): fale como ela falaria e, se você puder escolher a voz, use uma voz feminina. Mantenha isso do começo ao fim.\n';
+  return 'Decida pelo nome se o personagem é homem ou mulher e mantenha isso do começo ao fim (jeito de falar e, se puder escolher, a voz).\n';
 }
 function generoDaVoz(v){
   var n=(v.name||'').toLowerCase();
@@ -711,6 +743,9 @@ function baixarBackup(){
 }
 
 /* ---------------- prompts para a IA ---------------- */
+/* O que conta como erro, em toda correção. Pontuação e maiúscula não
+   ensinam a falar; o que importa nesta fase é gramática e ortografia. */
+var REGRA_CORRECAO='IGNORE pontuação (ponto, vírgula, ponto de interrogação, apóstrofo em contração), maiúsculas e minúsculas e acento em nome próprio: nada disso conta como erro nem entra nas correções, a menos que mude o sentido da frase. Conte como erro só GRAMÁTICA (ordem das palavras, verbo, plural, artigo, palavra que falta ou sobra) e ORTOGRAFIA (palavra escrita errada). Se o único problema for pontuação ou maiúscula, diga que está certo.';
 function promptEscrita(instrucao,resposta,semana,gabarito){
   var eu=aluna();
   return 'Você é uma professora de inglês simpática e paciente. Sua aluna é uma menina brasileira de '+eu.idade+
@@ -721,7 +756,7 @@ function promptEscrita(instrucao,resposta,semana,gabarito){
 'CORRIJA ASSIM:\n'+
 '1) Comece com um elogio curto e sincero, em português.\n'+
 '2) Escreva a versão corrigida completa em inglês.\n'+
-'3) Mostre no máximo 3 erros, cada um no formato: ❌ o que ela escreveu → ✅ o certo → explicação bem simples em português.\n'+
+'3) Mostre no máximo 3 erros, cada um no formato: ❌ o que ela escreveu → ✅ o certo → explicação bem simples em português. '+REGRA_CORRECAO+'\n'+
 '4) Não use termos gramaticais difíceis nem vocabulário avançado.\n'+
 '5) Termine com UMA pergunta bem fácil em inglês (com a tradução entre parênteses) para ela responder.\n'+
 'Responda em português, menos os exemplos em inglês. Seja carinhosa e encorajadora.';
@@ -731,7 +766,8 @@ function promptFala(instrucao,frases,semana,soConversa){
   var cabeca='Você é uma professora de inglês simpática e paciente. Sua aluna é uma menina brasileira de '+eu.idade+
 ' anos chamada '+eu.nome+', na semana '+semana+' de um curso de inglês do zero (nível iniciante).\n\n'+
 'ATIVIDADE DE FALA:\n'+instrucao+'\n\nFRASES/PERGUNTAS DA AULA DE HOJE:\n- '+frases.join('\n- ')+'\n\n'+
-'Ela responde falando; o áudio chega para você como texto (às vezes com erros de reconhecimento — seja tolerante).\n';
+'Ela responde falando; o áudio chega para você como texto (às vezes com erros de reconhecimento — seja tolerante). '+REGRA_CORRECAO+'\n'+
+'Você é uma professora (mulher): se puder escolher a voz, use uma voz feminina.\n';
   if(soConversa){
     /* no chat do app, as frases já foram praticadas no microfone: aqui é só a conversa guiada */
     return cabeca+
@@ -774,7 +810,7 @@ function promptMissao(b,semana){
   var objetivos=(b.objetivos||[]).map(function(o){return '- '+o;}).join('\n');
   return 'Vamos fazer um JOGO DE CONVERSA em inglês. A jogadora é uma menina brasileira de '+eu.idade+
 ' anos chamada '+eu.nome+', na semana '+semana+' de um curso de inglês para iniciantes. Ela vai responder digitando ou falando (o áudio chega para você como texto).\n\n'+
-'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+
+'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+linhaGenero(b.personagem,b.voz)+
 'A CENA: '+strip(b.cenario)+'\n'+
 'O personagem SÓ FALA E SÓ ENTENDE INGLÊS. Não sabe uma palavra de português.\n\n'+
 'A MISSÃO DELA (não revele esta lista; use-a para julgar se ela conseguiu):\n'+objetivos+'\n'+
@@ -791,7 +827,7 @@ function promptMissao(b,semana){
 'FECHAMENTO (só quando a missão for cumprida ou a cena acabar): saia do personagem e escreva em PORTUGUÊS:\n'+
 '- "🎉 Missão cumprida!" se ela conseguiu, ou "Quase! Faltou: ..." dizendo em uma linha o que faltou.\n'+
 '- Um elogio específico sobre algo que ela disse bem.\n'+
-'- No máximo 3 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português.\n'+
+'- No máximo 3 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português. '+REGRA_CORRECAO+'\n'+
 '- UMA frase em inglês que ela poderia ter usado, com a tradução.\n'+
 '- Termine perguntando se ela quer jogar de novo.\n\n'+
 'Tudo o que o personagem diz é em INGLÊS. Português só na dica do narrador (regra 4) e no fechamento. Comece agora.';
@@ -805,13 +841,16 @@ function promptMissao(b,semana){
    pista do que ficou escondido, para dar vontade de voltar. */
 function promptExplorar(b,semana){
   var eu=aluna(), n=nivelMissao(semana);
-  var segredos=(b.segredos||[]).map(function(o){return '- '+o;}).join('\n');
+  var segredos=(b.segredos||[]).map(function(o,i){return (i+1)+') '+o;}).join('\n');
+  var pistas=(b.pistas||[]).map(function(o,i){return (i+1)+') '+o;}).join('\n');
   return 'Vamos brincar de CONHECER ALGUÉM em inglês. A jogadora é uma menina brasileira de '+eu.idade+
 ' anos chamada '+eu.nome+', na semana '+semana+' de um curso de inglês para iniciantes. Ela vai responder digitando ou falando (o áudio chega para você como texto).\n\n'+
-'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+
+'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+linhaGenero(b.personagem,b.voz)+
 'ONDE ESTÃO: '+strip(b.apresentacao)+'\n'+
 'O personagem SÓ FALA E SÓ ENTENDE INGLÊS. Não sabe uma palavra de português.\n\n'+
-'OS SEGREDOS DO PERSONAGEM (ela só descobre se PERGUNTAR; nunca conte de uma vez, nem sem uma pergunta que leve até ali):\n'+segredos+'\n\n'+
+'OS SEGREDOS DO PERSONAGEM (ela só descobre se PERGUNTAR; nunca conte de uma vez, nem sem uma pergunta que leve até ali):\n'+segredos+'\n'+
+(pistas?'ELA VÊ NA TELA ESTAS PISTAS, uma para cada segredo, na mesma ordem (são só o assunto, não a resposta):\n'+pistas+'\nQuando a pergunta dela seguir uma pista, responda com o segredo daquele número.\n':'')+
+'Estes segredos são fixos: RELEIA a lista antes de cada resposta e nunca invente um fato que contradiga um segredo. Se ela perguntar algo que não está na lista, invente uma resposta curta e simples, coerente com o personagem, e mantenha-a depois.\n\n'+
 'O QUE ELA JÁ SABE (o personagem usa SÓ isto, nada mais avançado):\n'+(b.instrucaoIA||'')+'\n\n'+
 'NÃO É UMA MISSÃO: não há lista para cumprir, nem nota. É só pela diversão de descobrir quem é essa pessoa. ELA conduz: pergunta o que quiser, na ordem que quiser.\n\n'+
 'REGRAS DO JOGO:\n'+
@@ -824,10 +863,10 @@ function promptExplorar(b,semana){
 '7) Não corrija erros durante a conversa. Se dá para entender, o personagem entende. Anote os erros para o final.\n'+
 '8) A conversa NÃO tem fim marcado: acaba quando ELA se despedir (bye, see you, I have to go) ou pedir para parar. Aí o personagem se despede em inglês e você faz o fechamento.\n\n'+
 'FECHAMENTO (só quando ela se despedir): saia do personagem e escreva em PORTUGUÊS:\n'+
-'- "🔎 O que você descobriu sobre [nome do personagem]:" e a lista do que ela descobriu.\n'+
-'- "Ainda não descobriu:" uma ou duas pistas vagas do que ficou escondido, SEM revelar (para dar vontade de voltar).\n'+
+'- "🔎 O que você descobriu sobre [nome do personagem]:" a lista do que ela descobriu, conferindo segredo por segredo na lista numerada acima.\n'+
+'- "Ainda não descobriu:" os números dos segredos que faltaram, com uma pista vaga de cada, SEM revelar (para dar vontade de voltar).\n'+
 '- Um elogio específico sobre uma pergunta que ela fez bem.\n'+
-'- No máximo 2 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português.\n'+
+'- No máximo 2 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português. '+REGRA_CORRECAO+'\n'+
 '- UMA pergunta em inglês que ela poderia ter feito, com a tradução.\n'+
 '- Termine perguntando se ela quer conversar mais um pouco.\n\n'+
 'Tudo o que o personagem diz é em INGLÊS. Português só nas linhas do narrador (regras 5 e 6) e no fechamento. Use o símbolo 🔎 só no fechamento. Comece agora.';
@@ -843,7 +882,7 @@ function promptEntrevista(b,semana){
   var quer=(b.quer||[]).map(function(o){return '- '+o;}).join('\n');
   return 'Vamos fazer um JOGO DE CONVERSA em inglês. A jogadora é uma menina brasileira de '+eu.idade+
 ' anos chamada '+eu.nome+', na semana '+semana+' de um curso de inglês para iniciantes. Ela vai responder digitando ou falando (o áudio chega para você como texto).\n\n'+
-'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+
+'SEU PERSONAGEM: '+(b.personagem||'um personagem simpático')+'.\n'+linhaGenero(b.personagem,b.voz)+
 'A CENA: '+strip(b.apresentacao)+'\n'+
 'O personagem SÓ FALA E SÓ ENTENDE INGLÊS. Não sabe uma palavra de português. Mas ele SABE que ela está aprendendo inglês, e é paciente e criativo.\n\n'+
 'A MISSÃO É DO PERSONAGEM, não dela: ele quer descobrir estas coisas sobre ela (não mostre a lista; consiga uma por uma, na conversa):\n'+quer+'\n\n'+
@@ -861,7 +900,7 @@ function promptEntrevista(b,semana){
 '- "Ele descobriu que:" a lista do que ela contou, em português.\n'+
 '- Se ele precisou perguntar algo de vários jeitos: "Ele perguntou a mesma coisa assim:" as versões em inglês, com a tradução — todas querem dizer o mesmo.\n'+
 '- Um elogio específico sobre algo que ela disse bem.\n'+
-'- No máximo 3 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português.\n'+
+'- No máximo 3 correções, cada uma no formato: ❌ o que ela disse → ✅ o certo → explicação bem simples em português. '+REGRA_CORRECAO+'\n'+
 '- Termine perguntando se ela quer jogar de novo.\n\n'+
 'Tudo o que o personagem diz é em INGLÊS. Português só na dica do narrador (regra 4) e no fechamento. Comece agora.';
 }
@@ -1633,7 +1672,7 @@ blocos.missao = function(b,bi){
   if(iaAtiva()){
     c.appendChild(novo('p','ajuda','Toque em <b>Começar</b>. O personagem fala em inglês; responda pelo 🎤 ou escrevendo. Se travar, vem uma dica em português. 🎮'));
     c.appendChild(chatIA({chave:'ingles.chat.'+AULA.semana+'-'+AULA.dia+'-'+bi, sistema:promptMissao(b,AULA.semana),
-                          quem:String(b.personagem||'').split(/[\s,]+/)[0], voz:b.voz,
+                          quem:nomeCurto(b.personagem), voz:generoPersonagem(b.personagem,b.voz),
                           fim:/🎉|miss[ãa]o cumprida|quase!/i, aoConcluir:function(){ feito.marcar(); }}));
     feito.el.querySelector('.btn').hidden=true;
     c.appendChild(feito.el);
@@ -1668,7 +1707,7 @@ function cardConversa(b,bi,cls,icone,titulo,dica,ajudaChat,ajudaCopia,prompt,fim
   if(iaAtiva()){
     c.appendChild(novo('p','ajuda',ajudaChat));
     c.appendChild(chatIA({chave:'ingles.chat.'+AULA.semana+'-'+AULA.dia+'-'+bi, sistema:prompt,
-                          quem:nomeCurto(b.personagem), voz:b.voz, fim:fim, minTrocas:minTrocas,
+                          quem:nomeCurto(b.personagem), voz:generoPersonagem(b.personagem,b.voz), fim:fim, minTrocas:minTrocas,
                           aoConcluir:function(){ feito.marcar(); }}));
     feito.el.querySelector('.btn').hidden=true;
     c.appendChild(feito.el);
@@ -1681,10 +1720,11 @@ function cardConversa(b,bi,cls,icone,titulo,dica,ajudaChat,ajudaCopia,prompt,fim
 }
 /* EXPLORAR: ela descobre quem é o personagem, perguntando o que quiser */
 blocos.explorar = function(b,bi){
-  var n=(b.segredos||[]).length;
+  var n=(b.segredos||[]).length, pistas=b.pistas||[];
   return cardConversa(b,bi,'explorar','🔎','Quem é essa pessoa?',
     '<b>Sem missão, só curiosidade:</b> pergunte o que quiser e descubra quem é. '+
     (n?'Tem <b>'+n+' segredos</b> escondidos — só saem se você perguntar. ':'')+'Quando quiser parar, diga <b>bye</b>.'+
+    (pistas.length?'<br><b>🔎 Pistas do que dá para descobrir:</b><ul>'+pistas.map(function(o){return '<li>'+esc(o)+'</li>';}).join('')+'</ul>':'')+
     '<span class="ajuda">O personagem <b>só entende inglês</b>. Quando você se despedir, a '+esc(NOME_IA)+' volta a falar português e conta o que você descobriu. 🔎</span>',
     'Toque em <b>Começar</b>. O personagem se apresenta em inglês; pergunte pelo 🎤 ou escrevendo. Se travar, vem uma dica em português. 🎮',
     'Mande para a '+esc(NOME_IA)+' e pergunte <b>falando</b> (microfone do app) ou escrevendo. Quando se despedir, ela conta o que você descobriu. Depois volte aqui e marque. 🎮',
@@ -1921,7 +1961,7 @@ global.Curso={
   montar:montar, falar:falar, falarSequencia:falarSequencia, pararFala:pararFala,
   ouvirMicrofone:ouvirMicrofone, infoAudio:infoAudio,
   hojeLocal:hojeLocal, esc:esc, norm:norm, normFala:normFala, baralhar:baralhar, quaseIgual:quaseIgual,
-  vozPara:vozPara, generoDe:generoDe, vozesEN:vozesEN,
+  vozPara:vozPara, generoDe:generoDe, generoPersonagem:generoPersonagem, vozesEN:vozesEN,
   aluna:aluna, definirAluna:definirAluna, temAluna:temAluna,
   conferirVersoes:conferirVersoes, esquecerDesfeita:esquecerDesfeita, concluirSemana:concluirSemana,
   exportarTudo:exportarTudo, importarTudo:importarTudo, inspecionarBackup:inspecionarBackup,
