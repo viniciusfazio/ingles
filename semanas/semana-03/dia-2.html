@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 3 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:3,
+dia:2,
+titulo:"Colors! A pen or an eraser?",
+subtitulo:"As cores e a diferença entre a e an",
+objetivos:[
+  "Dizer as cores em inglês",
+  "Escolher entre a e an na hora certa",
+  "Entender um diálogo sobre cores só de ouvido"
+],
+blocos:[
+
+{tipo:"vocab", titulo:"As cores", itens:[
+ {en:"color", pt:"cor", ipa:"/KÂ-lor/", emoji:"🎨"},
+ {en:"red", pt:"vermelho, vermelha", ipa:"/RÉD/", emoji:"🔴"},
+ {en:"blue", pt:"azul", ipa:"/BLÚ/", emoji:"🔵"},
+ {en:"yellow", pt:"amarelo, amarela", ipa:"/IÉ-lou/", emoji:"🟡"},
+ {en:"green", pt:"verde", ipa:"/GRÍN/", emoji:"🟢"},
+ {en:"black", pt:"preto, preta", ipa:"/BLÉK/", emoji:"⚫"},
+ {en:"white", pt:"branco, branca", ipa:"/UÁIT/", emoji:"⚪"},
+ {en:"orange", pt:"laranja", ipa:"/Ó-rindj/", emoji:"🟠"},
+ {en:"pink", pt:"rosa", ipa:"/PÍNK/", emoji:"🌸"},
+ {en:"purple", pt:"roxo, roxa", ipa:"/PÊR-pol/", emoji:"🟣"},
+ {en:"brown", pt:"marrom", ipa:"/BRÁUN/", emoji:"🟤"},
+ {en:"gray", pt:"cinza", ipa:"/GRÊI/", emoji:"🩶"}
+]},
+
+{tipo:"gramatica", titulo:"a ou an? Escute a primeira letrinha",
+ html:"<p>Em inglês, <b>um</b> e <b>uma</b> são a mesma palavra: <code>a</code>. Mas quando a palavra seguinte começa com <b>som de vogal</b> (a, e, i, o, u), a boca não consegue emendar — aí vira <code>an</code>.</p>"+
+ "<table><tr><th>Começa com consoante</th><th>Começa com vogal</th></tr>"+
+ "<tr><td><code>a pen</code> — uma caneta</td><td><code>an eraser</code> — uma borracha</td></tr>"+
+ "<tr><td><code>a book</code> — um livro</td><td><code>an orange crayon</code> — um giz de cera laranja</td></tr>"+
+ "<tr><td><code>a red backpack</code> — uma mochila vermelha</td><td><code>an aunt</code> — uma tia</td></tr></table>"+
+ "<p>Olhe sempre para a palavra que vem <b>logo depois</b>: é <code>an eraser</code>, mas <code>a blue eraser</code> — quem manda agora é o <i>blue</i>. 😉</p>"+
+ "<p>E não existe <code>a</code> nem <code>an</code> no plural: <code>two pens</code>, <code>ten crayons</code>.</p>",
+ exemplos:[
+  {en:"It's a pen.", pt:"É uma caneta."},
+  {en:"It's an eraser.", pt:"É uma borracha."},
+  {en:"I have a blue notebook.", pt:"Eu tenho um caderno azul."},
+  {en:"She has an orange pencil case.", pt:"Ela tem um estojo laranja."},
+  {en:"I have an eraser and a ruler.", pt:"Eu tenho uma borracha e uma régua."},
+  {en:"These are two green books.", pt:"Estes são dois livros verdes."}
+ ]},
+
+{tipo:"dialogo", titulo:"Ouça: de quem é esta mochila?", escuta:true, linhas:[
+ {quem:"Emma", en:"Hi, Ben! Is this your backpack?", pt:"Oi, Ben! Esta é a sua mochila?"},
+ {quem:"Ben", en:"No, my backpack is blue.", pt:"Não, a minha mochila é azul."},
+ {quem:"Emma", en:"This backpack is red and white.", pt:"Esta mochila é vermelha e branca."},
+ {quem:"Ben", en:"It's Lucy's backpack. She is my cousin.", pt:"É a mochila da Lucy. Ela é minha prima."},
+ {quem:"Emma", en:"And what's this? An orange pencil case?", pt:"E o que é isto? Um estojo laranja?"},
+ {quem:"Ben", en:"Yes, it's my pencil case.", pt:"Sim, é o meu estojo."},
+ {quem:"Emma", en:"Wow! Twenty crayons!", pt:"Uau! Vinte gizes de cera!"},
+ {quem:"Ben", en:"My favorite color is green.", pt:"A minha cor favorita é verde."},
+ {quem:"Emma", en:"My favorite color is purple.", pt:"A minha cor favorita é roxo."},
+ {quem:"Ben", en:"Nice! This purple crayon is for you.", pt:"Legal! Este giz de cera roxo é para você."}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"What color is Ben's backpack?", opcoes:["Red","Blue","Green"], correta:1,
+  explicacao:"Ele diz: My backpack is blue."},
+ {pergunta:"Who has a red and white backpack?", opcoes:["Lucy","Emma","Ben"], correta:0,
+  explicacao:"Ben diz: It's Lucy's backpack."},
+ {pergunta:"Who is Lucy?", opcoes:["Ben's cousin","Ben's sister","Emma's mother"], correta:0,
+  explicacao:"Ele diz: She is my cousin."},
+ {pergunta:"How many crayons does Ben have?", opcoes:["Ten","Twelve","Twenty"], correta:2,
+  explicacao:"Emma conta: Wow! Twenty crayons!"},
+ {pergunta:"What is Ben's favorite color?", opcoes:["Purple","Green","Orange"], correta:1,
+  explicacao:"Green é a cor favorita do Ben. Purple é a da Emma."},
+ {pergunta:"What color is Ben's pencil case?", opcoes:["Purple","Orange","White"], correta:1,
+  explicacao:"Emma pergunta: An orange pencil case? E ele diz que sim."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"My backpack is blue", pt:"A minha mochila é azul.", dica:"(quatro palavras)"},
+ {en:"This backpack is red and white", pt:"Esta mochila é vermelha e branca.", dica:"(seis palavras)"},
+ {en:"It's Lucy's backpack", pt:"É a mochila da Lucy.", dica:"(três palavras; cuidado com o 's de Lucy)"},
+ {en:"My favorite color is green", pt:"A minha cor favorita é verde.", dica:"(cinco palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What color is Ben's backpack? (De que cor é a mochila do Ben?)<br>2. Who is Lucy? (Quem é a Lucy?)<br>3. What is Ben's favorite color? (Qual é a cor favorita do Ben?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>use <b>is</b> em todas</li><li>na 2, diga de quem a Lucy é prima</li></ul>",
+ andaime:"<p>Ben's backpack is <span class=\"lacuna\">?</span>. · Lucy is Ben's <span class=\"lacuna\">?</span>. · His favorite color is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Ben's backpack is blue. 2. Lucy is Ben's cousin. 3. His favorite color is green.",
+ instrucaoIA:"Ela ouviu um diálogo entre Emma e Ben e devia responder por escrito: a cor da mochila do Ben (blue), quem é a Lucy (prima do Ben) e a cor favorita dele (green). Vocabulário: cores, backpack, pencil case, crayon, cousin, favorite, his, is."},
+
+{tipo:"completar", titulo:"a, an ou a cor certa?", ajuda:"Toque na resposta.", itens:[
+ {frase:"What's this? It's ___ eraser.", pt:"O que é isto? É uma borracha.", resposta:"an",
+  opcoes:["a","an"], explicacao:"eraser começa com som de vogal (é), então an."},
+ {frase:"It's ___ blue notebook.", pt:"É um caderno azul.", resposta:"a",
+  opcoes:["a","an"], explicacao:"Quem manda é a palavra logo depois do a/an — aqui é blue, não notebook."},
+ {frase:"It's ___ orange crayon.", pt:"É um giz de cera laranja.", resposta:"an",
+  opcoes:["a","an"], explicacao:"orange começa com vogal, então an orange crayon."},
+ {frase:"I have ___ big lunch box.", pt:"Eu tenho uma lancheira grande.", resposta:"a",
+  opcoes:["a","an"], explicacao:"big começa com consoante."},
+ {frase:"My favorite ___ is purple.", pt:"A minha cor favorita é roxo.", resposta:"color",
+  opcoes:["color","class","photo"], explicacao:"color = cor."},
+ {frase:"Red and blue: this crayon is ___.", pt:"Vermelho e azul: este giz de cera é roxo.", resposta:"purple",
+  opcoes:["purple","green","gray"], explicacao:"Vermelho + azul = roxo (purple)."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"My backpack is blue", pt:"A minha mochila é azul."},
+ {frase:"It is an orange pencil case", pt:"É um estojo laranja."},
+ {frase:"What color is your notebook", pt:"De que cor é o seu caderno?"},
+ {frase:"This is a white eraser", pt:"Esta é uma borracha branca."}
+]},
+
+{tipo:"entrevista", titulo:"O quiz das cores", perfil:"apresentador",
+ personagem:"Tony, apresentador do quiz show da escola, animado e brincalhão",
+ apresentacao:"<p>Você entrou no <b>quiz show</b> da escola e o apresentador quer conhecer a candidata antes de começar. Ele <b>só fala inglês</b> e pergunta uma coisa de cada vez. Entenda e responda!</p>",
+ quer:["o nome dela e a idade","qual é a cor favorita dela","três coisas que tem na mochila dela","de que cor é o caderno dela","quantos lápis ela tem"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">My favorite color is</span> … · <span class=\"lacuna\">I have</span> … · <span class=\"lacuna\">It's</span> …</p>",
+ instrucaoIA:"Ela sabe: My name is..., I'm ... years old, My favorite color is..., I have a/an..., It's a red pen, cores (red, blue, yellow, green, black, white, orange, pink, purple, brown, gray), material escolar (backpack, pencil, pen, book, notebook, eraser, ruler, pencil case, crayon, glue, scissors, lunch box), números até 20, Sorry, I don't understand / Can you repeat, please? Tony pergunta uma coisa por vez com frases de 3 a 6 palavras e, se ela não entender, pergunta a mesma coisa de outro jeito (mais curto, dando exemplo dele mesmo, ou com opções: Blue or pink?)."},
+
+{tipo:"missao", titulo:"Missão: o estojo sumiu", cena:"objeto-perdido",
+ cenario:"<p>Você deixou o <b>estojo</b> no corredor da escola e ele sumiu. A Miss Kate está com uma caixa de coisas perdidas, mas ela <b>só entende inglês</b>. Descreva o seu estojo para ela achar.</p>",
+ personagem:"Miss Kate, a professora, calma e prestativa",
+ objetivos:["dizer o que você perdeu","dizer de que cor é o estojo","dizer duas coisas que estão dentro dele e agradecer"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">It's my</span> … · <span class=\"lacuna\">It's</span> … (cor) · <span class=\"lacuna\">My</span> … <span class=\"lacuna\">is in it</span>.</p>",
+ instrucaoIA:"Ela sabe: cores, material escolar (pencil case, pencil, pen, eraser, ruler, crayon, glue, scissors, notebook, book), It's a red pencil case, I have..., this is / these are, números até 20, please, thank you. Miss Kate fala frases de 3 a 6 palavras, pergunta What color is it? e What's in it?, e no fim acha o estojo."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre as suas cores e o seu material. Use <code>a</code> e <code>an</code> pelo menos uma vez cada.",
+ dica:"<ul><li>uma frase dizendo qual é a sua cor favorita</li><li>duas frases dizendo a cor de coisas suas (mochila, caderno, estojo…)</li><li>uma frase com <b>an</b></li><li>uma frase sobre a cor favorita de alguém da sua família</li></ul>",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>My favorite color is <span class=\"lacuna\">?</span>. · My <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span>. · I have an <span class=\"lacuna\">?</span>. · My <span class=\"lacuna\">?</span>'s favorite color is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases: a cor favorita dela, a cor de dois objetos de escola, uma frase usando an (an eraser, an orange ...) e a cor favorita de alguém da família. Estruturas: My favorite color is..., My ... is ..., I have a/an..., possessivo com 's ou his/her.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre cores e material escolar, usando a e an. Vocabulário da aula: color, red, blue, yellow, green, black, white, orange, pink, purple, brown, gray, a/an, material escolar da aula anterior (backpack, pencil, pen, book, notebook, eraser, ruler, pencil case, crayon, glue, scissors, lunch box), família, favorite. Confira se ela usou an antes de som de vogal."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ foco:"o <b>i</b> curto de <i>this, big, pink</i> (bem curtinho, boca quase parada) contra o <b>i</b> longo de <i>these, green, three</i> (sorrindo, som esticado). Em português a gente fala tudo com i longo — é por isso que <i>this</i> e <i>these</i> ficam iguais.",
+ frases:[
+  {en:"This is a pink pen.", pt:"Esta é uma caneta rosa."},
+  {en:"These are green crayons.", pt:"Estes são gizes de cera verdes."},
+  {en:"It's a big black book.", pt:"É um livro preto grande."},
+  {en:"I have three blue pencils.", pt:"Eu tenho três lápis azuis."},
+  {en:"My favorite color is orange.", pt:"A minha cor favorita é laranja."},
+  {en:"It's an orange eraser.", pt:"É uma borracha laranja."}
+ ],
+ instrucaoIA:"Primeiro trabalhe o foco da semana: o i curto (this, big, pink) e o i longo (these, green, three). Peça para ela repetir as frases e corrija em português. Depois faça 4 a 6 perguntas em inglês, uma de cada vez, esperando a resposta falada: What's your favorite color? · What color is your backpack? · Is your notebook blue or green? · What color is your pencil case? · How many crayons do you have? Corrija com carinho."},
+
+{tipo:"ligar", bonus:true, titulo:"Misturando as semanas", pares:[
+ {en:"this", pt:"este, esta (isto)"},
+ {en:"these", pt:"estes, estas"},
+ {en:"his", pt:"dele"},
+ {en:"her", pt:"dela"},
+ {en:"brother", pt:"irmão"},
+ {en:"grandfather", pt:"avô"},
+ {en:"pink", pt:"rosa"},
+ {en:"purple", pt:"roxo"}
+]}
+
+]});
+</script>
+</body>
+</html>

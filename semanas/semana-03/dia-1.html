@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 3 · Dia 1</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:3,
+dia:1,
+titulo:"What's this? My school things",
+subtitulo:"As coisas da sua mochila em inglês",
+objetivos:[
+  "Nomear 16 coisas da escola em inglês",
+  "Perguntar What's this? e responder It's a...",
+  "Pedir para repetir e fazer uma pergunta em inglês"
+],
+blocos:[
+
+{tipo:"nota", titulo:"💡 A pergunta mágica da semana",
+ html:"<p>Esta semana é sobre as coisas da <b>escola</b> e as <b>cores</b>. Comece pela pergunta que abre tudo:</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>What's this?</code></td><td>O que é isto?</td></tr>"+
+ "<tr><td><code>It's a pen.</code></td><td>É uma caneta.</td></tr>"+
+ "<tr><td><code>It's my backpack.</code></td><td>É a minha mochila.</td></tr></table>"+
+ "<p>Com essas três frases você já conversa sobre qualquer coisa que estiver na sua mesa. 💜</p>"},
+
+{tipo:"vocab", titulo:"O que tem na minha mochila", itens:[
+ {en:"backpack", pt:"mochila", ipa:"/BÉK-pék/", emoji:"🎒"},
+ {en:"pencil", pt:"lápis", ipa:"/PÉN-sol/", emoji:"✏️"},
+ {en:"pen", pt:"caneta", ipa:"/PÉN/", emoji:"🖊️"},
+ {en:"book", pt:"livro", ipa:"/BUK/", emoji:"📕"},
+ {en:"notebook", pt:"caderno", ipa:"/NÔUT-buk/", emoji:"📓"},
+ {en:"eraser", pt:"borracha", ipa:"/i-RÊI-ser/", emoji:"🧽"},
+ {en:"ruler", pt:"régua", ipa:"/RÚ-ler/", emoji:"📏"},
+ {en:"pencil case", pt:"estojo", ipa:"/PÉN-sol kêis/", emoji:"🧰"},
+ {en:"crayon", pt:"giz de cera", ipa:"/KRÊI-on/", emoji:"🖍️"},
+ {en:"glue", pt:"cola", ipa:"/GLÚ/", emoji:"🧴"},
+ {en:"scissors", pt:"tesoura", ipa:"/SÍ-zors/", emoji:"✂️"},
+ {en:"desk", pt:"carteira, mesa de estudo", ipa:"/DÉSK/", emoji:"🪑"},
+ {en:"chair", pt:"cadeira", ipa:"/TCHÉR/", emoji:"💺"},
+ {en:"board", pt:"quadro, lousa", ipa:"/BÓRD/", emoji:"📋"},
+ {en:"lunch box", pt:"lancheira", ipa:"/LÂNTCH bóks/", emoji:"🍱"},
+ {en:"classroom", pt:"sala de aula", ipa:"/KLÉS-rum/", emoji:"🏫"},
+ {en:"What's this?", pt:"O que é isto?", ipa:"/UÓTS DIS/", emoji:"❓"}
+]},
+
+{tipo:"vocab", titulo:"Frases para conversar (semana 3)", itens:[
+ {en:"Can you repeat, please?", pt:"Você pode repetir, por favor?", ipa:"/ken iu ri-PÍT plíz/", emoji:"🔁"},
+ {en:"I have a question.", pt:"Eu tenho uma pergunta.", ipa:"/ai HÉV a KUÉS-tchan/", emoji:"🙋"},
+ {en:"Excuse me.", pt:"Com licença.", ipa:"/eks-KIÚZ mi/", emoji:"🙏"}
+]},
+
+{tipo:"dialogo", titulo:"Na sala de aula", escuta:false, linhas:[
+ {quem:"Anna", en:"Hi, Leo! What's this?", pt:"Oi, Leo! O que é isto?"},
+ {quem:"Leo", en:"It's my new pencil case.", pt:"É o meu estojo novo."},
+ {quem:"Anna", en:"Wow! And this?", pt:"Uau! E isto?"},
+ {quem:"Leo", en:"It's an eraser. It's my sister's eraser.", pt:"É uma borracha. É a borracha da minha irmã."},
+ {quem:"Anna", en:"Excuse me, Leo. Can you repeat, please?", pt:"Com licença, Leo. Você pode repetir, por favor?"},
+ {quem:"Leo", en:"Of course! It's my sister's eraser.", pt:"Claro! É a borracha da minha irmã."},
+ {quem:"Anna", en:"I have a question. Where is my ruler?", pt:"Eu tenho uma pergunta. Onde está a minha régua?"},
+ {quem:"Leo", en:"Look! It's on your desk.", pt:"Olha! Está na sua carteira."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções (escola e família)", pares:[
+ {en:"backpack", pt:"mochila"},
+ {en:"notebook", pt:"caderno"},
+ {en:"ruler", pt:"régua"},
+ {en:"scissors", pt:"tesoura"},
+ {en:"brother", pt:"irmão"},
+ {en:"aunt", pt:"tia"},
+ {en:"twin", pt:"gêmeo"},
+ {en:"photo", pt:"foto"}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"Qual destas palavras quer dizer caderno?", opcoes:["notebook","book","pen"], correta:0,
+  explicacao:"notebook é caderno. Livro é book — cuidado, são parecidos!"},
+ {pergunta:"Como se diz estojo em inglês?", opcoes:["pencil case","pencil","eraser"], correta:0,
+  explicacao:"pencil case = a caixinha (case) dos lápis (pencil)."},
+ {pergunta:"What's this? ✏️", opcoes:["It's a pen","It's a pencil","It's a ruler"], correta:1,
+  explicacao:"O lápis é pencil. A caneta é pen."},
+ {pergunta:"Qual destas coisas corta papel?", opcoes:["scissors","glue","board"], correta:0,
+  explicacao:"scissors = tesoura. glue é cola e board é o quadro."},
+ {pergunta:"O Leo diz: \"It's my sister's eraser.\" De quem é a borracha?", opcoes:["da irmã do Leo","do Leo","da mãe do Leo"], correta:0,
+  explicacao:"sister's com 's é \"da irmã\" — o dono vem antes, igual na semana passada."}
+]},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"My pencils are in my ___.", pt:"Meus lápis estão no meu estojo.", resposta:"pencil case",
+  opcoes:["pencil case","board","chair"], explicacao:"pencil case é onde os lápis moram."},
+ {frase:"Look at the ___! It is big.", pt:"Olha o quadro! Ele é grande.", resposta:"board",
+  opcoes:["board","glue","lunch box"], explicacao:"board é o quadro da sala."},
+ {frase:"I have a ___ and a pen.", pt:"Eu tenho um caderno e uma caneta.", resposta:"notebook",
+  opcoes:["notebook","chair","classroom"], explicacao:"notebook = caderno."},
+ {frase:"Excuse me, I have a ___.", pt:"Com licença, eu tenho uma pergunta.", resposta:"question",
+  opcoes:["question","photo","class"], explicacao:"I have a question é a frase para pedir a palavra na aula."},
+ {frase:"___ this? It's a crayon.", pt:"O que é isto? É um giz de cera.", resposta:"What's",
+  opcoes:["What's","Who's","How"], explicacao:"What's this? pergunta por uma coisa. Who's? pergunta por uma pessoa."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"pencil", pt:"lápis", dica:"(uma palavra)"},
+ {en:"eraser", pt:"borracha", dica:"(uma palavra, começa com e)"},
+ {en:"my ruler", pt:"minha régua", dica:"(duas palavras)"},
+ {en:"a big book", pt:"um livro grande", dica:"(três palavras)"},
+ {en:"What's this?", pt:"O que é isto?", dica:"(a pergunta da semana)"}
+]},
+
+{tipo:"adivinha", titulo:"O que é? Escreva a resposta", itens:[
+ {pistas:["My books are in it.","My notebook is in it, too.","It is on my chair at school."],
+  resposta:"backpack", pt:"mochila", dica:"(uma coisa da escola)"},
+ {pistas:["It is in my classroom.","My books are on it.","My chair is here, too."],
+  resposta:"desk", pt:"carteira", dica:"(um móvel da sala)"},
+ {pistas:["It is big and it is not a desk.","It is in my classroom.","My teacher and my class look at it."],
+  resposta:"board", pt:"quadro", dica:"(está na parede da sala)"},
+ {pistas:["It is in my backpack.","It is not a notebook.","I am hungry! I look in it."],
+  resposta:"lunch box", pt:"lancheira", dica:"(duas palavras)"}
+]},
+
+{tipo:"explorar", titulo:"Quem é a Iris?", perfil:"artista", voz:"f",
+ personagem:"Iris, 13 anos, desenha quadrinhos, tímida no começo e muito falante depois",
+ apresentacao:"<p>Na biblioteca da escola tem uma menina desenhando num caderno enorme. Ela <b>só fala inglês</b>. Pergunte o que quiser e descubra quem ela é!</p>",
+ segredos:["ela tem 13 anos e é de Toronto","ela tem vinte lápis na mochila, todos de cores diferentes","ela desenha a irmã pequena dela nos quadrinhos","o caderno favorito dela é muito velho — é da avó dela","surpresa: ela não tem borracha, nunca"],
+ pistas:["a idade e de onde ela vem","o que ela tem na mochila","alguém da família dela nos desenhos","por que o caderno dela é especial","surpresa: um material que falta no estojo dela"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">What's your</span> …? · <span class=\"lacuna\">How old are</span> …? · <span class=\"lacuna\">Do you have</span> …?</p>",
+ instrucaoIA:"Ela sabe: What's your name? How old are you? Where are you from? What's this? Do you have a pencil/pen/notebook? material escolar (backpack, pencil, pen, book, notebook, eraser, ruler, pencil case, crayon, glue, scissors, desk, chair, board, lunch box, classroom), família (mother, father, sister, brother, grandmother, cousin), números até 20, I have, this is / these are, he is / she is, his / her. Ela também sabe dizer: Can you repeat, please? I have a question. Excuse me. Sorry, I don't understand. Iris responde com frases de 3 a 6 palavras, deixa ganchos (My notebook is very old.) e devolve perguntas fáceis."},
+
+{tipo:"missao", titulo:"Missão: a troca com o Leo", cena:"troca",
+ cenario:"<p>O Leo chegou com uma caixa de gizes de cera novos e você está com um lápis lindo que ele adora. Você quer <b>trocar</b>: o seu lápis pelo giz de cera dele. Ele <b>só entende inglês</b>.</p>",
+ personagem:"Leo, colega de turma, brincalhão e um pouco negociador",
+ objetivos:["mostrar o seu lápis e dizer o que é em inglês","pedir a troca do lápis pelo giz de cera e agradecer"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Look! It's my</span> … · <span class=\"lacuna\">Thank you</span>!</p>",
+ instrucaoIA:"Ela sabe: material escolar (pencil, pen, crayon, eraser, notebook, book, ruler, pencil case, glue, scissors, backpack), What's this? It's a..., I have..., this is / these are, please, thank you, yes / no, números até 20. O Leo fala frases de 3 a 6 palavras, mostra os gizes de cera, pergunta What's this? e no fim aceita a troca."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre o que tem na sua mochila hoje. Use <code>I have...</code>, <code>This is...</code> e <code>It's a...</code>.",
+ dica:"<ul><li>uma frase dizendo o que você tem na mochila</li><li>pelo menos três coisas da escola diferentes</li><li>uma frase com um número (quantos lápis, quantos livros)</li><li>uma frase sobre a sua coisa favorita</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I have a <span class=\"lacuna\">?</span> and a <span class=\"lacuna\">?</span>. · This is my <span class=\"lacuna\">?</span>. · I have <span class=\"lacuna\">?</span> pencils. · My favorite is my <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases com pelo menos três objetos de escola (pencil, pen, book, notebook, eraser, ruler, pencil case, crayon, glue, scissors, lunch box), um número até 20 e uma frase dizendo qual é o favorito. Estruturas: I have..., This is..., It's a..., My favorite ... is ...",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre o que tem na mochila. Vocabulário da aula: backpack, pencil, pen, book, notebook, eraser, ruler, pencil case, crayon, glue, scissors, desk, chair, board, lunch box, classroom, What's this?, It's a..., I have..., favorite, números até 20. Ainda não aprendeu cores (isso é amanhã), então não cobre cor."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ frases:[
+  {en:"What's this?", pt:"O que é isto?"},
+  {en:"It's a pen.", pt:"É uma caneta."},
+  {en:"It's my new backpack.", pt:"É a minha mochila nova."},
+  {en:"Excuse me, I have a question.", pt:"Com licença, eu tenho uma pergunta."},
+  {en:"Can you repeat, please?", pt:"Você pode repetir, por favor?"},
+  {en:"These are my books.", pt:"Estes são os meus livros."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português. Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando: What's in your backpack? · What's in your pencil case? · Do you have a ruler? · How many pencils do you have? · What's your favorite thing at school? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"This is my brother's new backpack", pt:"Esta é a mochila nova do meu irmão."},
+ {frase:"My notebook and my pencil are here", pt:"Meu caderno e meu lápis estão aqui."},
+ {frase:"My lunch box is in my new backpack", pt:"A minha lancheira está na minha mochila nova."}
+]}
+
+]});
+</script>
+</body>
+</html>

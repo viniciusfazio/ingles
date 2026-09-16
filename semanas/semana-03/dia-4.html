@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 3 · Dia 4</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:3,
+dia:4,
+titulo:"At the school store",
+subtitulo:"Comprar material escolar em inglês",
+objetivos:[
+  "Entender uma conversa numa papelaria",
+  "Juntar a/an, cor e plural numa frase só",
+  "Comprar duas coisas em inglês, dizendo a cor"
+],
+blocos:[
+
+{tipo:"vocab", titulo:"Na papelaria", itens:[
+ {en:"store", pt:"loja, papelaria", ipa:"/STÓR/", emoji:"🏪"},
+ {en:"paper", pt:"papel", ipa:"/PÊI-per/", emoji:"📄"},
+ {en:"marker", pt:"caneta hidrográfica, pincel atômico", ipa:"/MÁR-ker/", emoji:"🖊️"},
+ {en:"sharpener", pt:"apontador", ipa:"/CHÁR-pe-ner/", emoji:"🔺"},
+ {en:"poster", pt:"cartaz", ipa:"/PÔUS-ter/", emoji:"🖼️"},
+ {en:"homework", pt:"lição de casa", ipa:"/HÔUM-uerk/", emoji:"📝"},
+ {en:"window", pt:"janela", ipa:"/UÍN-dou/", emoji:"🪟"},
+ {en:"Here you are.", pt:"Aqui está. (ao entregar algo)", ipa:"/HÍR iu ÁR/", emoji:"🤲"}
+]},
+
+{tipo:"gramatica", titulo:"Revisão rápida: a, an, a cor e o plural",
+ html:"<p>Hoje é só juntar o que você já sabe, nesta ordem:</p>"+
+ "<table><tr><th>Um só</th><th>Mais de um</th></tr>"+
+ "<tr><td><code>a black marker</code> — um pincel preto</td><td><code>two black markers</code> — dois pincéis pretos</td></tr>"+
+ "<tr><td><code>an orange crayon</code> — um giz de cera laranja</td><td><code>ten orange crayons</code> — dez gizes de cera laranja</td></tr></table>"+
+ "<ul><li>no plural o <code>a</code> e o <code>an</code> <b>somem</b>;</li>"+
+ "<li>quem ganha o <b>-s</b> é só a coisa: <code>markers</code>, e nunca a cor;</li>"+
+ "<li>a cor continua <b>antes</b> da coisa.</li></ul>"+
+ "<p>E para pedir alguma coisa na loja: <code>I have a question.</code> · <code>White paper, please.</code></p>",
+ exemplos:[
+  {en:"I have a black marker.", pt:"Eu tenho um pincel atômico preto."},
+  {en:"I have two black markers.", pt:"Eu tenho dois pincéis atômicos pretos."},
+  {en:"It's an old poster.", pt:"É um cartaz velho."},
+  {en:"These are three yellow crayons.", pt:"Estes são três gizes de cera amarelos."},
+  {en:"My homework is in my green notebook.", pt:"A minha lição de casa está no meu caderno verde."}
+ ]},
+
+{tipo:"dialogo", titulo:"Ouça: a Anna na papelaria", escuta:true, linhas:[
+ {quem:"Mr. Ray", en:"Good afternoon! How are you?", pt:"Boa tarde! Como você está?"},
+ {quem:"Anna", en:"I'm fine, thank you. I have a question.", pt:"Estou bem, obrigada. Eu tenho uma pergunta."},
+ {quem:"Anna", en:"I have homework today. I need paper.", pt:"Eu tenho lição de casa hoje. Eu preciso de papel."},
+ {quem:"Mr. Ray", en:"White paper or yellow paper?", pt:"Papel branco ou papel amarelo?"},
+ {quem:"Anna", en:"White paper, please. And a big marker.", pt:"Papel branco, por favor. E um pincel atômico grande."},
+ {quem:"Mr. Ray", en:"A black marker or a blue marker?", pt:"Um pincel preto ou um pincel azul?"},
+ {quem:"Anna", en:"A black marker, please. It's for my poster.", pt:"Um pincel preto, por favor. É para o meu cartaz."},
+ {quem:"Mr. Ray", en:"Here you are. Good luck with your poster!", pt:"Aqui está. Boa sorte com o seu cartaz!"},
+ {quem:"Anna", en:"Thank you! Goodbye, Mr. Ray.", pt:"Obrigada! Tchau, Mr. Ray."}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"Where is Anna?", opcoes:["At school","In a store","At home"], correta:1,
+  explicacao:"Ela está comprando com o Mr. Ray, o vendedor da papelaria."},
+ {pergunta:"What does Anna need?", opcoes:["Paper and a marker","A ruler and glue","Crayons and a notebook"], correta:0,
+  explicacao:"Ela diz: I need paper — e depois pede a big marker."},
+ {pergunta:"What color is the paper?", opcoes:["Yellow","White","Blue"], correta:1,
+  explicacao:"Mr. Ray pergunta White paper or yellow paper? e ela responde White paper, please."},
+ {pergunta:"What color is the marker?", opcoes:["Black","Blue","Red"], correta:0,
+  explicacao:"A black marker, please."},
+ {pergunta:"What is the marker for?", opcoes:["Her notebook","Her poster","Her lunch box"], correta:1,
+  explicacao:"Ela diz: It's for my poster."},
+ {pergunta:"Who is Mr. Ray?", opcoes:["A student","A man in the store","Anna's father"], correta:1,
+  explicacao:"Ele atende a Anna na loja: é o vendedor. O diálogo não diz, mas dá para descobrir."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases do diálogo", itens:[
+ {en:"I have a question", pt:"Eu tenho uma pergunta.", dica:"(quatro palavras)"},
+ {en:"I have homework today", pt:"Eu tenho lição de casa hoje.", dica:"(quatro palavras)"},
+ {en:"White paper, please", pt:"Papel branco, por favor.", dica:"(três palavras)"},
+ {en:"A black marker, please", pt:"Um pincel atômico preto, por favor.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What does Anna need? (Do que a Anna precisa?)<br>2. What color is the marker? (De que cor é o pincel atômico?)<br>3. What is the marker for? (Para que é o pincel atômico?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1, diga as <b>duas</b> coisas</li><li>use a cor <b>antes</b> da coisa</li></ul>",
+ andaime:"<p>Anna needs <span class=\"lacuna\">?</span> and <span class=\"lacuna\">?</span>. · The marker is <span class=\"lacuna\">?</span>. · It is for her <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Anna needs paper and a marker (white paper and a big black marker). 2. The marker is black. 3. It is for her poster.",
+ instrucaoIA:"Ela ouviu o diálogo da Anna na papelaria e devia responder por escrito: do que a Anna precisa (papel e um pincel atômico), a cor do pincel (black) e para que é (para o cartaz dela). Vocabulário: paper, marker, poster, homework, store, cores, need, I have."},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na resposta certa.", itens:[
+ {frase:"Anna has two ___ markers.", pt:"A Anna tem dois pincéis atômicos pretos.", resposta:"black",
+  opcoes:["black","blacks"], explicacao:"A cor nunca ganha -s. Quem fica no plural é markers."},
+ {frase:"It's ___ orange marker.", pt:"É um pincel atômico laranja.", resposta:"an",
+  opcoes:["a","an"], explicacao:"orange começa com som de vogal."},
+ {frase:"I have three ___ in my pencil case.", pt:"Eu tenho três lápis no meu estojo.", resposta:"pencils",
+  opcoes:["pencil","pencils"], explicacao:"three = mais de um, então pencils."},
+ {frase:"My homework is on white ___.", pt:"A minha lição de casa está num papel branco.", resposta:"paper",
+  opcoes:["paper","poster","window"], explicacao:"paper = papel."},
+ {frase:"Look at the ___! It is big and green.", pt:"Olha o cartaz! Ele é grande e verde.", resposta:"poster",
+  opcoes:["poster","homework","sharpener"], explicacao:"poster = cartaz."},
+ {frase:"___ are my new markers.", pt:"Estes são os meus pincéis atômicos novos.", resposta:"These",
+  opcoes:["These","This"], explicacao:"markers está no plural, então These (da semana passada!)."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"I need two black markers", pt:"Eu preciso de dois pincéis atômicos pretos."},
+ {frase:"This is a pretty green poster", pt:"Este é um cartaz verde bonito."},
+ {frase:"My homework is in my backpack", pt:"A minha lição de casa está na minha mochila."},
+ {frase:"The window is big and clean", pt:"A janela é grande e limpa."}
+]},
+
+{tipo:"entrevista", titulo:"O vídeo do Jay", perfil:"youtuber", voz:"m",
+ personagem:"Jay, faz vídeos de “o que tem na minha mochila”, curioso e muito animado",
+ apresentacao:"<p>O Jay grava vídeos sobre material escolar e quer você no próximo. Ele <b>só fala inglês</b> e vai perguntar tudo sobre a sua mochila. Responda para a câmera!</p>",
+ quer:["três coisas que tem na mochila dela","a cor da mochila e a cor do estojo","quantos lápis ela tem","qual é o material favorito dela","se o caderno dela é novo ou velho"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I have</span> … · <span class=\"lacuna\">It's</span> … (cor) · <span class=\"lacuna\">My favorite is</span> …</p>",
+ instrucaoIA:"Ela sabe: material escolar (backpack, pencil, pen, book, notebook, eraser, ruler, pencil case, crayon, glue, scissors, lunch box, marker, paper, sharpener, poster), cores, adjetivo antes do substantivo (a blue backpack), a/an, plural com -s, I have..., It's..., My favorite ... is ..., new/old, big/little, números até 20, Can you repeat, please? / Sorry, I don't understand. Jay pergunta uma coisa por vez, com frases de 3 a 6 palavras, e se ela não entender pergunta de outro jeito (mais curto, dando exemplo da mochila dele, ou com opções: Blue or red?)."},
+
+{tipo:"missao", titulo:"Missão da semana: na papelaria", cena:"compra", voz:"f",
+ cenario:"<p>Você está numa <b>papelaria</b> em Nova York. A aula começa amanhã e falta material. A dona da loja é simpática, mas <b>só entende inglês</b>. Compre o que você precisa — e diga a cor de cada coisa.</p>",
+ personagem:"Mrs. Lane, a dona da papelaria, simpática e paciente",
+ objetivos:["cumprimentar e dizer duas coisas que você quer comprar","dizer a cor de cada uma","perguntar se ela tem um caderno verde (ou de outra cor que você queira)","agradecer e se despedir"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I need a</span> … · <span class=\"lacuna\">A blue</span> … <span class=\"lacuna\">please</span> · <span class=\"lacuna\">Do you have a</span> …?</p>",
+ instrucaoIA:"Ela sabe: material escolar (pencil, pen, notebook, book, eraser, ruler, pencil case, crayon, glue, scissors, backpack, marker, paper, sharpener, poster, lunch box), cores, a/an, adjetivo antes do substantivo (a red pen), plural com -s, I need..., I have..., Do you have...?, please, thank you, Here you are, números até 20, Can you repeat, please? Mrs. Lane fala frases de 3 a 6 palavras, pergunta What color? e How many?, entrega dizendo Here you are e no fim se despede."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Conte em <b>4 ou 5 frases</b> o que aconteceu na sua missão na papelaria: o que você comprou, de que cor, e como foi.",
+ dica:"<ul><li>diga onde você estava e com quem falou</li><li>diga as duas coisas que comprou</li><li>diga a cor de cada uma</li><li>uma frase com um número</li><li>termine dizendo se você gostou</li></ul>",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I am in a <span class=\"lacuna\">?</span>. · I have a <span class=\"lacuna\">?</span> <span class=\"lacuna\">?</span>. · It's <span class=\"lacuna\">?</span>. · Mrs. Lane is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases contando a missão: o lugar (store), as duas coisas compradas com a cor antes da coisa (a blue notebook, two black markers), um número e uma frase de opinião (It's pretty / I'm happy / Mrs. Lane is nice).",
+ instrucaoIA:"Ela devia contar em 4 ou 5 frases o que comprou na missão da papelaria. Vocabulário da aula: store, paper, marker, sharpener, poster, homework, window, Here you are, cores, material escolar das aulas anteriores, a/an, plural com -s, adjetivo antes do substantivo, números até 20. Confira a ordem cor + coisa e o -s do plural."},
+
+{tipo:"fala", titulo:"Hora de falar: aquecimento da missão",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. São as frases da papelaria!",
+ frases:[
+  {en:"I have a question.", pt:"Eu tenho uma pergunta."},
+  {en:"I need a blue notebook.", pt:"Eu preciso de um caderno azul."},
+  {en:"Two black markers, please.", pt:"Dois pincéis atômicos pretos, por favor."},
+  {en:"Do you have a green pencil case?", pt:"Você tem um estojo verde?"},
+  {en:"Thank you! Goodbye!", pt:"Obrigada! Tchau!"}
+ ],
+ instrucaoIA:"Peça para ela repetir as frases da papelaria e corrija a pronúncia em português. Depois faça 4 a 6 perguntas em inglês, uma de cada vez, esperando a resposta falada, como se você fosse a vendedora: What do you need? · What color? · How many? · Do you have homework today? · Is your notebook new or old? Corrija em português, com carinho, e diga que ela já está pronta para a missão."},
+
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil", itens:[
+ {pistas:["It is not big.","Many pencils and crayons are in it.","It is in your backpack, not on your desk."],
+  resposta:"pencil case", pt:"estojo", dica:"(duas palavras)"},
+ {pistas:["She is in my family.","She is my mother's mother.","She is not my aunt."],
+  resposta:"grandmother", pt:"avó", aceita:["grandma"], dica:"(uma pessoa da família)"},
+ {pistas:["My homework is in it.","It is not a book.","It is in my backpack, with my pens."],
+  resposta:"notebook", pt:"caderno", dica:"(uma coisa da escola)"},
+ {pistas:["He is my brother.","He is eleven and I am eleven.","We are not friends — we are family."],
+  resposta:"twin", pt:"gêmeo", dica:"(uma palavra da semana 2)"}
+]}
+
+]});
+</script>
+</body>
+</html>

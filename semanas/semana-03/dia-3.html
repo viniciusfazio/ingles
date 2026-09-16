@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 3 · Dia 3</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:3,
+dia:3,
+titulo:"A red pen: a cor vem antes",
+subtitulo:"A gramática principal da semana: adjetivo antes da coisa",
+objetivos:[
+  "Juntar cor e objeto na ordem do inglês (a red pen)",
+  "Descrever coisas com old, long, clean, full…",
+  "Entender uma história só de ouvido"
+],
+blocos:[
+
+{tipo:"nota", titulo:"💡 O inglês fala ao contrário",
+ html:"<p>Em português a gente diz <i>uma caneta <b>vermelha</b></i>: primeiro a coisa, depois a cor.</p>"+
+ "<p>Em inglês é o contrário: <code>a red pen</code> — primeiro a <b>cor</b>, depois a <b>coisa</b>. Sempre.</p>"+
+ "<p>Truque: leia de trás para frente. <code>a red pen</code> → <i>caneta</i>… <i>vermelha</i>. 😄</p>"},
+
+{tipo:"gramatica", titulo:"O adjetivo vem antes da coisa",
+ html:"<p>Adjetivo é a palavra que <b>descreve</b>: a cor, o tamanho, se é novo ou velho. Em inglês ele cola na frente do substantivo.</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>a red pen</code></td><td>uma caneta vermelha</td></tr>"+
+ "<tr><td><code>a big backpack</code></td><td>uma mochila grande</td></tr>"+
+ "<tr><td><code>my old notebook</code></td><td>o meu caderno velho</td></tr>"+
+ "<tr><td><code>two green crayons</code></td><td>dois gizes de cera verdes</td></tr></table>"+
+ "<p>Duas coisas que economizam trabalho:</p>"+
+ "<ul><li>o adjetivo <b>nunca</b> ganha -s no plural: <code>two green crayons</code>, e não <i>greens</i>;</li>"+
+ "<li>depois do verbo <code>is</code> ele vai sozinho: <code>My pen is red.</code> (A minha caneta é vermelha.)</li></ul>"+
+ "<p>Então há dois jeitos de dizer a mesma coisa: <code>It's a red pen.</code> ou <code>The pen is red.</code></p>",
+ exemplos:[
+  {en:"It's a red pen.", pt:"É uma caneta vermelha."},
+  {en:"My pen is red.", pt:"A minha caneta é vermelha."},
+  {en:"This is a big blue backpack.", pt:"Esta é uma mochila azul grande."},
+  {en:"These are two green crayons.", pt:"Estes são dois gizes de cera verdes."},
+  {en:"My sister has an old notebook.", pt:"A minha irmã tem um caderno velho."},
+  {en:"The little girl is happy.", pt:"A menininha está feliz."}
+ ]},
+
+{tipo:"vocab", titulo:"Palavras para descrever as coisas", itens:[
+ {en:"old", pt:"velho, velha", ipa:"/ÔULD/", emoji:"👴"},
+ {en:"long", pt:"comprido, comprida", ipa:"/LÓNG/", emoji:"📏"},
+ {en:"round", pt:"redondo, redonda", ipa:"/RÁUND/", emoji:"⭕"},
+ {en:"soft", pt:"macio, macia", ipa:"/SÓFT/", emoji:"🧸"},
+ {en:"pretty", pt:"bonito, bonita", ipa:"/PRÍ-ti/", emoji:"✨"},
+ {en:"clean", pt:"limpo, limpa", ipa:"/KLÍN/", emoji:"🧼"},
+ {en:"dirty", pt:"sujo, suja", ipa:"/DÊR-ti/", emoji:"🫧"},
+ {en:"full", pt:"cheio, cheia", ipa:"/FUL/", emoji:"🈵"},
+ {en:"empty", pt:"vazio, vazia", ipa:"/ÊMP-ti/", emoji:"📭"}
+]},
+
+{tipo:"historia", titulo:"Ouça: o giz de cera vermelho do Leo", cena:"escola", paragrafos:[
+ {en:"Today is a happy day at school. Miss Kate has a new box.", pt:"Hoje é um dia feliz na escola. A Miss Kate tem uma caixa nova."},
+ {en:"The box is full. It's a box of crayons!", pt:"A caixa está cheia. É uma caixa de gizes de cera!"},
+ {en:"“One crayon for one student,” says Miss Kate.", pt:"“Um giz de cera para cada aluno”, diz a Miss Kate."},
+ {en:"Leo is happy. His crayon is red. Red is his favorite color.", pt:"O Leo está feliz. O giz de cera dele é vermelho. Vermelho é a cor favorita dele."},
+ {en:"Anna's crayon is green. Emma's crayon is pink.", pt:"O giz de cera da Anna é verde. O da Emma é rosa."},
+ {en:"Now Leo is sad. Where is his red crayon? It is not on his desk.", pt:"Agora o Leo está triste. Cadê o giz de cera vermelho dele? Não está na carteira dele."},
+ {en:"Anna looks in Leo's pencil case. The red crayon is here!", pt:"A Anna olha dentro do estojo do Leo. O giz de cera vermelho está aqui!"},
+ {en:"“Thank you, Anna!” says Leo. Now the class has many pretty colors on the board.", pt:"“Obrigado, Anna!”, diz o Leo. Agora a turma tem muitas cores bonitas no quadro."}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"What is in Miss Kate's new box?", opcoes:["Books","Crayons","Pens"], correta:1,
+  explicacao:"A história diz: It's a box of crayons!"},
+ {pergunta:"What color is Leo's crayon?", opcoes:["Green","Pink","Red"], correta:2,
+  explicacao:"His crayon is red — e vermelho é a cor favorita dele."},
+ {pergunta:"Who has a green crayon?", opcoes:["Anna","Emma","Miss Kate"], correta:0,
+  explicacao:"Anna's crayon is green. O da Emma é rosa."},
+ {pergunta:"Why is Leo sad?", opcoes:["His crayon is not here","He is tired","His desk is dirty"], correta:0,
+  explicacao:"O giz de cera vermelho não estava na carteira dele."},
+ {pergunta:"Where is the red crayon?", opcoes:["In Leo's pencil case","On Leo's desk","In Miss Kate's box"], correta:0,
+  explicacao:"A Anna acha o giz de cera dentro do estojo do Leo."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases da história", itens:[
+ {en:"The box is full", pt:"A caixa está cheia.", dica:"(quatro palavras)"},
+ {en:"Red is his favorite color", pt:"Vermelho é a cor favorita dele.", dica:"(cinco palavras)"},
+ {en:"Anna's crayon is green", pt:"O giz de cera da Anna é verde.", dica:"(cuidado com o 's)"},
+ {en:"It is not on his desk", pt:"Não está na carteira dele.", dica:"(seis palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What is in the box? (O que tem na caixa?)<br>2. What color is Anna's crayon? (De que cor é o giz de cera da Anna?)<br>3. Where is Leo's red crayon? (Onde está o giz de cera vermelho do Leo?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 3, diga o lugar (de quem é o estojo?)</li><li>use <b>is</b> ou <b>are</b></li></ul>",
+ andaime:"<p>The box is full of <span class=\"lacuna\">?</span>. · Anna's crayon is <span class=\"lacuna\">?</span>. · It is in <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Crayons are in the box (It's a box of crayons). 2. Anna's crayon is green. 3. It is in Leo's pencil case.",
+ instrucaoIA:"Ela ouviu a história do giz de cera vermelho do Leo e devia responder por escrito: o que tem na caixa (crayons), a cor do giz de cera da Anna (green) e onde estava o vermelho (no estojo do Leo). Vocabulário: crayon, box, color, green, red, pencil case, desk, possessivo com 's."},
+
+{tipo:"completar", titulo:"Complete com a palavra que descreve", ajuda:"Toque na palavra certa.", itens:[
+ {frase:"My lunch box is ___. I am hungry!", pt:"A minha lancheira está vazia. Estou com fome!", resposta:"empty",
+  opcoes:["empty","full","clean"], explicacao:"empty = vazia. full é o contrário."},
+ {frase:"This ruler is ___, not short.", pt:"Esta régua é comprida, não curta.", resposta:"long",
+  opcoes:["long","round","soft"], explicacao:"long = comprido. O contrário é short."},
+ {frase:"This notebook is not new. It is ___.", pt:"Este caderno não é novo. Ele é velho.", resposta:"old",
+  opcoes:["old","pretty","dirty"], explicacao:"old é o contrário de new."},
+ {frase:"It's a ___ eraser: pink, white and purple.", pt:"É uma borracha bonita: rosa, branca e roxa.", resposta:"pretty",
+  opcoes:["pretty","dirty","long"], explicacao:"pretty = bonita."},
+ {frase:"My desk is ___ now. Thank you, mom!", pt:"A minha mesa está limpa agora. Obrigada, mãe!", resposta:"clean",
+  opcoes:["clean","dirty","empty"], explicacao:"clean = limpa. dirty é suja."},
+ {frase:"My pencil case is ___: twelve crayons are in it!", pt:"O meu estojo está cheio: doze gizes de cera estão dentro dele!", resposta:"full",
+  opcoes:["full","empty","soft"], explicacao:"full = cheio."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases (a cor vem antes!)", itens:[
+ {frase:"It is a big red backpack", pt:"É uma mochila vermelha grande."},
+ {frase:"Leo has a new pencil case", pt:"O Leo tem um estojo novo."},
+ {frase:"This is my old notebook", pt:"Este é o meu caderno velho."},
+ {frase:"The pretty crayons are on my desk", pt:"Os gizes de cera bonitos estão na minha carteira."}
+]},
+
+{tipo:"adivinha", titulo:"O que é? Escreva a resposta", itens:[
+ {pistas:["It is little and soft.","It is in my pencil case.","It is white and pink."],
+  resposta:"eraser", pt:"borracha", dica:"(uma coisa da escola)"},
+ {pistas:["It is not a pen.","It has one color.","It is in a big box in my classroom."],
+  resposta:"crayon", pt:"giz de cera", dica:"(uma coisa da escola)"},
+ {pistas:["I am a color.","I am not blue and I am not red.","But blue and red are in me!"],
+  resposta:"purple", pt:"roxo", dica:"(uma cor)"},
+ {pistas:["It is long.","It is in my pencil case.","It is not a pen and not a pencil."],
+  resposta:"ruler", pt:"régua", dica:"(uma coisa da escola)"}
+]},
+
+{tipo:"missao", titulo:"Missão: as cores do cartão da Emma", cena:"escolha",
+ cenario:"<p>A Emma vai fazer um cartão de aniversário para a avó dela e não sabe quais cores usar. Ela abriu o estojo na sua frente e pergunta a sua opinião — em inglês, porque ela <b>só entende inglês</b>.</p>",
+ personagem:"Emma, sua amiga americana, indecisa e carinhosa",
+ objetivos:["dizer qual cor você escolhe para o cartão","dizer duas coisas do estojo (com a cor) que ela pode usar","dizer no fim que o cartão ficou bonito"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">The</span> … (cor) <span class=\"lacuna\">crayon</span>, please · <span class=\"lacuna\">It's</span> … (pretty / nice)</p>",
+ instrucaoIA:"Ela sabe: cores (red, blue, yellow, green, black, white, orange, pink, purple, brown, gray), material escolar (crayon, pen, pencil, glue, scissors, eraser, ruler, notebook, book), adjetivo antes do substantivo (a red crayon), It's a..., I have..., pretty, big, little, old, new, favorite, números até 20, thank you. Emma fala frases de 3 a 6 palavras, mostra duas opções (Blue or pink?) e pede a opinião dela; no fim mostra o cartão pronto."},
+
+{tipo:"escrita", titulo:"Hora de escrever: invente o fim", id:"1",
+ instrucao:"A turma da Miss Kate vai fazer um desenho no quadro com todos os gizes de cera. <b>Invente o que eles desenham</b> e escreva <b>4 ou 5 frases</b> contando. Pode ser qualquer coisa: um bicho enorme, a escola, a família do Leo…",
+ dica:"<ul><li>diga o que a turma desenha</li><li>use pelo menos <b>três cores</b> diferentes</li><li>use uma coisa da escola (giz de cera, quadro, caderno…)</li><li>ponha a cor <b>antes</b> da coisa em pelo menos duas frases</li><li>termine dizendo se ficou bonito</li></ul>",
+ gabarito:"4 ou 5 frases inventadas sobre o desenho da turma, com pelo menos três cores, pelo menos um objeto de escola e duas frases com adjetivo antes do substantivo (a green cat, a big blue house...). Não precisa ser sobre ela mesma — o importante é criar e usar a ordem cor + coisa.",
+ instrucaoIA:"Tarefa criativa: ela devia inventar o que a turma desenhou no quadro e contar em 4 ou 5 frases. Vocabulário da aula: cores, material escolar, adjetivos (old, long, round, soft, pretty, clean, dirty, full, empty), adjetivo antes do substantivo, a/an, this is / these are, is / are, números até 20. Elogie a criatividade primeiro; depois corrija até 3 coisas, com atenção à ordem cor + coisa."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA sobre a história.",
+ frases:[
+  {en:"It's a red crayon.", pt:"É um giz de cera vermelho."},
+  {en:"My notebook is old.", pt:"O meu caderno é velho."},
+  {en:"These are two green pencils.", pt:"Estes são dois lápis verdes."},
+  {en:"My pencil case is full.", pt:"O meu estojo está cheio."},
+  {en:"This is a pretty white eraser.", pt:"Esta é uma borracha branca bonita."},
+  {en:"The board is big and clean.", pt:"O quadro é grande e limpo."}
+ ],
+ instrucaoIA:"Peça para ela repetir as frases e corrija a pronúncia em português, lembrando que a cor vem antes da coisa. Depois faça 4 a 6 perguntas em inglês sobre a história do dia, uma de cada vez, esperando a resposta falada: What color is Leo's crayon? · Where is the red crayon? · Who has a green crayon? · Is your pencil case full or empty? · What color is your notebook? Corrija em português, com carinho."},
+
+{tipo:"ligar", bonus:true, titulo:"Os contrários, misturando as semanas", pares:[
+ {en:"full", pt:"cheio"},
+ {en:"empty", pt:"vazio"},
+ {en:"clean", pt:"limpo"},
+ {en:"dirty", pt:"sujo"},
+ {en:"tall", pt:"alto"},
+ {en:"short", pt:"baixo"},
+ {en:"hungry", pt:"com fome"},
+ {en:"thirsty", pt:"com sede"}
+]}
+
+]});
+</script>
+</body>
+</html>

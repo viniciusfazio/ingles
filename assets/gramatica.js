@@ -159,6 +159,48 @@ var GRAMATICA = [
   {en:"Emma's mother is a teacher.", pt:"A mãe da Emma é professora."},
   {en:"Leo's cousins are twins.", pt:"Os primos do Leo são gêmeos."},
   {en:"Her grandmother's name is Ruth.", pt:"O nome da avó dela é Ruth."}
+ ]},
+
+{semana:3, dia:2, modulo:1,
+ titulo:"a / an — um e uma",
+ resumo:"an só antes de som de vogal",
+ html:"<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>a pen</code></td><td>uma caneta</td></tr>"+
+ "<tr><td><code>a book</code></td><td>um livro</td></tr>"+
+ "<tr><td><code>an eraser</code></td><td>uma borracha</td></tr>"+
+ "<tr><td><code>an orange crayon</code></td><td>um giz de cera laranja</td></tr>"+
+ "</table>"+
+ "<p>Um e uma são a mesma palavra em inglês: <code>a</code>. Vira <code>an</code> quando a palavra seguinte começa com <b>som de vogal</b> (a, e, i, o, u), porque a boca não emenda.</p>"+
+ "<p>Olhe para a palavra que vem <b>logo depois</b>: <code>an eraser</code>, mas <code>a blue eraser</code>.</p>"+
+ "<p>No plural não existe <code>a</code> nem <code>an</code>: <code>two pens</code>, <code>ten crayons</code>.</p>",
+ exemplos:[
+  {en:"It's a pen.", pt:"É uma caneta."},
+  {en:"It's an eraser.", pt:"É uma borracha."},
+  {en:"I have a blue notebook.", pt:"Eu tenho um caderno azul."},
+  {en:"She has an orange pencil case.", pt:"Ela tem um estojo laranja."},
+  {en:"These are two green books.", pt:"Estes são dois livros verdes."}
+ ]},
+
+{semana:3, dia:3, modulo:1,
+ titulo:"A cor vem antes — a red pen",
+ resumo:"O adjetivo cola na frente da coisa e nunca tem -s",
+ html:"<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>a red pen</code></td><td>uma caneta vermelha</td></tr>"+
+ "<tr><td><code>a big backpack</code></td><td>uma mochila grande</td></tr>"+
+ "<tr><td><code>my old notebook</code></td><td>o meu caderno velho</td></tr>"+
+ "<tr><td><code>two green crayons</code></td><td>dois gizes de cera verdes</td></tr>"+
+ "</table>"+
+ "<p>Em português a cor vem depois da coisa; em inglês vem <b>antes</b>. Leia de trás para frente que encaixa: <code>a red pen</code> → <i>caneta</i>… <i>vermelha</i>.</p>"+
+ "<p>O adjetivo <b>nunca</b> ganha -s no plural: <code>two green crayons</code> (e não <i>greens</i>). Quem ganha o -s é só a coisa.</p>"+
+ "<p>Depois do verbo <code>is</code> ele fica sozinho: <code>My pen is red.</code> — dois jeitos de dizer o mesmo: <code>It's a red pen.</code> ou <code>The pen is red.</code></p>",
+ exemplos:[
+  {en:"It's a red pen.", pt:"É uma caneta vermelha."},
+  {en:"My pen is red.", pt:"A minha caneta é vermelha."},
+  {en:"This is a big blue backpack.", pt:"Esta é uma mochila azul grande."},
+  {en:"These are two green crayons.", pt:"Estes são dois gizes de cera verdes."},
+  {en:"My sister has an old notebook.", pt:"A minha irmã tem um caderno velho."}
  ]}
 
 ];

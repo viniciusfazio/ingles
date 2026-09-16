@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 3 · Dia 5</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:3,
+dia:5,
+titulo:"Revisão + projeto: My school things",
+subtitulo:"Junte a semana toda e apresente a sua mochila",
+objetivos:[
+  "Revisar as cores, o material escolar e o a/an",
+  "Entender uma história de mistério só de ouvido",
+  "Apresentar o seu material em inglês"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🎉 Você chegou na sexta!",
+ html:"<p>Esta semana você aprendeu a nomear <b>as coisas da escola</b>, <b>as cores</b>, a escolher entre <code>a</code> e <code>an</code> e a pôr a cor <b>antes</b> da coisa: <code>a red pen</code>.</p>"+
+ "<p>Hoje é dia de juntar tudo: uma história de mistério, uma revisão geral e o <b>projeto da semana</b>. Vamos! 💪</p>"},
+
+{tipo:"historia", titulo:"Ouça: a mochila azul", cena:"misterio", paragrafos:[
+ {en:"It's morning at school. A blue backpack is on Ben's desk.", pt:"É de manhã na escola. Uma mochila azul está na carteira do Ben."},
+ {en:"“This is not my backpack,” says Ben. “My backpack is black.”", pt:"“Esta não é a minha mochila”, diz o Ben. “A minha mochila é preta.”"},
+ {en:"Ben looks in the blue backpack. It's a mystery!", pt:"O Ben olha dentro da mochila azul. É um mistério!"},
+ {en:"One old notebook, two green pencils and an orange eraser.", pt:"Um caderno velho, dois lápis verdes e uma borracha laranja."},
+ {en:"A photo is in the notebook. A little girl and a big dog!", pt:"Uma foto está dentro do caderno. Uma menininha e um cachorro grande!"},
+ {en:"Ben has a question: “Who is the girl?”", pt:"O Ben tem uma pergunta: “Quem é a menina?”"},
+ {en:"Miss Kate looks at the photo. “She is Mia. She is new here.”", pt:"A Miss Kate olha a foto. “Ela é a Mia. Ela é nova aqui.”"},
+ {en:"Mia is happy: “Thank you, Ben! My blue backpack!” Now Ben and Mia are friends.", pt:"A Mia fica feliz: “Obrigada, Ben! A minha mochila azul!” Agora o Ben e a Mia são amigos."}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"What color is the backpack on Ben's desk?", opcoes:["Black","Blue","Green"], correta:1,
+  explicacao:"A blue backpack is on Ben's desk."},
+ {pergunta:"What color is Ben's backpack?", opcoes:["Black","Blue","Orange"], correta:0,
+  explicacao:"Ele diz: My backpack is black. Por isso a azul não é dele."},
+ {pergunta:"What is in the notebook?", opcoes:["A photo","A pen","An eraser"], correta:0,
+  explicacao:"A photo is in the notebook."},
+ {pergunta:"Who is in the photo?", opcoes:["A girl and a dog","Ben and Mia","Miss Kate"], correta:0,
+  explicacao:"A little girl and a big dog."},
+ {pergunta:"Who is Mia?", opcoes:["Ben's sister","A new student","Ben's cousin"], correta:1,
+  explicacao:"Miss Kate diz: She is new here."},
+ {pergunta:"How many pencils are in the backpack?", opcoes:["One","Two","Three"], correta:1,
+  explicacao:"Two green pencils — e a cor não ganha -s, só pencils."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases da história", itens:[
+ {en:"My backpack is black", pt:"A minha mochila é preta.", dica:"(quatro palavras)"},
+ {en:"Now Ben and Mia are friends", pt:"Agora o Ben e a Mia são amigos.", dica:"(seis palavras)"},
+ {en:"A photo is in the notebook", pt:"Uma foto está no caderno.", dica:"(seis palavras)"},
+ {en:"She is new here", pt:"Ela é nova aqui.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What color is Ben's backpack? (De que cor é a mochila do Ben?)<br>2. What is in the blue backpack? (O que tem na mochila azul?)<br>3. Who is Mia? (Quem é a Mia?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 2, diga pelo menos duas coisas, com a cor</li><li>na 3, diga o que a Miss Kate contou</li></ul>",
+ gabarito:"1. Ben's backpack is black. 2. An old notebook, two green pencils and an orange eraser (and a photo). 3. Mia is a new student (she is new at the school) — the blue backpack is hers.",
+ instrucaoIA:"Ela ouviu a história da mochila azul e devia responder por escrito: a cor da mochila do Ben (black), o que tinha na mochila azul (caderno velho, dois lápis verdes, uma borracha laranja, uma foto) e quem é a Mia (a aluna nova, dona da mochila). Vocabulário: cores, material escolar, adjetivo antes do substantivo, plural com -s, a/an, she is."},
+
+{tipo:"completar", titulo:"Revisão da semana", ajuda:"Oito frases misturando tudo o que você viu.", itens:[
+ {frase:"What's this? It's ___ eraser.", pt:"O que é isto? É uma borracha.", resposta:"an",
+  opcoes:["a","an"], explicacao:"eraser começa com som de vogal."},
+ {frase:"It's ___ yellow pencil.", pt:"É um lápis amarelo.", resposta:"a",
+  opcoes:["a","an"], explicacao:"yellow começa com som de consoante."},
+ {frase:"Green and red: my ___ crayons.", pt:"Verde e vermelho: os meus gizes de cera favoritos.", resposta:"favorite",
+  opcoes:["favorite","favorites"], explicacao:"O adjetivo nunca ganha -s."},
+ {frase:"I have five ___ in my pencil case.", pt:"Eu tenho cinco canetas no meu estojo.", resposta:"pens",
+  opcoes:["pen","pens"], explicacao:"five = mais de uma, então pens."},
+ {frase:"___ is my new backpack.", pt:"Esta é a minha mochila nova.", resposta:"This",
+  opcoes:["This","These"], explicacao:"Uma coisa só: This. Se fossem duas, These."},
+ {frase:"My brother's eraser is ___ and little.", pt:"A borracha do meu irmão é macia e pequena.", resposta:"soft",
+  opcoes:["soft","long","empty"], explicacao:"soft = macia. Repare no 's: a borracha é do irmão."},
+ {frase:"Look at the ___! It is big and white.", pt:"Olha o quadro! Ele é grande e branco.", resposta:"board",
+  opcoes:["board","window","paper"], explicacao:"board é o quadro da sala de aula."},
+ {frase:"This is ___ notebook.", pt:"Este é o caderno da minha irmã.", resposta:"my sister's",
+  opcoes:["my sister's","my sister","sister of me"], explicacao:"O dono vem antes, com 's: my sister's notebook."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções", pares:[
+ {en:"scissors", pt:"tesoura"},
+ {en:"glue", pt:"cola"},
+ {en:"yellow", pt:"amarelo"},
+ {en:"gray", pt:"cinza"},
+ {en:"dirty", pt:"sujo"},
+ {en:"round", pt:"redondo"},
+ {en:"homework", pt:"lição de casa"},
+ {en:"window", pt:"janela"}
+]},
+
+{tipo:"explorar", titulo:"Quem é o Nick?", perfil:"adolescente", voz:"m",
+ personagem:"Nick, 15 anos, irmão mais velho da Sophie, meio quieto e muito bem-humorado",
+ apresentacao:"<p>Você foi à casa da Sophie e um menino que você não conhece está na sala, desenhando num caderno. Ele <b>só fala inglês</b>. Descubra quem ele é!</p>",
+ segredos:["ele tem 15 anos e é o irmão mais velho da Sophie","a cor favorita dele é preto","ele tem um gato branco chamado Snow","a mochila dele é velha e tem doze canetas dentro","surpresa: o caderno dele é cheio de desenhos da irmã pequena"],
+ pistas:["a idade dele e a família","qual é a cor favorita dele","um animal de estimação","o que ele tem na mochila","surpresa: o que ele desenha"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">How old are</span> …? · <span class=\"lacuna\">What's your favorite</span> …? · <span class=\"lacuna\">Do you have</span> …?</p>",
+ instrucaoIA:"Ela sabe: What's your name? How old are you? What's your favorite color? Do you have a pet/brother/sister? What's this? What's in your backpack? cores, material escolar (backpack, notebook, pen, pencil, crayon, marker, eraser, ruler, pencil case), família, animais (dog, cat, bird, fish), números até 20, adjetivo antes do substantivo (a black cat), is / are, this is / these are. Nick responde com frases de 3 a 6 palavras, deixa ganchos (My notebook is secret.) e devolve perguntas fáceis. Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: a barraquinha da feira da escola", cena:"venda",
+ cenario:"<p>É a <b>feira da escola</b> e você está na barraquinha vendendo material usado: lápis, canetas, cadernos e gizes de cera de todas as cores. O Ben chegou querendo comprar material novo — e ele <b>só entende inglês</b>.</p>",
+ personagem:"Ben, o colega da turma, indeciso e falante",
+ objetivos:["perguntar o que o Ben quer","dizer duas cores que você tem daquela coisa","dizer quantas coisas ele leva e agradecer"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">What do you need</span>? · <span class=\"lacuna\">I have a</span> … <span class=\"lacuna\">and a</span> … · <span class=\"lacuna\">Thank you</span>!</p>",
+ instrucaoIA:"Ela sabe: material escolar (pencil, pen, notebook, book, eraser, ruler, pencil case, crayon, glue, scissors, backpack, marker, paper, sharpener, lunch box), cores, a/an, adjetivo antes do substantivo, plural com -s, I have..., Do you have...?, Here you are, please, thank you, números até 20. Ela é a vendedora e o Ben é o cliente: ele pede uma coisa, muda de ideia uma vez, pergunta What color? e no fim leva duas coisas. Ben fala frases de 3 a 6 palavras."},
+
+{tipo:"escrita", titulo:"Projeto da semana: My school things", id:"1",
+ instrucao:"O projeto de hoje: escreva <b>4 ou 5 frases</b> apresentando o seu material escolar, como se fosse a legenda de uma foto da sua mesa. Depois leia em voz alta no bloco de baixo.",
+ dica:"<ul><li>comece dizendo o que é a foto (a sua mochila, a sua mesa…)</li><li>pelo menos <b>três</b> coisas da escola</li><li>pelo menos <b>três cores</b>, sempre antes da coisa</li><li>uma frase no plural, com número (three red pens…)</li><li>uma frase dizendo qual é o seu material favorito e por quê (novo, bonito, grande…)</li></ul>Sem ajuda hoje: você já sabe tudo isso. 💜",
+ gabarito:"4 ou 5 frases apresentando o material dela: pelo menos três objetos de escola, três cores na ordem certa (cor antes da coisa), uma frase no plural com número e uma frase sobre o favorito com um adjetivo (new, old, pretty, big, little, soft). Estruturas esperadas: This is..., These are..., I have a/an..., My ... is ..., My favorite ... is ...",
+ instrucaoIA:"É o projeto da semana 3: ela devia escrever 4 ou 5 frases apresentando o material escolar dela. Vocabulário da semana: backpack, pencil, pen, book, notebook, eraser, ruler, pencil case, crayon, glue, scissors, desk, chair, board, lunch box, classroom, marker, paper, sharpener, poster, homework, window, store, cores (red, blue, yellow, green, black, white, orange, pink, purple, brown, gray), adjetivos (old, long, round, soft, pretty, clean, dirty, full, empty), a/an, plural com -s, adjetivo antes do substantivo. Elogie primeiro, depois corrija no máximo 3 coisas e mostre uma frase que ela poderia ter usado."},
+
+{tipo:"fala", titulo:"Hora de falar: apresente o seu material",
+ instrucao:"Aqueça a boca com as frases abaixo e depois apresente o seu projeto em voz alta para a IA.",
+ foco:"o <b>i</b> curto de <i>this, big, pink</i> contra o <b>i</b> longo de <i>these, green, three</i> — hoje repita os dois seguidos: <i>this / these</i>, <i>big / green</i>.",
+ frases:[
+  {en:"This is my backpack.", pt:"Esta é a minha mochila."},
+  {en:"These are my crayons.", pt:"Estes são os meus gizes de cera."},
+  {en:"I have three green pens.", pt:"Eu tenho três canetas verdes."},
+  {en:"My pencil case is pink and white.", pt:"O meu estojo é rosa e branco."},
+  {en:"It's an old notebook.", pt:"É um caderno velho."},
+  {en:"My favorite color is purple.", pt:"A minha cor favorita é roxo."}
+ ],
+ instrucaoIA:"Primeiro o aquecimento: as frases acima, com atenção ao i curto e ao i longo (this/these). Depois peça para ela apresentar o projeto dela em voz alta. Em seguida faça 4 a 6 perguntas em inglês sobre o material dela, uma de cada vez, esperando a resposta falada: What's in your backpack? · What color is your pencil case? · How many pens do you have? · Is your notebook new or old? · What's your favorite thing at school? Corrija em português, com carinho, e feche elogiando a semana inteira."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"My new pencil case is green and white", pt:"O meu estojo novo é verde e branco."},
+ {frase:"These are my sister's old crayons", pt:"Estes são os gizes de cera velhos da minha irmã."},
+ {frase:"I have a question for my teacher", pt:"Eu tenho uma pergunta para a minha professora."},
+ {frase:"The little girl has a big blue backpack", pt:"A menininha tem uma mochila azul grande."}
+]}
+
+]});
+</script>
+</body>
+</html>
