@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 4 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:4,
+dia:2,
+titulo:"Monday, Tuesday... January, February!",
+subtitulo:"Os dias da semana, os meses e a idade com am / is",
+objetivos:[
+  "Dizer os 7 dias da semana e os 12 meses",
+  "Usar on com o dia (on Monday) e in com o mês (in May)",
+  "Dizer a idade de outras pessoas: She's twenty-one."
+],
+blocos:[
+
+{tipo:"vocab", titulo:"Os dias e os meses", itens:[
+ {en:"Monday", pt:"segunda-feira", ipa:"/MÂN-dei/", emoji:"📅"},
+ {en:"Tuesday", pt:"terça-feira", ipa:"/TÚZ-dei/", emoji:"📅"},
+ {en:"Wednesday", pt:"quarta-feira", ipa:"/UÉNZ-dei/", emoji:"📅"},
+ {en:"Thursday", pt:"quinta-feira", ipa:"/THÂRZ-dei/", emoji:"📅"},
+ {en:"Friday", pt:"sexta-feira", ipa:"/FRÁI-dei/", emoji:"📅"},
+ {en:"Saturday", pt:"sábado", ipa:"/SÉ-ter-dei/", emoji:"🎈"},
+ {en:"Sunday", pt:"domingo", ipa:"/SÂN-dei/", emoji:"☀️"},
+ {en:"weekend", pt:"fim de semana", ipa:"/UÍK-end/", emoji:"🛋️"},
+ {en:"What day is it today?", pt:"Que dia é hoje?", ipa:"/uót DÊI iz it tu-DÊI/", emoji:"❓"},
+ {en:"January", pt:"janeiro", ipa:"/DJÉ-niu-é-ri/", emoji:"❄️"},
+ {en:"February", pt:"fevereiro", ipa:"/FÉ-bru-é-ri/", emoji:"💝"},
+ {en:"March", pt:"março", ipa:"/MÁRTCH/", emoji:"🌱"},
+ {en:"April", pt:"abril", ipa:"/ÊI-pril/", emoji:"🌷"},
+ {en:"May", pt:"maio", ipa:"/MÊI/", emoji:"🌸"},
+ {en:"June", pt:"junho", ipa:"/DJÚN/", emoji:"🌞"},
+ {en:"July", pt:"julho", ipa:"/dju-LÁI/", emoji:"🏖️"},
+ {en:"August", pt:"agosto", ipa:"/Ó-gâst/", emoji:"🌻"},
+ {en:"September", pt:"setembro", ipa:"/sep-TÉM-ber/", emoji:"🍎"},
+ {en:"October", pt:"outubro", ipa:"/ók-TÔU-ber/", emoji:"🎃"},
+ {en:"November", pt:"novembro", ipa:"/nou-VÉM-ber/", emoji:"🍂"},
+ {en:"December", pt:"dezembro", ipa:"/di-SÉM-ber/", emoji:"🎄"}
+]},
+
+{tipo:"gramatica", titulo:"A idade vai com am / is — e o dia vai com on",
+ html:"<p><b>1. Idade.</b> Em português a gente <b>tem</b> onze anos. Em inglês a gente <b>é</b> onze anos: usa o mesmo <code>am</code> / <code>is</code> / <code>are</code> de sempre.</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I'm eleven.</code></td><td>Eu tenho onze anos.</td></tr>"+
+ "<tr><td><code>She's twenty-one.</code></td><td>Ela tem vinte e um anos.</td></tr>"+
+ "<tr><td><code>My grandpa is eighty.</code></td><td>O meu avô tem oitenta anos.</td></tr>"+
+ "<tr><td><code>How old is he?</code></td><td>Quantos anos ele tem?</td></tr></table>"+
+ "<p>O <code>years old</code> no fim é opcional: <code>I'm eleven</code> e <code>I'm eleven years old</code> estão certos.</p>"+
+ "<p><b>2. Quando.</b> Com dia da semana use <code>on</code>; com mês use <code>in</code>.</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>on Monday</code></td><td>na segunda-feira</td></tr>"+
+ "<tr><td><code>on Saturday</code></td><td>no sábado</td></tr>"+
+ "<tr><td><code>in May</code></td><td>em maio</td></tr>"+
+ "<tr><td><code>in December</code></td><td>em dezembro</td></tr></table>"+
+ "<p>Para perguntar <b>quando</b>, use <code>When</code>: <code>When is the party?</code> = Quando é a festa?</p>"+
+ "<p>Dias e meses em inglês começam sempre com <b>letra maiúscula</b>: <code>Monday</code>, <code>May</code>.</p>",
+ exemplos:[
+  {en:"I'm eleven years old.", pt:"Eu tenho onze anos."},
+  {en:"My sister is twenty-one.", pt:"A minha irmã tem vinte e um anos."},
+  {en:"How old is your grandma?", pt:"Quantos anos tem a sua avó?"},
+  {en:"The party is on Saturday.", pt:"A festa é no sábado."},
+  {en:"My birthday is in May.", pt:"O meu aniversário é em maio."},
+  {en:"See you on Monday!", pt:"Até segunda!"}
+ ]},
+
+{tipo:"dialogo", titulo:"Ouça: segunda-feira na escola", escuta:true, linhas:[
+ {quem:"Emma", en:"Good morning, Ben! What day is it today?", pt:"Bom dia, Ben! Que dia é hoje?"},
+ {quem:"Ben", en:"It's Monday. Look, a photo of my sister Lucy.", pt:"É segunda-feira. Olha, uma foto da minha irmã Lucy."},
+ {quem:"Emma", en:"She's pretty! How old is she?", pt:"Ela é bonita! Quantos anos ela tem?"},
+ {quem:"Ben", en:"Let me think... She's twenty-one.", pt:"Deixa eu pensar... Ela tem vinte e um."},
+ {quem:"Emma", en:"Twenty-one? Wow! Is it her birthday?", pt:"Vinte e um? Uau! É o aniversário dela?"},
+ {quem:"Ben", en:"Yes! Her party is on Saturday. It's a big party!", pt:"Sim! A festa dela é no sábado. É uma festa grande!"},
+ {quem:"Emma", en:"Nice! My grandma's birthday is in June. She's eighty!", pt:"Legal! O aniversário da minha avó é em junho. Ela tem oitenta anos!"},
+ {quem:"Ben", en:"Eighty? Wow! And your birthday, Emma?", pt:"Oitenta? Uau! E o seu aniversário, Emma?"},
+ {quem:"Emma", en:"My birthday is in July.", pt:"O meu aniversário é em julho."},
+ {quem:"Ben", en:"July? My birthday is in July, too!", pt:"Julho? O meu aniversário é em julho também!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"What day is it today?", opcoes:["Monday","Saturday","Sunday"], correta:0,
+  explicacao:"O Ben diz: It's Monday."},
+ {pergunta:"How old is Lucy?", opcoes:["Eleven","Twenty-one","Eighty"], correta:1,
+  explicacao:"She's twenty-one — a irmã do Ben tem 21 anos."},
+ {pergunta:"When is Lucy's party?", opcoes:["On Monday","On Saturday","In June"], correta:1,
+  explicacao:"Her party is on Saturday. Dia da semana vai com on."},
+ {pergunta:"How old is Emma's grandma?", opcoes:["Eighty","Eighteen","Twenty-one"], correta:0,
+  explicacao:"She's eighty! Cuidado: eighteen é 18, eighty é 80."},
+ {pergunta:"When is Emma's birthday?", opcoes:["In June","In July","On Saturday"], correta:1,
+  explicacao:"My birthday is in July. Em junho é o da avó dela."},
+ {pergunta:"Who has a birthday in July, too?", opcoes:["Lucy","Emma's grandma","Ben"], correta:2,
+  explicacao:"O Ben diz: My birthday is in July, too! Ele e a Emma fazem aniversário no mesmo mês."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases do diálogo", itens:[
+ {en:"What day is it today", pt:"Que dia é hoje?", dica:"(cinco palavras, é uma pergunta)"},
+ {en:"She's twenty-one", pt:"Ela tem vinte e um anos.", dica:"(she's + um número)"},
+ {en:"It's a big party", pt:"É uma festa grande.", dica:"(quatro palavras)"},
+ {en:"My birthday is in July", pt:"O meu aniversário é em julho.", dica:"(cinco palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Who is Lucy? (Quem é a Lucy?)<br>2. How old is Lucy? (Quantos anos a Lucy tem?)<br>3. When is Emma's birthday? (Quando é o aniversário da Emma?)<br>4. Who is eighty? (Quem tem oitenta anos?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1, diga de quem ela é irmã (use o 's)</li><li>idade vai com <b>is</b>, nunca com has</li><li>mês vai com <b>in</b></li></ul>",
+ andaime:"<p>Lucy is <span class=\"lacuna\">?</span>'s sister. · She is <span class=\"lacuna\">?</span>. · Emma's birthday is in <span class=\"lacuna\">?</span>. · Emma's <span class=\"lacuna\">?</span> is eighty.</p>",
+ gabarito:"1. Lucy is Ben's sister. 2. She is twenty-one (years old). 3. Emma's birthday is in July. 4. Emma's grandma is eighty.",
+ instrucaoIA:"Ela ouviu um diálogo entre a Emma e o Ben e devia responder por escrito: quem é a Lucy (a irmã do Ben), quantos anos ela tem (twenty-one), quando é o aniversário da Emma (in July) e quem tem oitenta anos (a avó da Emma). Vocabulário: dias da semana, meses, números até 100, idade com is (She is twenty-one), in + mês, on + dia, possessivo com 's."},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"The party is ___ Saturday.", pt:"A festa é no sábado.", resposta:"on",
+  opcoes:["on","in","at"], explicacao:"Dia da semana vai com on: on Saturday."},
+ {frase:"My birthday is ___ May.", pt:"O meu aniversário é em maio.", resposta:"in",
+  opcoes:["in","on","at"], explicacao:"Mês vai com in: in May."},
+ {frase:"Monday, Tuesday, ___, Thursday.", pt:"Segunda, terça, quarta, quinta.", resposta:"Wednesday",
+  opcoes:["Wednesday","Friday","weekend"], explicacao:"Wednesday é quarta-feira. Repare no D que não se fala: /UÉNZ-dei/."},
+ {frase:"Saturday and Sunday are the ___.", pt:"Sábado e domingo são o fim de semana.", resposta:"weekend",
+  opcoes:["weekend","birthday","party"], explicacao:"weekend = fim de semana (week + end)."},
+ {frase:"January, February, ___.", pt:"Janeiro, fevereiro, março.", resposta:"March",
+  opcoes:["March","May","Monday"], explicacao:"Depois de fevereiro vem março: March."},
+ {frase:"My grandma ___ seventy years old.", pt:"A minha avó tem setenta anos.", resposta:"is",
+  opcoes:["is","has","have"], explicacao:"Idade vai com is. Em inglês ela É setenta anos, não TEM."},
+ {frase:"These are my ___ crayons.", pt:"Estes são os meus gizes de cera verdes.", resposta:"green",
+  opcoes:["green","greens"], explicacao:"Lembra da semana passada? A cor nunca ganha -s."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"My birthday is in April", pt:"O meu aniversário é em abril."},
+ {frase:"How old is your dad", pt:"Quantos anos o seu pai tem?"},
+ {frase:"See you on Friday", pt:"Até sexta!"},
+ {frase:"My brother is twenty-two", pt:"O meu irmão tem vinte e dois anos."},
+ {frase:"Today is Wednesday", pt:"Hoje é quarta-feira."}
+]},
+
+{tipo:"entrevista", titulo:"A ficha do time de vôlei", perfil:"treinador",
+ personagem:"Coach Dan, técnico novo do time de vôlei da escola, animado e paciente",
+ apresentacao:"<p>O time de vôlei da escola está aceitando jogadoras novas. O técnico precisa preencher a sua ficha e montar os dias de treino, mas <b>só fala inglês</b>. Entenda o que ele pergunta e responda.</p>",
+ quer:["a idade dela","o mês do aniversário dela (para a festa do time)","que dias da semana ela pode treinar","o dia favorito dela da semana"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I'm</span> … years old. · <span class=\"lacuna\">My birthday is in</span> … · <span class=\"lacuna\">On</span> … <span class=\"lacuna\">and</span> …</p>",
+ instrucaoIA:"Ela sabe: números até 100, How old are you? I'm ... years old, os dias da semana (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, weekend), os meses (January a December), on + dia (on Monday), in + mês (in May), What day is it today?, favorite, yes / no, Wait a minute, Let me think, Just a second, Sorry? Again, please. Ainda não sabe horas nem verbos como play ou like. Coach Dan pergunta uma coisa por vez, em frases de 3 a 6 palavras, e se ela não entender repete de outro jeito (Monday? Tuesday? Which day?). Ele treina o time on Tuesday and Thursday e comemora os aniversários do mês."},
+
+{tipo:"missao", titulo:"Missão: quando o Max vem?", cena:"horario",
+ cenario:"<p>O Max, seu primo que mora em Chicago, vai vir visitar você! Ele está numa <b>videochamada</b> e você precisa descobrir <b>quando</b> ele chega para contar para a família. Ele <b>só entende inglês</b>.</p>",
+ personagem:"Max, o primo de Chicago, falante e um pouco distraído",
+ objetivos:["perguntar em que mês o Max vem","perguntar em que dia da semana ele chega","dizer se esse dia é bom para você (Yes! / Monday is school!) e se despedir com See you on ...!"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">When is</span> …? · <span class=\"lacuna\">What day</span> …? · <span class=\"lacuna\">See you on</span> …!</p>",
+ instrucaoIA:"Ela sabe: dias da semana, weekend, meses, on + dia, in + mês, números até 100, How old are you?, When is...?, What day is it today?, school, family, yes / no, Wait a minute, Let me think, Just a second, Sorry? Again, please. Fatos: Max tem twelve anos; ele vem in July e chega on Saturday; primeiro ele se confunde e diz Monday... no, Saturday! Max responde com frases de 3 a 6 palavras e pergunta de volta What day is it today? Não fale de horas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre você e a sua família usando o que aprendeu hoje: idade, mês do aniversário e dias da semana.",
+ dica:"<ul><li>uma frase com a sua idade</li><li>uma frase com o <b>mês</b> do seu aniversário (lembre do <b>in</b>)</li><li>a idade de uma pessoa da família (lembre do <b>is</b>)</li><li>o seu dia favorito da semana</li><li>uma frase com <b>on</b> + dia da semana</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I'm <span class=\"lacuna\">?</span>. · My birthday is in <span class=\"lacuna\">?</span>. · My <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span>. · My favorite day is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases: a idade dela (I'm eleven), o mês do aniversário com in (My birthday is in ...), a idade de alguém da família com is (My mother is forty.), o dia favorito da semana (My favorite day is Saturday.) e uma frase com on + dia (My English class is on Monday / See you on Friday). Dias e meses com letra maiúscula.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre ela: idade, mês do aniversário, idade de alguém da família, dia favorito da semana e uma frase com on + dia. Vocabulário da aula: Monday a Sunday, weekend, January a December, What day is it today?, on + dia, in + mês, idade com am/is (nunca have), números até 100. Confira on/in, a letra maiúscula nos dias e meses, e a idade com is."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ frases:[
+  {en:"What day is it today?", pt:"Que dia é hoje?"},
+  {en:"It's Wednesday.", pt:"É quarta-feira."},
+  {en:"My birthday is in May.", pt:"O meu aniversário é em maio."},
+  {en:"The party is on Saturday.", pt:"A festa é no sábado."},
+  {en:"My sister is twenty-one.", pt:"A minha irmã tem vinte e um anos."},
+  {en:"Tuesday, Thursday.", pt:"Terça, quinta."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português (atenção a Wednesday, com o D mudo, e a Tuesday / Thursday, que ela pode confundir). Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando: What day is it today? · When is your birthday? (ela responde só o mês: In ...) · What's your favorite day? · How old is your mother? · Is your English class on Monday? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ligar", bonus:true, titulo:"Pares traiçoeiros", pares:[
+ {en:"Tuesday", pt:"terça-feira"},
+ {en:"Thursday", pt:"quinta-feira"},
+ {en:"thirteen", pt:"treze"},
+ {en:"thirty", pt:"trinta"},
+ {en:"fourteen", pt:"quatorze"},
+ {en:"forty", pt:"quarenta"},
+ {en:"June", pt:"junho"},
+ {en:"July", pt:"julho"},
+ {en:"March", pt:"março"},
+ {en:"May", pt:"maio"}
+]}
+
+]});
+</script>
+</body>
+</html>

@@ -201,6 +201,51 @@ var GRAMATICA = [
   {en:"This is a big blue backpack.", pt:"Esta é uma mochila azul grande."},
   {en:"These are two green crayons.", pt:"Estes são dois gizes de cera verdes."},
   {en:"My sister has an old notebook.", pt:"A minha irmã tem um caderno velho."}
+ ]},
+
+{semana:4, dia:2, modulo:1,
+ titulo:"Idade com am / is — I'm eleven",
+ resumo:"Em inglês a pessoa É a idade: nunca use have",
+ html:"<table>"+
+ "<tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I'm eleven.</code></td><td>Eu tenho onze anos.</td></tr>"+
+ "<tr><td><code>I'm eleven years old.</code></td><td>Eu tenho onze anos.</td></tr>"+
+ "<tr><td><code>She's twenty-one.</code></td><td>Ela tem vinte e um anos.</td></tr>"+
+ "<tr><td><code>How old is he?</code></td><td>Quantos anos ele tem?</td></tr>"+
+ "</table>"+
+ "<p>O <code>years old</code> no fim é opcional. O erro clássico é traduzir o <i>tenho</i>: <i>I have eleven</i> está errado.</p>",
+ exemplos:[
+  {en:"How old are you?", pt:"Quantos anos você tem?"},
+  {en:"I'm eleven years old.", pt:"Eu tenho onze anos."},
+  {en:"My grandpa is eighty.", pt:"O meu avô tem oitenta anos."},
+  {en:"How old is your sister?", pt:"Quantos anos a sua irmã tem?"}
+ ]},
+
+{semana:4, dia:3, modulo:1,
+ titulo:"Números de ordem e datas — on May 5th",
+ resumo:"first, second, third, depois -th; on com dia e data, in só com o mês",
+ html:"<table>"+
+ "<tr><th>Escreve</th><th>Fala</th><th>Português</th></tr>"+
+ "<tr><td><code>1st</code></td><td><code>first</code></td><td>primeiro</td></tr>"+
+ "<tr><td><code>2nd</code></td><td><code>second</code></td><td>segundo</td></tr>"+
+ "<tr><td><code>3rd</code></td><td><code>third</code></td><td>terceiro</td></tr>"+
+ "<tr><td><code>4th</code> … <code>10th</code></td><td><code>fourth</code> … <code>tenth</code></td><td>quarto … décimo</td></tr>"+
+ "<tr><td><code>21st</code></td><td><code>twenty-first</code></td><td>vigésimo primeiro</td></tr>"+
+ "</table>"+
+ "<p>Os diferentes: <code>fifth</code>, <code>eighth</code>, <code>ninth</code>, <code>twelfth</code>, <code>twentieth</code>.</p>"+
+ "<table>"+
+ "<tr><th>Quando</th><th>Preposição</th><th>Exemplo</th></tr>"+
+ "<tr><td>dia da semana</td><td><code>on</code></td><td><code>on Monday</code></td></tr>"+
+ "<tr><td>data completa</td><td><code>on</code></td><td><code>on May 5th</code> (fala: May fifth)</td></tr>"+
+ "<tr><td>só o mês</td><td><code>in</code></td><td><code>in May</code></td></tr>"+
+ "</table>"+
+ "<p>Na data em inglês americano o <b>mês vem primeiro</b>, e o dia é dito como número de ordem.</p>",
+ exemplos:[
+  {en:"When is your birthday?", pt:"Quando é o seu aniversário?"},
+  {en:"My birthday is on May fifth.", pt:"O meu aniversário é no dia 5 de maio."},
+  {en:"The party is on Saturday.", pt:"A festa é no sábado."},
+  {en:"Her birthday is in March.", pt:"O aniversário dela é em março."},
+  {en:"January is the first month.", pt:"Janeiro é o primeiro mês."}
  ]}
 
 ];

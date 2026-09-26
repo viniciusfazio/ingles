@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 4 · Dia 4</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:4,
+dia:4,
+titulo:"Can you come to my party?",
+subtitulo:"Convidar para o aniversário: a data, o dia e a idade",
+objetivos:[
+  "Juntar idade, dia da semana e data numa conversa",
+  "Convidar alguém e responder a um convite",
+  "Cumprir a missão da semana: convidar a Emma para a sua festa"
+],
+blocos:[
+
+{tipo:"gramatica", titulo:"Revisão rápida: as perguntas da semana",
+ html:"<p>Com estas três perguntas você resolve qualquer conversa de aniversário:</p>"+
+ "<table><tr><th>Pergunta</th><th>Resposta</th></tr>"+
+ "<tr><td><code>How old are you?</code></td><td><code>I'm eleven.</code></td></tr>"+
+ "<tr><td><code>What day is it today?</code></td><td><code>It's Thursday.</code></td></tr>"+
+ "<tr><td><code>When is your birthday?</code></td><td><code>It's on May 5th.</code></td></tr></table>"+
+ "<p>E o <code>on</code> / <code>in</code>: <code>on</code> com dia da semana ou com data completa (<code>on Sunday</code>, <code>on April 9th</code>); <code>in</code> só com o mês (<code>in April</code>).</p>"+
+ "<p>Para convidar, a pergunta mágica é <code>Can you come?</code> — e as respostas são <code>Sure!</code> ou <code>Sorry, I can't.</code></p>",
+ exemplos:[
+  {en:"I'm twelve on Saturday.", pt:"Eu faço doze anos no sábado."},
+  {en:"The party is on Sunday, April 9th.", pt:"A festa é no domingo, dia 9 de abril."},
+  {en:"My birthday is in April.", pt:"O meu aniversário é em abril."},
+  {en:"Can you come? Sure!", pt:"Você pode vir? Claro!"}
+ ]},
+
+{tipo:"vocab", titulo:"Palavras para convidar", itens:[
+ {en:"Can you come?", pt:"Você pode vir?", ipa:"/ken iu KÂM/", emoji:"🙋"},
+ {en:"Sure!", pt:"Claro!", ipa:"/XÚR/", emoji:"👍"},
+ {en:"Sorry, I can't.", pt:"Desculpa, eu não posso.", ipa:"/SÓ-ri ai KÉNT/", emoji:"🙅"},
+ {en:"invitation", pt:"convite", ipa:"/in-vi-TÊI-xan/", emoji:"💌"},
+ {en:"game", pt:"jogo, brincadeira", ipa:"/GUÊIM/", emoji:"🎲"},
+ {en:"music", pt:"música", ipa:"/MIÚ-zik/", emoji:"🎵"},
+ {en:"dance", pt:"dançar", ipa:"/DÉNS/", emoji:"💃"},
+ {en:"fun", pt:"divertido, divertida", ipa:"/FÂN/", emoji:"😄"}
+]},
+
+{tipo:"dialogo", titulo:"Ouça: o convite do Leo", escuta:true, linhas:[
+ {quem:"Leo", en:"Hi, Anna! It's Leo. I have an invitation for you.", pt:"Oi, Anna! É o Leo. Eu tenho um convite para você."},
+ {quem:"Anna", en:"An invitation? Wow! For what?", pt:"Um convite? Uau! Para quê?"},
+ {quem:"Leo", en:"For my birthday party! I'm twelve on Saturday.", pt:"Para a minha festa de aniversário! Eu faço doze anos no sábado."},
+ {quem:"Anna", en:"Happy birthday! When is the party?", pt:"Feliz aniversário! Quando é a festa?"},
+ {quem:"Leo", en:"It's on Sunday, April 9th. Can you come?", pt:"É no domingo, dia 9 de abril. Você pode vir?"},
+ {quem:"Anna", en:"Sure! Is it at home?", pt:"Claro! É em casa?"},
+ {quem:"Leo", en:"Yes, at home. My cousins are here, too.", pt:"Sim, em casa. Os meus primos vão estar aqui também."},
+ {quem:"Anna", en:"Great! How many friends are at the party?", pt:"Ótimo! Quantos amigos vão estar na festa?"},
+ {quem:"Leo", en:"Twenty-five! We have music, games and a big cake.", pt:"Vinte e cinco! Vai ter música, brincadeiras e um bolo grande."},
+ {quem:"Anna", en:"Twenty-five? Wow! See you on Sunday, Leo!", pt:"Vinte e cinco? Uau! Até domingo, Leo!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"How old is Leo on Saturday?", opcoes:["Eleven","Twelve","Twenty"], correta:1,
+  explicacao:"I'm twelve on Saturday — ele faz doze anos no sábado."},
+ {pergunta:"What day is the party?", opcoes:["Saturday","Sunday","Friday"], correta:1,
+  explicacao:"O aniversário é no sábado, mas a festa é no domingo: It's on Sunday."},
+ {pergunta:"When is the party?", opcoes:["On April 9th","On August 9th","On April 5th"], correta:0,
+  explicacao:"It's on Sunday, April 9th — April ninth, dia 9 de abril."},
+ {pergunta:"Where is the party?", opcoes:["At school","At home","At Anna's home"], correta:1,
+  explicacao:"Yes, at home — na casa do Leo."},
+ {pergunta:"How many friends are at the party?", opcoes:["Fifteen","Twenty","Twenty-five"], correta:2,
+  explicacao:"Twenty-five! Vinte e cinco amigos."},
+ {pergunta:"What is at the party?", opcoes:["Music, games and a cake","A teacher and books","A dog and candles"], correta:0,
+  explicacao:"We have music, games and a big cake."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases do diálogo", itens:[
+ {en:"I have an invitation for you", pt:"Eu tenho um convite para você.", dica:"(seis palavras)"},
+ {en:"I'm twelve on Saturday", pt:"Eu faço doze anos no sábado.", dica:"(I'm + três palavras)"},
+ {en:"Can you come", pt:"Você pode vir?", dica:"(três palavras, é uma pergunta)"},
+ {en:"See you on Sunday", pt:"Até domingo.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. When is Leo's party? (Quando é a festa do Leo?)<br>2. How old is Leo on Saturday? (Quantos anos o Leo faz no sábado?)<br>3. What is at the party? (O que vai ter na festa?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1, diga o dia da semana <b>e</b> a data</li><li>na 3, diga pelo menos duas coisas</li></ul>",
+ andaime:"<p>Leo's party is on <span class=\"lacuna\">?</span>, April <span class=\"lacuna\">?</span>. · Leo is <span class=\"lacuna\">?</span> on Saturday. · Music, <span class=\"lacuna\">?</span> and <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Leo's party is on Sunday, April 9th (April ninth). 2. Leo is twelve on Saturday. 3. Music, games and a big cake.",
+ instrucaoIA:"Ela ouviu o Leo convidando a Anna pelo telefone e devia responder por escrito: quando é a festa (on Sunday, April 9th — o aniversário é no sábado, a festa no domingo), quantos anos o Leo faz (twelve) e o que vai ter (music, games, a big cake). Vocabulário: invitation, Can you come?, Sure!, music, game, fun, datas com on, números de ordem, dias da semana."},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"Can you ___? Sure!", pt:"Você pode vir? Claro!", resposta:"come",
+  opcoes:["come","fun","game"], explicacao:"Can you come? = Você pode vir?"},
+ {frase:"Sorry, I ___.", pt:"Desculpa, eu não posso.", resposta:"can't",
+  opcoes:["can't","can","am"], explicacao:"can't = não posso. É o jeito educado de recusar."},
+ {frase:"The party is ___ Sunday.", pt:"A festa é no domingo.", resposta:"on",
+  opcoes:["on","in","at"], explicacao:"Dia da semana vai com on."},
+ {frase:"It's ___ invitation for you.", pt:"É um convite para você.", resposta:"an",
+  opcoes:["a","an"], explicacao:"invitation começa com som de vogal: an invitation."},
+ {frase:"We have ___ and games.", pt:"Vai ter música e brincadeiras.", resposta:"music",
+  opcoes:["music","candle","month"], explicacao:"music = música."},
+ {frase:"How ___ friends are at the party?", pt:"Quantos amigos vão estar na festa?", resposta:"many",
+  opcoes:["many","old","fun"], explicacao:"How many...? pergunta quantidade. How old...? é da idade."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"Can you come to my party", pt:"Você pode vir à minha festa?"},
+ {frase:"The party is on Sunday", pt:"A festa é no domingo."},
+ {frase:"My birthday is on April ninth", pt:"O meu aniversário é no dia 9 de abril."},
+ {frase:"We have music and games", pt:"Vai ter música e brincadeiras."}
+]},
+
+{tipo:"entrevista", titulo:"O músico da festa", perfil:"musico",
+ personagem:"Hugo, músico que toca e canta em festas de aniversário, animado e falante",
+ apresentacao:"<p>Você vai fazer uma festa de aniversário e contratou o Hugo, que toca e canta em festas. Ele ligou para acertar os detalhes, mas <b>só fala inglês</b>. Entenda o que ele pergunta e responda.</p>",
+ quer:["quantos anos ela vai fazer","a data do aniversário (dia e mês)","em que dia da semana é a festa","quantos amigos vão","a cor favorita dela (para a decoração)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I'm</span> … · <span class=\"lacuna\">My birthday is on</span> … · <span class=\"lacuna\">The party is on</span> … · <span class=\"lacuna\">Twenty</span> … <span class=\"lacuna\">friends</span></p>",
+ instrucaoIA:"Ela sabe: números até 100, números de ordem (first, second, third... twelfth, twentieth, twenty-first...), meses, dias da semana, on + dia ou data, in + mês, How old are you? I'm ..., When is your birthday? It's on ..., How many...?, cores, party, cake, candle, present, invitation, music, game, dance, fun, Can you come?, Sure!, Sorry, I can't., Wait a minute, Let me think, Sorry? Again, please. Ainda não sabe horas. Hugo pergunta uma coisa por vez, em frases de 3 a 6 palavras, e se ela não entender reformula (How old? Eleven? Twelve?). Ele tem uma guitarra vermelha e adora festas."},
+
+{tipo:"missao", titulo:"Missão da semana: o convite para a Emma", cena:"convite",
+ cenario:"<p>O seu aniversário está chegando e você vai dar uma <b>festa</b>! Você encontra a Emma na saída da escola e quer convidá-la. Ela <b>só entende inglês</b>.</p>",
+ personagem:"Emma, a amiga de Nova York, animada e curiosa",
+ objetivos:["convidar a Emma para a sua festa de aniversário","dizer quantos anos você vai fazer","dizer o dia da semana e a data da festa","perguntar se ela pode ir (Can you come?)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I have an</span> … · <span class=\"lacuna\">I'm twelve on</span> … · <span class=\"lacuna\">The party is on</span> … · <span class=\"lacuna\">Can you</span> …?</p>",
+ instrucaoIA:"Ela sabe: invitation, party, birthday, Happy birthday!, cake, candle, present, music, game, dance, fun, Can you come?, Sure!, Sorry, I can't., How old are you? I'm ..., When is your birthday? It's on ..., números até 100, números de ordem, meses, dias da semana, on + dia ou data, in + mês, Wait a minute, Let me think, Just a second. Ainda não sabe horas: não pergunte What time. Emma é de New York, fica muito feliz com o convite, pergunta How old are you? e When is it? se ela não disser, pergunta se tem bolo ou música (Do you have a cake? Do you have music?) e no fim diz Sure! I can come! Frases de 3 a 6 palavras."},
+
+{tipo:"escrita", titulo:"Hora de escrever: como foi a missão", id:"1",
+ instrucao:"Conte em <b>4 ou 5 frases</b> como foi o convite para a Emma: o que você disse e o que ela respondeu.",
+ dica:"<ul><li>a sua idade no aniversário</li><li>o dia da semana e a data da festa</li><li>o que vai ter na festa (duas coisas)</li><li>a resposta da Emma</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I'm <span class=\"lacuna\">?</span> on <span class=\"lacuna\">?</span>. · My party is on <span class=\"lacuna\">?</span>, <span class=\"lacuna\">?</span>. · We have <span class=\"lacuna\">?</span> and <span class=\"lacuna\">?</span>. · Emma says: <span class=\"lacuna\">?</span></p>",
+ gabarito:"4 ou 5 frases: a idade que ela vai fazer (I'm twelve on ...), o dia da semana e a data da festa com on e número de ordem (My party is on Saturday, May 20th), duas coisas da festa (music, games, a big cake, candles) e a resposta da Emma (Emma says: Sure! / Emma is happy).",
+ instrucaoIA:"Ela devia contar em 4 ou 5 frases como foi a missão de convidar a Emma: idade, dia e data da festa, o que vai ter e a resposta da Emma. Vocabulário da semana: números até 100, números de ordem, meses, dias da semana, on + dia/data, in + mês, invitation, party, cake, candle, present, music, game, dance, fun, Can you come?, Sure!, Sorry, I can't. Confira on/in, a data (May twentieth ou May 20th) e a idade com am/is."},
+
+{tipo:"fala", titulo:"Hora de falar: aquecimento para o convite",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois a IA vai fazer perguntas sobre a sua festa.",
+ foco:"a <b>sílaba forte</b> dos números: <b>TWEN</b>ty (20) e <b>FOR</b>ty (40) com força no começo; twel<b>FTH</b> e fif<b>TH</b> terminam soprando, com a língua entre os dentes.",
+ frases:[
+  {en:"I have an invitation for you.", pt:"Eu tenho um convite para você."},
+  {en:"I'm twelve on Saturday.", pt:"Eu faço doze anos no sábado."},
+  {en:"The party is on Sunday, April ninth.", pt:"A festa é no domingo, dia 9 de abril."},
+  {en:"Can you come? Sure!", pt:"Você pode vir? Claro!"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português (sílaba forte em TWENty, FORty; o TH no fim de ninth, fifth). Depois faça 4 a 6 perguntas em inglês sobre uma festa de aniversário dela (pode ser inventada), uma de cada vez, e espere ela responder falando: How old are you on your birthday? · When is your birthday? · What day is the party? · How many friends can come? · Do you have music at the party? · Can I come? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil", itens:[
+ {pistas:["It is two days.","Saturday is in it.","No school!"],
+  resposta:"weekend", pt:"fim de semana", dica:"(uma palavra)"},
+ {pistas:["It is for a party.","It says the day and the month.","Can you come?"],
+  resposta:"invitation", pt:"convite", dica:"(uma palavra)"},
+ {pistas:["It is a month.","It is the second month."],
+  resposta:"February", pt:"fevereiro", dica:"(um mês)"},
+ {pistas:["It is a number.","It is not thirty.","It is ten and three."],
+  resposta:"thirteen", pt:"treze", dica:"(um número)"}
+]}
+
+]});
+</script>
+</body>
+</html>

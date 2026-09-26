@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 4 · Dia 1</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:4,
+dia:1,
+titulo:"How old are you?",
+subtitulo:"Os números até 100, a idade e a festa de aniversário",
+objetivos:[
+  "Contar de 20 até 100 em inglês",
+  "Perguntar e dizer a idade: How old are you? I'm eleven.",
+  "Falar da festa de aniversário: bolo, velas e presente"
+],
+blocos:[
+
+{tipo:"nota", titulo:"💡 Quantos anos você tem?",
+ html:"<p>Esta semana é sobre <b>idade, números grandes e aniversários</b>. Comece pela pergunta mais famosa:</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>How old are you?</code></td><td>Quantos anos você tem?</td></tr>"+
+ "<tr><td><code>I'm eleven.</code></td><td>Eu tenho onze anos.</td></tr>"+
+ "<tr><td><code>I'm eleven years old.</code></td><td>Eu tenho onze anos. (mais completo)</td></tr></table>"+
+ "<p>Repare: em inglês ninguém <b>tem</b> idade, a pessoa <b>é</b> a idade. Por isso é <code>I'm eleven</code> e nunca <i>I have eleven</i>.</p>"+
+ "<p>E os números depois do 20 são fáceis: a dezena, um tracinho e o número pequeno.</p>"+
+ "<table><tr><th>Número</th><th>Inglês</th></tr>"+
+ "<tr><td>21</td><td><code>twenty-one</code></td></tr>"+
+ "<tr><td>35</td><td><code>thirty-five</code></td></tr>"+
+ "<tr><td>42</td><td><code>forty-two</code></td></tr>"+
+ "<tr><td>99</td><td><code>ninety-nine</code></td></tr></table>"+
+ "<p>Cuidado com o <code>forty</code>: é sem U (four, mas forty). 💜</p>"},
+
+{tipo:"vocab", titulo:"Números grandes e aniversário", itens:[
+ {en:"thirty", pt:"trinta", ipa:"/THÂR-ti/", emoji:"3️⃣"},
+ {en:"forty", pt:"quarenta", ipa:"/FÓR-ti/", emoji:"4️⃣"},
+ {en:"fifty", pt:"cinquenta", ipa:"/FÍF-ti/", emoji:"5️⃣"},
+ {en:"sixty", pt:"sessenta", ipa:"/SÍKS-ti/", emoji:"6️⃣"},
+ {en:"seventy", pt:"setenta", ipa:"/SÉ-ven-ti/", emoji:"7️⃣"},
+ {en:"eighty", pt:"oitenta", ipa:"/ÊI-ti/", emoji:"8️⃣"},
+ {en:"ninety", pt:"noventa", ipa:"/NÁIN-ti/", emoji:"9️⃣"},
+ {en:"one hundred", pt:"cem", ipa:"/UÂN RÂN-dred/", emoji:"💯"},
+ {en:"How old are you?", pt:"Quantos anos você tem?", ipa:"/HAU ÔULD ar iu/", emoji:"❓"},
+ {en:"I'm eleven years old.", pt:"Eu tenho onze anos.", ipa:"/aim i-LÉ-ven IRZ ôuld/", emoji:"🙋"},
+ {en:"birthday", pt:"aniversário", ipa:"/BÂRTH-dei/", emoji:"🎉"},
+ {en:"Happy birthday!", pt:"Feliz aniversário!", ipa:"/HÉ-pi BÂRTH-dei/", emoji:"🥳"},
+ {en:"party", pt:"festa", ipa:"/PÁR-ti/", emoji:"🎊"},
+ {en:"cake", pt:"bolo", ipa:"/KÊIK/", emoji:"🎂"},
+ {en:"candle", pt:"vela", ipa:"/KÉN-dol/", emoji:"🕯️"},
+ {en:"present", pt:"presente", ipa:"/PRÉ-zent/", emoji:"🎁"}
+]},
+
+{tipo:"vocab", titulo:"Frases para conversar (semana 4)", itens:[
+ {en:"Wait a minute.", pt:"Espera um minuto.", ipa:"/UÊIT a MÍ-nit/", emoji:"✋"},
+ {en:"Let me think.", pt:"Deixa eu pensar.", ipa:"/LÉT mi THÍNK/", emoji:"🤔"},
+ {en:"Just a second.", pt:"Só um segundo.", ipa:"/DJÂST a SÉ-kond/", emoji:"⏱️"}
+]},
+
+{tipo:"dialogo", titulo:"O aniversário do avô do Leo", escuta:false, linhas:[
+ {quem:"Leo", en:"Look, Anna! It's my grandpa's birthday today.", pt:"Olha, Anna! Hoje é o aniversário do meu avô."},
+ {quem:"Anna", en:"Happy birthday! How old are you?", pt:"Feliz aniversário! Quantos anos o senhor tem?"},
+ {quem:"Grandpa", en:"Let me think... I'm seventy-five years old!", pt:"Deixa eu pensar... Eu tenho setenta e cinco anos!"},
+ {quem:"Anna", en:"Seventy-five? Wow! It's a big cake.", pt:"Setenta e cinco? Uau! É um bolo grande."},
+ {quem:"Grandpa", en:"Yes! And seventy-five candles!", pt:"Sim! E setenta e cinco velas!"},
+ {quem:"Leo", en:"No, Grandpa! Look: two candles, a seven and a five.", pt:"Não, vovô! Olha: duas velas, um sete e um cinco."},
+ {quem:"Anna", en:"Here you are, Grandpa. It's a present for you.", pt:"Aqui está, vovô. É um presente para o senhor."},
+ {quem:"Grandpa", en:"Wait a minute... A book! Thank you, Anna!", pt:"Espera um minuto... Um livro! Obrigado, Anna!"}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções (aniversário e escola)", pares:[
+ {en:"thirty", pt:"trinta"},
+ {en:"fifty", pt:"cinquenta"},
+ {en:"ninety", pt:"noventa"},
+ {en:"birthday", pt:"aniversário"},
+ {en:"candle", pt:"vela"},
+ {en:"yellow", pt:"amarelo"},
+ {en:"scissors", pt:"tesoura"},
+ {en:"pencil case", pt:"estojo"},
+ {en:"empty", pt:"vazio"},
+ {en:"window", pt:"janela"}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"Que número é forty?", opcoes:["14","40","4"], correta:1,
+  explicacao:"forty = 40. O -ty no fim quer dizer dezena (trinta, quarenta...). O 14 é fourteen, com -teen."},
+ {pergunta:"Como se diz 70 em inglês?", opcoes:["seventeen","seventy","seven"], correta:1,
+  explicacao:"seventy = 70. seventeen é 17 e seven é 7."},
+ {pergunta:"How old are you? Qual resposta está certa?", opcoes:["I have eleven years.","I'm eleven years old.","I eleven old."], correta:1,
+  explicacao:"Em inglês a idade vai com o verbo TO BE: I'm eleven years old. Nunca I have."},
+ {pergunta:"Ouça e escolha o número.", audio:"sixty-three", opcoes:["63","73","36"], correta:0,
+  explicacao:"sixty-three: sixty (60) + three (3) = 63."},
+ {pergunta:"Como se diz vela em inglês? 🕯️", opcoes:["candle","cake","present"], correta:0,
+  explicacao:"candle é a vela que vai em cima do bolo (cake)."}
+]},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"How ___ are you? I'm eleven.", pt:"Quantos anos você tem? Eu tenho onze.", resposta:"old",
+  opcoes:["old","many","new"], explicacao:"How old...? é a pergunta da idade. How many...? pergunta quantidade de coisas."},
+ {frase:"I'm eleven ___ old.", pt:"Eu tenho onze anos.", resposta:"years",
+  opcoes:["years","year","days"], explicacao:"Onze anos: mais de um ano, então years, com -s."},
+ {frase:"Happy ___, Grandpa!", pt:"Feliz aniversário, vovô!", resposta:"birthday",
+  opcoes:["birthday","morning","party"], explicacao:"Happy birthday! é o feliz aniversário."},
+ {frase:"50 + 20 = ___", pt:"cinquenta mais vinte é setenta", resposta:"seventy",
+  opcoes:["seventy","seventeen","sixty"], explicacao:"70 termina em -ty: seventy. seventeen (-teen) é 17."},
+ {frase:"Wait a ___! Let me think.", pt:"Espera um minuto! Deixa eu pensar.", resposta:"minute",
+  opcoes:["minute","photo","question"], explicacao:"Wait a minute = espera um minuto. Serve para ganhar tempo numa conversa."},
+ {frase:"It's ___ orange cake.", pt:"É um bolo laranja.", resposta:"an",
+  opcoes:["a","an"], explicacao:"Lembra da semana passada? orange começa com som de vogal, então an."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"forty", pt:"quarenta", dica:"(um número, sem U)"},
+ {en:"ninety", pt:"noventa", dica:"(um número)"},
+ {en:"birthday", pt:"aniversário", dica:"(uma palavra)"},
+ {en:"a big cake", pt:"um bolo grande", dica:"(três palavras)"},
+ {en:"Happy birthday", pt:"Feliz aniversário", dica:"(duas palavras)"}
+]},
+
+{tipo:"adivinha", titulo:"O que é? Escreva a resposta", itens:[
+ {pistas:["It is at a birthday party.","The candles are on it.","It is big and round."],
+  resposta:"cake", pt:"bolo", dica:"(uma coisa da festa)"},
+ {pistas:["It is on a birthday cake.","It is little and long.","Ten years old? Ten of them!"],
+  resposta:"candle", pt:"vela", dica:"(uma coisa da festa)"},
+ {pistas:["It is in a pretty box.","It is for you on your birthday."],
+  resposta:"present", pt:"presente", dica:"(uma coisa da festa)"},
+ {pistas:["It is a number.","It is ninety and ten.","One, zero, zero."],
+  resposta:"one hundred", aceita:["hundred","a hundred"], pt:"cem", dica:"(um número, duas palavras)"}
+]},
+
+{tipo:"explorar", titulo:"Quem é o Oscar?", perfil:"cozinheiro", voz:"m",
+ personagem:"Oscar, confeiteiro que faz bolos de aniversário, alegre e brincalhão",
+ apresentacao:"<p>Você entrou numa confeitaria cheia de bolos de aniversário. O dono, de avental e chapéu branco, sorri para você. Ele <b>só fala inglês</b>. Descubra quem ele é!</p>",
+ segredos:["ele tem 67 anos","hoje tem 45 bolos na loja","o maior bolo dele teve 100 velas: era para uma senhora de 100 anos","ele tem dois gatos brancos que dormem na loja","surpresa: a cor favorita dele é roxo, e o bolo favorito dele é roxo também"],
+ pistas:["a idade dele","um número: o que tem na vitrine hoje","surpresa: o recorde de velas","um animal de estimação","qual é a cor favorita dele"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">How old are</span> …? · <span class=\"lacuna\">How many</span> …? · <span class=\"lacuna\">Do you have</span> …?</p>",
+ instrucaoIA:"Ela sabe: How old are you? What's your name? What's your favorite color? Do you have a pet? How many...? números de 1 a 100 (twenty-one, thirty, forty, fifty... one hundred), birthday, Happy birthday!, party, cake, candle, present, cores, família, animais (dog, cat, bird, fish), I have, this is / these are, big, little, old, new. Frases para conversar: Wait a minute. Let me think. Just a second. Sorry, I don't understand. Can you repeat, please? Oscar responde com frases de 3 a 6 palavras, diz os números por extenso e devagar, deixa ganchos (My biggest cake? Wow!) e devolve perguntas fáceis (How old are you?). Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: adivinhe a idade", cena:"jogo",
+ cenario:"<p>O Leo trouxe o álbum de fotos da família e inventou um jogo: ele mostra uma foto e você <b>adivinha a idade</b> da pessoa. Ele diz se você acertou. O Leo <b>só entende inglês</b>.</p>",
+ personagem:"Leo, colega de turma, brincalhão",
+ objetivos:["perguntar a idade de duas pessoas das fotos (How old is he? / How old is she?)","chutar a idade de cada uma com um número entre 21 e 100"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">How old is</span> …? · <span class=\"lacuna\">Is she</span> … ? · <span class=\"lacuna\">Let me</span> …</p>",
+ instrucaoIA:"Ela sabe: números de 1 a 100, How old are you? / How old is he? / How old is she?, I'm ... years old, família (mother, father, grandmother, grandfather, grandma, grandpa, aunt, uncle, cousin, brother, sister, baby), Is he...? Yes / No, Wait a minute, Let me think, Just a second. Leo mostra uma foto por vez (This is my uncle!), deixa ela chutar a idade e responde Yes! ou No! com uma pista curta (No! Fifty!). Frases de 3 a 6 palavras. Idades: o avô tem seventy-five, a tia tem thirty-two, o tio tem forty-eight, a prima bebê tem one."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre a idade das pessoas da sua família. Escreva os números <b>por extenso</b>, em inglês.",
+ dica:"<ul><li>uma frase com a sua idade</li><li>a idade de pelo menos três pessoas da família</li><li>pelo menos um número acima de 20, escrito com letras</li><li>se não souber a idade de alguém, chute! 😄</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I'm <span class=\"lacuna\">?</span> years old. · My <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span>. · My <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span> years old.</p>",
+ gabarito:"4 ou 5 frases: a idade dela (I'm eleven years old) e a idade de pelo menos três pessoas da família (My mother is forty-one.), com números por extenso, pelo menos um acima de 20 escrito certo (thirty, forty sem u, fifty...). Idade sempre com is/am, nunca com have.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre a idade das pessoas da família. Vocabulário da aula: números de 21 a 100 (twenty-one, thirty, forty, fifty, sixty, seventy, eighty, ninety, one hundred), How old are you?, I'm ... years old, família (mother, father, grandma, grandpa, aunt, uncle, cousin, brother, sister). Confira a grafia dos números (forty sem u, eighty, ninety com e) e se a idade vem com is/am, e não com have."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ foco:"a <b>sílaba forte</b> separa os números: thir<b>TEEN</b> (13) tem a força no fim, <b>THIR</b>ty (30) tem a força no começo. Fale os pares seguidos: <i>fourteen / forty</i>, <i>fifteen / fifty</i>.",
+ frases:[
+  {en:"How old are you?", pt:"Quantos anos você tem?"},
+  {en:"I'm eleven years old.", pt:"Eu tenho onze anos."},
+  {en:"Thirteen, thirty.", pt:"Treze, trinta."},
+  {en:"Fourteen, forty.", pt:"Quatorze, quarenta."},
+  {en:"Fifteen, fifty.", pt:"Quinze, cinquenta."},
+  {en:"Happy birthday!", pt:"Feliz aniversário!"},
+  {en:"Wait a minute. Let me think.", pt:"Espera um minuto. Deixa eu pensar."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção à sílaba forte: thirTEEN / THIRty, fourTEEN / FORty, fifTEEN / FIFty. Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando: How old are you? · How old is your mother? · How old is your grandma? · How many candles are on your birthday cake? · Is fifty a big number? Se ela precisar de tempo, incentive a usar Let me think. Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"My grandpa is seventy-five years old", pt:"O meu avô tem setenta e cinco anos."},
+ {frase:"The big cake has twenty red candles", pt:"O bolo grande tem vinte velas vermelhas."},
+ {frase:"Happy birthday to my little sister", pt:"Feliz aniversário para a minha irmãzinha."},
+ {frase:"It's a present for my aunt", pt:"É um presente para a minha tia."}
+]}
+
+]});
+</script>
+</body>
+</html>

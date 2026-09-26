@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 4 · Dia 5</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:4,
+dia:5,
+titulo:"Revisão + projeto: My birthday",
+subtitulo:"Junte a semana toda e apresente o seu aniversário",
+objetivos:[
+  "Revisar números, idade, dias, meses e datas",
+  "Entender de ouvido uma história com datas",
+  "Apresentar o seu aniversário e a sua família em inglês"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🎉 Você chegou na sexta!",
+ html:"<p>Esta semana você aprendeu a contar até <b>cem</b>, a dizer a <b>idade</b> (com <code>am</code> / <code>is</code>, nunca com have), os <b>dias da semana</b>, os <b>meses</b> e as <b>datas</b>: <code>on May 5th</code>.</p>"+
+ "<p>Hoje é dia de juntar tudo: uma história de um presente diferente, uma revisão geral e o <b>projeto da semana</b>. Vamos! 💪</p>"},
+
+{tipo:"historia", titulo:"Ouça: o presente da Amy", cena:"desafio", paragrafos:[
+ {en:"It's Monday. Leo's little sister, Amy, is seven.", pt:"É segunda-feira. A irmãzinha do Leo, a Amy, tem sete anos."},
+ {en:"Grandma's birthday is on Saturday, June 1st. She is seventy!", pt:"O aniversário da vovó é no sábado, dia 1º de junho. Ela faz setenta anos!"},
+ {en:"Amy has a present for Grandma: the twelve months in English!", pt:"A Amy tem um presente para a vovó: os doze meses em inglês!"},
+ {en:"On Tuesday, Amy says: “January, February, May...” “No, Amy!” says Leo. “March is the third month.”", pt:"Na terça, a Amy diz: “Janeiro, fevereiro, maio...” “Não, Amy!”, diz o Leo. “Março é o terceiro mês.”"},
+ {en:"On Wednesday: “June, July, October...” “Wait a minute,” says Leo. “August is the eighth month.”", pt:"Na quarta: “Junho, julho, outubro...” “Espera um minuto”, diz o Leo. “Agosto é o oitavo mês.”"},
+ {en:"On Thursday, Amy is sad. “Twelve months? It's a big number!”", pt:"Na quinta, a Amy está triste. “Doze meses? É um número grande!”"},
+ {en:"Leo says: “Let me think... The months with music!” Now Amy says the months and she can dance, too.", pt:"O Leo diz: “Deixa eu pensar... Os meses com música!” Agora a Amy fala os meses e ainda pode dançar."},
+ {en:"On Saturday, Amy says the twelve months for Grandma: January to December! Grandma is happy: “It's a great present!”", pt:"No sábado, a Amy fala os doze meses para a vovó: de janeiro a dezembro! A vovó fica feliz: “É um presente ótimo!”"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"How old is Amy?", opcoes:["Seven","Seventy","Eleven"], correta:0,
+  explicacao:"Leo's little sister, Amy, is seven. Seventy (70) é a idade da vovó!"},
+ {pergunta:"When is Grandma's birthday?", opcoes:["On Saturday, June 1st","On Sunday, June 1st","On Saturday, July 1st"], correta:0,
+  explicacao:"Grandma's birthday is on Saturday, June 1st — June first, dia 1º de junho."},
+ {pergunta:"What is Amy's present for Grandma?", opcoes:["A big cake","The twelve months in English","A pink book"], correta:1,
+  explicacao:"O presente não é uma coisa: é a Amy falando os doze meses em inglês."},
+ {pergunta:"Who says “March is the third month”?", opcoes:["Amy","Grandma","Leo"], correta:2,
+  explicacao:"A Amy pula março, e o Leo corrige: March is the third month."},
+ {pergunta:"What day is Amy sad?", opcoes:["On Monday","On Thursday","On Saturday"], correta:1,
+  explicacao:"On Thursday, Amy is sad. Doze meses parecem muita coisa para ela."},
+ {pergunta:"Is Grandma happy with the present?", opcoes:["Yes! It's a great present.","No, she is sad.","No, it's Monday."], correta:0,
+  explicacao:"No fim, a vovó diz: It's a great present! A música ajudou a Amy a lembrar."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases da história", itens:[
+ {en:"She is seventy", pt:"Ela faz setenta anos.", dica:"(três palavras)"},
+ {en:"March is the third month", pt:"Março é o terceiro mês.", dica:"(cinco palavras)"},
+ {en:"It's a big number", pt:"É um número grande.", dica:"(it's + três palavras)"},
+ {en:"It's a great present", pt:"É um presente ótimo.", dica:"(it's + três palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. When is Grandma's birthday? (Quando é o aniversário da vovó?)<br>2. What is Amy's present? (Qual é o presente da Amy?)<br>3. What does Leo say about August? (O que o Leo diz sobre agosto?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1, diga o dia da semana <b>e</b> a data</li><li>na 3, use um número de ordem</li></ul>",
+ gabarito:"1. Grandma's birthday is on Saturday, June 1st (June first). 2. Amy's present is the twelve months in English. 3. August is the eighth month.",
+ instrucaoIA:"Ela ouviu a história da Amy, que aprende os doze meses em inglês como presente para a avó, e devia responder por escrito: quando é o aniversário da avó (on Saturday, June 1st), qual é o presente (os doze meses em inglês) e o que o Leo diz sobre agosto (August is the eighth month). Vocabulário: datas com on, números de ordem, dias da semana, meses, present, possessivo com 's. Aceite respostas simples na 2 (The months in English)."},
+
+{tipo:"completar", titulo:"Revisão da semana", ajuda:"Oito frases misturando tudo o que você viu.", itens:[
+ {frase:"How ___ is your grandpa? He's seventy.", pt:"Quantos anos o seu avô tem? Ele tem setenta.", resposta:"old",
+  opcoes:["old","many","day"], explicacao:"How old...? é a pergunta da idade."},
+ {frase:"My grandma ___ eighty.", pt:"A minha avó tem oitenta anos.", resposta:"is",
+  opcoes:["is","has","have"], explicacao:"Idade vai com is, nunca com has."},
+ {frase:"Saturday and Sunday: the ___!", pt:"Sábado e domingo: o fim de semana!", resposta:"weekend",
+  opcoes:["weekend","month","birthday"], explicacao:"weekend = fim de semana."},
+ {frase:"My birthday is ___ June 3rd.", pt:"O meu aniversário é no dia 3 de junho.", resposta:"on",
+  opcoes:["on","in","at"], explicacao:"Data com dia vai com on."},
+ {frase:"My party is ___ July.", pt:"A minha festa é em julho.", resposta:"in",
+  opcoes:["in","on","at"], explicacao:"Só o mês, sem dia: in."},
+ {frase:"30 = ___", pt:"trinta", resposta:"thirty",
+  opcoes:["thirty","thirteen","third"], explicacao:"thirty é 30 (força no começo: THIRty). thirteen é 13 e third é terceiro."},
+ {frase:"February is the ___ month.", pt:"Fevereiro é o segundo mês.", resposta:"second",
+  opcoes:["second","two","twelfth"], explicacao:"Na ordem é second, não two."},
+ {frase:"Can you come? ___! See you on Saturday.", pt:"Você pode vir? Claro! Até sábado.", resposta:"Sure",
+  opcoes:["Sure","Sorry","Wait"], explicacao:"Sure! = Claro! Sorry, I can't é o não."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções", pares:[
+ {en:"Tuesday", pt:"terça-feira"},
+ {en:"Thursday", pt:"quinta-feira"},
+ {en:"August", pt:"agosto"},
+ {en:"November", pt:"novembro"},
+ {en:"eighty", pt:"oitenta"},
+ {en:"third", pt:"terceiro"},
+ {en:"invitation", pt:"convite"},
+ {en:"candle", pt:"vela"}
+]},
+
+{tipo:"explorar", titulo:"Quem é a Nora?", perfil:"astronauta", voz:"f",
+ personagem:"Nora, astronauta que treina para ir à Lua, calma e curiosa",
+ apresentacao:"<p>A escola recebeu uma visita especial: uma mulher de macacão azul, com uma bandeira no braço. Ela <b>só fala inglês</b>. Pergunte o que quiser e descubra quem ela é!</p>",
+ segredos:["ela tem 34 anos","o aniversário dela é no dia 29 de fevereiro, que só existe de 4 em 4 anos","ela treina seis dias por semana; só o domingo é livre","surpresa: ela tem uma irmã gêmea, que é professora de música","o mês favorito dela é julho: em julho ela vai ao espaço pela primeira vez"],
+ pistas:["a idade dela","surpresa: a data do aniversário","como é a semana dela","surpresa: alguém da família","o mês favorito dela"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">How old are</span> …? · <span class=\"lacuna\">When is your</span> …? · <span class=\"lacuna\">Do you have a</span> …?</p>",
+ instrucaoIA:"Ela sabe: How old are you? When is your birthday? What's your favorite month/day? Do you have a brother or a sister? How many...? What day is it today? números até 100, números de ordem (first... tenth, twelfth, twentieth, twenty-ninth), meses, dias da semana, weekend, on + dia ou data, in + mês, cores, família (sister, brother, mother, father), music, teacher, Para a irmã gêmea, diga só: My sister is thirty-four, too! Her birthday is February twenty-ninth, too! Wait a minute, Let me think, Just a second, Sorry, I don't understand, Can you repeat, please? Nora responde com frases de 3 a 6 palavras, deixa ganchos (My birthday is very special!) e devolve perguntas fáceis. Para explicar o 29 de fevereiro, diga só: February twenty-ninth! Only every four years! e deixe o resto para o fechamento em português. Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: o presente do Max", cena:"presente",
+ cenario:"<p>O Max, seu primo, vai fazer aniversário. Você está passeando em Nova York e entra numa <b>loja de presentes</b>. O dono da loja quer ajudar e até escrever o cartão, mas <b>só entende inglês</b>.</p>",
+ personagem:"Mr. Ray, dono da loja de presentes, simpático e falante",
+ objetivos:["dizer para quem é o presente e quantos anos a pessoa vai fazer","dizer a data do aniversário (para o cartão)","escolher o presente dizendo a cor"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">It's for my</span> … · <span class=\"lacuna\">He is</span> … · <span class=\"lacuna\">His birthday is on</span> … · <span class=\"lacuna\">The</span> … <span class=\"lacuna\">one, please</span></p>",
+ instrucaoIA:"Ela sabe: família (cousin, brother, sister, mom, dad...), How old is he? He's ..., When is his birthday? It's on ..., números até 100, números de ordem, meses, dias da semana, on + data, in + mês, cores, adjetivo antes do substantivo (a blue book), material escolar, present, birthday, party, game, music, please, thank you, Here you are. Ainda não sabe preços: não fale de dinheiro. Mr. Ray pergunta Who is it for? How old is he? When is his birthday?, mostra duas opções (a red game or a blue book?) e escreve o cartão com a data. Frases de 3 a 6 palavras."},
+
+{tipo:"escrita", titulo:"Projeto da semana: My birthday", id:"1",
+ instrucao:"O projeto de hoje: escreva <b>4 ou 5 frases</b> apresentando o seu aniversário e o de alguém da família, como se fosse a página de um calendário de aniversários da turma. Depois leia em voz alta no bloco de baixo.",
+ dica:"<ul><li>a sua idade</li><li>a data do seu aniversário, com <b>on</b> e o número de ordem</li><li>o aniversário de uma pessoa da família: a data <b>e</b> a idade dela</li><li>o seu dia favorito da semana</li><li>como é a sua festa dos sonhos (bolo, velas, música, jogos)</li></ul>Sem ajuda hoje: você já sabe tudo isso. 💜",
+ gabarito:"4 ou 5 frases: a idade dela (I'm eleven), a data do aniversário com on + mês + número de ordem (My birthday is on ... ), o aniversário de alguém da família com data e idade (My mom's birthday is on ... She is forty.), o dia favorito da semana e uma frase sobre a festa (cake, candles, music, games, friends). Idade com am/is, on com data, in só com mês, dias e meses com letra maiúscula.",
+ instrucaoIA:"É o projeto da semana 4: ela devia escrever 4 ou 5 frases sobre o aniversário dela e o de alguém da família. Vocabulário da semana: números até 100 (twenty-one... one hundred), números de ordem (first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, twelfth, twentieth), dias da semana, weekend, meses, month, How old are you?, When is your birthday?, on + data ou dia, in + mês, idade com am/is, birthday, party, cake, candle, present, invitation, music, game, dance, fun. Elogie primeiro, depois corrija no máximo 3 coisas e mostre uma frase que ela poderia ter usado."},
+
+{tipo:"fala", titulo:"Hora de falar: apresente o seu aniversário",
+ instrucao:"Aqueça a boca com as frases abaixo e depois apresente o seu projeto em voz alta para a IA.",
+ foco:"a <b>sílaba forte</b>: thir<b>TEEN</b> / <b>THIR</b>ty, four<b>TEEN</b> / <b>FOR</b>ty. Se você errar a força, a pessoa entende outro número!",
+ frases:[
+  {en:"I'm eleven years old.", pt:"Eu tenho onze anos."},
+  {en:"My birthday is on May fifth.", pt:"O meu aniversário é no dia 5 de maio."},
+  {en:"My grandpa is seventy-five.", pt:"O meu avô tem setenta e cinco anos."},
+  {en:"Thirteen, thirty. Fourteen, forty.", pt:"Treze, trinta. Quatorze, quarenta."},
+  {en:"My favorite day is Saturday.", pt:"O meu dia favorito é sábado."},
+  {en:"Can you come to my party?", pt:"Você pode vir à minha festa?"}
+ ],
+ instrucaoIA:"Primeiro o aquecimento: as frases acima, com atenção à sílaba forte (thirTEEN / THIRty, fourTEEN / FORty). Depois peça para ela apresentar o projeto dela em voz alta. Em seguida faça 4 a 6 perguntas em inglês, uma de cada vez, esperando a resposta falada: How old are you? · When is your birthday? · When is your mother's birthday? · How old is your grandma? · What's your favorite month? · What day is it today? Corrija em português, com carinho, e feche elogiando a semana inteira."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"My cousin is twelve on May twentieth", pt:"O meu primo faz doze anos no dia 20 de maio."},
+ {frase:"My grandma is seventy on Saturday", pt:"A minha avó faz setenta anos no sábado."},
+ {frase:"My sister's birthday is in January", pt:"O aniversário da minha irmã é em janeiro."},
+ {frase:"Her birthday party is on June first", pt:"A festa de aniversário dela é no dia 1º de junho."}
+]},
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil: quem é?", itens:[
+ {pistas:["She is in my family.","She is my mother's mother.","She is seventy or eighty!"],
+  resposta:"grandmother", aceita:["grandma"], pt:"avó", dica:"(alguém da família)"},
+ {pistas:["It is a month.","It is not the first month.","It is the tenth month."],
+  resposta:"October", pt:"outubro", dica:"(um mês)"},
+ {pistas:["It is a day.","Thursday, ... , Saturday.","It is not the weekend."],
+  resposta:"Friday", pt:"sexta-feira", dica:"(um dia da semana)"}
+]}
+
+]});
+</script>
+</body>
+</html>
