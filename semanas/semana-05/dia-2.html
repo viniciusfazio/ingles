@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 5 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:5,
+dia:2,
+titulo:"What time is it?",
+subtitulo:"Dizer as horas e contar a que horas você faz as coisas",
+objetivos:[
+  "Perguntar e dizer as horas: What time is it? It's seven o'clock.",
+  "Dizer a que horas você faz algo: I get up at seven.",
+  "Usar in the morning, in the afternoon e at night"
+],
+blocos:[
+
+{tipo:"vocab", titulo:"As horas e as partes do dia", itens:[
+ {en:"What time is it?", pt:"Que horas são?", ipa:"/UÓT TÁIM iz it/", emoji:"❓"},
+ {en:"It's seven o'clock.", pt:"São sete horas. (em ponto)", ipa:"/its SÉ-ven o-KLÓK/", emoji:"🕖"},
+ {en:"o'clock", pt:"horas (em ponto)", ipa:"/o-KLÓK/", emoji:"🕐"},
+ {en:"It's seven thirty.", pt:"São sete e meia.", ipa:"/its SÉ-ven THÂR-ti/", emoji:"🕢"},
+ {en:"time", pt:"hora, tempo", ipa:"/TÁIM/", emoji:"⌛"},
+ {en:"clock", pt:"relógio (de parede ou de mesa)", ipa:"/KLÓK/", emoji:"🕰️"},
+ {en:"noon", pt:"meio-dia", ipa:"/NÚUN/", emoji:"🕛"},
+ {en:"midnight", pt:"meia-noite", ipa:"/MÍD-nait/", emoji:"🌙"},
+ {en:"early", pt:"cedo", ipa:"/ÂR-li/", emoji:"🐓"},
+ {en:"late", pt:"tarde, atrasada", ipa:"/LÊIT/", emoji:"⏳"},
+ {en:"in the morning", pt:"de manhã", ipa:"/in dhe MÓR-ning/", emoji:"🌅"},
+ {en:"in the afternoon", pt:"de tarde", ipa:"/in dhi éf-ter-NÚUN/", emoji:"☀️"},
+ {en:"in the evening", pt:"no fim da tarde, à noitinha", ipa:"/in dhi ÍV-ning/", emoji:"🌆"},
+ {en:"go home", pt:"ir para casa", ipa:"/GÔU HÔUM/", emoji:"🏠"}
+]},
+
+{tipo:"gramatica", titulo:"As horas e o at",
+ html:"<p>Para perguntar as horas: <code>What time is it?</code> A resposta começa sempre com <code>It's</code>.</p>"+
+ "<table><tr><th>Relógio</th><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td>7:00</td><td><code>It's seven o'clock.</code></td><td>São sete horas.</td></tr>"+
+ "<tr><td>7:30</td><td><code>It's seven thirty.</code></td><td>São sete e meia.</td></tr>"+
+ "<tr><td>12:00 (dia)</td><td><code>It's noon.</code></td><td>É meio-dia.</td></tr>"+
+ "<tr><td>0:00 (noite)</td><td><code>It's midnight.</code></td><td>É meia-noite.</td></tr></table>"+
+ "<p><code>o'clock</code> só vai na hora <b>cheia</b>. Com meia hora, você fala os dois números: <code>seven thirty</code> (sete e trinta).</p>"+
+ "<p>Para dizer <b>a que horas</b> você faz algo, use <code>at</code> antes da hora — é o nosso <b>às</b>:</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I get up at seven.</code></td><td>Eu me levanto às sete.</td></tr>"+
+ "<tr><td><code>I have lunch at noon.</code></td><td>Eu almoço ao meio-dia.</td></tr></table>"+
+ "<p>E as partes do dia: <code>in the morning</code>, <code>in the afternoon</code>, <code>in the evening</code>… mas a noite é diferente: <code>at night</code>. Por quê? É só o jeito do inglês — decore como uma dupla. 💜</p>",
+ exemplos:[
+  {en:"What time is it? It's eight o'clock.", pt:"Que horas são? São oito horas."},
+  {en:"It's nine thirty.", pt:"São nove e meia."},
+  {en:"I go to school at seven thirty.", pt:"Eu vou para a escola às sete e meia."},
+  {en:"I go home at noon.", pt:"Eu vou para casa ao meio-dia."},
+  {en:"I play in the afternoon.", pt:"Eu brinco de tarde."},
+  {en:"I read at night.", pt:"Eu leio de noite."}
+ ]},
+
+{tipo:"dialogo", titulo:"Ouça: acorda, Leo!", escuta:true, linhas:[
+ {quem:"Mom", en:"Leo! Wake up! It's seven thirty!", pt:"Leo! Acorda! São sete e meia!"},
+ {quem:"Leo", en:"Seven thirty? Oh no! I'm late!", pt:"Sete e meia? Ah, não! Estou atrasado!"},
+ {quem:"Mom", en:"School is at eight o'clock.", pt:"A escola é às oito horas."},
+ {quem:"Leo", en:"I get up, I get dressed... Where is my backpack?", pt:"Eu levanto, me visto... Cadê a minha mochila?"},
+ {quem:"Mom", en:"It's here. And your breakfast?", pt:"Está aqui. E o seu café da manhã?"},
+ {quem:"Leo", en:"No time, Mom! I have lunch at noon.", pt:"Sem tempo, mãe! Eu almoço ao meio-dia."},
+ {quem:"Mom", en:"Wait a minute... Look at the clock!", pt:"Espera um minuto... Olha o relógio!"},
+ {quem:"Leo", en:"It's six thirty! Mom!", pt:"São seis e meia! Mãe!"},
+ {quem:"Mom", en:"Oh! Sorry, Leo! It's early.", pt:"Ah! Desculpa, Leo! Está cedo."},
+ {quem:"Leo", en:"OK. Now we have breakfast!", pt:"Tá bom. Agora a gente toma café da manhã!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"Mom says: “Wake up! It's...”", opcoes:["Seven thirty","Eight o'clock","Six o'clock"], correta:0,
+  explicacao:"Ela grita: Wake up! It's seven thirty! (sete e meia)."},
+ {pergunta:"What time is school?", opcoes:["At seven thirty","At eight o'clock","At noon"], correta:1,
+  explicacao:"A mãe diz: School is at eight o'clock."},
+ {pergunta:"When is Leo's lunch?", opcoes:["At noon","At night","At eight"], correta:0,
+  explicacao:"Ele diz: I have lunch at noon. Por isso ele quer pular o café da manhã."},
+ {pergunta:"What time is it on the clock?", opcoes:["Six thirty","Seven thirty","Eight thirty"], correta:0,
+  explicacao:"Leo olha o relógio: It's six thirty! A mãe errou a hora."},
+ {pergunta:"Is Leo late for school?", opcoes:["Yes, he is.","No. It's early.","Yes, at noon."], correta:1,
+  explicacao:"São só seis e meia: It's early. Ele tem tempo!"},
+ {pergunta:"What do Leo and Mom have now?", opcoes:["Breakfast","Lunch","Dinner"], correta:0,
+  explicacao:"No fim, Leo diz: Now we have breakfast!"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases do diálogo", itens:[
+ {en:"It's seven thirty", pt:"São sete e meia.", dica:"(it's + duas palavras)"},
+ {en:"I'm late", pt:"Estou atrasado.", dica:"(I'm + uma palavra)"},
+ {en:"School is at eight o'clock", pt:"A escola é às oito horas.", dica:"(cinco palavras)"},
+ {en:"Look at the clock", pt:"Olha o relógio.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What time is school? (Que horas é a escola?)<br>2. What time is it on the clock? (Que horas o relógio mostra?)<br>3. Is Leo late? (O Leo está atrasado?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1 e na 2, use <b>o'clock</b> ou <b>thirty</b></li><li>na 3, diga sim ou não e por quê: é cedo ou tarde?</li></ul>",
+ andaime:"<p>School is at <span class=\"lacuna\">?</span>. · It's <span class=\"lacuna\">?</span>. · No, he <span class=\"lacuna\">?</span>. It's <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. School is at eight o'clock. 2. It's six thirty. 3. No, he isn't. It's early.",
+ instrucaoIA:"Ela ouviu um diálogo: a mãe acorda o Leo dizendo que são sete e meia, ele acha que está atrasado (a escola é às oito), mas o relógio mostra seis e meia e está cedo. Devia responder por escrito: a que horas é a escola (at eight o'clock), que horas o relógio mostra (six thirty) e se o Leo está atrasado (No, he isn't. It's early.). Vocabulário: What time is it?, o'clock, thirty, at + hora, early, late, clock."},
+
+{tipo:"completar", titulo:"at, in ou on?", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"I get up ___ seven o'clock.", pt:"Eu me levanto às sete horas.", resposta:"at",
+  opcoes:["at","in","on"], explicacao:"Hora do relógio vai com at: at seven."},
+ {frase:"I go to school ___ the morning.", pt:"Eu vou para a escola de manhã.", resposta:"in",
+  opcoes:["in","at","on"], explicacao:"Parte do dia vai com in: in the morning."},
+ {frase:"I have lunch ___ noon.", pt:"Eu almoço ao meio-dia.", resposta:"at",
+  opcoes:["at","in","on"], explicacao:"noon é uma hora (12:00), então at noon."},
+ {frase:"I do my homework in the ___.", pt:"Eu faço a lição de casa de tarde.", resposta:"afternoon",
+  opcoes:["afternoon","night","noon"], explicacao:"de tarde = in the afternoon. At night é de noite."},
+ {frase:"I read ___ night.", pt:"Eu leio de noite.", resposta:"at",
+  opcoes:["at","in","on"], explicacao:"A noite é a exceção: at night."},
+ {frase:"9:00 — It's nine ___.", pt:"São nove horas.", resposta:"o'clock",
+  opcoes:["o'clock","thirty","time"], explicacao:"Hora cheia: o'clock. thirty seria 9:30."},
+ {frase:"I go to school ___ Monday.", pt:"Eu vou para a escola na segunda.", resposta:"on",
+  opcoes:["on","in","at"], explicacao:"Lembra da semana passada? Dia da semana vai com on."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"What time is it", pt:"Que horas são?"},
+ {frase:"I have lunch at noon", pt:"Eu almoço ao meio-dia."},
+ {frase:"I get up at seven o'clock", pt:"Eu me levanto às sete horas."},
+ {frase:"I go home in the afternoon", pt:"Eu vou para casa de tarde."}
+]},
+
+{tipo:"entrevista", titulo:"A turma de hip-hop", perfil:"dancarino",
+ personagem:"Marcus, professor de dança hip-hop, animado e falante",
+ apresentacao:"<p>A escola vai abrir uma <b>turma de hip-hop</b>. O professor Marcus quer saber como é o seu dia para escolher o melhor horário da aula. Ele <b>só fala inglês</b>. Entenda o que ele pergunta e responda!</p>",
+ quer:["a que horas ela acorda","a que horas ela vai para casa depois da escola","o que ela faz de tarde (lição, TV, brincar, ler)","se de noite ela está cansada ou pronta para dançar"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I get up at</span> … · <span class=\"lacuna\">I go home at</span> … · <span class=\"lacuna\">In the afternoon, I</span> … · <span class=\"lacuna\">At night, I'm</span> …</p>",
+ instrucaoIA:"Ela sabe: What time is it? It's ... o'clock / It's ... thirty, at + hora, noon, midnight, early, late, in the morning, in the afternoon, in the evening, at night, go home, e a rotina da aula de ontem (wake up, get up, brush my teeth, take a shower, get dressed, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed, every day), tired, happy, ready, dance, music, números até 100. Frases para conversar: Me too! Not me. Really? Sorry? Again, please. Slowly, please. Ela ainda não sabe responder Yes, I do / No, I don't: aceite respostas curtas (At seven. Tired!). Marcus pergunta uma coisa por vez (What time do you get up?), e se ela não entender reformula mais curto (Get up? What time?) ou com exemplo dele (I get up at six. And you?). Frases de 3 a 6 palavras. No fim, diga em inglês simples qual horário ele escolheu para a turma."},
+
+{tipo:"missao", titulo:"Missão: ensine o Bip", cena:"ensinar", voz:"m",
+ cenario:"<p>O robô <b>Bip</b> quer aprender como é o dia de uma menina de verdade. Mas ele mistura tudo: acha que a gente janta de manhã! Ensine a ele o seu dia, <b>com as horas</b>. O Bip <b>só entende inglês</b>.</p>",
+ personagem:"Bip, robozinho simpático e atrapalhado",
+ objetivos:["dizer a que horas ela acorda ou se levanta (at + hora)","dizer a que horas ela almoça ou janta","corrigir o Bip quando ele trocar a parte do dia (No! In the ... / At ...)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I wake up at</span> … · <span class=\"lacuna\">I have lunch at</span> … · <span class=\"lacuna\">No! In the</span> …</p>",
+ instrucaoIA:"Ela sabe: What time is it? It's ... o'clock / It's ... thirty, at + hora, noon, midnight, early, late, in the morning, in the afternoon, in the evening, at night, go home, wake up, get up, brush my teeth, take a shower, get dressed, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed, No!, Me too!, Not me. Bip é um robô curioso que fala frases de 3 a 6 palavras, meio robóticas (Bip bip! What time... you get up?). Ele erra de propósito pelo menos uma vez para ela corrigir: You have dinner in the morning? You go to bed at noon? Quando ela corrige, ele agradece (Thank you! Now I know!). Cena de 4 a 8 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre o seu dia, agora <b>com as horas</b>.",
+ dica:"<ul><li>pelo menos três frases com <b>at</b> + hora</li><li>uma frase com <b>in the morning</b> ou <b>in the afternoon</b></li><li>uma frase com <b>at night</b></li><li>as horas por extenso, com letras (seven, noon…)</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I <span class=\"lacuna\">?</span> at <span class=\"lacuna\">?</span> o'clock. · I <span class=\"lacuna\">?</span> at <span class=\"lacuna\">?</span> thirty. · In the afternoon, I <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre o dia dela: pelo menos três com at + hora por extenso (I get up at seven. I have lunch at noon. I go to bed at nine thirty.), uma com in the morning ou in the afternoon e uma com at night. o'clock só na hora cheia; meia hora como seven thirty.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre o dia dela com as horas. Vocabulário da aula: What time is it?, o'clock, thirty (meia hora), at + hora, noon, midnight, early, late, in the morning, in the afternoon, in the evening, at night, go home, e as ações da rotina (wake up, get up, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed). Confira at antes da hora, in the antes das partes do dia, at night, e o'clock só em hora cheia (não seven thirty o'clock)."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ foco:"<i>o'clock</i> se fala <b>o-KLÓK</b>, com a força no fim. E o <b>at</b> gruda na palavra seguinte: <i>at eight</i> soa como <b>a-teight</b>, <i>at eleven</i> como <b>a-televen</b>.",
+ frases:[
+  {en:"What time is it?", pt:"Que horas são?"},
+  {en:"It's eight o'clock.", pt:"São oito horas."},
+  {en:"I get up at eight.", pt:"Eu me levanto às oito."},
+  {en:"I have lunch at noon.", pt:"Eu almoço ao meio-dia."},
+  {en:"I go home in the afternoon.", pt:"Eu vou para casa de tarde."},
+  {en:"I go to bed at nine thirty.", pt:"Eu vou para a cama às nove e meia."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português: o'clock com força no fim (o-KLÓK) e o at grudado na palavra seguinte (at eight = a-teight, at eleven = a-televen). Depois faça 4 a 6 perguntas em inglês, uma de cada vez, e espere ela responder falando: What time is it now? · What time do you get up? · What time do you have lunch? · What time do you go home? · What do you do in the afternoon? · What time do you go to bed? Aceite respostas curtas (At seven.). Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ligar", bonus:true, titulo:"Pares que confundem", pares:[
+ {en:"thirteen", pt:"treze"},
+ {en:"thirty", pt:"trinta"},
+ {en:"third", pt:"terceiro"},
+ {en:"noon", pt:"meio-dia"},
+ {en:"midnight", pt:"meia-noite"},
+ {en:"night", pt:"noite"},
+ {en:"late", pt:"atrasada"},
+ {en:"afternoon", pt:"a tarde (parte do dia)"}
+]}
+
+]});
+</script>
+</body>
+</html>

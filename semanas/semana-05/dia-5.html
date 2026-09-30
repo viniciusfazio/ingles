@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 5 · Dia 5</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:5,
+dia:5,
+titulo:"Revisão + projeto: My day",
+subtitulo:"Junte a semana toda e apresente o seu dia",
+objetivos:[
+  "Revisar a rotina, as horas e o at / on / in",
+  "Entender de ouvido uma história contada por um cachorro",
+  "Apresentar o seu dia em inglês"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🎉 Você chegou na sexta!",
+ html:"<p>Esta semana você aprendeu a contar o <b>seu dia</b>: <code>I get up</code>, <code>I have lunch</code>, <code>I go to bed</code>. Aprendeu as <b>horas</b> (<code>It's seven o'clock</code>, <code>seven thirty</code>), o mapa do <code>at</code> / <code>on</code> / <code>in</code>, e a falar com <b>we</b>, com <b>don't</b> e com <b>Do you…?</b></p>"+
+ "<p>Hoje a história é contada por um narrador diferente: um <b>cachorro</b>! Depois, revisão e o <b>projeto da semana</b>. Vamos! 💪</p>"},
+
+{tipo:"historia", titulo:"Ouça: o dia do Rex", cena:"animal", paragrafos:[
+ {en:"Hi! I'm Rex, Leo's dog. I'm brown and white, and I'm five.", pt:"Oi! Eu sou o Rex, o cachorro do Leo. Eu sou marrom e branco, e tenho cinco anos."},
+ {en:"Leo and I get up at seven. We have breakfast in the kitchen.", pt:"O Leo e eu nos levantamos às sete. Nós tomamos café da manhã na cozinha."},
+ {en:"At seven thirty, Leo says: “Bye, Rex! See you in the afternoon!”", pt:"Às sete e meia, o Leo diz: “Tchau, Rex! Até de tarde!”"},
+ {en:"I'm sad. I don't play in the morning. I wait at the door.", pt:"Eu fico triste. Eu não brinco de manhã. Eu espero na porta."},
+ {en:"But today, the door is open! I walk to school, too.", pt:"Mas hoje, a porta está aberta! Eu vou a pé para a escola também."},
+ {en:"At ten o'clock, I'm in Leo's classroom. The children say: “A dog!”", pt:"Às dez horas, eu estou na sala de aula do Leo. As crianças dizem: “Um cachorro!”"},
+ {en:"Miss Kate says: “Is this your dog, Leo?” Leo is red. “Yes... It's Rex!”", pt:"A Miss Kate diz: “Este é o seu cachorro, Leo?” O Leo fica vermelho. “É... É o Rex!”"},
+ {en:"Now, every Friday is Pet Day at school. I go with Leo!", pt:"Agora, toda sexta-feira é o Dia do Bicho de Estimação na escola. Eu vou com o Leo!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"Who is Rex?", opcoes:["Leo's dog","Leo's cat","Leo's brother"], correta:0,
+  explicacao:"Ele começa: I'm Rex, Leo's dog."},
+ {pergunta:"What color is Rex?", opcoes:["Brown and white","Black and white","Yellow"], correta:0,
+  explicacao:"I'm brown and white: marrom e branco."},
+ {pergunta:"What time do Leo and Rex get up?", opcoes:["At six","At seven","At seven thirty"], correta:1,
+  explicacao:"Leo and I get up at seven. Às sete e meia o Leo vai para a escola."},
+ {pergunta:"Where is Rex in the morning?", opcoes:["At the door","In the park","In the classroom"], correta:0,
+  explicacao:"I wait at the door. Ele fica triste esperando o Leo."},
+ {pergunta:"What time is Rex in the classroom?", opcoes:["At ten o'clock","At noon","At seven thirty"], correta:0,
+  explicacao:"At ten o'clock, I'm in Leo's classroom."},
+ {pergunta:"What is on Friday now?", opcoes:["Pet Day","A soccer game","A piano lesson"], correta:0,
+  explicacao:"Now, every Friday is Pet Day at school. O Rex vai para a escola com o Leo!"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases da história", itens:[
+ {en:"We have breakfast in the kitchen", pt:"Nós tomamos café da manhã na cozinha.", dica:"(seis palavras)"},
+ {en:"I wait at the door", pt:"Eu espero na porta.", dica:"(cinco palavras)"},
+ {en:"The door is open", pt:"A porta está aberta.", dica:"(quatro palavras)"},
+ {en:"Is this your dog", pt:"Este é o seu cachorro?", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. How old is Rex? (Quantos anos o Rex tem?)<br>2. Why is Rex sad in the morning? (Por que o Rex fica triste de manhã?)<br>3. What day is Pet Day? (Que dia é o Dia do Bicho de Estimação?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 2, pense: onde está o Leo de manhã?</li><li>na 3, use <b>on</b> + o dia</li></ul>",
+ gabarito:"1. Rex is five (years old). 2. Leo is at school / Rex doesn't play in the morning (aceite I don't play, Leo is at school, He is alone). 3. Pet Day is on Friday.",
+ instrucaoIA:"Ela ouviu a história do Rex, o cachorro do Leo, que fica triste de manhã esperando na porta porque o Leo está na escola; um dia a porta está aberta e ele vai até a sala de aula; agora toda sexta é o Dia do Bicho de Estimação. Devia responder: a idade do Rex (Rex is five), por que ele fica triste de manhã (Leo is at school / he doesn't play in the morning) e que dia é o Pet Day (on Friday). Na 2, aceite qualquer resposta simples que mostre que entendeu. Vocabulário: present simple com I e we, at + hora, in the morning, on + dia, door, open, wait."},
+
+{tipo:"completar", titulo:"Revisão da semana", ajuda:"Oito frases misturando tudo o que você viu.", itens:[
+ {frase:"I ___ up at seven.", pt:"Eu me levanto às sete.", resposta:"get",
+  opcoes:["get","go","do"], explicacao:"get up = levantar da cama."},
+ {frase:"What ___ is it? It's noon.", pt:"Que horas são? É meio-dia.", resposta:"time",
+  opcoes:["time","day","clock"], explicacao:"What time is it? = Que horas são?"},
+ {frase:"I have lunch ___ noon.", pt:"Eu almoço ao meio-dia.", resposta:"at",
+  opcoes:["at","in","on"], explicacao:"Hora certinha: at noon."},
+ {frase:"___ you take the bus? No, I don't.", pt:"Você pega o ônibus? Não.", resposta:"Do",
+  opcoes:["Do","Are","Is"], explicacao:"Pergunta com ação começa com Do."},
+ {frase:"We ___ watch TV in the morning.", pt:"Nós não vemos TV de manhã.", resposta:"don't",
+  opcoes:["don't","not","no"], explicacao:"Para dizer que não faz: don't antes da ação."},
+ {frase:"I play soccer ___ Saturday.", pt:"Eu jogo futebol no sábado.", resposta:"on",
+  opcoes:["on","in","at"], explicacao:"Dia da semana: on."},
+ {frase:"I do my homework in the ___.", pt:"Eu faço a lição de casa de tarde.", resposta:"afternoon",
+  opcoes:["afternoon","night","noon"], explicacao:"de tarde = in the afternoon."},
+ {frase:"How ___ are you? I'm eleven.", pt:"Quantos anos você tem? Eu tenho onze.", resposta:"old",
+  opcoes:["old","many","time"], explicacao:"Lembra da semana passada? How old...? pergunta a idade."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções", pares:[
+ {en:"brush my teeth", pt:"escovar os dentes"},
+ {en:"have dinner", pt:"jantar"},
+ {en:"early", pt:"cedo"},
+ {en:"clock", pt:"relógio"},
+ {en:"bread", pt:"pão"},
+ {en:"busy", pt:"ocupada"},
+ {en:"Thursday", pt:"quinta-feira"},
+ {en:"birthday", pt:"aniversário"}
+]},
+
+{tipo:"explorar", titulo:"Quem é o Mr. Tate?", perfil:"inventor", voz:"m",
+ personagem:"Mr. Tate, inventor de 70 anos, distraído e divertido",
+ apresentacao:"<p>Na feira de ciências da cidade, um senhor de óculos grandes está do lado de uma máquina cheia de botões. Ele <b>só fala inglês</b>. Pergunte o que quiser e descubra quem ele é!</p>",
+ segredos:["um robô acorda ele todo dia às seis da manhã","o robô se chama Toast e faz o café da manhã: pão e leite","ele trabalha no laboratório até a meia-noite","surpresa: ele não tem TV — de noite ele lê","no domingo ele vai ao parque com o robô"],
+ pistas:["quem acorda ele","o nome e o trabalho de alguém da casa","até que horas ele trabalha","surpresa: uma coisa que ele não tem","o domingo dele"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">What time do you</span> …? · <span class=\"lacuna\">Do you have</span> …? · <span class=\"lacuna\">What do you do on</span> …?</p>",
+ instrucaoIA:"Ela sabe: Do you...? What time do you...? What do you do on Sunday? Yes, I do. / No, I don't. a rotina (wake up, get up, brush my teeth, take a shower, get dressed, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed, every day), as horas (o'clock, thirty, noon, midnight), at + hora, on + dia, in the morning, in the afternoon, at night, early, late, week, busy, free, walk, take the bus, car, park, eat, drink, milk, bread, How old are you?, What's your name?, números até 100. Frases para conversar: Me too! Not me. Really? Wait a minute. Let me think. Para o laboratório, diga simples: I work at night. I go to bed at midnight! Mr. Tate responde com frases de 3 a 6 palavras, deixa ganchos (My robot is my friend!) e devolve perguntas fáceis (What time do you get up?). Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: o sábado com o Leo", cena:"planejamento",
+ cenario:"<p>Sábado livre! Você e o Leo querem passar o dia juntos. Combinem o plano: a que horas vocês se encontram, o que fazem de manhã e o que fazem de tarde. O Leo <b>só entende inglês</b> (e adora dormir até tarde no sábado…).</p>",
+ personagem:"Leo, colega de turma, brincalhão e dorminhoco",
+ objetivos:["combinar a que horas vocês se encontram (at + hora)","dizer uma coisa para fazer de manhã e uma de tarde (in the morning / in the afternoon)","responder uma pergunta do Leo com Yes, I do ou No, I don't"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">At</span> … o'clock? · <span class=\"lacuna\">In the morning, we</span> … · <span class=\"lacuna\">In the afternoon, we</span> … · <span class=\"lacuna\">Yes, I</span> …</p>",
+ instrucaoIA:"Ela sabe: present simple com I, you, we (we play, we go, Do you...? Yes, I do. / No, I don't.), What time...?, at + hora (seven, eight thirty, noon), on Saturday, on Saturday morning, in the morning, in the afternoon, at night, early, late, free, busy, a rotina (wake up, get up, have breakfast, have lunch, play, watch TV, read), walk, take the bus, park, eat, drink, milk, bread, swim, soccer, piano, Me too! Not me. Really? Leo acorda tarde no sábado: se ela propuser um horário cedo (seven, eight), ele reclama brincando (Seven? On Saturday? It's early!) e ela precisa propor outro. Ele sugere jogar futebol no parque e pergunta Do you play soccer? Do you swim? Frases de 3 a 6 palavras. Cena de até 8 falas."},
+
+{tipo:"escrita", titulo:"Projeto da semana: My day", id:"1",
+ instrucao:"O projeto de hoje: escreva <b>4 ou 5 frases</b> apresentando o seu dia, como se fosse um vídeo para a turma do Jack, em Chicago. Conte um dia de escola e diga uma coisa do seu fim de semana. Depois leia em voz alta no bloco de baixo.",
+ dica:"<ul><li>pelo menos duas horas com <b>at</b> (uma pode ser com <b>thirty</b>)</li><li>uma parte do dia com <b>in the</b></li><li>um dia da semana com <b>on</b></li><li>uma frase com <b>don't</b></li><li>uma frase com <b>we</b> (você e a sua família ou amigos)</li></ul>Sem ajuda hoje: você já sabe tudo isso. 💜",
+ gabarito:"4 ou 5 frases sobre o dia dela: pelo menos duas ações com at + hora (I get up at seven. I have lunch at noon / at twelve thirty.), uma parte do dia com in the (in the afternoon, I ...), um dia com on (On Saturday, I ...), uma frase negativa com don't (I don't take the bus.) e uma frase com we (We have dinner at eight.). Ação sem -s com I e we; o'clock só em hora cheia; at night.",
+ instrucaoIA:"É o projeto da semana 5: ela devia escrever 4 ou 5 frases apresentando o dia dela, um dia de escola e uma coisa do fim de semana. Vocabulário da semana: a rotina (wake up, get up, brush my teeth, take a shower, get dressed, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed, every day), as horas (What time is it?, o'clock, thirty, noon, midnight, early, late), at + hora, on + dia, in the morning / afternoon / evening, at night, present simple com I/you/we, don't, Do you...?, walk, take the bus, car, park, eat, drink, milk, bread, week, busy, free, after school, lesson, piano, swim, soccer. Elogie primeiro, depois corrija no máximo 3 coisas e mostre uma frase que ela poderia ter usado."},
+
+{tipo:"fala", titulo:"Hora de falar: apresente o seu dia",
+ instrucao:"Aqueça a boca com as frases abaixo e depois apresente o seu projeto em voz alta para a IA.",
+ foco:"<i>o'clock</i> = <b>o-KLÓK</b>, com força no fim. E o <b>at</b> gruda: <i>at eight</i> = <b>a-teight</b>, <i>at eleven</i> = <b>a-televen</b>.",
+ frases:[
+  {en:"I get up at seven o'clock.", pt:"Eu me levanto às sete horas."},
+  {en:"I have breakfast at seven thirty.", pt:"Eu tomo café da manhã às sete e meia."},
+  {en:"I go to school at eight.", pt:"Eu vou para a escola às oito."},
+  {en:"We have lunch at noon.", pt:"Nós almoçamos ao meio-dia."},
+  {en:"I don't watch TV in the morning.", pt:"Eu não vejo TV de manhã."},
+  {en:"On Saturday, I play in the park.", pt:"No sábado, eu brinco no parque."}
+ ],
+ instrucaoIA:"Primeiro o aquecimento: as frases acima, com atenção ao o'clock (o-KLÓK) e ao at grudado (at eight = a-teight). Depois peça para ela apresentar o projeto dela em voz alta. Em seguida faça 4 a 6 perguntas em inglês, uma de cada vez, esperando a resposta falada: What time do you get up? · Do you walk to school? · What time do you have lunch? · What do you do in the afternoon? · What do you do on Saturday? · What time do you go to bed? Corrija em português, com carinho, e feche elogiando a semana inteira."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"I don't take the bus on Monday", pt:"Eu não pego o ônibus na segunda."},
+ {frase:"We have dinner at eight at night", pt:"Nós jantamos às oito da noite."},
+ {frase:"Do you swim on Saturday morning", pt:"Você nada no sábado de manhã?"},
+ {frase:"Rex and I play in the park", pt:"O Rex e eu brincamos no parque."}
+]},
+{tipo:"escrita", bonus:true, titulo:"Desafio: o sábado do Rex", id:"bonus",
+ instrucao:"Você é o Rex! Conte o <b>sábado</b> dele, sem escola: <b>4 ou 5 frases</b> com <b>I</b> e <b>We</b> (o Rex e o Leo).",
+ dica:"<ul><li>escreva como o Rex, com <b>I</b> e <b>We</b></li><li>pelo menos duas horas com <b>at</b></li><li>uma frase com <b>don't</b></li><li>um final feliz (ou engraçado)</li></ul>",
+ gabarito:"4 ou 5 frases criativas na voz do Rex sobre o sábado com o Leo: pelo menos duas com at + hora, uma com don't, uma com we. Ação sem -s com I e we.",
+ instrucaoIA:"Desafio bônus de escrita criativa: ela devia contar o sábado do Rex, o cachorro do Leo, em 4 ou 5 frases com I e we, com pelo menos duas horas (at + hora) e uma frase com don't. Vocabulário da semana: a rotina, as horas, at / on / in, present simple com I/we, don't, walk, park, eat, drink, milk, bread, play, soccer, swim. Elogie a criatividade e corrija no máximo 3 coisas."}
+
+]});
+</script>
+</body>
+</html>

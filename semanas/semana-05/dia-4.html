@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 5 · Dia 4</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:5,
+dia:4,
+titulo:"A busy week",
+subtitulo:"at, on e in para falar da semana inteira — e um aluno novo de Chicago",
+objetivos:[
+  "Usar at, on e in do jeito certo: at four, on Monday, in the morning",
+  "Contar as atividades da sua semana",
+  "Comparar o seu dia com o de um amigo de outro país"
+],
+blocos:[
+
+{tipo:"gramatica", titulo:"at, on, in: o mapa do tempo",
+ html:"<p>Você já viu as três. Hoje elas se juntam num mapa só — do <b>menor</b> pedaço de tempo para o <b>maior</b>:</p>"+
+ "<table><tr><th></th><th>Quando</th><th>Exemplos</th></tr>"+
+ "<tr><td><code>at</code></td><td>hora certinha</td><td><code>at four</code>, <code>at seven thirty</code>, <code>at noon</code>, <code>at night</code></td></tr>"+
+ "<tr><td><code>on</code></td><td>um dia</td><td><code>on Monday</code>, <code>on May 5th</code>, <code>on the weekend</code></td></tr>"+
+ "<tr><td><code>in</code></td><td>pedaço grande</td><td><code>in the morning</code>, <code>in the afternoon</code>, <code>in May</code></td></tr></table>"+
+ "<p>Dá para juntar tudo numa frase: <code>I swim on Tuesday at four.</code> E um atalho bem americano: <code>on Saturday morning</code> = no sábado de manhã (sem o <i>in the</i>).</p>",
+ exemplos:[
+  {en:"I have a piano lesson on Monday at four.", pt:"Eu tenho aula de piano na segunda às quatro."},
+  {en:"We play soccer on the weekend.", pt:"Nós jogamos futebol no fim de semana."},
+  {en:"I swim in the afternoon.", pt:"Eu nado de tarde."},
+  {en:"I'm free on Saturday morning.", pt:"Eu estou livre no sábado de manhã."}
+ ]},
+
+{tipo:"vocab", titulo:"Uma semana cheia", itens:[
+ {en:"week", pt:"semana", ipa:"/UÍIK/", emoji:"🗓️"},
+ {en:"busy", pt:"ocupada, cheia (de coisas)", ipa:"/BÍ-zi/", emoji:"🏃"},
+ {en:"free", pt:"livre, desocupada", ipa:"/FRÍI/", emoji:"😌"},
+ {en:"after school", pt:"depois da escola", ipa:"/ÉF-ter SKÚUL/", emoji:"🎒"},
+ {en:"lesson", pt:"aula (de piano, de natação)", ipa:"/LÉ-son/", emoji:"👩‍🏫"},
+ {en:"piano", pt:"piano", ipa:"/pi-É-nou/", emoji:"🎹"},
+ {en:"swim", pt:"nadar", ipa:"/SUÍM/", emoji:"🏊"},
+ {en:"soccer", pt:"futebol", ipa:"/SÓ-ker/", emoji:"⚽"}
+]},
+
+{tipo:"dialogo", titulo:"Ouça: a semana da Emma", escuta:true, linhas:[
+ {quem:"Emma", en:"Leo, my week is very busy.", pt:"Leo, a minha semana é muito cheia."},
+ {quem:"Leo", en:"Really? Why?", pt:"Sério? Por quê?"},
+ {quem:"Emma", en:"On Monday, I have a piano lesson at four.", pt:"Na segunda, eu tenho aula de piano às quatro."},
+ {quem:"Leo", en:"On Monday? I watch TV in the afternoon.", pt:"Na segunda? Eu vejo TV de tarde."},
+ {quem:"Emma", en:"On Tuesday and Thursday, I swim after school.", pt:"Na terça e na quinta, eu nado depois da escola."},
+ {quem:"Leo", en:"I don't swim. I play soccer on Friday.", pt:"Eu não nado. Eu jogo futebol na sexta."},
+ {quem:"Emma", en:"On Wednesday, I do my homework with Anna.", pt:"Na quarta, eu faço a lição de casa com a Anna."},
+ {quem:"Leo", en:"And on the weekend?", pt:"E no fim de semana?"},
+ {quem:"Emma", en:"On Saturday, I wake up at six. I have a soccer game at eight!", pt:"No sábado, eu acordo às seis. Eu tenho um jogo de futebol às oito!"},
+ {quem:"Leo", en:"At eight on Saturday? Not me! I'm in bed!", pt:"Às oito no sábado? Eu não! Eu estou na cama!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu o diálogo?", questoes:[
+ {pergunta:"When is Emma's piano lesson?", opcoes:["On Monday at four","On Tuesday at four","On Friday at eight"], correta:0,
+  explicacao:"On Monday, I have a piano lesson at four."},
+ {pergunta:"On Monday afternoon, Leo says: “I...”", opcoes:["have a piano lesson","watch TV","play soccer"], correta:1,
+  explicacao:"Leo diz: I watch TV in the afternoon."},
+ {pergunta:"Soccer on Friday: Emma or Leo?", opcoes:["Emma","Leo","Emma and Leo"], correta:1,
+  explicacao:"Leo diz: I play soccer on Friday. E ele não nada: I don't swim."},
+ {pergunta:"Is Emma's week busy?", opcoes:["Yes, it is.","No, it isn't.","Yes, on Sunday."], correta:0,
+  explicacao:"Ela começa: my week is very busy."},
+ {pergunta:"On Saturday, Emma says: “I wake up at...”", opcoes:["six","eight","ten"], correta:0,
+  explicacao:"On Saturday, I wake up at six. O jogo é às oito."},
+ {pergunta:"Where is Leo at eight on Saturday?", opcoes:["In the park","In bed","At school"], correta:1,
+  explicacao:"Not me! I'm in bed! No sábado ele dorme até tarde."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva as frases do diálogo", itens:[
+ {en:"My week is very busy", pt:"A minha semana é muito cheia.", dica:"(cinco palavras)"},
+ {en:"I swim after school", pt:"Eu nado depois da escola.", dica:"(quatro palavras)"},
+ {en:"I play soccer on Friday", pt:"Eu jogo futebol na sexta.", dica:"(cinco palavras)"},
+ {en:"I'm in bed", pt:"Eu estou na cama.", dica:"(I'm + duas palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre o diálogo", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. When is Emma's piano lesson? (Quando é a aula de piano da Emma?)<br>2. When is Emma's soccer game? (Quando é o jogo de futebol da Emma?)<br>3. Is Leo busy on Saturday morning? Why? (O Leo está ocupado no sábado de manhã? Por quê?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1 e na 2, diga o dia <b>e</b> a hora (on… at…)</li><li>na 3, diga sim ou não e onde o Leo está</li></ul>",
+ andaime:"<p>It's on <span class=\"lacuna\">?</span> at <span class=\"lacuna\">?</span>. · No, he <span class=\"lacuna\">?</span>. He is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. It's on Monday at four. 2. It's on Saturday at eight (in the morning). 3. No, he isn't. He is in bed.",
+ instrucaoIA:"Ela ouviu um diálogo: a Emma conta a semana cheia dela (piano na segunda às quatro, natação terça e quinta depois da escola, lição com a Anna na quarta, jogo de futebol no sábado às oito) e o Leo, que vê TV e joga futebol na sexta, está na cama no sábado às oito. Ela devia responder: quando é a aula de piano (on Monday at four), quando é o jogo (on Saturday at eight) e se o Leo está ocupado no sábado de manhã (No, he isn't. He is in bed.). Vocabulário: on + dia, at + hora, busy, free, week, lesson, piano, swim, soccer, after school."},
+
+{tipo:"completar", titulo:"at, on ou in?", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"I have a piano lesson ___ Monday.", pt:"Eu tenho aula de piano na segunda.", resposta:"on",
+  opcoes:["on","in","at"], explicacao:"Dia da semana: on Monday."},
+ {frase:"My lesson is ___ four o'clock.", pt:"A minha aula é às quatro horas.", resposta:"at",
+  opcoes:["at","on","in"], explicacao:"Hora certinha: at four."},
+ {frase:"I swim ___ the afternoon.", pt:"Eu nado de tarde.", resposta:"in",
+  opcoes:["in","at","on"], explicacao:"Parte do dia: in the afternoon."},
+ {frase:"We play soccer ___ the weekend.", pt:"Nós jogamos futebol no fim de semana.", resposta:"on",
+  opcoes:["on","in","at"], explicacao:"No inglês americano: on the weekend."},
+ {frase:"My birthday is ___ June.", pt:"O meu aniversário é em junho.", resposta:"in",
+  opcoes:["in","on","at"], explicacao:"Só o mês: in June. É o pedaço grande do mapa."},
+ {frase:"I don't watch TV ___ night.", pt:"Eu não vejo TV de noite.", resposta:"at",
+  opcoes:["at","in","on"], explicacao:"A noite é a exceção: at night."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"I swim on Tuesday after school", pt:"Eu nado na terça depois da escola."},
+ {frase:"I'm free on Saturday morning", pt:"Eu estou livre no sábado de manhã."},
+ {frase:"My week is very busy", pt:"A minha semana é muito cheia."},
+ {frase:"I have a piano lesson at four", pt:"Eu tenho aula de piano às quatro."}
+]},
+
+{tipo:"entrevista", titulo:"A pesquisa do sono", perfil:"cientista", voz:"f",
+ personagem:"Dr. Stone, cientista que estuda o sono das crianças, gentil e curiosa",
+ apresentacao:"<p>A Dra. Stone faz uma <b>pesquisa sobre o sono</b> das crianças do mundo todo. Hoje ela quer saber do seu! Ela <b>só fala inglês</b> e anota tudo no caderno.</p>",
+ quer:["a que horas ela vai para a cama nos dias de escola","a que horas ela acorda no sábado","se ela está cansada de manhã","o que ela faz de noite antes de dormir (ler, ver TV)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">On Monday, I go to bed at</span> … · <span class=\"lacuna\">On Saturday, I wake up at</span> … · <span class=\"lacuna\">Yes, I</span> … / <span class=\"lacuna\">No, I</span> …</p>",
+ instrucaoIA:"Ela sabe: at + hora (at nine, at nine thirty, at noon, at midnight), on + dia (on Monday, on Saturday, on the weekend), in the morning, in the afternoon, in the evening, at night, early, late, tired, a rotina (wake up, get up, go to bed, read, watch TV, have dinner, brush my teeth, take a shower), Do you...? Yes, I do. / No, I don't. week, busy, free, after school. Frases para conversar: Me too! Not me. Really? Sorry? Again, please. Slowly, please. Dr. Stone pergunta uma coisa por vez (What time do you go to bed on Monday?), e se ela não entender reformula mais curto (Monday. Bed. What time?) ou com exemplo dela mesma (I go to bed at ten. And you?). Frases de 3 a 6 palavras. No fim, ela diz em inglês simples o resultado (You sleep ten hours! Great!)."},
+
+{tipo:"missao", titulo:"Missão da semana: o aluno novo de Chicago", cena:"escola",
+ cenario:"<p>Chegou um aluno novo na sua turma: o Jack, de <b>Chicago</b>. A professora pediu para você ser a dupla dele hoje: explicar como é o dia na sua escola e descobrir como é o dia dele lá. O Jack <b>só entende inglês</b>.</p>",
+ personagem:"Jack, 11 anos, aluno novo que veio de Chicago, simpático e um pouco tímido",
+ objetivos:["dizer a que horas ela vai para a escola e a que horas almoça (at ...)","contar duas atividades da semana dela com o dia (on Monday, on Saturday...)","perguntar a que horas o Jack almoça ou vai para a cama (What time do you ...?)","reagir a uma coisa dele com Really? ou Me too!"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I go to school at</span> … · <span class=\"lacuna\">On</span> …, I … · <span class=\"lacuna\">What time do you</span> …?</p>",
+ instrucaoIA:"Ela sabe: present simple com I, you, we (I go, we have, Do you...? Yes, I do. / No, I don't.), What time do you...?, at + hora (seven, seven thirty, noon, o'clock), on + dia, on the weekend, on Saturday morning, in the morning, in the afternoon, in the evening, at night, a rotina (wake up, get up, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed), walk, take the bus, car, park, eat, drink, milk, bread, week, busy, free, after school, lesson, piano, swim, soccer, Me too! Not me. Really? Fatos do Jack: em Chicago a escola dele é às oito, ele pega o ônibus às sete e meia, almoça às onze e meia (bem cedo!), joga futebol no sábado de manhã e vai para a cama às oito e meia. Jack começa tímido (Hi... I'm Jack.), responde curto, quer saber como é aqui (What time do you go to school? What time is lunch? Do you play soccer?) e dá chance para ela reagir. Frases de 3 a 6 palavras. Cena de até 8 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre a sua semana, como você contaria para o Jack: um dia e uma atividade por frase.",
+ dica:"<ul><li>pelo menos três frases com <b>on</b> + dia da semana</li><li>pelo menos duas com <b>at</b> + hora</li><li>uma frase com <b>in the morning</b>, <b>in the afternoon</b> ou <b>at night</b></li><li>diga se a sua semana é <b>busy</b> ou <b>free</b></li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>On <span class=\"lacuna\">?</span>, I <span class=\"lacuna\">?</span> at <span class=\"lacuna\">?</span>. · On the weekend, I <span class=\"lacuna\">?</span>. · My week is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre a semana dela: pelo menos três com on + dia (On Monday, I ...), pelo menos duas com at + hora, uma com in the morning / in the afternoon / at night, e se a semana é busy ou free. Atividades da rotina ou da aula (swim, piano lesson, play soccer, do my homework, watch TV, read). Dias da semana com letra maiúscula.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre a semana dela, como contou (ou contaria) para o Jack, o aluno novo. Vocabulário da aula: at + hora, on + dia, on the weekend, in the morning, in the afternoon, at night, week, busy, free, after school, lesson, piano, swim, soccer, present simple com I e we, don't. Confira as preposições (at hora, on dia, in parte do dia, at night) e a ação sem -s com I. Dias da semana com maiúscula."},
+
+{tipo:"fala", titulo:"Hora de falar: aquecimento para o Jack",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ foco:"o <b>at</b> gruda na palavra seguinte: <i>at eight</i> = <b>a-teight</b>, <i>at eleven</i> = <b>a-televen</b>. E <i>four o'clock</i> = <b>for-o-KLÓK</b>, tudo junto.",
+ frases:[
+  {en:"I have a piano lesson at eight.", pt:"Eu tenho aula de piano às oito."},
+  {en:"On Monday, I swim after school.", pt:"Na segunda, eu nado depois da escola."},
+  {en:"My week is very busy.", pt:"A minha semana é muito cheia."},
+  {en:"I'm free on Saturday morning.", pt:"Eu estou livre no sábado de manhã."},
+  {en:"What time do you have lunch?", pt:"A que horas você almoça?"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português: at grudado na palavra seguinte (at eight = a-teight, at eleven = a-televen) e four o'clock tudo junto. Depois faça 4 a 6 perguntas em inglês, uma de cada vez, e espere ela responder falando: Is your week busy? · What do you do on Monday? · What time do you go to school? · Do you swim or play soccer? · What do you do on the weekend? · Are you free on Saturday morning? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil: duas palavras", itens:[
+ {pistas:["Emma has it on Saturday at eight.","It is a game, not a lesson.","Leo has it on Friday."],
+  resposta:"soccer game", aceita:["soccer"], pt:"jogo de futebol", dica:"(duas palavras)"},
+ {pistas:["It is not at school.","It is on Monday at four.","Emma has it. It has music."],
+  resposta:"piano lesson", pt:"aula de piano", dica:"(duas palavras)"},
+ {pistas:["It is a time.","It is twelve o'clock.","It is not noon. It is at night."],
+  resposta:"midnight", pt:"meia-noite", dica:"(uma hora)"},
+ {pistas:["Saturday and Sunday.","No school!","Two days."],
+  resposta:"weekend", pt:"fim de semana", dica:"(semana passada)"}
+]},
+{tipo:"ligar", bonus:true, titulo:"Misturando semanas: pares parecidos", pares:[
+ {en:"his", pt:"dele"},
+ {en:"her", pt:"dela"},
+ {en:"this", pt:"este"},
+ {en:"these", pt:"estes"},
+ {en:"busy", pt:"ocupada"},
+ {en:"free", pt:"livre"},
+ {en:"early", pt:"cedo"},
+ {en:"late", pt:"atrasada"}
+]}
+
+]});
+</script>
+</body>
+</html>

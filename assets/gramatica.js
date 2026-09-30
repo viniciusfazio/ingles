@@ -246,6 +246,65 @@ var GRAMATICA = [
   {en:"The party is on Saturday.", pt:"A festa é no sábado."},
   {en:"Her birthday is in March.", pt:"O aniversário dela é em março."},
   {en:"January is the first month.", pt:"Janeiro é o primeiro mês."}
+ ]},
+
+{semana:5, dia:2, modulo:1,
+ titulo:"As horas — What time is it?",
+ resumo:"It's seven o'clock / seven thirty; at + hora; in the morning, mas at night",
+ html:"<table>"+
+ "<tr><th>Relógio</th><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td>7:00</td><td><code>It's seven o'clock.</code></td><td>São sete horas.</td></tr>"+
+ "<tr><td>7:30</td><td><code>It's seven thirty.</code></td><td>São sete e meia.</td></tr>"+
+ "<tr><td>12:00</td><td><code>It's noon.</code></td><td>É meio-dia.</td></tr>"+
+ "<tr><td>0:00</td><td><code>It's midnight.</code></td><td>É meia-noite.</td></tr></table>"+
+ "<p><code>o'clock</code> só na hora cheia. <b>A que horas</b>: <code>at</code> + hora (<code>at seven</code> = às sete).</p>"+
+ "<table><tr><th>Parte do dia</th><th>Inglês</th></tr>"+
+ "<tr><td>de manhã</td><td><code>in the morning</code></td></tr>"+
+ "<tr><td>de tarde</td><td><code>in the afternoon</code></td></tr>"+
+ "<tr><td>à noitinha</td><td><code>in the evening</code></td></tr>"+
+ "<tr><td>de noite</td><td><code>at night</code> (a exceção)</td></tr></table>",
+ exemplos:[
+  {en:"What time is it? It's eight o'clock.", pt:"Que horas são? São oito horas."},
+  {en:"It's nine thirty.", pt:"São nove e meia."},
+  {en:"I have lunch at noon.", pt:"Eu almoço ao meio-dia."},
+  {en:"I play in the afternoon.", pt:"Eu brinco de tarde."},
+  {en:"I read at night.", pt:"Eu leio de noite."}
+ ]},
+
+{semana:5, dia:3, modulo:1,
+ titulo:"Present simple com I / you / we — I get up, I don't, Do you?",
+ resumo:"A ação não muda com I, you e we; don't para negar; Do no começo para perguntar",
+ html:"<table>"+
+ "<tr><th></th><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td>afirma</td><td><code>I / You / We walk to school.</code></td><td>Eu vou / Você vai / Nós vamos a pé para a escola.</td></tr>"+
+ "<tr><td>nega</td><td><code>I / You / We don't walk.</code></td><td>Eu não vou / Você não vai / Nós não vamos a pé.</td></tr>"+
+ "<tr><td>pergunta</td><td><code>Do you walk to school?</code></td><td>Você vai a pé para a escola?</td></tr>"+
+ "<tr><td>responde</td><td><code>Yes, I do. / No, I don't.</code></td><td>Sim, vou. / Não, não vou.</td></tr>"+
+ "<tr><td>que horas</td><td><code>What time do you get up?</code></td><td>A que horas você se levanta?</td></tr></table>"+
+ "<p><code>don't</code> = <code>do not</code>. Com ação, pergunta com <code>Do</code>, nunca com <i>Are you walk…?</i> (Com he / she a ação muda: isso vem na semana 6.)</p>",
+ exemplos:[
+  {en:"We have breakfast at seven.", pt:"Nós tomamos café da manhã às sete."},
+  {en:"I don't take the bus.", pt:"Eu não pego o ônibus."},
+  {en:"Do you drink milk? Yes, I do.", pt:"Você bebe leite? Sim, bebo."},
+  {en:"Do you watch TV in the morning? No, I don't.", pt:"Você vê TV de manhã? Não, não vejo."},
+  {en:"What time do you go to bed?", pt:"A que horas você vai para a cama?"}
+ ]},
+
+{semana:5, dia:4, modulo:1,
+ titulo:"at / on / in de tempo — o mapa completo",
+ resumo:"at para a hora, on para o dia, in para os pedaços grandes",
+ html:"<table>"+
+ "<tr><th></th><th>Quando</th><th>Exemplos</th></tr>"+
+ "<tr><td><code>at</code></td><td>hora certinha</td><td><code>at four</code>, <code>at seven thirty</code>, <code>at noon</code>, <code>at night</code></td></tr>"+
+ "<tr><td><code>on</code></td><td>um dia</td><td><code>on Monday</code>, <code>on May 5th</code>, <code>on the weekend</code></td></tr>"+
+ "<tr><td><code>in</code></td><td>pedaço grande</td><td><code>in the morning</code>, <code>in the afternoon</code>, <code>in May</code></td></tr></table>"+
+ "<p>Juntando: <code>I swim on Tuesday at four.</code> Atalho americano: <code>on Saturday morning</code> (sem <i>in the</i>).</p>",
+ exemplos:[
+  {en:"I have a piano lesson on Monday at four.", pt:"Eu tenho aula de piano na segunda às quatro."},
+  {en:"We play soccer on the weekend.", pt:"Nós jogamos futebol no fim de semana."},
+  {en:"I swim in the afternoon.", pt:"Eu nado de tarde."},
+  {en:"I'm free on Saturday morning.", pt:"Eu estou livre no sábado de manhã."}
  ]}
+
 
 ];

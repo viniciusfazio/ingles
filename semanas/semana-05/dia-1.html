@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 5 · Dia 1</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:5,
+dia:1,
+titulo:"My day",
+subtitulo:"As palavras da rotina: acordar, tomar café, ir para a escola, dormir",
+objetivos:[
+  "Dizer em inglês o que você faz todo dia",
+  "Reagir numa conversa com Me too!, Not me. e Really?",
+  "Escrever sobre a sua manhã e a sua noite"
+],
+blocos:[
+
+{tipo:"nota", titulo:"💡 O seu dia em inglês",
+ html:"<p>Esta semana é sobre o <b>seu dia</b>: o que você faz de manhã, de tarde e de noite. E contar a rotina em inglês é fácil: <b>I + a ação</b>.</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I get up.</code></td><td>Eu me levanto.</td></tr>"+
+ "<tr><td><code>I go to school.</code></td><td>Eu vou para a escola.</td></tr>"+
+ "<tr><td><code>I have lunch.</code></td><td>Eu almoço.</td></tr></table>"+
+ "<p>Olha o <code>have</code>: em inglês a gente <b>tem</b> as refeições. <code>have breakfast</code> = tomar café da manhã, <code>have lunch</code> = almoçar, <code>have dinner</code> = jantar.</p>"+
+ "<p>E um segredo: muitas ações vêm em <b>dupla</b>. <code>get up</code>, <code>wake up</code>, <code>go to bed</code>. Aprenda a dupla inteira, como se fosse uma palavra só. 💜</p>"},
+
+{tipo:"vocab", titulo:"A minha rotina", itens:[
+ {en:"wake up", pt:"acordar", ipa:"/UÊIK âp/", emoji:"⏰"},
+ {en:"get up", pt:"levantar (da cama)", ipa:"/GUÉT âp/", emoji:"🛏️"},
+ {en:"brush my teeth", pt:"escovar os dentes", ipa:"/BRÂSH mai TÍITH/", emoji:"🪥"},
+ {en:"take a shower", pt:"tomar banho", ipa:"/TÊIK a SHÁU-er/", emoji:"🚿"},
+ {en:"get dressed", pt:"me vestir", ipa:"/GUÉT DRÉST/", emoji:"👕"},
+ {en:"have breakfast", pt:"tomar café da manhã", ipa:"/HÉV BRÉK-fast/", emoji:"🥣"},
+ {en:"go to school", pt:"ir para a escola", ipa:"/GÔU tu SKÚUL/", emoji:"🏫"},
+ {en:"have lunch", pt:"almoçar", ipa:"/HÉV LÂNTCH/", emoji:"🍽️"},
+ {en:"do my homework", pt:"fazer a lição de casa", ipa:"/DÚ mai HÔUM-uârk/", emoji:"📝"},
+ {en:"play", pt:"brincar, jogar", ipa:"/PLÊI/", emoji:"⚽"},
+ {en:"watch TV", pt:"ver TV", ipa:"/UÓTCH ti-VÍ/", emoji:"📺"},
+ {en:"read", pt:"ler", ipa:"/RÍID/", emoji:"📖"},
+ {en:"have dinner", pt:"jantar", ipa:"/HÉV DÍ-ner/", emoji:"🍝"},
+ {en:"go to bed", pt:"ir para a cama, ir dormir", ipa:"/GÔU tu BÉD/", emoji:"😴"},
+ {en:"every day", pt:"todo dia", ipa:"/É-vri DÊI/", emoji:"📅"}
+]},
+
+{tipo:"vocab", titulo:"Frases para conversar (semana 5)", itens:[
+ {en:"Me too!", pt:"Eu também!", ipa:"/MI TÚU/", emoji:"🙋"},
+ {en:"Not me.", pt:"Eu não.", ipa:"/NÓT mi/", emoji:"🙅"},
+ {en:"Really?", pt:"Sério? / É mesmo?", ipa:"/RÍ-li/", emoji:"😮"}
+]},
+
+{tipo:"dialogo", titulo:"Uma manhã cansada", escuta:false, linhas:[
+ {quem:"Anna", en:"Good morning, Emma! I'm so tired.", pt:"Bom dia, Emma! Eu estou tão cansada."},
+ {quem:"Emma", en:"Really? Why?", pt:"Sério? Por quê?"},
+ {quem:"Anna", en:"I wake up at six every day.", pt:"Eu acordo às seis todo dia."},
+ {quem:"Emma", en:"Me too! I take a shower and I get dressed.", pt:"Eu também! Eu tomo banho e me visto."},
+ {quem:"Anna", en:"I have breakfast and I go to school.", pt:"Eu tomo café da manhã e vou para a escola."},
+ {quem:"Emma", en:"And at night? I watch TV.", pt:"E de noite? Eu vejo TV."},
+ {quem:"Anna", en:"Not me. I read a book and I go to bed.", pt:"Eu não. Eu leio um livro e vou para a cama."},
+ {quem:"Emma", en:"A book every night? Wow!", pt:"Um livro toda noite? Uau!"}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções (rotina e aniversário)", pares:[
+ {en:"wake up", pt:"acordar"},
+ {en:"have lunch", pt:"almoçar"},
+ {en:"go to bed", pt:"ir para a cama"},
+ {en:"get dressed", pt:"me vestir"},
+ {en:"watch TV", pt:"ver TV"},
+ {en:"Wednesday", pt:"quarta-feira"},
+ {en:"forty", pt:"quarenta"},
+ {en:"third", pt:"terceiro"},
+ {en:"candle", pt:"vela"},
+ {en:"month", pt:"mês"}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"O que significa have breakfast?", opcoes:["almoçar","tomar café da manhã","jantar"], correta:1,
+  explicacao:"breakfast é o café da manhã. lunch é o almoço e dinner é o jantar."},
+ {pergunta:"Como se diz escovar os dentes? 🪥", opcoes:["brush my teeth","take a shower","get dressed"], correta:0,
+  explicacao:"brush = escovar, teeth = dentes. take a shower é tomar banho."},
+ {pergunta:"A Emma diz: I watch TV at night. Você também vê TV de noite. O que você diz?", opcoes:["Not me.","Me too!","Really?"], correta:1,
+  explicacao:"Me too! = Eu também! Not me. seria se você NÃO visse TV de noite."},
+ {pergunta:"O que vem primeiro no dia?", opcoes:["go to bed","have dinner","wake up"], correta:2,
+  explicacao:"wake up = acordar. É a primeira coisa do dia!"},
+ {pergunta:"Ouça e escolha.", audio:"take a shower", opcoes:["take a shower","get dressed","go to school"], correta:0,
+  explicacao:"take a shower = tomar banho. Em inglês a gente pega (take) o banho."},
+ {pergunta:"O Leo diz: I get up at five! Você acha isso muito cedo. Como você diz Sério?", opcoes:["Really?","Me too!","Good night!"], correta:0,
+  explicacao:"Really? = Sério? É mesmo? Serve para mostrar surpresa."}
+]},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"I ___ up at seven.", pt:"Eu me levanto às sete.", resposta:"get",
+  opcoes:["get","go","have"], explicacao:"get up = levantar da cama."},
+ {frase:"I have ___ at school.", pt:"Eu almoço na escola.", resposta:"lunch",
+  opcoes:["lunch","bed","TV"], explicacao:"have lunch = almoçar."},
+ {frase:"I ___ my teeth.", pt:"Eu escovo os dentes.", resposta:"brush",
+  opcoes:["brush","take","watch"], explicacao:"brush my teeth = escovar os dentes."},
+ {frase:"I go to ___ at night.", pt:"Eu vou para a cama de noite.", resposta:"bed",
+  opcoes:["bed","breakfast","school"], explicacao:"go to bed = ir para a cama, ir dormir."},
+ {frase:"I ___ TV with my dad.", pt:"Eu vejo TV com o meu pai.", resposta:"watch",
+  opcoes:["watch","read","do"], explicacao:"TV a gente assiste: watch TV."},
+ {frase:"My birthday is ___ May.", pt:"O meu aniversário é em maio.", resposta:"in",
+  opcoes:["in","on","at"], explicacao:"Lembra da semana passada? Só o mês, sem o dia: in May."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"breakfast", pt:"café da manhã", dica:"(uma palavra)"},
+ {en:"go to school", pt:"ir para a escola", dica:"(três palavras)"},
+ {en:"have lunch", pt:"almoçar", dica:"(duas palavras)"},
+ {en:"go to bed", pt:"ir para a cama", dica:"(três palavras)"},
+ {en:"Me too", pt:"Eu também", dica:"(duas palavras)"}
+]},
+
+{tipo:"adivinha", titulo:"O que é? Escreva a resposta", itens:[
+ {pistas:["I have it in the morning.","I have it at home, with my family.","It is not lunch. It is not dinner."],
+  resposta:"breakfast", pt:"café da manhã", dica:"(uma refeição)"},
+ {pistas:["It is in my home.","I go to it at night.","I am tired? I go to it!"],
+  resposta:"bed", pt:"cama", dica:"(uma coisa da casa)"},
+ {pistas:["I watch it.","It has music and games.","It is not a book."],
+  resposta:"TV", pt:"TV", dica:"(uma coisa da casa)"},
+ {pistas:["It is from my teacher.","I do it at home.","It is not fun!"],
+  resposta:"homework", pt:"lição de casa", dica:"(uma coisa da escola)"}
+]},
+
+{tipo:"explorar", titulo:"Quem é a Beth?", perfil:"medico", voz:"f",
+ personagem:"Beth, enfermeira de hospital, calma e sorridente",
+ apresentacao:"<p>No ponto de ônibus, uma moça de roupa branca boceja e sorri para você. São oito da manhã e ela diz <i>Good night!</i> Estranho, né? Ela <b>só fala inglês</b>. Descubra quem ela é!</p>",
+ segredos:["ela é enfermeira e trabalha de noite","ela toma café da manhã às oito da noite","ela vai para a cama às nove da manhã","ela tem um gato preto que também dorme de dia","surpresa: ela lê um livro no ônibus todo dia, e hoje é um livro de mistério"],
+ pistas:["quando ela trabalha","surpresa: a hora do café da manhã","a hora de ir para a cama","um animal de estimação","o que ela faz no ônibus"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">Breakfast? What</span> …? · <span class=\"lacuna\">Do you have a</span> …? · <span class=\"lacuna\">Really</span> …?</p>",
+ instrucaoIA:"Ela sabe: as ações da rotina desta aula (wake up, get up, brush my teeth, take a shower, get dressed, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed, every day), morning, night, at night, números até 100, What's your name? How old are you? Where are you from? Do you have a pet? What's your favorite...? cores, família, animais (dog, cat, bird, fish), book, mystery. Frases para conversar: Me too! Not me. Really? Sorry, I don't understand. Can you repeat, please? Ela ainda não aprendeu a fazer perguntas sobre a rotina (Do you...? What time do you...?) nem a dizer as horas com o'clock: aceite perguntas de uma ou duas palavras (Breakfast? What time? Bed?) e responda curto, com números: I have breakfast at eight... at night! Beth fala frases de 3 a 6 palavras, deixa ganchos (My day is funny!) e dá chance para ela reagir com Really? Me too! ou Not me. Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: a manhã da Emma e a sua", cena:"comparacao",
+ cenario:"<p>É hora do recreio. A Emma aposta que a manhã dela e a sua são <b>iguaizinhas</b>. Será? Comparem o que vocês fazem de manhã e de noite. A Emma <b>só entende inglês</b>.</p>",
+ personagem:"Emma, colega de turma de Nova York, animada e competitiva",
+ objetivos:["dizer duas coisas que ela faz de manhã ou de noite (I ...)","reagir a duas coisas da Emma com Me too!, Not me. ou Really?"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I</span> … every day. · <span class=\"lacuna\">At night, I</span> … · <span class=\"lacuna\">Me</span> …!</p>",
+ instrucaoIA:"Ela sabe: wake up, get up, brush my teeth, take a shower, get dressed, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed, every day, morning, night, at night, números até 100, Me too! Not me. Really? And you? Emma diz uma coisa por vez sobre ela (I watch TV in the morning! I read at night.), espera ela reagir, e pergunta And you? Fatos da Emma: acorda às seis, vê TV de manhã antes da escola, toma banho de noite, lê um livro antes de dormir. Frases de 3 a 6 palavras. A cena é curta: 4 a 6 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre o seu dia: o que você faz de manhã e o que você faz de noite.",
+ dica:"<ul><li>comece cada frase com <b>I</b></li><li>pelo menos duas coisas da manhã</li><li>pelo menos uma coisa da noite</li><li>use pelo menos um <b>have</b> de refeição</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I <span class=\"lacuna\">?</span> every day. · I <span class=\"lacuna\">?</span> and I <span class=\"lacuna\">?</span>. · At night, I <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases com I + ação da rotina: pelo menos duas da manhã (I wake up, I get up, I brush my teeth, I take a shower, I get dressed, I have breakfast, I go to school) e uma da noite (I have dinner, I watch TV, I read, I go to bed), com pelo menos um have de refeição. Horas com at + número são um bônus, não obrigatórias.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre o dia dela, com I + ação. Vocabulário da aula: wake up, get up, brush my teeth, take a shower, get dressed, have breakfast, go to school, have lunch, do my homework, play, watch TV, read, have dinner, go to bed, every day. Confira as duplas (get up, go to bed, have lunch — sem to depois de have) e se ela não trocou have e take. As horas (at seven) ainda não foram ensinadas: se aparecerem, elogie, não cobre."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ frases:[
+  {en:"I wake up every day.", pt:"Eu acordo todo dia."},
+  {en:"I brush my teeth.", pt:"Eu escovo os dentes."},
+  {en:"I have breakfast.", pt:"Eu tomo café da manhã."},
+  {en:"I go to school.", pt:"Eu vou para a escola."},
+  {en:"I do my homework.", pt:"Eu faço a lição de casa."},
+  {en:"I go to bed.", pt:"Eu vou para a cama."},
+  {en:"Me too! Not me. Really?", pt:"Eu também! Eu não. Sério?"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao TH de teeth (língua entre os dentes) e ao breakfast (BRÉK-fast, não brêik). Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando: Do you have breakfast every day? · Do you watch TV at night? · Do you read at night? · Do you play at school? · I go to bed at nine. And you? Ela pode responder com Me too!, Not me. ou uma frase com I. Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"I brush my teeth and go to bed", pt:"Eu escovo os dentes e vou para a cama."},
+ {frase:"I have breakfast with my family every day", pt:"Eu tomo café da manhã com a minha família todo dia."},
+ {frase:"I do my homework and I watch TV", pt:"Eu faço a lição de casa e vejo TV."},
+ {frase:"At night I read a new book", pt:"De noite eu leio um livro novo."}
+]}
+
+]});
+</script>
+</body>
+</html>
