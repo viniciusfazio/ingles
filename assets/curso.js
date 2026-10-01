@@ -43,6 +43,16 @@ function temAluna(){
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function norm(s){return String(s==null?'':s).toLowerCase().replace(/[’']/g,"'").replace(/[.,!?;:"“”]/g,'').replace(/\s+/g,' ').trim();}
 function baralhar(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+/* ordem embaralhada das opções de um exercício, mas FIXA para aquele exercício:
+   a mesma a cada vez que a aula abre. A certa não fica sempre na mesma posição,
+   não importa a ordem em que a aula foi escrita. Devolve os índices originais. */
+function ordemFixa(n,semente){
+  var h=2166136261;for(var c=0;c<semente.length;c++){h^=semente.charCodeAt(c);h=Math.imul(h,16777619)>>>0;}
+  var ord=[];for(var i=0;i<n;i++)ord.push(i);
+  for(i=n-1;i>0;i--){h=Math.imul(h^(h>>>15),2246822507)>>>0;h=Math.imul(h^(h>>>13),3266489909)>>>0;h=(h^(h>>>16))>>>0;
+    var j=h%(i+1);var t=ord[i];ord[i]=ord[j];ord[j]=t;}
+  return ord;
+}
 function novo(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e;}
 
 /* data de HOJE no fuso do celular (AAAA-MM-DD). toISOString() daria a data
@@ -1210,13 +1220,14 @@ blocos.quiz = function(b,bi){
     ex.appendChild(novo('div','pergunta','<span class="num">'+(i+1)+'</span>'+esc(q.pergunta)+(q.audio?' '+botaoSom(q.audio,true):'')));
     var ops=novo('div','opcoes');
     var fb=novo('div','feedback');
+    var botoes=[];                     /* por índice ORIGINAL da opção (é o que fica salvo) */
 
     function aplicar(escolhida,restaurando){
       var todos=ops.querySelectorAll('.opcao');
       for(var k=0;k<todos.length;k++)todos[k].disabled=true;
       var certo=(escolhida===q.correta);
-      if(todos[escolhida]) todos[escolhida].classList.add(certo?'certa':'errada');
-      if(!certo&&todos[q.correta]) todos[q.correta].classList.add('certa');
+      if(botoes[escolhida]) botoes[escolhida].classList.add(certo?'certa':'errada');
+      if(!certo&&botoes[q.correta]) botoes[q.correta].classList.add('certa');
       fb.className='feedback '+(certo?'ok':'nok');
       fb.innerHTML=(certo?'✅ Isso mesmo!':'❌ A resposta certa é: '+esc(q.opcoes[q.correta]))+
                    (q.explicacao?'<span class="porque">'+esc(q.explicacao)+'</span>':'');
@@ -1229,9 +1240,10 @@ blocos.quiz = function(b,bi){
         fb.className='feedback'; fb.innerHTML='';
       }));
     }
-    q.opcoes.forEach(function(op,jj){
-      var bt=novo('button','opcao',esc(op));
+    ordemFixa(q.opcoes.length,chaveAula()+'|'+id).forEach(function(jj){
+      var bt=novo('button','opcao',esc(q.opcoes[jj]));
       bt.onclick=function(){ aplicar(jj,false); };
+      botoes[jj]=bt;
       ops.appendChild(bt);
     });
     ex.appendChild(ops); ex.appendChild(fb);
@@ -1282,7 +1294,8 @@ blocos.completar = function(b,bi){
 
     if(it.opcoes&&it.opcoes.length){
       ops=novo('div','opcoes');
-      it.opcoes.forEach(function(op){
+      ordemFixa(it.opcoes.length,chaveAula()+'|'+id).forEach(function(jj){
+        var op=it.opcoes[jj];
         var bt=novo('button','opcao',esc(op));
         bt.onclick=function(){ aplicar(op,false); };
         ops.appendChild(bt);
