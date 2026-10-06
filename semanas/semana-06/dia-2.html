@@ -132,7 +132,7 @@ blocos:[
  apresentacao:"<p>O <b>Mr. Gomez</b> está fazendo um livro de fotos chamado <i>Um dia na vida de uma criança</i>, com crianças do mundo todo. Ele quer saber como é o <b>seu</b> dia para escolher as fotos — mas <b>só fala inglês</b>. Entenda o que ele pergunta e responda.</p>",
  quer:["uma coisa que ela sempre faz de manhã","uma coisa que ela nunca faz","o que ela normalmente faz aos domingos","o que ela gosta de fazer depois da escola","com quem ela faz alguma coisa junto (together)"],
  andaime:"<p>Se travar: <span class=\"lacuna\">I always</span> … · <span class=\"lacuna\">I never</span> … · <span class=\"lacuna\">On Sundays, I usually</span> … · <span class=\"lacuna\">I like</span> …</p>",
- instrucaoIA:"Ela sabe: always, usually, often, sometimes, never, on Sundays, together, best friend, go shopping, like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, a rotina da semana passada (wake up, get up, have breakfast, go to school, have lunch, do my homework, watch TV, read, have dinner, go to bed), in the morning, after school, at night, at + hora, família (mom, dad, brother, sister, grandma). Ela responde com I + palavra de frequência + ação (I always have breakfast). Mr. Gomez pergunta uma coisa por vez, com frases de 3 a 6 palavras, e diz que vai tirar uma foto disso (Great photo!). Se ela não entender, reformule: mais curto, com um exemplo sobre ele mesmo (I always drink coffee. And you?) ou com opções (Always? Sometimes? Never?)."},
+ instrucaoIA:"Ela sabe: always, usually, often, sometimes, never, on Sundays, together, best friend, go shopping, like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, a rotina da semana passada (wake up, get up, have breakfast, go to school, have lunch, do my homework, watch TV, read, have dinner, go to bed), in the morning, after school, at night, at + hora, família (mom, dad, brother, sister, grandma). Ela responde com I + palavra de frequência + ação (I always have breakfast). Mr. Gomez pergunta uma coisa por vez, com frases de 3 a 6 palavras, e diz que vai tirar uma foto disso (Great photo!). Se ela não entender, reformule: mais curto, com um exemplo sobre ele mesmo (I always walk my dog. And you?) ou com opções (Always? Sometimes? Never?)."},
 
 {tipo:"missao", titulo:"Missão: apresente a sua melhor amiga", cena:"apresentar-outro",
  cenario:"<p>O <b>Max</b> vai para a mesma festa que a sua melhor amiga (ou o seu melhor amigo) no sábado, mas não conhece ela. Conte para ele quem ela é e o que ela faz, para ele achar ela na festa e ter assunto. O Max <b>só entende inglês</b>.</p>",
@@ -161,17 +161,17 @@ blocos:[
  ],
  instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com foco nos três sons do -s: likes e cooks com /s/, plays, rides e studies com /z/, watches com /iz/ (uma sílaba a mais). Depois faça 4 a 6 perguntas em inglês sobre a família dela, uma de cada vez, e espere ela responder falando com o -s: What does your mom like? · Does your dad cook? · What does your best friend play? · Who watches TV in your family? · What do you always do on Sundays? Se ela esquecer o -s, repita a frase certa e peça para ela dizer de novo. Corrija com carinho, em português, e elogie o que saiu bem."},
 
-{tipo:"ligar", bonus:true, titulo:"Pegadinhas: ligue com cuidado", pares:[
- {en:"I play", pt:"eu jogo"},
- {en:"He plays", pt:"ele joga"},
- {en:"We play", pt:"nós jogamos"},
- {en:"I have", pt:"eu tenho"},
- {en:"She has", pt:"ela tem"},
- {en:"his dog", pt:"o cachorro dele"},
- {en:"her dog", pt:"o cachorro dela"},
- {en:"He always walks", pt:"ele sempre anda"},
- {en:"He never walks", pt:"ele nunca anda"},
- {en:"He sometimes walks", pt:"ele às vezes anda"}
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil: quem é? o que é?", itens:[
+ {pistas:["He is in my family, but he is not my dad.","He is my mom's brother.","He always visits us on Sundays."],
+  resposta:"uncle", pt:"tio", dica:"(alguém da família)"},
+ {pistas:["She is in my family, too.","She is my dad's mom.","She often cooks a cake for me."],
+  resposta:"grandma", pt:"avó", aceita:["grandmother"], dica:"(alguém da família)"},
+ {pistas:["It often sleeps on my bed.","It never walks with you in the park.","It doesn't like dogs."],
+  resposta:"cat", pt:"gato", dica:"(um animal)"},
+ {pistas:["Mom doesn't go to work.","We don't go to school.","It is after Saturday."],
+  resposta:"Sunday", pt:"domingo", dica:"(um dia)"},
+ {pistas:["It is in the classroom.","The teacher often writes on it.","It is big, and it is green or white."],
+  resposta:"board", pt:"quadro, lousa", dica:"(uma coisa da escola)"}
 ]}
 
 ]});

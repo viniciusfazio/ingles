@@ -32,7 +32,7 @@ blocos:[
  "<p><b>Uma novidade:</b> com <code>is</code> (e <code>am</code>, <code>are</code>), a palavra de frequência vem <b>depois</b>:</p>"+
  "<table><tr><th>Com ação: antes</th><th>Com is: depois</th></tr>"+
  "<tr><td><code>She always plays.</code></td><td><code>She is always happy.</code></td></tr>"+
- "<tr><td><code>He never comes late.</code></td><td><code>He is never late.</code></td></tr></table>",
+ "<tr><td><code>He never comes home late.</code></td><td><code>He is never late.</code></td></tr></table>",
  exemplos:[
   {en:"My mom starts work at nine.", pt:"A minha mãe começa a trabalhar às nove."},
   {en:"My dad doesn't drink tea.", pt:"O meu pai não bebe chá."},
@@ -93,7 +93,7 @@ blocos:[
  dica:"<ul><li>uma frase completa para cada pergunta</li><li>na pergunta 3, responda com <b>No, he …</b> e diga a que horas ou como ele se levanta</li></ul>",
  andaime:"<p>Paulo is <span class=\"lacuna\">?</span>. · He <span class=\"lacuna\">?</span> a lot of <span class=\"lacuna\">?</span>. · No, he <span class=\"lacuna\">?</span>. He always <span class=\"lacuna\">?</span> late.</p>",
  gabarito:"1. Paulo is twelve (years old). 2. He reads (a lot of) comic books. 3. No, he doesn't. He always gets up late.",
- instrucaoIA:"Ela ouviu um diálogo entre a Mrs. Brooks e o filho, Jake, sobre o Paulo, um aluno brasileiro de doze anos que vai morar com eles: ele joga futebol todo sábado, não joga videogame, lê muitos gibis e normalmente se levanta às seis e meia; o Jake sempre se levanta tarde. Ela devia responder: a idade do Paulo (twelve), o que ele lê (comic books) e se o Jake se levanta cedo (No, he doesn't. He always gets up late). Gramática da semana: -s com he/she, doesn't, Does...?, always/never antes da ação."},
+ instrucaoIA:"Ela ouviu um diálogo entre a Mrs. Brooks e o filho, Jake, sobre o Paulo, um aluno novo, brasileiro, de doze anos: ele joga futebol todo sábado, não joga videogame, lê muitos gibis e normalmente se levanta às seis e meia; o Jake sempre se levanta tarde. Ela devia responder: a idade do Paulo (twelve), o que ele lê (comic books) e se o Jake se levanta cedo (No, he doesn't. He always gets up late). Gramática da semana: -s com he/she, doesn't, Does...?, always/never antes da ação."},
 
 {tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
  {frase:"___ your dad drink coffee?", pt:"O seu pai bebe café?", resposta:"Does",
@@ -123,10 +123,10 @@ blocos:[
 
 {tipo:"entrevista", titulo:"O livro da Mrs. Fox", perfil:"escritor", voz:"f",
  personagem:"Mrs. Fox, escritora de livros para crianças, curiosa e falante",
- apresentacao:"<p>A <b>Mrs. Fox</b> está escrevendo um livro sobre <b>professores do mundo todo</b>, e quer saber tudo sobre o seu professor ou a sua professora favorita. Ela <b>só fala inglês</b>. Entenda o que ela pergunta e responda.</p>",
- quer:["o nome da professora (ou do professor) favorita dela","a que horas a aula começa (start)","uma coisa que a professora sempre faz na aula","uma coisa que a professora nunca faz ou não gosta","se a professora tem um bicho de estimação ou filhos (Does she have...?)"],
- andaime:"<p>Se travar: <span class=\"lacuna\">Her name is</span> … · <span class=\"lacuna\">School starts at</span> … · <span class=\"lacuna\">She always</span> … · <span class=\"lacuna\">She doesn't</span> …</p>",
- instrucaoIA:"Ela sabe: His/Her name is..., o -s da ação com he/she, doesn't, Does she...? / Yes, she does / No, she doesn't, always, usually, often, sometimes, never, is always..., start, come home, son, daughter, job, office, coffee, tea, juice, as ações da semana (sing, draw, cook, help, study, write, read, listen to music, ride a bike, walk the dog, run), teacher, student, class, classroom, board, book, at + hora, in the morning. Mrs. Fox pergunta uma coisa por vez sobre a professora dela, em frases de 3 a 6 palavras, e anota (Great! I write that!). Se ela não entender, reformule: mais curto, com exemplo sobre a própria Mrs. Fox (My teacher always sings. And your teacher?) ou com opções (Always? Never?)."},
+ apresentacao:"<p>A <b>Mrs. Fox</b> escreve livros para crianças, e o próximo é sobre <b>crianças e histórias</b>: o que elas leem, quem lê com elas, que personagem elas amam. Ela quer saber tudo sobre você — mas <b>só fala inglês</b>. Entenda o que ela pergunta e responda.</p>",
+ quer:["se ela lê livros ou gibis, e quando (at night, on Sundays...)","se alguém da família lê com ela (Does your mom read?)","o livro ou gibi favorito dela, e uma coisa que alguém dessa história sempre faz (He always...)","uma coisa que esse alguém nunca faz ou não gosta (He doesn't...)","se ela também escreve ou desenha (Do you write? Do you draw?)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I read</span> … · <span class=\"lacuna\">My mom</span> … · <span class=\"lacuna\">My favorite book is</span> … · <span class=\"lacuna\">He never</span> …</p>",
+ instrucaoIA:"Ela sabe: read, book, comic book, write, draw, like, favorite, o -s da ação com he/she, doesn't, Does your mom...? / Yes, she does / No, she doesn't, always, usually, often, sometimes, never, at night, on Sundays, after school, família (mom, dad, brother, sister, grandma, cousin), as ações da semana (sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep). Ela não conhece as palavras story nem character: para falar do personagem, pergunte Who is in the book? What does he do? Mrs. Fox pergunta uma coisa por vez, em frases de 3 a 6 palavras, e anota (Great! That's for my book!). Se ela não entender, reformule: mais curto, com exemplo sobre a própria Mrs. Fox (I always read at night. And you?) ou com opções (Books? Comic books?)."},
 
 {tipo:"missao", titulo:"Missão da semana: a videochamada com a Mrs. Brooks", cena:"ligacao", voz:"f",
  cenario:"<p>Surpresa: o Paulo, o aluno novo da conversa, é o <b>seu primo</b>! Ele vai morar um mês com a família Brooks em Nova York. A <b>Mrs. Brooks</b> faz uma videochamada com você para saber mais sobre ele. Ela <b>só entende inglês</b>.</p>",
