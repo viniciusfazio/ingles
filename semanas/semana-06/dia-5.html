@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 6 · Dia 5</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:6,
+dia:5,
+titulo:"Revisão + projeto",
+subtitulo:"O jogo da Miss Kate e o projeto: um dia na vida de alguém",
+objetivos:[
+  "Ouvir a história mais longa da semana e responder sobre ela",
+  "Misturar tudo: -s, doesn't, Does…? e always/never",
+  "Fazer o projeto: um dia na vida de alguém que você conhece"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🎉 Parabéns! Fim da semana 6!",
+ html:"<p>Esta semana você aprendeu a falar dos <b>outros</b>. Olha tudo o que você já consegue:</p>"+
+ "<table><tr><th>Para…</th><th>Exemplo</th></tr>"+
+ "<tr><td>dizer o que ele faz</td><td><code>He plays soccer.</code></td></tr>"+
+ "<tr><td>dizer o que ela não faz</td><td><code>She doesn't cook.</code></td></tr>"+
+ "<tr><td>perguntar</td><td><code>Does he like music?</code></td></tr>"+
+ "<tr><td>dizer quantas vezes</td><td><code>She always sings. He never runs.</code></td></tr></table>"+
+ "<p>Hoje tem a história mais longa da semana, um personagem novo para descobrir, uma missão na casa da Emma e o <b>projeto</b>. Vamos lá! 💜</p>"},
+
+{tipo:"historia", titulo:"Ouça: o jogo da Miss Kate", cena:"competicao", paragrafos:[
+ {en:"It's Friday. Miss Kate has a game for the class: “Who knows me?”", pt:"É sexta-feira. A Miss Kate tem um jogo para a turma: “Quem me conhece?”"},
+ {en:"The class has two teams: Leo's team and Emma's team.", pt:"A turma tem dois times: o time do Leo e o time da Emma."},
+ {en:"“Question one: what time do I get up?” Emma says: “At six!” “That's right!”", pt:"“Pergunta um: a que horas eu me levanto?” A Emma diz: “Às seis!” “Isso mesmo!”"},
+ {en:"“Question two: do I have a pet?” Leo says: “Yes! A cat!” “That's wrong! I don't have a pet.”", pt:"“Pergunta dois: eu tenho um bicho de estimação?” O Leo diz: “Sim! Um gato!” “Está errado! Eu não tenho bicho de estimação.”"},
+ {en:"“Question three: what do I always drink in the morning?” Emma says: “Milk!” “That's wrong! I always drink coffee.”", pt:"“Pergunta três: o que eu sempre bebo de manhã?” A Emma diz: “Leite!” “Está errado! Eu sempre bebo café.”"},
+ {en:"“Question four: what does my brother do on Sundays?” Leo says: “He sings!” “That's right! He sings every Sunday.”", pt:"“Pergunta quatro: o que o meu irmão faz aos domingos?” O Leo diz: “Ele canta!” “Isso mesmo! Ele canta todo domingo.”"},
+ {en:"One for Leo's team, one for Emma's team. “Last question: do I sing?” Emma says: “No! You never sing!”", pt:"Um ponto para o time do Leo, um para o time da Emma. “Última pergunta: eu canto?” A Emma diz: “Não! Você nunca canta!”"},
+ {en:"But Miss Kate sings “Happy Birthday”! “I sing on my birthday… and it's today! The two teams win cake!”", pt:"Mas a Miss Kate canta “Parabéns”! “Eu canto no meu aniversário… e é hoje! Os dois times ganham bolo!”"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"What day is it?", opcoes:["Monday","Friday","Saturday"], correta:1,
+  explicacao:"It's Friday. = É sexta-feira."},
+ {pergunta:"What time does Miss Kate get up?", opcoes:["at six","at seven","at six thirty"], correta:0,
+  explicacao:"A Emma diz At six! e a Miss Kate diz That's right!"},
+ {pergunta:"Does Miss Kate have a pet?", opcoes:["Yes, a cat.","Yes, a dog.","No, she doesn't."], correta:2,
+  explicacao:"O Leo chuta um gato, mas ela diz: That's wrong! I don't have a pet."},
+ {pergunta:"What does Miss Kate always drink in the morning?", opcoes:["milk","coffee","juice"], correta:1,
+  explicacao:"I always drink coffee. A Emma disse milk, e errou."},
+ {pergunta:"What does Miss Kate's brother do on Sundays?", opcoes:["He cooks.","He plays soccer.","He sings."], correta:2,
+  explicacao:"He sings every Sunday. = Ele canta todo domingo."},
+ {pergunta:"Why does Miss Kate sing?", opcoes:["It's her birthday.","She always sings on Fridays.","Her brother sings."], correta:0,
+  explicacao:"Ela só canta no aniversário: I sing on my birthday… and it's today!"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva frases da história", itens:[
+ {en:"I always drink coffee", pt:"Eu sempre bebo café.", dica:"(quatro palavras)"},
+ {en:"I don't have a pet", pt:"Eu não tenho bicho de estimação.", dica:"(cinco palavras, com apóstrofo)"},
+ {en:"He sings every Sunday", pt:"Ele canta todo domingo.", dica:"(quatro palavras)"},
+ {en:"You never sing", pt:"Você nunca canta.", dica:"(três palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Does Miss Kate have a pet? (A Miss Kate tem um bicho de estimação?)<br>2. What does Miss Kate's brother do on Sundays? (O que o irmão da Miss Kate faz aos domingos?)<br>3. Why does Miss Kate sing? (Por que a Miss Kate canta?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na pergunta 1, comece com <b>No, she …</b></li><li>na pergunta 3, conte o que tem de especial naquele dia</li></ul>",
+ gabarito:"1. No, she doesn't. She doesn't have a pet. 2. He sings (every Sunday). 3. It's her birthday (today). / She sings on her birthday.",
+ instrucaoIA:"Ela ouviu uma história: a Miss Kate faz um jogo 'Who knows me?' com dois times; ela se levanta às seis, não tem bicho de estimação, sempre bebe café de manhã, o irmão dela canta todo domingo, e ela canta Happy Birthday porque é o aniversário dela. Ela devia responder: se a Miss Kate tem pet (No, she doesn't), o que o irmão faz aos domingos (He sings) e por que ela canta (It's her birthday). Gramática da semana: -s com he/she, doesn't, Does...?, always/never."},
+
+{tipo:"completar", titulo:"Revisão da semana", ajuda:"Toque na palavra que falta. Tem um pouco de tudo da semana!", itens:[
+ {frase:"My sister ___ to music every day.", pt:"A minha irmã ouve música todo dia.", resposta:"listens",
+  opcoes:["listens","listen","doesn't"], explicacao:"My sister = she: listens, com -s."},
+ {frase:"Leo ___ his homework at night.", pt:"O Leo faz a lição de casa de noite.", resposta:"does",
+  opcoes:["does","do","dos"], explicacao:"do com he vira does (do termina em o: ganha -es)."},
+ {frase:"My dad ___ like tea.", pt:"O meu pai não gosta de chá.", resposta:"doesn't",
+  opcoes:["doesn't","don't","isn't"], explicacao:"Negar com he: doesn't."},
+ {frase:"Does Emma ___ a bike?", pt:"A Emma anda de bicicleta?", resposta:"ride",
+  opcoes:["ride","rides","does"], explicacao:"Depois de Does a ação fica sem -s: ride."},
+ {frase:"Tom ___ draws. He doesn't like it.", pt:"O Tom nunca desenha. Ele não gosta.", resposta:"never",
+  opcoes:["never","always","often"], explicacao:"Quem não gosta nunca faz: never."},
+ {frase:"Mrs. Brooks is ___ late.", pt:"A Mrs. Brooks nunca se atrasa.", resposta:"never",
+  opcoes:["never","sometimes","always"], explicacao:"nunca = never. Com is, vem depois: is never late."},
+ {frase:"My mom ___ a lot of books.", pt:"A minha mãe tem muitos livros.", resposta:"has",
+  opcoes:["has","have","haves"], explicacao:"have com she vira has."},
+ {frase:"Paulo ___ up at six thirty.", pt:"O Paulo se levanta às seis e meia.", resposta:"gets",
+  opcoes:["gets","get","is"], explicacao:"Paulo = he: get up vira gets up. O -s vai na ação, não no up."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as palavras da semana", pares:[
+ {en:"always", pt:"sempre"},
+ {en:"never", pt:"nunca"},
+ {en:"sometimes", pt:"às vezes"},
+ {en:"daughter", pt:"filha"},
+ {en:"son", pt:"filho"},
+ {en:"buy", pt:"comprar"},
+ {en:"neighbor", pt:"vizinho"},
+ {en:"together", pt:"juntos"}
+]},
+
+{tipo:"explorar", titulo:"Quem é a Dr. Ruby?", perfil:"veterinario", voz:"f",
+ personagem:"Dr. Ruby, veterinária, uns trinta anos, animada e cheia de bichos",
+ apresentacao:"<p>Na sala de espera do veterinário, uma moça de jaleco verde chega com um gato no colo e um cachorro velhinho atrás. Ela diz <i>Hi there!</i> Ela <b>só fala inglês</b>. Descubra quem ela é!</p>",
+ segredos:["ela é veterinária e cuida de animais todo dia","ela tem três gatos e um cachorro em casa","um dos gatos se chama Mr. Fish e dorme na cama dela todo dia","o cachorro dela tem quinze anos e nunca corre: ele dorme o dia todo","ela acorda às cinco para dar café da manhã aos bichos","surpresa: ela também tem um pássaro que canta Happy Birthday"],
+ pistas:["o trabalho dela","quantos bichos ela tem","um gato com nome engraçado","o cachorro velhinho","a hora que ela acorda","surpresa: um talento"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">Do you have</span> …? · <span class=\"lacuna\">What's your cat's</span> …? · <span class=\"lacuna\">Does your dog</span> …?</p>",
+ instrucaoIA:"Ela sabe perguntar: What's your name? What do you do? What's your job? Do you have a...? How many...? What's his/her name? Does your cat/dog...? What time do you get up? Do you like...? Vocabulário: cat, dog, bird, fish, pet, old, sleep, run, sing, eat, drink, milk, have breakfast, get up, at + hora, números até 100, as ações e o -s da semana (He sleeps, She sings), always, never, sometimes, doesn't. Frases para conversar: That's right! That's wrong! I think so. Really? Me too! Sorry, I don't understand. Dr. Ruby fala frases de 3 a 6 palavras, sobre os bichos com o -s (My cat sleeps in my bed!), deixa ganchos (My bird is very special...) e devolve perguntas fáceis (Do you have a pet?). Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: o fim de semana na casa da Emma", cena:"visita", voz:"f",
+ cenario:"<p>Você vai passar o fim de semana na <b>casa da Emma</b>! Antes de ir, a <b>mãe da Emma</b> conversa com você para combinar tudo. Descubra como é o sábado da família e conte uma coisa sobre você. Ela <b>só entende inglês</b>.</p>",
+ personagem:"a mãe da Emma, de Nova York, simpática e organizada",
+ objetivos:["descobrir a que horas a Emma se levanta no sábado (What time does Emma...?)","descobrir se o pai da Emma cozinha (Does Emma's dad cook?)","dizer uma coisa que você sempre faz ou nunca come (I always... / I never...)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">What time does Emma</span> …? · <span class=\"lacuna\">Does Emma's dad</span> …? · <span class=\"lacuna\">I never</span> …</p>",
+ instrucaoIA:"Ela sabe: Does he/she...? What time does...? What does...?, Yes, she does / No, he doesn't, o -s com he/she, I always / I never, always, usually, often, sometimes, never, on Saturday, get up, have breakfast, have dinner, go to bed, cook, eat, drink, milk, bread, juice, coffee, tea, like, sing, draw, ride a bike, walk the dog, play video games, watch TV, park, at + hora. Fatos: no sábado a Emma se levanta às nove (dorme até tarde!); o pai da Emma sempre cozinha o jantar no sábado (pizza); a mãe da Emma corre no parque às sete; o cachorro deles se chama Toast. A mãe da Emma responde o que ela perguntar e pergunta uma coisa sobre ela (Do you like pizza? What do you never eat?). Frases de 3 a 6 palavras. Personagem diferente da missão de ontem."},
+
+{tipo:"escrita", titulo:"Projeto da semana: um dia na vida de…", id:"1",
+ instrucao:"<b>Projeto!</b> Escolha uma pessoa que você conhece bem — a mãe, o pai, a avó, um irmão, a melhor amiga — e escreva <b>4 ou 5 frases</b> sobre o dia dela: o que ela faz, quantas vezes, e o que ela não faz.",
+ dica:"<ul><li>quem é a pessoa (nome ou quem ela é para você)</li><li>pelo menos uma hora com <b>at</b></li><li>pelo menos duas ações com <b>-s</b></li><li>um <b>always</b>, <b>usually</b>, <b>sometimes</b> ou <b>never</b></li><li>um <b>doesn't</b></li></ul>Sem molde hoje: é o seu projeto. Você consegue! 💜",
+ gabarito:"4 ou 5 frases sobre uma pessoa real, na 3ª pessoa: quem é (My grandma is seventy. / This is my dad.), uma hora com at (She gets up at six), pelo menos duas ações com -s (She cooks, She watches TV, He goes to work), uma palavra de frequência na posição certa (She always drinks coffee / He is never late), e um doesn't + ação sem -s (She doesn't like video games).",
+ instrucaoIA:"Projeto da semana: ela devia escrever 4 ou 5 frases sobre o dia de uma pessoa que ela conhece. Gramática da semana: -s com he/she (likes, plays, watches, goes, does, has, studies), doesn't e Does...? com a ação sem -s, always/usually/often/sometimes/never antes da ação e depois de is. Vocabulário da semana: like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, best friend, neighbor, go shopping, on Sundays, together, want, buy, ball, a lot of, comic book, son, daughter, job, office, start, come home, coffee, tea, juice, e a rotina da semana 5. Confira o -s em toda frase com he/she, o doesn't sem -s depois e a posição da palavra de frequência. Elogie bastante: é o projeto da semana."},
+
+{tipo:"fala", titulo:"Hora de falar: apresente o seu projeto",
+ instrucao:"Primeiro aqueça com as frases. Depois leia o seu projeto em voz alta para a IA e responda às perguntas dela.",
+ foco:"os três sons do <b>-s</b> juntos: <i>drinks</i> /s/, <i>plays</i> /z/, <i>watches</i> /iz/.",
+ frases:[
+  {en:"My mom drinks coffee.", pt:"A minha mãe bebe café."},
+  {en:"My brother plays soccer.", pt:"O meu irmão joga futebol."},
+  {en:"My dad watches TV.", pt:"O meu pai vê TV."},
+  {en:"She always gets up early.", pt:"Ela sempre se levanta cedo."},
+  {en:"He doesn't like tea.", pt:"Ele não gosta de chá."},
+  {en:"Does she sing? Yes, she does!", pt:"Ela canta? Sim, canta!"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases de aquecimento e corrija o som do -s em português (drinks /s/, plays /z/, watches /iz/). Depois peça para ela ler em voz alta o projeto dela (4 ou 5 frases sobre o dia de alguém que ela conhece) e, em seguida, faça 4 a 6 perguntas em inglês sobre essa pessoa, uma de cada vez, esperando a resposta falada: Who is she/he? · What time does she get up? · What does she always do? · Does she cook? · What does she never do? · Does she like music? Ela responde com o -s e com doesn't. Corrija com carinho, em português, e termine com um elogio sobre o que ela aprendeu na semana."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"My mom always drinks coffee in the morning", pt:"A minha mãe sempre bebe café de manhã."},
+ {frase:"Does your brother play soccer on Sundays", pt:"O seu irmão joga futebol aos domingos?"},
+ {frase:"She doesn't like tea but she likes juice", pt:"Ela não gosta de chá, mas gosta de suco."},
+ {frase:"My best friend sometimes visits her grandma", pt:"A minha melhor amiga às vezes visita a avó dela."}
+]},
+
+{tipo:"escrita", bonus:true, id:"bonus", titulo:"Escrita bônus: um cartão para a Miss Kate",
+ instrucao:"É aniversário da Miss Kate! Escreva um cartão para ela com <b>4 frases</b>: parabéns, e três coisas que você descobriu sobre ela na história (com <b>you</b>: <i>You…</i>).",
+ dica:"<ul><li>uma frase de parabéns</li><li>três coisas da história sobre ela, falando com ela (you, sem -s!)</li><li>um final carinhoso</li></ul>",
+ gabarito:"Um cartão com Happy birthday, Miss Kate! e três fatos da história falando com ela (You get up at six. You always drink coffee. You don't have a pet. Your brother sings every Sunday.), com o verbo SEM -s porque é you (e Your brother sings com -s, porque é he).",
+ instrucaoIA:"Desafio bônus: ela devia escrever um cartão de aniversário para a Miss Kate com 4 frases, usando you para falar com ela. A pegadinha: com you a ação NÃO leva -s (You drink coffee), com your brother leva (Your brother sings). Fatos da história: ela se levanta às seis, não tem bicho de estimação, sempre bebe café de manhã, o irmão dela canta todo domingo. Elogie se ela acertou a diferença entre you e he/she."}
+
+]});
+</script>
+</body>
+</html>

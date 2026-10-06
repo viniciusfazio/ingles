@@ -304,7 +304,59 @@ var GRAMATICA = [
   {en:"We play soccer on the weekend.", pt:"Nós jogamos futebol no fim de semana."},
   {en:"I swim in the afternoon.", pt:"Eu nado de tarde."},
   {en:"I'm free on Saturday morning.", pt:"Eu estou livre no sábado de manhã."}
- ]}
+ ]},
 
+{semana:6, dia:2, modulo:1,
+ titulo:"He plays, she likes — o -s do he e do she",
+ resumo:"Com he, she e it (uma pessoa ou coisa só) a ação ganha -s",
+ html:"<table>"+
+ "<tr><th>I / you / we</th><th>he / she / it</th></tr>"+
+ "<tr><td><code>I play</code></td><td><code>He plays</code></td></tr>"+
+ "<tr><td><code>You like</code></td><td><code>She likes</code></td></tr>"+
+ "<tr><td><code>We watch</code></td><td><code>Leo watches</code></td></tr></table>"+
+ "<table><tr><th>Termina em…</th><th>Fica</th></tr>"+
+ "<tr><td>sh, ch, o</td><td><code>watches</code>, <code>brushes</code>, <code>goes</code>, <code>does</code></td></tr>"+
+ "<tr><td>consoante + y</td><td><code>study → studies</code></td></tr>"+
+ "<tr><td>exceção</td><td><code>have → has</code></td></tr></table>"+
+ "<p>O -s tem três sons: <i>likes</i> /s/, <i>plays</i> /z/, <i>watches</i> /iz/.</p>",
+ exemplos:[
+  {en:"My mom likes music.", pt:"A minha mãe gosta de música."},
+  {en:"Leo plays video games.", pt:"O Leo joga videogame."},
+  {en:"My dad watches TV at night.", pt:"O meu pai vê TV de noite."},
+  {en:"Emma studies after school.", pt:"A Emma estuda depois da escola."},
+  {en:"My neighbor has a cat.", pt:"A minha vizinha tem um gato."}
+ ]},
+
+{semana:6, dia:2, modulo:1,
+ titulo:"always, usually, often, sometimes, never",
+ resumo:"Quantas vezes: antes da ação, mas depois de am / is / are",
+ html:"<p>💯 <code>always</code> → <code>usually</code> → <code>often</code> → <code>sometimes</code> → <code>never</code> 🚫</p>"+
+ "<table><tr><th>Com ação: ANTES</th><th>Com am / is / are: DEPOIS</th></tr>"+
+ "<tr><td><code>She always plays.</code></td><td><code>She is always happy.</code></td></tr>"+
+ "<tr><td><code>I never cook.</code></td><td><code>I am never late.</code></td></tr></table>",
+ exemplos:[
+  {en:"She always walks the dog.", pt:"Ela sempre passeia com o cachorro."},
+  {en:"He never goes shopping.", pt:"Ele nunca faz compras."},
+  {en:"We sometimes go shopping together.", pt:"Nós às vezes fazemos compras juntas."},
+  {en:"Jake is always hungry.", pt:"O Jake está sempre com fome."}
+ ]},
+
+{semana:6, dia:3, modulo:1,
+ titulo:"doesn't e Does…? — o -s pula para o do",
+ resumo:"Com he / she, negar com doesn't e perguntar com Does; a ação perde o -s",
+ html:"<table>"+
+ "<tr><th></th><th>I / you / we</th><th>he / she</th></tr>"+
+ "<tr><td>afirma</td><td><code>I like music.</code></td><td><code>She likes music.</code></td></tr>"+
+ "<tr><td>nega</td><td><code>I don't like music.</code></td><td><code>She doesn't like music.</code></td></tr>"+
+ "<tr><td>pergunta</td><td><code>Do you like music?</code></td><td><code>Does she like music?</code></td></tr>"+
+ "<tr><td>responde</td><td><code>Yes, I do. / No, I don't.</code></td><td><code>Yes, she does. / No, she doesn't.</code></td></tr></table>"+
+ "<p>O -s aparece <b>uma vez só</b>: ✅ <code>He doesn't play.</code> ❌ <i>He doesn't plays.</i></p>",
+ exemplos:[
+  {en:"Tom doesn't read books.", pt:"O Tom não lê livros."},
+  {en:"Does Emma like soccer? Yes, she does.", pt:"A Emma gosta de futebol? Sim, gosta."},
+  {en:"Does Leo sing? No, he doesn't.", pt:"O Leo canta? Não, não canta."},
+  {en:"What does your mom do on Sundays?", pt:"O que a sua mãe faz aos domingos?"},
+  {en:"What time does he get up?", pt:"A que horas ele se levanta?"}
+ ]}
 
 ];

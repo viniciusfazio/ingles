@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 6 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:6,
+dia:2,
+titulo:"He plays, she likes",
+subtitulo:"O -s do he e do she, e sempre, às vezes, nunca",
+objetivos:[
+  "Falar do que outra pessoa faz, com o -s: She likes, he plays",
+  "Dizer com que frequência: always, usually, often, sometimes, never",
+  "Entender uma conversa sobre o melhor amigo do Ben"
+],
+blocos:[
+
+{tipo:"vocab", titulo:"Sempre, às vezes, nunca (e mais)", itens:[
+ {en:"always", pt:"sempre", ipa:"/ÓL-uêiz/", emoji:"💯"},
+ {en:"usually", pt:"normalmente, geralmente", ipa:"/IÚ-ju-a-li/", emoji:"🔁"},
+ {en:"often", pt:"muitas vezes, com frequência", ipa:"/Ó-fen/", emoji:"🔂"},
+ {en:"sometimes", pt:"às vezes", ipa:"/SÂM-táimz/", emoji:"🎲"},
+ {en:"never", pt:"nunca", ipa:"/NÉ-ver/", emoji:"🚫"},
+ {en:"best friend", pt:"melhor amiga, melhor amigo", ipa:"/BÉST FRÉND/", emoji:"👯"},
+ {en:"neighbor", pt:"vizinha, vizinho", ipa:"/NÊI-bor/", emoji:"🏘️"},
+ {en:"go shopping", pt:"fazer compras", ipa:"/GÔU SHÓ-ping/", emoji:"🛍️"},
+ {en:"on Sundays", pt:"aos domingos (todo domingo)", ipa:"/on SÂN-dêiz/", emoji:"📆"},
+ {en:"together", pt:"juntas, juntos", ipa:"/tu-GUÉ-dher/", emoji:"🤗"}
+]},
+
+{tipo:"gramatica", titulo:"He plays, she likes: o -s do he e do she",
+ html:"<p>Com <code>I</code>, <code>you</code> e <code>we</code> a ação não muda (semana passada). Com <code>he</code>, <code>she</code> e <code>it</code> — <b>uma pessoa ou coisa só, que não é eu nem você</b> — a ação ganha um <b>-s</b>:</p>"+
+ "<table><tr><th>Eu, você, nós</th><th>Ele, ela</th></tr>"+
+ "<tr><td><code>I play</code></td><td><code>He plays</code></td></tr>"+
+ "<tr><td><code>You like</code></td><td><code>She likes</code></td></tr>"+
+ "<tr><td><code>We sing</code></td><td><code>Emma sings</code></td></tr></table>"+
+ "<p>Algumas mudam um pouquinho:</p>"+
+ "<table><tr><th>Termina em…</th><th>Fica</th></tr>"+
+ "<tr><td>sh, ch, o</td><td><code>watch → watches</code> · <code>brush → brushes</code> · <code>go → goes</code> · <code>do → does</code></td></tr>"+
+ "<tr><td>consoante + y</td><td><code>study → studies</code></td></tr>"+
+ "<tr><td>a exceção</td><td><code>have → has</code></td></tr></table>"+
+ "<p><b>Sempre ou nunca?</b> A palavra de frequência vem <b>antes da ação</b>: <code>She always plays.</code> <code>He never cooks.</code></p>"+
+ "<p>💯 <code>always</code> → <code>usually</code> → <code>often</code> → <code>sometimes</code> → <code>never</code> 🚫</p>",
+ exemplos:[
+  {en:"My mom likes music.", pt:"A minha mãe gosta de música."},
+  {en:"Leo plays video games.", pt:"O Leo joga videogame."},
+  {en:"My dad watches TV at night.", pt:"O meu pai vê TV de noite."},
+  {en:"Emma studies after school.", pt:"A Emma estuda depois da escola."},
+  {en:"She always walks the dog.", pt:"Ela sempre passeia com o cachorro."},
+  {en:"He never goes shopping.", pt:"Ele nunca faz compras."},
+  {en:"My neighbor has a cat.", pt:"A minha vizinha tem um gato."}
+ ]},
+
+{tipo:"dialogo", titulo:"Ouça: o melhor amigo do Ben", escuta:true, linhas:[
+ {quem:"Anna", en:"Who is this, Ben?", pt:"Quem é esse, Ben?"},
+ {quem:"Ben", en:"This is Sam, my best friend. He's from Chicago.", pt:"Este é o Sam, o meu melhor amigo. Ele é de Chicago."},
+ {quem:"Anna", en:"Is he funny?", pt:"Ele é engraçado?"},
+ {quem:"Ben", en:"Yes! He always sings in the car with his mom.", pt:"Sim! Ele sempre canta no carro com a mãe dele."},
+ {quem:"Anna", en:"Really? And on Sundays?", pt:"Sério? E aos domingos?"},
+ {quem:"Ben", en:"He usually rides a bike with his dad.", pt:"Ele normalmente anda de bicicleta com o pai dele."},
+ {quem:"Anna", en:"My dad never rides a bike!", pt:"O meu pai nunca anda de bicicleta!"},
+ {quem:"Ben", en:"Sam often cooks, too. He makes a cake every Saturday.", pt:"O Sam muitas vezes cozinha também. Ele faz um bolo todo sábado."},
+ {quem:"Anna", en:"Wow! I never cook. And his homework?", pt:"Uau! Eu nunca cozinho. E a lição de casa dele?"},
+ {quem:"Ben", en:"He sometimes does his homework at midnight!", pt:"Ele às vezes faz a lição de casa à meia-noite!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
+ {pergunta:"Who is Sam?", opcoes:["Ben's brother","Ben's best friend","Ben's dad"], correta:1,
+  explicacao:"O Ben diz: This is Sam, my best friend."},
+ {pergunta:"Where is Sam from?", opcoes:["Brazil","New York","Chicago"], correta:2,
+  explicacao:"He's from Chicago. = Ele é de Chicago."},
+ {pergunta:"Who does Sam sing with in the car?", opcoes:["his mom","his dad","Ben"], correta:0,
+  explicacao:"He always sings in the car with his mom."},
+ {pergunta:"What does Sam usually do on Sundays?", opcoes:["He cooks.","He rides a bike.","He goes shopping."], correta:1,
+  explicacao:"On Sundays, he usually rides a bike with his dad."},
+ {pergunta:"Who never rides a bike?", opcoes:["Sam's dad","Ben","Anna's dad"], correta:2,
+  explicacao:"A Anna diz: My dad never rides a bike! — o pai DELA, não o do Sam."},
+ {pergunta:"What does Sam make every Saturday?", opcoes:["a cake","dinner","breakfast"], correta:0,
+  explicacao:"He makes a cake every Saturday. = Ele faz um bolo todo sábado."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"This is Sam, my best friend", pt:"Este é o Sam, o meu melhor amigo.", dica:"(seis palavras)"},
+ {en:"He always sings in the car", pt:"Ele sempre canta no carro.", dica:"(seis palavras)"},
+ {en:"My dad never rides a bike", pt:"O meu pai nunca anda de bicicleta.", dica:"(seis palavras)"},
+ {en:"Sam often cooks, too", pt:"O Sam muitas vezes cozinha também.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Where is Sam from? (De onde é o Sam?)<br>2. What does Sam do on Sundays? (O que o Sam faz aos domingos?)<br>3. What does Sam make every Saturday? (O que o Sam faz todo sábado?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>comece com <b>Sam</b> ou <b>He</b></li><li>não esqueça o <b>-s</b> na ação</li></ul>",
+ andaime:"<p>Sam is from <span class=\"lacuna\">?</span>. · On Sundays, he usually <span class=\"lacuna\">?</span>. · He <span class=\"lacuna\">?</span> every Saturday.</p>",
+ gabarito:"1. Sam is from Chicago. 2. He usually rides a bike with his dad (on Sundays). 3. He makes a cake (every Saturday).",
+ instrucaoIA:"Ela ouviu um diálogo entre a Anna e o Ben sobre o Sam, melhor amigo do Ben: ele é de Chicago, sempre canta no carro com a mãe, aos domingos normalmente anda de bicicleta com o pai, faz um bolo todo sábado e às vezes faz a lição de casa à meia-noite. Ela devia responder: de onde é o Sam (Chicago), o que ele faz aos domingos (rides a bike with his dad) e o que faz todo sábado (makes a cake). Gramática nova da aula: o -s da ação com he/she (rides, makes, sings) e always/usually/often/sometimes/never antes da ação. O -s é o ponto principal: se faltar, mostre com carinho."},
+
+{tipo:"completar", titulo:"Com -s ou sem -s?", ajuda:"Toque na palavra que completa a frase.", itens:[
+ {frase:"Emma ___ music.", pt:"A Emma gosta de música.", resposta:"likes",
+  opcoes:["like","likes","is"], explicacao:"Emma = she, uma pessoa só. Então a ação ganha -s: likes."},
+ {frase:"My brother ___ soccer on Sundays.", pt:"O meu irmão joga futebol aos domingos.", resposta:"plays",
+  opcoes:["play","plays","is"], explicacao:"My brother = he. He plays, com -s."},
+ {frase:"Leo ___ TV at night.", pt:"O Leo vê TV de noite.", resposta:"watches",
+  opcoes:["watch","watches","watchs"], explicacao:"watch termina em ch, então ganha -es: watches."},
+ {frase:"My mom ___ to work at eight.", pt:"A minha mãe vai para o trabalho às oito.", resposta:"goes",
+  opcoes:["go","goes","gos"], explicacao:"go termina em o, então ganha -es: goes."},
+ {frase:"Ben ___ a dog.", pt:"O Ben tem um cachorro.", resposta:"has",
+  opcoes:["have","has","haves"], explicacao:"have é a exceção: com he/she vira has."},
+ {frase:"We ___ go shopping together.", pt:"Nós às vezes fazemos compras juntas.", resposta:"sometimes",
+  opcoes:["sometimes","always","never"], explicacao:"às vezes = sometimes. Vem antes da ação (go)."},
+ {frase:"I ___ eat bread. I don't like it!", pt:"Eu nunca como pão. Eu não gosto!", resposta:"never",
+  opcoes:["never","always","usually"], explicacao:"Quem não gosta de pão nunca come: never."},
+ {frase:"I have lunch ___ noon.", pt:"Eu almoço ao meio-dia.", resposta:"at",
+  opcoes:["at","on","in"], explicacao:"Da semana passada: hora certinha é at (at noon, at seven)."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"She always plays soccer", pt:"Ela sempre joga futebol."},
+ {frase:"My best friend often draws", pt:"A minha melhor amiga muitas vezes desenha."},
+ {frase:"He never watches TV", pt:"Ele nunca vê TV."},
+ {frase:"We sometimes go shopping together", pt:"Nós às vezes fazemos compras juntas."}
+]},
+
+{tipo:"entrevista", titulo:"O livro de fotos do Mr. Gomez", perfil:"fotografo", voz:"m",
+ personagem:"Mr. Gomez, fotógrafo de Nova York, simpático e cheio de câmeras",
+ apresentacao:"<p>O <b>Mr. Gomez</b> está fazendo um livro de fotos chamado <i>Um dia na vida de uma criança</i>, com crianças do mundo todo. Ele quer saber como é o <b>seu</b> dia para escolher as fotos — mas <b>só fala inglês</b>. Entenda o que ele pergunta e responda.</p>",
+ quer:["uma coisa que ela sempre faz de manhã","uma coisa que ela nunca faz","o que ela normalmente faz aos domingos","o que ela gosta de fazer depois da escola","com quem ela faz alguma coisa junto (together)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I always</span> … · <span class=\"lacuna\">I never</span> … · <span class=\"lacuna\">On Sundays, I usually</span> … · <span class=\"lacuna\">I like</span> …</p>",
+ instrucaoIA:"Ela sabe: always, usually, often, sometimes, never, on Sundays, together, best friend, go shopping, like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, a rotina da semana passada (wake up, get up, have breakfast, go to school, have lunch, do my homework, watch TV, read, have dinner, go to bed), in the morning, after school, at night, at + hora, família (mom, dad, brother, sister, grandma). Ela responde com I + palavra de frequência + ação (I always have breakfast). Mr. Gomez pergunta uma coisa por vez, com frases de 3 a 6 palavras, e diz que vai tirar uma foto disso (Great photo!). Se ela não entender, reformule: mais curto, com um exemplo sobre ele mesmo (I always drink coffee. And you?) ou com opções (Always? Sometimes? Never?)."},
+
+{tipo:"missao", titulo:"Missão: apresente a sua melhor amiga", cena:"apresentar-outro",
+ cenario:"<p>O <b>Max</b> vai para a mesma festa que a sua melhor amiga (ou o seu melhor amigo) no sábado, mas não conhece ela. Conte para ele quem ela é e o que ela faz, para ele achar ela na festa e ter assunto. O Max <b>só entende inglês</b>.</p>",
+ personagem:"Max, amigo da escola, curioso e um pouco tímido",
+ objetivos:["dizer o nome e a idade da melhor amiga (ou do melhor amigo) com She is / He is","dizer duas coisas que ela faz ou gosta, com o -s (She likes..., She plays...)","dizer uma coisa que ela sempre, às vezes ou nunca faz (always / sometimes / never)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">My best friend is</span> … · <span class=\"lacuna\">She likes</span> … · <span class=\"lacuna\">She always</span> …</p>",
+ instrucaoIA:"Ela sabe: My best friend is..., She is / He is + idade, o -s da ação com he/she (likes, plays, sings, draws, rides, watches, goes, has, studies), always, usually, often, sometimes, never, on Sundays, together, like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, cores, família, números até 100. Max faz uma pergunta por vez sobre a amiga dela (What's her name? How old is she? What does she like?), e reage com Me too! ou Really? quando ela diz algo. Se ela esquecer o -s, Max repete a frase certa com naturalidade (Oh, she likes music!), sem parar a conversa. Frases de 3 a 6 palavras."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b>: duas sobre <b>você</b> (com always, usually, sometimes ou never) e duas ou três sobre uma <b>pessoa da sua família</b> (com o -s).",
+ dica:"<ul><li>duas frases sobre você com uma palavra de frequência antes da ação</li><li>duas ou três frases sobre outra pessoa, começando com o nome, <b>She</b> ou <b>He</b></li><li>o <b>-s</b> na ação quando é ele ou ela</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I always <span class=\"lacuna\">?</span>. · I never <span class=\"lacuna\">?</span>. · My <span class=\"lacuna\">?</span> <span class=\"lacuna\">?</span>s every day. · She/He sometimes <span class=\"lacuna\">?</span>s.</p>",
+ gabarito:"4 ou 5 frases: duas sobre ela mesma com always/usually/often/sometimes/never antes da ação (I always walk the dog, I never cook), e duas ou três sobre uma pessoa da família com a ação + -s (My mom likes music, My brother plays video games, My dad watches TV), incluindo pelo menos uma forma especial (watches, goes, has, studies) se possível.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases: duas sobre ela mesma com uma palavra de frequência antes da ação e duas ou três sobre alguém da família com o -s. Gramática da aula: o -s com he/she (likes, plays; watches, goes, does, brushes com -es; studies; has) e always/usually/often/sometimes/never antes da ação. Vocabulário: as ações da semana (sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit) e as da rotina. Confira principalmente: o -s com he/she, nenhum -s com I, e a posição da palavra de frequência."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Preste atenção no som do -s. Depois converse com a IA.",
+ foco:"o <b>-s</b> do he/she tem três sons: <i>likes</i> /s/ (como em <i>sapo</i>), <i>plays</i> /z/ (como em <i>zebra</i>) e <i>watches</i> /iz/ (uma sílaba a mais: <i>UÓ-tchiz</i>).",
+ frases:[
+  {en:"Emma likes music.", pt:"A Emma gosta de música."},
+  {en:"Leo plays video games.", pt:"O Leo joga videogame."},
+  {en:"My mom watches TV.", pt:"A minha mãe vê TV."},
+  {en:"My dad always cooks.", pt:"O meu pai sempre cozinha."},
+  {en:"Sam sometimes rides a bike.", pt:"O Sam às vezes anda de bicicleta."},
+  {en:"My sister often studies.", pt:"A minha irmã muitas vezes estuda."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com foco nos três sons do -s: likes e cooks com /s/, plays, rides e studies com /z/, watches com /iz/ (uma sílaba a mais). Depois faça 4 a 6 perguntas em inglês sobre a família dela, uma de cada vez, e espere ela responder falando com o -s: What does your mom like? · Does your dad cook? · What does your best friend play? · Who watches TV in your family? · What do you always do on Sundays? Se ela esquecer o -s, repita a frase certa e peça para ela dizer de novo. Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ligar", bonus:true, titulo:"Pegadinhas: ligue com cuidado", pares:[
+ {en:"I play", pt:"eu jogo"},
+ {en:"He plays", pt:"ele joga"},
+ {en:"We play", pt:"nós jogamos"},
+ {en:"I have", pt:"eu tenho"},
+ {en:"She has", pt:"ela tem"},
+ {en:"his dog", pt:"o cachorro dele"},
+ {en:"her dog", pt:"o cachorro dela"},
+ {en:"He always walks", pt:"ele sempre anda"},
+ {en:"He never walks", pt:"ele nunca anda"},
+ {en:"He sometimes walks", pt:"ele às vezes anda"}
+]}
+
+]});
+</script>
+</body>
+</html>

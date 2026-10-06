@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 6 · Dia 4</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:6,
+dia:4,
+titulo:"A new family in New York",
+subtitulo:"O seu primo vai morar com uma família americana: conte como ele é",
+objetivos:[
+  "Contar a rotina de outra pessoa com o -s, doesn't e always/never",
+  "Entender uma conversa sobre o Paulo, o aluno novo de Nova York",
+  "Cumprir a missão da semana: a videochamada com a Mrs. Brooks"
+],
+blocos:[
+
+{tipo:"gramatica", titulo:"Recapitulando: tudo sobre ele e ela",
+ html:"<table><tr><th></th><th>Exemplo</th></tr>"+
+ "<tr><td>afirma (com -s)</td><td><code>He gets up at six.</code></td></tr>"+
+ "<tr><td>nega (doesn't, sem -s)</td><td><code>He doesn't drink coffee.</code></td></tr>"+
+ "<tr><td>pergunta (Does, sem -s)</td><td><code>Does he like juice?</code></td></tr>"+
+ "<tr><td>que horas / o quê</td><td><code>What time does he come home?</code></td></tr></table>"+
+ "<p><b>Uma novidade:</b> com <code>is</code> (e <code>am</code>, <code>are</code>), a palavra de frequência vem <b>depois</b>:</p>"+
+ "<table><tr><th>Com ação: antes</th><th>Com is: depois</th></tr>"+
+ "<tr><td><code>She always plays.</code></td><td><code>She is always happy.</code></td></tr>"+
+ "<tr><td><code>He never comes late.</code></td><td><code>He is never late.</code></td></tr></table>",
+ exemplos:[
+  {en:"My mom starts work at nine.", pt:"A minha mãe começa a trabalhar às nove."},
+  {en:"My dad doesn't drink tea.", pt:"O meu pai não bebe chá."},
+  {en:"Does your sister drink coffee? No, she doesn't.", pt:"A sua irmã bebe café? Não, não bebe."},
+  {en:"Jake is always hungry.", pt:"O Jake está sempre com fome."},
+  {en:"Mrs. Brooks is never late.", pt:"A Mrs. Brooks nunca se atrasa."}
+ ]},
+
+{tipo:"vocab", titulo:"Família e trabalho", itens:[
+ {en:"son", pt:"filho", ipa:"/SÂN/", emoji:"👦"},
+ {en:"daughter", pt:"filha", ipa:"/DÓ-ter/", emoji:"👧"},
+ {en:"job", pt:"trabalho, emprego", ipa:"/DJÓB/", emoji:"💼"},
+ {en:"office", pt:"escritório", ipa:"/Ó-fis/", emoji:"🏢"},
+ {en:"start", pt:"começar", ipa:"/STÁRT/", emoji:"🏁"},
+ {en:"come home", pt:"chegar em casa, voltar para casa", ipa:"/KÂM RÔUM/", emoji:"🏠"},
+ {en:"coffee", pt:"café", ipa:"/KÓ-fi/", emoji:"☕"},
+ {en:"tea", pt:"chá", ipa:"/TÍI/", emoji:"🍵"},
+ {en:"juice", pt:"suco", ipa:"/DJÚUS/", emoji:"🧃"}
+]},
+
+{tipo:"dialogo", titulo:"Ouça: o aluno novo", escuta:true, linhas:[
+ {quem:"Jake", en:"Mom, who is the new student?", pt:"Mãe, quem é o aluno novo?"},
+ {quem:"Mrs. Brooks", en:"His name is Paulo. He's from Brazil. He's twelve.", pt:"O nome dele é Paulo. Ele é do Brasil. Ele tem doze anos."},
+ {quem:"Jake", en:"Great! Does he play soccer?", pt:"Que legal! Ele joga futebol?"},
+ {quem:"Mrs. Brooks", en:"Yes, he does. He plays every Saturday.", pt:"Sim, joga. Ele joga todo sábado."},
+ {quem:"Jake", en:"And video games?", pt:"E videogame?"},
+ {quem:"Mrs. Brooks", en:"No, he doesn't. He reads a lot of comic books.", pt:"Não, não joga. Ele lê muitos gibis."},
+ {quem:"Jake", en:"Me too! What time does he get up?", pt:"Eu também! A que horas ele se levanta?"},
+ {quem:"Mrs. Brooks", en:"He usually gets up at six thirty.", pt:"Ele normalmente se levanta às seis e meia."},
+ {quem:"Jake", en:"Six thirty? I never get up at six thirty!", pt:"Seis e meia? Eu nunca me levanto às seis e meia!"},
+ {quem:"Mrs. Brooks", en:"I know, Jake. You always get up late!", pt:"Eu sei, Jake. Você sempre se levanta tarde!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
+ {pergunta:"Where is Paulo from?", opcoes:["New York","Brazil","Chicago"], correta:1,
+  explicacao:"He's from Brazil. = Ele é do Brasil."},
+ {pergunta:"How old is Paulo?", opcoes:["ten","eleven","twelve"], correta:2,
+  explicacao:"He's twelve. = Ele tem doze anos."},
+ {pergunta:"When does Paulo play soccer?", opcoes:["every Saturday","every day","on Sundays"], correta:0,
+  explicacao:"He plays every Saturday."},
+ {pergunta:"Does Paulo play video games?", opcoes:["Yes, he does.","No, he doesn't.","Yes, he is."], correta:1,
+  explicacao:"A Mrs. Brooks diz: No, he doesn't. Ele lê gibis."},
+ {pergunta:"What time does Paulo usually get up?", opcoes:["at six","at six thirty","at seven thirty"], correta:1,
+  explicacao:"He usually gets up at six thirty. = às seis e meia."},
+ {pergunta:"Who always gets up late?", opcoes:["Paulo","Mrs. Brooks","Jake"], correta:2,
+  explicacao:"A mãe diz para o Jake: You always get up late!"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"His name is Paulo", pt:"O nome dele é Paulo.", dica:"(quatro palavras)"},
+ {en:"He plays every Saturday", pt:"Ele joga todo sábado.", dica:"(quatro palavras)"},
+ {en:"Does he play soccer?", pt:"Ele joga futebol?", dica:"(quatro palavras, é uma pergunta)"},
+ {en:"You always get up late", pt:"Você sempre se levanta tarde.", dica:"(cinco palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. How old is Paulo? (Quantos anos tem o Paulo?)<br>2. What does Paulo read? (O que o Paulo lê?)<br>3. Does Jake get up early? (O Jake se levanta cedo?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na pergunta 3, responda com <b>No, he …</b> e diga a que horas ou como ele se levanta</li></ul>",
+ andaime:"<p>Paulo is <span class=\"lacuna\">?</span>. · He <span class=\"lacuna\">?</span> a lot of <span class=\"lacuna\">?</span>. · No, he <span class=\"lacuna\">?</span>. He always <span class=\"lacuna\">?</span> late.</p>",
+ gabarito:"1. Paulo is twelve (years old). 2. He reads (a lot of) comic books. 3. No, he doesn't. He always gets up late.",
+ instrucaoIA:"Ela ouviu um diálogo entre a Mrs. Brooks e o filho, Jake, sobre o Paulo, um aluno brasileiro de doze anos que vai morar com eles: ele joga futebol todo sábado, não joga videogame, lê muitos gibis e normalmente se levanta às seis e meia; o Jake sempre se levanta tarde. Ela devia responder: a idade do Paulo (twelve), o que ele lê (comic books) e se o Jake se levanta cedo (No, he doesn't. He always gets up late). Gramática da semana: -s com he/she, doesn't, Does...?, always/never antes da ação."},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"___ your dad drink coffee?", pt:"O seu pai bebe café?", resposta:"Does",
+  opcoes:["Does","Do","Is"], explicacao:"your dad = he. Pergunta com he: Does."},
+ {frase:"My mom ___ like tea.", pt:"A minha mãe não gosta de chá.", resposta:"doesn't",
+  opcoes:["doesn't","don't","isn't"], explicacao:"My mom = she. Negar com she: doesn't."},
+ {frase:"School ___ at seven thirty.", pt:"A escola começa às sete e meia.", resposta:"starts",
+  opcoes:["starts","start","is"], explicacao:"School = it, uma coisa só. Então: starts, com -s."},
+ {frase:"My dad comes ___ at six.", pt:"O meu pai chega em casa às seis.", resposta:"home",
+  opcoes:["home","office","job"], explicacao:"come home = chegar em casa. Sem to: comes home."},
+ {frase:"Emma is ___ happy.", pt:"A Emma está sempre feliz.", resposta:"always",
+  opcoes:["always","never","often"], explicacao:"sempre = always. Com is, ele vem depois: is always."},
+ {frase:"Mrs. Brooks has a son and a ___.", pt:"A Mrs. Brooks tem um filho e uma filha.", resposta:"daughter",
+  opcoes:["daughter","brother","job"], explicacao:"filha = daughter. filho = son."},
+ {frase:"My aunt works in an ___.", pt:"A minha tia trabalha num escritório.", resposta:"office",
+  opcoes:["office","juice","son"], explicacao:"office = escritório. Começa com som de vogal, então: an office."},
+ {frase:"Do you have breakfast ___ the morning?", pt:"Você toma café da manhã de manhã?", resposta:"in",
+  opcoes:["in","at","on"], explicacao:"Da semana passada: in the morning."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"Does your mom drink coffee", pt:"A sua mãe bebe café?"},
+ {frase:"My dad comes home at seven", pt:"O meu pai chega em casa às sete."},
+ {frase:"She is always late", pt:"Ela está sempre atrasada."},
+ {frase:"He doesn't like juice", pt:"Ele não gosta de suco."}
+]},
+
+{tipo:"entrevista", titulo:"O livro da Mrs. Fox", perfil:"escritor", voz:"f",
+ personagem:"Mrs. Fox, escritora de livros para crianças, curiosa e falante",
+ apresentacao:"<p>A <b>Mrs. Fox</b> está escrevendo um livro sobre <b>professores do mundo todo</b>, e quer saber tudo sobre o seu professor ou a sua professora favorita. Ela <b>só fala inglês</b>. Entenda o que ela pergunta e responda.</p>",
+ quer:["o nome da professora (ou do professor) favorita dela","a que horas a aula começa (start)","uma coisa que a professora sempre faz na aula","uma coisa que a professora nunca faz ou não gosta","se a professora tem um bicho de estimação ou filhos (Does she have...?)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Her name is</span> … · <span class=\"lacuna\">School starts at</span> … · <span class=\"lacuna\">She always</span> … · <span class=\"lacuna\">She doesn't</span> …</p>",
+ instrucaoIA:"Ela sabe: His/Her name is..., o -s da ação com he/she, doesn't, Does she...? / Yes, she does / No, she doesn't, always, usually, often, sometimes, never, is always..., start, come home, son, daughter, job, office, coffee, tea, juice, as ações da semana (sing, draw, cook, help, study, write, read, listen to music, ride a bike, walk the dog, run), teacher, student, class, classroom, board, book, at + hora, in the morning. Mrs. Fox pergunta uma coisa por vez sobre a professora dela, em frases de 3 a 6 palavras, e anota (Great! I write that!). Se ela não entender, reformule: mais curto, com exemplo sobre a própria Mrs. Fox (My teacher always sings. And your teacher?) ou com opções (Always? Never?)."},
+
+{tipo:"missao", titulo:"Missão da semana: a videochamada com a Mrs. Brooks", cena:"ligacao", voz:"f",
+ cenario:"<p>Surpresa: o Paulo, o aluno novo da conversa, é o <b>seu primo</b>! Ele vai morar um mês com a família Brooks em Nova York. A <b>Mrs. Brooks</b> faz uma videochamada com você para saber mais sobre ele. Ela <b>só entende inglês</b>.</p>",
+ personagem:"Mrs. Brooks, mãe do Jake, de Nova York, carinhosa e organizada",
+ objetivos:["dizer o que o Paulo come ou bebe no café da manhã (He drinks / He eats ...)","dizer a que horas o Paulo vai para a cama (He goes to bed at ...)","dizer uma coisa que ele sempre faz e uma que ele nunca faz (always / never)","dizer uma coisa que ele não gosta (He doesn't like ...)","perguntar uma coisa sobre o Jake (Does Jake ...?)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">He drinks</span> … · <span class=\"lacuna\">He goes to bed at</span> … · <span class=\"lacuna\">He always</span> … · <span class=\"lacuna\">He doesn't like</span> … · <span class=\"lacuna\">Does Jake</span> …?</p>",
+ instrucaoIA:"Ela sabe: o -s da ação com he/she (drinks, eats, goes, watches, has, studies), doesn't + ação, Does he...? / What time does he...?, always, usually, often, sometimes, never, is always..., coffee, tea, juice, milk, bread, have breakfast, have dinner, go to bed, get up, start, come home, son, daughter, job, office, as ações da semana (sing, draw, cook, help, study, read, listen to music, ride a bike, play video games, walk the dog, run, sleep), a lot of, comic books, soccer, at + hora, números até 100. Mrs. Brooks já sabe que o Paulo tem doze anos, joga futebol e lê gibis; ela quer saber do café da manhã, da hora de dormir, o que ele sempre e nunca faz e o que ele não gosta. Ela pergunta uma coisa por vez (What does he have for breakfast? What time does he go to bed?), em frases de 3 a 6 palavras, e anota (OK, juice and bread!). Fatos da família Brooks, se ela perguntar: Jake tem doze anos, sempre se levanta tarde, joga videogame todo dia e não gosta de futebol; a Mrs. Brooks trabalha num escritório e bebe café às seis; o Mr. Brooks cozinha o jantar. A cena tem até 8 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever: o e-mail para a Mrs. Brooks", id:"1",
+ instrucao:"A Mrs. Brooks pediu tudo por escrito, para não esquecer. Escreva <b>4 ou 5 frases</b> sobre o Paulo (ou sobre um primo ou uma prima de verdade): o dia dele, o que ele gosta e o que ele não gosta.",
+ dica:"<ul><li>a que horas ele se levanta ou vai para a cama</li><li>pelo menos duas ações com <b>-s</b></li><li>um <b>always</b> e um <b>never</b></li><li>um <b>doesn't</b></li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>Paulo <span class=\"lacuna\">?</span> at <span class=\"lacuna\">?</span>. · He always <span class=\"lacuna\">?</span>. · He never <span class=\"lacuna\">?</span>. · He doesn't <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre o Paulo (ou um primo de verdade) na 3ª pessoa: uma hora com at (He gets up / goes to bed at...), pelo menos duas ações com -s (He drinks juice, He plays soccer, He reads comic books), um always e um never antes da ação, e um doesn't + ação sem -s (He doesn't like tea).",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases para a Mrs. Brooks sobre o primo Paulo (ou um primo de verdade): a rotina dele com o -s, um always, um never e um doesn't. Gramática da semana: -s com he/she (gets, drinks, goes, watches, has, studies), doesn't + ação sem -s, palavra de frequência antes da ação (e depois de is). Vocabulário da aula: son, daughter, job, office, start, come home, coffee, tea, juice, e as ações da semana. Confira o -s, o doesn't sem -s depois e a posição do always/never."},
+
+{tipo:"fala", titulo:"Hora de falar: aquecimento para a videochamada",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois a IA faz as perguntas da Mrs. Brooks.",
+ foco:"o <b>-s</b> com /iz/: <i>watches</i>, <i>brushes</i>, <i>goes</i> é só /z/ (<i>GÔUZ</i>).",
+ frases:[
+  {en:"Paulo is my cousin.", pt:"O Paulo é o meu primo."},
+  {en:"He goes to bed at ten.", pt:"Ele vai para a cama às dez."},
+  {en:"He always watches soccer.", pt:"Ele sempre assiste futebol."},
+  {en:"He doesn't like tea.", pt:"Ele não gosta de chá."},
+  {en:"Does Jake play soccer?", pt:"O Jake joga futebol?"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português: watches tem uma sílaba a mais (UÓ-tchiz), goes é só /z/ (GÔUZ), doesn't soa DÂ-zent. Depois faça 4 a 6 perguntas em inglês sobre um primo, uma prima ou outra pessoa da família dela, uma de cada vez, e espere a resposta falada: What's his name? · What time does he get up? · What does he drink in the morning? · Does he play video games? · What does he never do? · Does he like school? Ela responde com o -s e com doesn't. Corrija com carinho, em português."},
+
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil: quem é? o que é?", itens:[
+ {pistas:["She is in my family.","She is my dad's sister.","Her son is my cousin."],
+  resposta:"aunt", pt:"tia", dica:"(alguém da família)"},
+ {pistas:["It is a drink.","It is white.","Babies drink it every day."],
+  resposta:"milk", pt:"leite", dica:"(uma bebida)"},
+ {pistas:["It is not a book.","It has a lot of colors.","Tom reads it at night."],
+  resposta:"comic book", pt:"gibi", dica:"(duas palavras)"},
+ {pistas:["It is a day of the week.","It is not on the weekend.","It is after Thursday."],
+  resposta:"Friday", pt:"sexta-feira", dica:"(um dia)"}
+]}
+
+]});
+</script>
+</body>
+</html>

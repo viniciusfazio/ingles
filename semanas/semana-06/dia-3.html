@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 6 · Dia 3</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:6,
+dia:3,
+titulo:"Does he like it? He doesn't!",
+subtitulo:"Perguntar e negar com ele e ela: Does she…? She doesn't…",
+objetivos:[
+  "Negar com doesn't: He doesn't read books.",
+  "Perguntar com Does: Does she like music?",
+  "Ouvir a história do presente do Tom e responder sobre ela"
+],
+blocos:[
+
+{tipo:"nota", titulo:"💡 E quando ele NÃO faz?",
+ html:"<p>Ontem você aprendeu o <b>-s</b>: <code>She likes music.</code> Mas e para dizer que ela <b>não</b> gosta? Ou para perguntar se ela gosta?</p>"+
+ "<p>Lembra do <code>don't</code> e do <code>Do you…?</code> da semana passada? Com he e she eles também ganham o <b>-s</b>, e viram <code>doesn't</code> e <code>Does</code>. O segredo de hoje: <b>o -s só pode aparecer uma vez</b>. 💜</p>"},
+
+{tipo:"gramatica", titulo:"doesn't e Does…? — o -s pula para o do",
+ html:"<table><tr><th></th><th>I / you / we</th><th>he / she</th></tr>"+
+ "<tr><td>afirma</td><td><code>I like music.</code></td><td><code>She likes music.</code></td></tr>"+
+ "<tr><td>nega</td><td><code>I don't like music.</code></td><td><code>She doesn't like music.</code></td></tr>"+
+ "<tr><td>pergunta</td><td><code>Do you like music?</code></td><td><code>Does she like music?</code></td></tr>"+
+ "<tr><td>responde</td><td><code>Yes, I do. / No, I don't.</code></td><td><code>Yes, she does. / No, she doesn't.</code></td></tr></table>"+
+ "<p>Olha o truque: quando aparece o <code>does</code> ou o <code>doesn't</code>, ele <b>leva o -s embora</b> e a ação volta ao normal.</p>"+
+ "<p>✅ <code>He doesn't play.</code> ❌ <i>He doesn't plays.</i><br>✅ <code>Does she sing?</code> ❌ <i>Does she sings?</i></p>"+
+ "<p><code>doesn't</code> = <code>does not</code>. E para perguntar o que ele faz: <code>What does he do on Sundays?</code></p>",
+ exemplos:[
+  {en:"Tom doesn't read books.", pt:"O Tom não lê livros."},
+  {en:"My dad doesn't cook.", pt:"O meu pai não cozinha."},
+  {en:"Does Emma like soccer? Yes, she does.", pt:"A Emma gosta de futebol? Sim, gosta."},
+  {en:"Does Leo sing? No, he doesn't.", pt:"O Leo canta? Não, não canta."},
+  {en:"What does your mom do on Sundays?", pt:"O que a sua mãe faz aos domingos?"},
+  {en:"What time does he get up?", pt:"A que horas ele se levanta?"}
+ ]},
+
+{tipo:"vocab", titulo:"Palavras da história", itens:[
+ {en:"want", pt:"querer", ipa:"/UÓNT/", emoji:"🙏"},
+ {en:"buy", pt:"comprar", ipa:"/BÁI/", emoji:"🛒"},
+ {en:"ball", pt:"bola", ipa:"/BÓL/", emoji:"⚽"},
+ {en:"kick", pt:"chutar", ipa:"/KÍK/", emoji:"🦶"},
+ {en:"idea", pt:"ideia", ipa:"/ai-DÍ-a/", emoji:"💡"},
+ {en:"a lot of", pt:"muitos, muitas", ipa:"/a LÓT ov/", emoji:"📦"},
+ {en:"comic book", pt:"gibi, revista em quadrinhos", ipa:"/KÓ-mik BÚK/", emoji:"💥"},
+ {en:"sticker", pt:"figurinha, adesivo", ipa:"/STÍ-ker/", emoji:"⭐"}
+]},
+
+{tipo:"historia", titulo:"Ouça: o presente do Tom", cena:"presente", paragrafos:[
+ {en:"Sophie's brother, Tom, is ten. His birthday is on Saturday, May 9th.", pt:"O irmão da Sophie, o Tom, tem dez anos. O aniversário dele é no sábado, 9 de maio."},
+ {en:"Sophie wants a present for Tom. But what does he like?", pt:"A Sophie quer um presente para o Tom. Mas do que ele gosta?"},
+ {en:"Tom plays soccer every day. He always kicks a ball in the park.", pt:"O Tom joga futebol todo dia. Ele sempre chuta uma bola no parque."},
+ {en:"Sophie says: “A ball! Good idea!” But Mom says: “No! Tom has a lot of balls. He has six!”", pt:"A Sophie diz: “Uma bola! Boa ideia!” Mas a mãe diz: “Não! O Tom tem muitas bolas. Ele tem seis!”"},
+ {en:"Tom doesn't read books. He never draws. But he sometimes reads comic books at night.", pt:"O Tom não lê livros. Ele nunca desenha. Mas às vezes ele lê gibis de noite."},
+ {en:"Sophie goes to the store with Dad. She buys a soccer comic book and green stickers.", pt:"A Sophie vai à loja com o pai. Ela compra um gibi de futebol e figurinhas verdes."},
+ {en:"On Saturday, Tom opens the present. “A soccer comic book! I love it!”", pt:"No sábado, o Tom abre o presente. “Um gibi de futebol! Eu amei!”"},
+ {en:"Now Tom reads every night. And Sophie? She reads with him!", pt:"Agora o Tom lê toda noite. E a Sophie? Ela lê com ele!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"Who is Tom?", opcoes:["Sophie's dad","Sophie's brother","Sophie's friend"], correta:1,
+  explicacao:"Sophie's brother, Tom, is ten. = O irmão da Sophie, o Tom, tem dez anos."},
+ {pergunta:"When is Tom's birthday?", opcoes:["on Friday","on Sunday","on Saturday"], correta:2,
+  explicacao:"His birthday is on Saturday, May 9th."},
+ {pergunta:"What does Tom play every day?", opcoes:["video games","soccer","piano"], correta:1,
+  explicacao:"Tom plays soccer every day."},
+ {pergunta:"Why doesn't Sophie buy a ball?", opcoes:["Tom has a lot of balls.","Tom doesn't like soccer.","The ball is old."], correta:0,
+  explicacao:"A mãe diz que o Tom já tem muitas bolas: Tom has a lot of balls. He has six!"},
+ {pergunta:"What does Tom sometimes read at night?", opcoes:["books","comic books","his homework"], correta:1,
+  explicacao:"He sometimes reads comic books at night. Livros (books) ele não lê!"},
+ {pergunta:"Who goes to the store with Sophie?", opcoes:["Mom","Tom","Dad"], correta:2,
+  explicacao:"Sophie goes to the store with Dad. A mãe só deu o conselho."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva frases da história", itens:[
+ {en:"He always kicks a ball", pt:"Ele sempre chuta uma bola.", dica:"(cinco palavras)"},
+ {en:"Tom doesn't read books", pt:"O Tom não lê livros.", dica:"(quatro palavras, com apóstrofo)"},
+ {en:"He never draws", pt:"Ele nunca desenha.", dica:"(três palavras)"},
+ {en:"She buys a soccer comic book", pt:"Ela compra um gibi de futebol.", dica:"(seis palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What does Tom play every day? (O que o Tom joga todo dia?)<br>2. Does Tom read books? (O Tom lê livros?)<br>3. What does Sophie buy for Tom? (O que a Sophie compra para o Tom?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na pergunta 2, responda com <b>No, he …</b> e depois uma frase inteira</li><li>cuidado com o <b>-s</b>: ele aparece uma vez só</li></ul>",
+ andaime:"<p>Tom <span class=\"lacuna\">?</span> soccer every day. · No, he <span class=\"lacuna\">?</span>. He doesn't <span class=\"lacuna\">?</span> books. · She <span class=\"lacuna\">?</span> a <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. Tom plays soccer (every day). 2. No, he doesn't. He doesn't read books (but he sometimes reads comic books). 3. She buys a soccer comic book (and green stickers).",
+ instrucaoIA:"Ela ouviu uma história: o Tom, irmão da Sophie, faz aniversário; ele joga futebol todo dia, já tem seis bolas, não lê livros mas às vezes lê gibis de noite; a Sophie compra um gibi de futebol e figurinhas verdes. Ela devia responder: o que o Tom joga (soccer), se ele lê livros (No, he doesn't) e o que a Sophie compra (a soccer comic book, green stickers). Gramática da aula: doesn't e Does...? com he/she, e a ação SEM -s depois de does/doesn't (He doesn't read, não doesn't reads). Vocabulário: want, buy, ball, kick, idea, a lot of, comic book, sticker."},
+
+{tipo:"completar", titulo:"does, doesn't ou -s?", ajuda:"Toque na palavra certa. Lembre: o -s só aparece uma vez!", itens:[
+ {frase:"___ Emma like music?", pt:"A Emma gosta de música?", resposta:"Does",
+  opcoes:["Does","Do","Is"], explicacao:"Emma = she. Pergunta com she começa com Does."},
+ {frase:"___ you like music?", pt:"Você gosta de música?", resposta:"Do",
+  opcoes:["Do","Does","Are"], explicacao:"Com you é Do, sem -s."},
+ {frase:"My dad ___ cook.", pt:"O meu pai não cozinha.", resposta:"doesn't",
+  opcoes:["doesn't","don't","isn't"], explicacao:"My dad = he. Para negar com he: doesn't."},
+ {frase:"I ___ play video games.", pt:"Eu não jogo videogame.", resposta:"don't",
+  opcoes:["don't","doesn't","not"], explicacao:"Com I é don't. doesn't é só para he e she."},
+ {frase:"Tom doesn't ___ books.", pt:"O Tom não lê livros.", resposta:"read",
+  opcoes:["read","reads","does"], explicacao:"Depois de doesn't, a ação volta ao normal: read, sem -s."},
+ {frase:"Does Leo ___ every day?", pt:"O Leo canta todo dia?", resposta:"sing",
+  opcoes:["sing","sings","does"], explicacao:"O Does já levou o -s. Então: Does Leo sing?"},
+ {frase:"Does she have a dog? Yes, she ___.", pt:"Ela tem um cachorro? Sim, tem.", resposta:"does",
+  opcoes:["does","do","is"], explicacao:"Resposta curta com she: Yes, she does. / No, she doesn't."},
+ {frase:"Sophie ___ a present for Tom.", pt:"A Sophie quer um presente para o Tom.", resposta:"wants",
+  opcoes:["wants","want","doesn't"], explicacao:"Sophie = she, frase afirmativa: wants, com -s."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"Does your mom like music", pt:"A sua mãe gosta de música?"},
+ {frase:"He doesn't play video games", pt:"Ele não joga videogame."},
+ {frase:"What does Tom read at night", pt:"O que o Tom lê de noite?"},
+ {frase:"She wants a lot of stickers", pt:"Ela quer muitas figurinhas."}
+]},
+
+{tipo:"adivinha", titulo:"O que é? Quem é? Escreva a resposta", itens:[
+ {pistas:["You kick it.","It is round.","Tom has six."],
+  resposta:"ball", pt:"bola", dica:"(uma coisa)"},
+ {pistas:["She works in a school.","She has a lot of students.","She is in the classroom every day."],
+  resposta:"teacher", pt:"professora", dica:"(uma pessoa)"},
+ {pistas:["Leo plays it in the park.","He always has a ball.","It is his favorite game."],
+  resposta:"soccer", pt:"futebol", dica:"(um esporte)"},
+ {pistas:["I do it in bed.","I do it at night.","My cat always does it in the afternoon, too."],
+  resposta:"sleep", pt:"dormir", dica:"(uma ação)"},
+ {pistas:["He is in my family.","He is a boy.","He has my mom and my dad, too."],
+  resposta:"brother", pt:"irmão", dica:"(uma pessoa da família)"}
+]},
+
+{tipo:"missao", titulo:"Missão: o cachorro da Mrs. Lane", cena:"animal", voz:"f",
+ cenario:"<p>A <b>Mrs. Lane</b>, a dona da papelaria, vai viajar no fim de semana, e você vai cuidar do cachorro dela, o <b>Biscuit</b>! Antes, você precisa descobrir como é o dia dele. Ela <b>só entende inglês</b>.</p>",
+ personagem:"Mrs. Lane, dona da papelaria, simpática e um pouco esquecida",
+ objetivos:["descobrir a que horas o Biscuit come (What time does he eat?)","descobrir uma coisa que o Biscuit gosta de fazer (Does he like...?)","descobrir uma coisa que o Biscuit não gosta ou nunca faz"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">What time does he</span> …? · <span class=\"lacuna\">Does he like</span> …? · <span class=\"lacuna\">Does he</span> … ?</p>",
+ instrucaoIA:"Ela sabe: Does he...? / What time does he...? / What does he...?, Yes, he does / No, he doesn't, o -s da ação com he/she, always, usually, often, sometimes, never, like, sing, run, sleep, walk the dog, eat, drink, milk, bread, ball, kick, a lot of, park, cat, bird, dog, cores, at + hora, in the morning, at night. Fatos do Biscuit: é um cachorro pequeno e marrom, de 3 anos; come às sete da manhã e às seis da tarde; adora correr no parque com uma bola vermelha; dorme na cama da Mrs. Lane (ela fica sem graça de contar); não gosta de gatos; nunca bebe leite. Mrs. Lane responde só o que ela perguntar, em frases de 3 a 6 palavras, e às vezes esquece e diz Let me think... Se ela usar Do he...? em vez de Does he...?, Mrs. Lane entende e repete certo (Does he eat? Yes, he does!)."},
+
+{tipo:"escrita", titulo:"Hora de escrever: invente alguém", id:"1",
+ instrucao:"Escrita livre! Invente um personagem — um robô, um gato que fala, uma super-heroína, um monstro simpático — e escreva <b>4 ou 5 frases</b> sobre o dia dele ou dela.",
+ dica:"<ul><li>o nome do personagem e o que ele ou ela é</li><li>pelo menos duas ações com <b>-s</b> (o que ele faz)</li><li>pelo menos um <b>always</b>, <b>sometimes</b> ou <b>never</b></li><li>pelo menos um <b>doesn't</b> (o que ele não faz)</li><li>uma coisa engraçada ou surpreendente!</li></ul>Capriche na imaginação. 💜",
+ gabarito:"4 ou 5 frases sobre um personagem inventado, todas na 3ª pessoa: nome e o que é (This is Zip. He is a robot.), pelo menos duas ações com -s (He gets up at five. He drinks milk.), pelo menos uma palavra de frequência antes da ação (He never sleeps), pelo menos um doesn't + ação sem -s (He doesn't like water... ou He doesn't go to school), e algo engraçado ou surpreendente. Vale qualquer ideia criativa, desde que use o inglês que ela sabe.",
+ instrucaoIA:"Escrita livre e criativa: ela inventou um personagem (robô, gato, super-heroína, monstro...) e devia escrever 4 ou 5 frases sobre o dia dele, na 3ª pessoa. Gramática da semana: o -s com he/she (likes, plays, watches, goes, has, studies), doesn't + ação sem -s, always/usually/often/sometimes/never antes da ação. Vocabulário: as ações da semana (sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, want, buy, kick), a rotina (wake up, get up, have breakfast, go to bed...), horas com at. Elogie a criatividade primeiro. Depois confira o -s, o doesn't sem -s depois (doesn't plays é o erro mais comum) e a posição da palavra de frequência."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA sobre a história.",
+ foco:"o <b>-s</b> continua: <i>kicks</i> /s/, <i>reads</i> /z/, <i>does</i> /dâz/ (não é <i>dôs</i>!).",
+ frases:[
+  {en:"Tom plays soccer every day.", pt:"O Tom joga futebol todo dia."},
+  {en:"He doesn't read books.", pt:"Ele não lê livros."},
+  {en:"Does he like comic books?", pt:"Ele gosta de gibis?"},
+  {en:"Yes, he does.", pt:"Sim, gosta."},
+  {en:"Sophie buys a present.", pt:"A Sophie compra um presente."},
+  {en:"She doesn't want a ball.", pt:"Ela não quer uma bola."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português: does soa 'dâz', doesn't soa 'DÂ-zent', o -s de plays e reads é /z/ e o de kicks é /s/. Depois faça 4 a 6 perguntas em inglês sobre a história do Tom, uma de cada vez, e espere a resposta falada: Does Tom play soccer? · Does Tom read books? · What does Tom read at night? · What does Sophie buy? · Does Tom like the present? · And you: what do you want for your birthday? Se ela responder só Yes ou No, peça a resposta curta completa (Yes, he does). Corrija com carinho, em português."},
+
+{tipo:"ligar", bonus:true, titulo:"Pegadinhas: do ou does?", pares:[
+ {en:"Does she sing?", pt:"Ela canta?"},
+ {en:"Do you sing?", pt:"Você canta?"},
+ {en:"She doesn't sing.", pt:"Ela não canta."},
+ {en:"I don't sing.", pt:"Eu não canto."},
+ {en:"She sings every day.", pt:"Ela canta todo dia."},
+ {en:"We sing.", pt:"Nós cantamos."},
+ {en:"She never sings.", pt:"Ela nunca canta."},
+ {en:"Does she always sing?", pt:"Ela sempre canta?"}
+]}
+
+]});
+</script>
+</body>
+</html>

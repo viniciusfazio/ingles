@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 6 · Dia 1</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:6,
+dia:1,
+titulo:"What do you like?",
+subtitulo:"O que você gosta de fazer: cantar, desenhar, andar de bicicleta…",
+objetivos:[
+  "Dizer em inglês o que você gosta de fazer e faz depois da escola",
+  "Concordar e discordar com That's right!, That's wrong! e I think so.",
+  "Escrever sobre as coisas que você gosta de fazer"
+],
+blocos:[
+
+{tipo:"nota", titulo:"💡 O que você gosta de fazer?",
+ html:"<p>Semana passada você contou o <b>seu</b> dia. Esta semana você vai falar do dia dos <b>outros</b>: da sua mãe, do seu amigo, da professora. Mas primeiro, as palavras: as coisas que a gente <b>gosta de fazer</b>.</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I like music.</code></td><td>Eu gosto de música.</td></tr>"+
+ "<tr><td><code>I draw after school.</code></td><td>Eu desenho depois da escola.</td></tr>"+
+ "<tr><td><code>I ride a bike in the park.</code></td><td>Eu ando de bicicleta no parque.</td></tr></table>"+
+ "<p>Repare: em inglês o <code>like</code> não leva o <b>de</b> do português: <code>I like music</code>. 💜</p>"},
+
+{tipo:"vocab", titulo:"Coisas que a gente faz", itens:[
+ {en:"like", pt:"gostar (de)", ipa:"/LÁIK/", emoji:"👍"},
+ {en:"sing", pt:"cantar", ipa:"/SÍNG/", emoji:"🎤"},
+ {en:"draw", pt:"desenhar", ipa:"/DRÓ/", emoji:"✏️"},
+ {en:"cook", pt:"cozinhar", ipa:"/KÚK/", emoji:"🍳"},
+ {en:"help", pt:"ajudar", ipa:"/RÉLP/", emoji:"🤝"},
+ {en:"study", pt:"estudar", ipa:"/STÂ-di/", emoji:"📚"},
+ {en:"write", pt:"escrever", ipa:"/RÁIT/", emoji:"✍️"},
+ {en:"listen to music", pt:"ouvir música", ipa:"/LÍ-sen tu MIÚ-zik/", emoji:"🎧"},
+ {en:"ride a bike", pt:"andar de bicicleta", ipa:"/RÁID a BÁIK/", emoji:"🚲"},
+ {en:"play video games", pt:"jogar videogame", ipa:"/PLÊI VÍ-di-ou GUÊIMZ/", emoji:"🎮"},
+ {en:"walk the dog", pt:"passear com o cachorro", ipa:"/UÓK dhe DÓG/", emoji:"🐕"},
+ {en:"run", pt:"correr", ipa:"/RÂN/", emoji:"🏃"},
+ {en:"sleep", pt:"dormir", ipa:"/SLÍIP/", emoji:"💤"},
+ {en:"visit", pt:"visitar", ipa:"/VÍ-zit/", emoji:"🏡"}
+]},
+
+{tipo:"vocab", titulo:"Frases para conversar (semana 6)", itens:[
+ {en:"That's right!", pt:"Isso mesmo! / Está certo!", ipa:"/DHÉTS RÁIT/", emoji:"✅"},
+ {en:"That's wrong!", pt:"Está errado!", ipa:"/DHÉTS RÓNG/", emoji:"❌"},
+ {en:"I think so.", pt:"Acho que sim.", ipa:"/ai THÍNK sôu/", emoji:"🤔"}
+]},
+
+{tipo:"dialogo", titulo:"Depois da escola", escuta:false, linhas:[
+ {quem:"Anna", en:"Leo, what do you do after school?", pt:"Leo, o que você faz depois da escola?"},
+ {quem:"Leo", en:"I play video games. And you?", pt:"Eu jogo videogame. E você?"},
+ {quem:"Anna", en:"I draw, and I listen to music.", pt:"Eu desenho e ouço música."},
+ {quem:"Leo", en:"Do you sing, too?", pt:"Você canta também?"},
+ {quem:"Anna", en:"Yes! I sing every day. I like music.", pt:"Sim! Eu canto todo dia. Eu gosto de música."},
+ {quem:"Leo", en:"I ride a bike in the park. Do you ride a bike?", pt:"Eu ando de bicicleta no parque. Você anda de bicicleta?"},
+ {quem:"Anna", en:"No, I don't. I walk the dog in the park.", pt:"Não. Eu passeio com o cachorro no parque."},
+ {quem:"Leo", en:"Is it fun? I think so!", pt:"É divertido? Acho que sim!"}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções (esta semana e a passada)", pares:[
+ {en:"sing", pt:"cantar"},
+ {en:"draw", pt:"desenhar"},
+ {en:"cook", pt:"cozinhar"},
+ {en:"ride a bike", pt:"andar de bicicleta"},
+ {en:"sleep", pt:"dormir"},
+ {en:"wake up", pt:"acordar"},
+ {en:"have dinner", pt:"jantar"},
+ {en:"take a shower", pt:"tomar banho"},
+ {en:"early", pt:"cedo"},
+ {en:"busy", pt:"ocupada"}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"Como se diz desenhar? ✏️", opcoes:["draw","sleep","dance"], correta:0,
+  explicacao:"draw = desenhar. sleep é dormir, e dance é dançar (da semana 4)."},
+ {pergunta:"Como se diz andar de bicicleta? 🚲", opcoes:["walk the dog","ride a bike","run"], correta:1,
+  explicacao:"ride = andar (montado em alguma coisa), bike = bicicleta. walk the dog é passear com o cachorro."},
+ {pergunta:"O Leo diz: Two and two is four. A conta está certa. O que você diz?", opcoes:["That's wrong!","That's right!","Not me."], correta:1,
+  explicacao:"That's right! = Isso mesmo! Está certo! Dois mais dois é quatro mesmo."},
+ {pergunta:"A Emma diz: Ten and ten is thirty. O que você diz?", opcoes:["That's right!","Me too!","That's wrong!"], correta:2,
+  explicacao:"Dez mais dez é vinte (twenty), não trinta. Então: That's wrong! = Está errado!"},
+ {pergunta:"A professora pergunta: Is Ben here today? Você acha que sim, mas não tem certeza. O que você diz?", opcoes:["I think so.","That's wrong!","Not me."], correta:0,
+  explicacao:"I think so. = Acho que sim. É a resposta de quem não tem certeza."},
+ {pergunta:"Ouça e escolha.", audio:"listen to music", opcoes:["play video games","listen to music","study"], correta:1,
+  explicacao:"listen to music = ouvir música. Repare no to: listen TO music."}
+]},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"I ___ to music every day.", pt:"Eu ouço música todo dia.", resposta:"listen",
+  opcoes:["listen","sing","watch"], explicacao:"listen to music = ouvir música. Música a gente ouve (listen)."},
+ {frase:"I ___ a bike in the park.", pt:"Eu ando de bicicleta no parque.", resposta:"ride",
+  opcoes:["ride","walk","play"], explicacao:"Bicicleta em inglês a gente ride: ride a bike."},
+ {frase:"I walk the ___ after school.", pt:"Eu passeio com o cachorro depois da escola.", resposta:"dog",
+  opcoes:["dog","bike","music"], explicacao:"walk the dog = passear com o cachorro."},
+ {frase:"I play video ___ with my brother.", pt:"Eu jogo videogame com o meu irmão.", resposta:"games",
+  opcoes:["games","music","books"], explicacao:"Videogame em inglês é video games, com S."},
+ {frase:"My mom and I ___ dinner.", pt:"A minha mãe e eu cozinhamos o jantar.", resposta:"cook",
+  opcoes:["cook","sleep","run"], explicacao:"cook = cozinhar. O jantar a gente cozinha."},
+ {frase:"I go to bed ___ night.", pt:"Eu vou para a cama de noite.", resposta:"at",
+  opcoes:["at","in","on"], explicacao:"Lembra da semana passada? De noite é at night (a exceção)."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"draw", pt:"desenhar", dica:"(uma palavra)"},
+ {en:"sleep", pt:"dormir", dica:"(uma palavra)"},
+ {en:"ride a bike", pt:"andar de bicicleta", dica:"(três palavras)"},
+ {en:"listen to music", pt:"ouvir música", dica:"(três palavras)"},
+ {en:"That's right", pt:"Isso mesmo", dica:"(duas palavras, com apóstrofo)"}
+]},
+
+{tipo:"adivinha", titulo:"O que é? Escreva a resposta", itens:[
+ {pistas:["I do it with music.","I do it in the car, too.","Birds do it in the morning, too."],
+  resposta:"sing", pt:"cantar", dica:"(uma ação)"},
+ {pistas:["I do it with a pencil.","I make a cat or a dog on paper.","It is not write."],
+  resposta:"draw", pt:"desenhar", dica:"(uma ação)"},
+ {pistas:["I do it in the kitchen.","I make breakfast or dinner.","My dad does it, too."],
+  resposta:"cook", pt:"cozinhar", dica:"(uma ação)"},
+ {pistas:["I play them.","I play them on TV.","They are fun!"],
+  resposta:"video games", pt:"videogame", dica:"(duas palavras)"}
+]},
+
+{tipo:"explorar", titulo:"Quem é o Paul?", perfil:"jardineiro",
+ personagem:"Paul, jardineiro do parque da cidade, uns quarenta anos, tranquilo e brincalhão",
+ apresentacao:"<p>No parque, um moço de chapéu está sentado num banco, com um caderno e um lápis. Ele sorri e diz <i>Good morning!</i> Ele <b>só fala inglês</b>. Descubra quem ele é!</p>",
+ segredos:["ele cuida do parque e trabalha lá todo dia","ele acorda às cinco da manhã e corre no parque","ele canta para os pássaros do parque toda manhã","ele tem um cachorro, o Leaf, que dorme no parque o dia todo","ele não tem TV e não gosta de video games","surpresa: ele desenha os pássaros do parque — já tem cem desenhos no caderno"],
+ pistas:["o trabalho dele","a hora que ele acorda","o que ele faz para os pássaros","um animal de estimação","uma coisa que ele não gosta","surpresa: um hobby"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">Do you like</span> …? · <span class=\"lacuna\">What time do you</span> …? · <span class=\"lacuna\">Do you have a</span> …?</p>",
+ instrucaoIA:"Ela sabe: like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, a rotina da semana passada (wake up, get up, have breakfast, go to bed, every day), park, birds, dog, cat, TV, book, notebook, pencil, números até 100, What time is it? at six, in the morning. Perguntas que ela sabe fazer: What's your name? How old are you? Do you like...? Do you have a...? What time do you get up? What do you do? What's your favorite...? Frases para conversar: That's right! That's wrong! I think so. Me too! Not me. Really? Sorry, I don't understand. Paul fala de si com I (I work in the park, I get up at five), em frases de 3 a 6 palavras, responde curto, deixa ganchos (My notebook is a secret!) e devolve perguntas fáceis (Do you draw?). Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: o que é mais legal?", cena:"opiniao",
+ cenario:"<p>A <b>Lily</b>, uma menina de Miami que está passando as férias na sua escola, tem opinião sobre <b>tudo</b>: ela diz o que é legal e o que é chato. Conte do que você gosta e diga se ela está certa ou errada! Ela <b>só entende inglês</b>.</p>",
+ personagem:"Lily, 11 anos, de Miami, cheia de opinião e muito risonha",
+ objetivos:["dizer duas coisas que ela gosta de fazer (I like ... / I ... every day)","responder a duas opiniões da Lily com That's right!, That's wrong! ou I think so."],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I like</span> … · <span class=\"lacuna\">That's</span> …! · <span class=\"lacuna\">I think</span> …</p>",
+ instrucaoIA:"Ela sabe: like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit, read, watch TV, play soccer, swim, fun, I like..., I don't like..., Do you like...?, That's right! That's wrong! I think so. Me too! Not me. Really? Lily dá uma opinião por vez, curta, exagerada e só com palavras que ela sabe (Cook? Not fun! / Video games are great! / Study is fun! / Sleep is the best!), e pergunta And you? Ela adora video games e ride a bike, acha cook chato e study divertido. Espere ela concordar ou discordar com That's right!, That's wrong! ou I think so., e reaja (Really? Me too!). Frases de 3 a 6 palavras. A cena é curta: 4 a 6 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre as coisas que você gosta de fazer e o que você faz depois da escola.",
+ dica:"<ul><li>pelo menos uma frase com <b>I like</b></li><li>pelo menos três ações novas desta aula</li><li>uma frase sobre quando ou onde (after school, every day, in the park, at night…)</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I like <span class=\"lacuna\">?</span>. · After school, I <span class=\"lacuna\">?</span>. · I <span class=\"lacuna\">?</span> every day. · I <span class=\"lacuna\">?</span> in the <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre ela: pelo menos uma com I like + coisa (I like music), pelo menos três ações desta aula (sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit), e uma indicação de quando ou onde (after school, every day, in the park, at night, on the weekend).",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre as coisas que gosta de fazer e o que faz depois da escola. Vocabulário da aula: like, sing, draw, cook, help, study, write, listen to music, ride a bike, play video games, walk the dog, run, sleep, visit. Confira: like sem 'of' (I like music), listen TO music, ride a bike (não drive), play video games. Ela ainda não aprendeu like + ação com -ing: se escrever I like draw, mostre com carinho que fica melhor I like to draw, sem cobrar como erro grave."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ frases:[
+  {en:"I like music.", pt:"Eu gosto de música."},
+  {en:"I listen to music every day.", pt:"Eu ouço música todo dia."},
+  {en:"I draw after school.", pt:"Eu desenho depois da escola."},
+  {en:"I ride a bike in the park.", pt:"Eu ando de bicicleta no parque."},
+  {en:"I help my mom.", pt:"Eu ajudo a minha mãe."},
+  {en:"That's right! That's wrong! I think so.", pt:"Isso mesmo! Está errado! Acho que sim."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao TH de think e de that's (língua entre os dentes), ao R de right e ride (sem som de rr carioca) e ao W de write (que não se fala). Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando: Do you like music? · Do you sing? · Do you ride a bike? · What do you do after school? · Do you play video games? · Two and two is five. Right? (para ela responder That's wrong!). Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"I listen to music and I sing", pt:"Eu ouço música e eu canto."},
+ {frase:"After school I walk the dog", pt:"Depois da escola eu passeio com o cachorro."},
+ {frase:"I ride a bike in the park", pt:"Eu ando de bicicleta no parque."},
+ {frase:"I help my dad cook dinner at night", pt:"Eu ajudo o meu pai a cozinhar o jantar de noite."}
+]}
+
+]});
+</script>
+</body>
+</html>
