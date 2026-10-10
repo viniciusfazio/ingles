@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 7 · Dia 4</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:7,
+dia:4,
+titulo:"My own room",
+subtitulo:"Descrever o seu quarto: grande ou pequeno, arrumado ou bagunçado, e onde fica cada coisa",
+objetivos:[
+  "Descrever um quarto com small, tidy, messy, dark e quiet",
+  "Perguntar Where is…? / Where are…? e responder com It's / They're",
+  "Descrever o seu quarto para a Emma desenhar"
+],
+blocos:[
+
+{tipo:"gramatica", titulo:"Revisão rápida: There is (tem) x It is (está)",
+ html:"<p>Dois jeitos de falar de uma coisa da casa — e eles não são iguais:</p>"+
+ "<table><tr><th>Para dizer…</th><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td>que <b>tem</b></td><td><code>There is a lamp in my room.</code></td><td>Tem um abajur no meu quarto.</td></tr>"+
+ "<tr><td><b>onde está</b></td><td><code>It's next to the bed.</code></td><td>Ele está do lado da cama.</td></tr></table>"+
+ "<p>Para perguntar onde está, use <code>Where is</code> com uma coisa e <code>Where are</code> com várias:</p>"+
+ "<table><tr><th>Pergunta</th><th>Resposta</th></tr>"+
+ "<tr><td><code>Where is the lamp?</code></td><td><code>It's on the desk.</code></td></tr>"+
+ "<tr><td><code>Where are my books?</code></td><td><code>They're on the shelf.</code></td></tr></table>",
+ exemplos:[
+  {en:"There is a lamp in my room. It's next to the bed.", pt:"Tem um abajur no meu quarto. Ele fica do lado da cama."},
+  {en:"Where is the cat? It's under the sofa.", pt:"Cadê o gato? Está embaixo do sofá."},
+  {en:"Where are my books? They're on the shelf.", pt:"Cadê os meus livros? Estão na prateleira."},
+  {en:"There are two pictures. They're on the wall.", pt:"Tem dois quadros. Eles estão na parede."}
+ ]},
+
+{tipo:"vocab", titulo:"Como é o quarto", itens:[
+ {en:"small", pt:"pequeno, pequena", ipa:"/SMÓL/", emoji:"🤏"},
+ {en:"dark", pt:"escuro, escura", ipa:"/DÁRK/", emoji:"🌑"},
+ {en:"messy", pt:"bagunçado, bagunçada", ipa:"/MÉ-si/", emoji:"🌪️"},
+ {en:"tidy", pt:"arrumado, arrumada", ipa:"/TÁI-di/", emoji:"✨"},
+ {en:"quiet", pt:"quieto, silencioso", ipa:"/KUÁI-et/", emoji:"🤫"},
+ {en:"share", pt:"dividir (o quarto, um lanche)", ipa:"/CHÉR/", emoji:"🤝"},
+ {en:"my own room", pt:"o meu próprio quarto (só meu)", ipa:"/mai ÔUN rum/", emoji:"🔑"},
+ {en:"move", pt:"mudar (de casa); mudar de lugar", ipa:"/MÚUV/", emoji:"📦"},
+ {en:"put", pt:"pôr, colocar", ipa:"/PÚT/", emoji:"👇"},
+ {en:"place", pt:"lugar", ipa:"/PLÊIS/", emoji:"📍"}
+]},
+
+{tipo:"dialogo", titulo:"Ouça: o quarto da Lily", escuta:true, linhas:[
+ {quem:"Anna", en:"Lily, do you have your own room?", pt:"Lily, você tem o seu próprio quarto?"},
+ {quem:"Lily", en:"No, I share my room with my sister.", pt:"Não, eu divido o quarto com a minha irmã."},
+ {quem:"Anna", en:"Is it big?", pt:"Ele é grande?"},
+ {quem:"Lily", en:"No, it's small. There are two beds and one desk.", pt:"Não, é pequeno. Tem duas camas e uma escrivaninha."},
+ {quem:"Anna", en:"Is your room tidy?", pt:"O seu quarto está arrumado?"},
+ {quem:"Lily", en:"My bed is tidy. My sister's bed is very messy!", pt:"A minha cama está arrumada. A cama da minha irmã está muito bagunçada!"},
+ {quem:"Anna", en:"Where is the desk?", pt:"Onde fica a escrivaninha?"},
+ {quem:"Lily", en:"It's between the beds, under the window.", pt:"Fica entre as camas, embaixo da janela."},
+ {quem:"Anna", en:"Do you like your room?", pt:"Você gosta do seu quarto?"},
+ {quem:"Lily", en:"Yes! At night it's dark and quiet. I love it.", pt:"Sim! De noite ele fica escuro e quieto. Eu adoro."}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
+ {pergunta:"Does Lily have her own room?", opcoes:["Yes, she does.","No, she shares it with her sister.","No, she shares it with her brother."], correta:1,
+  explicacao:"A Lily diz: I share my room with my sister."},
+ {pergunta:"Is Lily's room big?", opcoes:["No, it's small.","Yes, it's very big.","Yes, it's big and dark."], correta:0,
+  explicacao:"Ela diz: No, it's small."},
+ {pergunta:"Which bed is messy?", opcoes:["Lily's bed.","Anna's bed.","Lily's sister's bed."], correta:2,
+  explicacao:"My bed is tidy. My sister's bed is very messy! A bagunça é da irmã."},
+ {pergunta:"Where is the desk?", opcoes:["Next to the door.","Between the beds.","Behind the closet."], correta:1,
+  explicacao:"It's between the beds, under the window."},
+ {pergunta:"How is the room at night?", opcoes:["Dark and quiet.","Messy and small.","Big and tidy."], correta:0,
+  explicacao:"At night it's dark and quiet. Por isso ela adora o quarto."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que a Lily disse", itens:[
+ {en:"I share my room", pt:"Eu divido o meu quarto", dica:"(quatro palavras)"},
+ {en:"There are two beds", pt:"Tem duas camas", dica:"(quatro palavras)"},
+ {en:"My bed is tidy", pt:"A minha cama está arrumada.", dica:"(quatro palavras)"},
+ {en:"it's dark and quiet", pt:"ele fica escuro e quieto", dica:"(quatro palavras, com apóstrofo)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Who shares the room with Lily? (Quem divide o quarto com a Lily?)<br>2. What is there in Lily's room? (O que tem no quarto da Lily?)<br>3. Where is the desk? (Onde fica a escrivaninha?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na pergunta 2, use <b>There are</b> ou <b>There is</b></li><li>na pergunta 3, use duas palavras de lugar</li></ul>",
+ andaime:"<p>Her <span class=\"lacuna\">?</span> shares the room with Lily. · There are <span class=\"lacuna\">?</span>. · It's <span class=\"lacuna\">?</span> the beds, <span class=\"lacuna\">?</span> the window.</p>",
+ gabarito:"1. Her sister shares the room with Lily (Lily's sister). 2. There are two beds and one desk. 3. It's between the beds, under the window.",
+ instrucaoIA:"Ela ouviu a Lily contar como é o quarto dela e devia responder: quem divide o quarto (a irmã da Lily), o que tem no quarto (two beds and one desk) e onde fica a escrivaninha (between the beds, under the window). Confira o -s de shares (com she / her sister), There are com duas camas e as palavras de lugar. Vocabulário: share, own room, small, tidy, messy, dark, quiet, bed, desk, window, between, under."},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"My room isn't big. It's ___.", pt:"O meu quarto não é grande. É pequeno.", resposta:"small",
+  opcoes:["small","tall","messy"], explicacao:"Não é grande, então é small (pequeno). tall é alto, para pessoas."},
+ {frase:"There are toys on the floor. My room is ___!", pt:"Tem brinquedos no chão. O meu quarto está bagunçado!", resposta:"messy",
+  opcoes:["messy","tidy","quiet"], explicacao:"Brinquedo no chão = bagunça = messy. tidy é o contrário: arrumado."},
+ {frase:"I don't have my own room. I ___ it with my sister.", pt:"Eu não tenho o meu próprio quarto. Eu divido com a minha irmã.", resposta:"share",
+  opcoes:["share","put","move"], explicacao:"share = dividir."},
+ {frase:"___ the lamp on the desk, please.", pt:"Põe o abajur na escrivaninha, por favor.", resposta:"Put",
+  opcoes:["Put","Move","Share"], explicacao:"put = pôr, colocar."},
+ {frase:"Where ___ my pillows?", pt:"Cadê os meus travesseiros?", resposta:"are",
+  opcoes:["is","are","am"], explicacao:"Pillows são vários (tem -s), então Where are."},
+ {frase:"Where is the cat? ___ under the sofa.", pt:"Cadê o gato? Está embaixo do sofá.", resposta:"It's",
+  opcoes:["It's","There is","They're"], explicacao:"Para dizer ONDE uma coisa está, a resposta é It's. There is é para dizer que tem."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"My bedroom is small and tidy", pt:"O meu quarto é pequeno e arrumado."},
+ {frase:"Where are my books", pt:"Cadê os meus livros?"},
+ {frase:"I share my room with my sister", pt:"Eu divido o meu quarto com a minha irmã."}
+]},
+
+{tipo:"entrevista", titulo:"A revista das casas", perfil:"reporter", voz:"f",
+ personagem:"Rachel, repórter da revista infantil Kids' Homes, animada e curiosa",
+ apresentacao:"<p>A <b>Rachel</b> escreve para uma revista americana que mostra as casas de crianças do mundo todo. Hoje é a sua vez de aparecer na revista! Ela <b>só fala inglês</b> e quer saber tudo sobre a sua casa.</p>",
+ quer:["se ela mora numa casa ou num apartamento, e se o quarto dela fica lá em cima, lá embaixo ou em que andar","qual é o cômodo favorito dela na casa","o que uma pessoa da família faz num cômodo (por exemplo, quem cozinha na cozinha)","se ela tem o próprio quarto ou divide com alguém","se o quarto dela é grande ou pequeno, arrumado ou bagunçado"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I live in</span> … · <span class=\"lacuna\">My favorite room is</span> … · <span class=\"lacuna\">My dad</span> … in the kitchen · <span class=\"lacuna\">I share my room with</span> …</p>",
+ instrucaoIA:"Ela sabe: house, apartment, live, room, favorite, bedroom, dining room, bathroom, living room, kitchen, yard, garage, upstairs, downstairs, floor, bed, desk, closet, lamp, rug, shelf, mirror, window, small, big, tidy, messy, dark, quiet, share, my own room, There is / There are, Is there...?, under, next to, behind, in front of, between, It's next to..., os números, a rotina e o verbo com -s (My dad cooks, My mom reads), Sorry? Again, please. Rachel faz uma pergunta por vez, em 3 a 6 palavras (Do you live in a house? / Is your room upstairs? / What is your favorite room? / Who cooks in your kitchen? / Do you share your room? / Is your room tidy?). Se ela não entender, Rachel pergunta de outro jeito: mais curto, com exemplo dela (I live in an apartment. And you?) ou com opções (The kitchen? The living room?). Ela adora os detalhes e reage com Wow! Really?"},
+
+{tipo:"missao", titulo:"Missão da semana: a Emma desenha o seu quarto", cena:"descricao",
+ cenario:"<p>A <b>Emma</b> tem um projeto de arte na escola em Nova York: <b>“Rooms of the world”</b>. Ela vai desenhar o <b>seu</b> quarto só com o que você contar! Ela <b>só entende inglês</b>. Descreva bem — e no fim confira se o desenho dela ficou certo.</p>",
+ personagem:"Emma, 11 anos, de Nova York, amiga da escola, adora desenhar",
+ objetivos:["dizer se o quarto é grande ou pequeno e se é só seu ou dividido","dizer três coisas que tem no quarto (There is / There are)","dizer onde ficam duas coisas (under, next to, behind, between...)","corrigir a Emma quando ela errar um detalhe do desenho (That's wrong! It's ...)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">My room is</span> … · <span class=\"lacuna\">There is a</span> … · <span class=\"lacuna\">The bed is next to</span> … · <span class=\"lacuna\">That's wrong!</span> …</p>",
+ instrucaoIA:"Ela sabe: small, big, tidy, messy, dark, quiet, share, my own room, bed, table, desk, chair, sofa, lamp, closet, shelf, rug, mirror, plant, picture, pillow, window, door, wall, floor, as cores, There is / There are / There isn't, Is there...? / Are there...?, under, next to, behind, in front of, between, in, on, Where is...? It's..., That's right! That's wrong! I think so. Emma faz uma pergunta por vez, em 3 a 6 palavras (Is your room big? / What is there in your room? / Where is your bed? / What color is the rug? / Is there a window?). Quando tiver três ou quatro coisas, Emma descreve o desenho dela de volta com UM detalhe errado de propósito (por exemplo, põe a cama no lugar errado ou troca uma cor) e pergunta Is it right? Espere ela corrigir com That's wrong! It's... Se ela não perceber, Emma pergunta de novo sobre aquele detalhe. Fim: Emma diz que o desenho ficou lindo. A cena tem até 8 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> descrevendo o seu quarto, como você contou para a Emma: como ele é, o que tem e onde fica cada coisa.",
+ dica:"<ul><li>se o quarto é grande ou pequeno, arrumado ou bagunçado, e se é só seu (<b>my own room</b>) ou dividido (<b>share</b>)</li><li>pelo menos duas coisas que tem, com <b>There is</b> e <b>There are</b></li><li>onde ficam duas coisas, com palavras de lugar</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>My room is <span class=\"lacuna\">?</span> and <span class=\"lacuna\">?</span>. · There is <span class=\"lacuna\">?</span>. · There are <span class=\"lacuna\">?</span>. · The <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span> the <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre o quarto dela: como ele é (small/big, tidy/messy, dark/quiet), se é só dela ou dividido (my own room / I share my room with...), pelo menos duas coisas com There is / There are, e onde ficam duas coisas (The bed is under the window. The lamp is next to the bed.).",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases descrevendo o quarto dela, como contou para a Emma na missão. Vocabulário da aula e da semana: small, dark, messy, tidy, quiet, share, my own room, move, put, place, os móveis (bed, desk, closet, lamp, rug, shelf, mirror, pillow, picture) e as palavras de lugar (under, next to, behind, in front of, between, in, on). Confira: There is (tem) x It is (está), Where is / Where are, There is com uma coisa e There are com várias, e o -s na ação com he / she (My sister shares my room)."},
+
+{tipo:"fala", titulo:"Hora de falar: aquecimento para a Emma",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ frases:[
+  {en:"My room is small and tidy.", pt:"O meu quarto é pequeno e arrumado."},
+  {en:"There is a bed under the window.", pt:"Tem uma cama embaixo da janela."},
+  {en:"There are two pictures on the wall.", pt:"Tem dois quadros na parede."},
+  {en:"The desk is next to the closet.", pt:"A escrivaninha fica do lado do guarda-roupa."},
+  {en:"I share my room with my sister.", pt:"Eu divido o meu quarto com a minha irmã."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao TH de there (língua entre os dentes), ao R americano de room e picture, e ao SH de share (como o X de xícara, não S). Depois faça 4 a 6 perguntas em inglês, uma de cada vez, e espere ela responder falando: Is your room big or small? · Is your room tidy or messy? · Do you have your own room? · What is there on your wall? · Where is your bed? · What is your favorite place in your house? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil: respostas de duas palavras", itens:[
+ {pistas:["It is not a bedroom.","There is a sofa in it.","My family watches TV in it."],
+  resposta:"living room", pt:"sala de estar", dica:"(duas palavras)"},
+ {pistas:["It is a room.","There is a big table in it.","We have dinner in it on Sundays."],
+  resposta:"dining room", pt:"sala de jantar", dica:"(duas palavras)"},
+ {pistas:["It is small.","My pens and pencils are in it.","It is in my backpack."],
+  resposta:"pencil case", pt:"estojo", dica:"(duas palavras, da semana 3)"},
+ {pistas:["It is in my backpack, too.","My bread and my juice are in it.","I open it at school."],
+  resposta:"lunch box", pt:"lancheira", dica:"(duas palavras, da semana 3)"},
+ {pistas:["Ben and Leo have it in a garage.","There is an old sofa and a big rug in it.","They play video games in it."],
+  resposta:"game room", pt:"sala de jogos", dica:"(duas palavras, do dia 2)"}
+]}
+
+]});
+</script>
+</body>
+</html>

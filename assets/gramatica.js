@@ -357,6 +357,55 @@ var GRAMATICA = [
   {en:"Does Leo sing? No, he doesn't.", pt:"O Leo canta? Não, não canta."},
   {en:"What does your mom do on Sundays?", pt:"O que a sua mãe faz aos domingos?"},
   {en:"What time does he get up?", pt:"A que horas ele se levanta?"}
+ ]},
+
+{semana:7, dia:2, modulo:1,
+ titulo:"There is / There are",
+ resumo:"Para dizer o que tem (o que existe) num lugar",
+ html:"<table><tr><th></th><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td>uma coisa</td><td><code>There is a bed.</code> (<code>There's</code>)</td><td>Tem uma cama.</td></tr>"+
+ "<tr><td>duas ou mais</td><td><code>There are two lamps.</code></td><td>Tem dois abajures.</td></tr>"+
+ "<tr><td>não tem</td><td><code>There isn't a TV.</code></td><td>Não tem TV.</td></tr></table>"+
+ "<p>⚠️ Não é <code>have</code>: ❌ <i>Have a bed in my room.</i> ✅ <code>There is a bed in my room.</code> O <code>have / has</code> é de alguém que tem: <code>My room has a window.</code></p>",
+ exemplos:[
+  {en:"There is a bed in my room.", pt:"Tem uma cama no meu quarto."},
+  {en:"There are three bedrooms in my house.", pt:"Tem três quartos na minha casa."},
+  {en:"There's a big mirror in the bathroom.", pt:"Tem um espelho grande no banheiro."},
+  {en:"There isn't a TV in my bedroom.", pt:"Não tem TV no meu quarto."}
+ ]},
+
+{semana:7, dia:3, modulo:1,
+ titulo:"Is there…? / Are there…?",
+ resumo:"Para perguntar se tem: o is / are pula para a frente",
+ html:"<table><tr><th>Pergunta</th><th>Sim</th><th>Não</th></tr>"+
+ "<tr><td><code>Is there a TV?</code></td><td><code>Yes, there is.</code></td><td><code>No, there isn't.</code></td></tr>"+
+ "<tr><td><code>Are there two beds?</code></td><td><code>Yes, there are.</code></td><td><code>No, there aren't.</code></td></tr></table>"+
+ "<p>There is (<b>tem</b>) é diferente de It is (<b>está</b>): <code>There is a lamp. It's next to the bed.</code></p>",
+ exemplos:[
+  {en:"Is there a mirror in your bathroom? Yes, there is.", pt:"Tem espelho no seu banheiro? Tem, sim."},
+  {en:"Are there toys in your room? No, there aren't.", pt:"Tem brinquedos no seu quarto? Não, não tem."},
+  {en:"Is there a place for the piano?", pt:"Tem lugar para o piano?"},
+  {en:"There is a lamp in my room. It's next to the bed.", pt:"Tem um abajur no meu quarto. Ele fica do lado da cama."}
+ ]},
+
+{semana:7, dia:3, modulo:1,
+ titulo:"Palavras de lugar: in, on, under, next to…",
+ resumo:"Para dizer onde uma coisa está",
+ html:"<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>in</code></td><td>dentro de</td></tr>"+
+ "<tr><td><code>on</code></td><td>em cima de</td></tr>"+
+ "<tr><td><code>under</code></td><td>embaixo de</td></tr>"+
+ "<tr><td><code>next to</code></td><td>ao lado de</td></tr>"+
+ "<tr><td><code>behind</code></td><td>atrás de</td></tr>"+
+ "<tr><td><code>in front of</code></td><td>na frente de</td></tr>"+
+ "<tr><td><code>between … and …</code></td><td>entre … e …</td></tr></table>"+
+ "<p>“Na mesa” depende: em cima é <code>on the table</code>, dentro da caixa é <code>in the box</code>. Pergunta: <code>Where is…?</code> (uma) · <code>Where are…?</code> (várias) → <code>It's…</code> · <code>They're…</code></p>",
+ exemplos:[
+  {en:"The cat is under the bed.", pt:"O gato está embaixo da cama."},
+  {en:"My backpack is behind the door.", pt:"A minha mochila está atrás da porta."},
+  {en:"The sofa is in front of the TV.", pt:"O sofá fica na frente da TV."},
+  {en:"The desk is between the bed and the closet.", pt:"A escrivaninha fica entre a cama e o guarda-roupa."},
+  {en:"Where are my books? They're on the shelf.", pt:"Cadê os meus livros? Estão na prateleira."}
  ]}
 
 ];

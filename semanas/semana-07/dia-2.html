@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 7 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:7,
+dia:2,
+titulo:"There is a bed, there are two lamps",
+subtitulo:"Os móveis e o jeito de dizer o que TEM num lugar",
+objetivos:[
+  "Dizer em inglês os móveis e as coisas da casa",
+  "Usar There is e There are para dizer o que tem num cômodo",
+  "Entender de ouvido uma conversa sobre uma garagem cheia de coisas"
+],
+blocos:[
+
+{tipo:"vocab", titulo:"Os móveis e as coisas da casa", itens:[
+ {en:"bed", pt:"cama", ipa:"/BÉD/", emoji:"🛏️"},
+ {en:"table", pt:"mesa", ipa:"/TÊI-bol/", emoji:"🪑"},
+ {en:"sofa", pt:"sofá", ipa:"/SÔU-fa/", emoji:"🛋️"},
+ {en:"lamp", pt:"abajur, luminária", ipa:"/LÉMP/", emoji:"💡"},
+ {en:"closet", pt:"guarda-roupa, armário", ipa:"/KLÓ-zet/", emoji:"🚪"},
+ {en:"shelf", pt:"prateleira, estante", ipa:"/CHÉLF/", emoji:"📚"},
+ {en:"rug", pt:"tapete", ipa:"/RÂG/", emoji:"🟪"},
+ {en:"mirror", pt:"espelho", ipa:"/MÍ-rer/", emoji:"🪞"},
+ {en:"fridge", pt:"geladeira", ipa:"/FRÍDJ/", emoji:"🧊"},
+ {en:"bathtub", pt:"banheira", ipa:"/BÉTH-tâb/", emoji:"🛁"},
+ {en:"plant", pt:"planta", ipa:"/PLÉNT/", emoji:"🪴"},
+ {en:"picture", pt:"quadro, foto (na parede)", ipa:"/PÍK-tcher/", emoji:"🖼️"},
+ {en:"pillow", pt:"travesseiro, almofada", ipa:"/PÍ-lou/", emoji:"🛌"},
+ {en:"game room", pt:"sala de jogos", ipa:"/GUÊIM rum/", emoji:"🎮"}
+]},
+
+{tipo:"gramatica", titulo:"There is / There are — o “tem” de lugar",
+ html:"<p>Em português a gente diz <b>“tem uma cama no meu quarto”</b>. Em inglês, para dizer o que <b>tem</b> (o que <b>existe</b>) num lugar, usa-se <code>there is</code> e <code>there are</code>:</p>"+
+ "<table><tr><th></th><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td>uma coisa</td><td><code>There is a bed.</code></td><td>Tem uma cama.</td></tr>"+
+ "<tr><td>duas ou mais</td><td><code>There are two lamps.</code></td><td>Tem dois abajures.</td></tr>"+
+ "<tr><td>não tem</td><td><code>There isn't a TV.</code></td><td>Não tem TV.</td></tr></table>"+
+ "<p>Falando rápido, <code>there is</code> vira <code>there's</code>: <code>There's a sofa.</code></p>"+
+ "<p>⚠️ Não use <code>have</code> para isso: ❌ <i>Have a bed in my room.</i> ✅ <code>There is a bed in my room.</code> O <code>have</code> é de <b>alguém</b> que tem: <code>I have a dog.</code> · <code>My room has a big window.</code></p>",
+ exemplos:[
+  {en:"There is a bed in my room.", pt:"Tem uma cama no meu quarto."},
+  {en:"There are three bedrooms in my house.", pt:"Tem três quartos na minha casa."},
+  {en:"There's a big mirror in the bathroom.", pt:"Tem um espelho grande no banheiro."},
+  {en:"There are two plants in the kitchen.", pt:"Tem duas plantas na cozinha."},
+  {en:"There isn't a TV in my bedroom.", pt:"Não tem TV no meu quarto."},
+  {en:"There is a fridge in the garage.", pt:"Tem uma geladeira na garagem."}
+ ]},
+
+{tipo:"dialogo", titulo:"Ouça: a garagem do Ben", escuta:true, linhas:[
+ {quem:"Ben", en:"Leo, look! This is our garage.", pt:"Leo, olha! Esta é a nossa garagem."},
+ {quem:"Leo", en:"Wow, it's big! There's an old sofa here.", pt:"Uau, é grande! Tem um sofá velho aqui."},
+ {quem:"Ben", en:"Yes! And there are two lamps and a table.", pt:"É! E tem dois abajures e uma mesa."},
+ {quem:"Leo", en:"Where is your mom's car?", pt:"Cadê o carro da sua mãe?"},
+ {quem:"Ben", en:"It isn't here. Mom is at work. I want a game room here!", pt:"Não está aqui. A mamãe está no trabalho. Eu quero uma sala de jogos aqui!"},
+ {quem:"Leo", en:"Great idea! There's a big rug, too.", pt:"Ótima ideia! Tem um tapete grande também."},
+ {quem:"Ben", en:"Yes, but there isn't a TV.", pt:"É, mas não tem TV."},
+ {quem:"Leo", en:"My grandpa has an old TV. It's in his garage, too!", pt:"O meu avô tem uma TV velha. Fica na garagem dele também!"},
+ {quem:"Ben", en:"Really? Now we have a game room!", pt:"Sério? Agora a gente tem uma sala de jogos!"},
+ {quem:"Leo", en:"Yes! Video games every Saturday!", pt:"É! Videogame todo sábado!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
+ {pergunta:"Where are Ben and Leo?", opcoes:["In the kitchen.","In the garage.","In the yard."], correta:1,
+  explicacao:"O Ben diz: This is our garage."},
+ {pergunta:"What is in the garage?", opcoes:["A bed.","A fridge.","An old sofa."], correta:2,
+  explicacao:"O Leo diz: There's an old sofa here."},
+ {pergunta:"How many lamps are there?", opcoes:["Two.","One.","Three."], correta:0,
+  explicacao:"O Ben diz: there are two lamps and a table."},
+ {pergunta:"Where is Ben's mom?", opcoes:["At home.","At work.","At school."], correta:1,
+  explicacao:"O carro não está lá porque Mom is at work: a mãe está no trabalho."},
+ {pergunta:"What does Ben want?", opcoes:["A new car.","A TV for his bedroom.","A game room."], correta:2,
+  explicacao:"Ele diz: I want a game room here!"},
+ {pergunta:"Who has an old TV?", opcoes:["Leo's grandpa.","Ben's mom.","Ben."], correta:0,
+  explicacao:"O Leo diz: My grandpa has an old TV. Sem TV na garagem, o vovô do Leo resolve o problema."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"This is our garage", pt:"Esta é a nossa garagem.", dica:"(quatro palavras)"},
+ {en:"There's an old sofa here", pt:"Tem um sofá velho aqui.", dica:"(cinco palavras, com apóstrofo)"},
+ {en:"there are two lamps", pt:"tem dois abajures", dica:"(quatro palavras)"},
+ {en:"I want a game room", pt:"Eu quero uma sala de jogos", dica:"(cinco palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Where are the boys? (Onde estão os meninos?)<br>2. What is there in the garage? (O que tem na garagem?)<br>3. Who has an old TV? (Quem tem uma TV velha?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na pergunta 2, use <b>There is</b> e <b>There are</b> e diga pelo menos três coisas</li></ul>",
+ andaime:"<p>The boys are in <span class=\"lacuna\">?</span>. · There is <span class=\"lacuna\">?</span> and there are <span class=\"lacuna\">?</span>. · <span class=\"lacuna\">?</span> has an old TV.</p>",
+ gabarito:"1. The boys are in the garage (Ben's garage). 2. There is an old sofa, a table and a big rug, and there are two lamps (there isn't a TV). 3. Leo's grandpa has an old TV.",
+ instrucaoIA:"Ela ouviu uma conversa entre o Ben e o Leo na garagem do Ben e devia responder: onde eles estão (in the garage), o que tem na garagem (an old sofa, two lamps, a table, a big rug; não tem TV) e quem tem uma TV velha (o avô do Leo). Confira There is com uma coisa e There are com duas ou mais. Vocabulário: garage, sofa, lamp, table, rug, TV, game room, grandpa, old, big."},
+
+{tipo:"completar", titulo:"There is ou There are?", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"___ a bed in my room.", pt:"Tem uma cama no meu quarto.", resposta:"There is",
+  opcoes:["There is","There are"], explicacao:"Uma cama só: There is."},
+ {frase:"There ___ two pillows on my bed.", pt:"Tem dois travesseiros na minha cama.", resposta:"are",
+  opcoes:["is","are","am"], explicacao:"Dois travesseiros (mais de um): there are."},
+ {frase:"There ___ a big mirror in the bathroom.", pt:"Tem um espelho grande no banheiro.", resposta:"is",
+  opcoes:["is","are","has"], explicacao:"Um espelho só: there is."},
+ {frase:"There are three ___ in my house.", pt:"Tem três quartos na minha casa.", resposta:"bedrooms",
+  opcoes:["bedrooms","bedroom"], explicacao:"Três quartos: a palavra vai para o plural, com -s."},
+ {frase:"My sister ___ in her bedroom every day.", pt:"A minha irmã canta no quarto dela todo dia.", resposta:"sings",
+  opcoes:["sings","sing","singing"], explicacao:"Revisão da semana passada: com she, a ação ganha -s: sings."},
+ {frase:"My dad ___ TV in the living room at night.", pt:"O meu pai vê TV na sala de noite.", resposta:"watches",
+  opcoes:["watches","watch","watchs"], explicacao:"Revisão da semana passada: watch termina em ch, então ganha -es: watches."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"There is a lamp in my bedroom", pt:"Tem um abajur no meu quarto."},
+ {frase:"There are two plants in the kitchen", pt:"Tem duas plantas na cozinha."},
+ {frase:"There isn't a TV in my room", pt:"Não tem TV no meu quarto."},
+ {frase:"My cat sleeps on the sofa", pt:"O meu gato dorme no sofá."}
+]},
+
+{tipo:"entrevista", titulo:"A pesquisa da loja de móveis", perfil:"vendedor",
+ personagem:"Mr. Wood, dono da loja de móveis do bairro, simpático e falante",
+ apresentacao:"<p>O <b>Mr. Wood</b>, dono da loja de móveis do bairro, está fazendo uma pesquisa: ele quer saber como é o quarto das crianças para criar móveis novos. Ele <b>só fala inglês</b>. Entenda o que ele pergunta e responda!</p>",
+ quer:["quantos quartos tem a casa dela","o que tem no quarto dela (pelo menos duas coisas)","se tem TV no quarto dela","a cor da cama ou do tapete dela","o que ela quer de novo para o quarto"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">There is</span> … · <span class=\"lacuna\">There are</span> … · <span class=\"lacuna\">There isn't</span> … · <span class=\"lacuna\">I want</span> a …</p>",
+ instrucaoIA:"Ela sabe: house, apartment, bedroom, bathroom, living room, kitchen, room, bed, table, sofa, lamp, closet, shelf, rug, mirror, fridge, bathtub, plant, picture, pillow, game room, desk, chair, TV, as cores, números até 100, There is a... / There are two... / There isn't a..., I want a..., Yes / No. Ela também sabe dizer Sorry? Again, please. Slowly, please. Mr. Wood faz uma pergunta por vez, em 3 a 6 palavras (How many bedrooms? / What is there in your room? / Is there a TV in your room? / What color is your bed? / What do you want for your room?). Se ela não entender, ele pergunta de outro jeito: mais curto, com exemplo dele (In my room, there is a big bed. And in your room?) ou com opções (A TV? Yes or no?). Ele anota tudo e fica animado com as respostas."},
+
+{tipo:"missao", titulo:"Missão: o apartamento das férias", cena:"escolha",
+ cenario:"<p>A família da <b>Sophie</b> vai passar as férias na praia e está escolhendo entre dois apartamentos. Você está com o anúncio na mão:</p>"+
+ "<p><b>Apartamento A:</b> 2 quartos, 1 banheiro, sala com sofá e TV, sem quintal.<br><b>Apartamento B:</b> 3 quartos, 2 banheiros, sem TV, com quintal e uma mesa no quintal.</p>"+
+ "<p>A Sophie <b>só entende inglês</b>. Responda o que ela pergunta e ajude a escolher!</p>",
+ personagem:"Sophie, 11 anos, amiga da Emma, animada e indecisa",
+ objetivos:["dizer quantos quartos tem cada apartamento (There are ... bedrooms)","dizer uma coisa que NÃO tem num deles (There isn't a ...)","dizer qual apartamento é melhor para a família da Sophie e por quê (I like ... / There is ...)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">In apartment A, there are</span> … · <span class=\"lacuna\">There isn't</span> a … · <span class=\"lacuna\">I like apartment</span> …</p>",
+ instrucaoIA:"Ela sabe: apartment, house, bedroom, bathroom, living room, kitchen, yard, sofa, TV, table, números até 100, There is / There are / There isn't, I like, I want, That's right!, I think so. Fatos do anúncio: apartamento A tem 2 bedrooms, 1 bathroom, sofa e TV, não tem yard; apartamento B tem 3 bedrooms, 2 bathrooms, não tem TV, tem yard com uma table. Sophie pergunta uma coisa por vez, em 3 a 6 palavras: How many bedrooms in A? / Is there a TV in B? / Is there a yard? / Which one? Sophie adora TV, mas a família dela é grande (cinco pessoas). Deixe ela decidir; aceite qualquer escolha que ela justifique. A cena é curta: 5 a 7 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre o seu quarto usando <b>There is</b> e <b>There are</b>.",
+ dica:"<ul><li>pelo menos uma frase com <b>There is</b> (uma coisa)</li><li>pelo menos uma frase com <b>There are</b> (duas ou mais coisas, com número)</li><li>uma coisa que <b>não tem</b> no seu quarto (<b>There isn't</b>)</li><li>pelo menos uma cor</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>There is <span class=\"lacuna\">?</span> in my bedroom. · There are <span class=\"lacuna\">?</span>. · There isn't <span class=\"lacuna\">?</span>. · My <span class=\"lacuna\">?</span> is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre o quarto dela: pelo menos uma com There is + uma coisa (There is a bed / a closet / a lamp), uma com There are + número + plural (There are two pillows / three pictures), uma com There isn't (There isn't a TV) e uma cor (My rug is purple).",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre o quarto dela com There is e There are. Vocabulário da aula: bed, table, sofa, lamp, closet, shelf, rug, mirror, fridge, bathtub, plant, picture, pillow, game room. Confira: There is com uma coisa, There are com duas ou mais (e o plural com -s: two pillows), There isn't para o que não tem, e que ela não usou have no lugar de there is (Have a bed in my room está errado)."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ foco:"<b>there</b> e <b>three</b> começam com TH, mas são diferentes: em <i>there</i> a língua fica entre os dentes e <b>vibra</b> (quase um D macio); em <i>three</i> ela <b>sopra</b>, sem voz. E o <b>R</b> americano de <i>room</i>, com a língua enrolada para trás.",
+ frases:[
+  {en:"There is a bed in my room.", pt:"Tem uma cama no meu quarto."},
+  {en:"There are three pillows on my bed.", pt:"Tem três travesseiros na minha cama."},
+  {en:"There are three bedrooms.", pt:"Tem três quartos."},
+  {en:"There isn't a TV in my bedroom.", pt:"Não tem TV no meu quarto."},
+  {en:"There's a big mirror in the bathroom.", pt:"Tem um espelho grande no banheiro."},
+  {en:"My room is my favorite room.", pt:"O meu quarto é o meu cômodo favorito."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção à diferença entre there (TH com voz, a língua vibra entre os dentes) e three (TH soprado, sem voz), e ao R americano de room e mirror. Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando com There is ou There are: What is there in your bedroom? · How many pillows are there on your bed? · Is there a TV in your room? · What is there in your kitchen? · Is there a mirror in your bathroom? · What is your favorite room? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil: que coisa da casa é?", itens:[
+ {pistas:["It is in the living room.","It is soft and long.","My family watches TV on it."],
+  resposta:"sofa", pt:"sofá"},
+ {pistas:["It is in the bathroom.","It is on the wall.","I look at it in the morning."],
+  resposta:"mirror", pt:"espelho"},
+ {pistas:["It is big and white.","It is in the kitchen.","The milk and the juice are in it."],
+  resposta:"fridge", pt:"geladeira"},
+ {pistas:["It is soft.","It is on my bed.","I sleep on it every night."],
+  resposta:"pillow", pt:"travesseiro"}
+]},
+
+{tipo:"ligar", bonus:true, titulo:"Pares traiçoeiros (semanas 3 e 7)", pares:[
+ {en:"bed", pt:"cama"},
+ {en:"bedroom", pt:"quarto"},
+ {en:"bathroom", pt:"banheiro"},
+ {en:"bathtub", pt:"banheira"},
+ {en:"picture", pt:"quadro na parede"},
+ {en:"board", pt:"lousa"},
+ {en:"desk", pt:"carteira da escola"},
+ {en:"table", pt:"mesa"}
+]}
+
+]});
+</script>
+</body>
+</html>

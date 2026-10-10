@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 7 · Dia 1</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:7,
+dia:1,
+titulo:"My house, my room",
+subtitulo:"Os cômodos da casa e onde fica cada um",
+objetivos:[
+  "Dizer em inglês os cômodos de uma casa",
+  "Dizer se você mora numa casa ou num apartamento e onde fica o seu quarto",
+  "Receber alguém com Come in!, Look! e Here it is."
+],
+blocos:[
+
+{tipo:"nota", titulo:"🏠 Bem-vinda à semana da casa!",
+ html:"<p>Na semana passada você contou o que os <b>outros</b> fazem. Esta semana a gente entra <b>em casa</b>: os cômodos, os móveis e onde fica cada coisa.</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I live in a house.</code></td><td>Eu moro numa casa.</td></tr>"+
+ "<tr><td><code>I live in an apartment.</code></td><td>Eu moro num apartamento.</td></tr>"+
+ "<tr><td><code>My bedroom is upstairs.</code></td><td>O meu quarto fica lá em cima.</td></tr></table>"+
+ "<p>Repare: <code>live</code> é <b>morar</b>. E lembra do <code>an</code> da semana 3? <code>an apartment</code>, porque <i>apartment</i> começa com som de vogal. 💜</p>"},
+
+{tipo:"vocab", titulo:"A casa e os cômodos", itens:[
+ {en:"house", pt:"casa", ipa:"/RÁUS/", emoji:"🏠"},
+ {en:"apartment", pt:"apartamento", ipa:"/a-PÁRT-ment/", emoji:"🏢"},
+ {en:"live", pt:"morar", ipa:"/LÍV/", emoji:"📍"},
+ {en:"room", pt:"cômodo (um ambiente da casa)", ipa:"/RÚUM/", emoji:"🚪"},
+ {en:"bedroom", pt:"quarto (de dormir)", ipa:"/BÉD-rum/", emoji:"🛏️"},
+ {en:"bathroom", pt:"banheiro", ipa:"/BÉTH-rum/", emoji:"🚿"},
+ {en:"living room", pt:"sala de estar", ipa:"/LÍ-ving rum/", emoji:"🛋️"},
+ {en:"dining room", pt:"sala de jantar", ipa:"/DÁI-ning rum/", emoji:"🍽️"},
+ {en:"kitchen", pt:"cozinha", ipa:"/KÍ-tchen/", emoji:"🍳"},
+ {en:"yard", pt:"quintal", ipa:"/IÁRD/", emoji:"🌳"},
+ {en:"garage", pt:"garagem", ipa:"/ga-RÁDJ/", emoji:"🚗"},
+ {en:"stairs", pt:"escada", ipa:"/STÉRZ/", emoji:"🪜"},
+ {en:"upstairs", pt:"lá em cima (no andar de cima)", ipa:"/âp-STÉRZ/", emoji:"⬆️"},
+ {en:"downstairs", pt:"lá embaixo (no andar de baixo)", ipa:"/dáun-STÉRZ/", emoji:"⬇️"},
+ {en:"floor", pt:"chão; andar (de um prédio)", ipa:"/FLÓR/", emoji:"🟫"},
+ {en:"wall", pt:"parede", ipa:"/UÓL/", emoji:"🧱"}
+]},
+
+{tipo:"vocab", titulo:"Frases para conversar (semana 7)", itens:[
+ {en:"Come in!", pt:"Entra! / Pode entrar!", ipa:"/kâm ÍN/", emoji:"🚪"},
+ {en:"Look!", pt:"Olha!", ipa:"/LÚK/", emoji:"👀"},
+ {en:"Here it is.", pt:"Aqui está.", ipa:"/RÍR it íz/", emoji:"👉"}
+]},
+
+{tipo:"dialogo", titulo:"A casa do Leo", escuta:false, linhas:[
+ {quem:"Leo", en:"Hi, Anna! Come in!", pt:"Oi, Anna! Entra!"},
+ {quem:"Anna", en:"Thank you, Leo. Wow, your house is big!", pt:"Obrigada, Leo. Uau, a sua casa é grande!"},
+ {quem:"Leo", en:"Look! This is the living room. And the kitchen is here.", pt:"Olha! Esta é a sala. E a cozinha é aqui."},
+ {quem:"Anna", en:"Where is your bedroom?", pt:"Onde é o seu quarto?"},
+ {quem:"Leo", en:"It's upstairs. My parents' bedroom is upstairs, too.", pt:"É lá em cima. O quarto dos meus pais é lá em cima também."},
+ {quem:"Anna", en:"And where is the bathroom, please?", pt:"E onde é o banheiro, por favor?"},
+ {quem:"Leo", en:"Here it is! It's downstairs, next to the kitchen.", pt:"Aqui está! É aqui embaixo, do lado da cozinha."},
+ {quem:"Anna", en:"I live in an apartment. It's on the tenth floor!", pt:"Eu moro num apartamento. Fica no décimo andar!"},
+ {quem:"Leo", en:"The tenth floor? Wow!", pt:"No décimo andar? Uau!"}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções (esta semana e a passada)", pares:[
+ {en:"house", pt:"casa"},
+ {en:"bedroom", pt:"quarto"},
+ {en:"bathroom", pt:"banheiro"},
+ {en:"yard", pt:"quintal"},
+ {en:"stairs", pt:"escada"},
+ {en:"sing", pt:"cantar"},
+ {en:"draw", pt:"desenhar"},
+ {en:"always", pt:"sempre"},
+ {en:"never", pt:"nunca"},
+ {en:"neighbor", pt:"vizinha"}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"Como se diz banheiro? 🚿", opcoes:["bedroom","bathroom","living room"], correta:1,
+  explicacao:"bathroom = banheiro (bath = banho). bedroom é o quarto (bed = cama)."},
+ {pergunta:"O que significa I live in an apartment?", opcoes:["Eu amo o meu apartamento.","Eu moro num apartamento.","Eu vejo um apartamento."], correta:1,
+  explicacao:"live = morar. Cuidado para não confundir com love (amar) e like (gostar)."},
+ {pergunta:"Onde a família guarda o carro? 🚗", opcoes:["the garage","the dining room","the stairs"], correta:0,
+  explicacao:"garage = garagem. dining room é a sala de jantar."},
+ {pergunta:"Uma amiga toca a campainha da sua casa. Você abre a porta e diz:", opcoes:["Here it is.","Come in!","Again, please."], correta:1,
+  explicacao:"Come in! = Entra! É o que se diz para receber alguém."},
+ {pergunta:"A sua mãe pergunta onde está a borracha. Você acha e entrega para ela. O que você diz?", opcoes:["Come in!","Look!","Here it is."], correta:2,
+  explicacao:"Here it is. = Aqui está. Serve para quando você acha ou entrega alguma coisa."},
+ {pergunta:"Ouça e escolha.", audio:"upstairs", opcoes:["upstairs","downstairs","stairs"], correta:0,
+  explicacao:"upstairs = lá em cima. Lembra do up de get up? up = para cima."}
+]},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"I ___ in a house with my family.", pt:"Eu moro numa casa com a minha família.", resposta:"live",
+  opcoes:["live","like","love"], explicacao:"live = morar. like é gostar e love é amar."},
+ {frase:"We have dinner in the dining ___.", pt:"Nós jantamos na sala de jantar.", resposta:"room",
+  opcoes:["room","yard","wall"], explicacao:"dining room = sala de jantar. Os cômodos costumam terminar em room."},
+ {frase:"The car is in the ___.", pt:"O carro está na garagem.", resposta:"garage",
+  opcoes:["garage","kitchen","bathroom"], explicacao:"garage = garagem, o lugar do carro."},
+ {frase:"I take a shower in the ___.", pt:"Eu tomo banho no banheiro.", resposta:"bathroom",
+  opcoes:["bathroom","bedroom","living room"], explicacao:"take a shower (semana 5) = tomar banho. Isso é no bathroom."},
+ {frase:"My bedroom is ___. I go up the stairs.", pt:"O meu quarto fica lá em cima. Eu subo a escada.", resposta:"upstairs",
+  opcoes:["upstairs","downstairs","garage"], explicacao:"Para subir (go up), o quarto fica upstairs, lá em cima."},
+ {frase:"My dog ___ in the yard every day.", pt:"O meu cachorro dorme no quintal todo dia.", resposta:"sleeps",
+  opcoes:["sleeps","sleep","is sleep"], explicacao:"Lembra da semana passada? Com he, she, it (o cachorro) a ação ganha -s: sleeps."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"bathroom", pt:"banheiro", dica:"(uma palavra)"},
+ {en:"kitchen", pt:"cozinha", dica:"(uma palavra)"},
+ {en:"living room", pt:"sala de estar", dica:"(duas palavras)"},
+ {en:"upstairs", pt:"lá em cima", dica:"(uma palavra)"},
+ {en:"Here it is", pt:"Aqui está", dica:"(três palavras)"}
+]},
+
+{tipo:"adivinha", titulo:"Que lugar é? Escreva a resposta", itens:[
+ {pistas:["It is a room.","I go to bed in it.","It is not the bathroom."],
+  resposta:"bedroom", pt:"quarto", dica:"(um cômodo)"},
+ {pistas:["It is a room.","I make a cake in it.","My dad cooks dinner in it."],
+  resposta:"kitchen", pt:"cozinha", dica:"(um cômodo)"},
+ {pistas:["It is not a room for people.","The car is in it.","It has a big door."],
+  resposta:"garage", pt:"garagem", dica:"(um lugar da casa)"},
+ {pistas:["It is not in the house.","My dog plays in it.","I play soccer in it, too."],
+  resposta:"yard", pt:"quintal", dica:"(um lugar da casa)"}
+]},
+
+{tipo:"explorar", titulo:"Quem é a Hannah?", perfil:"viajante", voz:"f",
+ personagem:"Hannah, uma moça de uns trinta anos, sorridente e aventureira",
+ apresentacao:"<p>Na frente da sua escola, uma moça de chapéu está tomando café e acena para você: <i>Hi!</i> Ela <b>só fala inglês</b>. Descubra quem ela é e como é a casa dela!</p>",
+ segredos:["a casa dela é um carro enorme (um motorhome): a casa anda!","a casa dela tem um cômodo só: a cozinha, a sala e o quarto juntos","o banheiro dela é pequenininho","ela tem um gato, o Map, que viaja com ela","amanhã a casa dela vai para outra cidade, Miami"],
+ pistas:["como é a casa dela","quantos cômodos","o banheiro","um animal de estimação","surpresa: onde ela vai estar amanhã"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">Do you live in</span> …? · <span class=\"lacuna\">Is your house</span> …? · <span class=\"lacuna\">Do you have a</span> …?</p>",
+ instrucaoIA:"Ela sabe: house, apartment, live, room, bedroom, bathroom, living room, dining room, kitchen, yard, garage, stairs, upstairs, downstairs, floor, wall, big, little, new, car, bus, cat, dog, pet, números até 100, I like / I don't like, a rotina e o verbo com -s (She sleeps, He plays). Perguntas que ela sabe fazer: Do you live in a house? Is your house big? How many rooms? Where is your bedroom? Do you have a pet? Where are you from? What's your name? Frases para conversar: Come in! Look! Here it is. Really? Wow! Me too! Not me. Sorry, I don't understand. Again, please. Hannah fala de si com frases de 3 a 6 palavras (My house is a car! My house is little.), responde curto, deixa ganchos (My house is not here tomorrow!) e devolve perguntas fáceis (Do you live in a house?). Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: esconde-esconde na casa do Leo", cena:"jogo",
+ cenario:"<p>Você está na casa do Leo, brincando de <b>esconde-esconde</b>. O <b>Sam</b>, irmão caçula do Leo, se escondeu num cômodo da casa. Ele responde lá do esconderijo, mas <b>só entende inglês</b>! Pergunte cômodo por cômodo até achar.</p>",
+ personagem:"Sam, 6 anos, irmão caçula do Leo, risonho e ótimo em se esconder",
+ objetivos:["perguntar se ele está em pelo menos três cômodos diferentes (Are you in the...?)","descobrir em que lugar da casa ele está"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Are you in the</span> …? · <span class=\"lacuna\">Are you</span> upstairs?</p>",
+ instrucaoIA:"Ela sabe: house, room, bedroom, bathroom, living room, dining room, kitchen, yard, garage, stairs, upstairs, downstairs, Are you...? Yes, I am / No, I'm not, Come in! Look! Here it is. Sam está escondido na GARAGEM, dentro do carro do pai. Ele responde só sobre o lugar que ela perguntou, rindo, em 3 a 6 palavras: No! I'm not in the kitchen! / No, I'm not upstairs! Se ela perguntar upstairs ou downstairs, ele responde (I'm downstairs!). Quando ela perguntar da garagem, ele diz Yes! I'm in the garage! You win! A cena é curta: 4 a 6 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre a sua casa: onde você mora, os cômodos e onde fica o seu quarto.",
+ dica:"<ul><li>se você mora numa casa ou num apartamento (com <b>live</b>)</li><li>quantos quartos a sua casa tem</li><li>onde fica o seu quarto (<b>upstairs</b>, <b>downstairs</b>, em que andar)</li><li>o seu cômodo favorito</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I live in <span class=\"lacuna\">?</span>. · My house has <span class=\"lacuna\">?</span> bedrooms. · My bedroom is <span class=\"lacuna\">?</span>. · My favorite room is <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases sobre a casa dela: I live in a house / an apartment; quantos quartos ou cômodos (My house has three bedrooms); onde fica o quarto (My bedroom is upstairs / on the fifth floor); o cômodo favorito (My favorite room is the kitchen); pode citar yard, garage, living room, dining room, bathroom.",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre a casa dela. Vocabulário da aula: house, apartment, live, room, bedroom, bathroom, living room, dining room, kitchen, yard, garage, stairs, upstairs, downstairs, floor, wall. Confira: I live IN a house / IN an apartment (an antes de vogal), o artigo the antes do cômodo (the kitchen), has com a casa (My house has). Ela ainda não aprendeu there is (é amanhã): se ela escrever have no lugar de there is, aceite sem cobrar."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ foco:"o <b>R</b> americano de <i>room</i> e <i>bedroom</i>: a ponta da língua enrola para trás e <b>não encosta</b> em nada — não é o R de <i>rato</i>.",
+ frases:[
+  {en:"I live in a house.", pt:"Eu moro numa casa."},
+  {en:"Come in! This is the living room.", pt:"Entra! Esta é a sala."},
+  {en:"My bedroom is upstairs.", pt:"O meu quarto fica lá em cima."},
+  {en:"The kitchen is downstairs.", pt:"A cozinha fica lá embaixo."},
+  {en:"Look! This is my room.", pt:"Olha! Este é o meu quarto."},
+  {en:"Here it is!", pt:"Aqui está!"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao R americano de room, bedroom e floor (língua enrolada para trás, sem encostar) e ao H de house e here (um sopro, não R). Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando: Do you live in a house or an apartment? · How many bedrooms? · Where is your bedroom? · Do you have a yard? · Where is the kitchen? · What is your favorite room? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"I live in an apartment with my family", pt:"Eu moro num apartamento com a minha família."},
+ {frase:"We have dinner in the dining room", pt:"Nós jantamos na sala de jantar."},
+ {frase:"My dog always sleeps in the garage", pt:"O meu cachorro sempre dorme na garagem."},
+ {frase:"My grandma lives in a big house", pt:"A minha avó mora numa casa grande."}
+]}
+
+]});
+</script>
+</body>
+</html>

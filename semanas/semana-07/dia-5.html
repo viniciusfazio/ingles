@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 7 · Dia 5</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:7,
+dia:5,
+titulo:"Welcome to my home!",
+subtitulo:"Revisão da semana + o projeto: apresentar a sua casa",
+objetivos:[
+  "Entender de ouvido uma história com tudo da semana",
+  "Revisar cômodos, móveis, There is / There are e as palavras de lugar",
+  "Escrever e apresentar a sua casa em inglês"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🎉 Parabéns, semana 7 quase no fim!",
+ html:"<p>Esta semana você aprendeu a abrir a porta (<code>Come in!</code>), a mostrar os cômodos, a dizer o que <b>tem</b> (<code>There is / There are</code>) e <b>onde</b> cada coisa está (<code>under, behind, between…</code>).</p>"+
+ "<p>Hoje tem uma história para ouvir, uma conversa com um guia de museu cheio de segredos, uma festa surpresa para preparar e o projeto: <b>apresentar a sua casa</b>. 🏠💜</p>"},
+
+{tipo:"historia", titulo:"Ouça: o piano da vovó", cena:"ajuda", paragrafos:[
+ {en:"Anna's grandma moves today. Her new apartment is small.", pt:"A avó da Anna se muda hoje. O apartamento novo dela é pequeno."},
+ {en:"Anna and her dad help Grandma. There are a lot of boxes!", pt:"A Anna e o pai dela ajudam a vovó. Tem muitas caixas!"},
+ {en:"The bed goes in the bedroom, under the window. The sofa goes in the living room.", pt:"A cama vai no quarto, embaixo da janela. O sofá vai na sala."},
+ {en:"Grandma always reads at night. Anna puts a lamp next to the bed.", pt:"A vovó sempre lê de noite. A Anna põe um abajur do lado da cama."},
+ {en:"But there is a problem. Grandma's piano is very big!", pt:"Mas tem um problema. O piano da vovó é muito grande!"},
+ {en:"Is there a place for it? Not in the bedroom. Not in the kitchen.", pt:"Tem lugar para ele? No quarto, não. Na cozinha, não."},
+ {en:"Anna has an idea. \"Put it in the living room, between the sofa and the window!\"", pt:"A Anna tem uma ideia: “Põe na sala, entre o sofá e a janela!”"},
+ {en:"Now Grandma plays the piano every Sunday, and Anna sings with her.", pt:"Agora a vovó toca piano todo domingo, e a Anna canta com ela."}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"Who moves today?", opcoes:["Anna.","Anna's grandma.","Anna's dad."], correta:1,
+  explicacao:"A história começa: Anna's grandma moves today."},
+ {pergunta:"Is the new apartment big?", opcoes:["Yes, it's very big.","Yes, there are three bedrooms.","No, it's small."], correta:2,
+  explicacao:"Her new apartment is small."},
+ {pergunta:"Where is the lamp?", opcoes:["Next to the bed.","Under the window.","On the piano."], correta:0,
+  explicacao:"Anna puts a lamp next to the bed. A cama é que fica embaixo da janela."},
+ {pergunta:"Why does Grandma need a lamp next to the bed?", opcoes:["The bedroom is messy.","She always reads at night.","She sleeps in the living room."], correta:1,
+  explicacao:"Grandma always reads at night. Para ler de noite, ela precisa de luz do lado da cama."},
+ {pergunta:"What is the problem?", opcoes:["There isn't a bed.","Grandma is tired.","The piano is very big."], correta:2,
+  explicacao:"But there is a problem. Grandma's piano is very big!"},
+ {pergunta:"What does Anna do every Sunday?", opcoes:["She sings with Grandma.","She plays the piano.","She reads at night."], correta:0,
+  explicacao:"A vovó toca piano e a Anna canta com ela: Anna sings with her."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva frases da história", itens:[
+ {en:"Her new apartment is small", pt:"O apartamento novo dela é pequeno.", dica:"(cinco palavras)"},
+ {en:"There are a lot of boxes", pt:"Tem muitas caixas.", dica:"(seis palavras)"},
+ {en:"Grandma always reads at night", pt:"A vovó sempre lê de noite.", dica:"(cinco palavras)"},
+ {en:"Anna has an idea", pt:"A Anna tem uma ideia.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Who helps Grandma? (Quem ajuda a vovó?)<br>2. What is the problem? (Qual é o problema?)<br>3. Where is the piano now? (Onde está o piano agora?)<br>4. What does Grandma do every Sunday? (O que a vovó faz todo domingo?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na pergunta 3, use <b>between</b></li><li>nas perguntas 1 e 4, cuidado com o <b>-s</b> da ação</li></ul>",
+ gabarito:"1. Anna and her dad help Grandma. 2. The piano is very big (there isn't a place for it). 3. It's in the living room, between the sofa and the window. 4. She plays the piano (and Anna sings with her).",
+ instrucaoIA:"Ela ouviu a história da mudança da avó da Anna e devia responder: quem ajuda (Anna and her dad), qual é o problema (o piano é muito grande, não tem lugar), onde o piano fica (in the living room, between the sofa and the window) e o que a vovó faz todo domingo (plays the piano). Confira o -s da ação com she (She plays) e sem -s com Anna and her dad (they help). Vocabulário: move, small, apartment, boxes, bed, sofa, lamp, piano, place, put, between, next to, under, always, every Sunday."},
+
+{tipo:"completar", titulo:"Revisão da semana", ajuda:"Toque na palavra que falta. Tem um pouco de cada dia!", itens:[
+ {frase:"I live in an ___ on the fifth floor.", pt:"Eu moro num apartamento no quinto andar.", resposta:"apartment",
+  opcoes:["apartment","garage","yard"], explicacao:"an apartment — e no quinto andar, então só pode ser apartamento."},
+ {frase:"There ___ three bedrooms upstairs.", pt:"Tem três quartos lá em cima.", resposta:"are",
+  opcoes:["is","are","has"], explicacao:"Três quartos, mais de um: there are."},
+ {frase:"The fridge is in the ___.", pt:"A geladeira fica na cozinha.", resposta:"kitchen",
+  opcoes:["kitchen","bedroom","yard"], explicacao:"fridge = geladeira, e o lugar dela é a kitchen."},
+ {frase:"The cat is ___ the sofa.", pt:"O gato está embaixo do sofá.", resposta:"under",
+  opcoes:["under","on","between"], explicacao:"Embaixo de = under."},
+ {frase:"My room isn't tidy. It's ___.", pt:"O meu quarto não está arrumado. Está bagunçado.", resposta:"messy",
+  opcoes:["messy","quiet","small"], explicacao:"O contrário de tidy (arrumado) é messy (bagunçado)."},
+ {frase:"___ there a bathtub in your bathroom?", pt:"Tem banheira no seu banheiro?", resposta:"Is",
+  opcoes:["Is","Are","Do"], explicacao:"Uma banheira só: Is there...?"},
+ {frase:"I ___ my room with my brother.", pt:"Eu divido o meu quarto com o meu irmão.", resposta:"share",
+  opcoes:["share","live","put"], explicacao:"share = dividir."},
+ {frase:"The lamp is ___ the bed and the desk.", pt:"O abajur fica entre a cama e a escrivaninha.", resposta:"between",
+  opcoes:["between","behind","in front of"], explicacao:"Entre duas coisas: between ... and ..."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções", pares:[
+ {en:"living room", pt:"sala de estar"},
+ {en:"closet", pt:"guarda-roupa"},
+ {en:"mirror", pt:"espelho"},
+ {en:"behind", pt:"atrás de"},
+ {en:"in front of", pt:"na frente de"},
+ {en:"tidy", pt:"arrumado"},
+ {en:"quiet", pt:"quieto"},
+ {en:"yard", pt:"quintal"}
+]},
+
+{tipo:"explorar", titulo:"Quem é o guia do museu?", perfil:"guia",
+ personagem:"Mr. Grant, um senhor de uns sessenta anos, guia de uma casa antiga que virou museu, engraçado e misterioso",
+ apresentacao:"<p>Você está visitando uma <b>casa muito antiga que virou museu</b>. Um senhor de gravata-borboleta abre a porta e diz <i>Come in!</i> Ele é o guia e <b>só fala inglês</b>. Descubra quem ele é e os segredos da casa!</p>",
+ segredos:["a casa tem 100 anos e 30 cômodos","tem uma porta secreta atrás da estante de livros da sala","ele mora no museu, num quarto pequeno lá em cima","um gato, o Duke, mora na cozinha e dorme numa banheira velha","surpresa: a cama dele também tem 100 anos"],
+ pistas:["a idade da casa e o tamanho","um segredo na sala","onde ele mora","um animal","surpresa: um móvel"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">How many rooms</span> …? · <span class=\"lacuna\">Is there a</span> …? · <span class=\"lacuna\">Where do you</span> …?</p>",
+ instrucaoIA:"Ela sabe: house, apartment, live, room, bedroom, bathroom, living room, dining room, kitchen, yard, garage, stairs, upstairs, downstairs, floor, wall, bed, table, sofa, lamp, closet, shelf, rug, mirror, fridge, bathtub, plant, picture, pillow, small, big, old, new, dark, quiet, tidy, messy, secret, corner, find, under, next to, behind, in front of, between, There is / There are, Is there...? / Are there...?, Where is...?, How many...?, How old...?, Do you live...?, números até 100, o verbo com -s. Frases para conversar: Come in! Look! Here it is. Really? Wow! That's right! I think so. Sorry, I don't understand. Again, please. Mr. Grant fala de si com frases de 3 a 6 palavras (This house is very old. I live here!), responde curto, deixa ganchos (There is a secret in this room...) e devolve perguntas fáceis (Is your house old?). Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: a festa surpresa da mãe do Ben", cena:"surpresa",
+ cenario:"<p>Hoje é aniversário da <b>mãe do Ben</b>! Você está na casa dele para preparar uma <b>festa surpresa</b>. O Ben está nervoso e cheio de perguntas, e ele <b>só entende inglês</b>. O bolo está na geladeira e os presentes estão no guarda-roupa do quarto dele.</p>",
+ personagem:"Ben, 11 anos, amigo da escola, animado e nervoso",
+ objetivos:["dizer onde estão o bolo e os presentes (in the fridge, in the closet...)","escolher onde vocês vão se esconder (behind / under ...)","perguntar a que horas a mãe dele chega em casa (What time does she...?)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">The cake is</span> … · <span class=\"lacuna\">Look! The presents are</span> … · <span class=\"lacuna\">What time does</span> …?</p>",
+ instrucaoIA:"Ela sabe: cake, present, party, birthday, Happy birthday!, fridge, closet, sofa, door, table, bed, kitchen, living room, bedroom, stairs, under, next to, behind, in front of, between, in, on, There is / There are, Where is...? It's..., What time does she...? She comes home at..., a rotina com -s (She always comes home at six), Come in! Look! Here it is. Fatos: o cake está no fridge, os presents estão no closet do quarto do Ben, a mãe dele comes home at six o'clock (ele só conta se ela perguntar). Ben pergunta uma coisa por vez, em 3 a 6 palavras: Where is the cake? / Where are the presents? / Where do we hide? Se ela sugerir um esconderijo (behind the sofa, under the table), ele concorda. No fim: Ding dong! She is here! Surprise! A cena tem 6 a 8 falas."},
+
+{tipo:"escrita", titulo:"Projeto da semana: My home", id:"1",
+ instrucao:"<b>PROJETO DA SEMANA:</b> apresente a sua casa em inglês, como se estivesse recebendo uma visita. Escreva <b>4 ou 5 frases</b> (ou mais, se quiser!).",
+ dica:"<ul><li>receba a visita com uma das frases para conversar da semana</li><li>se você mora numa casa ou num apartamento, e os cômodos (com <b>There is</b> / <b>There are</b>)</li><li>como é o seu quarto e onde ficam duas coisas nele (palavras de lugar)</li><li>uma pessoa da família e o que ela sempre faz num cômodo (com o <b>-s</b>: always, never, every day)</li></ul>Agora é sem molde: você já sabe tudo isso. 💜",
+ gabarito:"4 ou 5 frases (ou mais) apresentando a casa dela: uma recepção (Come in! / Welcome to my home!), casa ou apartamento (I live in...), os cômodos com There is / There are (There are three bedrooms upstairs), o quarto dela (small/big, tidy/messy, my own room ou share) com palavras de lugar (My bed is next to the window), e alguém da família fazendo algo num cômodo com o verbo com -s (My dad always cooks in the kitchen).",
+ instrucaoIA:"Projeto da semana: ela devia apresentar a casa dela em 4 ou 5 frases ou mais, como se recebesse uma visita. Gramática da semana: There is / There are / There isn't, Is there...?, palavras de lugar (in, on, under, next to, behind, in front of, between), Where is...? It's.... Vocabulário: house, apartment, live, os cômodos (bedroom, bathroom, living room, dining room, kitchen, yard, garage, stairs, upstairs, downstairs, floor), os móveis (bed, table, sofa, lamp, closet, shelf, rug, mirror, fridge, bathtub, plant, picture, pillow), small, dark, messy, tidy, quiet, share, my own room, Come in! Look! Here it is. Espiral: o verbo com -s e always/never (semana 6), a rotina e at/on/in de tempo (semana 5). Confira There is x It is, There is com uma coisa e There are com várias, o -s com he/she, e on (em cima) x in (dentro). Elogie o que ela juntou da semana."},
+
+{tipo:"fala", titulo:"Hora de apresentar",
+ instrucao:"Primeiro, aqueça repetindo estas frases. Depois leia o <b>seu projeto</b> em voz alta no 🎤 e converse com a IA sobre a sua casa.",
+ foco:"<b>there</b> (TH com voz, a língua vibra) x <b>three</b> (TH soprado) — e o <b>R</b> americano de <i>room</i>.",
+ frases:[
+  {en:"Welcome to my home!", pt:"Bem-vindo à minha casa!"},
+  {en:"Come in! This is the living room.", pt:"Entra! Esta é a sala."},
+  {en:"There are three bedrooms upstairs.", pt:"Tem três quartos lá em cima."},
+  {en:"My bedroom is small and tidy.", pt:"O meu quarto é pequeno e arrumado."},
+  {en:"My cat always sleeps under my bed.", pt:"O meu gato sempre dorme embaixo da minha cama."},
+  {en:"Look! Here it is: my secret corner!", pt:"Olha! Aqui está: o meu cantinho secreto!"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção a there x three e ao R americano de room e bedroom. Depois peça para ela ler o projeto dela (a apresentação da casa) em voz alta. Em seguida faça 4 a 6 perguntas em inglês, uma de cada vez, e espere ela responder falando: How many rooms are there in your house? · Where is your bedroom? · What is there under your bed? · Who cooks in your kitchen? · Is there a place for a piano in your house? · What is your favorite place in your home? Corrija com carinho, em português, e elogie a apresentação."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"There is a secret door behind the shelf", pt:"Tem uma porta secreta atrás da estante."},
+ {frase:"My sister puts her toys under the bed", pt:"A minha irmã põe os brinquedos dela embaixo da cama."},
+ {frase:"Is there a place for the piano", pt:"Tem lugar para o piano?"},
+ {frase:"The desk is between the two beds", pt:"A escrivaninha fica entre as duas camas."}
+]},
+
+{tipo:"adivinha", bonus:true, titulo:"Adivinha difícil: misturando semanas", itens:[
+ {pistas:["It is in the classroom.","The teacher writes on it.","It is big, and it is on the wall."],
+  resposta:"board", pt:"lousa", dica:"(da semana 3)"},
+ {pistas:["It is a day.","Grandma plays the piano on it.","It is the day after Saturday."],
+  resposta:"Sunday", pt:"domingo", dica:"(da história)"},
+ {pistas:["They are two people in your family.","They are your mom and your dad."],
+  resposta:"parents", pt:"pais (mãe e pai)", dica:"(da semana 2)"},
+ {pistas:["It is not tidy.","There are toys and books on the floor.","Lily's sister's bed is like this!"],
+  resposta:"messy", pt:"bagunçado", dica:"(como é?)"}
+]}
+
+]});
+</script>
+</body>
+</html>
