@@ -40,7 +40,8 @@ var SEMANAS = [
  dias:["What do you like?","He plays, she likes","Does he like it? He doesn't!","A new family in New York","Revisão + projeto"]},
 {n:7, bloco:"Bloco 1 — Primeiras palavras", titulo:"My house, my room", tema:"Cômodos, móveis, there is / there are, preposições de lugar", pronta:true,
  dias:["My house, my room","There is a bed, there are two lamps","Under, behind, between: where is it?","My own room","Revisão + projeto"]},
-{n:8, bloco:"Bloco 1 — Primeiras palavras", titulo:"Yummy! Food and drinks", tema:"Comidas, contáveis/incontáveis, some/any, I like / I don't like", pronta:false},
+{n:8, bloco:"Bloco 1 — Primeiras palavras", titulo:"Yummy! Food and drinks", tema:"Comidas, contáveis/incontáveis, some/any, I like / I don't like", pronta:true,
+ dias:["What's in your lunch box?","I like apples, I like rice","Is there any milk?","At the snack bar","Revisão + projeto"]},
 {n:9, bloco:"Bloco 1 — Primeiras palavras", titulo:"Animals and nature", tema:"Animais, can / can't (habilidade), plurais irregulares", pronta:false},
 {n:10, bloco:"Bloco 1 — Primeiras palavras", titulo:"REVISÃO 1 + Projeto", tema:"Revisão das semanas 1–9 + projeto 'All About Me' (vídeo)", pronta:false, revisao:true},
 

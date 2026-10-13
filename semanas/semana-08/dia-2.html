@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 8 · Dia 2</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:8,
+dia:2,
+titulo:"I like apples, I like rice",
+subtitulo:"Mais comidas, e quando a comida ganha -s",
+objetivos:[
+  "Dizer em inglês legumes, verduras e mais comidas",
+  "Saber quando a comida ganha -s (apples) e quando não ganha (rice)",
+  "Dizer o que você gosta e não gosta, e perguntar Do you like...?"
+],
+blocos:[
+
+{tipo:"vocab", titulo:"Mais comidas e bebidas", itens:[
+ {en:"vegetable", pt:"legume, verdura", ipa:"/VÉDJ-ta-bol/", emoji:"🥦"},
+ {en:"carrot", pt:"cenoura", ipa:"/KÉ-rot/", emoji:"🥕"},
+ {en:"tomato", pt:"tomate", ipa:"/to-MÊI-tou/", emoji:"🍅"},
+ {en:"potato", pt:"batata", ipa:"/po-TÊI-tou/", emoji:"🥔"},
+ {en:"onion", pt:"cebola", ipa:"/Â-nion/", emoji:"🧅"},
+ {en:"pasta", pt:"macarrão", ipa:"/PÁS-ta/", emoji:"🍝"},
+ {en:"soup", pt:"sopa", ipa:"/SÚUP/", emoji:"🍲"},
+ {en:"cereal", pt:"cereal", ipa:"/SÍ-ri-al/", emoji:"🥣"},
+ {en:"yogurt", pt:"iogurte", ipa:"/IÔU-gurt/", emoji:"🥛"},
+ {en:"honey", pt:"mel", ipa:"/RÂ-ni/", emoji:"🍯"},
+ {en:"soda", pt:"refrigerante", ipa:"/SÔU-da/", emoji:"🥤"},
+ {en:"lemonade", pt:"limonada", ipa:"/lé-mo-NÊID/", emoji:"🍋"},
+ {en:"popcorn", pt:"pipoca", ipa:"/PÓP-korn/", emoji:"🍿"}
+]},
+
+{tipo:"gramatica", titulo:"Uma maçã, duas maçãs… e o arroz?",
+ html:"<p>Em inglês, as comidas se dividem em dois times:</p>"+
+ "<table><tr><th>Dá para contar</th><th>Não dá para contar</th></tr>"+
+ "<tr><td><code>an apple</code> · <code>two apples</code></td><td><code>rice</code> (nada de two rices)</td></tr>"+
+ "<tr><td><code>a carrot</code> · <code>three carrots</code></td><td><code>water</code> · <code>milk</code> · <code>juice</code></td></tr>"+
+ "<tr><td><code>an egg</code> · <code>ten eggs</code></td><td><code>cheese</code> · <code>bread</code> · <code>honey</code></td></tr></table>"+
+ "<p>As que <b>não dá para contar</b> (líquidos, grãozinhos, coisas que a gente corta em pedaços) <b>nunca</b> levam <code>a</code> nem <code>-s</code>.</p>"+
+ "<p>Para dizer que você gosta <b>em geral</b>, a comida que dá para contar vai com <b>-s</b>, e a outra fica como está:</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I like apples.</code></td><td>Eu gosto de maçã.</td></tr>"+
+ "<tr><td><code>I like rice.</code></td><td>Eu gosto de arroz.</td></tr>"+
+ "<tr><td><code>I don't like onions.</code></td><td>Eu não gosto de cebola.</td></tr>"+
+ "<tr><td><code>Do you like carrots?</code></td><td>Você gosta de cenoura?</td></tr>"+
+ "<tr><td><code>Yes, I do. / No, I don't.</code></td><td>Gosto. / Não gosto.</td></tr></table>"+
+ "<p>Repare: em português a gente diz <i>gosto de maçã</i>, sem plural. Em inglês, <code>I like apple</code> soa estranho: é <code>I like apples</code>. E com he / she, lembra da semana 6? <code>She likes pasta.</code> · <code>Does he like soup?</code></p>",
+ exemplos:[
+  {en:"I like bananas.", pt:"Eu gosto de banana."},
+  {en:"I don't like tomatoes.", pt:"Eu não gosto de tomate."},
+  {en:"I love pasta.", pt:"Eu amo macarrão."},
+  {en:"Do you like popcorn? Yes, I do.", pt:"Você gosta de pipoca? Gosto."},
+  {en:"My dad likes vegetables.", pt:"O meu pai gosta de legumes."},
+  {en:"Does she like soda? No, she doesn't.", pt:"Ela gosta de refrigerante? Não, não gosta."}
+ ]},
+
+{tipo:"dialogo", titulo:"Ouça: o café da manhã na casa da vovó", escuta:true, linhas:[
+ {quem:"Grandma", en:"Good morning, Leo! Are you hungry?", pt:"Bom dia, Leo! Você está com fome?"},
+ {quem:"Leo", en:"Yes, I am! What's for breakfast?", pt:"Estou, sim! O que tem de café da manhã?"},
+ {quem:"Grandma", en:"There are eggs. And there is cereal with milk.", pt:"Tem ovos. E tem cereal com leite."},
+ {quem:"Leo", en:"Eggs? No, thanks. I don't like eggs.", pt:"Ovos? Não, obrigado. Eu não gosto de ovo."},
+ {quem:"Grandma", en:"Do you like yogurt? I have strawberry yogurt.", pt:"Você gosta de iogurte? Eu tenho iogurte de morango."},
+ {quem:"Leo", en:"Yes, please! I love yogurt. And honey, too.", pt:"Sim, por favor! Eu amo iogurte. E mel também."},
+ {quem:"Grandma", en:"For lunch, I make soup with carrots and potatoes.", pt:"No almoço, eu faço sopa com cenoura e batata."},
+ {quem:"Leo", en:"Soup? Oh... Do you have pasta, Grandma?", pt:"Sopa? Ah... Você tem macarrão, vó?"},
+ {quem:"Grandma", en:"Pasta with tomatoes and cheese? OK!", pt:"Macarrão com tomate e queijo? Tá bom!"},
+ {quem:"Leo", en:"Thank you, Grandma! It's my favorite food!", pt:"Obrigado, vó! É a minha comida favorita!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
+ {pergunta:"Who makes the food for Leo?", opcoes:["his mom","his grandma","Emma"], correta:1,
+  explicacao:"Quem fala com o Leo é a Grandma, a avó dele."},
+ {pergunta:"What does Leo NOT like?", opcoes:["yogurt","honey","eggs"], correta:2,
+  explicacao:"Ele diz: Eggs? No, thanks. I don't like eggs."},
+ {pergunta:"What yogurt does Grandma have?", opcoes:["banana yogurt","strawberry yogurt","chocolate yogurt"], correta:1,
+  explicacao:"Ela diz: I have strawberry yogurt."},
+ {pergunta:"What is in Grandma's soup?", opcoes:["carrots and potatoes","rice and beans","chicken and onions"], correta:0,
+  explicacao:"Ela diz: soup with carrots and potatoes."},
+ {pergunta:"What does Leo want for lunch?", opcoes:["soup","pasta","a sandwich"], correta:1,
+  explicacao:"Ele não fica animado com a sopa e pergunta: Do you have pasta, Grandma?"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"I don't like eggs", pt:"Eu não gosto de ovo.", dica:"(quatro palavras)"},
+ {en:"Do you like yogurt", pt:"Você gosta de iogurte?", dica:"(quatro palavras)"},
+ {en:"It's my favorite food", pt:"É a minha comida favorita.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What does Leo eat at breakfast? (O que o Leo come no café da manhã?)<br>2. Does Leo like eggs? (O Leo gosta de ovo?)<br>3. What does Leo want for lunch? (O que o Leo quer no almoço?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>fale do Leo com <b>he</b>, e lembre do <b>-s</b> na ação (he eats, he wants)</li><li>na pergunta 2, a resposta curta usa <b>doesn't</b></li></ul>",
+ andaime:"<p>He eats <span class=\"lacuna\">?</span>. · No, he <span class=\"lacuna\">?</span>. · He wants <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. He eats (strawberry) yogurt with honey. 2. No, he doesn't. (He doesn't like eggs.) 3. He wants pasta (with tomatoes and cheese).",
+ instrucaoIA:"Ela ouviu uma conversa do Leo com a avó no café da manhã e devia responder por escrito: o que o Leo come no café (iogurte de morango com mel — ele recusa os ovos), se ele gosta de ovo (No, he doesn't) e o que ele quer no almoço (macarrão com tomate e queijo, em vez da sopa). Vocabulário: breakfast, lunch, eggs, yogurt, honey, soup, pasta, tomatoes, cheese, like, want, eat. Confira o -s com he (he eats, he wants) e o doesn't."},
+
+{tipo:"completar", titulo:"Com -s ou sem -s?", ajuda:"Toque na palavra que falta. Pense: dá para contar?", itens:[
+ {frase:"I like ___.", pt:"Eu gosto de maçã.", resposta:"apples",
+  opcoes:["apples","apple","an apples"], explicacao:"Maçã dá para contar (one apple, two apples). Para gostar em geral, vai com -s: I like apples."},
+ {frase:"I don't like ___.", pt:"Eu não gosto de arroz.", resposta:"rice",
+  opcoes:["rice","rices","a rice"], explicacao:"Arroz não dá para contar grão por grão: rice fica sem a e sem -s."},
+ {frase:"Do you like ___? Yes, I do.", pt:"Você gosta de cenoura? Gosto.", resposta:"carrots",
+  opcoes:["carrots","carrot","a carrots"], explicacao:"Cenoura dá para contar (two carrots), então vai com -s."},
+ {frase:"I drink ___ every morning.", pt:"Eu bebo leite toda manhã.", resposta:"milk",
+  opcoes:["milk","milks","a milk"], explicacao:"Leite é líquido: não dá para contar. Nada de a nem de -s."},
+ {frase:"Do you like popcorn? No, I ___.", pt:"Você gosta de pipoca? Não, não gosto.", resposta:"don't",
+  opcoes:["don't","doesn't","not"], explicacao:"Com I a resposta curta é No, I don't. doesn't é só com he / she."},
+ {frase:"There ___ two tomatoes in the fridge.", pt:"Tem dois tomates na geladeira.", resposta:"are",
+  opcoes:["are","is","has"], explicacao:"Semana passada: duas coisas = there are. E repare: tomato no plural ganha -es, tomatoes."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"I like carrots and potatoes", pt:"Eu gosto de cenoura e de batata."},
+ {frase:"Do you like soup", pt:"Você gosta de sopa?"},
+ {frase:"My sister doesn't like onions", pt:"A minha irmã não gosta de cebola."},
+ {frase:"I don't drink soda", pt:"Eu não bebo refrigerante."}
+]},
+
+{tipo:"entrevista", titulo:"A ficha do acampamento", perfil:"recepcionista", voz:"f",
+ personagem:"Miss Carla, recepcionista de um acampamento de férias nos Estados Unidos, alegre e organizada",
+ apresentacao:"<p>Você vai passar uma semana num <b>acampamento de férias</b> nos Estados Unidos! A Miss Carla, da recepção, precisa preencher a sua <b>ficha da cozinha</b> do acampamento — e ela <b>só fala inglês</b>. Entenda o que ela pergunta e responda.</p>",
+ quer:["qual é a comida favorita dela","uma comida de que ela não gosta","se ela gosta de legumes e verduras (e de quais)","o que ela bebe no café da manhã","se ela gosta de pipoca (para a noite de cinema)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">My favorite food is</span> … · <span class=\"lacuna\">I don't like</span> … · <span class=\"lacuna\">Yes, I do. I like</span> … · <span class=\"lacuna\">I drink</span> …</p>",
+ instrucaoIA:"Ela sabe: food, fruit, apple, banana, strawberry, egg, cheese, meat, chicken, rice, beans, salad, pizza, sandwich, cookie, ice cream, chocolate, water, vegetable, carrot, tomato, potato, onion, pasta, soup, cereal, yogurt, honey, soda, lemonade, popcorn, milk, bread, juice, breakfast, lunch, dinner; I like / I don't like (I like apples / I like rice), Do you like...? Yes, I do / No, I don't, My favorite food is..., Sorry? Again, please. Slowly, please. Miss Carla pergunta uma coisa por vez, com frases de 3 a 6 palavras. Se ela não entender, reformule: mais curto, com exemplo sobre você (I love pizza! And you?), ou com opções (Carrots? Tomatoes? Potatoes?). Até 3 jeitos antes do narrador ajudar."},
+
+{tipo:"missao", titulo:"Missão: cadê o meu lanche?", cena:"problema",
+ cenario:"<p>Hora do recreio. Você abre a mochila e… a sua <b>lancheira ficou em casa</b>! Você está com fome. O <b>Ben</b>, seu colega, está do seu lado com um lanche enorme. Ele <b>só entende inglês</b>. Explique o problema e resolva.</p>",
+ personagem:"Ben, 11 anos, seu colega de turma, generoso e brincalhão",
+ objetivos:["dizer que está com fome e que a sua lancheira está em casa","recusar uma comida que o Ben oferece, dizendo que não gosta","aceitar outra comida e agradecer"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I'm</span> … · My lunch box is <span class=\"lacuna\">?</span>. · <span class=\"lacuna\">No, thanks. I don't like</span> … · <span class=\"lacuna\">Yes,</span> …</p>",
+ instrucaoIA:"Ela sabe: hungry, lunch box, at home, food, fruit, apple, banana, strawberry, egg, cheese, chicken, sandwich, cookie, vegetable, carrot, tomato, potato, onion, pasta, soup, cereal, yogurt, honey, popcorn, water, juice, I like / I don't like (I like apples / I like rice), Do you like...? Do you want...? Yes, please. No, thanks. It's delicious! Thank you. Ben tem na lancheira: carrots, a cheese sandwich, a yogurt e popcorn. Ele pergunta What's wrong? ou Are you OK?, e quando entender, oferece primeiro as cenouras (Do you want carrots?), depois as outras coisas. Frases de 3 a 6 palavras. Até 8 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre você e a comida: o que você gosta, o que não gosta, e uma pergunta para uma amiga.",
+ dica:"<ul><li>duas comidas que você gosta (uma que dá para contar, com <b>-s</b>, e uma que não dá)</li><li>uma comida que você não gosta</li><li>um legume ou uma verdura (gosta ou não?)</li><li>uma pergunta com <b>Do you like</b></li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>I like <span class=\"lacuna\">?</span>s. · I like <span class=\"lacuna\">?</span>, too. · I don't like <span class=\"lacuna\">?</span>. · Do you like <span class=\"lacuna\">?</span>?</p>",
+ gabarito:"4 ou 5 frases: gosta de uma comida contável no plural (I like bananas / I like carrots); gosta de uma incontável sem -s (I like rice / pasta / cheese / honey); uma que não gosta (I don't like onions); um legume (I like potatoes / I don't like tomatoes); uma pergunta Do you like ...?",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre o que gosta e não gosta de comer, usando a regra nova: comida que dá para contar vai com -s quando se fala em geral (I like apples, carrots, tomatoes, potatoes, onions, eggs, bananas, strawberries, cookies), e a que não dá para contar fica sem a e sem -s (rice, pasta, soup, cheese, bread, milk, water, juice, honey, yogurt, cereal, popcorn). Confira também I don't like e a pergunta Do you like ...? Vocabulário da aula: vegetable, carrot, tomato, potato, onion, pasta, soup, cereal, yogurt, honey, soda, lemonade, popcorn."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ frases:[
+  {en:"I like apples and bananas.", pt:"Eu gosto de maçã e de banana."},
+  {en:"I don't like onions.", pt:"Eu não gosto de cebola."},
+  {en:"I love pasta with cheese.", pt:"Eu amo macarrão com queijo."},
+  {en:"Do you like vegetables?", pt:"Você gosta de legumes?"},
+  {en:"Yes, I do.", pt:"Gosto, sim."},
+  {en:"No, I don't.", pt:"Não, não gosto."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao -s do plural (apples com /z/, carrots com /s/, tomatoes com /z/) e ao i comprido de cheese. Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando, com a forma certa (I like carrots / I like rice): Do you like vegetables? · Do you like carrots? · What do you eat at breakfast? · Do you like soup? · What's your favorite fruit? · Does your mom like popcorn? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ligar", bonus:true, titulo:"Pegadinhas: palavras parecidas de várias semanas", pares:[
+ {en:"like", pt:"gostar"},
+ {en:"live", pt:"morar"},
+ {en:"love", pt:"amar"},
+ {en:"meat", pt:"carne"},
+ {en:"meet", pt:"conhecer"},
+ {en:"his", pt:"dele"},
+ {en:"her", pt:"dela"},
+ {en:"these", pt:"estes"},
+ {en:"beans", pt:"feijão"},
+ {en:"behind", pt:"atrás de"}
+]}
+
+]});
+</script>
+</body>
+</html>

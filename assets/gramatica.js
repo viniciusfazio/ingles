@@ -406,6 +406,56 @@ var GRAMATICA = [
   {en:"The sofa is in front of the TV.", pt:"O sofá fica na frente da TV."},
   {en:"The desk is between the bed and the closet.", pt:"A escrivaninha fica entre a cama e o guarda-roupa."},
   {en:"Where are my books? They're on the shelf.", pt:"Cadê os meus livros? Estão na prateleira."}
+ ]},
+
+{semana:8, dia:2, modulo:1,
+ titulo:"Comida que dá e que não dá para contar",
+ resumo:"Quando a comida leva a / -s (apples) e quando não leva (rice)",
+ html:"<table><tr><th>Dá para contar</th><th>Não dá para contar</th></tr>"+
+ "<tr><td><code>an apple</code> · <code>two apples</code></td><td><code>rice</code> · <code>water</code> · <code>milk</code></td></tr>"+
+ "<tr><td><code>a carrot</code> · <code>three carrots</code></td><td><code>cheese</code> · <code>bread</code> · <code>honey</code></td></tr></table>"+
+ "<p>A que não dá para contar nunca leva <code>a</code> nem <code>-s</code>. Para gostar <b>em geral</b>: <code>I like apples</code> (com -s) · <code>I like rice</code> (sem -s). Pergunta: <code>Do you like…?</code> → <code>Yes, I do. / No, I don't.</code></p>",
+ exemplos:[
+  {en:"I like bananas.", pt:"Eu gosto de banana."},
+  {en:"I don't like tomatoes.", pt:"Eu não gosto de tomate."},
+  {en:"I love pasta.", pt:"Eu amo macarrão."},
+  {en:"Do you like carrots? Yes, I do.", pt:"Você gosta de cenoura? Gosto."},
+  {en:"She likes cheese.", pt:"Ela gosta de queijo."}
+ ]},
+
+{semana:8, dia:3, modulo:1,
+ titulo:"Some / any",
+ resumo:"Um pouco de, uns, algum, nenhum: depende de a frase afirmar, negar ou perguntar",
+ html:"<table><tr><th>Frase</th><th>Use</th><th>Exemplo</th></tr>"+
+ "<tr><td>Afirmando</td><td><code>some</code></td><td><code>There is some milk.</code></td></tr>"+
+ "<tr><td>Com não</td><td><code>any</code></td><td><code>There aren't any eggs.</code></td></tr>"+
+ "<tr><td>Perguntando</td><td><code>any</code></td><td><code>Is there any juice?</code></td></tr>"+
+ "<tr><td>Oferecendo</td><td><code>some</code></td><td><code>Do you want some juice?</code></td></tr></table>"+
+ "<p>Vale para as duas: <code>some milk</code>, <code>some apples</code>. Para medir: <code>a glass of</code> · <code>a piece of</code> · <code>a bowl of</code> · <code>a bottle of</code>.</p>",
+ exemplos:[
+  {en:"There is some cheese on the table.", pt:"Tem queijo na mesa."},
+  {en:"We don't have any bread.", pt:"A gente não tem pão."},
+  {en:"Are there any apples in the basket?", pt:"Tem maçã na cesta?"},
+  {en:"Do you want some lemonade?", pt:"Você quer limonada?"},
+  {en:"Can I have a glass of water, please?", pt:"Posso tomar um copo de água, por favor?"}
+ ]},
+
+{semana:8, dia:4, modulo:1,
+ titulo:"Pedir comida: Can I have…?",
+ resumo:"As frases de uma lanchonete, do pedido ao fim",
+ html:"<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>Can I have a hot dog, please?</code></td><td>Pode me ver um cachorro-quente, por favor?</td></tr>"+
+ "<tr><td><code>Anything else?</code></td><td>Mais alguma coisa?</td></tr>"+
+ "<tr><td><code>A large lemonade, please.</code></td><td>Uma limonada grande, por favor.</td></tr>"+
+ "<tr><td><code>Here you are!</code></td><td>Aqui está!</td></tr>"+
+ "<tr><td><code>That's all, thanks.</code></td><td>É só isso, obrigada.</td></tr></table>"+
+ "<p>O tamanho vem antes da comida: <code>a large milkshake</code>, nunca <i>a milkshake large</i>.</p>",
+ exemplos:[
+  {en:"Can I have a hamburger, please?", pt:"Pode me ver um hambúrguer, por favor?"},
+  {en:"Can I have some French fries?", pt:"Pode me ver batata frita?"},
+  {en:"Is there any ice cream?", pt:"Tem sorvete?"},
+  {en:"Anything else? That's all, thanks.", pt:"Mais alguma coisa? É só isso, obrigada."}
  ]}
+
 
 ];

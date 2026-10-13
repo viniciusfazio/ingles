@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 8 · Dia 5</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:8,
+dia:5,
+titulo:"Revisão + projeto",
+subtitulo:"Tudo da semana da comida junto, e o seu projeto: My food",
+objetivos:[
+  "Entender de ouvido uma história com tudo da semana",
+  "Usar some, any, Can I have...? e as comidas sem olhar a cola",
+  "Escrever e apresentar o projeto My food"
+],
+blocos:[
+
+{tipo:"nota", titulo:"🎉 Sexta-feira: você chegou ao fim da semana da comida!",
+ html:"<p>Parabéns! Nesta semana você aprendeu quase 40 comidas e bebidas, a regra do <b>-s</b> (<code>I like apples</code> / <code>I like rice</code>), o <code>some</code> e o <code>any</code>, e fez um pedido sozinha numa lanchonete de Nova York. 🍔</p>"+
+ "<p>Hoje tem uma história para ouvir, uma revisão, uma conversa com uma vovó cheia de segredos, uma missão na cozinha da Emma e o <b>projeto da semana</b>.</p>"},
+
+{tipo:"historia", titulo:"Ouça: os morangos da fazenda", cena:"passeio", paragrafos:[
+ {en:"On Friday, Emma's class goes to a farm. There are a lot of apples and strawberries there!", pt:"Na sexta, a turma da Emma vai a uma fazenda. Tem um monte de maçãs e morangos lá! (farm = fazenda)"},
+ {en:"Miss Kate says, \"Put some strawberries in your basket, please. They are for our picnic.\"", pt:"A Miss Kate diz: \"Coloquem uns morangos na cesta, por favor. Eles são para o nosso piquenique.\""},
+ {en:"Emma and Leo have a big basket. Leo always eats a lot.", pt:"A Emma e o Leo têm uma cesta grande. O Leo sempre come muito."},
+ {en:"Emma puts strawberries in the basket. And Leo eats them! One, two, three...", pt:"A Emma coloca morangos na cesta. E o Leo come! Um, dois, três..."},
+ {en:"At the picnic, Emma opens the basket. There aren't any strawberries!", pt:"No piquenique, a Emma abre a cesta. Não tem nenhum morango!"},
+ {en:"\"Leo!\" says Emma. Leo is sad. \"Sorry, Emma. They are delicious!\"", pt:"\"Leo!\", diz a Emma. O Leo fica triste. \"Desculpa, Emma. Eles são uma delícia!\""},
+ {en:"Then a woman from the farm comes with a big bowl of strawberries. \"Do you want some?\"", pt:"Aí uma moça da fazenda chega com uma tigela grande de morangos. \"Vocês querem?\""},
+ {en:"Now there are strawberries for the class. Emma says, \"Leo, you love strawberries!\" \"Yes, I do!\"", pt:"Agora tem morango para a turma. A Emma diz: \"Leo, você ama morango!\" \"Amo, sim!\""}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a história?", questoes:[
+ {pergunta:"Where does Emma's class go?", opcoes:["to a snack bar","to a farm","to the park"], correta:1,
+  explicacao:"Emma's class goes to a farm — farm é fazenda."},
+ {pergunta:"When do they go?", opcoes:["on Sunday","on Monday","on Friday"], correta:2,
+  explicacao:"A história começa assim: On Friday..."},
+ {pergunta:"What do the kids put in the basket?", opcoes:["strawberries","eggs","apples"], correta:0,
+  explicacao:"A Miss Kate pede: Put some strawberries in your basket. Tem maçãs na fazenda, mas não é isso que vai na cesta."},
+ {pergunta:"Who eats the strawberries?", opcoes:["Emma","Miss Kate","Leo"], correta:2,
+  explicacao:"Emma puts strawberries in the basket. And Leo eats them!"},
+ {pergunta:"What is the problem at the picnic?", opcoes:["There isn't any water.","There aren't any strawberries.","Leo isn't there."], correta:1,
+  explicacao:"Emma opens the basket. There aren't any strawberries!"},
+ {pergunta:"Who has a big bowl of strawberries?", opcoes:["a woman from the farm","Miss Kate","Leo's mom"], correta:0,
+  explicacao:"Then a woman from the farm comes with a big bowl of strawberries."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva frases da história", itens:[
+ {en:"Leo always eats a lot", pt:"O Leo sempre come muito.", dica:"(cinco palavras)"},
+ {en:"There aren't any strawberries", pt:"Não tem nenhum morango.", dica:"(quatro palavras: a segunda tem apóstrofo)"},
+ {en:"Do you want some", pt:"Vocês querem?", dica:"(quatro palavras)"},
+ {en:"Leo, you love strawberries", pt:"Leo, você ama morango.", dica:"(quatro palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a história", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. Where is Emma's class on Friday? (Onde está a turma da Emma na sexta?)<br>2. Why is the basket empty? (Por que a cesta está vazia?)<br>3. What happens at the end? (O que acontece no fim?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 2, diga quem fez o quê (com o <b>-s</b> na ação)</li><li>na 3, conte quem chega e o que traz</li></ul>",
+ gabarito:"1. The class is at a farm. 2. Leo eats the strawberries (there aren't any strawberries in the basket). 3. A woman from the farm comes with a big bowl of strawberries, and now there are strawberries for the class.",
+ instrucaoIA:"Ela ouviu a história da turma da Emma numa fazenda: a Emma põe morangos na cesta, o Leo come todos, no piquenique não tem nenhum, e uma moça da fazenda traz uma tigela grande de morangos para a turma. Ela devia responder: onde está a turma (at a farm), por que a cesta está vazia (Leo eats the strawberries) e o fim (a woman from the farm comes with a big bowl of strawberries). Confira o -s com he/she (eats, comes) e o any na negativa."},
+
+{tipo:"completar", titulo:"Revisão da semana", ajuda:"Toque na palavra que falta. Tem um pouco de tudo da semana.", itens:[
+ {frase:"I like ___.", pt:"Eu gosto de banana.", resposta:"bananas",
+  opcoes:["bananas","banana","a bananas"], explicacao:"Banana dá para contar: para gostar em geral, vai com -s."},
+ {frase:"I don't like ___.", pt:"Eu não gosto de queijo.", resposta:"cheese",
+  opcoes:["cheese","cheeses","a cheese"], explicacao:"Queijo não dá para contar: cheese, sem a e sem -s."},
+ {frase:"There isn't ___ milk.", pt:"Não tem leite.", resposta:"any",
+  opcoes:["any","some","a"], explicacao:"Frase com não (isn't): any."},
+ {frase:"Do you want ___ cookies?", pt:"Você quer uns cookies?", resposta:"some",
+  opcoes:["some","any","a"], explicacao:"É pergunta, mas oferecendo: aí vai some."},
+ {frase:"Can I have a ___ of cake, please?", pt:"Pode me ver um pedaço de bolo, por favor?", resposta:"piece",
+  opcoes:["piece","glass","bottle"], explicacao:"a piece of = um pedaço de. Copo (glass) e garrafa (bottle) são para bebida."},
+ {frase:"Can I have ___ egg sandwich?", pt:"Pode me ver um sanduíche de ovo?", resposta:"an",
+  opcoes:["an","a","some"], explicacao:"egg começa com som de vogal: an egg sandwich."},
+ {frase:"She ___ pasta every Friday.", pt:"Ela come macarrão toda sexta.", resposta:"eats",
+  opcoes:["eats","eat","is eat"], explicacao:"Com she, a ação ganha -s: eats."},
+ {frase:"No, ___. I don't like onions.", pt:"Não, obrigada. Eu não gosto de cebola.", resposta:"thanks",
+  opcoes:["thanks","please","sorry"], explicacao:"Para recusar com educação: No, thanks."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as palavras da semana", pares:[
+ {en:"hamburger", pt:"hambúrguer"},
+ {en:"French fries", pt:"batata frita"},
+ {en:"honey", pt:"mel"},
+ {en:"onion", pt:"cebola"},
+ {en:"flour", pt:"farinha"},
+ {en:"menu", pt:"cardápio"},
+ {en:"strawberry", pt:"morango"},
+ {en:"soup", pt:"sopa"}
+]},
+
+{tipo:"explorar", titulo:"Quem é a Granny Pat?", perfil:"avo", voz:"f",
+ personagem:"Granny Pat, 80 anos, a avó do Ben, risonha e cheia de energia",
+ apresentacao:"<p>Você foi brincar na casa do Ben e a <b>avó dele</b> chegou do Texas com uma caixa enorme de cookies. Ela <b>só fala inglês</b> e adora conversar. Descubra quem ela é!</p>",
+ segredos:["ela faz 100 cookies todo sábado, para os vizinhos","ela ama pizza com banana","ela toma chocolate quente antes de dormir","ela tem uma galinha de estimação, a Nugget (por isso não come frango!)","ela não suporta sorvete"],
+ pistas:["o fim de semana dela","o prato preferido (é estranho!)","uma bebida da noite","um bicho na casa dela","uma comida que ela detesta"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">What do you</span> … on Saturday? · <span class=\"lacuna\">What's your favorite</span> …? · <span class=\"lacuna\">Do you have a</span> …? · <span class=\"lacuna\">Do you like</span> …?</p>",
+ instrucaoIA:"Ela sabe: as comidas e bebidas da semana (food, fruit, apple, banana, strawberry, egg, cheese, meat, chicken, rice, beans, salad, pizza, sandwich, cookie, ice cream, chocolate, water, vegetable, carrot, tomato, potato, onion, pasta, soup, cereal, yogurt, honey, soda, lemonade, popcorn, pancake, hamburger, French fries, hot dog, milkshake, milk, bread, juice, cake), some / any, I like / I don't like, Do you like...? What do you...? Do you have...? What's your favorite...? os dias da semana, números até 100, pet, dog, cat, bird, neighbor, at night, go to bed. Frases para conversar: Yes, please. No, thanks. It's delicious! Really? Wow! Me too! Not me. Sorry, I don't understand. Again, please. Granny Pat fala com frases de 3 a 6 palavras (I make one hundred cookies!), responde curto, deixa ganchos (My pet is not a dog!) e devolve perguntas fáceis (Do you like cookies?). Ela pode oferecer um cookie (Do you want some cookies?). Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: a geladeira da festa", cena:"ajuda",
+ cenario:"<p>Amanhã tem festa na casa da Emma! A <b>mãe da Emma</b> vai ao mercado, mas perdeu os óculos e não enxerga nada dentro da <b>geladeira</b>! Ela pede a sua ajuda. Ela <b>só entende inglês</b>. Olhe a geladeira por ela e ajude a fazer a lista de compras.</p><p>🧊 <b>Na geladeira tem:</b> leite, queijo e três maçãs. <b>Não tem:</b> ovos, suco nem sorvete.</p>",
+ personagem:"Mrs. Hall, a mãe da Emma, simpática e um pouco atrapalhada com a festa",
+ voz:"f",
+ objetivos:["dizer pelo menos duas coisas que tem na geladeira (There is some... / There are some...)","dizer pelo menos duas coisas que não tem (There isn't any... / There aren't any...)","sugerir duas comidas para o lanche da festa"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">There is some</span> … · <span class=\"lacuna\">There aren't any</span> … · <span class=\"lacuna\">Can you buy</span> …?</p>",
+ instrucaoIA:"Ela sabe: some / any, There is / There are / There isn't / There aren't, Is there any...? Are there any...? fridge, as comidas e bebidas da semana (milk, cheese, apples, eggs, juice, ice cream, pizza, sandwich, cookies, cake, popcorn, hot dog, hamburger, French fries, lemonade, soda, strawberries, chocolate), I like / I don't like, buy, party, Yes, please. No, thanks. Na geladeira tem: milk, cheese, three apples. NÃO tem: eggs, juice, ice cream. Mrs. Hall perdeu os óculos e não enxerga dentro da geladeira; ela está na cozinha com a aluna. Ela pergunta uma coisa por vez (Is there any milk? Are there any eggs?) e no fim pergunta What food for the party? Ela fica feliz com as ideias. Frases de 3 a 6 palavras. Até 8 falas."},
+
+{tipo:"escrita", titulo:"Projeto da semana: My food", id:"1",
+ instrucao:"Projeto da semana! Escreva <b>4 ou 5 frases</b> sobre a comida na sua vida, para apresentar na fala logo depois.",
+ dica:"<ul><li>o que você come no café da manhã</li><li>uma comida que você ama e uma que você não gosta (lembre do <b>-s</b>!)</li><li>o que tem e o que não tem na sua geladeira hoje (<b>some</b> e <b>any</b>)</li><li>o seu pedido favorito numa lanchonete (com <b>Can I have</b>)</li></ul>Sem cola desta vez: você consegue! 💜",
+ gabarito:"4 ou 5 frases: café da manhã (I eat cereal / bread / eggs at breakfast); uma comida que ama com a regra do -s certa (I love strawberries / I love pasta); uma que não gosta (I don't like onions); geladeira com some e any (There is some milk. There aren't any eggs.); pedido favorito (Can I have a hamburger and a large milkshake, please?).",
+ instrucaoIA:"Projeto da semana 8 (comida): 4 ou 5 frases sobre a comida na vida dela — café da manhã, uma comida que ama e uma que não gosta, o que tem e não tem na geladeira, e o pedido favorito numa lanchonete. Confira tudo da semana: o -s nas comidas que dá para contar quando fala em geral (I like apples) e sem -s nas que não dá (I like rice, cheese, milk); some ao afirmar e any com not e em perguntas; there is / there are; Can I have ..., please?; a/an; o -s com he/she se falar de outra pessoa. Elogie o que estiver certo antes de corrigir."},
+
+{tipo:"fala", titulo:"Apresentação: My food",
+ instrucao:"Aqueça com as frases, teste no 🎤 e depois <b>apresente o seu projeto</b> para a IA, lendo o que você escreveu.",
+ foco:"o <b>i comprido</b> de <i>eat, meat, cheese</i> e o <b>é</b> de <i>bread</i>: <i>I eat bread</i> = <i>ai ÍIT BRÉD</i>.",
+ frases:[
+  {en:"I eat bread and cheese at breakfast.", pt:"Eu como pão com queijo no café da manhã."},
+  {en:"I love strawberries.", pt:"Eu amo morango."},
+  {en:"I don't like meat.", pt:"Eu não gosto de carne."},
+  {en:"There is some milk in my fridge.", pt:"Tem leite na minha geladeira."},
+  {en:"There aren't any eggs.", pt:"Não tem nenhum ovo."},
+  {en:"Can I have a large milkshake, please?", pt:"Pode me ver um milk-shake grande, por favor?"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao i comprido de eat, meat e cheese contra o é de bread, e ao -s do plural. Depois peça para ela apresentar o projeto My food lendo o texto dela em voz alta, e então faça 4 a 6 perguntas em inglês sobre o que ela apresentou, uma de cada vez, esperando a resposta falada: What do you eat at breakfast? · What food do you love? · Is there any ice cream in your fridge? · What do you eat at a snack bar? · Does your mom like pizza? · Do you want some popcorn? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"Can I have a bowl of soup please", pt:"Pode me ver uma tigela de sopa, por favor?"},
+ {frase:"There aren't any eggs in the fridge", pt:"Não tem nenhum ovo na geladeira."},
+ {frase:"My grandma makes pancakes on Sundays", pt:"A minha avó faz panqueca aos domingos."},
+ {frase:"Do you want some lemonade or some water", pt:"Você quer limonada ou água?"}
+]},
+{tipo:"escrita", bonus:true, id:"bonus", titulo:"Desafio: o bilhete do Leo",
+ instrucao:"O Leo comeu todos os morangos da cesta! Escreva o <b>bilhete de desculpas</b> que ele deixa para a Emma: 3 ou 4 frases em inglês.",
+ dica:"<ul><li>um pedido de desculpas</li><li>o que ele comeu (e quantos!)</li><li>uma coisa que ele vai dar para a Emma no lugar (com <b>some</b>)</li><li>uma despedida</li></ul>",
+ gabarito:"Bilhete de 3 ou 4 frases do Leo para a Emma: Sorry, Emma!; o que comeu (I eat a lot of strawberries / ten strawberries); uma oferta com some (Do you want some cookies? / Here are some apples for you); despedida (See you tomorrow! / Your friend, Leo).",
+ instrucaoIA:"Desafio bônus, criativo: ela escreveu o bilhete de desculpas do Leo para a Emma depois de comer os morangos da cesta, 3 ou 4 frases. Valorize o humor. Confira some (oferecendo), o -s das comidas no plural e as formas do present simple. Ela ainda não aprendeu o passado: se ela escrever I eat em vez de I ate, aceite sem cobrar."}
+
+]});
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 8 · Dia 4</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:8,
+dia:4,
+titulo:"At the snack bar",
+subtitulo:"Pedir comida numa lanchonete, do começo ao fim",
+objetivos:[
+  "Pedir comida e bebida com Can I have..., please?",
+  "Entender Anything else? e responder That's all, thanks.",
+  "Fazer o seu pedido sozinha numa lanchonete de Nova York"
+],
+blocos:[
+
+{tipo:"gramatica", titulo:"Como pedir na lanchonete",
+ html:"<p>Para pedir, a frase mágica é <code>Can I have…, please?</code> (Pode me ver…, por favor? / Eu quero…, por favor). É educada e serve em qualquer lugar.</p>"+
+ "<table><tr><th>Quem fala</th><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td>Você</td><td><code>Can I have a hot dog, please?</code></td><td>Pode me ver um cachorro-quente, por favor?</td></tr>"+
+ "<tr><td>Atendente</td><td><code>Anything else?</code></td><td>Mais alguma coisa?</td></tr>"+
+ "<tr><td>Você</td><td><code>Yes, a small soda, please.</code></td><td>Sim, um refrigerante pequeno, por favor.</td></tr>"+
+ "<tr><td>Atendente</td><td><code>Here you are!</code></td><td>Aqui está!</td></tr>"+
+ "<tr><td>Você</td><td><code>That's all, thanks.</code></td><td>É só isso, obrigada.</td></tr></table>"+
+ "<p>E o <code>some / any</code> de ontem aparece aqui também: <code>Can I have some fries?</code> · <code>Is there any ice cream?</code> · <code>Sorry, there isn't any lemonade.</code></p>",
+ exemplos:[
+  {en:"Can I have a hamburger, please?", pt:"Pode me ver um hambúrguer, por favor?"},
+  {en:"Can I have some French fries?", pt:"Pode me ver batata frita?"},
+  {en:"A large lemonade, please.", pt:"Uma limonada grande, por favor."},
+  {en:"Anything else? That's all, thanks.", pt:"Mais alguma coisa? É só isso, obrigada."}
+ ]},
+
+{tipo:"vocab", titulo:"Na lanchonete", itens:[
+ {en:"snack bar", pt:"lanchonete", ipa:"/SNÉK bar/", emoji:"🏪"},
+ {en:"snack", pt:"lanche, petisco", ipa:"/SNÉK/", emoji:"🥨"},
+ {en:"menu", pt:"cardápio", ipa:"/MÉ-niu/", emoji:"📋"},
+ {en:"hamburger", pt:"hambúrguer", ipa:"/RÉM-bur-guer/", emoji:"🍔"},
+ {en:"French fries", pt:"batata frita", ipa:"/FRÉNTCH FRÁIZ/", emoji:"🍟"},
+ {en:"hot dog", pt:"cachorro-quente", ipa:"/RÓT dóg/", emoji:"🌭"},
+ {en:"milkshake", pt:"milk-shake", ipa:"/MÍLK-sheik/", emoji:"🥤"},
+ {en:"large", pt:"grande (tamanho de bebida, de lanche)", ipa:"/LÁRDJ/", emoji:"⬆️"},
+ {en:"Can I have…?", pt:"Pode me ver…? / Eu quero… (para pedir)", ipa:"/kén ai RÉV/", emoji:"🙋"},
+ {en:"Anything else?", pt:"Mais alguma coisa?", ipa:"/É-ni-thing ÉLS/", emoji:"➕"},
+ {en:"That's all.", pt:"É só isso.", ipa:"/théts ÓL/", emoji:"✅"}
+]},
+
+{tipo:"dialogo", titulo:"Ouça: o Ben na lanchonete", escuta:true, linhas:[
+ {quem:"Waiter", en:"Hi! Welcome! Here is the menu.", pt:"Oi! Bem-vindo! Aqui está o cardápio."},
+ {quem:"Ben", en:"Thank you. Can I have a hamburger, please?", pt:"Obrigado. Pode me ver um hambúrguer, por favor?"},
+ {quem:"Waiter", en:"Sure! With cheese?", pt:"Claro! Com queijo?"},
+ {quem:"Ben", en:"No, thanks. I don't like cheese.", pt:"Não, obrigado. Eu não gosto de queijo."},
+ {quem:"Waiter", en:"OK. Anything else?", pt:"Tudo bem. Mais alguma coisa?"},
+ {quem:"Ben", en:"Yes. Some French fries and a large lemonade, please.", pt:"Sim. Batata frita e uma limonada grande, por favor."},
+ {quem:"Waiter", en:"Sorry, there isn't any lemonade today.", pt:"Desculpe, hoje não tem limonada."},
+ {quem:"Ben", en:"Oh! Is there any orange juice?", pt:"Ah! Tem suco de laranja?"},
+ {quem:"Waiter", en:"Yes, there is. A large orange juice. Here you are!", pt:"Tem, sim. Um suco de laranja grande. Aqui está!"},
+ {quem:"Ben", en:"That's all, thank you!", pt:"É só isso, obrigado!"}
+]},
+
+{tipo:"quiz", titulo:"Você entendeu a conversa?", questoes:[
+ {pergunta:"Where is Ben?", opcoes:["at school","at a snack bar","at home"], correta:1,
+  explicacao:"Tem um atendente (waiter), um cardápio (menu) e um pedido: é uma lanchonete."},
+ {pergunta:"What does Ben want to eat?", opcoes:["a hot dog","pizza","a hamburger"], correta:2,
+  explicacao:"Ele pede: Can I have a hamburger, please?"},
+ {pergunta:"Does Ben want cheese?", opcoes:["No, he doesn't.","Yes, he does.","Yes, a lot."], correta:0,
+  explicacao:"Ele diz: No, thanks. I don't like cheese."},
+ {pergunta:"Why doesn't Ben have lemonade?", opcoes:["He doesn't like lemonade.","There isn't any lemonade today.","It's large."], correta:1,
+  explicacao:"O atendente diz: Sorry, there isn't any lemonade today."},
+ {pergunta:"What does Ben drink?", opcoes:["water","soda","orange juice"], correta:2,
+  explicacao:"Sem limonada, ele pede: Is there any orange juice? E tem!"}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva o que eles disseram", itens:[
+ {en:"Can I have a hamburger", pt:"Pode me ver um hambúrguer?", dica:"(cinco palavras)"},
+ {en:"I don't like cheese", pt:"Eu não gosto de queijo.", dica:"(quatro palavras)"},
+ {en:"Is there any orange juice", pt:"Tem suco de laranja?", dica:"(cinco palavras)"}
+]},
+
+{tipo:"escrita", titulo:"Responda sobre a conversa", id:"escuta",
+ instrucao:"Responda em inglês, com frases completas:<br>1. What does Ben eat? (O que o Ben come?)<br>2. Is there any lemonade? (Tem limonada?)<br>3. What does Ben drink? (O que o Ben bebe?)",
+ dica:"<ul><li>uma frase completa para cada pergunta</li><li>na 1, diga as duas coisas que ele come</li><li>na 2, responda com <b>there isn't</b> e <b>any</b></li></ul>",
+ andaime:"<p>He eats <span class=\"lacuna\">?</span> and <span class=\"lacuna\">?</span>. · No, there <span class=\"lacuna\">?</span>. · He drinks <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"1. He eats a hamburger (without cheese) and (some) French fries. 2. No, there isn't (any lemonade today). 3. He drinks (a large) orange juice.",
+ instrucaoIA:"Ela ouviu o Ben pedindo numa lanchonete: um hambúrguer sem queijo, batata frita e uma limonada grande; não tinha limonada e ele pediu suco de laranja. Ela devia responder: o que ele come (a hamburger and French fries), se tem limonada (No, there isn't any lemonade) e o que ele bebe (orange juice). Confira o -s com he (eats, drinks) e o any na frase negativa."},
+
+{tipo:"completar", titulo:"Complete o pedido", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"___ I have a hot dog, please?", pt:"Pode me ver um cachorro-quente, por favor?", resposta:"Can",
+  opcoes:["Can","Do","Am"], explicacao:"A frase de pedir é Can I have...? (Posso ter...?)."},
+ {frase:"Anything ___?", pt:"Mais alguma coisa?", resposta:"else",
+  opcoes:["else","all","some"], explicacao:"Anything else? = Mais alguma coisa? É o que o atendente sempre pergunta."},
+ {frase:"That's ___, thanks.", pt:"É só isso, obrigada.", resposta:"all",
+  opcoes:["all","any","else"], explicacao:"That's all = É só isso. Serve para terminar o pedido."},
+ {frase:"Is there ___ ice cream?", pt:"Tem sorvete?", resposta:"any",
+  opcoes:["any","some","a"], explicacao:"Pergunta para saber se tem: any (de ontem)."},
+ {frase:"Can I have ___ French fries, please?", pt:"Pode me ver batata frita, por favor?", resposta:"some",
+  opcoes:["some","any","a"], explicacao:"Pedindo, você espera um sim: some. E fries é plural, então não vai a."},
+ {frase:"My sister ___ hot dogs.", pt:"A minha irmã ama cachorro-quente.", resposta:"loves",
+  opcoes:["loves","love","is love"], explicacao:"Com she (a minha irmã), a ação ganha -s: loves. E hot dogs vai com -s porque dá para contar."}
+]},
+
+{tipo:"ordenar", titulo:"Monte as frases", itens:[
+ {frase:"Can I have some French fries", pt:"Pode me ver batata frita?"},
+ {frase:"Here is the menu", pt:"Aqui está o cardápio."},
+ {frase:"I want a large milkshake", pt:"Eu quero um milk-shake grande."},
+ {frase:"Is there any orange juice", pt:"Tem suco de laranja?"}
+]},
+
+{tipo:"entrevista", titulo:"O vídeo de comida da Bella", perfil:"youtuber", voz:"f",
+ personagem:"Bella, uma moça de Nova York que faz vídeos sobre comida, falante e muito animada",
+ apresentacao:"<p>Na porta de uma lanchonete de Nova York, a <b>Bella</b> está gravando um vídeo: <i>What do kids eat?</i> Ela quer fazer umas perguntas para você sobre comida — e <b>só fala inglês</b>. Entenda e responda!</p>",
+ quer:["o que ela come numa lanchonete","o que o pai ou a mãe dela gosta de comer","se tem sorvete na casa dela agora","o que ela bebe com o lanche","qual é o lanche favorito dela"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I eat</span> … · <span class=\"lacuna\">My mom likes</span> … · <span class=\"lacuna\">There is some / There isn't any</span> … · <span class=\"lacuna\">I drink</span> … · <span class=\"lacuna\">My favorite snack is</span> …</p>",
+ instrucaoIA:"Ela sabe: snack bar, snack, menu, hamburger, French fries, hot dog, milkshake, large, small, pizza, sandwich, chicken, cheese, salad, ice cream, cookie, popcorn, fruit, apple, banana, soda, lemonade, juice, orange juice, water, milk, I like / I don't like (I like hamburgers / I like cheese), Do you like...? Yes, I do / No, I don't, He likes / She likes (semana 6), My favorite ... is, some / any (There is some... / There isn't any... / Is there any...?), Sorry? Again, please. Slowly, please. Bella pergunta uma coisa por vez, com frases de 3 a 6 palavras (What do you eat at a snack bar?). Se ela não entender, reformule: mais curto, com exemplo sobre você (I love hot dogs! And you?), ou com opções (Hamburger? Hot dog? Pizza?). Até 3 jeitos antes do narrador ajudar."},
+
+{tipo:"missao", titulo:"Missão da semana: na lanchonete de Nova York", cena:"pedido",
+ cenario:"<p>Você está numa <b>lanchonete em Nova York</b> e está com muita fome! O atendente, o Joe, é simpático, mas <b>só entende inglês</b>. Faça o seu pedido do começo ao fim: comida, bebida e o tamanho.</p>",
+ personagem:"Joe, atendente de uma lanchonete em Nova York, simpático e um pouco apressado",
+ voz:"m",
+ objetivos:["pedir uma comida com Can I have..., please?","pedir uma bebida dizendo o tamanho (small ou large)","responder quando o Joe perguntar Anything else?","terminar o pedido e agradecer (That's all, thanks)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">Can I have</span> … please? · A <span class=\"lacuna\">small / large</span> … · <span class=\"lacuna\">That's</span> …</p>",
+ instrucaoIA:"Ela sabe: Can I have..., please? Anything else? That's all. Here you are. Yes, please. No, thanks. snack bar, menu, hamburger, French fries, hot dog, milkshake, large, small, pizza, sandwich, chicken, cheese, salad, ice cream, cookie, soda, lemonade, juice, water, some / any (Is there any...?), I like / I don't like. O cardápio do Joe: hamburger, hot dog, chicken sandwich, pizza, French fries, salad; bebidas: soda, lemonade, orange juice, water, milkshake (chocolate ou strawberry); tamanhos small e large. Hoje não tem pizza (Sorry, there isn't any pizza today) — se ela pedir pizza, ele oferece outra coisa. Joe cumprimenta, pergunta What do you want? ou Can I help you?, pergunta o tamanho da bebida (Small or large?) e sempre pergunta Anything else? antes de entregar (Here you are!). Frases de 3 a 6 palavras. Até 8 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b>: o seu pedido na lanchonete do Joe, como uma conversa. Escreva o que <b>você</b> diz e o que o <b>Joe</b> diz.",
+ dica:"<ul><li>os nomes antes de cada fala (Joe: … / Me: …)</li><li>o seu pedido de comida com <b>Can I have</b></li><li>a bebida, com o tamanho</li><li>a pergunta do Joe <b>Anything else?</b> e a sua resposta</li><li>um jeito de terminar e agradecer</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>Joe: Hi! <span class=\"lacuna\">?</span> · Me: Can I have <span class=\"lacuna\">?</span>, please? · Joe: <span class=\"lacuna\">?</span> else? · Me: <span class=\"lacuna\">?</span></p>",
+ gabarito:"Um diálogo de 4 ou 5 falas entre ela e o Joe: cumprimento; pedido com Can I have a ..., please?; bebida com tamanho (a large lemonade / a small soda); Anything else?; final com That's all, thanks / Thank you.",
+ instrucaoIA:"Ela devia escrever o pedido dela na lanchonete do Joe como um diálogo de 4 ou 5 falas. Confira: Can I have a/an ..., please? (com a pergunta invertida), o tamanho antes da bebida (a large lemonade, não a lemonade large), some com coisas no plural ou que não dá para contar (some French fries), Anything else? e That's all. Vocabulário da aula: snack bar, snack, menu, hamburger, French fries, hot dog, milkshake, large, Can I have, Anything else, That's all."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. É o aquecimento para pedir sozinha!",
+ foco:"o <b>i comprido</b> de <i>please</i> e <i>cheese</i> (estique: <i>PLÍIZ</i>), e o <b>a</b> aberto de <i>can</i> e <i>have</i> (<i>KÉN, RÉV</i>, boca bem aberta).",
+ frases:[
+  {en:"Can I have a hamburger, please?", pt:"Pode me ver um hambúrguer, por favor?"},
+  {en:"A large lemonade, please.", pt:"Uma limonada grande, por favor."},
+  {en:"Is there any ice cream?", pt:"Tem sorvete?"},
+  {en:"That's all, thanks.", pt:"É só isso, obrigada."}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao i comprido de please e cheese e ao a aberto de can e have. Depois faça de atendente de lanchonete e faça 4 a 6 perguntas em inglês, uma de cada vez, esperando ela responder falando: Hi! What do you want? · With cheese? · Anything else? · Small or large? · Do you want some ice cream, too? · Is that all? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ligar", bonus:true, titulo:"Frases prontas de várias semanas (cuidado com as parecidas!)", pares:[
+ {en:"Anything else?", pt:"Mais alguma coisa?"},
+ {en:"That's all.", pt:"É só isso."},
+ {en:"Here you are.", pt:"Aqui está. (entregando)"},
+ {en:"Here it is.", pt:"Aqui está ele! (achei)"},
+ {en:"Come in!", pt:"Entra!"},
+ {en:"Me too!", pt:"Eu também!"},
+ {en:"Not me.", pt:"Eu não."},
+ {en:"Let me think.", pt:"Deixa eu pensar."},
+ {en:"Just a second.", pt:"Só um segundo."}
+]},
+{tipo:"escrita", bonus:true, id:"bonus", titulo:"Desafio: a sua própria lanchonete",
+ instrucao:"Invente a <b>sua lanchonete</b>! Escreva o nome dela, um cardápio com 3 comidas e 2 bebidas, e uma coisa que <b>não tem</b> lá (com <b>there isn't any</b> ou <b>there aren't any</b>). Depois escreva uma frase que o atendente diz.",
+ dica:"<ul><li>o nome da lanchonete</li><li>3 comidas e 2 bebidas do cardápio</li><li>uma coisa que não tem, com <b>any</b></li><li>uma frase do atendente (pode ser engraçada!)</li></ul>",
+ gabarito:"Nome da lanchonete; um cardápio com 3 comidas e 2 bebidas (com tamanhos, se quiser); uma frase com There isn't any ... / There aren't any ...; uma fala do atendente (Can I help you? / Anything else? / Here you are!).",
+ instrucaoIA:"Desafio bônus, criativo: ela inventou a própria lanchonete, com nome, cardápio de 3 comidas e 2 bebidas, uma coisa que não tem (There isn't any / There aren't any) e uma fala do atendente. Valorize a criatividade. Confira any na frase negativa, o -s das comidas que dá para contar e a forma sem -s das que não dá."}
+
+]});
+</script>
+</body>
+</html>

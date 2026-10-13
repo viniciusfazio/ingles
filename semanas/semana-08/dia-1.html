@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6C4AB6">
+<title>Semana 8 · Dia 1</title>
+<link rel="stylesheet" href="../../assets/curso.css">
+</head>
+<body>
+<script src="../../assets/config.js"></script>
+<script src="../../assets/curso.js"></script>
+<script>
+Curso.montar({
+semana:8,
+dia:1,
+titulo:"What's in your lunch box?",
+subtitulo:"As comidas do dia a dia e como aceitar ou recusar com educação",
+objetivos:[
+  "Dizer em inglês as comidas e bebidas do dia a dia",
+  "Dizer o que tem na sua lancheira",
+  "Aceitar e recusar comida com Yes, please! e No, thanks."
+],
+blocos:[
+
+{tipo:"nota", titulo:"🍕 Bem-vinda à semana mais gostosa!",
+ html:"<p>Na semana passada você mostrou a sua casa. Agora a gente vai para a <b>cozinha</b> e para a <b>lancheira</b>: esta semana é de comida!</p>"+
+ "<table><tr><th>Inglês</th><th>Português</th></tr>"+
+ "<tr><td><code>I like pizza.</code></td><td>Eu gosto de pizza.</td></tr>"+
+ "<tr><td><code>I don't like eggs.</code></td><td>Eu não gosto de ovo.</td></tr>"+
+ "<tr><td><code>It's delicious!</code></td><td>É uma delícia!</td></tr></table>"+
+ "<p>Você já conhece <code>eat</code> (comer), <code>drink</code> (beber), <code>milk</code>, <code>bread</code>, <code>juice</code> e <code>cake</code>. Hoje entram quase vinte. 😋</p>"},
+
+{tipo:"vocab", titulo:"Comidas e bebidas", itens:[
+ {en:"food", pt:"comida", ipa:"/FÚUD/", emoji:"🍽️"},
+ {en:"fruit", pt:"fruta", ipa:"/FRÚUT/", emoji:"🍇"},
+ {en:"apple", pt:"maçã", ipa:"/É-pol/", emoji:"🍎"},
+ {en:"banana", pt:"banana", ipa:"/ba-NÉ-na/", emoji:"🍌"},
+ {en:"strawberry", pt:"morango", ipa:"/STRÓ-bé-ri/", emoji:"🍓"},
+ {en:"egg", pt:"ovo", ipa:"/ÉG/", emoji:"🥚"},
+ {en:"cheese", pt:"queijo", ipa:"/TCHÍIZ/", emoji:"🧀"},
+ {en:"meat", pt:"carne", ipa:"/MÍIT/", emoji:"🥩"},
+ {en:"chicken", pt:"frango", ipa:"/TCHÍ-ken/", emoji:"🍗"},
+ {en:"rice", pt:"arroz", ipa:"/RÁIS/", emoji:"🍚"},
+ {en:"beans", pt:"feijão", ipa:"/BÍINZ/", emoji:"🫘"},
+ {en:"salad", pt:"salada", ipa:"/SÉ-lad/", emoji:"🥗"},
+ {en:"pizza", pt:"pizza", ipa:"/PÍT-sa/", emoji:"🍕"},
+ {en:"sandwich", pt:"sanduíche", ipa:"/SÉND-uitch/", emoji:"🥪"},
+ {en:"cookie", pt:"biscoito, cookie", ipa:"/KÚ-ki/", emoji:"🍪"},
+ {en:"ice cream", pt:"sorvete", ipa:"/áis KRÍIM/", emoji:"🍦"},
+ {en:"chocolate", pt:"chocolate", ipa:"/TCHÓ-klet/", emoji:"🍫"},
+ {en:"water", pt:"água", ipa:"/UÓ-ter/", emoji:"💧"}
+]},
+
+{tipo:"vocab", titulo:"Frases para conversar (semana 8)", itens:[
+ {en:"Yes, please.", pt:"Sim, por favor. (aceitar)", ipa:"/iés PLÍIZ/", emoji:"👍"},
+ {en:"No, thanks.", pt:"Não, obrigada. (recusar)", ipa:"/nôu THÉNKS/", emoji:"🙅"},
+ {en:"It's delicious!", pt:"É uma delícia! / Está uma delícia!", ipa:"/its de-LÍ-shâs/", emoji:"😋"}
+]},
+
+{tipo:"dialogo", titulo:"O lanche no recreio", escuta:false, linhas:[
+ {quem:"Emma", en:"Hi, Anna! I'm hungry.", pt:"Oi, Anna! Estou com fome."},
+ {quem:"Anna", en:"Me too! Look, I have a sandwich and an apple.", pt:"Eu também! Olha, eu tenho um sanduíche e uma maçã."},
+ {quem:"Emma", en:"I have rice and chicken. And a cookie!", pt:"Eu tenho arroz e frango. E um cookie!"},
+ {quem:"Anna", en:"Do you like cheese? My sandwich has cheese.", pt:"Você gosta de queijo? O meu sanduíche tem queijo."},
+ {quem:"Emma", en:"Yes! I love cheese.", pt:"Sim! Eu amo queijo."},
+ {quem:"Anna", en:"Do you want a strawberry?", pt:"Você quer um morango?"},
+ {quem:"Emma", en:"Yes, please! It's delicious!", pt:"Sim, por favor! É uma delícia!"},
+ {quem:"Anna", en:"And a banana?", pt:"E uma banana?"},
+ {quem:"Emma", en:"No, thanks. I don't like bananas.", pt:"Não, obrigada. Eu não gosto de banana."}
+]},
+
+{tipo:"ligar", titulo:"Ligue as traduções (esta semana e a passada)", pares:[
+ {en:"apple", pt:"maçã"},
+ {en:"egg", pt:"ovo"},
+ {en:"cheese", pt:"queijo"},
+ {en:"chicken", pt:"frango"},
+ {en:"water", pt:"água"},
+ {en:"fridge", pt:"geladeira"},
+ {en:"mirror", pt:"espelho"},
+ {en:"under", pt:"embaixo de"},
+ {en:"behind", pt:"atrás de"},
+ {en:"bedroom", pt:"quarto"}
+]},
+
+{tipo:"quiz", titulo:"Escolha a resposta certa", questoes:[
+ {pergunta:"Como se diz arroz? 🍚", opcoes:["rice","meat","beans"], correta:0,
+  explicacao:"rice = arroz. beans é feijão e meat é carne. Arroz com feijão = rice and beans!"},
+ {pergunta:"O que significa No, thanks.?", opcoes:["Não, obrigada.","Sim, por favor.","É uma delícia!"], correta:0,
+  explicacao:"No, thanks. é o jeito educado de recusar. thanks é um thank you mais curtinho."},
+ {pergunta:"A sua avó oferece bolo de chocolate e você quer muito. O que você diz?", opcoes:["Yes, please!","No, thanks.","I don't know."], correta:0,
+  explicacao:"Yes, please! = Sim, por favor! É assim que se aceita alguma coisa."},
+ {pergunta:"Ouça e escolha.", audio:"cheese", opcoes:["cheese","chicken","meat"], correta:0,
+  explicacao:"cheese = queijo. O ee é um i comprido: TCHÍIZ. chicken (frango) tem um i curtinho."},
+ {pergunta:"Qual destas NÃO é uma fruta?", opcoes:["egg","strawberry","banana"], correta:0,
+  explicacao:"egg é ovo. strawberry (morango) e banana são frutas: fruit."},
+ {pergunta:"Você provou a pizza da mãe da Emma e amou. O que você diz?", opcoes:["It's delicious!","Come in!","Here it is."], correta:0,
+  explicacao:"It's delicious! = É uma delícia! Quem cozinhou fica feliz de ouvir."}
+]},
+
+{tipo:"completar", titulo:"Complete as frases", ajuda:"Toque na palavra que falta.", itens:[
+ {frase:"I eat an ___ every day.", pt:"Eu como uma maçã todo dia.", resposta:"apple",
+  opcoes:["apple","banana","sandwich"], explicacao:"Lembra da semana 3? an vem antes de som de vogal: an apple. Uma banana é a banana."},
+ {frase:"I drink ___ after soccer.", pt:"Eu bebo água depois do futebol.", resposta:"water",
+  opcoes:["water","rice","chicken"], explicacao:"drink = beber. Das três, só water (água) dá para beber."},
+ {frase:"My favorite pizza has ___.", pt:"A minha pizza favorita tem queijo.", resposta:"cheese",
+  opcoes:["cheese","cookie","water"], explicacao:"cheese = queijo, o que vai em cima da pizza."},
+ {frase:"Do you want ice cream? ___, please!", pt:"Você quer sorvete? Sim, por favor!", resposta:"Yes",
+  opcoes:["Yes","No","Not"], explicacao:"Para aceitar: Yes, please! Para recusar seria No, thanks."},
+ {frase:"The pizza is in the ___.", pt:"A pizza está na geladeira.", resposta:"fridge",
+  opcoes:["fridge","bathroom","closet"], explicacao:"Lembra da semana passada? fridge = geladeira, o lugar da comida."},
+ {frase:"My brother ___ chicken and rice on Sundays.", pt:"O meu irmão come frango com arroz aos domingos.", resposta:"eats",
+  opcoes:["eats","eat","are eat"], explicacao:"Com he e she (o meu irmão) a ação ganha -s: eats, como na semana 6."}
+]},
+
+{tipo:"ditado", titulo:"Escute e escreva", itens:[
+ {en:"cheese", pt:"queijo", dica:"(uma palavra)"},
+ {en:"chicken", pt:"frango", dica:"(uma palavra)"},
+ {en:"ice cream", pt:"sorvete", dica:"(duas palavras)"},
+ {en:"No, thanks", pt:"Não, obrigada", dica:"(duas palavras)"},
+ {en:"It's delicious", pt:"É uma delícia", dica:"(duas palavras: a primeira tem apóstrofo)"}
+]},
+
+{tipo:"adivinha", titulo:"Que comida é? Escreva a resposta", itens:[
+ {pistas:["I am a fruit.","I am red and little.","I am delicious in a cake."],
+  resposta:"strawberry", pt:"morango", dica:"(uma fruta)"},
+ {pistas:["A chicken has it.","It is white.","I eat it at breakfast."],
+  resposta:"egg", pt:"ovo", dica:"(uma comida)"},
+ {pistas:["Kids love it.","It is white, pink or brown.","I eat it at a party, with cake."],
+  resposta:"ice cream", pt:"sorvete", dica:"(duas palavras)"},
+ {pistas:["It is not food.","I drink it every day.","It has no color."],
+  resposta:"water", pt:"água", dica:"(uma bebida)"}
+]},
+
+{tipo:"explorar", titulo:"Quem é o Zorp?", perfil:"fantasia", voz:"m",
+ personagem:"Zorp, um alienígena verde e simpático que acabou de chegar na Terra",
+ apresentacao:"<p>Na hora do lanche, uma nave pequenininha pousa no pátio da escola! Sai dela o <b>Zorp</b>, um alienígena verde e sorridente, olhando bem para a sua lancheira. Ele <b>só fala inglês</b>. Descubra quem ele é!</p>",
+ segredos:["ele tem 100 anos — e no planeta dele isso ainda é ser criança","o que ele mais ama aqui é sorvete","ele não gosta de queijo (acha o cheiro horrível)","ele bebe leite com chocolate todo dia","ele come 20 bananas logo que acorda"],
+ pistas:["a idade dele","a comida favorita dele aqui na Terra","uma comida de que ele não gosta","o que ele bebe","surpresa: o café da manhã dele"],
+ andaime:"<p>Para começar: <span class=\"lacuna\">How old</span> …? · <span class=\"lacuna\">Do you like</span> …? · <span class=\"lacuna\">What's your favorite</span> …? · <span class=\"lacuna\">What do you eat</span> …?</p>",
+ instrucaoIA:"Ela sabe: food, fruit, apple, banana, strawberry, egg, cheese, meat, chicken, rice, beans, salad, pizza, sandwich, cookie, ice cream, chocolate, water, milk, bread, juice, cake, eat, drink, breakfast, lunch, dinner, números até 100, I like / I don't like, Do you like...? Do you eat...? What's your favorite food? How old are you? Frases para conversar: Yes, please. No, thanks. It's delicious! Really? Wow! Me too! Not me. Sorry, I don't understand. Again, please. Zorp fala com frases de 3 a 6 palavras (I am one hundred! I love ice cream!), responde curto, deixa ganchos (My breakfast is very big!) e devolve perguntas fáceis (Do you like cheese?). Ele é curioso sobre a comida da Terra e pode pedir para ela dizer o que tem na lancheira. Quando ela disser bye, conte em português o que ela descobriu e o que ficou escondido."},
+
+{tipo:"missao", titulo:"Missão: a troca de lanche", cena:"troca",
+ cenario:"<p>Hora do recreio! A <b>Emma</b>, sua amiga de Nova York, abriu a lancheira e quer <b>trocar</b> alguma coisa com você. Ela <b>só entende inglês</b>. Diga o que tem na sua lancheira e veja se vocês fazem uma troca.</p>",
+ personagem:"Emma, 11 anos, sua amiga de Nova York, gulosa e animada",
+ objetivos:["dizer duas coisas que tem na sua lancheira (I have...)","aceitar ou recusar o que a Emma oferece (Yes, please / No, thanks)"],
+ andaime:"<p>Se travar: <span class=\"lacuna\">I have</span> … and … · <span class=\"lacuna\">Yes,</span> … / <span class=\"lacuna\">No,</span> …</p>",
+ instrucaoIA:"Ela sabe: food, fruit, apple, banana, strawberry, egg, cheese, meat, chicken, rice, beans, salad, pizza, sandwich, cookie, ice cream, chocolate, water, milk, bread, juice, cake, lunch box, I have, I like / I don't like, Do you like...? Do you want...? Yes, please. No, thanks. It's delicious! Emma tem na lancheira um cookie de chocolate e uma banana. Ela pergunta What do you have? e depois oferece o cookie ou a banana em troca de uma coisa dela (Do you want my cookie?). Se ela recusar, Emma oferece a outra coisa. Frases de 3 a 6 palavras. A cena é curta: 4 a 6 falas."},
+
+{tipo:"escrita", titulo:"Hora de escrever", id:"1",
+ instrucao:"Escreva <b>4 ou 5 frases</b> sobre o que você come: o que tem na sua lancheira, o que você gosta e o que não gosta.",
+ dica:"<ul><li>o que tem na sua lancheira hoje (ou num dia normal)</li><li>duas comidas que você gosta</li><li>uma comida que você não gosta</li><li>a sua comida favorita</li><li>o que você bebe</li></ul>Tente sem olhar para cima. 💜",
+ andaime:"<p>O molde é este — quem preenche é você:</p><p>In my lunch box, I have <span class=\"lacuna\">?</span> and <span class=\"lacuna\">?</span>. · I like <span class=\"lacuna\">?</span>. · I don't like <span class=\"lacuna\">?</span>. · My favorite food is <span class=\"lacuna\">?</span>. · I drink <span class=\"lacuna\">?</span>.</p>",
+ gabarito:"4 ou 5 frases: o que tem na lancheira (I have a sandwich and an apple); comidas de que gosta (I like rice and beans); uma de que não gosta (I don't like eggs); a comida favorita (My favorite food is pizza); o que bebe (I drink water / juice / milk).",
+ instrucaoIA:"Ela devia escrever 4 ou 5 frases sobre o que come. Vocabulário da aula: food, fruit, apple, banana, strawberry, egg, cheese, meat, chicken, rice, beans, salad, pizza, sandwich, cookie, ice cream, chocolate, water; e já sabia milk, bread, juice, cake, eat, drink. Confira: an apple / an egg (an antes de vogal), I don't like (com don't), My favorite food is. Ela ainda não aprendeu quando a comida leva -s (I like apples / I like rice) — isso é amanhã: se ela escrever I like apple, aceite e só mostre a forma com -s como dica, sem contar erro."},
+
+{tipo:"fala", titulo:"Hora de falar",
+ instrucao:"Ouça, repita em voz alta e teste no 🎤. Depois converse com a IA.",
+ foco:"o <b>i comprido</b> de <i>eat, meat, cheese</i> (estique o i: <i>MÍIT</i>) e o <b>é</b> aberto de <i>bread</i> (<i>BRÉD</i>), que se escreve com ea mas não soa i.",
+ frases:[
+  {en:"I eat meat and rice.", pt:"Eu como carne e arroz."},
+  {en:"I like cheese and eggs.", pt:"Eu gosto de queijo e de ovo."},
+  {en:"I eat bread at breakfast.", pt:"Eu como pão no café da manhã."},
+  {en:"Yes, please!", pt:"Sim, por favor!"},
+  {en:"No, thanks.", pt:"Não, obrigada."},
+  {en:"It's delicious!", pt:"É uma delícia!"}
+ ],
+ instrucaoIA:"Primeiro peça para ela repetir as frases acima e corrija a pronúncia em português, com atenção ao i comprido de eat, meat e cheese (MÍIT, TCHÍIZ) contra o é aberto de bread (BRÉD), e ao TH de thanks (língua entre os dentes). Depois faça 4 a 6 perguntas fáceis em inglês, uma de cada vez, e espere ela responder falando: What's your favorite food? · Do you like cheese? · Do you eat eggs at breakfast? · What do you have in your lunch box? · Do you like ice cream or chocolate? · Do you drink water or juice? Corrija com carinho, em português, e elogie o que saiu bem."},
+
+{tipo:"ordenar", bonus:true, titulo:"Frases maiores", itens:[
+ {frase:"My mom always eats rice and beans", pt:"A minha mãe sempre come arroz com feijão."},
+ {frase:"I don't like cheese on my pizza", pt:"Eu não gosto de queijo na minha pizza."},
+ {frase:"There is ice cream in the fridge", pt:"Tem sorvete na geladeira."},
+ {frase:"Do you want a cookie or a banana", pt:"Você quer um cookie ou uma banana?"}
+]}
+
+]});
+</script>
+</body>
+</html>
